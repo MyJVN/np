@@ -1,0 +1,91 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "jvnpid_schema_1.0.json",
+    "title": "Product Dictionary for MyJVN",
+    "description": "Representation of Product Dictionary for MyJVN as a JSON document.",
+    "type": "object",
+    "properties": {
+        "product-list": {"$ref": "#/definitions/product-list_t"}
+    },
+    "definitions": {
+        "title_t": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "language": {"type": "string"},
+                    "description": {"type": "string"}
+                },
+                "required": ["description"]
+            }
+        },
+        "references_t": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "href": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "description": {"type": "string"}
+                }
+            }
+        },
+        "product_ids_t": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "swid": {"type": "string"},
+                    "cpe": {"type": "string"},
+                    "spdx": {"type": "string"},
+                    "type": {"type": "string"}
+                }
+            }
+        },
+        "products_t": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "pname": {"type": "string"},
+                    "title": {"$ref": "#/definitions/title_t"},
+                    "product_ids": {"$ref": "#/definitions/product_ids_t"},
+                    "references": {"$ref": "#/definitions/references_t"}
+                },
+                "required": [
+                    "pname",
+                    "title"
+                ]
+            }
+        },
+        "vendor_t": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "vname": {"type": "string"},
+                    "title": {"$ref": "#/definitions/title_t"},
+                    "products": {"$ref": "#/definitions/products_t"}
+                },
+                "required": [
+                    "vname",
+                    "title",
+                    "products"
+                ]
+            }
+        },
+        "product-list_t": {
+            "type": "object",
+            "properties": {
+                "vendor": {"$ref": "#/definitions/vendor_t"}
+            }
+        }
+    }
+}

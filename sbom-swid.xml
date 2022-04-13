@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swid:SoftwareIdentity xmlns:swid="http://standards.iso.org/iso/19770/-2/2015/schema.xsd"
+    xmlns:xsi="htttp://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://standards.iso.org/iso/19770/-2/2015/schema.xsd
+    https://standards.iso.org/iso/19770/-2/2015-current/schema.xsd" 
+    name="Information DBX"
+    tagId="jvnpid%3A1.0%3Asample.or.jp%3Asecinfodbx%3A1.0.0.0.0" 
+    version="1.0.0">
+    <swid:Entity name="Sample Security" 
+        regid="https://www.sample.or.jp"
+        role="softwareCreator"/>
+    <swid:Link  rel="component" href="swid: cpe%3A2.3%3Aa%3Aapache%3Atomcat%3A7.0.27%3A*%3A*%3A*%3A*%3A*%3A*%3A*" />
+    <swid:Link  rel="component" href="swid: cpe%3A2.3%3Aa%3Aapache%3Astruts%3A2.3.8%3A*%3A*%3A*%3A*%3A*%3A*%3A*" />
+    <swid:Link  rel="component" href="swid: cpe%3A2.3%3Aa%3Apostgresql%3Apostgresql%3A9.6.2%3A*%3A*%3A*%3A*%3A*%3A*%3A*" />
+    <swid:Link  rel="component" href="swid: cpe%3A2.3%3Aa%3Aopenssl%3Aopenssl%3A1.0.2%3A*%3A*%3A*%3A*%3A*%3A*%3A*" />
+</swid:SoftwareIdentity>

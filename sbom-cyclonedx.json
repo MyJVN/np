@@ -1,0 +1,109 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.4",
+  "serialNumber": "urn:uuid:d8076487-3984-a542-ebcf-9d6b56eb96f8",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2022-04-12T13:32:09Z",
+    "authors": [
+      {
+        "name": "Sample Security"
+      }
+    ],
+    "component": {
+      "type": "application",
+      "bom-ref": "6b95af17-4b3a-6dbd-cb2a-d5e997ee6763",
+      "name": "Information DBX",
+      "purl": "pkg:supplier/cpe%3A2.3%3Aa%3Asample.or.jp%3Asecinfodbx%3A1.0%3A*%3A*%3A*%3A*%3A*%3A*%3A*/Information%20DBX@1.0",
+      "supplier": {
+        "name": "cpe:2.3:a:sample.or.jp:secinfodbx:1.0:*:*:*:*:*:*:*"
+      },
+      "version": "1.0",
+      "hashes": [
+        {
+          "alg": "SHA256",
+          "content": "44bae9c669a8f3409ea8afd8ddd61f056c1b56dc24f8d18260d13bff5d2ad5a1"
+        }
+      ]
+    },
+    "manufacture": {
+      "name": "cpe:2.3:a:sample.or.jp:secinfodbx:1.0:*:*:*:*:*:*:*"
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "0b76982b-81b8-5e08-c321-4dd32bfca12f",
+      "name": "tomcat",
+      "purl": "pkg:supplier/cpe%3A2.3%3Aa%3Aapache%3Atomcat%3A7.0.27%3A*%3A*%3A*%3A*%3A*%3A*%3A*/tomcat@7.0.27",
+      "publisher": "cpe:2.3:a:apache:tomcat:7.0.27:*:*:*:*:*:*:*",
+      "version": "7.0.27"
+    },
+    {
+      "type": "library",
+      "bom-ref": "8de8462a-d213-3639-3dfd-44682375089f",
+      "name": "struts",
+      "purl": "pkg:supplier/cpe%3A2.3%3Aa%3Aapache%3Astruts%3A2.3.8%3A*%3A*%3A*%3A*%3A*%3A*%3A*/struts@2.3.8",
+      "publisher": "cpe:2.3:a:apache:struts:2.3.8:*:*:*:*:*:*:*",
+      "version": "2.3.8"
+    },
+    {
+      "type": "library",
+      "bom-ref": "daaba795-e7ba-5124-574b-8ed0bb6f4239",
+      "name": "postgresql",
+      "purl": "pkg:supplier/cpe%3A2.3%3Aa%3Apostgresql%3Apostgresql%3A9.6.2%3A*%3A*%3A*%3A*%3A*%3A*%3A*/postgresql@9.6.2",
+      "publisher": "cpe:2.3:a:postgresql:postgresql:9.6.2:*:*:*:*:*:*:*",
+      "version": "9.6.2"
+    },
+    {
+      "type": "library",
+      "bom-ref": "b6bf7451-f779-2ab4-326a-86d98147010c",
+      "name": "openssl",
+      "purl": "pkg:supplier/cpe%3A2.3%3Aa%3Aopenssl%3Aopenssl%3A1.0.2%3A*%3A*%3A*%3A*%3A*%3A*%3A*/openssl@1.0.2",
+      "publisher": "cpe:2.3:a:openssl:openssl:1.0.2:*:*:*:*:*:*:*",
+      "version": "1.0.2"
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "48566bc9-6789-7cff-6eab-11a82834e637",
+      "dependsOn": [
+        "38016be0-15bb-0c3d-c513-609aab3a0d68",
+        "8345a587-d4a2-f38a-80ff-ce623fa9e5eb",
+        "7758531b-05f7-041f-7354-73f975dc649e",
+        "85d5f23a-c7ce-21e1-f3bf-3643aac11b33"
+      ]
+    },
+    {
+      "ref": "38016be0-15bb-0c3d-c513-609aab3a0d68",
+      "dependsOn": [
+        "913b144c-0bb6-9473-d5f1-bddaf9fad9b6"
+      ]
+    },
+    {
+      "ref": "85d5f23a-c7ce-21e1-f3bf-3643aac11b33",
+      "dependsOn": [
+        "c8367173-7259-e63e-ad72-7a5eef105ab0",
+        "e88fa2af-f5eb-953d-9a4d-c41161946269"
+      ]
+    },
+    {
+      "ref": "f2c763d3-9a10-7392-c197-4b983ace2466",
+      "dependsOn": [
+        "0b76982b-81b8-5e08-c321-4dd32bfca12f",
+        "8de8462a-d213-3639-3dfd-44682375089f",
+        "daaba795-e7ba-5124-574b-8ed0bb6f4239",
+        "b6bf7451-f779-2ab4-326a-86d98147010c"
+      ]
+    },
+    {
+      "ref": "6b95af17-4b3a-6dbd-cb2a-d5e997ee6763",
+      "dependsOn": [
+        "0b76982b-81b8-5e08-c321-4dd32bfca12f",
+        "8de8462a-d213-3639-3dfd-44682375089f",
+        "daaba795-e7ba-5124-574b-8ed0bb6f4239",
+        "b6bf7451-f779-2ab4-326a-86d98147010c"
+      ]
+    }
+  ]
+}
