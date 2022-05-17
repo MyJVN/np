@@ -29,6 +29,7 @@
 
 
 * SBOM
+
 | タイプ | 形式(例題) |
 | ---- | ---- |
 | SWID | [ XML ](sbom-swid.xml) |
