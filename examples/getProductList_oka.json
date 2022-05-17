@@ -1,0 +1,134 @@
+{
+    "jvn-product-dictionary": {
+        "vendors": [
+            {
+                "vname": "jvnpid:1.0:sample.or.jp",
+                "vid": "999991",
+                "title": [
+                    {
+                        "lang": "ja-JP",
+                        "name": "サンプル"
+                    },
+                    {
+                        "lang": "en-US",
+                        "name": "Sample"
+                    }
+                ],
+                "products": [
+                    {
+                        "pname": "jvnpid:1.0:sample.or.jp:secinfodbx",
+                        "pid": "777999991",
+                        "title": [
+                            {
+                                "lang": "ja-JP",
+                                "name": "セキュリティ情報データベースX"
+                            },
+                            {
+                                "lang": "en-US",
+                                "name": "Security Information DBX"
+                            }
+                        ],
+                        "product_ids": [
+                            {"swid": ""},
+                            {"cpe": ""},
+                            {"spdxid": ""},
+                            {"purl": ""}
+                        ]
+                    }
+                ]
+            },
+            {
+                "vname": "jvnpid:1.0:testx",
+                "vid": "999992",
+                "title": [
+                    {"name": "テストエックス"}
+                ],
+                "products": [
+                    {
+                        "pname": "jvnpid:1.0:testx:httpd",
+                        "pid": "777999992",
+                        "title": [
+                            {
+                                "lang": "ja-JP",
+                                "name": "HTTPD サーバ"
+                            }
+                        ],
+                        "product_ids": [
+                            {"swid": ""},
+                            {"cpe": "cpe:2.3:a:testx:httpd"},
+                            {"spdxid": ""},
+                            {"purl": ""}
+                        ],
+                        "references": [
+                            {
+                                "url": "https://www.testx.com/httpd/",
+                                "summary": "TESTX HTTPD"
+                            },
+                            {
+                                "url": "https://www.testx.com/httpd2/",
+                                "summary": "TESTX HTTPD2"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "vname": "jvnpid:1.0:ipa",
+                "vid": "999996",
+                "title": [
+                    {
+                        "lang": "ja-JP",
+                        "name": "独立行政法人　情報処理推進機構"
+                    }
+                ],
+                "products": [
+                    {
+                        "pname": "jvnpid:1.0:ipa:myjvn_api",
+                        "pid": "777999993",
+                        "title": [
+                            {
+                                "lang": "ja-JP",
+                                "name": "MyJVN API"
+                            }
+                        ],
+                        "product_ids": [
+                            {"swid": "jvnpid:1.0:ipa:myjvn_api"},
+                            {"cpe": "cpe:2.3:a:ipa:myjvn_api"},
+                            {"spdxid": ""},
+                            {"purl": ""}
+                        ]
+                    },
+                    {
+                        "pname": "jvnpid:1.0:ipa:jvn_ipedia",
+                        "pid": "777999994",
+                        "title": [
+                            {
+                                "lang": "ja-JP",
+                                "name": "JVN iPedia"
+                            }
+                        ],
+                        "product_ids": [
+                            {"swid": "jvnpid:1.0:ipa:jvn_ipedia"},
+                            {"cpe": "cpe:2.3:a:ipa:jvn_ipedia"},
+                            {"spdxid": ""},
+                            {"purl": ""}
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "status:Status": {
+        "version": "3.3",
+        "method": "getProductList",
+        "retCd": 0,
+        "retMax": "10000",
+        "errCd": "",
+        "errMsg": "",
+        "totalRes": "65000",
+        "totalResRet": "4",
+        "firstRes": "1",
+        "ft": "json",
+        "feed": "oka"
+    }
+}

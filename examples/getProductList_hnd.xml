@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<Result version="3.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://jvndb.jvn.jp/myjvn/Results" xmlns:mjres="http://jvndb.jvn.jp/myjvn/Results"
+  xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
+  xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/Results https://jvndb.jvn.jp/schema/results_3.3.xsd">
+  <VendorInfo xml:lang="ja">
+    <Vendor vname="#1 deals and maps app" cpe="cpe:/:pointinside" vid="10133">
+      <Product pname="Point Inside Shopping &amp; Travel"
+        cpe="cpe:/a:pointinside:point_inside_shopping_%26_travel" pid="21248"/>
+    </Vendor>
+    <Vendor vname="#sysPass" cpe="cpe:/:syspass" vid="12776">
+      <Product pname="#sysPass" cpe="cpe:/a:syspass:syspass" pid="29385"/>
+    </Vendor>
+    <Vendor vname="$0.99 kindle books project" cpe="cpe:/:%240.99_kindle_books_project" vid="11248">
+      <Product pname="$0.99 kindle books"
+        cpe="cpe:/a:%240.99_kindle_books_project:%240.99_kindle_books" pid="22920"/>
+    </Vendor>
+    <Vendor vname=".VDMi/" cpe="cpe:/:fibonacciorange" vid="11644">
+      <Product pname="Commerce WeDeal" cpe="cpe:/a:fibonacciorange:wedeal" pid="23925"/>
+    </Vendor>
+    <Vendor vname="1-800 CONTACTS" cpe="cpe:/:1800contacts" vid="10077">
+      <Product pname="1800CONTACTS App" cpe="cpe:/a:1800contacts:1800contacts_app" pid="21112"/>
+    </Vendor>
+    <Vendor vname="1-script" cpe="cpe:/:1-script" vid="1928">
+      <Product pname="1-book" cpe="cpe:/a:1-script:1-book" pid="5346"/>
+    </Vendor>
+    <Vendor vname="10-Strike Software" cpe="cpe:/:10-strike" vid="13908">
+      <Product pname="10-Strike Network Monitor" cpe="cpe:/a:10-strike:network_monitor" pid="33057"/>
+      <Product pname="Free Photo Viewer" cpe="cpe:/a:10-strike:free_photo_viewer" pid="42150"/>
+    </Vendor>
+    <Vendor vname="1000guess" cpe="cpe:/:1000guess" vid="14792">
+      <Product pname="1000 Guess" cpe="cpe:/a:1000guess:1000_guess" pid="34647"/>
+    </Vendor>
+    <Vendor vname="101 project" cpe="cpe:/:101_project" vid="20018">
+      <Product pname="101" cpe="cpe:/a:101_project:101" pid="50692"/>
+    </Vendor>
+  </VendorInfo>
+  <status:Status version="3.3" method="getProductList" lang="ja" retCd="0" retMax="10000" errCd=""
+    errMsg="" totalRes="49401" totalResRet="10" firstRes="1" feed="hnd" maxCountItem="10"/>
+</Result>

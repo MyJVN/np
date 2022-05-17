@@ -1,0 +1,87 @@
+{
+    "jvn-product-dictionary": {
+        "vendors": [
+            {
+                "vname": "jvnpid:1,0:sample,or,jp",
+                "vid": "999991",
+                "title": [
+                    {
+                        "lang": "ja-JP",
+                        "name": "サンプル"
+                    },
+                    {
+                        "lang": "en-US",
+                        "name": "Sample"
+                    }
+                ]
+            },
+            {
+                "vname": "jvnpid:1,0:testx",
+                "vid": "999992",
+                "title": [
+                    {
+                        "lang": "ja-JP",
+                        "name": "テストエックス"
+                    },
+                    {
+                        "lang": "en-US",
+                        "name": "TESTX"
+                    }
+                ]
+            },
+            {
+                "vname": "jvnpid:1,0:apache",
+                "vid": "999993",
+                "title": [
+                    {
+                        "lang": "en-US",
+                        "name": "Apache Software Foundation"
+                    }
+                ]
+            },
+            {
+                "vname": "jvnpid:1,0:example,or,jp",
+                "vid": "999994",
+                "title": [
+                    {
+                        "lang": "ja-JP",
+                        "name": "イグザンプル"
+                    }
+                ]
+            },
+            {
+                "vname": "jvnpid:1,0:acme,com",
+                "vid": "999995",
+                "title": [
+                    {
+                        "lang": "ja-JP",
+                        "name": "The ACME Corporation"
+                    }
+                ]
+            },
+            {
+                "vname": "jvnpid:1,0:ipa",
+                "vid": "999996",
+                "title": [
+                    {
+                        "lang": "ja-JP",
+                        "name": "独立行政法人　情報処理推進機構"
+                    }
+                ]
+            }
+        ]
+    },
+    "status:Status": {
+        "version": "3.3",
+        "method": "getVendorList",
+        "retCd": 0,
+        "retMax": "10000",
+        "errCd": "",
+        "errMsg": "",
+        "totalRes": "15000",
+        "totalResRet": "6",
+        "firstRes": "1",
+        "ft": "json",
+        "feed": "oka"
+    }
+}
