@@ -14,7 +14,7 @@
 | ---- | ---- | ---- | ---- | ---- | 
 | method | メソッド名 | getVulnStixInfo (固定) | ○ | － |
 | feed | フィードフォーマット名 | フィードフォーマット(=APIバージョン)を示す名称 <br> okaを指定 | ○ | － |
-| vulnId | 脆弱性対策情報ID | 整数 (半角数字) <br> JVNDB-YYYY-XXXXXX <br> JVNDB ... プレフィックス <br> YYYY ... 整数4桁 (半角数字) <br> XXXXXX ... 整数6桁 (半角数字) | － | － |
+| vulnId | 脆弱性対策情報ID | 整数 (半角数字) <br> JVNDB-YYYY-XXXXXX <br> JVNDB ... プレフィックス <br> YYYY ... 整数4桁 (半角数字) <br> XXXXXX ... 整数6桁 (半角数字) | ○ | － |
 | lang | 表示言語(日本語／英語) | ja:日本語、en:英語 | － | ja |
 
 \*1)  
@@ -139,17 +139,18 @@
             "status:Status": {
                 "version": "3.3",
                 "method": "getVulnStixInfo",
-                "retCd": 0,
-                "retMax": "1",
-                "errCd": "",
-                "errMsg": "",
-                "totalRes": "1",
-                "totalResRet": "1",
-                "firstRes": "1",
-                "feed": "oka"
+                "feed": "oka",
+                "lang": "表示言語",
+                "retCd": "リターンコード (0:成功時、1:エラー時)",
+                "retMax": "エントリ上限値",
+                "errCd": "エラーコード (処理成功時は空文字列)",
+                "errMsg": "エラーメッセージ (処理成功時は空文字列)",
+                "totalRes": "応答エントリ総数",
+                "totalResRet": "応答エントリ数",
+                "firstRes": "応答エントリ開始位置",
+                "各リクエストパラメタ": "各リクエストパラメタ値"
             }
         }
     ]
 }
-
 ```

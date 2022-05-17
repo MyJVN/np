@@ -59,7 +59,7 @@ charset=UTF-8
     "status:Status": {
         "version": "3.3",
         "method": "getVendorList",
-        "feed": "hnd",
+        "feed": "oka",
         "lang": "表示言語",
         "retCd": "リターンコード (0:成功時、1:エラー時)",
         "retMax": "エントリ上限値",

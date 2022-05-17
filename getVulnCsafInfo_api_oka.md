@@ -14,7 +14,7 @@
 | ---- | ---- | ---- | ---- | ---- | 
 | method | メソッド名 | getVulnCsafInfo (固定) | ○ | － |
 | feed | フィードフォーマット名 | フィードフォーマット(=APIバージョン)を示す名称 <br> okaを指定 | ○ | － |
-| vulnId | 脆弱性対策情報ID | 整数 (半角数字) <br> JVNDB-YYYY-XXXXXX <br> JVNDB ... プレフィックス <br> YYYY ... 整数4桁 (半角数字) <br> XXXXXX ... 整数6桁 (半角数字) | － | － |
+| vulnId | 脆弱性対策情報ID | 整数 (半角数字) <br> JVNDB-YYYY-XXXXXX <br> JVNDB ... プレフィックス <br> YYYY ... 整数4桁 (半角数字) <br> XXXXXX ... 整数6桁 (半角数字) | ○ | － |
 | lang | 表示言語(日本語／英語) | ja:日本語、en:英語 | － | ja |
 
 \*1)  

@@ -16,7 +16,7 @@
 | feed | フィードフォーマット名 | フィードフォーマット(=APIバージョン)を示す名称 <br> hndを指定 | ○ | － |
 | startItem | エントリ開始位置 | 整数 (半角数字) 1～応答エントリ数 | － | 1 |
 | maxCountItem | エントリ取得件数 | 整数 (半角数字) 1～10 (getVulnDetailInfoエントリ上限値)  | － | 10 |
-| vulnId | 脆弱性対策情報ID | 整数 (半角数字) <br> JVNDB-YYYY-XXXXXX <br> JVNDB ... プレフィックス <br> YYYY ... 整数4桁 (半角数字) <br> XXXXXX ... 整数6桁 (半角数字) | － | － |
+| vulnId | 脆弱性対策情報ID | 整数 (半角数字) <br> JVNDB-YYYY-XXXXXX <br> JVNDB ... プレフィックス <br> YYYY ... 整数4桁 (半角数字) <br> XXXXXX ... 整数6桁 (半角数字) | ○ | － |
 | lang | 表示言語(日本語／英語) | ja:日本語、en:英語 | － | ja |
 
 \*1)  
