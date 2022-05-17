@@ -41,6 +41,8 @@ cpeName=cpe:/a:apache:xerces-c%252B%252B
   * Atom：https://jvndb.jvn.jp/schema/atom.xsd
   * mod_sec3.0：https://jvndb.jvn.jp/schema/mod_sec_3.0.xsd
   * MyJVN共通Statusノード：https://jvndb.jvn.jp/schema/status_3.3.xsd
+* 例
+  * [ ]()
 
 ```
 <?xml version="1.0" encoding="utf-8" ?>
