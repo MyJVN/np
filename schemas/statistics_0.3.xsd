@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema
+    targetNamespace="http://jvndb.jvn.jp/myjvn/Statistics"
+    xmlns:mjstat="http://jvndb.jvn.jp/myjvn/Statistics"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified"
+    version="0.3">
+
+    <!-- ================================================== -->
+    <!-- =====  Schema imports  -->
+    <!-- ================================================== -->
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
+
+    <!-- ================================================== -->
+    <!-- =====  Schema description  -->
+    <!-- ================================================== -->
+    <xs:annotation>
+        <xs:documentation xml:lang="en-US"/>
+        <xs:documentation xml:lang="ja"/>
+        <xs:appinfo>
+            <schema>MyJVN Results</schema>
+            <author>Masato Terada</author>
+            <version>0.3</version>
+            <date>2017-07-20T03:16:00+09:00</date>
+        </xs:appinfo>
+    </xs:annotation>
+
+    <!-- ================================================== -->
+    <!-- =====  Element Declarations  -->
+    <!-- ================================================== -->
+
+    <xs:element name="sumAll">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="1" ref="mjstat:sumJvnDb"/>
+                <xs:element minOccurs="0" maxOccurs="1" ref="mjstat:sumCvss"/>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="mjstat:sumCwe"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="sumJvnDb">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="2" maxOccurs="2" ref="mjstat:title"/>
+                <xs:element minOccurs="1" maxOccurs="1" ref="mjstat:resDataTotal"/>
+                <xs:element minOccurs="1" maxOccurs="unbounded" ref="mjstat:resData"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="sumCvss">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="2" maxOccurs="2" ref="mjstat:title"/>
+                <xs:element minOccurs="1" maxOccurs="1" ref="mjstat:resDataTotal"/>
+                <xs:element minOccurs="1" maxOccurs="unbounded" ref="mjstat:resData"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="sumCwe">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="2" maxOccurs="2" ref="mjstat:title"/>
+                <xs:element minOccurs="1" maxOccurs="1" ref="mjstat:resDataTotal"/>
+                <xs:element minOccurs="1" maxOccurs="unbounded" ref="mjstat:resData"/>
+            </xs:sequence>
+            <xs:attribute name="cweId" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="title">
+        <xs:complexType mixed="true">
+            <xs:attribute ref="xml:lang" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="resDataTotal">
+        <xs:complexType>
+            <xs:attribute name="vulinfo" type="xs:integer" use="required"/>
+            <xs:attribute name="vendor" type="xs:integer" use="required"/>
+            <xs:attribute name="product" type="xs:integer" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="resData">
+        <xs:complexType>
+            <xs:attribute name="date" type="mjstat:datePattern" use="optional"/>
+            <xs:attribute name="cntAll" type="xs:integer" use="optional"/>
+            <xs:attribute name="cntC" type="xs:integer" use="optional"/>
+            <xs:attribute name="cntH" type="xs:integer" use="optional"/>
+            <xs:attribute name="cntM" type="xs:integer" use="optional"/>
+            <xs:attribute name="cntL" type="xs:integer" use="optional"/>
+            <xs:attribute name="cntN" type="xs:integer" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- ================================================== -->
+    <!-- =====  Complex Type Definitions  -->
+    <!-- ================================================== -->
+
+
+    <!-- ================================================== -->
+    <!-- =====  Simple Type Definitions  -->
+    <!-- ================================================== -->
+    <xs:simpleType name="datePattern">
+        <xs:restriction base="xs:string">
+            <xs:pattern
+                value="((000[1-9])|(00[1-9][0-9])|(0[1-9][0-9]{2})|([1-9][0-9]{3}))|((000[1-9])|(00[1-9][0-9])|(0[1-9][0-9]{2})|([1-9][0-9]{3}))-((0[1-9])|(1[012]))|((000[1-9])|(00[1-9][0-9])|(0[1-9][0-9]{2})|([1-9][0-9]{3}))-((0[1-9])|(1[012]))-((0[1-9])|([12][0-9])|(3[01]))|(([1-9][0-9]{3})-[1-4]Q)"
+            />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="cwenamePattern">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Define the format for acceptable CWE
+                name.</xs:documentation>
+            <xs:documentation xml:lang="ja">CWE 名のフォーマット</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[cC][wW][eE]-([0-9]*)*"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- ================================================== -->
+    <!-- =====  Change History  -->
+    <!-- ================================================== -->
+    <!--
+    v0.1 2009-09-30
+         Working draft version for MyJVN
+         https://jvndb.jvn.jp/schema/statistics_0.1.xsd
+    v0.2 2011-08-17
+         0.2 version for MyJVN API V3
+         [add] sumJvnDb, sumCvss, sumCwe
+         https://jvndb.jvn.jp/schema/statistics_0.2.xsd
+    v0.2 2012-11-05
+         [mod] datePattern
+    v0.3 2017-07-20
+         [add] <xs:element name="sumAll">, <xs:element name="resDataTotal">
+               <xs:attribute name="cntN">, <xs:attribute name="cntC">
+         https://jvndb.jvn.jp/schema/statistics_0.3.xsd
+    -->
+
+</xs:schema>

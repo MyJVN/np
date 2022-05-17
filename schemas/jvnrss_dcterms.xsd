@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema 
+    targetNamespace="http://purl.org/dc/terms/" 
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+    xmlns:rss="http://purl.org/rss/1.0/" 
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:dcterms="http://purl.org/dc/terms/" 
+    xmlns:sec="http://jvn.jp/rss/mod_sec/" 
+    xmlns:status="http://jvndb.jvn.jp/myjvn/Status" 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    elementFormDefault="qualified" 
+    attributeFormDefault="unqualified" 
+    version="2.1">
+
+    <!-- ================================================== -->
+    <!-- =====  Schema imports  -->
+    <!-- ================================================== -->
+
+    <!-- ================================================== -->
+    <!-- =====  Schema description  -->
+    <!-- ================================================== -->
+    <xs:annotation>
+        <xs:documentation xml:lang="en-US">RDF Site Summary 1.0 Modules: Qualified Dublin Core (dcterms) for JVNRSS</xs:documentation>
+        <xs:documentation xml:lang="ja">JVNRSS 用 RDF Site Summary 1.0 モジュール: Qualified Dublin Core (dcterms)</xs:documentation>
+        <xs:documentation xml:lang="en-US">http://jvndb.jvn.jp/en/schema/jvnrss.html</xs:documentation>
+        <xs:documentation xml:lang="ja">http://jvndb.jvn.jp/schema/jvnrss.html</xs:documentation>
+        <xs:appinfo>
+            <schema>JVN RDF Site Summary (JVNRSS)</schema>
+            <author>Masato Terada</author>
+            <version>2.1</version>
+            <date>2009-04-28T00:00:00.000+09:00</date>
+        </xs:appinfo>
+    </xs:annotation>
+
+    <!-- ================================================== -->
+    <!-- =====  Element Declarations  -->
+    <!-- ================================================== -->
+    <xs:element name="issued" type="xs:string"/>
+    <xs:element name="modified" type="xs:string"/>
+
+    <!-- ================================================== -->
+    <!-- =====  Change History  -->
+    <!-- ================================================== -->
+    <!--
+    v1.0 2003-07-15
+         http://jvnrss.ise.chuo-u.ac.jp/jtg/jvnrss/
+    v2.0 2009-03-09
+         2nd version for JVNRSS
+         http://jvnrss.ise.chuo-u.ac.jp/jtg/jvnrss/jvnrss_dcterms.xsd
+    v2.1 2009-04-28
+         Publish JVNRSS specification and XML schema on jvndb.jvn.jp
+         http://jvndb.jvn.jp/schema/jvnrss_dcterms.xsd
+    -->
+
+</xs:schema>

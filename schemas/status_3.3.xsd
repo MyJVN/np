@@ -1,0 +1,574 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema 
+    targetNamespace="http://jvndb.jvn.jp/myjvn/Status" 
+    xmlns:status="http://jvndb.jvn.jp/myjvn/Status" 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    elementFormDefault="qualified" 
+    attributeFormDefault="unqualified" 
+    version="3.2">
+
+    <!-- ================================================== -->
+    <!-- =====  Schema imports  -->
+    <!-- ================================================== -->
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
+
+    <!-- ================================================== -->
+    <!-- =====  Schema description  -->
+    <!-- ================================================== -->
+    <xs:annotation>
+        <xs:documentation xml:lang="en-US">This is an XML Schema for the status information of MyJVN API.</xs:documentation>
+        <xs:documentation xml:lang="ja">MyJVN API のステータス情報を格納する XML スキーマ</xs:documentation>
+        <xs:appinfo>
+            <schema>Status Information of MyJVN API</schema>
+            <author>Masato Terada</author>
+            <version>3.3</version>
+            <date>2017-07-20T03:16:00+09:00</date>
+        </xs:appinfo>
+    </xs:annotation>
+
+    <!-- ================================================== -->
+    <!-- =====  Element Declarations  -->
+    <!-- ================================================== -->
+    <xs:element name="Status" type="status:Status"/>
+
+    <!-- ================================================== -->
+    <!-- =====  Complex Type Definitions  -->
+    <!-- ================================================== -->
+    <xs:complexType name="Status">
+
+<!-- ////////////////////////// common response parameter ////////////////////////// -->
+
+        <xs:attribute name="version" type="xs:decimal" use="required" fixed="3.3">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Response Parameter; MyJVN API Schema Version - MyJVN API Ver 3.0 [common]</xs:documentation>
+                <xs:documentation xml:lang="ja">レスポンスパラメタ; MyJVN API スキーマバージョン - MyJNV API Ver 3.0 [共通]</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="retCd" type="xs:integer" use="required">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Response Parameter; Return Code/Interger (0:success, 1:failure) [common]</xs:documentation>
+                <xs:documentation xml:lang="ja">レスポンスパラメタ; リターンコード/整数値 (0:成功, 1:エラー) [共通]</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="retMax" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter; Maximum number of Entry/Interger [common]</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ; エントリ上限値/整数値 (APIごとに規定されている一度に取得できるエントリ件数の上限値, エラー時は空文字列) [共通]</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="errCd" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Response Parameter; Error Code (Null:success) [common]</xs:documentation>
+                <xs:documentation xml:lang="ja">レスポンスパラメタ; エラーコード (空文字列:成功) [共通]</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="errMsg" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Response Parameter; Error Message (Null:success) [common]</xs:documentation>
+                <xs:documentation xml:lang="ja">レスポンスパラメタ; エラーメッセージ (空文字列:成功) [共通]</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="totalRes" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Response Parameter; Total number of Result entries [common]</xs:documentation>
+                <xs:documentation xml:lang="ja">レスポンスパラメタ; 応答エントリ総数: 整数値 (フィルタリング条件に当てはまるエントリの総件数) ；エラー時は空文字列 [共通]</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="totalResRet" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Response Parameter; Number of Result entries [common]</xs:documentation>
+                <xs:documentation xml:lang="ja">レスポンスパラメタ; 応答エントリ数: 整数値 (フィルタリング条件に当てはまるエントリのうち、レスポンスに格納されている件数) ；エラー時は空文字列 [共通]</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="firstRes" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Response Parameter; Start entry number in Result entries [common]</xs:documentation>
+                <xs:documentation xml:lang="ja">レスポンスパラメタ; 応答エントリ開始位置: 整数値 (フィルタリング条件に当てはまるエントリのうち、何番目からのデータを取得したのかを示す値) ；エラー時は空文字列 [共通]</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+
+
+<!-- ////////////////////////// common request parameter ////////////////////////// -->
+
+        <xs:attribute name="method" type="status:methodEnum" use="required">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter; Method [common]</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ; メソッド名 [共通]</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="lang" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter; Language (ja/en) [common]</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ; 表示言語 (ja/en) [共通]</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="startItem" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: Start entry number [common]</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: エントリ開始位置 [共通]</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="maxCountItem" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: Read entry number [common]</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: エントリ取得件数 [共通]</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="xsl" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: XSL file enable/disable [common]</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: XSL ファイル 適用／未適用 [共通]</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="feed" type="status:feedEnum" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: feed name</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: フェードフォーマット(=APIバージョン)を示す名称</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+
+
+<!-- ////////////////////////// partial common request parameter ////////////////////////// -->
+
+        <xs:attribute name="cpeName" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: Vendor CPE Name/Product CPE Name</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: ベンダ CPE 名/製品 CPE 名</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="vendorId" type="xs:integer" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: Vendor unique numbers</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: ベンダの識別番号一覧</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="productId" type="xs:integer" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: Product unique numbers</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: 製品の識別番号一覧</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="keyword" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: Keyword</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: キーワード</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="type" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: Type of OVAL</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: OVAL 種別</xs:documentation>
+                <xs:documentation xml:lang="en-US">method=getOvalList, getVulnOverviewStatistics</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="lt" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: Type of feed limit</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: フィード制限タイプ</xs:documentation>
+                <xs:documentation xml:lang="en-US">method=getVendorList, getProductList,getVulnOverviewList, getVulnDetailInfo</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+
+
+<!-- ////////////////////////// getProductList parameter ////////////////////////// -->
+
+        <xs:attribute name="category" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: Product type (01/02/03)</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: 製品タイプ (01/02/03)</xs:documentation>
+                <xs:documentation xml:lang="en-US">method=getProductList</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="ver" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: MyJVN API Version</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: MyJVN API Version</xs:documentation>
+                <xs:documentation xml:lang="en-US">method=getProductList</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="latestProductUpdate" type="xs:dateTime" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Response Paramter; ReLatest date of product registration/update</xs:documentation>
+                <xs:documentation xml:lang="ja">レスポンスパラメタ: 製品登録/更新の最新日</xs:documentation>
+                <xs:documentation xml:lang="en-US">method=getProductList</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+
+
+<!-- ////////////////////////// getVulnOverviewList parameter ////////////////////////// -->
+
+        <xs:attribute name="severity" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: Severity</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: CVSS 深刻度</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="vector" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: Vector of CVSS Base metric</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: CVSS 基本評価基準ベクタ</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="rangeDatePublic" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: Range of Date Public</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: 発見日の範囲指定</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="rangeDatePublished" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: Range of Date Last Updated</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: 更新日の範囲指定</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="rangeDateFirstPublished" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: Range of Date First Published</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: 発行日の範囲指定</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="datePublicStartY" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: Start year of Date Public</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: 発見日開始年</xs:documentation>
+                <xs:documentation xml:lang="en-US">method=getVulnOverviewList</xs:documentation>
+                <xs:documentation xml:lang="en-US">method=getStatistics</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="datePublicStartM" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: Start month of Date Public</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: 発見日開始月</xs:documentation>
+                <xs:documentation xml:lang="en-US">method=getVulnOverviewList</xs:documentation>
+                <xs:documentation xml:lang="en-US">method=getStatistics</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="datePublicStartD" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: Start day of Date Public</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: 発見日開始日</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="datePublicEndY" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: End year of Date Public</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: 発見日終了年</xs:documentation>
+                <xs:documentation xml:lang="en-US">method=getVulnOverviewList</xs:documentation>
+                <xs:documentation xml:lang="en-US">method=getStatistics</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="datePublicEndM" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: End month of Date Public</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: 発見日終了月</xs:documentation>
+                <xs:documentation xml:lang="en-US">method=getVulnOverviewList</xs:documentation>
+                <xs:documentation xml:lang="en-US">method=getStatistics</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="datePublicEndD" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: End day of Date Public</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: 発見日終了日</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="datePublishedStartY" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: Start year of Date Last Updated</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: 更新日開始年</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="datePublishedStartM" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: Star month of Date Last Updated</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: 更新日開始月</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="datePublishedStartD" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: Start day of Date Last Updated</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: 更新日開始日</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="datePublishedEndY" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: End year of Date Last Updated</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: 更新日終了年</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="datePublishedEndM" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: End month of Date Last Updated</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: 更新日終了月</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="datePublishedEndD" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: End day of Date Last Updated</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: 更新日終了日</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="dateFirstPublishedStartY" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: Start year of Date First Published</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: 発行日開始年</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="dateFirstPublishedStartM" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: Start month of Date First Published</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: 発行日開始月</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="dateFirstPublishedStartD" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: Start day of Date First Published</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: 発行日開始日</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="dateFirstPublishedEndY" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: End year of Date First Published</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: 発行日終了年</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="dateFirstPublishedEndM" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: End month of Date First Published</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: 発行日終了月</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="dateFirstPublishedEndD" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: End day of Date First Published</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: 発行日終了日</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+
+
+<!-- ////////////////////////// getVulnDetailInfo parameter ////////////////////////// -->
+
+        <xs:attribute name="vulnId" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: Vulnerability ID</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: 脆弱性対策情報 ID</xs:documentation>
+                <xs:documentation xml:lang="en-US">method=getVulnDetailInfo</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+
+
+<!-- ////////////////////////// getCvrfInfo parameter ////////////////////////// -->
+
+        <xs:attribute name="cvrfdoc" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: Vulnerability ID</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: 脆弱性対策情報 ID</xs:documentation>
+                <xs:documentation xml:lang="en-US">method=getCvrfInfo</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+
+
+<!-- ////////////////////////// getOvalList parameter ////////////////////////// -->
+
+        <xs:attribute name="platform" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: Type of OS</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: OS 種別</xs:documentation>
+                <xs:documentation xml:lang="en-US">method=getOvalList</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="internalType" type="status:internalTypeEnum" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: Type of OVAL definition</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: OVAL定義のタイプ</xs:documentation>
+                <xs:documentation xml:lang="en-US">method=getOvalList</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="mode" type="status:modeEnum" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: Type of Application condition</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: アプリケーションの動作モード</xs:documentation>
+                <xs:documentation xml:lang="en-US">method=getOvalList</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+
+
+<!-- ////////////////////////// getOvalData parameter ////////////////////////// -->
+
+        <xs:attribute name="ovalId" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: OVAL ID</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: OVAL ID</xs:documentation>
+                <xs:documentation xml:lang="en-US">method=getOvalData</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+
+
+<!-- ////////////////////////// getXccdfData parameter ////////////////////////// -->
+
+        <xs:attribute name="benchmarkId" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: Benchmark ID</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: ベンチマーク ID</xs:documentation>
+                <xs:documentation xml:lang="en-US">method=getXccdfCheckData</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+
+
+<!-- ////////////////////////// getStatistics parameter ////////////////////////// -->
+
+        <xs:attribute name="theme" type="status:themeEnum" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: Graph theme</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: グラフ テーマ</xs:documentation>
+                <xs:documentation xml:lang="en-US">method=getStatistics</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="retMaxCnt" type="xs:integer" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Response Parameter: Maxium number of cntAll</xs:documentation>
+                <xs:documentation xml:lang="ja">レスポンスパラメタ: cntAll の最大値</xs:documentation>
+                <xs:documentation xml:lang="en-US">method=getStatistics</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="cweId" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: CWE ID</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: CWE 識別子</xs:documentation>
+                <xs:documentation xml:lang="en-US">method=getStatistics</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="pid" type="xs:integer" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: Product unique numbers</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: 製品の識別番号一覧</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+
+<!-- ////////////////////////// getCPEdictionary parameter ////////////////////////// -->
+
+        <xs:attribute name="reference" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: reference</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: 参考情報</xs:documentation>
+                <xs:documentation xml:lang="en-US">method=getCPEdictionary</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+
+<!-- ////////////////////////// getAlertList parameter ////////////////////////// -->
+
+        <xs:attribute name="datePublished" type="xs:integer" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: Date Last Updated (Year 4digits)</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: 更新日年</xs:documentation>
+                <xs:documentation xml:lang="en-US">method=getAlertList</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+
+        <xs:attribute name="dateFirstPublished" type="xs:integer" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: Date First Published (Year 4digits)</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: 発行日年</xs:documentation>
+                <xs:documentation xml:lang="en-US">method=getAlertList</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+
+        <xs:attribute name="ft" type="status:ftEnum" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-US">Request Parameter: reference</xs:documentation>
+                <xs:documentation xml:lang="ja">リクエストパラメタ: 参考情報</xs:documentation>
+                <xs:documentation xml:lang="en-US">method=getAlertList</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+
+    </xs:complexType>
+
+    <!-- ================================================== -->
+    <!-- =====  Simple Type Definitions  -->
+    <!-- ================================================== -->
+    <xs:simpleType name="versionPattern">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Define the version Number of Status XSD</xs:documentation>
+            <xs:documentation xml:lang="ja">Status XSD のバージョン番号</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9].[0-9]"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="methodEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="getVendorList"/>
+            <xs:enumeration value="getProductList"/>
+            <xs:enumeration value="getVulnOverviewList"/>
+            <xs:enumeration value="getVulnDetailInfo"/>
+            <xs:enumeration value="getCvrfInfo"/>
+            <xs:enumeration value="getOvalList"/>
+            <xs:enumeration value="getOvalData"/>
+            <xs:enumeration value="getXccdfList"/>
+            <xs:enumeration value="getXccdfData"/>
+            <xs:enumeration value="getStatistics"/>
+            <xs:enumeration value="getCPEdictionary"/>
+            <xs:enumeration value="getAlertList"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="internalTypeEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="inventory"/>
+            <xs:enumeration value="vulnerability"/>
+            <xs:enumeration value="compliance"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="modeEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="x32"/>
+            <xs:enumeration value="x64"/>
+            <xs:enumeration value="wow64"/>
+            <xs:enumeration value="x32-x64"/>
+            <xs:enumeration value="x32-wow64"/>
+            <xs:enumeration value="x64-wow64"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="themeEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="sumAll"/>
+            <xs:enumeration value="sumJvnDb"/>
+            <xs:enumeration value="sumCvss"/>
+            <xs:enumeration value="sumCwe"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="feedEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="hnd"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ftEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="xml"/>
+            <xs:enumeration value="json"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- ================================================== -->
+    <!-- =====  Change History  -->
+    <!-- ================================================== -->
+    <!--
+    v1.0 
+         Draft version for MyJVN
+    v2.0 2008-11-11
+         Initial version for MyJVN
+         http://jvnrss.ise.chuo-u.ac.jp/jtg/apis/status_2.0.xsd
+    v3.0 2009-09-30
+         3rd version of MyJVN
+         https://jvndb.jvn.jp/schema/status_3.0.xsd
+    v3.1 2011-08-17
+         3.1 version for MyJVN API V3
+         https://jvndb.jvn.jp/schema/status_3.1.xsd
+    v3.2 2014-08-11
+         3.2 version for MyJVN API V3
+         https://jvndb.jvn.jp/schema/status_3.2.xsd
+    v3.3 2017-07-20
+         3.3 version for MyJVN API V3
+         https://jvndb.jvn.jp/schema/status_3.3.xsd
+         [add] getAlertList
+    -->
+
+</xs:schema>

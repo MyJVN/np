@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema
+    targetNamespace="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rss="http://purl.org/rss/1.0/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:sec="http://jvn.jp/rss/mod_sec/3.0/"
+    xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
+    xmlns:marking="http://data-marking.mitre.org/Marking-1"
+    xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified"
+    version="3.2">
+
+    <!-- ================================================== -->
+    <!-- =====  Schema imports  -->
+    <!-- ================================================== -->
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
+    <xs:import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="jvnrss_rdf_3.2.xsd"/>
+    <xs:import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="jvnrss_dc.xsd"/>
+    <xs:import namespace="http://purl.org/dc/terms/" schemaLocation="jvnrss_dcterms.xsd"/>
+    <xs:import namespace="http://jvn.jp/rss/mod_sec/3.0/" schemaLocation="mod_sec_3.0.xsd"/>
+    <xs:import namespace="http://data-marking.mitre.org/Marking-1" schemaLocation="data_marking.xsd"/>
+    <xs:import namespace="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1" schemaLocation="tlp_marking.xsd"/>
+
+    <!-- ================================================== -->
+    <!-- =====  Schema description  -->
+    <!-- ================================================== -->
+    <xs:annotation>
+        <xs:documentation xml:lang="en-US">JVNRSS is based on RDF Site Summary (RSS) 1.0 and use the
+            field dc:relation of Dublin Core / sec:references of mod_sec as index of grouping
+            security information.</xs:documentation>
+        <xs:documentation xml:lang="ja">JVNRSS は、脆弱性対策情報の概要記述用 XML フォーマットで、サイトの概要をメタデータとして簡潔に記述する
+            XML フォーマットである RSS (RDF Site Summary) 1.0 をベースとした仕様です。他サイトに掲載可能な形式で発信する仕組み、脆弱性対策情報のグループ化
+            (dc:relation, sec:references)
+            や抽出した情報の再構成などの点から、脆弱性対策情報の利活用を促進することを目的としています。</xs:documentation>
+        <xs:documentation xml:lang="en-US">https://jvndb.jvn.jp/en/schema/jvnrss.html</xs:documentation>
+        <xs:documentation xml:lang="ja">https://jvndb.jvn.jp/schema/jvnrss.html</xs:documentation>
+        <xs:appinfo>
+            <schema>JVN RDF Site Summary (JVNRSS)</schema>
+            <author>Masato Terada</author>
+            <version>3.2</version>
+            <date>2017-07-20T03:16:00+09:00</date>
+        </xs:appinfo>
+    </xs:annotation>
+
+    <!-- ================================================== -->
+    <!-- =====  Element Declarations  -->
+    <!-- ================================================== -->
+    <xs:element name="channel">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="1" maxOccurs="1" ref="rss:title"/>
+                <xs:element minOccurs="1" maxOccurs="1" ref="rss:link"/>
+                <xs:element minOccurs="1" maxOccurs="1" ref="rss:description"/>
+                <xs:element minOccurs="0" maxOccurs="1" ref="dc:language"/>
+                <xs:element minOccurs="0" maxOccurs="1" ref="dc:publisher"/>
+                <xs:element minOccurs="0" maxOccurs="1" ref="dc:rights"/>
+                <xs:element minOccurs="0" maxOccurs="1" ref="dc:creator"/>
+                <xs:element minOccurs="0" maxOccurs="1" ref="dc:subject"/>
+                <xs:element minOccurs="0" maxOccurs="1" ref="dc:identifier"/>
+                <xs:element minOccurs="0" maxOccurs="1" ref="sec:identifier"/>
+                <xs:element minOccurs="0" maxOccurs="1" ref="dc:date"/>
+                <xs:element minOccurs="0" maxOccurs="1" ref="dcterms:issued"/>
+                <xs:element minOccurs="0" maxOccurs="1" ref="dcterms:modified"/>
+                <xs:element minOccurs="0" maxOccurs="1" ref="sec:handling"/>
+                <xs:element minOccurs="1" maxOccurs="1" ref="rss:items"/>
+            </xs:sequence>
+            <xs:attribute ref="rdf:about" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="items">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="rdf:Seq" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="item">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="1" maxOccurs="1" ref="rss:title"/>
+                <xs:element minOccurs="1" maxOccurs="1" ref="rss:link"/>
+                <xs:element minOccurs="0" maxOccurs="1" ref="rss:description"/>
+                <xs:element minOccurs="0" maxOccurs="1" ref="dc:language"/>
+                <xs:element minOccurs="0" maxOccurs="1" ref="dc:publisher"/>
+                <xs:element minOccurs="0" maxOccurs="1" ref="dc:rights"/>
+                <xs:element minOccurs="0" maxOccurs="1" ref="dc:creator"/>
+                <xs:element minOccurs="0" maxOccurs="1" ref="dc:subject"/>
+                <xs:element minOccurs="0" maxOccurs="1" ref="dc:identifier"/>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="dc:relation"/>
+                <xs:element minOccurs="0" maxOccurs="1" ref="sec:identifier"/>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="sec:references"/>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="sec:cpe"/>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="sec:cvss"/>
+                <xs:element minOccurs="0" maxOccurs="1" ref="dc:date"/>
+                <xs:element minOccurs="0" maxOccurs="1" ref="dcterms:issued"/>
+                <xs:element minOccurs="0" maxOccurs="1" ref="dcterms:modified"/>
+            </xs:sequence>
+            <xs:attribute ref="rdf:about" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="title" type="xs:string"/>
+    <xs:element name="link" type="xs:anyURI"/>
+    <xs:element name="description" type="xs:string"/>
+
+    <!-- ================================================== -->
+    <!-- =====  Change History  -->
+    <!-- ================================================== -->
+    <!--
+    v1.0 2003-07-15
+         http://jvnrss.ise.chuo-u.ac.jp/jtg/jvnrss/
+    v2.0 2009-03-09
+         2nd version for JVNRSS
+         http://jvnrss.ise.chuo-u.ac.jp/jtg/jvnrss/jvnrss_2.0.xsd
+    v2.1 2009-04-28
+         Publish JVNRSS specification and XML schema on jvndb.jvn.jp
+         https://jvndb.jvn.jp/schema/jvnrss_2.0.xsd
+    v2.2 2009-07-17
+         [add] dc:language, dc:subject
+    v3.1 2011-08-17
+         3.1 version for MyJVN API V3
+         [change]  refer (from status_3.0.xsd) to status_3.1.xsd
+         https://jvndb.jvn.jp/schema/jvnrss_3.1.xsd
+    v3.2 2017-07-20
+         3.2 version for MyJVN API hnd
+         [change]  refer (from mod_sec_2.0.xsd) to mod_sec_3.0.xsd
+         https://jvndb.jvn.jp/schema/jvnrss_3.2.xsd
+    -->
+
+</xs:schema>

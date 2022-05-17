@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<product-list
+  xmlns="http://jvndb.jvn.jp/myjvn/mjpid"
+  xmlns:mjpid="http://jvndb.jvn.jp/myjvn/mjpid"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/mjpid http://www.isl.im.dendai.ac.jp/cti/schema/mjpid.xsd"
+  >
+  <vendor name="jvnpid:1.0:sample.or.jp">
+    <title xml:lang="ja-JP">サンプル</title>
+    <title xml:lang="en-US">Sample</title>
+    <products>
+      <product-item name="jvnpid:1.0:sample.or.jp:secinfodbx:3.2.0.0.0">
+        <title xml:lang="ja-JP">セキュリティ情報データベースX V3.2</title>
+        <title xml:lang="en-US">Security Information DBX V3.2</title>
+        <product_ids>
+          <product_id name="swid">sample.or.jp+secinfodbx+3.2</product_id>
+          <product_id name="cpe">xx</product_id>
+          <product_id name="spdx">xx</product_id>
+        </product_ids>
+      </product-item>
+    </products>
+  </vendor>
+  <vendor name="jvnpid:1.0:testx">
+    <title xml:lang="ja-JP">テストエックス</title>
+    <title xml:lang="en-US">TESTX</title>
+    <products>
+      <product-item name="jvnpid:1.0:testx:httpd:1.0.0.c.0">
+        <title xml:lang="ja-JP">HTTPD サーバ Ver 1.0.0c</title>
+        <title xml:lang="en-US">HTTPD Ver 1.0.0c</title>
+        <product_ids>
+          <product_id name="swid">xx</product_id>
+          <product_id name="cpe">cpe:2.3:a:testx:httpd:1.0.0c</product_id>
+          <product_id name="cpe" type="alias">cpe:2.3:a:testxold:httpd:1.0.0c</product_id>
+          <product_id name="spdx">xx</product_id>
+        </product_ids>
+        <references>
+          <reference href="https://www.testx.com/httpd/">TESTX HTTPD</reference>
+          <reference href="https://www.testx.com/httpd2/">TESTX HTTPD2</reference>
+        </references>
+      </product-item>
+      <product-item name="jvnpid:1.0:testx:spreadsheetx:2.1.0.0.0">
+        <title xml:lang="ja-JP">スプレッドシートX V2.1</title>
+        <product_ids>
+          <product_id name="swid" type="alias">jvnpid:1.0:testx:spreadsheetx:2.1.0.0.0</product_id>
+          <product_id name="cpe" type="alias">cpe:2.3:a:jvnpid_1.0_testx:spreadsheetx:2.1.0.0.0</product_id>
+        </product_ids>
+      </product-item>
+    </products>
+  </vendor>
+  <vendor name="jvnpid:1.0:apache">
+    <title xml:lang="en-US">Apache Software Foundation</title>
+    <products>
+      <product-item name="jvnpid:1.0:apache:struts:2.5.33.0.0">
+        <title xml:lang="en-US">Struts 2.5.33</title>
+        <product_ids>
+          <product_id name="cpe">cpe:/a:apache:struts:2.5.33</product_id>
+          <product_id name="swid" type="alias">jvnpid:1.0:apache:struts:2.5.33.0.0</product_id>
+        </product_ids>
+      </product-item>
+    </products>
+  </vendor>
+  <vendor name="jvnpid:1.0:example.or.jp">
+    <title xml:lang="ja-JP">イグザンプル</title>
+    <products>
+      <product-item name="jvnpid:1.0:example.or.jp:spreadsheetx:2.1.0.0.0">
+        <title xml:lang="ja-JP">スプレッドシートX V2.1</title>
+        <product_ids>
+          <product_id name="swid" type="alias">jvnpid:1.0:example.or.jp:spreadsheetx:2.1.0.0.0</product_id>
+          <product_id name="cpe" type="alias">cpe:2.3:a:jvnpid_1.0_example.or.jp:spreadsheetx:2.1.0.0.0</product_id>
+        </product_ids>
+      </product-item>
+    </products>
+  </vendor>
+  <vendor name="jvnpid:1.0:acme.com">
+    <title xml:lang="ja-JP">The ACME Corporation</title>
+    <products>
+      <product-item name="jvnpid:1.0:acme.com:roadrunner_detector:2013.0.0.0.0">
+        <title xml:lang="ja-JP">Roadrunner Detector 2013</title>
+        <product_ids>
+          <product_id name="swid">com.acme.rrd2013-ce-sp1-v4-1-5-0</product_id>
+          <product_id name="swid" type="alias">jvnpid:1.0:acme.com:roadrunner_detector:2013.0.0.0.0</product_id>
+          <product_id name="cpe" type="alias">cpe:2.3:a:jvnpid_1.0_acme.com:roadrunner_detector:2013.0.0.0.0</product_id>
+        </product_ids>
+      </product-item>
+    </products>
+  </vendor>
+  <vendor name="jvnpid:1.0:ipa">
+    <title xml:lang="ja-JP">独立行政法人　情報処理推進機構</title>
+    <products>
+      <product-item name="jvnpid:1.0:ipa:myjvn_api:3.2.0.0.0">
+        <title xml:lang="ja-JP">MyJVN API 3.2.0</title>
+        <product_ids>
+          <product_id name="swid">ipa.go.jp+myjvn_api+3.2.0</product_id>
+          <product_id name="swid" type="alias">jvnpid:1.0:ipa:myjvn_api:3.2.0.0.0</product_id>
+          <product_id name="cpe" type="alias">cpe:2.3:a:ipa:myjvn_api:3.2.0</product_id>
+        </product_ids>
+      </product-item>
+    </products>
+  </vendor>
+
+
+
+</product-list>
+<!--  ============================= History ==============================  -->
+<!--    -->
+
+<!--  ==================================================  -->
+<!--  =====  Change History   -->
+<!--  ==================================================  -->
+<!-- 
+    v1.0 2021-01-12T09:43+09:00
+         http://www.isl.im.dendai.ac.jp/cti/schema/sample-format_jvn-product-dictionay.xml
+     -->

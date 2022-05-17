@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema
+    targetNamespace="http://jvn.jp/rss/mod_sec/3.0/"
+    xmlns:sec="http://jvn.jp/rss/mod_sec/3.0/"
+    xmlns:marking="http://data-marking.mitre.org/Marking-1"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified"
+    version="3.0">
+
+    <!-- ================================================== -->
+    <!-- =====  Schema imports  -->
+    <!-- ================================================== -->
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
+    <xs:import namespace="http://data-marking.mitre.org/Marking-1" schemaLocation="data_marking.xsd"/>
+
+    <!-- ================================================== -->
+    <!-- =====  Schema description  -->
+    <!-- ================================================== -->
+    <xs:annotation>
+        <xs:documentation xml:lang="en-US">mod_sec describes RSS Extension of security information
+            distribution, and definition of the tags for RSS 1.0, 2.0 and Atom.</xs:documentation>
+        <xs:documentation xml:lang="ja">mod_sec は、脆弱性対策情報などのセキュリティ情報を記述するための JVNRSS 拡張仕様で、RSS
+            1.0、RSS 2.0、Atom での利用を想定した汎用的な仕様となっています。</xs:documentation>
+        <xs:documentation xml:lang="en-US">https://jvndb.jvn.jp/en/schema/mod_sec.html</xs:documentation>
+        <xs:documentation xml:lang="ja">https://jvndb.jvn.jp/schema/mod_sec.html</xs:documentation>
+        <xs:appinfo>
+            <schema>Qualified Security Advisory Reference (mod_sec)</schema>
+            <author>Masato Terada</author>
+            <version>3.0</version>
+            <date>2017-07-20T03:16:00+09:00</date>
+        </xs:appinfo>
+    </xs:annotation>
+
+    <!-- ================================================== -->
+    <!-- =====  Element Declarations  -->
+    <!-- ================================================== -->
+    <xs:element name="items">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="sec:item"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="item">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="sec:title"/>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="sec:identifier"/>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="sec:summary"/>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="sec:link"/>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="sec:references"/>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="sec:cpe"/>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="sec:cvss"/>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="sec:published"/>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="sec:updated"/>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="sec:author"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="title" type="xs:string"/>
+    <xs:element name="identifier" type="xs:string"/>
+    <xs:element name="summary" type="xs:string"/>
+    <xs:element name="link" type="sec:link"/>
+    <xs:element name="references" type="sec:references"/>
+    <xs:element name="cvss" type="sec:cvss"/>
+    <xs:element name="cpe" type="sec:cpe"/>
+    <xs:element name="published" type="xs:dateTime"/>
+    <xs:element name="updated" type="xs:dateTime"/>
+    <xs:element name="author" type="sec:author"/>
+    <xs:element name="handling" type="marking:MarkingType">
+        <xs:annotation>
+            <xs:documentation>Specifies the relevant handling guidance for this STIX_Package. The
+                valid marking scope is the nearest STIXPackageType ancestor of this Handling element
+                and all its descendants.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+
+    <!-- ================================================== -->
+    <!-- =====  Complex Type Definitions  -->
+    <!-- ================================================== -->
+    <xs:complexType name="link">
+        <xs:attribute name="href" type="xs:anyURI" use="required"/>
+        <xs:attribute name="rel" type="xs:string" use="optional"/>
+        <xs:attribute name="type" type="xs:string" use="optional"/>
+        <xs:attribute name="hreflang" type="xs:NMTOKEN" use="optional"/>
+        <xs:attribute name="title" type="xs:string" use="optional"/>
+        <xs:attribute name="length" type="xs:positiveInteger" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="references">
+        <xs:simpleContent>
+            <xs:extension base="xs:anyURI">
+                <xs:attribute name="source" type="xs:string" use="optional"/>
+                <xs:attribute name="id" type="xs:string" use="optional"/>
+                <xs:attribute name="title" type="xs:string" use="optional"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="cvss">
+        <xs:attribute name="version" type="xs:decimal" use="required"/>
+        <xs:attribute name="type" type="sec:cvssTypeEnum" use="required"/>
+        <xs:attribute name="severity" type="sec:cvssSeverityEnum" use="required"/>
+        <xs:attribute name="score" type="xs:decimal" use="required"/>
+        <xs:attribute name="vector" type="xs:string" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="cpe">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="version" type="xs:decimal" use="required"/>
+                <xs:attribute name="vendor" type="xs:string" use="required"/>
+                <xs:attribute name="product" type="xs:string" use="optional"/>
+                <xs:attribute name="impact" type="sec:cpeImpactEnum" use="optional"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="author">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="href" type="xs:anyURI" use="optional"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- ================================================== -->
+    <!-- =====  Simple Type Definitions  -->
+    <!-- ================================================== -->
+    <xs:simpleType name="cvssTypeEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Base"/>
+            <xs:enumeration value="Temporal"/>
+            <xs:enumeration value="Environmental"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="cvssSeverityEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="None"/>
+            <xs:enumeration value="Low"/>
+            <xs:enumeration value="Medium"/>
+            <xs:enumeration value="High"/>
+            <xs:enumeration value="Critical"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="cpeImpactEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="not vulnerable"/>
+            <xs:enumeration value="vulnerable"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- ================================================== -->
+    <!-- =====  Change History  -->
+    <!-- ================================================== -->
+    <!--
+    v1.0 2005-10-31
+         http://jvnrss.ise.chuo-u.ac.jp/jtg/mod_sec/
+    v2.0 2009-01-05
+         2nd version for mod_sec
+         http://jvnrss.ise.chuo-u.ac.jp/jtg/mod_sec/mod_sec_2.0.xsd
+    v2.1 2009-04-28
+         Publish mod_sec specification and XML schema on jvndb.jvn.jp
+         https://jvndb.jvn.jp/schema/mod_sec_2.0.xsd
+    v3.0 2017-07-20
+         Publish mod_sec specification and XML schema on jvndb.jvn.jp
+         https://jvndb.jvn.jp/schema/mod_sec_3.0.xsd
+    -->
+
+</xs:schema>

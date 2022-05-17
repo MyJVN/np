@@ -1,0 +1,1568 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema 
+    targetNamespace="http://jvn.jp/vuldef/" 
+    xmlns:vuldef="http://jvn.jp/vuldef/" 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    elementFormDefault="qualified" 
+    attributeFormDefault="unqualified" 
+    version="2.0">
+
+    <!-- ================================================== -->
+    <!-- =====  Schema imports -->
+    <!-- ================================================== -->
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+
+    <!-- ================================================== -->
+    <!-- =====  Schema description -->
+    <!-- ================================================== -->
+    <xs:annotation>
+        <xs:documentation xml:lang="en-US">This is an XML Schema for VULDEF - The Vulnerability Data Publication and Exchange Format Data Model. </xs:documentation>
+        <xs:documentation xml:lang="ja">脆弱性詳細情報の XML スキーマ VULDEF - The Vulnerability Data Publication and Exchange Format Data Model</xs:documentation>
+        <xs:appinfo>
+            <schema>VULDEF - The Vulnerability Data Publication and Exchange Format Data Model</schema>
+            <author>Masato Terada</author>
+            <version>2.0</version>
+            <date>2009-02-16T16:55:00.000+09:00</date>
+        </xs:appinfo>
+    </xs:annotation>
+
+    <xs:annotation id="abstract">
+        <xs:documentation xml:lang="en-US">"VULDEF(The VULnerability Data publication and Exchange Format data model)" is intended to be a format for the security information published by the vendors or the Computer Security Incident Response Teams (CSIRTs). Assuming widespread adoption of the VULDEF by the community, an organization can potentially benefit from the increased automation in the processing of security advisory data, since the commitment of vulnerability handling to parse free-form textual document will be reduced.</xs:documentation>
+        <xs:documentation xml:lang="ja">"VULDEF(The VULnerability Data publication and Exchange Format data model)" の目的は、脆弱性情報ならびに脆弱性を除去するための脆弱性対策情報を提供し、流通させるために必要となるデータフォーマットを定義することにある。特に、脆弱性対策情報については、データフォーマットを定義することにより、情報自身の流通ならびに、関連対策情報同士の集約化を促すことができ、結果として対策促進を支援することができるであろう。</xs:documentation>
+    </xs:annotation>
+    <xs:annotation id="purpose">
+        <xs:documentation xml:lang="en-US">The purpose of the "VULDEF(The VULnerability Data publication and Exchange Format data model)" is to define data formats for information related to security advisory typically published by the Vendors and Computer Security Incident Response Teams (CSIRTs). An the Extensible Markup Language (XML) Document Type Definition is developed, and examples are provided.</xs:documentation>
+        <xs:documentation xml:lang="ja">"VULDEF(The VULnerability Data publication and Exchange Format data model)" では、脆弱性対策の情報提供(含む交換)において必要となる項目をデータモデルとして提示すると共に、XML による表現形式を規定することにある。</xs:documentation>
+    </xs:annotation>
+
+    <!-- ================================================== -->
+    <!-- =====  Element Declarations -->
+    <!-- ================================================== -->
+
+    <!-- ===================================================================== -->
+    <!-- == VULDEF-Document class                                              -->
+    <!-- ===================================================================== -->
+    <xs:element name="VULDEF-Document">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">VULDEF-Document class is the top level class in the VULDEF data model and the DTD. All VULDEF documents are instances of the VULDEF-Document class. The version of the VULDEF specification to which the VULDEF document conforms. The value of this attribute MUST be 2.0.</xs:documentation>
+            <xs:documentation xml:lang="ja">VULDEFドキュメントクラスは、VULDEF データモデルと DTD のトップレベルのクラスである。全ての VULDEF ドキュメントは、VULDEF ドキュメントクラスのインスタンスとなる。VULDEF のバージョン情報には "2.0" を設定する。</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vuldef:Vulinfo"                      minOccurs="1" maxOccurs="unbounded"/>
+                <xs:any namespace="##other" processContents="lax"     minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string" use="required" fixed="2.0"/>
+            <xs:attribute ref="xml:lang"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- ==================================================================== -->
+    <!-- ==    Vulinfo class                                                  -->
+    <!-- ==        - VulinfoID                                                -->
+    <!-- ==        - VulinfoGID                                               -->
+    <!-- ==        - VulinfoData                                              -->
+    <!-- ==        - AdditionalData                                           -->
+    <!-- ==================================================================== -->
+    <xs:element name="Vulinfo">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">In each publication of vulnerability related data is represented by an instance of the Vulinfo class. This class provides a standardized representation for commonly published vulnerability data and associates a unique identifier.</xs:documentation>
+            <xs:documentation xml:lang="ja">Vulinfo クラスは、脆弱性に関する情報(概要、想定される影響、対策など)を記載するクラスと、その脆弱性情報を一意に識別する識別子クラスから構成する。</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vuldef:VulinfoID"/>
+                <xs:element ref="vuldef:VulinfoGID"                   minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="vuldef:VulinfoData"                  minOccurs="1" maxOccurs="1"/>
+                <xs:element ref="vuldef:AdditionalData"               minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="restriction" type="vuldef:restrictionEnum" use="optional" default="private"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- ==================================================================== -->
+    <!-- ==    VulinfoID class                                                -->
+    <!-- ==================================================================== -->
+    <xs:element name="VulinfoID" type="xs:string">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">VulinfoID class represents an vulnerability information number that is unique in the context of the vendor or CSIRT and identifies the activity characterized in an VULDEF-Document. A vulnerability number assigned to this vulnerability information by the party that generated the document. VulinfoID includes the organization prefix and unique number within the organization. ex. {TA04-217A:US-CERT Alerts (CERT-TA)}{bid9835:Bugtraq (BID)}{XF9324:ISS X-Force (XF)}{JVN54326:VN-JP (JVN)}</xs:documentation>
+            <xs:documentation xml:lang="ja">脆弱性情報を一意に識別するための識別子であり、脆弱性情報を作成した組織が割り当てる。</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+
+    <!-- ==================================================================== -->
+    <!-- ==    VulinfoGID class                                               -->
+    <!-- ==================================================================== -->
+    <xs:element name="VulinfoGID" type="xs:string">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Group ID for vulnerability information</xs:documentation>
+            <xs:documentation xml:lang="ja">複数の脆弱性情報を取り扱う場合のグループ識別子を記載する。</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+
+    <!-- ==================================================================== -->
+    <!-- ==    VulinfoData class                                              -->
+    <!-- ==        - Title                                                    -->
+    <!-- ==        - VulinfoDescription                                       -->
+    <!-- ==        - Affected                                                 -->
+    <!-- ==        - Impact                                                   -->
+    <!-- ==        - Solution                                                 -->
+    <!-- ==        - Exploit                                                  -->
+    <!-- ==        - Related                                                  -->
+    <!-- ==        - Credit                                                   -->
+    <!-- ==        - Contact                                                  -->
+    <!-- ==        - History                                                  -->
+    <!-- ==        - DateFirstPublished                                       -->
+    <!-- ==        - DateLastUpdated                                          -->
+    <!-- ==        - DatePublic                                               -->
+    <!-- ==        - AdditionalData                                           -->
+    <!-- ==              - JvnHandlingDataset                                 -->
+    <!-- ==              - JvnDataset                                         -->
+    <!-- ==================================================================== -->
+    <xs:element name="VulinfoData">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">The item(s) that constitute the vulnerability about which the VULDEF-Document conveys information. The VulinfoData class summarizes the details of the vulnerability information.</xs:documentation>
+        <xs:documentation xml:lang="ja">VulinfoData クラスは、脆弱性情報として、脆弱性の概要、想定される影響、対策などの情報を記載する。</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vuldef:Title"                        minOccurs="0" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">Title class describes the title of the vulnerability information.</xs:documentation>
+                        <xs:documentation xml:lang="ja">脆弱性対策情報の題名を記載する。JVNRSS の item 要素の title に対応する。</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element ref="vuldef:VulinfoDescription"           minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="vuldef:Affected"                     minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="vuldef:Impact"                       minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="vuldef:Solution"                     minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="vuldef:Exploit"                      minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="vuldef:Related"                      minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="vuldef:Credit"                       minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="vuldef:Contact"                      minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="vuldef:History"                      minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="vuldef:DateFirstPublished"           minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="vuldef:DateLastUpdated"              minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="vuldef:DatePublic"                   minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="vuldef:AdditionalData"               minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="restriction" type="vuldef:restrictionEnum" use="optional"/>
+            <xs:attribute name="severity"    type="vuldef:severityEnum"    use="optional"/>
+            <xs:attribute name="publication" type="vuldef:publicationEnum" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- ==================================================================== -->
+    <!-- ==    VulinfoDescription class                                       -->
+    <!-- ==================================================================== -->
+    <xs:element name="VulinfoDescription">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">VulinfoDescription class summarizes the detail of the vulnerability information.</xs:documentation>
+            <xs:documentation xml:lang="ja">VulinfoDescription クラスは、脆弱性に関する概要、技術的な解説、脆弱性のタイプの情報を記載する。</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vuldef:Overview"/>
+                <xs:element ref="vuldef:Detail"                       minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="vuldef:Cwe"                          minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="vuldef:AdditionalData"               minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="restriction"        type="vuldef:restrictionEnum"       use="optional"/>
+            <xs:attribute name="exploitrange"       type="vuldef:exploitrangeEnum"      use="optional"/>
+            <xs:attribute name="vulnerabilitytype"  type="vuldef:vulnerabilitytypeEnum" use="optional"/>
+            <xs:attribute ref="vuldef:historyno"                                        use="optional"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- ==================================================================== -->
+    <!-- ==    Overview class                                                 -->
+    <!-- ==================================================================== -->
+    <xs:element name="Overview">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Overview is an abstract of the vulnerability that provides a summary of the problem and its impact to the reader.</xs:documentation>
+            <xs:documentation xml:lang="ja">脆弱性ならびにその対策に関する概要を記載する。JVNRSS1.0 の item 要素の description に対応する。</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="restriction" type="vuldef:restrictionEnum" use="optional"/>
+                    <xs:attribute ref="vuldef:historyno"                           use="optional"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- ==================================================================== -->
+    <!-- ==    Detail class                                                   -->
+    <!-- ==================================================================== -->
+    <xs:element name="Detail">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">The vulnerability description contains one or more paragraphs of text describing the vulnerability.</xs:documentation>
+            <xs:documentation xml:lang="ja">脆弱性に関する詳細情報(技術的な解説)を記載する。</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="restriction" type="vuldef:restrictionEnum" use="optional"/>
+                    <xs:attribute ref="vuldef:historyno"              use="optional"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Cwe">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">CWE</xs:documentation>
+            <xs:documentation xml:lang="ja">脆弱性に関するタイプを記載する。</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vuldef:RelatedItem"                  minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="restriction" type="vuldef:restrictionEnum" use="optional"/>
+            <xs:attribute ref="vuldef:historyno"                           use="optional"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- ==================================================================== -->
+    <!-- ==    Affected class                                                 -->
+    <!-- ==        - AffectedItem                                             -->
+    <!-- ==================================================================== -->
+    <xs:element name="Affected">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Affected class includes vendors who may be affected by the vulnerability.</xs:documentation>
+            <xs:documentation xml:lang="ja">Affected クラスは、脆弱性により影響を受けるバージョン、システムに関する情報を提示するクラスである。</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vuldef:AffectedItem"                 minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="restriction" type="vuldef:restrictionEnum" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="AffectedItem">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Entries in the Affected class. </xs:documentation>
+            <xs:documentation xml:lang="ja">影響を受ける製品の項目</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vuldef:Name"                         minOccurs="0" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">A vendor name of the affected products.</xs:documentation>
+                        <xs:documentation xml:lang="ja">影響を受ける製品のベンダ名(提供者名)を記載する。</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element ref="vuldef:ProductName"                  minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="vuldef:VersionNumber"                minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="vuldef:BuildNumber"                  minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="vuldef:Description"                  minOccurs="0" maxOccurs="unbounded">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">A free-form textual description of the affected products. </xs:documentation>
+                        <xs:documentation xml:lang="ja">影響を受ける製品に関する説明</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element ref="vuldef:AdditionalData"               minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="restriction"    type="vuldef:restrictionEnum"    use="optional"/>
+            <xs:attribute name="affectedstatus" type="vuldef:affectedstatusEnum" use="optional"/>
+            <xs:attribute ref="vuldef:historyno"                                 use="optional"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="ProductName">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">A product name of the affected products. </xs:documentation>
+            <xs:documentation xml:lang="ja">影響を受ける製品名を記載する。</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="restriction" type="vuldef:restrictionEnum" use="optional"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="VersionNumber">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">A version number of the affected products. </xs:documentation>
+            <xs:documentation xml:lang="ja">影響を受ける製品のバージョンあるいはリビジョン番号を記載する。</xs:documentation>
+        </xs:annotation>
+        <xs:complexType mixed="true">
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="vuldef:RangeBegin"/>
+                <xs:element ref="vuldef:RangeEnd"/>
+            </xs:choice>
+            <xs:attribute name="restriction" type="vuldef:restrictionEnum" use="optional"/>
+            <xs:attribute name="operator" type="vuldef:operatorEnum"  use="optional"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="BuildNumber">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">A build number of the affected products. </xs:documentation>
+            <xs:documentation xml:lang="ja">影響を受ける製品のビルド番号を記載する。</xs:documentation>
+        </xs:annotation>
+        <xs:complexType mixed="true">
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="vuldef:RangeBegin"/>
+                <xs:element ref="vuldef:RangeEnd"/>
+            </xs:choice>
+            <xs:attribute name="restriction" type="vuldef:restrictionEnum" use="optional"/>
+            <xs:attribute name="operator" type="vuldef:operatorEnum"  use="optional"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="RangeBegin">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">A version or build number of the affected products. </xs:documentation>
+            <xs:documentation xml:lang="ja">影響を受ける製品のバージョン番号あるいはビルド番号の範囲を記載する。</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="operator" type="vuldef:operatorEnum"  use="optional"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="RangeEnd">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">A version or revision number of the affected products. </xs:documentation>
+            <xs:documentation xml:lang="ja">影響を受ける製品のバージョン番号あるいはビルド番号の範囲を記載する。</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="operator" type="vuldef:operatorEnum"  use="optional"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- ==================================================================== -->
+    <!-- ==    Impact class                                                   -->
+    <!-- ==        - Cvss                                                     -->
+    <!-- ==        - ImpactItem                                               -->
+    <!-- ==================================================================== -->
+    <xs:element name="Impact">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Impact class allows for classifying as well as providing a description of the technical impact due to the vulnerability.</xs:documentation>
+            <xs:documentation xml:lang="ja">Impact クラスは、脆弱性に伴い想定しうる影響を記載するクラスである。</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vuldef:Cvss"                         minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="vuldef:ImpactItem"                   minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="restriction" type="vuldef:restrictionEnum" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Cvss">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Cvss class is a information of the Common Vulnerability Scoring System.</xs:documentation>
+            <xs:documentation xml:lang="ja">CVSS に関する情報を記載するクラスである。</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vuldef:Severity"                     minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="vuldef:Score"                        minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="vuldef:Vector"                       minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="vuldef:Temp"                         minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="vuldef:Env"                          minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="vuldef:AdditionalData"               minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:string"                  use="required"/>
+            <xs:attribute name="restriction" type="vuldef:restrictionEnum" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Severity">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">CVSS severity ranking.</xs:documentation>
+            <xs:documentation xml:lang="ja">CVSS 深刻度</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="vuldef:CVSSSeverity">
+                    <xs:attribute name="restriction" type="vuldef:restrictionEnum" use="optional"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Score">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">CVSS Base Score.</xs:documentation>
+            <xs:documentation xml:lang="ja">CVSS 基本値</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="vuldef:zeroToTen">
+                    <xs:attribute name="restriction" type="vuldef:restrictionEnum" use="optional"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Vector">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">CVSS Base Metrics.</xs:documentation>
+            <xs:documentation xml:lang="ja">CVSS 基本評価基準</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="vuldef:CVSSVectorPattern">
+                    <xs:attribute name="restriction" type="vuldef:restrictionEnum" use="optional"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Temp">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">CVSS Temporal Metrics.</xs:documentation>
+            <xs:documentation xml:lang="ja">CVSS 現状評価基準</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="vuldef:CVSSTempPattern">
+                    <xs:attribute name="restriction" type="vuldef:restrictionEnum" use="optional"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Env">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">CVSS Environmental Metrics.</xs:documentation>
+            <xs:documentation xml:lang="ja">CVSS 環境評価基準</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="vuldef:CVSSEnvPattern">
+                    <xs:attribute name="restriction" type="vuldef:restrictionEnum" use="optional"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="ImpactItem">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Entries in the Impact class.</xs:documentation>
+            <xs:documentation xml:lang="ja">想定される影響の項目</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vuldef:Description"                  minOccurs="1" maxOccurs="unbounded">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">A free-form textual description of the impact. </xs:documentation>
+                        <xs:documentation xml:lang="ja">想定される影響の項目に関する説明</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element ref="vuldef:AdditionalData"               minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="restriction" type="vuldef:restrictionEnum" use="optional"/>
+            <xs:attribute name="severity"    type="vuldef:severityEnum"    use="optional"/>
+            <xs:attribute name="impacttype"  type="vuldef:impacttypeEnum"  use="optional"/>
+            <xs:attribute ref="vuldef:historyno"                           use="optional"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- ==================================================================== -->
+    <!-- ==    Solution class                                                 -->
+    <!-- ==        - SolutionItem                                             -->
+    <!-- ==================================================================== -->
+    <xs:element name="Solution">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Solution class allows for classifying as well as providing a description of the technical solution due to the vulnerability.</xs:documentation>
+            <xs:documentation xml:lang="ja">Solution クラスは、脆弱性の回避施策に関する情報を記載するクラスである。</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vuldef:SolutionItem"                 minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="restriction" type="vuldef:restrictionEnum" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="SolutionItem">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Entries in the Solution class. </xs:documentation>
+            <xs:documentation xml:lang="ja">脆弱性の回避施策の項目</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vuldef:Description"                  minOccurs="1" maxOccurs="unbounded">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">A free-form textual description of the solution. </xs:documentation>
+                        <xs:documentation xml:lang="ja">脆弱性の回避施策に関する説明</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element ref="vuldef:URL"                          minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="vuldef:AdditionalData"               minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="restriction"  type="vuldef:restrictionEnum"  use="optional"/>
+            <xs:attribute name="solutiontype" type="vuldef:solutiontypeEnum" use="optional"/>
+            <xs:attribute ref="vuldef:historyno"                             use="optional"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- ==================================================================== -->
+    <!-- ==    Exploit class                                                  -->
+    <!-- ==        - ExploitItem                                              -->
+    <!-- ==================================================================== -->
+    <xs:element name="Exploit">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Exploit class allows for classifying as well as providing a description of the technical exploit due to the vulnerability. </xs:documentation>
+            <xs:documentation xml:lang="ja">Exploitクラスは、脆弱性の攻略に関する情報を記載するクラスである。</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vuldef:ExploitItem"                  minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="restriction" type="vuldef:restrictionEnum" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="ExploitItem">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Entries in the Exploit class. </xs:documentation>
+            <xs:documentation xml:lang="ja">脆弱性の攻略に関する項目</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vuldef:Description"                  minOccurs="0" maxOccurs="unbounded">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">A free-form textual description of the exploit. </xs:documentation>
+                        <xs:documentation xml:lang="ja">脆弱性の攻略に関する説明</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element ref="vuldef:URL"                          minOccurs="0" maxOccurs="unbounded">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">A URL to additional information about the exploit.</xs:documentation>
+                        <xs:documentation xml:lang="ja">脆弱性の攻略に関する情報掲載 URL</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element ref="vuldef:AdditionalData"               minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="restriction" type="vuldef:restrictionEnum" use="optional"/>
+            <xs:attribute name="exploittype" type="vuldef:exploittypeEnum" use="optional"/>
+            <xs:attribute ref="vuldef:historyno"                           use="optional"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- ==================================================================== -->
+    <!-- ==    Related class                                                  -->
+    <!-- ==        - RelatedItem                                              -->
+    <!-- ==================================================================== -->
+    <xs:element name="Related">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Related class is a collection of URLs at our web site and others providing additional information about the vulnerability. </xs:documentation>
+            <xs:documentation xml:lang="ja">Relatedクラスは、参考情報など脆弱性に関連する情報を記載するクラスである。</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vuldef:RelatedItem"                  minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="restriction" type="vuldef:restrictionEnum" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="RelatedItem">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Entries in the Related class.</xs:documentation>
+            <xs:documentation xml:lang="ja">関連情報の項目を記載する。</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vuldef:Name"                         minOccurs="0" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">A issuer of the reference.</xs:documentation>
+                        <xs:documentation xml:lang="ja">脆弱性対策情報発行者の名称</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element ref="vuldef:VulinfoID"                    minOccurs="0" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">A ID of the reference.</xs:documentation>
+                        <xs:documentation xml:lang="ja">脆弱性対策情報を一意に識別するための識別子</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element ref="vuldef:Title"                        minOccurs="0" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">A title of the reference. </xs:documentation>
+                        <xs:documentation xml:lang="ja">脆弱性対策情報の題名</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element ref="vuldef:URL"                          minOccurs="0" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">A URL to related information about the vulnerability. </xs:documentation>
+                        <xs:documentation xml:lang="ja">脆弱性対策情報の掲載 URL。JVNRSS の item 要素の dc:relation に対応付ける。</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element ref="vuldef:Description"                  minOccurs="0" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">A free-form textual description of the reference. </xs:documentation>
+                        <xs:documentation xml:lang="ja">関連情報の項目に関する説明</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element ref="vuldef:AdditionalData"               minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="restriction" type="vuldef:restrictionEnum" use="optional"/>
+            <xs:attribute name="origin"      type="vuldef:originEnum"      use="optional"/>
+            <xs:attribute name="type"        type="vuldef:relatedtypeEnum" use="required"/>
+            <xs:attribute ref="vuldef:historyno"                           use="optional"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- ==================================================================== -->
+    <!-- ==    Credit class                                                   -->
+    <!-- ==        - CreditItem                                               -->
+    <!-- ==================================================================== -->
+    <xs:element name="Credit">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Credit Class identifies who initially discovered the vulnerability, anyone who was instrumental in the development of the document and the contributors for anything. </xs:documentation>
+            <xs:documentation xml:lang="ja"></xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vuldef:CreditItem"                   minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="restriction" type="vuldef:restrictionEnum" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="CreditItem">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Entries in the Credit class. </xs:documentation>
+            <xs:documentation xml:lang="ja"></xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vuldef:Name"                         minOccurs="0" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">An author/contributor Name. </xs:documentation>
+                        <xs:documentation xml:lang="ja"></xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element ref="vuldef:Description"                  minOccurs="1" maxOccurs="unbounded">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">A free-form textual description of the credit. </xs:documentation>
+                        <xs:documentation xml:lang="ja"></xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="restriction" type="vuldef:restrictionEnum" use="optional"/>
+            <xs:attribute ref="vuldef:historyno"                      use="optional"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- ==================================================================== -->
+    <!-- ==    Contact class                                                  -->
+    <!-- ==        - ContactItem                                              -->
+    <!-- ==================================================================== -->
+    <xs:element name="Contact">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Contact class describes contact information of VULDEF-Document issuer.</xs:documentation>
+            <xs:documentation xml:lang="ja"></xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vuldef:ContactItem"                  minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="restriction" type="vuldef:restrictionEnum" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="ContactItem">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Entries in the Contact class. </xs:documentation>
+            <xs:documentation xml:lang="ja"></xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vuldef:Name"                         minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="vuldef:Description"                  minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="vuldef:Email"                        minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="vuldef:Telephone"                    minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="vuldef:Fax"                          minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="vuldef:TimeZone"                     minOccurs="0" maxOccurs="1"/>
+            </xs:sequence>
+            <xs:attribute name="restriction" type="vuldef:restrictionEnum" use="optional"/>
+            <xs:attribute name="contacttype" type="vuldef:contacttypeEnum" use="optional"/>
+            <xs:attribute ref="vuldef:historyno"                           use="optional"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- ==================================================================== -->
+    <!-- ==    History class                                                  -->
+    <!-- ==        - HistoryItem                                              -->
+    <!-- ==================================================================== -->
+    <xs:element name="History">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">History class is a log or diary of the significant events that occurred or actions performed by the issuers. </xs:documentation>
+            <xs:documentation xml:lang="ja">History クラスは、脆弱性情報の改訂履歴などを記載するクラスである。</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vuldef:HistoryItem"                  minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="restriction" type="vuldef:restrictionEnum" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="HistoryItem">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">HistoryItem class is a particular entry in the History log that documents a particular significant action or event.</xs:documentation>
+            <xs:documentation xml:lang="ja">改訂履歴の項目</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vuldef:HistoryNo"                    minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="vuldef:DateTime"                     minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="vuldef:Description"                  minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="restriction" type="vuldef:restrictionEnum" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="HistoryNo" type="xs:string">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Number of the this entry in the history log.</xs:documentation>
+            <xs:documentation xml:lang="ja">改訂履歴の項目に付与する番号</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+
+    <!-- ==================================================================== -->
+    <!-- ==    AdditionalData class                                           -->
+    <!-- ==        - JvnHandlingDataset                                       -->
+    <!-- ==        - JvnDataset                                               -->
+    <!-- ==================================================================== -->
+    <xs:element name="AdditionalData">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">AdditionalData class serves as an extension mechanism for information not otherwise represented in the data model.</xs:documentation>
+            <xs:documentation xml:lang="ja"></xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vuldef:JvnHandlingDataset"           minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="vuldef:JvnDataset"                   minOccurs="0" maxOccurs="1"/>
+                <xs:any namespace="##other" processContents="lax"     minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="JvnHandlingDataset">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">JvnHandlingDataset class is a exchange format for a coordination of vulnerability information handling which is between JPCERT/CC and many product vendors. "JVN vulnerability information handling assistance tool" for product vendor supports this field.</xs:documentation>
+            <xs:documentation xml:lang="ja">JPCERT/CC と製品開発ベンダとの脆弱性情報交換に使用する拡張フィールドである。JVN 脆弱性情報ハンドリング支援で使用する。</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vuldef:HandlingServer"               minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="vuldef:HandlingClient"               minOccurs="0" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="HandlingServer">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">HandlingServer class is for server module of assistance tool. The server module only makes this field. Typically, the server module is in a JPCERT/CC side. </xs:documentation>
+            <xs:documentation xml:lang="ja">JVN 脆弱性情報ハンドリング支援のサーバモジュールで使用する拡張フィールドであり、通常、調整機関 JPCERT/CC が使用する。</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vuldef:VN"                                  minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="vuldef:URLPublished"                        minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="vuldef:DatePublished"                       minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="vuldef:Keyword"                             minOccurs="0" maxOccurs="1"/>
+                <xs:element name="MessageType" type="vuldef:MessageTypeEnum" minOccurs="0" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="VN">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">VN class has a list of vulnerability information ID for coordination. </xs:documentation>
+            <xs:documentation xml:lang="ja">脆弱性番号群を記載するフィールド</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vuldef:ID"                           minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="URLPublished">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">URLPublished class has a list of published URLs about a vulnerability. </xs:documentation>
+            <xs:documentation xml:lang="ja">公表される／公表された脆弱性情報の URL 群を記載するフィールド</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vuldef:URL"                          minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="HandlingClient">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">HandlingClient class is for client module of assistance tool. The client module only makes this field. Typically, the client module is in a product vendor side. </xs:documentation>
+            <xs:documentation xml:lang="ja">JVN 脆弱性情報ハンドリング支援のクライアントモジュールで使用する拡張フィールドであり、通常、製品開発ベンダが使用する。</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="MessageType" type="vuldef:MessageTypeEnum" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="DTRequest"   type="vuldef:DTRequestEnum"   minOccurs="0" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:simpleType name="MessageTypeEnum">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">MessageType class is an exchange message type between server module and client module. </xs:documentation>
+            <xs:documentation xml:lang="ja">JVN 脆弱性情報ハンドリング支援のクライアントモジュールが受信確認を返信する際に使用するフィールドであり、JVN 脆弱性情報ハンドリング支援のサーバモジュールが選択した情報分類を指定する。 </xs:documentation>
+        </xs:annotation>
+            <xs:restriction base="xs:decimal">
+                <xs:enumeration value="0">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">Other</xs:documentation>
+                        <xs:documentation xml:lang="ja">上記以外(ゼロまたはNULLは上記以外を意味する)</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="1">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">The message is a summary of vulnerability information. </xs:documentation>
+                        <xs:documentation xml:lang="ja">概要情報</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="2">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">The message is a detail of vulnerability information. </xs:documentation>
+                        <xs:documentation xml:lang="ja">詳細情報</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="3">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">The message is a status information about coordination. </xs:documentation>
+                        <xs:documentation xml:lang="ja">ステータス情報</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+            </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="DTRequestEnum">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">DTRequest class is an request message type from client module to server module. </xs:documentation>
+            <xs:documentation xml:lang="ja">JVN 脆弱性情報ハンドリング支援のクライアントモジュールから、詳細情報の送付を要求する際に使用するフィールドである。</xs:documentation>
+        </xs:annotation>
+            <xs:restriction base="xs:decimal">
+                <xs:enumeration value="0">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">Other</xs:documentation>
+                        <xs:documentation xml:lang="ja"> 詳細情報を要求していない(ゼロまたはNULLは詳細情報を要求していないを意味する)</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="1">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">Request for a detail of vulnerability information. </xs:documentation>
+                        <xs:documentation xml:lang="ja">詳細情報を要求</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+            </xs:restriction>
+    </xs:simpleType>
+
+    <xs:element name="JvnDataset">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">JvnDataset class is used for a receipt of confirmation about a status registration. </xs:documentation>
+            <xs:documentation xml:lang="ja">JvnDataset クラスには、JVN に登録したステータス情報を記載する。</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vuldef:History"                      minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="vuldef:DateFirstPublished"           minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="vuldef:DateLastUpdated"              minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="vuldef:DateReceived"                 minOccurs="0" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- ==================================================================== -->
+    <!-- ==    Miscellaneous simple classes                                   -->
+    <!-- ==================================================================== -->
+
+    <xs:element name="Title"                                   type="xs:string"/>
+    <xs:element name="Name"                                    type="xs:string"/>
+    <xs:element name="Description"                             type="xs:string"/>
+    <xs:element name="URL"                                     type="xs:string"/>
+    <xs:element name="ID"                                      type="xs:string"/>
+    <xs:element name="Email"                                   type="xs:string"/>
+    <xs:element name="Telephone"                               type="xs:string"/>
+    <xs:element name="Fax"                                     type="xs:string"/>
+    <xs:element name="DatePublished"                           type="xs:string"/>
+    <xs:element name="Keyword"                                 type="xs:string"/>
+
+    <xs:element name="DateFirstPublished"                      type="xs:dateTime"/>
+    <xs:element name="DateLastUpdated"                         type="xs:dateTime"/>
+    <xs:element name="DatePublic"                              type="xs:dateTime"/>
+    <xs:element name="DateTime"                                type="xs:dateTime"/>
+    <xs:element name="DateReceived"                            type="xs:dateTime"/>
+    <xs:element name="TimeZone"                                type="vuldef:TimeZoneType"/>
+
+    <xs:simpleType name="TimeZoneType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[+-][0-9][0-9]:[0-9][0-9]"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="CVSSSeverity">
+        <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="High"/>
+            <xs:enumeration value="Medium"/>
+            <xs:enumeration value="Low"/> 
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="zeroToTen">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">simpleType used when scoring on a scale of 0-10, inclusive.</xs:documentation>
+            <xs:documentation xml:lang="ja"></xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0" fixed="true"/>
+            <xs:maxInclusive value="10" fixed="true"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="CVSSVectorPattern">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\(AV:[LAN]/AC:[HML]/Au:[MSN]/C:[NPC]/I:[NPC]/A:[NPC]\)"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="CVSSTempPattern">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\(E:[U|POC|F|H|ND]/RL:[OF|TF|W|U|ND]/RC:[UC|UR|C|ND]\)"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="CVSSEnvPattern">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\(CDP:[N|L|LM|MH|H|ND]/TD:[N|L|M|H|ND]/CR:[L|M|H|ND]/IR:[L|M|H|ND]/AR:[L|M|H|ND]\)"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- ==================================================================== -->
+    <!-- ==    Attribute list declarations.                                   -->
+    <!-- ==        - restriction                                              -->
+    <!-- ==        - historyno                                                -->
+    <!-- ==        - severity                                                 -->
+    <!-- ==        - publication                                              -->
+    <!-- ==        - vulnerabilitytype                                        -->
+    <!-- ==        - exploitrange                                             -->
+    <!-- ==        - affectedstatus                                           -->
+    <!-- ==        - operator                                                 -->
+    <!-- ==        - impacttype                                               -->
+    <!-- ==        - solutiontype                                             -->
+    <!-- ==        - exploittype                                              -->
+    <!-- ==        - origin                                                   -->
+    <!-- ==        - contacttype                                              -->
+    <!-- ==================================================================== -->
+
+    <!-- xs:attribute name="restriction" -->
+    <xs:simpleType name="restrictionEnum">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">This attribute indicates the disclosure guidelines to which the sender expects the recipient of the VULDEF-Document to adhere. This attribute is defined as an enumerated value with a default value of "private".</xs:documentation>
+            <xs:documentation xml:lang="ja">送信側がVULDEF-Documentの受信側に期待する配布のガイドライン属性であり、以下の属性値(デフォルト値＝private)を選択する。</xs:documentation>
+        </xs:annotation>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="public">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">There is no restriction level applied to the information.</xs:documentation>
+                        <xs:documentation xml:lang="ja">情報配布に関する制約はない。</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="private">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">The information may not be shared.</xs:documentation>
+                        <xs:documentation xml:lang="ja">共有を期待する情報ではない。</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+            </xs:restriction>
+    </xs:simpleType>
+
+    <xs:attribute name="historyno" type="xs:string">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">The historyno attribute refers to HistoryNo class. </xs:documentation>
+            <xs:documentation xml:lang="ja">改訂履歴の項目に付与する番号</xs:documentation>
+        </xs:annotation>
+    </xs:attribute>
+
+    <!-- xs:attribute name="severity" -->
+    <xs:simpleType name="severityEnum">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">An estimate of the relative severity of the vulnerability. The permitted values are shown below. There is no default value. </xs:documentation>
+            <xs:documentation xml:lang="ja">脆弱性の相対的な深刻度の指標を、以下の属性値(デフォルト値＝なし)から選択する。</xs:documentation>
+        </xs:annotation>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="low">
+                    <xs:annotation>
+                     <xs:documentation xml:lang="en-US">Low severity.  </xs:documentation>
+                     <xs:documentation xml:lang="ja">低 </xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="medium">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">Medium severity. </xs:documentation>
+                        <xs:documentation xml:lang="ja">中</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="high">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">High severity. </xs:documentation>
+                        <xs:documentation xml:lang="ja">高</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+            </xs:restriction>
+    </xs:simpleType>
+
+    <!-- xs:attribute name="publication" -->
+    <xs:simpleType name="publicationEnum">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">This is the vulnerability information was known to the public or not. </xs:documentation>
+            <xs:documentation xml:lang="ja">脆弱性情報の公開状況を、以下の属性値(デフォルト値＝なし)から選択する。なお、配布のガイドライン属性restrictionとは、独立した属性である。</xs:documentation>
+        </xs:annotation>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="open">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">Public information. </xs:documentation>
+                        <xs:documentation xml:lang="ja">公開済み</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="close">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">Not public information. </xs:documentation>
+                        <xs:documentation xml:lang="ja">未公開</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+            </xs:restriction>
+    </xs:simpleType>
+
+    <!-- xs:attribute name="vulnerabilitytype" -->
+    <xs:simpleType name="vulnerabilitytypeEnum">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">Each vulnerability in such a way that one can understand the type of software problem that produced the vulnerability.</xs:documentation>
+            <xs:documentation xml:lang="ja">脆弱性のタイプを記載する。タイプとして、NIST NVD で使用している VulnerabilityType を使用する。</xs:documentation>
+        </xs:annotation>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="input validation error"/>
+                <xs:enumeration value="boundary condition error"/>
+                <xs:enumeration value="buffer overflow"/>
+                <xs:enumeration value="access validation error"/>
+                <xs:enumeration value="exceptional condition error"/>
+                <xs:enumeration value="environmental error"/>
+                <xs:enumeration value="configuration error"/>
+                <xs:enumeration value="race condition"/>
+                <xs:enumeration value="design error"/>
+                <xs:enumeration value="other error"/>
+            </xs:restriction>
+    </xs:simpleType>
+
+    <!-- xs:attribute name="exploitrange" -->
+    <xs:simpleType name="exploitrangeEnum">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">A vulnerability can enable either a "local" and/or "remote" attack.</xs:documentation>
+            <xs:documentation xml:lang="ja"></xs:documentation>
+        </xs:annotation>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="remote">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">The remote attack is possible. </xs:documentation>
+                        <xs:documentation xml:lang="ja"></xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="local">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">Need the account and logon operation. </xs:documentation>
+                        <xs:documentation xml:lang="ja"></xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="any">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">Both attacks are possible. </xs:documentation>
+                        <xs:documentation xml:lang="ja"></xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+            </xs:restriction>
+    </xs:simpleType>
+
+    <!-- xs:attribute name="affectedstatus" -->
+    <xs:simpleType name="affectedstatusEnum">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">This attribute indicates whether product is vulnerable or not. There is no default value. </xs:documentation>
+            <xs:documentation xml:lang="ja">影響を受ける製品毎の項目フィールドであり、下記に示す脆弱性の影響有無を記述するaffectedstatus 属性を持っている。</xs:documentation>
+        </xs:annotation>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="vulnerable">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">Vulnerable to the issue.</xs:documentation>
+                        <xs:documentation xml:lang="ja">影響あり</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="notvulnerable">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">Not Vulnerable to the issue.</xs:documentation>
+                        <xs:documentation xml:lang="ja">影響なし</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="unknown">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">Under investigation or a status can't be fixed.</xs:documentation>
+                        <xs:documentation xml:lang="ja">不明</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="vulnerable_investigating">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">Vulnerable to the issue and continue to investigate.</xs:documentation>
+                        <xs:documentation xml:lang="ja">影響あり調査中</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="notvulnerable_investigating">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">Not Vulnerable to the issue and continue to investigate.</xs:documentation>
+                        <xs:documentation xml:lang="ja">影響なし調査中</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+            </xs:restriction>
+    </xs:simpleType>
+
+    <!-- xs:attribute name="operator" -->
+    <xs:simpleType name="operatorEnum">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">This attribute is Comparison operators for a version or build number.</xs:documentation>
+            <xs:documentation xml:lang="ja"></xs:documentation>
+        </xs:annotation>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="eq"/>
+                <xs:enumeration value="ne"/>
+                <xs:enumeration value="gt"/>
+                <xs:enumeration value="lt"/>
+                <xs:enumeration value="ge"/>
+                <xs:enumeration value="le"/>
+            </xs:restriction>
+    </xs:simpleType>
+
+    <!-- xs:attribute name="impacttype" -->
+    <xs:simpleType name="impacttypeEnum">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">The type of impact in relatively broad categories. The permitted values are shown below. </xs:documentation>
+            <xs:documentation xml:lang="ja">想定される影響のタイプを記載する。タイプとして、IODEF で使用している Impacttype 属性を使用する。</xs:documentation>
+        </xs:annotation>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="admin">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">Administrative privileges were attempted or obtained. </xs:documentation>
+                        <xs:documentation xml:lang="ja"></xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="dos">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">A denial of service was attempted or completed. </xs:documentation>
+                        <xs:documentation xml:lang="ja"></xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="file">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">An action on a file was attempted or completed. </xs:documentation>
+                        <xs:documentation xml:lang="ja"></xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="recon">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">A reconnaissance probe was attempted or completed. </xs:documentation>
+                        <xs:documentation xml:lang="ja"></xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="user">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">User privileges were attempted or obtained.</xs:documentation>
+                        <xs:documentation xml:lang="ja"></xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="none">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">The activity did not have any (technical) impact.</xs:documentation>
+                        <xs:documentation xml:lang="ja"></xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="unknown">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">The impact of the activity is unknown. </xs:documentation>
+                        <xs:documentation xml:lang="ja"></xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="other">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">Anything not in one of the above categories.</xs:documentation>
+                        <xs:documentation xml:lang="ja"></xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+            </xs:restriction>
+    </xs:simpleType>
+
+    <!-- xs:attribute name="solutiontype" -->
+    <xs:simpleType name="solutiontypeEnum">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">The type of solution in relatively broad categories. There is no default value. </xs:documentation>
+            <xs:documentation xml:lang="ja">回避施策のタイプを、以下の属性値(デフォルト値＝なし)から選択する。</xs:documentation>
+        </xs:annotation>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="fixed">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">This solution eliminates the vulnerability. </xs:documentation>
+                        <xs:documentation xml:lang="ja">脆弱性そのものを除去する施策である。</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="workaround">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">workaround solution (which has a direct effect to resolve the issue). </xs:documentation>
+                        <xs:documentation xml:lang="ja">暫定施策(直接的な効果)である。</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="migration">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">migration solution (which has a indirect effect to resolve the issue). </xs:documentation>
+                        <xs:documentation xml:lang="ja">緩和施策(間接的な効果)である。</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="none">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">There is no solution. </xs:documentation>
+                        <xs:documentation xml:lang="ja">回避施策はない。</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="unknown">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">Under investigation or a status can't be fixed. </xs:documentation>
+                        <xs:documentation xml:lang="ja">不明(調査中など)</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+            </xs:restriction>
+    </xs:simpleType>
+
+    <!-- xs:attribute name="exploittype" -->
+    <xs:simpleType name="exploittypeEnum">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">The type of exploit in relatively broad categories. There is no default value. </xs:documentation>
+            <xs:documentation xml:lang="ja"></xs:documentation>
+        </xs:annotation>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="exploit">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">An exploit code exists.</xs:documentation>
+                        <xs:documentation xml:lang="ja">すぐに悪用できるコードが存在する。</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="poc">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">POC exists.</xs:documentation>
+                        <xs:documentation xml:lang="ja">動作確認に利用できるコードが存在する。</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="malware">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">Worm, Virus or Trojan Hose exists.</xs:documentation>
+                        <xs:documentation xml:lang="ja">ワーム、ウイルス、トロイの木馬などのコードが存在する。</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="senario">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">Information for the exploit exists.</xs:documentation>
+                        <xs:documentation xml:lang="ja">手順紹介レベルの情報が存在する。</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="none">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">There are no exploits for this issue.</xs:documentation>
+                        <xs:documentation xml:lang="ja">上記のいずれも存在しない。</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="unknown">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">Currently we are not aware of any exploits for this issue.</xs:documentation>
+                        <xs:documentation xml:lang="ja">不明</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+            </xs:restriction>
+    </xs:simpleType>
+
+    <!-- xs:attribute name="origin" -->
+    <xs:simpleType name="originEnum">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-US">The name of the database to which the reference is being made. The permitted values are shown below. There is no default value. </xs:documentation>
+            <xs:documentation xml:lang="ja">参照する情報源を以下の属性値(デフォルト値＝なし)から選択する。</xs:documentation>
+        </xs:annotation>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="bugtraqid">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">Bugtraq. (=Security Focus.)</xs:documentation>
+                        <xs:documentation xml:lang="ja">Bugtraq (=Security Focus)</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="cve">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">Common Vulnerabilities and Exposures (CVE).</xs:documentation>
+                        <xs:documentation xml:lang="ja">Common Vulnerabilities and Exposures (CVE)</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="certcc">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">CERT/CC Vulnerability Catalog. (=CERT Advisory)</xs:documentation>
+                        <xs:documentation xml:lang="ja">CERT/CC Vulnerability Catalog (=CERT Advisory)</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="vendor">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">A product vendor. </xs:documentation>
+                        <xs:documentation xml:lang="ja">製品開発ベンダ</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="local">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">A local database. </xs:documentation>
+                        <xs:documentation xml:lang="ja"></xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="comment">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">Comments by person. </xs:documentation>
+                        <xs:documentation xml:lang="ja"></xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="other">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">Except for the above. </xs:documentation>
+                        <xs:documentation xml:lang="ja">上記以外</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="JVN">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">JVN.</xs:documentation>
+                        <xs:documentation xml:lang="ja">JVN</xs:documentation>
+                    </xs:annotation>
+                 </xs:enumeration>
+                <xs:enumeration value="JVNTR">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">JVN Status Tracking Notes.</xs:documentation>
+                        <xs:documentation xml:lang="ja">JVN Status Tracking Notes</xs:documentation>
+                    </xs:annotation>
+                 </xs:enumeration>
+                <xs:enumeration value="IPA">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">IPA Security Center</xs:documentation>
+                        <xs:documentation xml:lang="ja">IPA セキュリティセンター 緊急対策情報</xs:documentation>
+                    </xs:annotation>
+                 </xs:enumeration>
+                <xs:enumeration value="IPA-VUL">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US"></xs:documentation>
+                        <xs:documentation xml:lang="ja">IPA セキュリティセンター</xs:documentation>
+                    </xs:annotation>
+                 </xs:enumeration>
+                <xs:enumeration value="JPCERT-AT">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US"></xs:documentation>
+                        <xs:documentation xml:lang="ja">JPCERT 緊急報告</xs:documentation>
+                    </xs:annotation>
+                 </xs:enumeration>
+                <xs:enumeration value="JPCERT-WR">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">JPCERT Report.</xs:documentation>
+                        <xs:documentation xml:lang="ja">JPCERT Report</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="CYBPO-JP">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">@police topics</xs:documentation>
+                        <xs:documentation xml:lang="ja">@police topics</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="CERT">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">CERT Advisory.</xs:documentation>
+                        <xs:documentation xml:lang="ja">CERT Advisory</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="CERT-SA">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">US-CERT Cyber Security Alerts.</xs:documentation>
+                        <xs:documentation xml:lang="ja">US-CERT Cyber Security Alerts</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="CERT-VN">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">US-CERT Vulnerability Note.</xs:documentation>
+                        <xs:documentation xml:lang="ja">US-CERT Vulnerability Note</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="CERT-TA">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">US-CERT Technical Cyber Security Alert.</xs:documentation>
+                        <xs:documentation xml:lang="ja">US-CERT Technical Cyber Security Alert</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="NVD">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">National Vulnerability Database (NVD).</xs:documentation>
+                        <xs:documentation xml:lang="ja">National Vulnerability Database (NVD)</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="CIAC">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">CIAC Bulletins.</xs:documentation>
+                        <xs:documentation xml:lang="ja">CIAC Bulletins</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="AUSCERT">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">AUSCERT.</xs:documentation>
+                        <xs:documentation xml:lang="ja">AUSCERT</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="NISCC">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">NISCC Vulnerability Advisory.</xs:documentation>
+                        <xs:documentation xml:lang="ja">NISCC Vulnerability Advisory</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="CVE">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">Common Vulnerabilities and Exposures (CVE).</xs:documentation>
+                        <xs:documentation xml:lang="ja">Common Vulnerabilities and Exposures (CVE)</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="OVAL">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">Open Vulnerability and Assessment Language (OVAL).</xs:documentation>
+                        <xs:documentation xml:lang="ja">Open Vulnerability and Assessment Language (OVAL)</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="SECUNIA">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">Secunia Advisory.</xs:documentation>
+                        <xs:documentation xml:lang="ja">Secunia Advisory</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="BID">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">Security Focus.</xs:documentation>
+                        <xs:documentation xml:lang="ja">Security Focus</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="XF">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">ISS X-Force Database.</xs:documentation>
+                        <xs:documentation xml:lang="ja">ISS X-Force Database</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="OSVDB">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">OPEN SOURCE VULNERABILITY DATABASE (OSVDB).</xs:documentation>
+                        <xs:documentation xml:lang="ja">OPEN SOURCE VULNERABILITY DATABASE (OSVDB)</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="ISS">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">ISS Security Alerts and Advisories.</xs:documentation>
+                        <xs:documentation xml:lang="ja">ISS Security Alerts and Advisories</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="ISSKK">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US"></xs:documentation>
+                        <xs:documentation xml:lang="ja">X-Force セキュリティアラート＆アドバイザリ</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="SECTRACK">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">SecurityTracker.</xs:documentation>
+                        <xs:documentation xml:lang="ja">SecurityTracker</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="SECTEAM">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">SecuriTeam.</xs:documentation>
+                        <xs:documentation xml:lang="ja">SecuriTeam</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="FRSIRT">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">FrSIRT Advisories.</xs:documentation>
+                        <xs:documentation xml:lang="ja">FrSIRT Advisories</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="SANS">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-US">The SANS Institute Diary.</xs:documentation>
+                        <xs:documentation xml:lang="ja">The SANS Institute Diary</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+            </xs:restriction>
+    </xs:simpleType>
+
+    <!-- xs:attribute name="relatedtype" -->
+    <xs:simpleType name="relatedtypeEnum">
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="vendor"/>
+                <xs:enumeration value="advisory"/>
+            </xs:restriction>
+    </xs:simpleType>
+
+    <!-- xs:attribute name="contacttype" -->
+    <xs:simpleType name="contacttypeEnum">
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="person"/>
+                <xs:enumeration value="organisation"/>
+            </xs:restriction>
+     </xs:simpleType>
+
+<!--
+Full Copyright Statement
+
+     Copyright (C) JVNRSS Feasibility Study Team 2007-2009 . All Rights Reserved.
+
+     This document and translations of it may be copied and furnished to
+     others, and derivative works that comment on or otherwise explain it
+     or assist in its implementation may be prepared, copied, published
+     and distributed, in whole or in part, without restriction of any
+     kind, provided that the above copyright notice and this paragraph are
+     included on all such copies and derivative works.    
+
+     This document and the information contained herein is provided on an
+     "AS IS" basis and JVNRSS Feasibility Study Team DISCLAIMS ALL WARRANTIES, 
+     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY 
+     THAT THE USE OF THE INFORMATION HEREIN WILL NOT INFRINGE ANY 
+     RIGHTS OR ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS 
+     FOR A PARTICULAR PURPOSE.
+-->
+
+    <!-- ================================================== -->
+    <!-- =====  Change History  -->
+    <!-- ================================================== -->
+    <!--
+    v1.0-R6 2006-04-30
+         http://jvnrss.ise.chuo-u.ac.jp/jtg/vuldef/1.0_R6/vuldef.xsd
+    v1.1-R1 2007-02-08
+         http://jvnrss.ise.chuo-u.ac.jp/jtg/vuldef/1.1_R1/vuldef.xsd
+    v1.2-R1 2008-04-28
+         http://jvnrss.ise.chuo-u.ac.jp/jtg/vuldef/1.2/vuldef.xsd
+    v2.0 2009-02-16
+         http://jvndb.jvn.jp/schema/vuldef_2.0.xsd
+    -->
+
+</xs:schema>
