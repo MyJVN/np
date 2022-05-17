@@ -16,9 +16,9 @@
 | feed | フィードフォーマット名 | フィードフォーマット(=APIバージョン)を示す名称 <br> hndを指定 | ○ | － |
 | startItem | エントリ開始位置 | 整数 (半角数字) 1～応答エントリ数 | － | 1 |
 | maxCountItem | エントリ取得件数 | 整数 (半角数字) 1～10,000 (getProductListエントリ上限値)  | － | 10,000 |
-| cpeName | CPEベンダ名 | cpe:/{part}:{vendor}:{product} <br> {part}フィールド ... "h" | "o" | "a" | "\*" <br> {vendor}:{product}フィールド ... CPE製品名 (\*2) | － | － |
-| vendorId | ベンダID | 整数(半角数字) | － | － |
-| productId | 製品ID | 整数(半角数字) | － | － |
+| cpeName | CPE製品名 | cpe:/{part}:{vendor}:{product} <br> {part}フィールド ... "h" | "o" | "a" | "\*" <br> {vendor}:{product}フィールド ... CPE製品名 (\*2) | － | － |
+| vendorId | ベンダ番号 | 整数(半角数字) | － | － |
+| productId | 製品番号 | 整数(半角数字) | － | － |
 | keyword | キーワード | URLエンコードされたキーワード (\*3) | － | － |
 | lang | 表示言語(日本語／英語) | ja:日本語、en:英語 | － | ja |
 
@@ -52,8 +52,8 @@ xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/Results　
 https://jvndb.jvn.jp/schema/results_3.3.xsd ">
 
 <VendorInfo xml:lang="表示言語">
-  <Vendor vname="ベンダ名" cpe="CPEベンダ名" vid="ベンダID">
-    <Product pname="製品名" cpe="CPE製品名" pid="製品ID"/>
+  <Vendor vname="ベンダ名" cpe="CPEベンダ名" vid="ベンダ番号">
+    <Product pname="製品名" cpe="CPE製品名" pid="製品番号"/>
     フィルタリングに当てはまる製品の件数分Productノードを繰り返します。
   </Vendor>
   ベンダの件数分 Vendor ノードを繰り返します。
