@@ -2,7 +2,7 @@
 フィルタリング条件に当てはまるベンダ名(製品開発者)リストを取得します。
 
 ## リクエスト
-* https://jvndb.jvn.jp/myjvn?method=getVendorList&feed=hnd&パラメタ名=パラメタ値&...
+* https://jvndb.jvn.jp/myjvn?method=getVendorList&feed=oka&パラメタ名=パラメタ値&...
   * リクエストURLは、HTTPSのGETおよびPOSTに対応しています。
 
 * パラメタ
