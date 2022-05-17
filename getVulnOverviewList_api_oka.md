@@ -44,77 +44,75 @@ charset=UTF-8
 
 ## レスポンス
 * 概要
-  * 処理成功時、JVNRSS 3.2(RSS 1.0 + mod_sec)、MyJVN共通Statusノードを含むXMLを応答します。ただし、フィルタリング結果が0件の場合、Resultノードの中にMyJVN共通Statusノードのみを含むXMLを応答します。
+  * 処理成功時、feedノード、MyJVN共通Statusノードを含むJSONを応答します。
   * エラー発生時、MyJVN共通Statusノードにエラーコードとエラーメッセージを格納します。
-* XMLスキーマ
-  * JVNRSS 3.2：https://jvndb.jvn.jp/schema/jvnrss_3.2.xsd
-  * mod_sec 3.0：https://jvndb.jvn.jp/schema/mod_sec_3.0.xsd
-  * MyJVN共通Statusノード：https://jvndb.jvn.jp/schema/status_3.3.xsd
+* JSONスキーマ
+  * TBD
 * 例
-  * [ getVulnOverviewList_oka.xml ](examples/getVulnOverviewList_oka.xml)
+  * [ getVulnOverviewList_oka.json ](examples/getVulnOverviewList_oka.json)
+
 
 ```
-<?xml version="1.0" encoding="UTF-8" ?>
-<rdf:RDF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xmlns="http://purl.org/rss/1.0/"
-xmlns:rss="http://purl.org/rss/1.0/"
-xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-xmlns:dc="http://purl.org/dc/elements/1.1/"
-xmlns:dcterms="http://purl.org/dc/terms/"
-xmlns:sec="https://jvn.jp/rss/mod_sec/"
-xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
-xsi:schemaLocation="http://purl.org/rss/1.0/
-https://jvndb.jvn.jp/schema/jvnrss_3.2.xsd"
-xml:lang="ja">
-
-<channel rdf:about="セキュリティ情報のチャンネルURI">
-  <title>セキュリティ情報のチャンネルタイトル</title>
-  <link>セキュリティ情報が掲載されているURI</link>
-  <description>セキュリティ情報の概要</description>
-  <dc:date>レスポンス生成日時</dc:date>
-  <dcterms:issued />
-  <dcterms:modified>レスポンス生成日時</dcterms:modified>
-  <items>
-  <rdf:Seq>
-  <rdf:li rdf:resource="item要素のrdf:about属性と同じURI"/>
-  フィルタリングに当てはまる脆弱性対策概要情報の件数分 <rdf:li rdf:resource= を繰り返します。
-  </rdf:Seq>
-  </items>
-</channel>
-
-<item rdf:about="ベンダが掲載するセキュリティ情報のURI">
-  <title>セキュリティ情報のタイトル</title>
-  <link>セキュリティ情報のURI</link>
-  <description>セキュリティ情報の概要</description>
-  <sec:identifier>ベンダ固有のセキュリティ情報ID</sec:identifier>
-  <sec:references source="発行元省略名" id="識別番号" title="タイトル" >関連情報</sec:references>
-  参考情報の件数分 sec:references ノードを繰り返します。
-
-  <sec:cpe version="CPEバージョン" vendor="ベンダ名" product="製品名">CPE製品名</sec:cpe>
-  製品情報の件数分 sec:cpe ノードを繰り返します。
-
-  <sec:cvss version="CVSS バージョン" type="基本|現状|環境評価基準" severity="typeで指定された評価基準の深刻度" score="typeで指定された評価基準の評価値" vector="短縮表記"/>
-  評価の件数分 sec:cvss ノードを繰り返します。
-
-  <dc:date>更新日</dc:date>
-  <dcterms:issued>発行日</dcterms:issued>
-  <dcterms:modified>更新日</dcterms:modified>
-</item>
-フィルタリングに当てはまる脆弱性対策概要情報の件数分itemノードを繰り返します。
-
-<status:Status
-version="3.3"
-method="getVulnOverviewList"
-feed="oka"
-lang="表示言語"
-retCd="リターンコード (0:成功時、1:エラー時) "
-retMax="エントリ上限値"
-errCd="エラーコード (処理成功時は空文字列) "
-errMsg="エラーメッセージ (処理成功時は空文字列) "
-totalRes="応答エントリ総数"
-totalResRet="応答エントリ数"
-firstRes="応答エントリ開始位置"
-各リクエストパラメタ
-</status:Status>
-</Result>
+{
+    "feed": {
+        "title": "getVulnOverviewList API",
+        "updated": "更新日",
+        "id": "jvnpid:1.0:ipa:myjvn_api_getVulnOverviewList:4.0.0.0.0",
+        "link": "https://jvndb.jvn.jp/apis/myjvn/",
+        "author": {
+            "name": "IPA",
+            "uri": "https://www.ipa.go.jp/"
+        },
+        "sec:handling": {
+            "marking:Marking": {
+                "marking:Marking_Structure": {
+                    "marking_model_name": "TLP",
+                    "marking_model_ref": "http://www.us-cert.gov/tlp/",
+                    "color": "WHITE"
+                }
+            }
+        },
+        "entry": [
+            {
+                "title": "関連情報のタイトル",
+                "id": "関連情報の識別子",
+                "summary": "関連情報の概要",
+                "link": "関連情報の概要のURL",
+                "update": "更新日",
+                "published": "発行日",
+                "sec:items": [
+                    {
+                        "sec:title": "関連情報のタイトル",
+                        "sec:identifier": "関連情報の識別子",
+                        "sec:link": "関連情報の概要のURL",
+                        "sec:published": "発行日",
+                        "sec:updated": "更新日",
+                        "sec:author": {"name": "発行者"},
+                        "sec:prod": [
+                            {"value": "swid製品名"},
+                            {"value": "cpe製品名"},
+                            {"value": "spdx製品名"},
+                            {"value": "purl製品名"}
+                        ]
+                    }
+                ]
+            },
+            {"~comment": "title,idなどのノードを繰り返します。"}
+        ],
+        "status:Status": {
+            "version": "3.3",
+            "method": "getVulnOverviewList",
+            "feed": "hnd",
+            "lang": "表示言語",
+            "retCd": "リターンコード (0:成功時、1:エラー時)",
+            "retMax": "エントリ上限値",
+            "errCd": "エラーコード (処理成功時は空文字列)",
+            "errMsg": "エラーメッセージ (処理成功時は空文字列)",
+            "totalRes": "応答エントリ総数",
+            "totalResRet": "応答エントリ数",
+            "firstRes": "応答エントリ開始位置",
+            "各リクエストパラメタ": "各リクエストパラメタ値"
+        }
+    }
+}
 ```
