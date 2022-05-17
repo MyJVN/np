@@ -1,0 +1,176 @@
+{
+    "jvn-product-dictionary": {
+        "vendor": [
+            {
+                "vname": "jvnpid:1.0:sample.or.jp",
+                "title": [
+                    {
+                        "lang": "ja-JP",
+                        "name": "サンプル"
+                    },
+                    {
+                        "lang": "en-US",
+                        "name": "Sample"
+                    }
+                ],
+                "products": [
+                    {
+                        "pname": "jvnpid:1.0:sample.or.jp:secinfodbx:3.2.0.0.0",
+                        "title": [
+                            {
+                                "lang": "ja-JP",
+                                "name": "セキュリティ情報データベースX V3.2"
+                            },
+                            {
+                                "lang": "en-US",
+                                "name": "Security Information DBX V3.2"
+                            }
+                        ],
+                        "product_ids": [
+                            {"swid": "sample.or.jp+secinfodbx+3.2"},
+                            {"cpe": "xx"},
+                            {"spdx": "xx"}
+                        ]
+                    }
+                ]
+            },
+            {
+                "vname": "jvnpid:1.0:testx",
+                "title": [
+                    {
+                        "lang": "ja-JP",
+                        "name": "テストエックス"
+                    },
+                    {
+                        "lang": "en-US",
+                        "name": "TESTX"
+                    }
+                ],
+                "products": [
+                    {
+                        "pname": "jvnpid:1.0:testx:httpd:1.0.0.c.0",
+                        "title": [
+                            {
+                                "lang": "ja-JP",
+                                "name": "HTTPD サーバ Ver 1.0.0c"
+                            },
+                            {
+                                "lang": "en-US",
+                                "name": "HTTPD Ver 1.0.0c"
+                            }
+                        ],
+                        "product_ids": [
+                            {"swid": "xx"},
+                            {"cpe": "cpe:2.3:a:testx:httpd:1.0.0c"},
+                            {
+                                "type": "alias",
+                                "cpe": "cpe:2.3:a:testxold:httpd:1.0.0c"
+                            },
+                            {"swid": "xx"}
+                        ],
+                        "references": [
+                            {
+                                "url": "https://www.testx.com/httpd/",
+                                "summary": "TESTX HTTPD"
+                            },
+                            {
+                                "url": "https://www.testx.com/httpd2/",
+                                "summary": "TESTX HTTPD2"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "vname": "jvnpid:1.0:apache",
+                "title": [
+                    {
+                        "lang": "en-US",
+                        "name": "Apache Software Foundation"
+                    }
+                ],
+                "products": [
+                    {
+                        "pname": "jvnpid:1.0:apache:struts:2.5.33.0.0",
+                        "title": [
+                            {
+                                "lang": "en-US",
+                                "name": "Struts 2.5.33"
+                            }
+                        ],
+                        "product_ids": [
+                            {"cpe": "cpe:/a:apache:struts:2.5.33"}
+                        ]
+                    }
+                ]
+            },
+            {
+                "vname": "jvnpid:1.0:example.or.jp",
+                "title": [
+                    {
+                        "lang": "ja-JP",
+                        "name": "イグザンプル"
+                    }
+                ],
+                "products": [
+                    {
+                        "pname": "jvnpid:1.0:example.or.jp:spreadsheetx:2.1.0.0.0",
+                        "title": [
+                            {
+                                "lang": "ja-JP",
+                                "name": "スプレッドシートX V2.1"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "vname": "jvnpid:1.0:acme.com",
+                "title": [
+                    {
+                        "lang": "ja-JP",
+                        "name": "The ACME Corporation"
+                    }
+                ],
+                "products": [
+                    {
+                        "pname": "jvnpid:1.0:acme.com:roadrunner_detector:2013.0.0.0.0",
+                        "title": [
+                            {
+                                "lang": "ja-JP",
+                                "name": "Roadrunner Detector 2013"
+                            }
+                        ],
+                        "product_ids": [
+                            {"swid": "com.acme.rrd2013-ce-sp1-v4-1-5-0"}
+                        ]
+                    }
+                ]
+            },
+            {
+                "vname": "jvnpid:1.0:ipa",
+                "title": [
+                    {
+                        "lang": "ja-JP",
+                        "name": "独立行政法人　情報処理推進機構"
+                    }
+                ],
+                "products": [
+                    {
+                        "pname": "jvnpid:1.0:ipa:myjvn_api:3.2.0.0.0",
+                        "title": [
+                            {
+                                "lang": "ja-JP",
+                                "name": "MyJVN API 3.2.0"
+                            }
+                        ],
+                        "product_ids": [
+                            {"swid": "ipa.go.jp+myjvn_api+3.2.0"},
+                            {"cpe": "cpe:2.3:a:ipa:myjvn_api:3.2.0"}
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
