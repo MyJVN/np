@@ -115,7 +115,7 @@ firstRes="応答エントリ開始位置"
   * 処理成功時、feedノード、MyJVN共通Statusノードを含むJSONを応答します。
   * エラー発生時、MyJVN共通Statusノードにエラーコードとエラーメッセージを格納します。
 * JSONスキーマ
-  * 
+  * TBD
 * 例
   * [ getAlertList_hnd.json ](examples/getAlertList_hnd.json)
 
