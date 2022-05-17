@@ -34,8 +34,8 @@ charset=UTF-8
 * 概要
   * 処理成功時、jvn-product-dictionaryノード、MyJVN共通Statusノードを含むJSONを応答します。
   * エラー発生時、MyJVN共通Statusノードにエラーコードとエラーメッセージを格納します。
-* JSONスキーマ
-  * 
+* JSONスキーマ  
+  * TBD 
 * 例
   * [ getVendorList_oka.json ](examples/getVendorList_oka.json)
 
