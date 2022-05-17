@@ -2,7 +2,7 @@
 フィルタリング条件に当てはまるベンダ名(製品開発者)リストを取得します。
 
 ## リクエスト
-* https://jvndb.jvn.jp/myjvn?method=getVendorList&feed=hnd&パラメタ名=パラメタ値&...
+* https://jvndb.jvn.jp/myjvn?method=getVendorList&feed=oka&パラメタ名=パラメタ値&...
   * リクエストURLは、HTTPSのGETおよびPOSTに対応しています。
 
 * パラメタ
@@ -34,8 +34,8 @@ charset=UTF-8
 * 概要
   * 処理成功時、jvn-product-dictionaryノード、MyJVN共通Statusノードを含むJSONを応答します。
   * エラー発生時、MyJVN共通Statusノードにエラーコードとエラーメッセージを格納します。
-* JSONスキーマ
-  * 
+* JSONスキーマ  
+  * TBD 
 * 例
   * [ getVendorList_oka.json ](examples/getVendorList_oka.json)
 
