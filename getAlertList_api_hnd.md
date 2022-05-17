@@ -42,7 +42,7 @@ cpeName=cpe:/a:apache:xerces-c%252B%252B
   * mod_sec3.0：https://jvndb.jvn.jp/schema/mod_sec_3.0.xsd
   * MyJVN共通Statusノード：https://jvndb.jvn.jp/schema/status_3.3.xsd
 * 例
-  * [ ]()
+  * [ getAlertList_hnd.xml ](examples/getAlertList_hnd.xml)
 
 ```
 <?xml version="1.0" encoding="utf-8" ?>
@@ -112,6 +112,8 @@ firstRes="応答エントリ開始位置"
 
 * JSONスキーマ
   * getalert: 
+* 例
+  * [ getAlertList_hnd.json ](examples/getAlertList_hnd.json)
 
 ```
 {
