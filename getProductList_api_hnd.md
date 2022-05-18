@@ -54,9 +54,9 @@ https://jvndb.jvn.jp/schema/results_3.3.xsd ">
 <VendorInfo xml:lang="表示言語">
   <Vendor vname="ベンダ名" cpe="CPEベンダ名" vid="ベンダ番号">
     <Product pname="製品名" cpe="CPE製品名" pid="製品番号"/>
-    フィルタリングに当てはまる製品の件数分Productノードを繰り返します。
+    <!-- フィルタリングに当てはまる製品の件数分Productノードを繰り返します。 -->
   </Vendor>
-  ベンダの件数分 Vendor ノードを繰り返します。
+  <!-- ベンダの件数分 Vendor ノードを繰り返します。 -->
 </VendorInfo>
 
 <status:Status
@@ -70,8 +70,8 @@ errCd="エラーコード (処理成功時は空文字列) "
 errMsg="エラーメッセージ (処理成功時は空文字列) "
 totalRes="応答エントリ総数"
 totalResRet="応答エントリ数"
-firstRes="応答エントリ開始位置"
-各リクエストパラメタ
+firstRes="応答エントリ開始位置" >
+<!-- 各リクエストパラメタ -->
 </status:Status>
 </Result>
 ```

@@ -35,7 +35,6 @@
 
 ```
 <?xml version="1.0" encoding="UTF-8" ?>
-<?xml-stylesheet href="VulnDetailInfo.xsl" type=text/xsl"?>
 <VULDEF-Document version="3.1"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xmlns="https://jvn.jp/vuldef/"
@@ -61,9 +60,9 @@ xml:lang="ja">
         <Name>ベンダ名</Name>
         <ProductName>製品名</ProductName>
         <VersionNumber>バージョン情報</VersionNumber>
-        バージョン情報の件数分 VersionNumber ノードを繰り返します。
+        <!-- バージョン情報の件数分 VersionNumber ノードを繰り返します。 -->
       </AffectedItem>
-      製品の件数分 AffectedItem ノードを繰り返します。
+      <!-- 製品の件数分 AffectedItem ノードを繰り返します。 -->
     </Affected>
 
     <Impact>
@@ -89,14 +88,14 @@ xml:lang="ja">
         <VulinfoID>アドバイザリID</VulinfoID>
         <URL>アドバイザリURL</URL>
       </RelatedItem>
-      ：アドバイザリ情報の件数分 RelatedItem ノードを繰り返します。
+      <!-- アドバイザリ情報の件数分 RelatedItem ノードを繰り返します。 -->
       <RelatedItem type="cwe">
         <Name>JVNDB</Name>
         <VulinfoID>CWE-ID</VulinfoID>
         <Title>CWE名</Title>
         <URL>CWEURL</URL>
       </RelatedItem>
-      ：CWE情報の件数分 RelatedItem ノードを繰り返します。
+      <!-- CWE情報の件数分 RelatedItem ノードを繰り返します。 -->
     </Related>
 
     <History>
@@ -111,7 +110,7 @@ xml:lang="ja">
   </VulinfoData>
 
 </Vulinfo>
-フィルタリングに当てはまる脆弱性対策詳細情報の件数分 Vulinfo ノードを繰り返します。
+<!-- フィルタリングに当てはまる脆弱性対策詳細情報の件数分 Vulinfo ノードを繰り返します。 -->
 
 <status:Status
 version="3.3"
@@ -124,10 +123,9 @@ errCd="エラーコード (処理成功時は空文字列) "
 errMsg="エラーメッセージ (処理成功時は空文字列) "
 totalRes="応答エントリ総数"
 totalResRet="応答エントリ数"
-firstRes="応答エントリ開始位置"
-各リクエストパラメタ
+firstRes="応答エントリ開始位置" >
+<!-- 各リクエストパラメタ -->
 </status:Status>
-</Result>
 </VULDEF-Document> 
 
 ```

@@ -89,7 +89,7 @@ xml:lang="ja">
   <items>
   <rdf:Seq>
   <rdf:li rdf:resource="item要素のrdf:about属性と同じURI"/>
-  フィルタリングに当てはまる脆弱性対策概要情報の件数分 <rdf:li rdf:resource= を繰り返します。
+  <!-- フィルタリングに当てはまる脆弱性対策概要情報の件数分 <rdf:li rdf:resource= を繰り返します。 -->
   </rdf:Seq>
   </items>
 </channel>
@@ -100,19 +100,19 @@ xml:lang="ja">
   <description>セキュリティ情報の概要</description>
   <sec:identifier>ベンダ固有のセキュリティ情報ID</sec:identifier>
   <sec:references source="発行元省略名" id="識別番号" title="タイトル" >関連情報</sec:references>
-  参考情報の件数分 sec:references ノードを繰り返します。
+  <!-- 参考情報の件数分 sec:references ノードを繰り返します。 -->
 
   <sec:cpe version="CPEバージョン" vendor="ベンダ名" product="製品名">CPE製品名</sec:cpe>
-  製品情報の件数分 sec:cpe ノードを繰り返します。
+  <!-- 製品情報の件数分 sec:cpe ノードを繰り返します。 -->
 
   <sec:cvss version="CVSS バージョン" type="基本|現状|環境評価基準" severity="typeで指定された評価基準の深刻度" score="typeで指定された評価基準の評価値" vector="短縮表記"/>
-  評価の件数分 sec:cvss ノードを繰り返します。
+  <!-- 評価の件数分 sec:cvss ノードを繰り返します。 -->
 
   <dc:date>更新日</dc:date>
   <dcterms:issued>発行日</dcterms:issued>
   <dcterms:modified>更新日</dcterms:modified>
 </item>
-フィルタリングに当てはまる脆弱性対策概要情報の件数分itemノードを繰り返します。
+<!-- フィルタリングに当てはまる脆弱性対策概要情報の件数分itemノードを繰り返します。 -->
 
 <status:Status
 version="3.3"
@@ -125,8 +125,8 @@ errCd="エラーコード (処理成功時は空文字列) "
 errMsg="エラーメッセージ (処理成功時は空文字列) "
 totalRes="応答エントリ総数"
 totalResRet="応答エントリ数"
-firstRes="応答エントリ開始位置"
-各リクエストパラメタ
+firstRes="応答エントリ開始位置" >
+<!-- 各リクエストパラメタ -->
 </status:Status>
-</Result>
+</rdf:RDF>
 ```

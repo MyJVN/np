@@ -92,7 +92,7 @@ xml:lang="ja">
       <sec:published>発行日</sec:published>
       <sec:updated>更新日</sec:updated>
     </sec:item>
-    sec:itemノードを繰り返します。
+    <!-- sec:itemノードを繰り返します。 -->
   </sec:items>
 </entry>
 <status:Status 
@@ -106,9 +106,10 @@ errCd="エラーコード (処理成功時は空文字列)"
 errMsg="エラーメッセージ (処理成功時は空文字列)" 
 totalRes="応答エントリ総数" 
 totalResRet="応答エントリ数" 
-firstRes="応答エントリ開始位置" 
-各リクエストパラメタ
+firstRes="応答エントリ開始位置" >
+<!-- 各リクエストパラメタ -->
 </status:Status>
+</feed>
 ```
 
 * 概要
