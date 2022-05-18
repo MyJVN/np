@@ -1,0 +1,62 @@
+{
+    "feed": {
+        "title": "getVulnOverviewList API",
+        "updated": "更新日",
+        "id": "jvnpid:1.0:ipa:myjvn_api_getVulnOverviewList:4.0.0.0.0",
+        "link": "https://jvndb.jvn.jp/apis/myjvn/",
+        "author": {
+            "name": "IPA",
+            "uri": "https://www.ipa.go.jp/"
+        },
+        "sec:handling": {
+            "marking:Marking": {
+                "marking:Marking_Structure": {
+                    "marking_model_name": "TLP",
+                    "marking_model_ref": "http://www.us-cert.gov/tlp/",
+                    "color": "WHITE"
+                }
+            }
+        },
+        "entry": [
+            {
+                "title": "関連情報のタイトル",
+                "id": "関連情報の識別子",
+                "summary": "関連情報の概要",
+                "link": "関連情報の概要のURL",
+                "update": "更新日",
+                "published": "発行日",
+                "sec:items": [
+                    {
+                        "sec:title": "関連情報のタイトル",
+                        "sec:identifier": "関連情報の識別子",
+                        "sec:link": "関連情報の概要のURL",
+                        "sec:published": "発行日",
+                        "sec:updated": "更新日",
+                        "sec:author": {"name": "発行者"},
+                        "sec:prod": [
+                            {"value": "swid製品名"},
+                            {"value": "cpe製品名"},
+                            {"value": "spdx製品名"},
+                            {"value": "purl製品名"}
+                        ]
+                    }
+                ]
+            },
+            {"~comment": "title,idなどのノードを繰り返します。"}
+        ],
+        "status:Status": {
+            "version": "3.3",
+            "method": "getVulnOverviewList",
+            "feed": "hnd",
+            "lang": "表示言語",
+            "retCd": "リターンコード (0:成功時、1:エラー時)",
+            "retMax": "エントリ上限値",
+            "errCd": "エラーコード (処理成功時は空文字列)",
+            "errMsg": "エラーメッセージ (処理成功時は空文字列)",
+            "totalRes": "応答エントリ総数",
+            "totalResRet": "応答エントリ数",
+            "firstRes": "応答エントリ開始位置",
+            "各リクエストパラメタ": "各リクエストパラメタ値"
+        }
+    }
+}

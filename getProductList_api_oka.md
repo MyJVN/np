@@ -38,7 +38,7 @@ charset=UTF-8
 * JSONスキーマ  
   * TBD 
 * 例
-  * [ getProductList_oka.xml ](examples/getProductList_oka.xml)
+  * [ getProductList_oka.json ](examples/getProductList_oka.json)
 
 ```
 {
