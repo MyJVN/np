@@ -4,17 +4,18 @@
   xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
   xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/Results https://jvndb.jvn.jp/schema/results_3.3.xsd">
   <VendorInfo xml:lang="ja">
-    <Vendor vname="#1 deals and maps app" cpe="cpe:/:pointinside" vid="10133"/>
-    <Vendor vname="#sysPass" cpe="cpe:/:syspass" vid="12776"/>
-    <Vendor vname="$0.99 kindle books project" cpe="cpe:/:%240.99_kindle_books_project" vid="11248"/>
-    <Vendor vname=".VDMi/" cpe="cpe:/:fibonacciorange" vid="11644"/>
-    <Vendor vname="1-800 CONTACTS" cpe="cpe:/:1800contacts" vid="10077"/>
-    <Vendor vname="1-script" cpe="cpe:/:1-script" vid="1928"/>
-    <Vendor vname="10-Strike Software" cpe="cpe:/:10-strike" vid="13908"/>
-    <Vendor vname="1000guess" cpe="cpe:/:1000guess" vid="14792"/>
-    <Vendor vname="101 project" cpe="cpe:/:101_project" vid="20018"/>
-    <Vendor vname="1024cms" cpe="cpe:/:1024cms" vid="1929"/>
+    <Vendor vname="日本情報化農業研究所" cpe="cpe:/:n-i-agroinformatics" vid="9710"/>
+    <Vendor vname="日本電気" cpe="cpe:/:nec" vid="89"/>
+    <Vendor vname="日本年金機構" cpe="cpe:/:japan_pension_service" vid="12273"/>
+    <Vendor vname="日本無線株式会社" cpe="cpe:/:japan_radio" vid="9469"/>
+    <Vendor vname="日立" cpe="cpe:/:hitachi" vid="129"/>
+    <Vendor vname="日立エナジー (旧 日立ABBパワーグリッド)" cpe="cpe:/:hitachi_abb_power_grids" vid="18819"/>
+    <Vendor vname="日立ソフトウェアエンジニアリング" cpe="cpe:/:hitachi" vid="180"/>
+    <Vendor vname="日立ヴァンタラ" cpe="cpe:/:hitachivantara" vid="13410"/>
+    <Vendor vname="日立電線" cpe="cpe:/:hitachi" vid="154"/>
+    <Vendor vname="農林水産省" cpe="cpe:/:maff" vid="12679"/>
   </VendorInfo>
   <status:Status version="3.3" method="getVendorList" lang="ja" retCd="0" retMax="10000" errCd=""
-    errMsg="" totalRes="19643" totalResRet="10" firstRes="1" feed="hnd" maxCountItem="10"/>
+    errMsg="" totalRes="19644" totalResRet="10" firstRes="19600" feed="hnd" maxCountItem="10"
+    startItem="19600"/>
 </Result>

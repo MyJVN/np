@@ -2,86 +2,140 @@
     "jvn-product-dictionary": {
         "vendors": [
             {
-                "vname": "jvnpid:1,0:sample,or,jp",
-                "vid": "999991",
-                "title": [
-                    {
-                        "lang": "ja-JP",
-                        "name": "サンプル"
-                    },
-                    {
-                        "lang": "en-US",
-                        "name": "Sample"
-                    }
-                ]
+                "vname": "jvnpid:1.0:n-i-agroinformatics",
+                "vid": "9710",
+                "title": "日本情報化農業研究所",
+                "cpe": "cpe:/:n-i-agroinformatics"
             },
             {
-                "vname": "jvnpid:1,0:testx",
-                "vid": "999992",
-                "title": [
-                    {
-                        "lang": "ja-JP",
-                        "name": "テストエックス"
-                    },
-                    {
-                        "lang": "en-US",
-                        "name": "TESTX"
-                    }
-                ]
+                "vname": "jvnpid:1.0:nec",
+                "vid": "89",
+                "title": "日本電気",
+                "cpe": "cpe:/:nec"
             },
             {
-                "vname": "jvnpid:1,0:apache",
-                "vid": "999993",
-                "title": [
-                    {
-                        "lang": "en-US",
-                        "name": "Apache Software Foundation"
-                    }
-                ]
+                "vname": "jvnpid:1.0:japan_pension_service",
+                "vid": "12273",
+                "title": "日本年金機構",
+                "cpe": "cpe:/:japan_pension_service"
             },
             {
-                "vname": "jvnpid:1,0:example,or,jp",
-                "vid": "999994",
-                "title": [
-                    {
-                        "lang": "ja-JP",
-                        "name": "イグザンプル"
-                    }
-                ]
+                "vname": "jvnpid:1.0:japan_radio",
+                "vid": "9469",
+                "title": "日本無線株式会社",
+                "cpe": "cpe:/:japan_radio"
             },
             {
-                "vname": "jvnpid:1,0:acme,com",
-                "vid": "999995",
-                "title": [
-                    {
-                        "lang": "ja-JP",
-                        "name": "The ACME Corporation"
-                    }
-                ]
+                "vname": "jvnpid:1.0:hitachi",
+                "vid": "129",
+                "title": "日立",
+                "cpe": "cpe:/:hitachi"
             },
             {
-                "vname": "jvnpid:1,0:ipa",
-                "vid": "999996",
-                "title": [
-                    {
-                        "lang": "ja-JP",
-                        "name": "独立行政法人　情報処理推進機構"
-                    }
-                ]
+                "vname": "jvnpid:1.0:hitachi_abb_power_grids",
+                "vid": "18819",
+                "title": "日立エナジー (旧 日立ABBパワーグリッド)",
+                "cpe": "cpe:/:hitachi_abb_power_grids"
+            },
+            {
+                "vname": "jvnpid:1.0:hitachi",
+                "vid": "180",
+                "title": "日立ソフトウェアエンジニアリング",
+                "cpe": "cpe:/:hitachi"
+            },
+            {
+                "vname": "jvnpid:1.0:hitachivantara",
+                "vid": "13410",
+                "title": "日立ヴァンタラ",
+                "cpe": "cpe:/:hitachivantara"
+            },
+            {
+                "vname": "jvnpid:1.0:hitachi",
+                "vid": "154",
+                "title": "日立電線",
+                "cpe": "cpe:/:hitachi"
+            },
+            {
+                "vname": "jvnpid:1.0:maff",
+                "vid": "12679",
+                "title": "農林水産省",
+                "cpe": "cpe:/:maff"
+            },
+            {
+                "vname": "jvnpid:1.0:ntv.co.jp",
+                "vid": "17583",
+                "title": "日本テレビ放送網株式会社",
+                "cpe": "cpe:/:misc"
+            },
+            {
+                "vname": "jvnpid:1.0:groupsession",
+                "vid": "12596",
+                "title": "日本トータルシステム株式会社",
+                "cpe": "cpe:/:groupsession"
+            },
+            {
+                "vname": "jvnpid:1.0:ni",
+                "vid": "9050",
+                "title": "日本ナショナルインスツルメンツ",
+                "cpe": "cpe:/:ni"
+            },
+            {
+                "vname": "jvnpid:1.0:misc",
+                "vid": "15805",
+                "title": "日本マイクロソフト株式会社",
+                "cpe": "cpe:/:misc"
+            },
+            {
+                "vname": "jvnpid:1.0:unisys",
+                "vid": "12187",
+                "title": "日本ユニシス株式会社",
+                "cpe": "cpe:/:unisys"
+            },
+            {
+                "vname": "jvnpid:1.0:radware",
+                "vid": "659",
+                "title": "日本ラドウェア",
+                "cpe": "cpe:/:radware"
+            },
+            {
+                "vname": "jvnpid:1.0:gigaccsecure",
+                "vid": "12310",
+                "title": "日本ワムネット株式会社",
+                "cpe": "cpe:/:gigaccsecure"
+            },
+            {
+                "vname": "jvnpid:1.0:orcamo",
+                "vid": "14157",
+                "title": "日本医師会ＯＲＣＡ管理機構株式会社",
+                "cpe": "cpe:/:orcamo"
+            },
+            {
+                "vname": "jvnpid:1.0:jaea",
+                "vid": "15564",
+                "title": "日本原子力研究開発機構",
+                "cpe": "cpe:/:jaea"
+            },
+            {
+                "vname": "jvnpid:1.0:n-i-agroinformatics",
+                "vid": "9710",
+                "title": "日本情報化農業研究所",
+                "cpe": "cpe:/:n-i-agroinformatics"
             }
         ]
     },
     "status:Status": {
         "version": "3.3",
         "method": "getVendorList",
-        "retCd": 0,
+        "lang": "ja",
+        "retCd": "0",
         "retMax": "10000",
         "errCd": "",
         "errMsg": "",
-        "totalRes": "15000",
-        "totalResRet": "6",
-        "firstRes": "1",
-        "ft": "json",
-        "feed": "oka"
+        "totalRes": "19644",
+        "totalResRet": "10",
+        "firstRes": "19591",
+        "feed": "oka",
+        "maxCountItem": "10",
+        "startItem": "19591"
     }
 }

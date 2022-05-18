@@ -2,35 +2,18 @@
     "jvn-product-dictionary": {
         "vendors": [
             {
-                "vname": "jvnpid:1.0:sample.or.jp",
-                "vid": "999991",
-                "title": [
-                    {
-                        "lang": "ja-JP",
-                        "name": "サンプル"
-                    },
-                    {
-                        "lang": "en-US",
-                        "name": "Sample"
-                    }
-                ],
+                "vname": "jvnpid:1.0:unisys",
+                "cpe": "cpe:/:unisys",
+                "vid": "12187",
+                "title": "日本ユニシス株式会社",
                 "products": [
                     {
-                        "pname": "jvnpid:1.0:sample.or.jp:secinfodbx",
-                        "pid": "777999991",
-                        "title": [
-                            {
-                                "lang": "ja-JP",
-                                "name": "セキュリティ情報データベースX"
-                            },
-                            {
-                                "lang": "en-US",
-                                "name": "Security Information DBX"
-                            }
-                        ],
+                        "pname": "jvnpid:1.0:unisys:mobigate",
+                        "pid": "26767",
+                        "title": "mobiGate",
                         "product_ids": [
                             {"swid": ""},
-                            {"cpe": ""},
+                            {"cpe": "cpe:/a:unisys:mobigate"},
                             {"spdxid": ""},
                             {"purl": ""}
                         ]
@@ -38,78 +21,146 @@
                 ]
             },
             {
-                "vname": "jvnpid:1.0:testx",
-                "vid": "999992",
-                "title": [
-                    {"name": "テストエックス"}
-                ],
+                "vname": "jvnpid:1.0:radware",
+                "cpe": "cpe:/:radware",
+                "vid": "659",
+                "title": "日本ラドウェア",
                 "products": [
                     {
-                        "pname": "jvnpid:1.0:testx:httpd",
-                        "pid": "777999992",
-                        "title": [
-                            {
-                                "lang": "ja-JP",
-                                "name": "HTTPD サーバ"
-                            }
-                        ],
+                        "pname": "jvnpid:1.0:radware:alteon",
+                        "pid": "28113",
+                        "title": "Alteon",
                         "product_ids": [
                             {"swid": ""},
-                            {"cpe": "cpe:2.3:a:testx:httpd"},
-                            {"spdxid": ""},
-                            {"purl": ""}
-                        ],
-                        "references": [
-                            {
-                                "url": "https://www.testx.com/httpd/",
-                                "summary": "TESTX HTTPD"
-                            },
-                            {
-                                "url": "https://www.testx.com/httpd2/",
-                                "summary": "TESTX HTTPD2"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "vname": "jvnpid:1.0:ipa",
-                "vid": "999996",
-                "title": [
-                    {
-                        "lang": "ja-JP",
-                        "name": "独立行政法人　情報処理推進機構"
-                    }
-                ],
-                "products": [
-                    {
-                        "pname": "jvnpid:1.0:ipa:myjvn_api",
-                        "pid": "777999993",
-                        "title": [
-                            {
-                                "lang": "ja-JP",
-                                "name": "MyJVN API"
-                            }
-                        ],
-                        "product_ids": [
-                            {"swid": "jvnpid:1.0:ipa:myjvn_api"},
-                            {"cpe": "cpe:2.3:a:ipa:myjvn_api"},
+                            {"cpe": "cpe:/o:radware:alteon"},
                             {"spdxid": ""},
                             {"purl": ""}
                         ]
                     },
                     {
-                        "pname": "jvnpid:1.0:ipa:jvn_ipedia",
-                        "pid": "777999994",
-                        "title": [
-                            {
-                                "lang": "ja-JP",
-                                "name": "JVN iPedia"
-                            }
-                        ],
+                        "pname": "jvnpid:1.0:radware:appwall",
+                        "pid": "2798",
+                        "title": "AppWall Web Application Firewall",
                         "product_ids": [
-                            {"swid": "jvnpid:1.0:ipa:jvn_ipedia"},
-                            {"cpe": "cpe:2.3:a:ipa:jvn_ipedia"},
+                            {"swid": ""},
+                            {"cpe": "cpe:/h:radware:appwall"},
+                            {"spdxid": ""},
+                            {"purl": ""}
+                        ]
+                    },
+                    {
+                        "pname": "jvnpid:1.0:radware:gateway",
+                        "pid": "2799",
+                        "title": "Gateway",
+                        "product_ids": [
+                            {"swid": ""},
+                            {"cpe": "cpe:/a:radware:gateway"},
+                            {"spdxid": ""},
+                            {"purl": ""}
+                        ]
+                    }
+                ]
+            },
+            {
+                "vname": "jvnpid:1.0:gigaccsecure",
+                "cpe": "cpe:/:gigaccsecure",
+                "vid": "12310",
+                "title": "日本ワムネット株式会社",
+                "products": [
+                    {
+                        "pname": "jvnpid:1.0:gigaccsecure:gigacc_office",
+                        "pid": "27634",
+                        "title": "GigaCC OFFICE",
+                        "product_ids": [
+                            {"swid": ""},
+                            {"cpe": "cpe:/a:gigaccsecure:gigacc_office"},
+                            {"spdxid": ""},
+                            {"purl": ""}
+                        ]
+                    }
+                ]
+            },
+            {
+                "vname": "jvnpid:1.0:orcamo",
+                "cpe": "cpe:/:orcamo",
+                "vid": "14157",
+                "title": "日本医師会ＯＲＣＡ管理機構株式会社",
+                "products": [
+                    {
+                        "pname": "jvnpid:1.0:orcamo:ubuntu_14.04_online_receipt_computer_advantage",
+                        "pid": "33791",
+                        "title": "Ubuntu14.04 日医標準レセプトソフト",
+                        "product_ids": [
+                            {"swid": ""},
+                            {"cpe": "cpe:/a:orcamo:ubuntu_14.04_online_receipt_computer_advantage"},
+                            {"spdxid": ""},
+                            {"purl": ""}
+                        ]
+                    },
+                    {
+                        "pname": "jvnpid:1.0:orcamo:ubuntu_16.04_online_receipt_computer_advantage",
+                        "pid": "33794",
+                        "title": "Ubuntu16.04 日医標準レセプトソフト",
+                        "product_ids": [
+                            {"swid": ""},
+                            {"cpe": "cpe:/a:orcamo:ubuntu_16.04_online_receipt_computer_advantage"},
+                            {"spdxid": ""},
+                            {"purl": ""}
+                        ]
+                    }
+                ]
+            },
+            {
+                "vname": "jvnpid:1.0:jaea",
+                "cpe": "cpe:/:jaea",
+                "vid": "15564",
+                "title": "日本原子力研究開発機構",
+                "products": [
+                    {
+                        "pname": "jvnpid:1.0:jaea:mapping_tool",
+                        "pid": "36188",
+                        "title": "マッピングツール",
+                        "product_ids": [
+                            {"swid": ""},
+                            {"cpe": "cpe:/a:jaea:mapping_tool"},
+                            {"spdxid": ""},
+                            {"purl": ""}
+                        ]
+                    }
+                ]
+            },
+            {
+                "vname": "jvnpid:1.0:n-i-agroinformatics",
+                "cpe": "cpe:/:n-i-agroinformatics",
+                "vid": "9710",
+                "title": "日本情報化農業研究所",
+                "products": [
+                    {
+                        "pname": "jvnpid:1.0:n-i-agroinformatics:soy_cms",
+                        "pid": "20217",
+                        "title": "SOY CMS",
+                        "product_ids": [
+                            {"swid": ""},
+                            {"cpe": "cpe:/a:n-i-agroinformatics:soy_cms"},
+                            {"spdxid": ""},
+                            {"purl": ""}
+                        ]
+                    }
+                ]
+            },
+            {
+                "vname": "jvnpid:1.0:nec",
+                "cpe": "cpe:/:nec",
+                "vid": "89",
+                "title": "日本電気",
+                "products": [
+                    {
+                        "pname": "jvnpid:1.0:nec:actsecure",
+                        "pid": "48655",
+                        "title": "ActSecure",
+                        "product_ids": [
+                            {"swid": ""},
+                            {"cpe": "cpe:/a:nec:actsecure"},
                             {"spdxid": ""},
                             {"purl": ""}
                         ]
@@ -121,14 +172,16 @@
     "status:Status": {
         "version": "3.3",
         "method": "getProductList",
-        "retCd": 0,
+        "lang": "ja",
+        "retCd": "0",
         "retMax": "10000",
         "errCd": "",
         "errMsg": "",
-        "totalRes": "65000",
-        "totalResRet": "4",
-        "firstRes": "1",
-        "ft": "json",
-        "feed": "oka"
+        "totalRes": "49410",
+        "totalResRet": "10",
+        "firstRes": "48591",
+        "feed": "oka",
+        "maxCountItem": "10",
+        "startItem": "48591"
     }
 }
