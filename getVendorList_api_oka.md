@@ -53,7 +53,7 @@ charset=UTF-8
                     }
                 ]
             },
-            {"~comment": "vname,vid,title,productsノードを繰り返します。"}
+            {"~comment": "vname,vid,titleノードを繰り返します。"}
         ]
     },
     "status:Status": {

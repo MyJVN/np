@@ -97,7 +97,7 @@ charset=UTF-8
                     }
                 ]
             },
-            {"~comment": "title,idなどのノードを繰り返します。"}
+            {"//_comment": "title,idなどのタグを繰り返します。"}
         ],
         "status:Status": {
             "version": "3.3",

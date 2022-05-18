@@ -1,11 +1,18 @@
 {
     "jvn-product-dictionary": {
+        "generator": {
+            "product_name": "MyJVN Product Dictionary",
+            "product_version": "oka",
+            "schema_version": "1.1",
+            "timestamp": "2022-05-19T06:17:10+09:00",
+            "language": "ja-JP"
+        },
         "vendors": [
             {
                 "vname": "jvnpid:1.0:unisys",
-                "cpe": "cpe:/:unisys",
                 "vid": "12187",
                 "title": "日本ユニシス株式会社",
+                "cpe": "cpe:/:unisys",
                 "products": [
                     {
                         "pname": "jvnpid:1.0:unisys:mobigate",
@@ -22,9 +29,9 @@
             },
             {
                 "vname": "jvnpid:1.0:radware",
-                "cpe": "cpe:/:radware",
                 "vid": "659",
                 "title": "日本ラドウェア",
+                "cpe": "cpe:/:radware",
                 "products": [
                     {
                         "pname": "jvnpid:1.0:radware:alteon",
@@ -63,9 +70,9 @@
             },
             {
                 "vname": "jvnpid:1.0:gigaccsecure",
-                "cpe": "cpe:/:gigaccsecure",
                 "vid": "12310",
                 "title": "日本ワムネット株式会社",
+                "cpe": "cpe:/:gigaccsecure",
                 "products": [
                     {
                         "pname": "jvnpid:1.0:gigaccsecure:gigacc_office",
@@ -82,9 +89,9 @@
             },
             {
                 "vname": "jvnpid:1.0:orcamo",
-                "cpe": "cpe:/:orcamo",
                 "vid": "14157",
                 "title": "日本医師会ＯＲＣＡ管理機構株式会社",
+                "cpe": "cpe:/:orcamo",
                 "products": [
                     {
                         "pname": "jvnpid:1.0:orcamo:ubuntu_14.04_online_receipt_computer_advantage",
@@ -112,9 +119,9 @@
             },
             {
                 "vname": "jvnpid:1.0:jaea",
-                "cpe": "cpe:/:jaea",
                 "vid": "15564",
                 "title": "日本原子力研究開発機構",
+                "cpe": "cpe:/:jaea",
                 "products": [
                     {
                         "pname": "jvnpid:1.0:jaea:mapping_tool",
@@ -131,9 +138,9 @@
             },
             {
                 "vname": "jvnpid:1.0:n-i-agroinformatics",
-                "cpe": "cpe:/:n-i-agroinformatics",
                 "vid": "9710",
                 "title": "日本情報化農業研究所",
+                "cpe": "cpe:/:n-i-agroinformatics",
                 "products": [
                     {
                         "pname": "jvnpid:1.0:n-i-agroinformatics:soy_cms",
@@ -150,9 +157,9 @@
             },
             {
                 "vname": "jvnpid:1.0:nec",
-                "cpe": "cpe:/:nec",
                 "vid": "89",
                 "title": "日本電気",
+                "cpe": "cpe:/:nec",
                 "products": [
                     {
                         "pname": "jvnpid:1.0:nec:actsecure",
