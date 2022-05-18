@@ -2,7 +2,7 @@
 
 * MyJVN API
 
-| API名 | メソッド名 | 概要 | Feed | 形式 |
+| API名 | メソッド名 | 概要 | バージョン | 形式 |
 | ---- | ---- | ---- | ---- | ---- | 
 | 注意警戒情報一覧の取得 | getAlertList | 注意警戒情報一覧を取得します。 | [ HND ](getAlertList_api_hnd.md) | XML,JSON | 
 | ベンダ一覧の取得 | getVendorList | フィルタリング条件に当てはまるベンダ名(製品開発者)リストを取得します。 | [ HND ](getVendorList_api_hnd.md) | XML | 
@@ -18,7 +18,7 @@
 
 * MyJVNデータフィード
 
-| データフィード名 | 概要 | Feed | 形式 |
+| データフィード名 | 概要 | バージョン | 形式 |
 | ---- | ---- | ---- | ---- | 
 | JVNDBRSS | 脆弱性対策情報の概要 | HND | XML |
 | | | OKA | JSON |
