@@ -37,3 +37,8 @@
 | SWID | [ XML ](sbom-swid.xml) |
 | CycloneDX | [ JSON ](examples/sbom-cyclonedx.json) |
 | SPDX | JSON |
+
+
+* 謝辞
+
+本サイトでは、総務省「ソフトウェア脆弱性を狙ったサイバー攻撃の防御に向けた情報共有基盤に関する実証実験」の成果を活用しています。 
