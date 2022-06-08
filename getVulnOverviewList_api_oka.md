@@ -26,12 +26,12 @@
 | rangeDatePublic | 発見日の範囲指定 	n:範囲指定なし、w:過去1週間、m:過去1ヶ月  | － | w |
 | rangeDatePublished | 更新日の範囲指定 | n:範囲指定なし、w:過去1週間、m:過去1ヶ月  | － | w |
 | rangeDateFirstPublished | 発行日の範囲指定 | n:範囲指定なし、w:過去1週間、m:過去1ヶ月  | － | w |
-| datePublicStartY | 発見日開始年月日 | 整数8桁 (半角数字)| － | － |
-| datePublicEndY | 発見日終了年月日 | 整数8桁 (半角数字)| － | － |
-| datePublishedStartY | 更新日開始年月日 | 整数8桁 (半角数字)| － | － |
-| datePublishedEndY | 更新日終了年月日 | 整数8桁 (半角数字)| － | － |
-| dateFirstPublishedStartY | 発行日開始年月日 | 整数8桁 (半角数字)| － | － |
-| dateFirstPublishedEndY | 発行日終了年月日 | 整数8桁 (半角数字)| － | － |
+| datePublicStart | 発見日開始年月日 | 整数8桁 (半角数字)| － | － |
+| datePublicEnd | 発見日終了年月日 | 整数8桁 (半角数字)| － | － |
+| datePublishedStart | 更新日開始年月日 | 整数8桁 (半角数字)| － | － |
+| datePublishedEnd | 更新日終了年月日 | 整数8桁 (半角数字)| － | － |
+| dateFirstPublishedStart | 発行日開始年月日 | 整数8桁 (半角数字)| － | － |
+| dateFirstPublishedEnd | 発行日終了年月日 | 整数8桁 (半角数字)| － | － |
 | lang | 表示言語(日本語／英語) | ja:日本語、en:英語 | － | ja |
 
 \*1)  
