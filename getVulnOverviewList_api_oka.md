@@ -19,6 +19,7 @@
 | cpeName | CPE製品名 | cpe:/{part}:{vendor}:{product} <br> {part}フィールド ... "h" | "o" | "a" | "\*" <br> {vendor}:{product}フィールド ... CPE製品名 (\*2) | － | － |
 | vendorId | ベンダ番号 | 整数(半角数字) | － | － |
 | productId | 製品番号 | 整数(半角数字) | － | － |
+| productName | 製品名 | CPE,SWID,SPDX,purl,Hash | － | － |
 | keyword | キーワード | URLエンコードされたキーワード (\*3) | － | － |
 | severity | CVSS深刻度 | n:なし、l:注意、m:警告、h:重要、c:緊急 | － | － |
 | vector | CVSS基本評価基準 | CVSS 基本評価基準 <br> CVSS:3.0/AV:[N,A,L,P]/AC:[L,H]/PR:[N,L,R]/UI:[N,R]/S:[C,U]/C:[N,L,H]/I:[N,L,H]/A:[N,L,H]  | － | － |
