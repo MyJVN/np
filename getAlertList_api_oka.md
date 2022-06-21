@@ -18,11 +18,12 @@
 | maxCountItem | エントリ取得件数 | 整数 (半角数字) 1～50 (getAlertListエントリ上限値) | － | 50 |
 | datePublished | 更新日年 | 半角整数4桁 | － | － |
 | dateFirstPublished | 発行日年 | 半角整数4桁 | － | － |
-| productName | 製品名 | CPE,SWID,SPDX,purl,Hash | － | － |
+| productName | 製品名 | CPE,SWID,SPDX,purl,Hash (\*2) | － | － |
 | ft | 応答フォーマット | xml または json | － | － |
 
 \*1)  
 「デフォルト」は、該当パラメタに指定がない場合(パラメタ自体もしくはパラメタ値が未指定の場合)にMyJVN API側で自動的に設定する値です。  
+\*2) 
 
 ## レスポンス
 * 概要
@@ -36,9 +37,15 @@
 ```
 {
     "feed": {
-        "title": "IPA注意警戒サービスAPI",
-        "updated": "更新日",
-        "id": "swid:ipa.go.jp+myjvn_alert+1.0.0",
+        "generator": {
+            "product_name": "MyJVN API",
+            "product_version": "oka",
+            "schema_version": "4.0",
+            "language": "ja-JP",
+            "updated": "更新日"
+        },
+        "title": "MyJVN getAlertList API",
+        "id": "jvnpid:1.0:ipa:myjvn_api_getAlertList:4.0.0.0.0",
         "link": "https://jvndb.jvn.jp/apis/myjvn/",
         "author": {
             "name": "IPA",
@@ -73,12 +80,13 @@
                             "sec:link": "関連情報の概要のURL",
                             "sec:published": "発行日",
                             "sec:updated": "更新日",
-                            "sec:author": {"name": "発行者"},
-                            "sec:prod": [
-                                "swid製品名",
-                                "cpe製品名",
-                                "spdx製品名",
-                                "purl製品名"
+                            "sec:author": "発行者",
+                            "sec:product_ids": [
+                                {"swid": "SWID製品名"},
+                                {"cpe": "CPE製品名"},
+                                {"spdxid": "spdx製品名"},
+                                {"purl": "purl製品名"},
+                                {"sha256": "ハッシュ値"}
                             ]
                         }
                     },
@@ -87,7 +95,7 @@
             }
         ],
         "status:Status": {
-            "version": "3.3",
+            "version": "4.0",
             "method": "getAlertList",
             "feed": "oka",
             "lang": "表示言語",

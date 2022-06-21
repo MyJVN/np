@@ -23,7 +23,6 @@
 \*1)  
 「デフォルト」は、該当パラメタに指定がない場合(パラメタ自体もしくはパラメタ値が未指定の場合)にMyJVN API側で自動的に設定する値です。  
 \*2)  
-
 \*3)  
 ベンダ名の部分一致によるフィルタリング  
 ワイルドカード "\*" 指定不可 ("\*"を指定した場合、"\*"を含む項目をフィルタリング)  
@@ -42,22 +41,32 @@ charset=UTF-8
 ```
 {
     "jvn-product-dictionary": {
+        "generator": {
+            "product_name": "MyJVN API",
+            "product_version": "oka",
+            "schema_version": "4.0",
+            "language": "ja-JP",
+            "updated": "更新日"
+        },
+        "title": "MyJVN getVendorList API",
+        "id": "jvnpid:1.0:ipa:myjvn_api_getVendorList:4.0.0.0.0",
+        "link": "https://jvndb.jvn.jp/apis/myjvn/",
+        "author": {
+            "name": "IPA",
+            "uri": "https://www.ipa.go.jp/"
+        },
         "vendors": [
             {
-                "vname": "ベンダ識別子",
+                "vendor_id": "ベンダ識別子",
                 "vid": "ベンダ番号",
-                "title": [
-                    {
-                        "lang": "言語型",
-                        "name": "ベンダ名(日本語)"
-                    }
-                ]
+                "vname": "ベンダ名",
+                "cpe": "CPEベンダ名"
             },
-            {"~comment": "vname,vid,titleノードを繰り返します。"}
+            {"~comment": "vendor_id,vid,vnameなどのタグを繰り返します。"}
         ]
     },
     "status:Status": {
-        "version": "3.3",
+        "version": "4.0",
         "method": "getVendorList",
         "feed": "oka",
         "lang": "表示言語",

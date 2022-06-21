@@ -16,7 +16,7 @@
 | feed | フィードフォーマット名 | フィードフォーマット(=APIバージョン)を示す名称 <br> okaを指定 | ○ | － |
 | startItem | エントリ開始位置 | 整数 (半角数字) 1～応答エントリ数 | － | 1 |
 | maxCountItem | エントリ取得件数 | 整数 (半角数字) 1～10,000 (getProductListエントリ上限値)  | － | 10,000 |
-| cpeName | CPE製品名 | cpe:/{part}:{vendor}:{product} <br> {part}フィールド ... "h" | "o" | "a" | "\*" <br> {vendor}:{product}フィールド ... CPE製品名 (\*2) | － | － |
+| productName | 製品名 | CPE,SWID,SPDX,purl,Hash (\*2) | － | － |
 | vendorId | ベンダ番号 | 整数(半角数字) | － | － |
 | productId | 製品番号 | 整数(半角数字) | － | － |
 | keyword | キーワード | URLエンコードされたキーワード (\*3) | － | － |
@@ -43,40 +43,47 @@ charset=UTF-8
 ```
 {
     "jvn-product-dictionary": {
+        "generator": {
+            "product_name": "MyJVN API",
+            "product_version": "oka",
+            "schema_version": "4.0",
+            "language": "ja-JP",
+            "updated": "更新日"
+        },
+        "title": "MyJVN getProductList API",
+        "id": "jvnpid:1.0:ipa:myjvn_api_getProductList:4.0.0.0.0",
+        "link": "https://jvndb.jvn.jp/apis/myjvn/",
+        "author": {
+            "name": "IPA",
+            "uri": "https://www.ipa.go.jp/"
+        },
         "vendors": [
             {
-                "vname": "ベンダ識別子",
+                "vendor_id": "ベンダ識別子",
                 "vid": "ベンダ番号",
-                "title": [
-                    {
-                        "lang": "言語型",
-                        "name": "ベンダ名(日本語)"
-                    }
-                ],
+                "vname": "ベンダ名",
+                "cpe": "CPEベンダ名",
                 "products": [
                     {
-                        "pname": "製品識別子",
+                        "product_id": "製品識別子",
                         "pid": "製品番号",
-                        "title": [
-                            {
-                                "lang": "言語型",
-                                "name": "製品名(日本語)"
-                            }
-                        ],
+                        "pname": "製品名",
                         "product_ids": [
                             {"swid": "SWID識別子"},
                             {"cpe": "CPE製品名"},
                             {"spdxid": "SPDX識別子"},
-                            {"purl": "purl識別子"}
+                            {"purl": "purl識別子"},
+                            {"sha256": "ハッシュ値"}
                         ]
-                    }
+                    },
+                    {"//_comment": "product_id,pid,pnameなどのタグを繰り返します。"}
                 ]
             },
-            {"//_comment": "vname,vid,title,productsタグを繰り返します。"}
+            {"//_comment": "vendor_id,vid,vnameなどのタグを繰り返します。"}
         ]
     },
     "status:Status": {
-        "version": "3.3",
+        "version": "4.0",
         "method": "getProductList",
         "feed": "hnd",
         "lang": "表示言語",

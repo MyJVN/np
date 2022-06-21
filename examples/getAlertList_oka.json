@@ -1,17 +1,22 @@
 {
     "feed": {
-        "title": "IPA注意警戒サービスAPI",
-        "id": "jvnpid:1.0:ipa.go.jp:myjvn_alert:2.0.0",
+        "generator": {
+            "product_name": "MyJVN API",
+            "product_version": "oka",
+            "schema_version": "4.0",
+            "language": "ja-JP",
+            "updated": "2022-05-17T17:30:02+09:00"
+        },
+        "title": "MyJVN getAlertList API",
+        "id": "jvnpid:1.0:ipa:myjvn_api_getAlertList:4.0.0.0.0",
+        "link": "https://jvndb.jvn.jp/apis/myjvn/",
         "author": {
             "name": "IPA",
             "uri": "https://www.ipa.go.jp/"
         },
-        "updated": "2022-05-17T17:30:02+09:00",
-        "link": "https://jvndb.jvn.jp/apis/myjvn/",
         "sec:handling": {
             "marking:Marking": {
                 "marking:Marking_Structure": {
-                    "xsi:type": "tlpMarking:TLPMarkingStructureType",
                     "marking_model_name": "TLP",
                     "marking_model_ref": "http://www.us-cert.gov/tlp/",
                     "color": "WHITE"
@@ -38,12 +43,11 @@
                             "sec:link": "https://struts.apache.org/announce-2022#a20220102",
                             "sec:published": "2022-01-04T00:00:00+09:00",
                             "sec:updated": "2022-01-04T10:07:07+09:00",
-                            "sec:author": {"value": "Apache"},
-                            "sec:prod": [
-                                "jvnpid:1.0:apache:struts",
-                                "cpe:/a:apache:struts",
-                                "spdx",
-                                "pkg:maven/org.apache.struts/struts2-core"
+                            "sec:author": "Apache",
+                            "sec:product_ids": [
+                                {"swid": "jvnpid:1.0:apache:struts"},
+                                {"cpe": "cpe:/a:apache:struts"},
+                                {"purl": "pkg:maven/org.apache.struts/struts2-core"}
                             ]
                         }
                     },
@@ -54,7 +58,7 @@
                             "sec:link": "https://struts.apache.org/download.cgi#struts-ga",
                             "sec:published": "2022-01-04T00:00:00+09:00",
                             "sec:updated": "2022-01-04T10:07:07+09:00",
-                            "sec:author": {"value": "Apache"}
+                            "sec:author": "Apache"
                         }
                     }
                 ]
@@ -78,12 +82,10 @@
                             "sec:link": "https://wordpress.org/download/",
                             "sec:published": "2022-01-07T00:00:00+09:00",
                             "sec:updated": "2022-01-07T09:51:37+09:00",
-                            "sec:author": {"value": "WordPress.org"},
-                            "sec:prod": [
-                                "jvnpid:1.0:wordpress:wordpress",
-                                "cpe:/a:wordpress:wordpress",
-                                "spdx",
-                                "purl"
+                            "sec:author": "WordPress.org",
+                            "sec:product_ids": [
+                                {"swid": "jvnpid:1.0:wordpress:wordpress"},
+                                {"cpe": "cpe:/a:wordpress:wordpress"}
                             ]
                         }
                     },
@@ -94,14 +96,14 @@
                             "sec:link": "https://wordpress.org/news/2022/01/wordpress-5-8-3-security-release/",
                             "sec:published": "2022-01-07T00:00:00+09:00",
                             "sec:updated": "2022-01-07T09:51:37+09:00",
-                            "sec:author": {"value": "WordPress.org"}
+                            "sec:author": "WordPress.org"
                         }
                     }
                 ]
             }
         ],
         "status:Status": {
-            "version": "3.3",
+            "version": "4.0",
             "method": "getAlertList",
             "retCd": 0,
             "retMax": "50",

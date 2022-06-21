@@ -1,23 +1,39 @@
 {
     "jvn-product-dictionary": {
         "generator": {
-            "product_name": "MyJVN Product Dictionary",
+            "product_name": "MyJVN API",
             "product_version": "oka",
-            "schema_version": "1.1",
-            "timestamp": "2022-05-19T06:17:10+09:00",
-            "language": "ja-JP"
+            "schema_version": "4.0",
+            "language": "ja-JP",
+            "updated": "2022-05-19T06:17:10+09:00"
+        },
+        "title": "MyJVN getProductList API",
+        "id": "jvnpid:1.0:ipa:myjvn_api_getProductList:4.0.0.0.0",
+        "link": "https://jvndb.jvn.jp/apis/myjvn/",
+        "author": {
+            "name": "IPA",
+            "uri": "https://www.ipa.go.jp/"
+        },
+        "sec:handling": {
+            "marking:Marking": {
+                "marking:Marking_Structure": {
+                    "marking_model_name": "TLP",
+                    "marking_model_ref": "http://www.us-cert.gov/tlp/",
+                    "color": "WHITE"
+                }
+            }
         },
         "vendors": [
             {
-                "vname": "jvnpid:1.0:unisys",
+                "vendor_id" "jvnpid:1.0:unisys",
                 "vid": "12187",
-                "title": "日本ユニシス株式会社",
+                "vname": "日本ユニシス株式会社",
                 "cpe": "cpe:/:unisys",
                 "products": [
                     {
-                        "pname": "jvnpid:1.0:unisys:mobigate",
+                        "product_id": "jvnpid:1.0:unisys:mobigate",
                         "pid": "26767",
-                        "title": "mobiGate",
+                        "pname": "mobiGate",
                         "product_ids": [
                             {"swid": ""},
                             {"cpe": "cpe:/a:unisys:mobigate"},
@@ -28,15 +44,15 @@
                 ]
             },
             {
-                "vname": "jvnpid:1.0:radware",
+                "vendor_id" "jvnpid:1.0:radware",
                 "vid": "659",
-                "title": "日本ラドウェア",
+                "vname": "日本ラドウェア",
                 "cpe": "cpe:/:radware",
                 "products": [
                     {
-                        "pname": "jvnpid:1.0:radware:alteon",
+                        "product_id": "jvnpid:1.0:radware:alteon",
                         "pid": "28113",
-                        "title": "Alteon",
+                        "pname": "Alteon",
                         "product_ids": [
                             {"swid": ""},
                             {"cpe": "cpe:/o:radware:alteon"},
@@ -45,9 +61,9 @@
                         ]
                     },
                     {
-                        "pname": "jvnpid:1.0:radware:appwall",
+                        "product_id": "jvnpid:1.0:radware:appwall",
                         "pid": "2798",
-                        "title": "AppWall Web Application Firewall",
+                        "pname": "AppWall Web Application Firewall",
                         "product_ids": [
                             {"swid": ""},
                             {"cpe": "cpe:/h:radware:appwall"},
@@ -56,9 +72,9 @@
                         ]
                     },
                     {
-                        "pname": "jvnpid:1.0:radware:gateway",
+                        "product_id": "jvnpid:1.0:radware:gateway",
                         "pid": "2799",
-                        "title": "Gateway",
+                        "pname": "Gateway",
                         "product_ids": [
                             {"swid": ""},
                             {"cpe": "cpe:/a:radware:gateway"},
@@ -69,15 +85,15 @@
                 ]
             },
             {
-                "vname": "jvnpid:1.0:gigaccsecure",
+                "vendor_id" "jvnpid:1.0:gigaccsecure",
                 "vid": "12310",
-                "title": "日本ワムネット株式会社",
+                "vname": "日本ワムネット株式会社",
                 "cpe": "cpe:/:gigaccsecure",
                 "products": [
                     {
-                        "pname": "jvnpid:1.0:gigaccsecure:gigacc_office",
+                        "product_id": "jvnpid:1.0:gigaccsecure:gigacc_office",
                         "pid": "27634",
-                        "title": "GigaCC OFFICE",
+                        "pname": "GigaCC OFFICE",
                         "product_ids": [
                             {"swid": ""},
                             {"cpe": "cpe:/a:gigaccsecure:gigacc_office"},
@@ -88,15 +104,15 @@
                 ]
             },
             {
-                "vname": "jvnpid:1.0:orcamo",
+                "vendor_id" "jvnpid:1.0:orcamo",
                 "vid": "14157",
-                "title": "日本医師会ＯＲＣＡ管理機構株式会社",
+                "vname": "日本医師会ＯＲＣＡ管理機構株式会社",
                 "cpe": "cpe:/:orcamo",
                 "products": [
                     {
-                        "pname": "jvnpid:1.0:orcamo:ubuntu_14.04_online_receipt_computer_advantage",
+                        "product_id": "jvnpid:1.0:orcamo:ubuntu_14.04_online_receipt_computer_advantage",
                         "pid": "33791",
-                        "title": "Ubuntu14.04 日医標準レセプトソフト",
+                        "pname": "Ubuntu14.04 日医標準レセプトソフト",
                         "product_ids": [
                             {"swid": ""},
                             {"cpe": "cpe:/a:orcamo:ubuntu_14.04_online_receipt_computer_advantage"},
@@ -105,9 +121,9 @@
                         ]
                     },
                     {
-                        "pname": "jvnpid:1.0:orcamo:ubuntu_16.04_online_receipt_computer_advantage",
+                        "product_id": "jvnpid:1.0:orcamo:ubuntu_16.04_online_receipt_computer_advantage",
                         "pid": "33794",
-                        "title": "Ubuntu16.04 日医標準レセプトソフト",
+                        "pname": "Ubuntu16.04 日医標準レセプトソフト",
                         "product_ids": [
                             {"swid": ""},
                             {"cpe": "cpe:/a:orcamo:ubuntu_16.04_online_receipt_computer_advantage"},
@@ -118,15 +134,15 @@
                 ]
             },
             {
-                "vname": "jvnpid:1.0:jaea",
+                "vendor_id" "jvnpid:1.0:jaea",
                 "vid": "15564",
-                "title": "日本原子力研究開発機構",
+                "vname": "日本原子力研究開発機構",
                 "cpe": "cpe:/:jaea",
                 "products": [
                     {
-                        "pname": "jvnpid:1.0:jaea:mapping_tool",
+                        "product_id": "jvnpid:1.0:jaea:mapping_tool",
                         "pid": "36188",
-                        "title": "マッピングツール",
+                        "pname": "マッピングツール",
                         "product_ids": [
                             {"swid": ""},
                             {"cpe": "cpe:/a:jaea:mapping_tool"},
@@ -137,15 +153,15 @@
                 ]
             },
             {
-                "vname": "jvnpid:1.0:n-i-agroinformatics",
+                "vendor_id" "jvnpid:1.0:n-i-agroinformatics",
                 "vid": "9710",
-                "title": "日本情報化農業研究所",
+                "vname": "日本情報化農業研究所",
                 "cpe": "cpe:/:n-i-agroinformatics",
                 "products": [
                     {
-                        "pname": "jvnpid:1.0:n-i-agroinformatics:soy_cms",
+                        "product_id": "jvnpid:1.0:n-i-agroinformatics:soy_cms",
                         "pid": "20217",
-                        "title": "SOY CMS",
+                        "pname": "SOY CMS",
                         "product_ids": [
                             {"swid": ""},
                             {"cpe": "cpe:/a:n-i-agroinformatics:soy_cms"},
@@ -156,15 +172,15 @@
                 ]
             },
             {
-                "vname": "jvnpid:1.0:nec",
+                "vendor_id" "jvnpid:1.0:nec",
                 "vid": "89",
-                "title": "日本電気",
+                "vname": "日本電気",
                 "cpe": "cpe:/:nec",
                 "products": [
                     {
-                        "pname": "jvnpid:1.0:nec:actsecure",
+                        "product_id": "jvnpid:1.0:nec:actsecure",
                         "pid": "48655",
-                        "title": "ActSecure",
+                        "pname": "ActSecure",
                         "product_ids": [
                             {"swid": ""},
                             {"cpe": "cpe:/a:nec:actsecure"},
@@ -177,7 +193,7 @@
         ]
     },
     "status:Status": {
-        "version": "3.3",
+        "version": "4.0",
         "method": "getProductList",
         "lang": "ja",
         "retCd": "0",

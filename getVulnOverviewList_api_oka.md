@@ -16,10 +16,9 @@
 | feed | フィードフォーマット名 | フィードフォーマット(=APIバージョン)を示す名称 <br> okaを指定 | ○ | － |
 | startItem | エントリ開始位置 | 整数 (半角数字) 1～応答エントリ数 | － | 1 |
 | maxCountItem | エントリ取得件数 | 整数 (半角数字) 1～50 (getVulnOverviewListエントリ上限値)  | － | 50 |
-| cpeName | CPE製品名 | cpe:/{part}:{vendor}:{product} <br> {part}フィールド ... "h" | "o" | "a" | "\*" <br> {vendor}:{product}フィールド ... CPE製品名 (\*2) | － | － |
 | vendorId | ベンダ番号 | 整数(半角数字) | － | － |
 | productId | 製品番号 | 整数(半角数字) | － | － |
-| productName | 製品名 | CPE,SWID,SPDX,purl,Hash | － | － |
+| productName | 製品名 | CPE,SWID,SPDX,purl,Hash (\*2) | － | － |
 | keyword | キーワード | URLエンコードされたキーワード (\*3) | － | － |
 | severity | CVSS深刻度 | n:なし、l:注意、m:警告、h:重要、c:緊急 | － | － |
 | vector | CVSS基本評価基準 | CVSS 基本評価基準 <br> CVSS:3.0/AV:[N,A,L,P]/AC:[L,H]/PR:[N,L,R]/UI:[N,R]/S:[C,U]/C:[N,L,H]/I:[N,L,H]/A:[N,L,H]  | － | － |
@@ -56,8 +55,14 @@ charset=UTF-8
 ```
 {
     "feed": {
+        "generator": {
+            "product_name": "MyJVN API",
+            "product_version": "oka",
+            "schema_version": "4.0",
+            "language": "ja-JP",
+            "updated": "更新日"
+        },
         "title": "getVulnOverviewList API",
-        "updated": "更新日",
         "id": "jvnpid:1.0:ipa:myjvn_api_getVulnOverviewList:4.0.0.0.0",
         "link": "https://jvndb.jvn.jp/apis/myjvn/",
         "author": {
@@ -81,22 +86,41 @@ charset=UTF-8
                 "link": "関連情報の概要のURL",
                 "update": "更新日",
                 "published": "発行日",
-                "sec:items": [
+                "references": [
                     {
-                        "sec:title": "関連情報のタイトル",
-                        "sec:identifier": "関連情報の識別子",
-                        "sec:link": "関連情報の概要のURL",
-                        "sec:published": "発行日",
-                        "sec:updated": "更新日",
-                        "sec:author": {"name": "発行者"},
-                        "sec:prod": [
-                            "swid製品名",
-                            "cpe製品名",
-                            "spdx製品名",
-                            "purl製品名"
+                        "url": "https://www.cve.org/CVERecord?id=CVE-2022-29894",
+                        "summary": "CVE-2022-29894"
+                    },
+                    {"//_comment": "url,summaryのタグを繰り返します。"}
+                ],
+                "products": [
+                    {
+                        "vendor": "ベンダ名",
+                        "product": "製品名",
+                        "product_ids": [
+                            {"swid": "SWID製品名"},
+                            {"cpe": "CPE製品名"},
+                            {"spdxid": "spdx製品名"},
+                            {"purl": "purl製品名"},
+                            {"sha256": "ハッシュ値"}
                         ]
+                    },
+                    {"//_comment": "vendor,productなどのタグを繰り返します。"}
+                ],
+                "scores": {
+                    "cvss_v2": {
+                        "version": "CVSSバージョン 2.0",
+                        "vectorString": "パラメータ短縮表記",
+                        "baseScore": "基本値",
+                        "baseSeverity": "基本値深刻度"
+                    },
+                    "cvss_v3": {
+                        "version": "CVSSバージョン 3.0 or 3.1",
+                        "vectorString": "パラメータ短縮表記",
+                        "baseScore": "基本値",
+                        "baseSeverity": "基本値深刻度"
                     }
-                ]
+                }
             },
             {"//_comment": "title,idなどのタグを繰り返します。"}
         ],

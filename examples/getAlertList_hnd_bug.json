@@ -5,7 +5,7 @@
 "uri":"https://www.ipa.go.jp/"},
 "updated":"2022-06-22T02:49:42+09:00",
 "link":"https://jvndb.jvn.jp/apis/myjvn/",
-"sec:handling":{"marking:Marking":{"marking:Marking_Structure":{"xsi:type":"tlpMarking:TLPMarkingStructureType",
+"sec:handling":{"marking:Marking":{"marking:Marking_Structure":{
 "marking_model_name":"TLP",
 "marking_model_ref":"http://www.us-cert.gov/tlp/",
 "color":"WHITE"}}},
