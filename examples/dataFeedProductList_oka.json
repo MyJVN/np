@@ -1,14 +1,14 @@
 {
     "jvn-product-dictionary": {
         "generator": {
-            "product_name": "MyJVN API",
+            "product_name": "MyJVN DataFeed",
             "product_version": "oka",
             "schema_version": "4.0",
             "language": "ja-JP",
             "updated": "2022-05-19T06:17:10+09:00"
         },
-        "title": "MyJVN getProductList API",
-        "id": "jvnpid:1.0:ipa:myjvn_api_getProductList:4.0.0.0.0",
+        "title": "MyJVN DataFeed ProductList",
+        "id": "jvnpid:1.0:ipa:myjvn_datafeed_ProductList:4.0.0.0.0",
         "link": "https://jvndb.jvn.jp/apis/myjvn/",
         "author": {
             "name": "IPA",
@@ -197,14 +197,13 @@
         "method": "getProductList",
         "lang": "ja",
         "retCd": "0",
-        "retMax": "10000",
+        "retMax": "",
         "errCd": "",
         "errMsg": "",
-        "totalRes": "49410",
-        "totalResRet": "10",
-        "firstRes": "48591",
-        "feed": "oka",
-        "maxCountItem": "10",
-        "startItem": "48591"
+        "totalRes": "49515",
+        "totalResRet": "49515",
+        "firstRes": "",
+        "feed": "hnd",
+        "lt": "1"
     }
 }

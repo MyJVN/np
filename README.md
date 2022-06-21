@@ -21,23 +21,23 @@
 
 | データフィード名 | 概要 | バージョン | 形式 |
 | ---- | ---- | ---- | ---- | 
-| JVNDBRSS | 脆弱性対策情報の概要 | HND | XML |
-| | | OKA | JSON |
-| 脆弱性対策情報詳細 | 脆弱性対策情報の詳細 | HND | XML |
-| | | OKA | JSON |
-| ベンダ一覧 | ベンダ名(製品開発者)リスト | HND | XML |
-| | | OKA | [ JSON ](examples/jvnVendorDictionary_oka.json) |
-| 製品一覧 | 製品名リスト | HND | XML |
-| | バージョンなし | OKA | [ JSON ](examples/jvnProductDictionary_oka.json) |
-| | バージョンあり | OKA | [ JSON ](examples/jvnProductDictionary_oka.json) |
+| JVNDBRSS | 脆弱性対策情報の概要 | [ HND ](dataFeed.md) | XML |
+| | | [ OKA ](dataFeed.md) | JSON |
+| 脆弱性対策情報詳細 | 脆弱性対策情報の詳細 | [ HND ](dataFeed.md) | XML |
+| | | [ OKA ](dataFeed.md) | JSON |
+| ベンダ一覧 | ベンダ名(製品開発者)リスト | [ HND ](dataFeed.md) | XML |
+| | | [ OKA ](dataFeed.md) | JSON |
+| 製品一覧 | 製品名リスト | [ HND ](dataFeed.md) | XML |
+| | バージョンなし | [ OKA ](dataFeed.md) | JSON |
+| | バージョンあり | [ OKA ](dataFeed.md) | JSON |
 
 * SBOM
 
-| タイプ | 形式(例題) |
+| タイプ | 形式 |
 | ---- | ---- |
-| SWID | [ XML ](sbom-swid.xml) |
-| CycloneDX | [ JSON ](examples/sbom-cyclonedx.json) |
-| SPDX | JSON |
+| SWID | [ XML ](sbom.md) |
+| CycloneDX | [ JSON ](sbom.md) |
+| SPDX | [ JSON ](sbom.md) |
 
 
 * 謝辞

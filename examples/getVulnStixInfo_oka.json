@@ -159,7 +159,7 @@
                 }
             ],
             "status:Status": {
-                "version": "3.3",
+                "version": "4.0",
                 "method": "getVulnStixInfo",
                 "retCd": 0,
                 "retMax": "1",

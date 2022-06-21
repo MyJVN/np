@@ -123,7 +123,7 @@
         }
     ],
     "status:Status": {
-        "version": "3.3",
+        "version": "4.0",
         "method": "getVulnCsafInfo",
         "retCd": 0,
         "retMax": "1",
