@@ -90,10 +90,10 @@ charset=UTF-8
                         "sec:updated": "更新日",
                         "sec:author": {"name": "発行者"},
                         "sec:prod": [
-                            {"value": "swid製品名"},
-                            {"value": "cpe製品名"},
-                            {"value": "spdx製品名"},
-                            {"value": "purl製品名"}
+                            "swid製品名",
+                            "cpe製品名",
+                            "spdx製品名",
+                            "purl製品名"
                         ]
                     }
                 ]
