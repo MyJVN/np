@@ -1,8 +1,8 @@
-# getAlertList (ver. HND)
+# getAlertList (ver. OKA)
 注意警戒情報一覧を取得します。
 
 ## リクエスト
-* https://jvndb.jvn.jp/myjvn?method=getAlertList&feed=hnd&パラメタ名=パラメタ値&...
+* https://jvndb.jvn.jp/myjvn?method=getAlertList&feed=oka&パラメタ名=パラメタ値&...
   * リクエストURLは、HTTPSのGETおよびPOSTに対応しています。
 
 * パラメタ
@@ -18,21 +18,11 @@
 | maxCountItem | エントリ取得件数 | 整数 (半角数字) 1～50 (getAlertListエントリ上限値) | － | 50 |
 | datePublished | 更新日年 | 半角整数4桁 | － | － |
 | dateFirstPublished | 発行日年 | 半角整数4桁 | － | － |
-| productName | 製品名 | cpe:/{part}:{vendor}:{product} <br> {part}フィールド ... "h" \| "o" \| "a" \| "\*" <br> {vendor}:{product}フィールド ... CPE 製品名 (\*2) | － | － |
+| productName | 製品名 | CPE,SWID,SPDX,purl,Hash | － | － |
 | ft | 応答フォーマット | xml または json | － | － |
 
 \*1)  
 「デフォルト」は、該当パラメタに指定がない場合(パラメタ自体もしくはパラメタ値が未指定の場合)にMyJVN API側で自動的に設定する値です。  
-\*2)  
-ワイルドカード "\*" 指定可  
-アスキー文字  
-大文字／小文字区別なし  
-複数指定時は "+" で連結  
-URL エンコードされたエスケープシーケンス  
-cpe:/a:apache:xerces-c%2B%2B  
-cpeName=cpe:/a:apache:xerces-c%252B%252B  
-いずれか1つのみ指定可 [ cpeName | vendorId | productId ]  
-
 
 ## レスポンス
 * 概要
