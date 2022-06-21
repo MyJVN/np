@@ -28,8 +28,8 @@
 | ベンダ一覧 | ベンダ名(製品開発者)リスト | HND | XML |
 | | | OKA | [ JSON ](examples/jvnVendorDictionary_oka.json) |
 | 製品一覧 | 製品名リスト | HND | XML |
-| | | OKA | [ JSON ](examples/jvnProductDictionary_oka.json) |
-
+| | バージョンなし | OKA | [ JSON ](examples/jvnProductDictionary_oka.json) |
+| | バージョンあり | OKA | [ JSON ](examples/jvnProductDictionary_oka.json) |
 
 * SBOM
 
