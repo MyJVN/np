@@ -64,9 +64,9 @@
             <xs:documentation xml:lang="en-US">VULDEF-Document class is the top level class in the
                 VULDEF data model and the DTD. All VULDEF documents are instances of the
                 VULDEF-Document class. The version of the VULDEF specification to which the VULDEF
-                document conforms. The value of this attribute MUST be 3.1.</xs:documentation>
+                document conforms. The value of this attribute MUST be 3.2.</xs:documentation>
             <xs:documentation xml:lang="ja">VULDEFドキュメントクラスは、VULDEF データモデルと DTD のトップレベルのクラスである。全ての
-                VULDEF ドキュメントは、VULDEF ドキュメントクラスのインスタンスとなる。VULDEF のバージョン情報には "3.1"
+                VULDEF ドキュメントは、VULDEF ドキュメントクラスのインスタンスとなる。VULDEF のバージョン情報には "3.2"
                 を設定する。</xs:documentation>
         </xs:annotation>
         <xs:complexType>

@@ -57,7 +57,7 @@ charset=UTF-8
         },
         "vendors": [
             {
-                "vendor_id": "ベンダ識別子",
+                "vendor_id": "JVNPIDベンダ名",
                 "vid": "ベンダ番号",
                 "vname": "ベンダ名",
                 "cpe": "CPEベンダ名"
@@ -81,3 +81,55 @@ charset=UTF-8
     }
 }
 ```
+
+* vendors [type:array]
+  * vendor_id [type:string] [required]  
+    JVNPID Vendor Name  
+    JVNPIDベンダ名  
+    ```
+    jvnpid:1.0:dendai.ac.jp
+    ```
+  * vid [type:integer] [required]  
+    Vendor unique number in JVN iPedia  
+    JVN iPedia におけるベンダの識別番号  
+    ```
+    12345
+    ```
+  * vname [type:string] [required]  
+    Vendor Title  
+    ベンダ名  
+    ```
+    東京電機大学
+    ```
+  * cpe [type:string] [required]  
+    CPE Vendor Name  
+    CPEベンダ名  
+    Specifies a well-formed CPE name that conforms to the CPE 2.2 specification.  
+    ```
+    cpe:/:dendai.ac.jp
+    ```
+
+* generator [type:object]
+  * product_name [type:string] [required]  
+    Must be one of: `MyJVN API`  
+  * product_version [type:string] [required]  
+    Must be one of: `oka`  
+  * schema_version [type:string] [required]  
+    Must be one of: `4.0`  
+  * language [type:string] [required]  
+    Must be one of: `ja-JP, en-US`  
+  * updated [type:string] [required]  
+    The date and time (timestamp) when the VendorList was created.  
+
+* title [type:string] [required]  
+  Must be one of: `MyJVN getVendorList API`  
+* id [type:string] [required]  
+  Must be one of: `jvnpid:1.0:ipa:myjvn_api_getVendorList:4.0.0.0.0`  
+* link [type:string] [required]  
+  Must be one of: `https://jvndb.jvn.jp/myjvn?method=getVendorList` 
+
+* author [type:object]
+  * name [type:string] [required]  
+    Must be one of: `IPA`  
+  * uri [type:string] [required]  
+    Must be one of: `https://www.ipa.go.jp/`  

@@ -57,7 +57,7 @@ xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/Results　
 https://jvndb.jvn.jp/schema/results_3.3.xsd ">
 
 <VendorInfo xml:lang="表示言語">
-  <Vendor vname="ベンダ名" cpe="CPE ベンダ名" vid="ベンダID"/>
+  <Vendor vname="ベンダ名" cpe="CPEベンダ名" vid="ベンダ番号"/>
   <!-- フィルタリングに当てはまるベンダの件数分Vendorノードを繰り返します。 -->
 </VendorInfo>
 
@@ -77,3 +77,25 @@ firstRes="応答エントリ開始位置" >
 </status:Status>
 </Result> 
 ```
+
+* フォーマット
+  * xml:lang [type:string] [required]  
+    Language  
+    表示言語  
+    Must be one of: `ja, en`  
+  * vname [type:string] [required]  
+    Vendor Title  
+    ベンダ名  
+    ```
+    東京電機大学
+    ```
+  * cpe [type:string] [required]  
+    CPE Vendor Name  
+    CPEベンダ名  
+    Specifies a well-formed CPE name that conforms to the CPE 2.2 specification.  
+    ```
+    cpe:/:dendai.ac.jp
+    ```
+  * vid [type:integer] [required]  
+    Vendor unique number in JVN iPedia  
+    JVN iPedia におけるベンダの識別番号  

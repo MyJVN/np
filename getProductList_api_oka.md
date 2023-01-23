@@ -65,15 +65,16 @@ charset=UTF-8
                 "cpe": "CPEベンダ名",
                 "products": [
                     {
-                        "product_id": "製品識別子",
+                        "product_id": "JVN製品識別子",
                         "pid": "製品番号",
                         "pname": "製品名",
                         "product_ids": [
-                            {"swid": "SWID識別子"},
                             {"cpe": "CPE製品名"},
-                            {"spdxid": "SPDX識別子"},
-                            {"purl": "purl識別子"},
-                            {"sha256": "ハッシュ値"}
+                            {"nvdid": "UUID値"},
+                            {"swid": "グローバルなユニークID"},
+                            {"spdxid": "SPDXID値"},
+                            {"pm": "Package-Manager値"},
+                            {"alg": "ハッシュ値"}
                         ]
                     },
                     {"//_comment": "product_id,pid,pnameなどのタグを繰り返します。"}
