@@ -1,0 +1,229 @@
+{
+    "document": {
+        "lang": "ja",
+        "title": "東京電機大学のMyJVN APIに情報漏えいの脆弱性",
+        "category": "csaf_security_advisory",
+        "csaf_version": "2.0",
+        "publisher": {
+            "contact_details": "https://jvndb.jvn.jp/",
+            "issuing_authority": "MyJVN",
+            "name": "MyJVN",
+            "category": "coordinator",
+            "namespace": "https://jvndb.jvn.jp/"
+        },
+        "distribution": {
+            "title": "Copyright 2022 IPA. All rights reserved.",
+            "tlp": {
+                "label": "CLEAN",
+                "url": "https://www.first.org/tlp/"
+            }
+        },
+        "references": [
+            {
+                "category": "external",
+                "summary": "Sample Inc. Security Advisory: sec-2022-0099",
+                "url": "https://www.sample.or.jp/SecurityAdvisory/sec-2022-0099"
+            },
+            {
+                "category": "external",
+                "summary": "Common Vulnerabilities and Exposures (CVE) CVE-0000-000000",
+                "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-0000-000000"
+            },
+            {
+                "category": "external",
+                "summary": "National Vulnerability Database (NVD) CVE-0000-000000",
+                "url": "https://nvd.nist.gov/vuln/detail/CVE-0000-000000"
+            },
+            {
+                "category": "external",
+                "summary": "Information Exposure CWE-200",
+                "url": "https://cwe.mitre.org/data/definitions/200.html"
+            }
+        ],
+        "tracking": {
+            "id": "JVNDB-0000-000000",
+            "status": "final",
+            "version": "2",
+            "revision_history": [
+                {
+                    "number": "1",
+                    "date": "2022-02-12T18:06:30+09:00",
+                    "summary": "[2022/02/12]\n掲載"
+                },
+                {
+                    "number": "2",
+                    "date": "2022-03-23T18:06:30+09:00",
+                    "summary": "[2022/03/23]\n影響を受けるシステム：内容を更新\n対策：内容を更新"
+                }
+            ],
+            "initial_release_date": "2022-02-12T18:06:30+09:00",
+            "current_release_date": "2022-03-23T18:06:30+09:00"
+        }
+    },
+    "product_tree": {
+        "full_product_names": [
+            {
+                "name": "Sample Security Information DBX",
+                "product_id": "jvnpid:1.0:sample.or.jp:secinfodbx",
+                "product_identification_helper": {
+                    "cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api:*:*:*:*:*:*:*:*",
+                    "purl": "pkg:rpm/dendai.ac.jp/myjvn",
+                    "hashes": [
+                        {
+                            "file_hashes": [
+                                {
+                                    "algorithm": "md5",
+                                    "value": "b1fff17152a6a25dc0f44c3083f38ed1"
+                                }
+                            ]
+                        }
+                    ],
+                    "nvdid": "f8d99c9e-817e-e51b-623c-ab045420903e",
+                    "swid": "f8d99c9e-817e-e51b-623c-ab045420903e",
+                    "spdxid": "SPDXRef-f8d99c9e-817e-e51b-623c-ab045420903e"
+                }
+            }
+        ]
+    },
+    "vulnerabilities": [
+        {
+            "notes": [
+                {
+                    "title": "概要",
+                    "category": "summary",
+                    "text": "東京電機大学のMyJVN APIには情報漏えいを許してしまう脆弱性が存在します。"
+                }
+            ],
+            "discovery_date": "2022-02-11T18:06:30+09:00",
+            "cve": "CVE-0000-000000",
+            "cwe": {
+                "id": "CWE-200",
+                "name": "情報漏えい"
+            },
+            "scores": [
+                {
+                    "products": [
+                        "jvnpid:1.0:dendai.ac.jp:myjvn_api"
+                    ],
+                    "cvss_v2": {
+                        "version": "2.0",
+                        "vectorString": "AV:L/AC:L/Au:N/C:P/I:N/A:N",
+                        "baseScore": 2.1,
+                        "baseSeverity": "LOW"
+                    },
+                    "cvss_v3": {
+                        "version": "3.1",
+                        "vectorString": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+                        "baseScore": 4.0,
+                        "baseSeverity": "MEDIUM"
+                    },
+                    "cvss_v4": {
+                        "version": "4.0",
+                        "vectorString": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N",
+                        "baseScore": 4.0,
+                        "baseSeverity": "MEDIUM"
+                    }
+                }
+            ],
+            "product_status": {
+                "known_affected": [
+                    "jvnpid:1.0:dendai.ac.jp:myjvn_api"
+                ]
+            },
+            "threats": [
+                {
+                    "category": "impact",
+                    "details": "遠隔の第三者によって、公開情報を取得される可能性があります。 "
+                }
+            ],
+            "remediations": [
+                {
+                    "category": "vendor_fix",
+                    "details": "[アップデートする]\n開発者が提供する情報をもとに、最新版へアップデートしてください。 "
+                },
+                {
+                    "category": "workaround",
+                    "details": "[ワークアラウンドを実施する]\n回避策を適用することにより、本脆弱性の悪用を防ぐことが可能です。"
+                }
+            ]
+        }
+    ],
+    "jvn-extension": {
+        "extension_version": "1.0",
+        "jvndbid": "JVNDB-0000-000000",
+        "title": "東京電機大学のMyJVN APIに情報漏えいの脆弱性",
+        "jvndbinfo": [
+            {
+                "cve": "CVE-0000-0000",
+                "cwe": [ 
+                    "CWE-200",
+                    "CWE-264"
+                ],
+                "cvss": [
+                    "CVSS:2.0/AV:L/AC:L/Au:N/C:P/I:N/A:N",
+                    "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+                    "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N"
+                ],
+                "product_status": {
+                    "known_affected": [
+                        {
+                            "product_id": "jvnpid:1.0:dendai.ac.jp:myjvn_api:2.0.0.0.0",
+    
+                        },
+                        {
+                            "product_id": "jvnpid:1.0:dendai.ac.jp:myjvn_api",
+                            "version": {
+                                "and": {"lessThan": "2.1.8.0.0"}
+                            }
+                        },
+                        {
+                            "product_id": "jvnpid:1.0:dendai.ac.jp:myjvn_api",
+                            "version": {
+                                "and": {"lessThanOrEqual": "2.0.0.0.0"}
+                            }
+                        }
+                        {
+                            "product_id": "jvnpid:1.0:dendai.ac.jp:myjvn_api",
+                            "version": {
+                                "and": {
+                                    "greaterThanOrEqual": "1.0.0.0.0",
+                                    "lessThanOrEqual": "2.0.8.0.0",
+                                    "exclusions": [
+                                        {"notContains": "1.5.0.0.0"},
+                                        {"notContains": "1.6.0.0.0"}
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "product_id": "jvnpid:1.0:dendai.ac.jp:myjvn_api",
+                            "version": {
+                                "and": {
+                                    "greaterThan": "0.9.0.0.0",
+                                    "lessThan": "2.1.0.0.0",
+                                    "exclusions": [
+                                        {"notContains": "1.5.0.0.0"},
+                                        {"notContains": "1.6.0.0.0"}
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "status:Status": {
+        "version": "4.0",
+        "method": "getCsafInfo",
+        "feed": "oka",
+        "lang": "ja",
+        "retCd": "0",
+        "retMax": "1",
+        "errCd": "",
+        "errMsg": "",
+        "totalRes": "1",
+        "totalResRet": "1",
+        "firstRes": "1"
+    }
+}

@@ -14,13 +14,11 @@
             "name": "IPA",
             "uri": "https://www.ipa.go.jp/"
         },
-        "sec:handling": {
-            "marking:Marking": {
-                "marking:Marking_Structure": {
-                    "marking_model_name": "TLP",
-                    "marking_model_ref": "https://www.first.org/tlp/",
-                    "color": "CLEAN"
-                }
+        "distribution": {
+            "title": "Copyright 2022 IPA. All rights reserved.",
+            "tlp": {
+                "label": "CLEAN",
+                "url": "https://www.first.org/tlp/"
             }
         },
         "vendors": [
