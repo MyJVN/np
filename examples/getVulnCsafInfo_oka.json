@@ -167,7 +167,7 @@
                 "product_status": {
                     "known_affected": [
                         {
-                            "product_id": "jvnpid:1.0:dendai.ac.jp:myjvn_api:2.0.0.0.0",
+                            "product_id": "jvnpid:1.0:dendai.ac.jp:myjvn_api:2.0.0.0.0"
     
                         },
                         {
@@ -181,16 +181,16 @@
                             "version": {
                                 "and": {"lessThanOrEqual": "2.0.0.0.0"}
                             }
-                        }
+                        },
                         {
                             "product_id": "jvnpid:1.0:dendai.ac.jp:myjvn_api",
                             "version": {
                                 "and": {
                                     "greaterThanOrEqual": "1.0.0.0.0",
                                     "lessThanOrEqual": "2.0.8.0.0",
-                                    "exclusions": [
-                                        {"notContains": "1.5.0.0.0"},
-                                        {"notContains": "1.6.0.0.0"}
+                                    "exclusions": [ 
+                                        "1.5.0.0.0",
+                                        "1.6.0.0.0"
                                     ]
                                 }
                             }
@@ -202,8 +202,8 @@
                                     "greaterThan": "0.9.0.0.0",
                                     "lessThan": "2.1.0.0.0",
                                     "exclusions": [
-                                        {"notContains": "1.5.0.0.0"},
-                                        {"notContains": "1.6.0.0.0"}
+                                        "1.5.0.0.0",
+                                        "1.6.0.0.0"
                                     ]
                                 }
                             }
