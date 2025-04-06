@@ -45,19 +45,5 @@
                 ]
             }
         ]
-    },
-    "status:Status": {
-        "version": "4.0",
-        "method": "getProductList",
-        "feed": "oka",
-        "lang": "ja",
-        "retCd": "0",
-        "retMax": "10000",
-        "errCd": "",
-        "errMsg": "",
-        "totalRes": "1",
-        "totalResRet": "1",
-        "firstRes": "1",
-        "lt": "1"
     }
 }

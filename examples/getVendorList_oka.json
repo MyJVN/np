@@ -1,46 +1,352 @@
 {
-    "jvn-product-dictionary": {
-        "generator": {
-            "product_name": "MyJVN API",
-            "product_version": "oka",
-            "schema_version": "4.0",
-            "language": "ja-JP",
-            "updated": "2022-05-19T06:17:53+09:00"
-        },
-        "title": "MyJVN getVendorList API",
-        "id": "jvnpid:1.0:ipa:myjvn_api_getVendorList:4.0.0.0.0",
-        "link": "https://jvndb.jvn.jp/apis/myjvn/",
-        "author": {
-            "name": "IPA",
-            "uri": "https://www.ipa.go.jp/"
-        },
-        "distribution": {
-            "title": "Copyright 2022 IPA. All rights reserved.",
-            "tlp": {
-                "label": "CLEAN",
-                "url": "https://www.first.org/tlp/"
-            }
-        },
-        "vendors": [
-            {
-                "vendor_id": "jvnpid:1.0:n-i-agroinformatics",
-                "vid": "12345",
-                "vname": "東京電機大学",
-                "cpe": "cpe:/:dendai.ac.jp"
-            }
-        ]
+  "jvn-product-dictionary": {
+    "generator": {
+      "engine": {
+        "version": "4.0.0",
+        "name": "MyJVN API"
+      }
     },
-    "status:Status": {
-        "version": "4.0",
-        "method": "getVendorList",
-        "feed": "oka",
-        "lang": "ja",
-        "retCd": "0",
-        "retMax": "10000",
-        "errCd": "",
-        "errMsg": "",
-        "totalRes": "1",
-        "totalResRet": "1",
-        "firstRes": "1"
-    }
+    "title": "MyJVN getVendorList API",
+    "id": "jvnpid:1.0::ipa:myjvn_api_getVendorList:4.0.0.0.0",
+    "link": "https://jvndb.jvn.jp/apis/myjvn/",
+    "updated": "2025-03-24T06:17:53+09:00",
+    "lang": "ja",
+    "author": {
+      "name": "IPA",
+      "uri": "https://www.ipa.go.jp/"
+    },
+    "distribution": {
+      "tlp": {
+        "label": "CLEAR",
+        "url": "https://www.first.org/tlp/"
+      }
+    },
+    "vendors": [
+      {
+        "vendor_id": "jvnpid:1.0::dendai.ac.jp",
+        "vid": "99999999991",
+        "vname": "東京電機大学",
+        "cpe": "cpe:2.3::dendai.ac.jp"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::ipa.go.jp",
+        "vid": "99999999992",
+        "vname": "情報処理推進機構",
+        "cpe": "cpe:2.3::ipa.go.jp"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::dounokouno",
+        "vid": "11629",
+        "vname": "多川 貴郎",
+        "cpe": "cpe:2.3::dounokouno"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::ohtanz",
+        "vid": "15612",
+        "vname": "大河内 洋介",
+        "cpe": "cpe:2.3::ohtanz"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::ogaki_kyoritsu_bank",
+        "vid": "11524",
+        "vname": "大垣共立銀行",
+        "cpe": "cpe:2.3::ogaki_kyoritsu_bank"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::j-lis",
+        "vid": "12261",
+        "vname": "地方公共団体情報システム機構",
+        "cpe": "cpe:2.3::j-lis"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::vine_mv_project",
+        "vid": "12064",
+        "vname": "池澤彩野花",
+        "cpe": "cpe:2.3::vine_mv_project"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::susie_ro",
+        "vid": "599",
+        "vname": "竹村喜人(たけちん)",
+        "cpe": "cpe:2.3::susie_ro"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::misc",
+        "vid": "29845",
+        "vname": "竹中エンジニアリング株式会社",
+        "cpe": "cpe:2.3::misc"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::softether",
+        "vid": "16680",
+        "vname": "筑波大学 SoftEther VPN Project",
+        "cpe": "cpe:2.3::softether"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::masahiko_watanabe",
+        "vid": "603",
+        "vname": "渡辺 正彦",
+        "cpe": "cpe:2.3::masahiko_watanabe"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::toshiba",
+        "vid": "170",
+        "vname": "東芝",
+        "cpe": "cpe:2.3::toshiba"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::toshibatec",
+        "vid": "1806",
+        "vname": "東芝テック",
+        "cpe": "cpe:2.3::toshibatec"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::toshiba",
+        "vid": "18101",
+        "vname": "東芝デバイス＆ストレージ株式会社",
+        "cpe": "cpe:2.3::toshiba"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::toshiba",
+        "vid": "12754",
+        "vname": "東芝ライテック",
+        "cpe": "cpe:2.3::toshiba"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::ntt_east",
+        "vid": "12160",
+        "vname": "東日本電信電話株式会社",
+        "cpe": "cpe:2.3::ntt_east"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::jreast",
+        "vid": "9753",
+        "vname": "東日本旅客鉄道株式会社",
+        "cpe": "cpe:2.3::jreast"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::h-fj",
+        "vid": "999",
+        "vname": "藤本 壱",
+        "cpe": "cpe:2.3::h-fj"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::phpuploader_project",
+        "vid": "20083",
+        "vname": "同人サークル MICMNIS",
+        "cpe": "cpe:2.3::phpuploader_project"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::misc",
+        "vid": "12606",
+        "vname": "特許庁",
+        "cpe": "cpe:2.3::misc"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::the_seasar_foundation",
+        "vid": "321",
+        "vname": "特定非営利活動法人 Seasar ファウンデーション",
+        "cpe": "cpe:2.3::the_seasar_foundation"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::ipa",
+        "vid": "10297",
+        "vname": "独立行政法人情報処理推進機構 (IPA)",
+        "cpe": "cpe:2.3::ipa"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::nara_institute_of_science_and_technology",
+        "vid": "756",
+        "vname": "奈良先端科学技術大学院大学",
+        "cpe": "cpe:2.3::nara_institute_of_science_and_technology"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::nissan_securities",
+        "vid": "12367",
+        "vname": "日産証券株式会社",
+        "cpe": "cpe:2.3::nissan_securities"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::alcatel",
+        "vid": "750",
+        "vname": "日本アルカテル・ルーセント",
+        "cpe": "cpe:2.3::alcatel"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::nippon-antenna",
+        "vid": "12918",
+        "vname": "日本アンテナ株式会社",
+        "cpe": "cpe:2.3::nippon-antenna"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::m2soft",
+        "vid": "15670",
+        "vname": "日本エムツーソフト株式会社",
+        "cpe": "cpe:2.3::m2soft"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::pizzahut",
+        "vid": "8981",
+        "vname": "日本ケンタッキー・フライド・チキン株式会社",
+        "cpe": "cpe:2.3::pizzahut"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::misc",
+        "vid": "202",
+        "vname": "日本コントロールシステム",
+        "cpe": "cpe:2.3::misc"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::misc",
+        "vid": "24273",
+        "vname": "日本システム技術株式会社",
+        "cpe": "cpe:2.3::misc"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::ntv",
+        "vid": "17583",
+        "vname": "日本テレビ放送網株式会社",
+        "cpe": "cpe:2.3::ntv"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::groupsession",
+        "vid": "12596",
+        "vname": "日本トータルシステム株式会社",
+        "cpe": "cpe:2.3::groupsession"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::ni",
+        "vid": "9050",
+        "vname": "日本ナショナルインスツルメンツ",
+        "cpe": "cpe:2.3::ni"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::misc",
+        "vid": "15805",
+        "vname": "日本マイクロソフト株式会社",
+        "cpe": "cpe:2.3::misc"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::unisys",
+        "vid": "12187",
+        "vname": "日本ユニシス株式会社",
+        "cpe": "cpe:2.3::unisys"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::radware",
+        "vid": "659",
+        "vname": "日本ラドウェア",
+        "cpe": "cpe:2.3::radware"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::gigaccsecure",
+        "vid": "12310",
+        "vname": "日本ワムネット株式会社",
+        "cpe": "cpe:2.3::gigaccsecure"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::orcamo",
+        "vid": "14157",
+        "vname": "日本医師会ＯＲＣＡ管理機構株式会社",
+        "cpe": "cpe:2.3::orcamo"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::jaea",
+        "vid": "15564",
+        "vname": "日本原子力研究開発機構",
+        "cpe": "cpe:2.3::jaea"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::n-i-agroinformatics",
+        "vid": "9710",
+        "vname": "日本情報化農業研究所",
+        "cpe": "cpe:2.3::n-i-agroinformatics"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::nec",
+        "vid": "89",
+        "vname": "日本電気",
+        "cpe": "cpe:2.3::nec"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::japan_pension_service",
+        "vid": "12273",
+        "vname": "日本年金機構",
+        "cpe": "cpe:2.3::japan_pension_service"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::japan_radio",
+        "vid": "9469",
+        "vname": "日本無線株式会社",
+        "cpe": "cpe:2.3::japan_radio"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::hitachi",
+        "vid": "129",
+        "vname": "日立",
+        "cpe": "cpe:2.3::hitachi"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::hitachi_abb_power_grids",
+        "vid": "18819",
+        "vname": "日立エナジー (旧 日立ABBパワーグリッド)",
+        "cpe": "cpe:2.3::hitachi_abb_power_grids"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::hitachi",
+        "vid": "180",
+        "vname": "日立ソフトウェアエンジニアリング",
+        "cpe": "cpe:2.3::hitachi"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::hitachi",
+        "vid": "13410",
+        "vname": "日立ヴァンタラ",
+        "cpe": "cpe:2.3::hitachi"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::hitachi",
+        "vid": "21217",
+        "vname": "日立国際電気",
+        "cpe": "cpe:2.3::hitachi"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::hitachi",
+        "vid": "154",
+        "vname": "日立電線",
+        "cpe": "cpe:2.3::hitachi"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::nintendo",
+        "vid": "20800",
+        "vname": "任天堂株式会社",
+        "cpe": "cpe:2.3::nintendo"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::maff",
+        "vid": "12679",
+        "vname": "農林水産省",
+        "cpe": "cpe:2.3::maff"
+      },
+      {
+        "vendor_id": "jvnpid:1.0::misc",
+        "vid": "15297",
+        "vname": "飛天ジャパン株式会社",
+        "cpe": "cpe:2.3::misc"
+      }
+    ]
+  },
+  "status:Status": {
+    "version": "4.0.0",
+    "method": "getVendorList",
+    "feed": "oka",
+    "lang": "ja",
+    "retCd": "0",
+    "retMax": "10000",
+    "errCd": "",
+    "errMsg": "",
+    "totalRes": "2",
+    "totalResRet": "2",
+    "firstRes": "1"
+  }
 }

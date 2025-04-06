@@ -96,15 +96,14 @@
             ],
             "discovery_date": "2022-02-11T18:06:30+09:00",
             "cve": "CVE-0000-000000",
-            "cwe": {
-                "id": "CWE-200",
-                "name": "情報漏えい"
-            },
+            "cwe": [
+                {
+                    "id": "CWE-200",
+                    "name": "情報漏えい"
+                }
+            ],
             "scores": [
                 {
-                    "products": [
-                        "jvnpid:1.0:dendai.ac.jp:myjvn_api"
-                    ],
                     "cvss_v2": {
                         "version": "2.0",
                         "vectorString": "AV:L/AC:L/Au:N/C:P/I:N/A:N",
@@ -127,7 +126,24 @@
             ],
             "product_status": {
                 "known_affected": [
-                    "jvnpid:1.0:dendai.ac.jp:myjvn_api"
+                        {
+                            "category": "product",
+                            "details": "名前"
+                        },
+                        {
+                            "category": "product",
+                            "details": "名前"
+                        }
+                ],
+                "not_affected":[
+                    {
+                        "category": "product",
+                        "details": "名前"
+                    },
+                    {
+                        "category": "product",
+                        "details": "名前"
+                    }
                 ]
             },
             "threats": [
@@ -167,38 +183,31 @@
                 "product_status": {
                     "known_affected": [
                         {
-                            "product_id": "jvnpid:1.0:dendai.ac.jp:myjvn_api:2.0.0.0.0"
-    
-                        },
-                        {
                             "product_id": "jvnpid:1.0:dendai.ac.jp:myjvn_api",
-                            "version": {
-                                "and": {"lessThan": "2.1.8.0.0"}
-                            }
-                        },
-                        {
-                            "product_id": "jvnpid:1.0:dendai.ac.jp:myjvn_api",
-                            "version": {
-                                "and": {"lessThanOrEqual": "2.0.0.0.0"}
-                            }
-                        },
-                        {
-                            "product_id": "jvnpid:1.0:dendai.ac.jp:myjvn_api",
-                            "version": {
-                                "and": {
-                                    "greaterThanOrEqual": "1.0.0.0.0",
-                                    "lessThanOrEqual": "2.0.8.0.0",
-                                    "exclusions": [ 
-                                        "1.5.0.0.0",
-                                        "1.6.0.0.0"
+                            "cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api",
+                            "versions": [
+                                {"at": "1.1.1.0.0"},
+                                {"lessThan": "2.1.8.0.0"},
+                                {
+                                    "greaterThanOrEqual": "1.33.2.0.0",
+                                    "lessThan": "2.7.8.0.0"
+                                },
+                                {
+                                    "greaterThan": "3.33.2.0.0",
+                                    "lessThanOrEqual": "5.7.8.0.0",
+                                    "exclusions": [
+                                        "4.1.0.0.0",
+                                        "4.2.0.0.0"
                                     ]
-                                }
-                            }
+                                },
+                                {"lessThanOrEqual": "0.9.34.0.0"}
+                            ]
                         },
                         {
-                            "product_id": "jvnpid:1.0:dendai.ac.jp:myjvn_api",
-                            "version": {
-                                "and": {
+                            "product_id": "jvnpid:1.0:chuo-u.ac.jp:myjvn",
+                            "cpe": "cpe:2.3:a:chuo-u.ac.jp:myjvn",
+                            "version": [
+                                {
                                     "greaterThan": "0.9.0.0.0",
                                     "lessThan": "2.1.0.0.0",
                                     "exclusions": [
@@ -206,7 +215,7 @@
                                         "1.6.0.0.0"
                                     ]
                                 }
-                            }
+                            ]
                         }
                     ]
                 }

@@ -251,7 +251,7 @@
             },
             "status:Status": {
                 "version": "4.0",
-                "method": "getCsafInfo",
+                "method": "getStixInfo",
                 "feed": "oka",
                 "lang": "ja",
                 "retCd": "0",

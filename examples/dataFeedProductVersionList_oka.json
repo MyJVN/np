@@ -56,23 +56,24 @@
                             {"purl": "pkg:rpm/dendai.ac.jp/myjvn@4.0.0"},
                             {"MD5": "7eb51a1d04047d4742ffd69bb88500e2"}
                         ]
+                    },
+
+                    {
+                        "product_id": "jvnpid:1.0:dendai.ac.jp:myjvn_api:4.0.c.0.0",
+                        "pid": "67892",
+                        "version": "4.0.c",
+                        "pname": "MyJVN API",
+                        "product_ids": [
+                            {"cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api:4.0.c:*:*:*:*:*:*:*"},
+                            {"nvdid": "dd69f733-47c4-408a-8da4-0bceb8b8070f"},
+                            {"swid": "dd69f733-47c4-408a-8da4-0bceb8b8070f"},
+                            {"spdxid": "SPDXRef-dd69f733-47c4-408a-8da4-0bceb8b8070f"},
+                            {"purl": "pkg:rpm/dendai.ac.jp/myjvn@4.0.c"},
+                            {"SHA-1": "715878cd88b0f5cec20d7ada7b5dec3124bc5494"}
+                        ]
                     }
                 ]
             }
         ]
-    },
-    "status:Status": {
-        "version": "4.0",
-        "method": "getProductList",
-        "feed": "oka",
-        "lang": "ja",
-        "retCd": "0",
-        "retMax": "10000",
-        "errCd": "",
-        "errMsg": "",
-        "totalRes": "1",
-        "totalResRet": "1",
-        "firstRes": "1",
-        "lt": "1"
     }
 }

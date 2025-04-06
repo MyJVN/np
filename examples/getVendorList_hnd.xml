@@ -1,26 +1,60 @@
-<?xml version="1.0" encoding="UTF-8" ?>  
-<Result version="3.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns="http://jvndb.jvn.jp/myjvn/Results" xmlns:mjres="http://jvndb.jvn.jp/myjvn/Results"
-  xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
-  xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/Results https://jvndb.jvn.jp/schema/results_3.3.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<Result version="3.3"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://jvndb.jvn.jp/myjvn/Results"
+  xmlns:mjres="http://jvndb.jvn.jp/myjvn/Results"
+  xmlns:status="http://jvndb.jvn.jp/myjvn/Status" xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/Results https://jvndb.jvn.jp/schema/results_3.3.xsd">
   <VendorInfo xml:lang="ja">
-    <Vendor 
-      vid="12345"
-      vname="東京電機大学" 
-      cpe="cpe:/:dendai.ac.jp" 
-    />
+    <Vendor vname="多川 貴郎" cpe="cpe:/:dounokouno" vid="11629" />
+    <Vendor vname="大河内 洋介" cpe="cpe:/:ohtanz" vid="15612" />
+    <Vendor vname="大垣共立銀行" cpe="cpe:/:ogaki_kyoritsu_bank" vid="11524" />
+    <Vendor vname="地方公共団体情報システム機構" cpe="cpe:/:j-lis" vid="12261" />
+    <Vendor vname="池澤彩野花" cpe="cpe:/:vine_mv_project" vid="12064" />
+    <Vendor vname="竹村喜人(たけちん)" cpe="cpe:/:susie_ro" vid="599" />
+    <Vendor vname="竹中エンジニアリング株式会社" cpe="cpe:/:misc" vid="29845" />
+    <Vendor vname="筑波大学 SoftEther VPN Project" cpe="cpe:/:softether" vid="16680" />
+    <Vendor vname="渡辺 正彦" cpe="cpe:/:masahiko_watanabe" vid="603" />
+    <Vendor vname="東芝" cpe="cpe:/:toshiba" vid="170" />
+    <Vendor vname="東芝テック" cpe="cpe:/:toshibatec" vid="1806" />
+    <Vendor vname="東芝デバイス＆ストレージ株式会社" cpe="cpe:/:toshiba" vid="18101" />
+    <Vendor vname="東芝ライテック" cpe="cpe:/:toshiba" vid="12754" />
+    <Vendor vname="東日本電信電話株式会社" cpe="cpe:/:ntt_east" vid="12160" />
+    <Vendor vname="東日本旅客鉄道株式会社" cpe="cpe:/:jreast" vid="9753" />
+    <Vendor vname="藤本 壱" cpe="cpe:/:h-fj" vid="999" />
+    <Vendor vname="同人サークル MICMNIS" cpe="cpe:/:phpuploader_project" vid="20083" />
+    <Vendor vname="特許庁" cpe="cpe:/:misc" vid="12606" />
+    <Vendor vname="特定非営利活動法人 Seasar ファウンデーション" cpe="cpe:/:the_seasar_foundation" vid="321" />
+    <Vendor vname="独立行政法人情報処理推進機構 (IPA)" cpe="cpe:/:ipa" vid="10297" />
+    <Vendor vname="奈良先端科学技術大学院大学" cpe="cpe:/:nara_institute_of_science_and_technology" vid="756" />
+    <Vendor vname="日産証券株式会社" cpe="cpe:/:nissan_securities" vid="12367" />
+    <Vendor vname="日本アルカテル・ルーセント" cpe="cpe:/:alcatel" vid="750" />
+    <Vendor vname="日本アンテナ株式会社" cpe="cpe:/:nippon-antenna" vid="12918" />
+    <Vendor vname="日本エムツーソフト株式会社" cpe="cpe:/:m2soft" vid="15670" />
+    <Vendor vname="日本ケンタッキー・フライド・チキン株式会社" cpe="cpe:/:pizzahut" vid="8981" />
+    <Vendor vname="日本コントロールシステム" cpe="cpe:/:misc" vid="202" />
+    <Vendor vname="日本システム技術株式会社" cpe="cpe:/:misc" vid="24273" />
+    <Vendor vname="日本テレビ放送網株式会社" cpe="cpe:/:ntv" vid="17583" />
+    <Vendor vname="日本トータルシステム株式会社" cpe="cpe:/:groupsession" vid="12596" />
+    <Vendor vname="日本ナショナルインスツルメンツ" cpe="cpe:/:ni" vid="9050" />
+    <Vendor vname="日本マイクロソフト株式会社" cpe="cpe:/:misc" vid="15805" />
+    <Vendor vname="日本ユニシス株式会社" cpe="cpe:/:unisys" vid="12187" />
+    <Vendor vname="日本ラドウェア" cpe="cpe:/:radware" vid="659" />
+    <Vendor vname="日本ワムネット株式会社" cpe="cpe:/:gigaccsecure" vid="12310" />
+    <Vendor vname="日本医師会ＯＲＣＡ管理機構株式会社" cpe="cpe:/:orcamo" vid="14157" />
+    <Vendor vname="日本原子力研究開発機構" cpe="cpe:/:jaea" vid="15564" />
+    <Vendor vname="日本情報化農業研究所" cpe="cpe:/:n-i-agroinformatics" vid="9710" />
+    <Vendor vname="日本電気" cpe="cpe:/:nec" vid="89" />
+    <Vendor vname="日本年金機構" cpe="cpe:/:japan_pension_service" vid="12273" />
+    <Vendor vname="日本無線株式会社" cpe="cpe:/:japan_radio" vid="9469" />
+    <Vendor vname="日立" cpe="cpe:/:hitachi" vid="129" />
+    <Vendor vname="日立エナジー (旧 日立ABBパワーグリッド)" cpe="cpe:/:hitachi_abb_power_grids" vid="18819" />
+    <Vendor vname="日立ソフトウェアエンジニアリング" cpe="cpe:/:hitachi" vid="180" />
+    <Vendor vname="日立ヴァンタラ" cpe="cpe:/:hitachi" vid="13410" />
+    <Vendor vname="日立国際電気" cpe="cpe:/:hitachi" vid="21217" />
+    <Vendor vname="日立電線" cpe="cpe:/:hitachi" vid="154" />
+    <Vendor vname="任天堂株式会社" cpe="cpe:/:nintendo" vid="20800" />
+    <Vendor vname="農林水産省" cpe="cpe:/:maff" vid="12679" />
+    <Vendor vname="飛天ジャパン株式会社" cpe="cpe:/:misc" vid="15297" />
   </VendorInfo>
-  <status:Status 
-    version="3.3" 
-    method="getVendorList" 
-    feed="hnd"
-    lang="ja" 
-    retCd="0" 
-    retMax="10000" 
-    errCd=""
-    errMsg="" 
-    totalRes="1" 
-    totalResRet="1"
-    firstRes="1"
-  />
+  <status:Status version="3.3" method="getVendorList" lang="ja" retCd="0" retMax="10000" errCd="" errMsg="" totalRes="29944" totalResRet="50" firstRes="29860" feed="hnd" startItem="29860" maxCountItem="50" />
 </Result>
