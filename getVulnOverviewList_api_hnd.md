@@ -89,16 +89,16 @@ CVSSv3基本評価基準、CVSSv3深刻度を指定します。
 
 - vectorでは、CVSSv3.0形式を指定します。CVSS:3.0/AV:\[N,A,L,P\]/AC:\[L,H\]/PR:\[N,L,R\]/UI:\[N,R\]/S:\[C,U\]/C:\[N,L,H\]/I:\[N,L,H\]/A:\[N,L,H\]  
 - severityでは、n:なし、l:注意、m:警告、h:重要、c:緊急、のいずれか一つを指定します。  
--\[例\]
-  `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=hnd&vector=CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N`
-  `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=hnd&severity=m`
+- \[例\]  
+   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=hnd&vector=CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N`
+   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=hnd&severity=m`
 
 #### rangeDatePublic , rangeDatePublished , rangeDateFirstPublished
 
 発見日、更新日、発行日の範囲を指定します。
 
--\[例\]
-  `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=hnd&rangeDatePublic=n&rangeDatePublished=n&rangeDateFirstPublished=n`
+- \[例\]  
+   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=hnd&rangeDatePublic=n&rangeDatePublished=n&rangeDateFirstPublished=n`
 
 <br>
 <br>
