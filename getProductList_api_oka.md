@@ -16,16 +16,19 @@
 
  <br>
 
-| パラメタ名   | 名称                   | パラメタ値                                                      | 必須 | デフォルト |
-| ------------ | ---------------------- | --------------------------------------------------------------- | ---- | ---------- |
-| method       | メソッド名             | getProductList (固定)                                           | ○    | －         |
-| feed         | フィードフォーマット名 | フィードフォーマット(=API バージョン)を示す名称 <br> oka を指定 | ○    | －         |
-| startItem    | エントリ開始位置       | 整数 1 ～応答エントリ数                                         | －   | 1          |
-| maxCountItem | エントリ取得件数       | 整数 1 ～ 10,000 (getProductList エントリ上限値)                | －   | 10,000     |
-| nameType     | 製品識別子タイプ       | cpe, jvnpid, vid, pid のいずれかひとつ                          | －   | －         |
-| productName  | 製品識別子             | type=cpe: cpe v2.3 形式　<br> type=jvnpid: jvnpid v1.0 形式     | －   | －         |
-| keyword      | キーワード             | URL エンコードされたキーワード                                  | －   | －         |
-| lang         | 表示言語               | ja:日本語、en:英語                                              | －   | ja         |
+| パラメタ名                         | 名称                   | パラメタ値                                                      | 必須 | デフォルト |
+| ---------------------------------- | ---------------------- | --------------------------------------------------------------- | ---- | ---------- |
+| method                             | メソッド名             | getProductList (固定)                                           | ○    | －         |
+| feed                               | フィードフォーマット名 | フィードフォーマット(=API バージョン)を示す名称 <br> oka を指定 | ○    | －         |
+| startItem                          | エントリ開始位置       | 整数 1 ～応答エントリ数                                         | －   | 1          |
+| maxCountItem                       | エントリ取得件数       | 整数 1 ～ 10,000 (getProductList エントリ上限値)                | －   | 10,000     |
+| nameType                           | 製品識別子タイプ       | cpe, jvnpid, vid, pid のいずれかひとつ                          | －   | －         |
+| productName                        | 製品識別子             | type=cpe: cpe v2.3 形式　<br> type=jvnpid: jvnpid v1.0 形式     | －   | －         |
+| version <br> versionType           | バージョン             | バージョン情報                                                  | －   | －         |
+| versionStart <br> versionStartType | 開始バージョン         | バージョン情報                                                  | －   | －         |
+| versionEnd <br> versionEndType     | 終了バージョン         | バージョン情報                                                  |
+| keyword                            | キーワード             | URL エンコードされたキーワード                                  | －   | －         |
+| lang                               | 表示言語               | ja:日本語、en:英語                                              | －   | ja         |
 
 <br>
 
@@ -41,8 +44,11 @@
   1 件目から 50 件分のベンダ名を取得したい場合  
   `https://jvndb.jvn.jp/myjvn?method=getProductList&feed=oka&startItem=1&maxCountItem=50`
 
+<br>
 
+#### nameType
 
+製品識別子タイプとして、cpe | jvnpid | vid | pid のいずれか一つを指定します。
 
 #### productName (type=cpe)
 
@@ -70,6 +76,67 @@
 - \[例\]  
    MApache HTTPD の場合  
    `https://jvndb.jvn.jp/myjvn?method=getProductList&feed=oka&type=jvnpid&ProductName=jvnpid:1.0::apache:http_server`
+
+#### productName & nameType=vid
+
+製品識別子として、JVN iPedia におけるベンダ番号を指定します。
+
+- \[例\]  
+   Apache Software Foundation(vid=8)に関する概要情報の一覧を取得したい場合  
+   `https://jvndb.jvn.jp/myjvn?method=getProductList&feed=oka&nameType=vid&ProductName=8`
+
+#### productName & nameType=pid
+
+製品識別子として、JVN iPedia における製品番号を指定します。
+
+- \[例\]  
+   Apache HTTPD(pid=141)に関する概要情報一覧を取得したい場合  
+   `https://jvndb.jvn.jp/myjvn?method=getProductList&feed=oka&nameType=pid&ProductName=141`
+
+#### version & versionType
+
+cpe あるいは、jvnpid のバージョン(0 文字以上の ASCII 文字列)を指定します。
+
+- nameType=cpe あるいは、nameType=jvnpid のみ使用可
+- \[例\]  
+   Apache HTTPD 1.3.1.1 に関する概要情報一覧を取得したい場合
+  `https://jvndb.jvn.jp/myjvn?method=getProductList&feed=oka&nameType=cpe&productName=cpe:2.3:a:apache:http_server&version=1.3.1.1`
+- versionType  
+  | オペレータ名 | 使用可パラメタ | 操作 |
+  | --------------------- | ---------------------- | ---------------------- |
+  | no | version | バージョンが設定されていない情報を取得 (version 値は未設定) |
+  | all | version | バージョンが設定された全ての情報を取得 (version 値は未設定) |
+  | equal | version | version の値に一致したバージョンを持つ情報を取得 <br> versitonType が指定されていない場合のデフォルト値 |
+
+#### versionStart & versionStartType
+
+cpe あるいは、jvnpid の開始バージョン(0 文字以上の ASCII 文字列)を指定します。
+
+- nameType=cpe あるいは、nameType=jvnpid のみ使用可
+- \[例\]  
+   Apache HTTPD 1.3.1.1 以上に関する概要情報一覧を取得したい場合  
+  `https://jvndb.jvn.jp/myjvn?method=getProductList&feed=oka&nameType=cpe&productName=cpe:2.3:a:apache:http_server&versionStart=1.3.1.1&versionStartType=including`
+- versionStartType
+  |オペレータ名 | 使用可パラメタ | 操作|
+  | --------------------- | ---------------------- | ---------------------- |
+  |including | versionEndType | バージョンを含む|
+  |excluding | versionEndType | バージョンを含まない|
+
+#### versionEnd & versionEndType
+
+cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文字列)を指定します。
+
+- nameType=cpe あるいは、nameType=jvnpid のみ使用可
+- \[例\]  
+  Apache HTTPD 1.3.1.1 以下に関する概要情報一覧を取得したい場合  
+  `https://jvndb.jvn.jp/myjvn?method=getProductList&feed=oka&nameType=cpe&productName=cpe:2.3:a:apache:http_server&versionEnd=1.3.1.1&versionEndType=including`
+- versionEndType
+  |オペレータ名 | 使用可パラメタ | 操作|
+  | --------------------- | ---------------------- | ---------------------- |
+  |including | versionEndType | バージョンを含む|
+  |excluding | versionEndType | バージョンを含まない|
+
+<br>
 
 #### keyword
 
@@ -101,7 +168,7 @@
         "name": "MyJVN API"
       }
     },
-    "title": "MyJVN getProductList API",
+    "title": "JVNDB 製品一覧",
     "id": "jvnpid:1.0:ipa:myjvn_api_getProductList:4.0.0",
     "link": "https://jvndb.jvn.jp/apis/myjvn/",
     "updated": "更新日",
@@ -223,14 +290,14 @@
         `4.0.0`
 
   - title [type:string] [required]  
-    `MyJVN getVendorList API`
+    `JVNDB 製品一覧`
   - id [type:string] [required]  
     `jvnpid:1.0::ipa:myjvn_api_getVendorList:4.0.0`
   - link [type:string] [required]  
     `https://jvndb.jvn.jp/myjvn`
-  - updated [type:string] [required]  
+  - updated [type:string] [format:"yyyy-MM-ddTHH:mm:ss+09:00"] [required]  
     更新日  
-    The date and time (timestamp) when the VendorList was created.
+    The date and time (timestamp) when the ProductList was created.
   - lang [type:string] [required]  
     表示言語 (ja:日本語、en:英語 )  
     Must be one of: ja, en

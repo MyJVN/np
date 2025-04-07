@@ -41,6 +41,12 @@
    1 件目から 50 件分のベンダ名を取得したい場合  
    `https://jvndb.jvn.jp/myjvn?method=getVendorList&feed=oka&startItem=1&maxCountItem=50`
 
+<br>
+
+#### nameType
+
+ベンダ識別子タイプとして、cpe, jvnpid のいずれか一つを指定します。
+
 #### vendorName (type=cpe)
 
 ベンダ名として、CPE ベンダ識別子を指定します。
@@ -64,6 +70,8 @@
 - \[例\]  
    Microsoft の場合  
    `https://jvndb.jvn.jp/myjvn?method=getVendorList&feed=oka&type=jvnpid&vendorName=jvnpid:1.0::microsoft`
+
+<br>
 
 #### keyword
 
@@ -100,7 +108,7 @@
         "name": "MyJVN API"
       }
     },
-    "title": "MyJVN getVendorList API",
+    "title": "JVNDB ベンダ一覧",
     "id": "jvnpid:1.0::ipa:myjvn_api_getVendorList:4.0.0",
     "link": "https://jvndb.jvn.jp/apis/myjvn/",
     "updated": "更新日",
@@ -164,12 +172,12 @@
         `4.0.0`
 
   - title [type:string] [required]  
-    `MyJVN getVendorList API`
+    `JVNDB ベンダ一覧`
   - id [type:string] [required]  
     `jvnpid:1.0::ipa:myjvn_api_getVendorList:4.0.0`
   - link [type:string] [required]  
     `https://jvndb.jvn.jp/myjvn`
-  - updated [type:string] [required]  
+  - updated [type:string] [format:"yyyy-MM-ddTHH:mm:ss+09:00"] [required]  
     更新日  
     The date and time (timestamp) when the VendorList was created.
   - lang [type:string] [required]  

@@ -1,0 +1,60 @@
+{
+  "feed": {
+    "generator": {
+      "engine": {
+        "version": "4.0.0",
+        "name": "MyJVN API"
+      }
+    },
+    "title": "IPA注意警戒サービスAPI",
+    "id": "jvnpid:1.0::ipa:myjvn_api_getAlertList:4.0.0",
+    "link": "https://jvndb.jvn.jp/apis/myjvn/",
+    "updated": "2025-04-07T07:36:21+09:00",
+    "lang": "ja",
+    "author": {
+      "name": "IPA",
+      "uri": "https://www.ipa.go.jp/"
+    },
+    "distribution": {
+      "tlp": {
+        "label": "CLEAR",
+        "url": "https://www.first.org/tlp/"
+      }
+    },
+    "entry": [
+      {
+        "title": "WordPress に関するソフトウェア更新情報 (2025年2月12日 公開)",
+        "id": "MYJVN-ALT-2025-0011",
+        "link": "",
+        "summary": "",
+        "category": { "term": "Info", "label": "INFO" },
+        "update": "2025-02-12T10:58:02+09:00",
+        "published": "2025-02-12T10:58:02+09:00",
+        "items": [
+          {
+            "title": "Download WordPress (6.3.2)",
+            "id": "MYJVN-ALT-2025-0011-0001",
+            "link": "https://wordpress.org/download/",
+            "updated": "2025-02-12T10:58:02+09:00",
+            "published": "2025-02-12T00:00:00+09:00",
+            "author": "WordPress.org",
+            "cpe": "cpe:2.3:a:wordpress:wordpress:6.3.2:*:*:*:*:*:*:*",
+            "jvnpid": "jvnpid:1.0::wordpress:wordpress:6.3.2"
+          }
+        ]
+      }
+    ],
+    "status:Status": {
+      "version": "4.0.0",
+      "method": "getAlertList",
+      "feed": "oka",
+      "retCd": 0,
+      "retMax": "50",
+      "errCd": "",
+      "errMsg": "",
+      "totalRes": "1",
+      "totalResRet": "1",
+      "firstRes": "1"
+    }
+  }
+}
