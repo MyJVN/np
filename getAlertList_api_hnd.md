@@ -55,11 +55,13 @@
 
 CPE 製品識別子を指定します。
 
-- cpe:/{part}:{vendor}:{product} <br> {part}フィールド ... "h" \| "o" \| "a" \| "\*" <br> {vendor}:{product}フィールド ... CPEベンダ名、CPE 製品名
+- cpe:/{part}:{vendor}:{product}  
+   {part}フィールド ... \[ h \| o \| a \| \* \]  
+   {vendor}:{product}フィールド ... CPE ベンダ名、CPE 製品名
 - ワイルドカード "\*" 指定可、アスキー文字、大文字／小文字区別なし
 - 複数指定時は "+" で連結
 - URL エンコードされたエスケープシーケンス
-- いずれか 1 つのみ指定可 \[ cpeName | vendorId | productId \]
+- いずれか 1 つのみ指定可 \[ cpeName \| vendorId \| productId \]
 - \[例\]  
    cpe:/a:apache:xerces-c%2B%2B の場合  
    `cpeName=cpe:/a:apache:xerces-c%252B%252B`

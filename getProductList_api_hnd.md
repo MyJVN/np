@@ -47,9 +47,9 @@
 CPE 製品名を指定します。
 
 - cpe:/{part}:{vendor}:{product}  
-  {part}フィールド ... "h" | "o" | "a" | "\*"  
+  {part}フィールド ... \[ h \| o \| a \| \* \]  
   {vendor}:{product}フィールド ... CPE 製品名
-- いずれか 1 つのみ指定可 [ cpeName | vendorId | productId ] です。
+- いずれか 1 つのみ指定可 \[ cpeName \| vendorId \| productId \]
 - ワイルドカード "\*" 指定可、アスキー文字、大文字／小文字区別なし
 - 複数指定時は "+" で連結
 - URL エンコードされたエスケープシーケンス
@@ -57,20 +57,20 @@ CPE 製品名を指定します。
    Apache HTTPD の場合  
    `https://jvndb.jvn.jp/myjvn?method=getProductList&feed=hnd&cpeName=cpe:/a: apache:http_server`
 
-  Apache 製品の場合  
+   Apache 製品の場合  
    `https://jvndb.jvn.jp/myjvn?method=getProductList&feed=hnd&cpeName=cpe:/a:apache:*`
 
-  Apache HTTPD と Microsoft .Net の場合  
+   Apache HTTPD と Microsoft .Net の場合  
    `https://jvndb.jvn.jp/myjvn?method=getProductList&feed=hnd&cpeName=cpe:/a: apache:http_server+cpe:/a:microsoft:.net`
 
-  cpe:/a:apache:xerces-c%252B%252B の場合  
+   cpe:/a:apache:xerces-c%252B%252B の場合  
    `https://jvndb.jvn.jp/myjvn?method=getProductList&feed=hnd&cpeName=cpe:/a:apache:xerces-c%252B%252B`
 
 #### vendorId
 
 ベンダ番号を指定します。
 
-- いずれか 1 つのみ指定可 [ cpeName | vendorId | productId ] です。
+- いずれか 1 つのみ指定可 \[ cpeName \| vendorId \| productId \]
 - 複数指定時は "+" で連結
 - \[例\]  
    vendorId=100 の場合  
@@ -80,7 +80,7 @@ CPE 製品名を指定します。
 
 製品番号を指定します。
 
-- いずれか 1 つのみ指定可 [ cpeName | vendorId | productId ] です。
+- いずれか 1 つのみ指定可 \[ cpeName \| vendorId \| productId \]
 - 複数指定時は "+" で連結
 - \[例\]  
    productId=10000 の場合  
@@ -99,14 +99,16 @@ CPE 製品名を指定します。
 
 ## レスポンス
 
-- 概要
-  - 処理成功時、Result ノードの中に VendorInfo、MyJVN 共通 Status ノードを含む XML を応答します。ただし、フィルタリング結果が 0 件の場合、Result ノードの中に MyJVN 共通 Status ノードのみを含む XML を応答します。
-  - エラー発生時、MyJVN 共通 Status ノードにエラーコードとエラーメッセージを格納します。
-- XML スキーマ
-  - Result ノード：https://jvndb.jvn.jp/schema/results_3.3.xsd
-  - MyJVN 共通 Status ノード：https://jvndb.jvn.jp/schema/status_3.3.xsd
-- 例
-  - [ getProductList_hnd.xml ](examples/getProductList_hnd.xml)
+### 概要
+- 処理成功時、Result ノードの中に VendorInfo、MyJVN 共通 Status ノードを含む XML を応答します。ただし、フィルタリング結果が 0 件の場合、Result ノードの中に MyJVN 共通 Status ノードのみを含む XML を応答します。
+- エラー発生時、MyJVN 共通 Status ノードにエラーコードとエラーメッセージを格納します。
+
+### XML スキーマ
+- Result ノード：https://jvndb.jvn.jp/schema/results_3.3.xsd
+- MyJVN 共通 Status ノード：https://jvndb.jvn.jp/schema/status_3.3.xsd
+
+### 例
+- [ getProductList_hnd.xml ](examples/getProductList_hnd.xml)
 
 ```
 <?xml version="1.0" encoding="UTF-8" ?>

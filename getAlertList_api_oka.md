@@ -64,13 +64,15 @@
 
 #### nameType
 
-製品識別子タイプとして、cpe | jvnpid | vid | pid のいずれか一つを指定します。
+製品識別子タイプとして、\[ cpe \| jvnpid \| vid \| pid \]のいずれか一つを指定します。
 
 #### productName (type=cpe)
 
 製品識別子として、CPE 製品識別子を指定します。
 
-- cpe:2.3{part}:{vendor}:{product}:{version} <br> {part}フィールド ... "h" | "o" | "a" | "\*" または 未指定(NULL) <br> {vendor}:{product}:{version}フィールド ... CPE ベンダ名、製品名、バージョン
+- cpe:2.3{part}:{vendor}:{product}:{version}  
+   {part}フィールド ... \[ h \| o \| a \| \* \]  
+   {vendor}:{product}:{version}フィールド ... CPE ベンダ名、製品名、バージョン
 - ワイルドカード(\*) 指定可、アスキー文字、大文字／小文字区別なし、複数指定は不可
 - バージョンが未指定(NULL)、もしくはワイルドカード(\*)が指定された場合、全てのバージョン情報を取得します。
 - URL エンコードされたエスケープシーケンス
@@ -78,7 +80,7 @@
    Apache HTTPD 全てのバージョンに関する注意警戒情報を取得したい場合  
    `https://jvndb.jvn.jp/myjvn?method=getAlertList&feed=hnd&type=cpe&ProductName=cpe:2.3:a:apache:http_server`
 
-  Apache HTTPD 1.3.1.1 に関する注意警戒情報を取得したい場合  
+   Apache HTTPD 1.3.1.1 に関する注意警戒情報を取得したい場合  
    `https://jvndb.jvn.jp/myjvn?method=getAlertList&feed=hnd&cpeName=cpe:2.3:a:apache:http_server:1.3.1.1`
 
 #### productName (type=jvnpid)
@@ -118,7 +120,7 @@ cpe あるいは、jvnpid のバージョン(0 文字以上の ASCII 文字列)�
 - nameType=cpe あるいは、nameType=jvnpid のみ使用可
 - \[例\]  
    Apache HTTPD 1.3.1.1 に関する概要情報一覧を取得したい場合
-  `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&nameType=cpe&productName=cpe:2.3:a:apache:http_server&version=1.3.1.1`
+   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&nameType=cpe&productName=cpe:2.3:a:apache:http_server&version=1.3.1.1`
 - versionType  
   | オペレータ名 | 使用可パラメタ | 操作 |
   | --------------------- | ---------------------- | ---------------------- |
@@ -133,7 +135,7 @@ cpe あるいは、jvnpid の開始バージョン(0 文字以上の ASCII 文�
 - nameType=cpe あるいは、nameType=jvnpid のみ使用可
 - \[例\]  
    Apache HTTPD 1.3.1.1 以上に関する概要情報一覧を取得したい場合  
-  `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&nameType=cpe&productName=cpe:2.3:a:apache:http_server&versionStart=1.3.1.1&versionStartType=including`
+   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&nameType=cpe&productName=cpe:2.3:a:apache:http_server&versionStart=1.3.1.1&versionStartType=including`
 - versionStartType
   |オペレータ名 | 使用可パラメタ | 操作|
   | --------------------- | ---------------------- | ---------------------- |
@@ -146,8 +148,8 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
 
 - nameType=cpe あるいは、nameType=jvnpid のみ使用可
 - \[例\]  
-  Apache HTTPD 1.3.1.1 以下に関する概要情報一覧を取得したい場合  
-  `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&nameType=cpe&productName=cpe:2.3:a:apache:http_server&versionEnd=1.3.1.1&versionEndType=including`
+   Apache HTTPD 1.3.1.1 以下に関する概要情報一覧を取得したい場合  
+   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&nameType=cpe&productName=cpe:2.3:a:apache:http_server&versionEnd=1.3.1.1&versionEndType=including`
 - versionEndType
   |オペレータ名 | 使用可パラメタ | 操作|
   | --------------------- | ---------------------- | ---------------------- |
@@ -220,7 +222,7 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
             "cpe": "cpe 製品識別子",
             "jvnpid": "JVN 製品識別子"
           },
-          { "$comment": "タグを繰り返します。" }
+          { "$comment": "title,idなどのタグを繰り返します。" }
         ]
       }
     ],
@@ -243,13 +245,14 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
 ```
 
 - feed [type:object] [required]
+
   - entry [type:array]
     - title: 関連情報のタイトル
     - id: 関連情報の識別子
     - summary: 関連情報の概要
     - link: 関連情報の概要の URL
     - category  
-      |label属性値|term属性値|
+      |label 属性値|term 属性値|
       |---|---|
       |INFO|Info|
       |注意|Low|
@@ -268,28 +271,29 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
       - cpe: CPE 製品識別子
       - jvnpid: JVN 製品識別子
 
- - generator [type:object]
-   - engine [type:object]
-     - name [type:string] [required]  
-       `MyJVN API`
-     - version [type:string] [required]  
-       `4.0.0`
+- generator [type:object]
 
- - title [type:string] [required]  
-   `IPA 注意警戒サービス API`
- - id [type:string] [required]  
-   `jvnpid:1.0::ipa:myjvn_api_getAlertList:4.0.0`
- - link [type:string] [required]  
-   `https://jvndb.jvn.jp/myjvn`
- - updated [type:string] [format:"yyyy-MM-ddTHH:mm:ss+09:00"] [required]  
-   更新日  
-   The date and time (timestamp) when the AlertList was created.
- - lang [type:string] [required]  
-   表示言語 (ja:日本語、en:英語 )  
-   Must be one of: ja, en
+  - engine [type:object]
+    - name [type:string] [required]  
+      `MyJVN API`
+    - version [type:string] [required]  
+      `4.0.0`
 
- - author [type:object]
-   - name [type:string] [required]  
-     `IPA`
-   - uri [type:string] [required]  
-     `https://www.ipa.go.jp/`
+- title [type:string] [required]  
+  `IPA 注意警戒サービス API`
+- id [type:string] [required]  
+  `jvnpid:1.0::ipa:myjvn_api_getAlertList:4.0.0`
+- link [type:string] [required]  
+  `https://jvndb.jvn.jp/myjvn`
+- updated [type:string] [format:"yyyy-MM-ddTHH:mm:ss+09:00"] [required]  
+  更新日  
+  The date and time (timestamp) when the AlertList was created.
+- lang [type:string] [required]  
+  表示言語 (ja:日本語、en:英語 )  
+  Must be one of: ja, en
+
+- author [type:object]
+  - name [type:string] [required]  
+    `IPA`
+  - uri [type:string] [required]  
+    `https://www.ipa.go.jp/`

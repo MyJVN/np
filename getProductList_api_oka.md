@@ -48,30 +48,34 @@
 
 #### nameType
 
-製品識別子タイプとして、cpe | jvnpid | vid | pid のいずれか一つを指定します。
+製品識別子タイプとして、\[ cpe \| jvnpid \| vid \| pid \]のいずれか一つを指定します。
 
 #### productName (type=cpe)
 
 製品識別子として、CPE 製品識別子を指定します。
 
-- cpe:2.3{part}:{vendor}:{product} <br> {part}フィールド ... "h" | "o" | "a" | "\*" または (NULL) <br> {vendor}:{product}フィールド ... CPE 製品名
+- cpe:2.3{part}:{vendor}:{product}  
+   {part}フィールド ... \[ h \| o \| a \| \* \]  
+   {vendor}:{product}フィールド ... CPE 製品名
 - ワイルドカード "\*" 指定可、アスキー文字、大文字／小文字区別なし、複数指定は不可
 - URL エンコードされたエスケープシーケンス
 - \[例\]  
    Apache HTTPD の場合  
    `https://jvndb.jvn.jp/myjvn?method=getProductList&feed=oka&type=cpe&productName=cpe:2.3:a:apache:http_server`
 
-  Apache 製品の場合  
+   Apache 製品の場合  
    `https://jvndb.jvn.jp/myjvn?method=getProductList&feed=oka&type=cpe&productName=cpe:2.3:a:apache:*`
 
-  cpe:/a:apache:xerces-c%252B%252B の場合  
+   cpe:/a:apache:xerces-c%252B%252B の場合  
    `https://jvndb.jvn.jp/myjvn?method=getProductList&feed=oka&type=cpe&productName=cpe:/a:apache:xerces-c%252B%252B`
 
 #### productName (type=jvnpid)
 
 製品識別子として、JVN 製品識別子を指定します。
 
-- jvnpid:1.0::{vendor} <br> {vendor}フィールド ... JVN ベンダ名 <br> {product}フィールド ... JVN 製品名
+- jvnpid:1.0::{vendor}  
+   {vendor}フィールド ... JVN ベンダ名  
+   {product}フィールド ... JVN 製品名
 - ワイルドカード "\*" 指定可、アスキー文字、大文字／小文字区別なし、複数指定は不可
 - \[例\]  
    MApache HTTPD の場合  
@@ -100,7 +104,7 @@ cpe あるいは、jvnpid のバージョン(0 文字以上の ASCII 文字列)�
 - nameType=cpe あるいは、nameType=jvnpid のみ使用可
 - \[例\]  
    Apache HTTPD 1.3.1.1 に関する概要情報一覧を取得したい場合
-  `https://jvndb.jvn.jp/myjvn?method=getProductList&feed=oka&nameType=cpe&productName=cpe:2.3:a:apache:http_server&version=1.3.1.1`
+   `https://jvndb.jvn.jp/myjvn?method=getProductList&feed=oka&nameType=cpe&productName=cpe:2.3:a:apache:http_server&version=1.3.1.1`
 - versionType  
   | オペレータ名 | 使用可パラメタ | 操作 |
   | --------------------- | ---------------------- | ---------------------- |
@@ -115,7 +119,7 @@ cpe あるいは、jvnpid の開始バージョン(0 文字以上の ASCII 文�
 - nameType=cpe あるいは、nameType=jvnpid のみ使用可
 - \[例\]  
    Apache HTTPD 1.3.1.1 以上に関する概要情報一覧を取得したい場合  
-  `https://jvndb.jvn.jp/myjvn?method=getProductList&feed=oka&nameType=cpe&productName=cpe:2.3:a:apache:http_server&versionStart=1.3.1.1&versionStartType=including`
+   `https://jvndb.jvn.jp/myjvn?method=getProductList&feed=oka&nameType=cpe&productName=cpe:2.3:a:apache:http_server&versionStart=1.3.1.1&versionStartType=including`
 - versionStartType
   |オペレータ名 | 使用可パラメタ | 操作|
   | --------------------- | ---------------------- | ---------------------- |
@@ -129,7 +133,7 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
 - nameType=cpe あるいは、nameType=jvnpid のみ使用可
 - \[例\]  
   Apache HTTPD 1.3.1.1 以下に関する概要情報一覧を取得したい場合  
-  `https://jvndb.jvn.jp/myjvn?method=getProductList&feed=oka&nameType=cpe&productName=cpe:2.3:a:apache:http_server&versionEnd=1.3.1.1&versionEndType=including`
+   `https://jvndb.jvn.jp/myjvn?method=getProductList&feed=oka&nameType=cpe&productName=cpe:2.3:a:apache:http_server&versionEnd=1.3.1.1&versionEndType=including`
 - versionEndType
   |オペレータ名 | 使用可パラメタ | 操作|
   | --------------------- | ---------------------- | ---------------------- |
@@ -151,13 +155,15 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
 
 ## レスポンス
 
-- 概要
-  - 処理成功時、jvn-product-dictionary ノード、MyJVN 共通 Status ノードを含む JSON を応答します。
-  - エラー発生時、MyJVN 共通 Status ノードにエラーコードとエラーメッセージを格納します。
-- JSON スキーマ
-  - TBD
-- 例
-  - [ getProductList_oka.json ](examples/getProductList_oka.json)
+### 概要
+- 処理成功時、jvn-product-dictionary ノード、MyJVN 共通 Status ノードを含む JSON を応答します。
+- エラー発生時、MyJVN 共通 Status ノードにエラーコードとエラーメッセージを格納します。
+
+### JSON スキーマ
+- TBD
+
+### 例
+- [ getProductList_oka.json ](examples/getProductList_oka.json)
 
 ```
 {
@@ -262,7 +268,7 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
       Product Version  
       製品バージョン  
       \[例\] `4.0.0`
-    - product_ids [type:object]
+    - product_ids [type:array]
       - cpe [type:string] [required]  
         Product identifier (CPE v2.3 format)  
         CPE 製品識別子 (CPE v2.3 形式)  

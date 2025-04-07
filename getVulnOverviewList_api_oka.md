@@ -61,9 +61,9 @@
 
 更新日の簡易な範囲を指定します。
 
-- NONE: 範囲指定なし、DAY: 前日以降、WEEK:過去 1 週間以降、MONTH:過去 1 ヶ月以降、のいずれか一つを指定します。
+- \[ NONE: 範囲指定なし \| DAY: 前日以降 \| WEEK:過去 1 週間以降 \| MONTH:過去 1 ヶ月以降 \]のいずれか一つを指定します。
 - \[例\]  
-  `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&rangelastModDate=DAY`
+   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&rangelastModDate=DAY`
 
 #### lastModStartDate & lastModEndDate
 
@@ -83,14 +83,14 @@
 
 #### nameType
 
-製品識別子タイプとして、cpe | jvnpid | vid | pid のいずれか一つを指定します。
+製品識別子タイプとして、\[cpe \| jvnpid \| vid \| pid \]のいずれか一つを指定します。
 
 #### productName & nameType=cpe
 
 製品識別子として、CPE 製品識別子を指定します。
 
 - cpe:2.3{part}:{vendor}:{product}  
-  {part}フィールド ... "h" | "o" | "a" | "\*" または 未指定(NULL)  
+  {part}フィールド ... \[ h | o | a | \* \]  
   {vendor}:{product}フィールド ... CPE ベンダ名、製品名
 - ワイルドカード(\*) 指定可、アスキー文字、大文字／小文字区別なし、複数指定は不可
 - バージョンが設定されていない情報とバージョンが設定された全ての情報を取得
@@ -103,7 +103,7 @@
 
 製品識別子として、JVN 製品識別子を指定します。
 
-- jvnpid:1.0::{vendor}:{product}
+- jvnpid:1.0::{vendor}:{product}  
   {vendor}:{product}フィールド ... JVN ベンダ名、製品名
 - ワイルドカード(\*) 指定可、アスキー文字、大文字／小文字区別なし、複数指定は不可
 - バージョンが設定されていない情報とバージョンが設定された全ての情報を取得
@@ -150,7 +150,7 @@ cpe あるいは、jvnpid の開始バージョン(0 文字以上の ASCII 文�
 - nameType=cpe あるいは、nameType=jvnpid のみ使用可
 - \[例\]  
    Apache HTTPD 1.3.1.1 以上に関する概要情報一覧を取得したい場合  
-  `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&nameType=cpe&productName=cpe:2.3:a:apache:http_server&versionStart=1.3.1.1&versionStartType=including`
+   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&nameType=cpe&productName=cpe:2.3:a:apache:http_server&versionStart=1.3.1.1&versionStartType=including`
 - versionStartType
   |オペレータ名 | 使用可パラメタ | 操作|
   | --------------------- | ---------------------- | ---------------------- |
@@ -163,8 +163,8 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
 
 - nameType=cpe あるいは、nameType=jvnpid のみ使用可
 - \[例\]  
-  Apache HTTPD 1.3.1.1 以下に関する概要情報一覧を取得したい場合  
-  `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&nameType=cpe&productName=cpe:2.3:a:apache:http_server&versionEnd=1.3.1.1&versionEndType=including`
+   Apache HTTPD 1.3.1.1 以下に関する概要情報一覧を取得したい場合  
+   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&nameType=cpe&productName=cpe:2.3:a:apache:http_server&versionEnd=1.3.1.1&versionEndType=including`
 - versionEndType
   |オペレータ名 | 使用可パラメタ | 操作|
   | --------------------- | ---------------------- | ---------------------- |
@@ -175,33 +175,33 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
 
 CVSSv2 基本評価基準、CVSSv2 深刻度を指定します。
 
-- cvssV2Metrics , cvssV3Metrics , cvssV4Metrics , cvssV2Severity , cvssV3Severity , cvssV4Severity のいずれか一つを指定します。
+- \[cvssV2Metrics \| cvssV3Metrics \| cvssV4Metrics \| cvssV2Severity \| cvssV3Severity \| cvssV4Severity\]のいずれか一つを指定します。
 - cvssV2Metrics では、Base Metric の部分検索はできません。
 - cvssV2Severity では、LOW:注意、MEDIUM:警告、HIGH:重要、のいずれか一つを指定します。
 - \[例\]  
-   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&cvssV2Metrics=AV:L/AC:H/Au:M/C:N/I:N/A:N`
-  `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&cvssV2Severity=LOW`
+   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&cvssV2Metrics=AV:L/AC:H/Au:M/C:N/I:N/A:N`  
+   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&cvssV2Severity=LOW`
 
 #### cvssV3Metrics、cvssV3Severity
 
 CVSSv3 基本評価基準、CVSSv3 深刻度を指定します。
 
-- cvssV2Metrics , cvssV3Metrics , cvssV4Metrics , cvssV2Severity , cvssV3Severity , cvssV4Severity のいずれか一つを指定します。
+- \[cvssV2Metrics \| cvssV3Metrics \| cvssV4Metrics \| cvssV2Severity \| cvssV3Severity \| cvssV4Severity\]のいずれか一つを指定します。
 - cvssV3Metrics では、Base Metric の部分検索はできません。
 - cvssV3Severity では、NONE:なし、l:注意、MEDIUM:警告、HIGH:重要、CRITICAL:緊急、のいずれか一つを指定します。
 - \[例\]  
-   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&cvssV3Metrics=AV:L/AC:L/PR:L/UI:R/S:U/C:N/I:L/A:L`
-  `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&cvssV3Severity=MEDIUM`
+   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&cvssV3Metrics=AV:L/AC:L/PR:L/UI:R/S:U/C:N/I:L/A:L`  
+   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&cvssV3Severity=MEDIUM`
 
 #### cvssV4Metrics、cvssV4Severity
 
 CVSSv4 基本評価基準、CVSSv4 深刻度を指定します。
 
-- cvssV2Metrics , cvssV3Metrics , cvssV4Metrics , cvssV2Severity , cvssV3Severity , cvssV4Severity のいずれか一つを指定します。
+- \[cvssV2Metrics \| cvssV3Metrics \| cvssV4Metrics \| cvssV2Severity \| cvssV3Severity \| cvssV4Severity\]のいずれか一つを指定します。
 - CVSSv4 Base Metric の部分検索ができます。
 - \[例\]  
-   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&cvssV4Metrics=AV:A/AC:H/PR:H/UI:N`
-  `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&cvssV4Severity=CRITICAL`
+   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&cvssV4Metrics=AV:A/AC:H/PR:H/UI:N`  
+   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&cvssV4Severity=CRITICAL`
 
 #### keyword
 

@@ -44,7 +44,9 @@
 
 CPE ベンダ名を指定します。
 
-- cpe:/{part}:{vendor} <br> {part}フィールド ... "\*" または (NULL) <br> {vendor}フィールド ... CPE ベンダ名
+- cpe:/{part}:{vendor}  
+   {part}フィールド ... \[ \* \| (NULL) \]  
+   {vendor}フィールド ... CPE ベンダ名
 - ワイルドカード "\*" 指定可、アスキー文字、大文字／小文字区別なし
 - 複数指定時は "+" で連結
 - URL エンコードされたエスケープシーケンス
@@ -52,10 +54,10 @@ CPE ベンダ名を指定します。
    Apache の場合  
    `https://jvndb.jvn.jp/myjvn?method=getVendorList&feed=hnd&cpeName=cpe:/:apache`
 
-  Apache と Microsoft の場合  
+   Apache と Microsoft の場合  
    `https://jvndb.jvn.jp/myjvn?method=getVendorList&feed=hnd&cpeName=cpe:/:apache+cpe:/:microsoft`
 
-  cpeName=cpe:/:%40mail の場合  
+   cpeName=cpe:/:%40mail の場合  
    `https://jvndb.jvn.jp/myjvn?method=getVendorList&feed=hnd&cpeName=cpe:/:%40mail`
 
 #### keyword

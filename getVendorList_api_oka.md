@@ -45,13 +45,15 @@
 
 #### nameType
 
-ベンダ識別子タイプとして、cpe, jvnpid のいずれか一つを指定します。
+ベンダ識別子タイプとして、\[ cpe \| jvnpid \]のいずれか一つを指定します。
 
 #### vendorName (type=cpe)
 
 ベンダ名として、CPE ベンダ識別子を指定します。
 
-- cpe:2.3:{part}:{vendor} <br> {part}フィールド ... "\*" または (NULL) <br> {vendor}フィールド ... CPE ベンダ名
+- cpe:2.3:{part}:{vendor}  
+   {part}フィールド ... \[ \* \| (NULL) \]  
+   {vendor}フィールド ... CPE ベンダ名
 - アスキー文字、大文字／小文字区別なし、複数指定は不可
 - URL エンコードされたエスケープシーケンス
 - \[例\]  
@@ -65,7 +67,8 @@
 
 ベンダ識別子として、JVN ベンダ識別子を指定します。
 
-- jvnpid:1.0::{vendor} <br> {vendor}フィールド ... JVN ベンダ名
+- jvnpid:1.0::{vendor}  
+   {vendor}フィールド ... JVN ベンダ名
 - アスキー文字、大文字／小文字区別なし、複数指定は不可
 - \[例\]  
    Microsoft の場合  
@@ -147,6 +150,7 @@
 - jvn-product-dictionary [type:object]
 
   - vendors [type:array]
+
     - vendor_id [type:string] [required]  
       JVN Vendor Name (jvnpid 1.0 format)  
       JVN ベンダ名 (jvnpid 1.0 形式)  
@@ -165,6 +169,7 @@
       \[例\] `cpe:2.3::dendai.ac.jp`
 
   - generator [type:object]
+
     - engine [type:object]
       - name [type:string] [required]  
         `MyJVN API`
