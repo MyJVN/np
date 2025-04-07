@@ -32,31 +32,35 @@
             "product_id": "jvnpid:1.0::dendai.ac.jp:myjvn_api",
             "pid": "99999999991001",
             "pname": "MyJVN API",
-            "product_ids": {
-              "cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api:*:*:*:*:*:*:*:*",
-              "id_refs": [
-                { "key": "purl", "value": "pkg:/ipa/myjvn_api" },
-                { "key": "swid", "value": "swid:ipa.go.jp+myjvn_api" }
-              ]
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api:*:*:*:*:*:*:*:*",
+                "id_refs": [
+                  { "key": "purl", "value": "pkg:/ipa/myjvn_api" },
+                  { "key": "swid", "value": "swid:ipa.go.jp+myjvn_api" }
+                ]
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::dendai.ac.jp:myjvn_api_getProductList",
             "pid": "9999999991002",
             "pname": "MyJVN API getPorductList",
-            "product_ids": {
-              "cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api_getProductList:*:*:*:*:*:*:*:*",
-              "id_refs": [
-                {
-                  "key": "purl",
-                  "value": "pkg:/ipa/myjvn_api_getProductList"
-                },
-                {
-                  "key": "swid",
-                  "value": "swid:ipa.go.jp+myjvn_api_getProductList"
-                }
-              ]
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api_getProductList:*:*:*:*:*:*:*:*",
+                "id_refs": [
+                  {
+                    "key": "purl",
+                    "value": "pkg:/ipa/myjvn_api_getProductList"
+                  },
+                  {
+                    "key": "swid",
+                    "value": "swid:ipa.go.jp+myjvn_api_getProductList"
+                  }
+                ]
+              }
+            ]
           }
         ]
       },

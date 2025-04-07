@@ -189,19 +189,21 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
             "pid": "製品番号",
             "pname": "製品名",
             "version": "バージョン",
-            "product_ids": {
-              "cpe": "CPE製品識別子",
-              "id_refs": [
-                { "key": "sha256", "value": "ハッシュ値 1234DF...234" },
-                { "key": "purl", "value": "Package-Manager値 rpm:/" },
-                { "key": "swid", "value": "swid:ipa.go.jp+myjvn_alert+1.0.0" }
-              ]
-            }
-          }
-          { "//_comment": "product_id,pid,pnameなどのタグを繰り返します。" }
+            "product_ids": [
+              {
+                "cpe": "CPE製品識別子",
+                "id_refs": [
+                  { "key": "sha256", "value": "ハッシュ値 1234DF...234" },
+                  { "key": "purl", "value": "Package-Manager値 rpm:/" },
+                  { "key": "swid", "value": "swid:ipa.go.jp+myjvn_alert+1.0.0" }
+                ]
+              }
+            ]
+          },
+          { "$comment": "product_id,pid,pnameなどのタグを繰り返します。" }
         ]
       },
-      { "//_comment": "vendor_id,vid,vnameなどのタグを繰り返します。" }
+      { "$comment": "vendor_id,vid,vnameなどのタグを繰り返します。" }
     ]
   },
   "status:Status": {
