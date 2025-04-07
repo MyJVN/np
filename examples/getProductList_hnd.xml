@@ -1,37 +1,62 @@
-<?xml version="1.0" encoding="UTF-8" ?>   
-<Result 
-version="3.3" 
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-xmlns="http://jvndb.jvn.jp/myjvn/Results" 
-xmlns:mjres="http://jvndb.jvn.jp/myjvn/Results" 
-xmlns:status="http://jvndb.jvn.jp/myjvn/Status" 
-xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/Results https://jvndb.jvn.jp/schema/results_3.3.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<Result version="3.3"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://jvndb.jvn.jp/myjvn/Results"
+  xmlns:mjres="http://jvndb.jvn.jp/myjvn/Results"
+  xmlns:status="http://jvndb.jvn.jp/myjvn/Status" xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/Results https://jvndb.jvn.jp/schema/results_3.3.xsd">
   <VendorInfo xml:lang="ja">
-    <Vendor 
-      vid="12345"
-      vname="東京電機大学" 
-      cpe="cpe:/:dendai.ac.jp" 
-    >
-      <Product 
-        pid="67890"
-        pname="MyJVN API" 
-        cpe="cpe:/a:dendai.ac.jp:myjvn_api" 
-      />
+    <Vendor vname="三菱電機" cpe="cpe:/:mitsubishielectric" vid="4499">
+      <Product pname="MELIPC シリーズ MI5000" cpe="cpe:/a:mitsubishielectric:melipc_series_mi5000" pid="43039" />
+      <Product pname="MELIPC シリーズ MI5122-VW" cpe="cpe:/o:mitsubishielectric:melipc_series_mi5122-vw" pid="76240" />
+      <Product pname="MELSEC F シリーズ" cpe="cpe:/a:mitsubishielectric:melsec_f_series" pid="43870" />
+      <Product pname="MELSEC FX シリーズ" cpe="cpe:/o:mitsubishielectric:melsec-fx_firmware" pid="44968" />
+      <Product pname="MELSEC FX3G シリーズ" cpe="cpe:/h:mitsubishielectric:melsec_fx3g" pid="24920" />
+      <Product pname="MELSEC iQ-F シリーズ" cpe="cpe:/o:mitsubishielectric:melsec_iq-f_firmware" pid="43868" />
+      <Product pname="melsec iq-fx5u-32mr/ds ファームウェア" cpe="cpe:/o:mitsubishielectric:melsec_iq-fx5u-32mr%2Fds_firmware" pid="59900" />
+      <Product pname="melsec iq-fx5u-32mr/dss ファームウェア" cpe="cpe:/o:mitsubishielectric:melsec_iq-fx5u-32mr%2Fdss_firmware" pid="59902" />
+      <Product pname="melsec iq-fx5u-32mr/es ファームウェア" cpe="cpe:/o:mitsubishielectric:melsec_iq-fx5u-32mr%2Fes_firmware" pid="59899" />
+      <Product pname="melsec iq-fx5u-32mr/ess ファームウェア" cpe="cpe:/o:mitsubishielectric:melsec_iq-fx5u-32mr%2Fess_firmware" pid="59901" />
+      <Product pname="melsec iq-fx5u-32mt/ds ファームウェア" cpe="cpe:/o:mitsubishielectric:melsec_iq-fx5u-32mt%2Fds_firmware" pid="59896" />
+      <Product pname="melsec iq-fx5u-32mt/dss ファームウェア" cpe="cpe:/o:mitsubishielectric:melsec_iq-fx5u-32mt%2Fdss_firmware" pid="59898" />
+      <Product pname="melsec iq-fx5u-32mt/es ファームウェア" cpe="cpe:/o:mitsubishielectric:melsec_iq-fx5u-32mt%2Fes_firmware" pid="59895" />
+      <Product pname="melsec iq-fx5u-32mt/ess ファームウェア" cpe="cpe:/o:mitsubishielectric:melsec_iq-fx5u-32mt%2Fess_firmware" pid="59897" />
+      <Product pname="melsec iq-fx5u-64mr/ds ファームウェア" cpe="cpe:/o:mitsubishielectric:melsec_iq-fx5u-64mr%2Fds_firmware" pid="59908" />
+      <Product pname="melsec iq-fx5u-64mr/dss ファームウェア" cpe="cpe:/o:mitsubishielectric:melsec_iq-fx5u-64mr%2Fdss_firmware" pid="59910" />
+      <Product pname="melsec iq-fx5u-64mr/es ファームウェア" cpe="cpe:/o:mitsubishielectric:melsec_iq-fx5u-64mr%2Fes_firmware" pid="59907" />
+      <Product pname="melsec iq-fx5u-64mr/ess ファームウェア" cpe="cpe:/o:mitsubishielectric:melsec_iq-fx5u-64mr%2Fess_firmware" pid="59909" />
+      <Product pname="melsec iq-fx5u-64mt/ds ファームウェア" cpe="cpe:/o:mitsubishielectric:melsec_iq-fx5u-64mt%2Fds_firmware" pid="59904" />
+      <Product pname="melsec iq-fx5u-64mt/dss ファームウェア" cpe="cpe:/o:mitsubishielectric:melsec_iq-fx5u-64mt%2Fdss_firmware" pid="59906" />
+      <Product pname="melsec iq-fx5u-64mt/es ファームウェア" cpe="cpe:/o:mitsubishielectric:melsec_iq-fx5u-64mt%2Fes_firmware" pid="59903" />
+      <Product pname="melsec iq-fx5u-64mt/ess ファームウェア" cpe="cpe:/o:mitsubishielectric:melsec_iq-fx5u-64mt%2Fess_firmware" pid="59905" />
+      <Product pname="melsec iq-fx5u-80mt/ds ファームウェア" cpe="cpe:/o:mitsubishielectric:melsec_iq-fx5u-80mt%2Fds_firmware" pid="59912" />
+      <Product pname="melsec iq-fx5u-80mt/dss ファームウェア" cpe="cpe:/o:mitsubishielectric:melsec_iq-fx5u-80mt%2Fdss_firmware" pid="59914" />
+      <Product pname="melsec iq-fx5u-80mt/es ファームウェア" cpe="cpe:/o:mitsubishielectric:melsec_iq-fx5u-80mt%2Fes_firmware" pid="59911" />
+      <Product pname="melsec iq-fx5u-80mt/ess ファームウェア" cpe="cpe:/o:mitsubishielectric:melsec_iq-fx5u-80mt%2Fess_firmware" pid="59913" />
+      <Product pname="MELSEC iQ-L シリーズ" cpe="cpe:/o:mitsubishielectric:melsec_iq-l_firmware" pid="77934" />
+      <Product pname="MELSEC iQ-R シリーズ" cpe="cpe:/o:mitsubishielectric:melsec_iq-r_firmware" pid="43867" />
+      <Product pname="MELSEC iQ-R シリーズ C言語インテリジェント機能ユニット" cpe="cpe:/a:mitsubishielectric:melsec_iq-r_series_c_intelligent_function_module" pid="43038" />
+      <Product pname="MELSEC iQ-R シリーズ C言語コントローラユニット" cpe="cpe:/a:mitsubishielectric:melsec_iq-r_series_c_controller_module" pid="43037" />
+      <Product pname="MELSEC iQ-R シリーズ RD81MES96N ファームウェア" cpe="cpe:/o:mitsubishielectric:melsec_iq-r_rd81mes96n_firmware" pid="75769" />
+      <Product pname="MELSEC L シリーズ" cpe="cpe:/o:mitsubishielectric:melsec-l_firmware" pid="43871" />
+      <Product pname="MELSEC L シリーズ LJ71E71-100 ファームウェア" cpe="cpe:/o:mitsubishielectric:melsec_lj71e71-100_firmware" pid="75771" />
+      <Product pname="MELSEC Q シリーズ" cpe="cpe:/o:mitsubishielectric:melsec-q_firmware" pid="43869" />
+      <Product pname="MELSEC Q シリーズ QJ71E71-100 ファームウェア" cpe="cpe:/o:mitsubishielectric:melsec_qj71e71-100_firmware" pid="75770" />
+      <Product pname="MELSEC WS シリーズ WS0-GETH00200" cpe="cpe:/o:mitsubishielectric:melsec_ws0-geth00200_firmware" pid="56740" />
+      <Product pname="MELSEC-L シリーズ" cpe="cpe:/a:mitsubishielectric:melsec-l_series" pid="57374" />
+      <Product pname="MELSEC-L シリーズ CPU ユニット" cpe="cpe:/a:mitsubishielectric:melsec-l_series_cpu_unit" pid="41508" />
+      <Product pname="MELSEC-Q シリーズ" cpe="cpe:/a:mitsubishielectric:melsec-q_series" pid="57373" />
+      <Product pname="MELSEC-Q シリーズ CPU ユニット" cpe="cpe:/a:mitsubishielectric:melsec-q_series_cpu_unit" pid="41507" />
+      <Product pname="MELSEC-Q シリーズ C言語コントローラユニット" cpe="cpe:/a:mitsubishielectric:melsec-q_series_c_controller_module" pid="43036" />
+      <Product pname="MELSOFT EM Software Development Kit" cpe="cpe:/a:mitsubishielectric:melsoft_em_software_development_kit" pid="46766" />
+      <Product pname="MELSOFT FieldDeviceConfigurator" cpe="cpe:/a:mitsubishielectric:melsoft_fielddeviceconfigurator" pid="53180" />
+      <Product pname="MELSOFT iQ AppPortal" cpe="cpe:/a:mitsubishielectric:melsoft_iq_appportal" pid="56953" />
+      <Product pname="MELSOFT Navigator" cpe="cpe:/a:mitsubishielectric:melsoft_navigator" pid="46767" />
+      <Product pname="mfz-gxt50/60/73vfk ファームウェア" cpe="cpe:/o:mitsubishielectric:mfz-gxt50%2F60%2F73vfk_firmware" pid="64700" />
+      <Product pname="mfz-xt50/60vfk ファームウェア" cpe="cpe:/o:mitsubishielectric:mfz-xt50%2F60vfk_firmware" pid="64701" />
+      <Product pname="MH11 SettingTool Version2" cpe="cpe:/a:mitsubishielectric:mh11_settingtool_version2" pid="46768" />
+      <Product pname="MI Configurator" cpe="cpe:/a:mitsubishielectric:mi_configurator" pid="46769" />
+      <Product pname="Mitsubishi MX4 SCADA" cpe="cpe:/a:mitsubishielectric:mx4_scada" pid="9611" />
     </Vendor>
   </VendorInfo>
-  <status:Status 
-    version="3.3" 
-    method="getProductList" 
-    feed="hnd"
-    lang="ja" 
-    retCd="0" 
-    retMax="10000" 
-    errCd=""
-    errMsg="" 
-    totalRes="1" 
-    totalResRet="1"
-    firstRes="1"
-  />
+  <status:Status version="3.3" method="getProductList" lang="ja" retCd="0" retMax="10000" errCd="" errMsg="" totalRes="77572" totalResRet="50" firstRes="76000" feed="hnd" startItem="76000" maxCountItem="50" />
 </Result>
-
-

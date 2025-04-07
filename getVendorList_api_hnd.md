@@ -132,7 +132,6 @@ firstRes="応答エントリ開始位置" >
       ベンダ名  
       \[例\] `東京電機大学`
     - cpe [type:string] [required]  
-      CPE Vendor Name  
-      CPE ベンダ名  
-      CPE Vendor Name that based on the CPE 2.2 specification.  
+      CPE Vendor Name (CPE v2.2 format)  
+      CPE ベンダ名 (CPE v2.2 形式)  
       \[例\] `cpe:/:dendai.ac.jp`

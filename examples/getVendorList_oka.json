@@ -7,7 +7,7 @@
       }
     },
     "title": "MyJVN getVendorList API",
-    "id": "jvnpid:1.0::ipa:myjvn_api_getVendorList:4.0.0.0.0",
+    "id": "jvnpid:1.0::ipa:myjvn_api_getVendorList:4.0.0",
     "link": "https://jvndb.jvn.jp/apis/myjvn/",
     "updated": "2025-03-24T06:17:53+09:00",
     "lang": "ja",
@@ -345,8 +345,10 @@
     "retMax": "10000",
     "errCd": "",
     "errMsg": "",
-    "totalRes": "2",
-    "totalResRet": "2",
-    "firstRes": "1"
+    "totalRes": "29944",
+    "totalResRet": "50",
+    "firstRes": "1",
+    "startItem": "29860",
+    "maxCountItem": "50"
   }
 }

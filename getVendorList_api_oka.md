@@ -101,7 +101,7 @@
       }
     },
     "title": "MyJVN getVendorList API",
-    "id": "jvnpid:1.0::ipa:myjvn_api_getVendorList:4.0.0.0.0",
+    "id": "jvnpid:1.0::ipa:myjvn_api_getVendorList:4.0.0",
     "link": "https://jvndb.jvn.jp/apis/myjvn/",
     "updated": "更新日",
     "lang": "ja",
@@ -141,7 +141,7 @@
   - vendors [type:array]
     - vendor_id [type:string] [required]  
       JVN Vendor Name (jvnpid 1.0 format)  
-      JVN ベンダ名 (jvnpid 1.0形式)  
+      JVN ベンダ名 (jvnpid 1.0 形式)  
       \[例\] `jvnpid:1.0::dendai.ac.jp`
     - vid [type:integer] [required]  
       Vendor unique number in JVN iPedia  
@@ -152,21 +152,21 @@
       ベンダ名  
       \[例\] `東京電機大学`
     - cpe [type:string] [required]  
-      CPE Vendor Name  (CPE v2.3 format)  
-      CPE ベンダ名 (CPE v2.3形式)  
+      CPE Vendor Name (CPE v2.3 format)  
+      CPE ベンダ名 (CPE v2.3 形式)  
       \[例\] `cpe:2.3::dendai.ac.jp`
 
   - generator [type:object]
-     - engine [type:object]
-       - name [type:string] [required]  
-         `MyJVN API`
-       - version [type:string] [required]  
-         `4.0.0`
+    - engine [type:object]
+      - name [type:string] [required]  
+        `MyJVN API`
+      - version [type:string] [required]  
+        `4.0.0`
 
   - title [type:string] [required]  
     `MyJVN getVendorList API`
   - id [type:string] [required]  
-    `jvnpid:1.0::ipa:myjvn_api_getVendorList:4.0.0.0.0`
+    `jvnpid:1.0::ipa:myjvn_api_getVendorList:4.0.0`
   - link [type:string] [required]  
     `https://jvndb.jvn.jp/myjvn`
   - updated [type:string] [required]  
