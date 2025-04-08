@@ -1,32 +1,25 @@
 # Welcome to MyJVN APIs!
 
-* MyJVN API
+- MyJVN API
 
-| API名 | メソッド名 | 概要 | バージョン | 形式 |
-| ---- | ---- | ---- | ---- | ---- | 
-| 注意警戒情報一覧の取得 | getAlertList | 注意警戒情報一覧を取得します。 | [ HND ](getAlertList_api_hnd.md) | XML,JSON | 
-| | | | [ OKA ](getAlertList_api_oka.md) | JSON | 
-| ベンダ一覧の取得 | getVendorList | フィルタリング条件に当てはまるベンダ名(製品開発者)リストを取得します。 | [ HND ](getVendorList_api_hnd.md) | XML | 
-| | | | [ OKA ](getVendorList_api_oka.md) | JSON | 
-| 製品一覧の取得 | getProductList | フィルタリング条件に当てはまる製品名リストを取得します。 | [ HND ](getProductList_api_hnd.md) | XML | 
-| | | | [ OKA ](getProductList_api_oka.md) | JSON | 
-| 脆弱性対策概要情報一覧の取得 | getVulnOverviewList | フィルタリング条件に当てはまる脆弱性対策の概要情報リストを取得します。 | [ HND ](getVulnOverviewList_api_hnd.md) | XML | 
-| | | | [ OKA ](getVulnOverviewList_api_oka.md) | JSON | 
+| API 名                       | メソッド名          | 概要                                                                   | Ver3.2 <br> HND                                  | Ver4.0 <br> OKA                          |
+| ---------------------------- | ------------------- | ---------------------------------------------------------------------- | ------------------------------------------------ | ---------------------------------------- |
+| 注意警戒情報一覧の取得       | getAlertList        | 注意警戒情報一覧を取得します。                                         | [ XML \| JSON ](docs/getAlertList_api_hnd.md) <br> | [ JSON ](docs/getAlertList_api_oka.md)   |
+| ベンダ一覧の取得             | getVendorList       | フィルタリング条件に当てはまるベンダ名(製品開発者)リストを取得します。 | [ XML ](docs/getVendorList_api_hnd.md)                | [ JSON ](docs/getVendorList_api_oka.md)       |
+| 製品一覧の取得               | getProductList      | フィルタリング条件に当てはまる製品名リストを取得します。               | [ XML ](docs/getProductList_api_hnd.md)               | [ JSON ](docs/getProductList_api_oka.md)      |
+| 脆弱性対策概要情報一覧の取得 | getVulnOverviewList | フィルタリング条件に当てはまる脆弱性対策の概要情報リストを取得します。 | [ XML ](docs/getVulnOverviewList_api_hnd.md)          | [ JSON ](docs/getVulnOverviewList_api_oka.md) |
 
 <br>
 <br>
 
-* MyJVNデータフィード
+- MyJVN データフィード
 
 | データフィード名 | 概要 | バージョン | 形式 |
-| ---- | ---- | ---- | ---- | 
+| ---------------- | ---- | ---------- | ---- |
 
 <br>
 <br>
 
+- 謝辞
 
-
-
-* 謝辞
-
-本サイトでは、総務省「ソフトウェア脆弱性を狙ったサイバー攻撃の防御に向けた情報共有基盤に関する実証実験」の成果を活用しています。 
+本サイトでは、総務省「ソフトウェア脆弱性を狙ったサイバー攻撃の防御に向けた情報共有基盤に関する実証実験」の成果を活用しています。
