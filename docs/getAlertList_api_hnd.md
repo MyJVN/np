@@ -87,7 +87,7 @@ CPE 製品識別子を指定します。
 
 ### 例
 
-- [ getAlertList_hnd.xml ](examples/getAlertList_hnd.xml)
+- [ getAlertList_hnd.xml ](../examples/getAlertList_hnd.xml)
 
 ```
 <?xml version="1.0" encoding="utf-8" ?>
@@ -169,7 +169,7 @@ firstRes="応答エントリ開始位置" >
 
 ### 例
 
-- [ getAlertList_hnd.json ](examples/getAlertList_hnd.json)
+- [ getAlertList_hnd.json ](../examples/getAlertList_hnd.json)
 
 ```
 {

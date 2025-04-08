@@ -108,7 +108,7 @@ CPE 製品名を指定します。
 - MyJVN 共通 Status ノード：https://jvndb.jvn.jp/schema/status_3.3.xsd
 
 ### 例
-- [ getProductList_hnd.xml ](examples/getProductList_hnd.xml)
+- [ getProductList_hnd.xml ](../examples/getProductList_hnd.xml)
 
 ```
 <?xml version="1.0" encoding="UTF-8" ?>

@@ -172,7 +172,7 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
 
 ### 例
 
-- [ getAlertList_oka.json ](examples/getAlertList_oka.json)
+- [ getAlertList_oka.json ](../examples/getAlertList_oka.json)
 
 ```
 {

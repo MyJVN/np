@@ -100,7 +100,7 @@
 
 ### 例
 
-- [ getVendorList_oka.json ](examples/getVendorList_oka.json)
+- [ getVendorList_oka.json ](../examples/getVendorList_oka.json)
 
 ```
 {

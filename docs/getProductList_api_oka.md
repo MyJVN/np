@@ -163,7 +163,7 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
 - TBD
 
 ### 例
-- [ getProductList_oka.json ](examples/getProductList_oka.json)
+- [ getProductList_oka.json ](../examples/getProductList_oka.json)
 
 ```
 {

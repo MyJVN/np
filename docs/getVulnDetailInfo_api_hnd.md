@@ -34,7 +34,7 @@
 - MyJVN共通Statusノード：https://jvndb.jvn.jp/schema/status_3.3.xsd
 
 ### 例
-- [ getVulnDetailInfo_hnd.xml ](examples/getVulnDetailInfo_hnd.xml)
+- [ getVulnDetailInfo_hnd.xml ](../examples/getVulnDetailInfo_hnd.xml)
 
 ```
 <?xml version="1.0" encoding="UTF-8" ?>
