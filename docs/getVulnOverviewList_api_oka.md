@@ -227,7 +227,7 @@ CVSSv4 基本評価基準、CVSSv4 深刻度を指定します。
 
 ### 例
 
-- [ getVulnOverviewList_oka.json ](examples/getVulnOverviewList_oka.json)
+- [ getVulnOverviewList_oka.json ](../examples/getVulnOverviewList_oka.json)
 
 ```
 {
