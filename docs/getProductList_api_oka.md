@@ -175,7 +175,7 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
       }
     },
     "title": "JVNDB 製品一覧",
-    "id": "jvnpid:1.0:ipa:myjvn_api_getProductList:4.0.0",
+    "id": "jvnpid:1.0::ipa:myjvn_api_getProductList:4.0.0",
     "link": "https://jvndb.jvn.jp/apis/myjvn/",
     "updated": "更新日",
     "lang": "ja",
