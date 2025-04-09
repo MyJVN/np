@@ -239,7 +239,7 @@ CVSSv4 基本評価基準、CVSSv4 深刻度を指定します。
       }
     },
     "title": "getVulnOverviewList API",
-    "id": "jvnpid:1.0:ipa:myjvn_api_getVulnOverviewList:4.0.0",
+    "id": "jvnpid:1.0::ipa:myjvn_api_getVulnOverviewList:4.0.0",
     "link": "https://jvndb.jvn.jp/apis/myjvn/",
     "updated": "更新日",
     "lang": "ja",
