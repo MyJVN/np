@@ -156,12 +156,15 @@ firstRes="応答エントリ開始位置" >
 </feed>
 ```
 
+<br>
+<br>
+
 ## レスポンス(JSON)
 
 ### 概要
 
-- 処理成功時、feed ノード、MyJVN 共通 Status ノードを含む JSON(UTF-8)を応答します。
-- エラー発生時、MyJVN 共通 Status ノードにエラーコードとエラーメッセージを格納します。
+- 処理成功時、feed、MyJVN 共通 Status を含む JSON(UTF-8)を応答します。
+- エラー発生時、MyJVN 共通 Status にエラーコードとエラーメッセージを格納します。
 
 ### JSON スキーマ
 

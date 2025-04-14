@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<VULDEF-Document 
+version="3.2" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns="http://jvn.jp/vuldef/" 
+xmlns:vuldef="http://jvn.jp/vuldef/" 
+xmlns:status="http://jvndb.jvn.jp/myjvn/Status" 
+xmlns:sec="http://jvn.jp/rss/mod_sec/3.0/" 
+xmlns:marking="http://data-marking.mitre.org/Marking-1" 
+xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1" 
+xsi:schemaLocation="http://jvn.jp/vuldef/ https://jvndb.jvn.jp/schema/vuldef_3.2.xsd http://jvn.jp/rss/mod_sec/3.0/ https://jvndb.jvn.jp/schema/mod_sec_3.0.xsd http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1 https://jvndb.jvn.jp/schema/tlp_marking.xsd http://jvndb.jvn.jp/myjvn/Status https://jvndb.jvn.jp/schema/status_3.3.xsd" 
+xml:lang="ja">
+    <Vulinfo>
+      <VulinfoID>JVNDB-2022-000097</VulinfoID>
+      <VulinfoData>
+        <Title>電子入札コアシステムにおける複数の脆弱性</Title>
+        <VulinfoDescription>
+          <Overview>一般財団法人日本建設情報総合センターが提供する電子入札コアシステムには、次の複数の脆弱性が存在します。&lt;ul&gt;&lt;li&gt;クロスサイトスクリプティング (CWE-79) - CVE-2022-41993&lt;/li&gt;&lt;li&gt;クロスサイトスクリプティング (CWE-79) - CVE-2022-46287&lt;/li&gt;&lt;li&gt;オープンリダイレクト (CWE-601) - CVE-2022-46288&lt;/li&gt;&lt;/ul&gt;</Overview>
+        </VulinfoDescription>
+        <Affected>
+          <AffectedItem>
+            <Name>一般財団法人日本建設情報総合センター</Name>
+            <ProductName>電子入札コアシステム</ProductName>
+            <Cpe version="2.2">cpe:/a:jacic:electronic_bidding_core_system</Cpe>
+            <VersionNumber>v6 R4 およびそれ以前のバージョン</VersionNumber>
+          </AffectedItem>
+        </Affected>
+        <Impact>
+          <Cvss version="2.0">
+            <Severity type="Base">Medium</Severity>
+            <Base>4.3</Base>
+            <Vector>AV:N/AC:M/Au:N/C:N/I:P/A:N</Vector>
+          </Cvss>
+          <Cvss version="3.0">
+            <Severity type="Base">Medium</Severity>
+            <Base>6.1</Base>
+            <Vector>CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N</Vector>
+          </Cvss>
+          <ImpactItem>
+            <Description>想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。&lt;ul&gt;&lt;li&gt;当該製品を使用しているシステムにログインしているユーザのウェブブラウザ上で、任意のスクリプトを実行される - CVE-2022-41993&lt;/li&gt;&lt;li&gt;当該製品を使用しているシステムにアクセスしたユーザのウェブブラウザ上で、任意のスクリプトを実行される - CVE-2022-46287&lt;/li&gt;&lt;li&gt;細工された URL にアクセスすることで、任意のウェブサイトにリダイレクトされる - CVE-2022-46288&lt;/li&gt;&lt;/ul&gt;</Description>
+          </ImpactItem>
+        </Impact>
+        <Solution>
+          <SolutionItem>
+            <Description>[パッチを適用する] 開発者が提供する情報をもとにパッチを適用してください。</Description>
+          </SolutionItem>
+        </Solution>
+        <Related>
+          <RelatedItem type="vendor">
+            <Name>JACIC</Name>
+            <VulinfoID>【発注機関の皆様】電子入札コアシステムにおける複数の脆弱性について</VulinfoID>
+            <URL>https://www.cals.jacic.or.jp/coreconso/pdf/coreconsoinfo20221215.pdf</URL>
+          </RelatedItem>
+          <RelatedItem type="advisory">
+            <Name>Common Vulnerabilities and Exposures (CVE)</Name>
+            <VulinfoID>CVE-2022-41993</VulinfoID>
+            <URL>https://www.cve.org/CVERecord?id=CVE-2022-41993</URL>
+          </RelatedItem>
+          <RelatedItem type="advisory">
+            <Name>Common Vulnerabilities and Exposures (CVE)</Name>
+            <VulinfoID>CVE-2022-46287</VulinfoID>
+            <URL>https://www.cve.org/CVERecord?id=CVE-2022-46287</URL>
+          </RelatedItem>
+          <RelatedItem type="advisory">
+            <Name>Common Vulnerabilities and Exposures (CVE)</Name>
+            <VulinfoID>CVE-2022-46288</VulinfoID>
+            <URL>https://www.cve.org/CVERecord?id=CVE-2022-46288</URL>
+          </RelatedItem>
+          <RelatedItem type="advisory">
+            <Name>JVN</Name>
+            <VulinfoID>JVN#96321933</VulinfoID>
+            <URL>https://jvn.jp/jp/JVN96321933/index.html</URL>
+          </RelatedItem>
+          <RelatedItem type="advisory">
+            <Name>National Vulnerability Database (NVD)</Name>
+            <VulinfoID>CVE-2022-41993</VulinfoID>
+            <URL>https://nvd.nist.gov/vuln/detail/CVE-2022-41993</URL>
+          </RelatedItem>
+          <RelatedItem type="advisory">
+            <Name>National Vulnerability Database (NVD)</Name>
+            <VulinfoID>CVE-2022-46287</VulinfoID>
+            <URL>https://nvd.nist.gov/vuln/detail/CVE-2022-46287</URL>
+          </RelatedItem>
+          <RelatedItem type="advisory">
+            <Name>National Vulnerability Database (NVD)</Name>
+            <VulinfoID>CVE-2022-46288</VulinfoID>
+            <URL>https://nvd.nist.gov/vuln/detail/CVE-2022-46288</URL>
+          </RelatedItem>
+          <RelatedItem type="cwe">
+            <Name>JVNDB</Name>
+            <VulinfoID>CWE-79</VulinfoID>
+            <Title>クロスサイトスクリプティング</Title>
+            <URL>https://jvndb.jvn.jp/ja/cwe/CWE-79.html</URL>
+          </RelatedItem>
+          <RelatedItem type="cwe">
+            <Name>JVNDB</Name>
+            <VulinfoID>CWE-20</VulinfoID>
+            <Title>不適切な入力確認</Title>
+            <URL>https://jvndb.jvn.jp/ja/cwe/CWE-20.html</URL>
+          </RelatedItem>
+        </Related>
+        <History>
+          <HistoryItem>
+            <HistoryNo>1</HistoryNo>
+            <DateTime>2022-12-07T13:44:19+09:00</DateTime>
+            <Description>[2022年12月15日]\n  掲載</Description>
+          </HistoryItem>
+          <HistoryItem>
+            <HistoryNo>2</HistoryNo>
+            <DateTime>2024-07-10T15:35:46+09:00</DateTime>
+            <Description>[2024年05月29日]\n  参考情報：National Vulnerability Database (NVD) (CVE-2022-41993) を追加\n  参考情報：National Vulnerability Database (NVD) (CVE-2022-46287) を追加\n  参考情報：National Vulnerability Database (NVD) (CVE-2022-46288) を追加\n</Description>
+          </HistoryItem>
+        </History>
+        <DateFirstPublished>2022-12-15T12:04:51+09:00</DateFirstPublished>
+        <DateLastUpdated>2024-05-29T17:39:51+09:00</DateLastUpdated>
+        <DatePublic>2022-12-15T00:00:00+09:00</DatePublic>
+      </VulinfoData>
+    </Vulinfo>
+    <sec:handling>
+      <marking:Marking>
+        <marking:Marking_Structure xsi:type="tlpMarking:TLPMarkingStructureType" marking_model_name="TLP" marking_model_ref="http://www.us-cert.gov/tlp/" color="WHITE"/>
+      </marking:Marking>
+    </sec:handling>
+    <status:Status version="3.3" method="getVulnDetailInfo" lang="ja" retCd="0" retMax="10" errCd="" errMsg="" totalRes="1" totalResRet="1" firstRes="1" feed="hnd" vulnId="JVNDB-2022-000097"/>
+  </VULDEF-Document>
+

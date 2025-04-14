@@ -1,0 +1,57 @@
+{
+  "feed": {
+    "title": "IPA注意警戒サービスAPI",
+    "id": "swid:ipa.go.jp+myjvn_alert+1.0.0",
+    "author": { "name": "IPA", "uri": "https://www.ipa.go.jp/" },
+    "updated": "2025-03-23T05:16:35+09:00",
+    "link": "https://jvndb.jvn.jp/apis/myjvn/",
+    "sec:handling": {
+      "marking:Marking": {
+        "marking:Marking_Structure": {
+          "xsi:type": "tlpMarking:TLPMarkingStructureType",
+          "marking_model_name": "TLP",
+          "marking_model_ref": "http://www.us-cert.gov/tlp/",
+          "color": "WHITE"
+        }
+      }
+    },
+    "entry": [
+      {
+        "title": "WordPress に関するソフトウェア更新情報 (2025年2月12日 公開)",
+        "id": "MYJVN-ALT-2025-0011",
+        "link": "",
+        "summary": "",
+        "category": { "term": "Info", "label": "INFO" },
+        "update": "2025-02-12T10:58:02+09:00",
+        "published": "2025-02-12T10:58:02+09:00",
+        "sec:items": [
+          {
+            "sec:item": {
+              "sec:title": "Download WordPress (6.7.2)",
+              "sec:identifier": "MYJVN-ALT-2025-0011-0001",
+              "sec:link": "https://wordpress.org/download/",
+              "sec:published": "2025-02-12T00:00:00+09:00",
+              "sec:updated": "2025-02-12T10:58:02+09:00",
+              "sec:author": { "value": "WordPress.org" },
+              "sec:cpe": [{ "value": "cpe:/a:wordpress:wordpress" }]
+            }
+          }
+        ]
+      }
+    ],
+    "status:Status": {
+      "version": "3.3",
+      "method": "getAlertList",
+      "retCd": 0,
+      "retMax": "50",
+      "errCd": "",
+      "errMsg": "",
+      "totalRes": "1",
+      "totalResRet": "1",
+      "firstRes": "1",
+      "cpeName": "cpe:/a:wordpress:wordpress",
+      "ft": "json",
+      "feed": "hnd"
+    }
+  }
+}

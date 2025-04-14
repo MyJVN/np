@@ -1,0 +1,284 @@
+{
+  "document": {
+    "category": "myjvn_security_advisory",
+    "csaf_version": "2.1",
+    "distribution": {
+      "tlp": {
+        "label": "CLEAR",
+        "url": "https://www.first.org/tlp/"
+      }
+    },
+    "title": "JP1/VERITAS 製品における複数の脆弱性",
+    "lang": "ja",
+    "notes": [
+      {
+        "category": "description",
+        "text": "JP1/VERITAS 製品に複数の脆弱性が存在します。"
+      }
+    ],
+    "tracking": {
+      "generator": {
+        "engine": {
+          "version": "4.0.0",
+          "name": "MyJVN API"
+        }
+      },
+      "id": "JVNDB-2018-009328",
+      "current_release_date": "2025-04-06T03:00:00+09:00",
+      "initial_release_date": "2018-11-15T16:17:27+09:00",
+      "public_release_date": "2018-11-14T00:00:00+09:00",
+      "status": "final",
+      "version": "3.0.0",
+      "revision_history": [
+        {
+          "date": "2018-11-15T16:17:27+09:00",
+          "number": "1.0.0",
+          "summary": "[2018年11月15日] 掲載"
+        },
+        {
+          "date": "2018-11-20T10:37:07+09:00",
+          "number": "2.0.0",
+          "summary": "[2018年11月20日] CVSS による深刻度：内容を更新"
+        },
+        {
+          "date": "2025-04-06T02:00:00+09:00",
+          "number": "3.0.0",
+          "summary": "XML形式からJSON形式に変換"
+        }
+      ]
+    },
+    "publisher": {
+      "category": "coordinator",
+      "name": "IPA",
+      "namespace": "https://www.ipa.go.jp"
+    },
+    "references": [
+      {
+        "category": "external",
+        "summary": "hitachi-sec-2018-133",
+        "url": "http://www.hitachi.co.jp/Prod/comp/soft1/global/security/info/vuls/hitachi-sec-2018-133/index.html",
+        "type": "vendor",
+        "source": "Hitachi Software Vulnerability Information"
+      },
+      {
+        "category": "external",
+        "summary": "Article ID:100000477",
+        "url": "https://www.veritas.com/support/en_US/article.100000477.html",
+        "type": "vendor",
+        "source": "Support"
+      },
+      {
+        "category": "external",
+        "summary": "Article ID:100043979",
+        "url": "https://www.veritas.com/support/en_US/article.100043979.html",
+        "type": "vendor",
+        "source": "Support"
+      },
+      {
+        "category": "external",
+        "summary": "hitachi-sec-2018-133",
+        "url": "http://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2018-133/index.html",
+        "type": "vendor",
+        "source": "ソフトウェア製品セキュリティ情報"
+      }
+    ]
+  },
+  "product_tree": {
+    "branches": [
+      {
+        "category": "vendor",
+        "name": "ベリタス",
+        "product": {
+          "product_id": "jvnpid:1.0::veritas:netbackup",
+          "name": "Veritas NetBackup",
+          "product_identification_helper": {
+            "cpe": "cpe:2.3:a:veritas:netbackup:*:*:*:*:*:*:*:*"
+          }
+        }
+      },
+      {
+        "category": "vendor",
+        "name": "日立",
+        "product": {
+          "product_id": "jvnpid:1.0::hitachi:jp1_veritas_netbackup",
+          "name": "JP1/VERITAS NetBackup",
+          "product_identification_helper": {
+            "cpe": "cpe:2.3:a:hitachi:jp1_veritas_netbackup:*:*:*:*:*:*:*:*"
+          }
+        }
+      }
+    ]
+  },
+  "vulnerabilities": [
+    {
+      "cve": "",
+      "cwes": [
+        {
+          "id": "CWE-noinfo",
+          "name": "情報不足",
+          "version": "",
+          "source": "IPA"
+        }
+      ],
+      "product_status": {
+        "known_affected": [
+          "jvnpid:1.0::veritas:netbackup",
+          "jvnpid:1.0::hitachi:jp1_veritas_netbackup"
+        ]
+      },
+      "threats": [
+        {
+          "category": "impact",
+          "details": "想定される影響については、ベンダ情報をご確認ください。"
+        }
+      ],
+      "remediations": [
+        {
+          "category": "vendor_fix",
+          "details": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。",
+          "product_ids": [
+            "jvnpid:1.0::veritas:netbackup",
+            "jvnpid:1.0::hitachi:jp1_veritas_netbackup"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "content": {
+            "cvss_v2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:N/I:P/A:N",
+              "baseScore": "10.0",
+              "baseSeverity": "CRITICAL",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "NONE"
+            },
+
+            "cvss_v3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "baseScore": "9.8",
+              "baseSeverity": "CRITICAL",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH"
+            },
+            "source": "vendor",
+            "type": "Primary"
+          },
+          "products": [
+            "jvnpid:1.0::veritas:netbackup",
+            "jvnpid:1.0::hitachi:jp1_veritas_netbackup"
+          ]
+        }
+      ]
+    }
+  ],
+  "jvn_extension": {
+    "version": "4.0.0",
+    "affected": [
+      {
+        "vendor": "ベリタス",
+        "product": "Veritas NetBackup",
+        "versions": [
+          {
+            "version": "7.7",
+            "status": "affected",
+            "description": "バージョン 7.7"
+          },
+          {
+            "version": "8.0",
+            "status": "affected",
+            "description": "バージョン 8.0"
+          },
+          {
+            "version": "8.1",
+            "status": "affected",
+            "description": "バージョン 8.1"
+          }
+        ]
+      },
+      {
+        "vendor": "日立",
+        "product": "JP1/VERITAS NetBackup",
+        "versions": [
+          {
+            "version": "7.7",
+            "status": "affected",
+            "description": "バージョン 7.7"
+          },
+          {
+            "version": "8.0",
+            "status": "affected",
+            "description": "バージョン 8.0"
+          },
+          {
+            "version": "8.1",
+            "status": "affected",
+            "description": "バージョン 8.1"
+          }
+        ]
+      }
+    ],
+    "cpeApplicability": [
+      {
+        "nodes": [
+          {
+            "operator": "OR",
+            "negate": false,
+            "cpeMatch": [
+              {
+                "vulnerable": true,
+                "criteria": "cpe:2.3:a:veritas:netbackup:7.7:*:*:*:*:*:*:*"
+              },
+              {
+                "vulnerable": true,
+                "criteria": "cpe:2.3:a:veritas:netbackup:8.0:*:*:*:*:*:*:*"
+              },
+              {
+                "vulnerable": true,
+                "criteria": "cpe:2.3:a:veritas:netbackup:8.1:*:*:*:*:*:*:*"
+              },
+              {
+                "vulnerable": true,
+                "criteria": "jvnpid:1.0::hitachi:jp1_veritas_netbackup:7.7"
+              },
+              {
+                "vulnerable": true,
+                "criteria": "jvnpid:1.0::hitachi:jp1_veritas_netbackup:8.0"
+              },
+              {
+                "vulnerable": true,
+                "criteria": "jvnpid:1.0::hitachi:jp1_veritas_netbackup:8.1"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "status": {
+    "version": "4.0.0",
+    "method": "getDetailInfo",
+    "feed": "oka",
+    "lang": "ja",
+    "retCd": "0",
+    "retMax": "1",
+    "errCd": "",
+    "errMsg": "",
+    "totalRes": "1",
+    "totalResRet": "1",
+    "firstRes": "1",
+    "vulnId": "JVNDB-2018-009328",
+    "ft": "jvncsaf"
+  }
+}

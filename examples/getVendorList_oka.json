@@ -1,5 +1,5 @@
 {
-  "jvn-product-dictionary": {
+  "jvn_product_dictionary": {
     "generator": {
       "engine": {
         "version": "4.0.0",
@@ -30,8 +30,8 @@
       },
       {
         "vendor_id": "jvnpid:1.0::ipa.go.jp",
-        "vid": "99999999992",
-        "vname": "情報処理推進機構",
+        "vid": "10297",
+        "vname": "独立行政法人情報処理推進機構 (IPA)",
         "cpe": "cpe:2.3::ipa.go.jp"
       },
       {
@@ -336,7 +336,7 @@
       }
     ]
   },
-  "status:Status": {
+  "status": {
     "version": "4.0.0",
     "method": "getVendorList",
     "feed": "oka",

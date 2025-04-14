@@ -1,55 +1,196 @@
-# MyJVNデータフィード
+# MyJVN データフィード
 
-## JVNDBRSS (ver. HND)
-* XMLスキーマ
-  * TBD
-* 例
-  * [ dataFeedVulnOverviewList_hnd.rdf ](examples/dataFeedVulnOverviewList_hnd.rdf)
+## JVNDBRSS (脆弱性対策情報の概要)
 
-## JVNDBRSS (ver. OKA)
-* JSONスキーマ
-  * TBD
-* 例
-  * [ dataFeedVulnOverviewList_oka.json ](examples/dataFeedVulnOverviewList_oka.json)
+### Ver3.2 HND
 
-## 脆弱性対策情報詳細 (ver. HND)
-* XMLスキーマ
-  * TBD
-* 例
-  * [ dataFeedVulnDetailInfo_hnd.xml ](examples/dataFeedVulnDetailInfo_hnd.xml)
+- XML スキーマ
 
-## 脆弱性対策情報詳細 (ver. OKA)
-* JSONスキーマ
-  * TBD
-* 例
-  * [ dataFeedVulnCsafInfo_oka.json ](examples/dataFeedVulnCsafInfo_oka.json)
+  - TBD
 
-## ベンダ一覧 (ver. HND)
-* XMLスキーマ
-  * TBD
-* 例
-  * [ dataFeedVendorList_hnd.xml ](examples/dataFeedVendorList_hnd.xml)
+- \[例\]  
+  [ dataFeed_jvndb_rss_hnd.xml ](../examples/dataFeed_jvndb_rss_hnd.xml)
+  ```
+  - rdf:RDF
+    - channel
+      - title
+      - link
+      - description
+      - dc:creator
+      - dc:date
+      - dcterms:modified
+      - items
+   - item
+      - title
+      - link
+      - description
+      - sec:identifier
+      - sec:references
+      - sec:cpe
+      - sec:cvss
+      - dc:date
+      - dcterms:issued
+      - dcterms:modified
+   - item
+   :   
+  ```
 
-## ベンダ一覧 (ver. OKA)
-* JSONスキーマ
-  * TBD
-* 例
-  * [ dataFeedVendorList_oka.json ](examples/dataFeedVendorList_oka.json)
+<br>
 
-## 製品一覧 (ver. HND)
-* XMLスキーマ
-  * TBD
-* 例
-  * [ dataFeedProductList_hnd.xml ](examples/dataFeedProductList_hnd.xml)
+### Ver4.0 OKA
 
-## 製品一覧 バージョンなし (ver. OKA)
-* JSONスキーマ
-  * TBD
-* 例
-  * [ dataFeedProductList_oka.json ](examples/dataFeedProductList_oka.json)
+- JSON スキーマ
 
-## 製品一覧 バージョンあり (ver. OKA)
-* JSONスキーマ
-  * TBD
-* 例
-  * [ dataFeedProductVersionList_oka.json ](examples/dataFeedProductVersionList_oka.json)
+  - TBD
+
+- \[例\]  
+  [ dataFeed_jvndb_rss_oka.json ](../examples/dataFeed_jvndb_rss_oka.json)
+
+  ```
+  - feed
+    - generator
+    - title
+    - id
+    - link
+    - updated
+    - lang
+    - author
+    - distribution
+    - entry
+      - title, id, summary, link, update, published, references, products, metrics, cwes
+  ```
+
+<br>
+<br>
+
+## 脆弱性対策情報詳細 (脆弱性対策情報の詳細)
+
+### Ver3.2 HND
+
+- XML スキーマ
+
+  - TBD
+
+- \[例\]  
+  [ dataFeed_jvndb_detail_hnd.xml ](../examples/dataFeed_jvndb_detail_hnd.xml)
+  ```
+  - VULDEF-Document
+    - Vulinfo
+      - VulinfoID
+      - VulinfoData
+        - Title
+        - VulinfoDescription
+        - Affected
+        - Impact
+        - Solution
+        - Related
+        - History
+        - DateFirstPublished
+        - DateLastUpdated
+        - DatePublic
+  ```
+
+<br>
+
+### Ver4.0 OKA
+
+- JSON スキーマ
+
+  - TBD
+
+- \[例\]  
+  [ dataFeed_jvndb_detail_oka.json ](../examples/dataFeed_jvndb_detail_oka.json)
+  ```
+  - format
+  - version
+  - timestamp
+  - VULDEF-Document
+    - document
+      - category, csaf_version, distribution, title, lang, notes, tracking, publisher, references
+    - product_tree
+      - branches
+    - vulnerabilities
+      - cve, cwes, product_status
+  ```
+
+<br>
+<br>
+
+## ベンダ一覧 (ベンダ名（製品開発者）リスト)
+
+### Ver3.2 HND
+
+- XML スキーマ
+
+  - TBD
+
+- \[例\]  
+  [ dataFeed_myjvn_vendor_hnd.xml ](../examples/dataFeed_myjvn_vendor_hnd.xml)
+  ```
+  - VendorInfo
+    - Vendor (vname, cpe, vid)
+  ```
+
+<br>
+
+### Ver4.0 OKA
+
+- JSON スキーマ
+
+  - TBD
+
+- \[例\]  
+  [ dataFeed_myjvn_product_oka.json ](../examples/dataFeed_myjvn_product_oka.json)
+  ```
+  - jvn_product_dictionary
+    - vendors
+      - vendor_id, vid, vname, vname_i18, cpe
+  ```
+
+<br>
+<br>
+
+## 製品一覧 (製品名リスト)
+
+### Ver3.2 HND
+
+- XML スキーマ
+
+  - TBD
+
+- \[例\]  
+  [ dataFeed_myjvn_product_hnd.xml ](../examples/dataFeed_myjvn_product_hnd.xml) バージョン表記なし
+  ```
+  - VendorInfo
+    - Vendor (vname, cpe, vid)
+      - Product (pname, cpe, pid)
+  ```
+
+<br>
+
+### Ver4.0 OKA
+
+- JSON スキーマ
+
+  - TBD
+
+- \[例\]  
+   [ dataFeed_myjvn_product_oka.json ](../examples/dataFeed_myjvn_product_oka.json) バージョン表記なし
+
+  ```
+  - jvn_product_dictionary
+    - vendors
+      - vendor_id, vid, vname, vname_i18, cpe
+      - products
+        - product_id, pid, pname, pname_i18, product_ids
+  ```
+
+  [ dataFeed_myjvn_product_version_oka.json ](../examples/dataFeed_myjvn_product_version_oka.json) バージョン表記あり
+
+  ```
+  - jvn_product_dictionary
+    - vendors
+      - vendor_id, vid, vname, vname_i18, cpe
+      - products
+        - product_id, pid, pname, pname_i18, version, product_ids
+  ```

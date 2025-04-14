@@ -1,0 +1,936 @@
+{
+  "format": "VULDEF-Document",
+  "version": "4.0.0",
+  "timestamp": "2025-04-02T00:38:11+09:00",
+  "VULDEF-Document": [
+    {
+      "document": {
+        "category": "myjvn_security_advisory",
+        "csaf_version": "2.1",
+        "distribution": {
+          "tlp": {
+            "label": "CLEAR",
+            "url": "https://www.first.org/tlp/"
+          }
+        },
+        "title": "エアバッグコントロールユニットにおける暗号アルゴリズムの使用に関する脆弱性",
+        "lang": "ja",
+        "notes": [
+          {
+            "category": "description",
+            "text": "2014 年以降に製造された不特定の乗用車のエアバッグコントロールユニット (別名 pyrotechnical control unit または PCU) には、暗号アルゴリズムの使用に関する脆弱性が存在します。"
+          }
+        ],
+        "tracking": {
+          "generator": {
+            "engine": {
+              "version": "4.0.0",
+              "name": "MyJVN API"
+            }
+          },
+          "id": "JVNDB-2017-009608",
+          "current_release_date": "2025-04-06T03:00:00+09:00",
+          "initial_release_date": "2017-11-16T15:06:40+09:00",
+          "status": "final",
+          "version": "2.0.0",
+          "revision_history": [
+            {
+              "date": "2018-02-17T10:37:52+09:00",
+              "number": "1.0.0",
+              "summary": "[2017年11月16日] 掲載"
+            },
+            {
+              "date": "2025-04-06T02:00:00+09:00",
+              "number": "2.0.0",
+              "summary": "XML形式からJSON形式に変換"
+            }
+          ]
+        },
+        "publisher": {
+          "category": "coordinator",
+          "name": "IPA",
+          "namespace": "https://www.ipa.go.jp"
+        },
+        "references": [
+          {
+            "category": "external",
+            "summary": "CVE-2017-14937",
+            "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-14937",
+            "type": "advisory",
+            "source": "Common Vulnerabilities and Exposures (CVE)"
+          },
+          {
+            "category": "external",
+            "summary": "CVE-2017-14937",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-14937",
+            "type": "advisory",
+            "source": "National Vulnerability Database (NVD)"
+          },
+          {
+            "category": "external",
+            "summary": "Vulnerability in pyrotechnical control units of passenger cars",
+            "url": "http://www.mmt.hs-karlsruhe.de/downloads/IEEM/Schwachstellen/PCU_Vulnerability_Description_HsKA.PDF",
+            "type": "advisory",
+            "source": "関連文書"
+          }
+        ]
+      },
+      "product_tree": {
+        "branches": [
+          {
+            "category": "vendor",
+            "name": "PCU",
+            "product": {
+              "product_id": "jvnpid:1.0::pcu:pcu",
+              "name": "PCU",
+              "product_identification_helper": {
+                "cpe": "cpe:2.3:h:pcu:pcu:*:*:*:*:*:*:*:*"
+              }
+            }
+          }
+        ]
+      },
+      "vulnerabilities": [
+        {
+          "cve": "CVE-2017-14937",
+          "cwes": [
+            {
+              "id": "CWE-327",
+              "name": "不完全、または危険な暗号アルゴリズムの使用",
+              "version": "",
+              "source": "NVD"
+            }
+          ],
+          "product_status": {
+            "known_affected": ["jvnpid:1.0::pcu:pcu"]
+          },
+          "threats": [
+            {
+              "category": "impact",
+              "details": "情報を取得される可能性があります。"
+            }
+          ],
+          "remediations": [
+            {
+              "category": "vendor_fix",
+              "details": "参考情報を参照して適切な対策を実施してください。",
+              "product_ids": ["jvnpid:1.0::pcu:pcu"]
+            }
+          ],
+          "metrics": [
+            {
+              "content": {
+                "cvss_v2": {
+                  "version": "2.0",
+                  "vectorString": "AV:L/AC:M/Au:N/C:P/I:N/A:N",
+                  "baseScore": 1.9,
+                  "baseSeverity": "LOW",
+                  "accessVector": "LOCAL",
+                  "accessComplexity": "MEDIUM",
+                  "authentication": "NONE",
+                  "confidentialityImpact": "PARTIAL",
+                  "integrityImpact": "NONE",
+                  "availabilityImpact": "NONE"
+                },
+                "cvss_v3": {
+                  "version": "3.0",
+                  "vectorString": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N",
+                  "baseScore": 4.7,
+                  "baseSeverity": "MEDIUM",
+                  "attackVector": "LOCAL",
+                  "attackComplexity": "HIGH",
+                  "privilegesRequired": "LOW",
+                  "userInteraction": "NONE",
+                  "scope": "UNCHANGED",
+                  "confidentialityImpact": "HIGH",
+                  "integrityImpact": "NONE",
+                  "availabilityImpact": "NONE"
+                },
+                "source": "NVD",
+                "type": "Primary"
+              },
+              "products": ["jvnpid:1.0::pcu:pcu"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "document": {
+        "category": "myjvn_security_advisory",
+        "csaf_version": "2.1",
+        "distribution": {
+          "tlp": {
+            "label": "CLEAR",
+            "url": "https://www.first.org/tlp/"
+          }
+        },
+        "title": "JP1/VERITAS 製品における複数の脆弱性",
+        "lang": "ja",
+        "notes": [
+          {
+            "category": "description",
+            "text": "JP1/VERITAS 製品に複数の脆弱性が存在します。"
+          }
+        ],
+        "tracking": {
+          "generator": {
+            "engine": {
+              "version": "4.0.0",
+              "name": "MyJVN API"
+            }
+          },
+          "id": "JVNDB-2018-009328",
+          "current_release_date": "2025-04-06T03:00:00+09:00",
+          "initial_release_date": "2018-11-15T16:17:27+09:00",
+          "public_release_date": "2018-11-14T00:00:00+09:00",
+          "status": "final",
+          "version": "3.0.0",
+          "revision_history": [
+            {
+              "date": "2018-11-15T16:17:27+09:00",
+              "number": "1.0.0",
+              "summary": "[2018年11月15日] 掲載"
+            },
+            {
+              "date": "2018-11-20T10:37:07+09:00",
+              "number": "2.0.0",
+              "summary": "[2018年11月20日] CVSS による深刻度：内容を更新"
+            },
+            {
+              "date": "2025-04-06T02:00:00+09:00",
+              "number": "3.0.0",
+              "summary": "XML形式からJSON形式に変換"
+            }
+          ]
+        },
+        "publisher": {
+          "category": "coordinator",
+          "name": "IPA",
+          "namespace": "https://www.ipa.go.jp"
+        },
+        "references": [
+          {
+            "category": "external",
+            "summary": "hitachi-sec-2018-133",
+            "url": "http://www.hitachi.co.jp/Prod/comp/soft1/global/security/info/vuls/hitachi-sec-2018-133/index.html",
+            "type": "vendor",
+            "source": "Hitachi Software Vulnerability Information"
+          },
+          {
+            "category": "external",
+            "summary": "Article ID:100000477",
+            "url": "https://www.veritas.com/support/en_US/article.100000477.html",
+            "type": "vendor",
+            "source": "Support"
+          },
+          {
+            "category": "external",
+            "summary": "Article ID:100043979",
+            "url": "https://www.veritas.com/support/en_US/article.100043979.html",
+            "type": "vendor",
+            "source": "Support"
+          },
+          {
+            "category": "external",
+            "summary": "hitachi-sec-2018-133",
+            "url": "http://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2018-133/index.html",
+            "type": "vendor",
+            "source": "ソフトウェア製品セキュリティ情報"
+          }
+        ]
+      },
+      "product_tree": {
+        "branches": [
+          {
+            "category": "vendor",
+            "name": "ベリタス",
+            "product": {
+              "product_id": "jvnpid:1.0::veritas:netbackup",
+              "name": "Veritas NetBackup",
+              "product_identification_helper": {
+                "cpe": "cpe:2.3:a:veritas:netbackup:*:*:*:*:*:*:*:*"
+              }
+            }
+          },
+          {
+            "category": "vendor",
+            "name": "日立",
+            "product": {
+              "product_id": "jvnpid:1.0::hitachi:jp1_veritas_netbackup",
+              "name": "JP1/VERITAS NetBackup",
+              "product_identification_helper": {
+                "cpe": "cpe:2.3:a:hitachi:jp1_veritas_netbackup:*:*:*:*:*:*:*:*"
+              }
+            }
+          }
+        ]
+      },
+      "vulnerabilities": [
+        {
+          "cve": "",
+          "cwes": [
+            {
+              "id": "CWE-noinfo",
+              "name": "情報不足",
+              "version": "",
+              "source": "IPA"
+            }
+          ],
+          "product_status": {
+            "known_affected": [
+              "jvnpid:1.0::veritas:netbackup",
+              "jvnpid:1.0::hitachi:jp1_veritas_netbackup"
+            ]
+          },
+          "threats": [
+            {
+              "category": "impact",
+              "details": "想定される影響については、ベンダ情報をご確認ください。"
+            }
+          ],
+          "remediations": [
+            {
+              "category": "vendor_fix",
+              "details": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。",
+              "product_ids": [
+                "jvnpid:1.0::veritas:netbackup",
+                "jvnpid:1.0::hitachi:jp1_veritas_netbackup"
+              ]
+            }
+          ],
+          "metrics": [
+            {
+              "content": {
+                "cvss_v2": {
+                  "version": "2.0",
+                  "vectorString": "AV:N/AC:M/Au:N/C:N/I:P/A:N",
+                  "baseScore": "10.0",
+                  "baseSeverity": "CRITICAL",
+                  "accessVector": "NETWORK",
+                  "accessComplexity": "MEDIUM",
+                  "authentication": "NONE",
+                  "confidentialityImpact": "NONE",
+                  "integrityImpact": "PARTIAL",
+                  "availabilityImpact": "NONE"
+                },
+
+                "cvss_v3": {
+                  "version": "3.0",
+                  "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+                  "baseScore": "9.8",
+                  "baseSeverity": "CRITICAL",
+                  "attackVector": "NETWORK",
+                  "attackComplexity": "LOW",
+                  "privilegesRequired": "NONE",
+                  "userInteraction": "NONE",
+                  "scope": "UNCHANGED",
+                  "confidentialityImpact": "HIGH",
+                  "integrityImpact": "HIGH",
+                  "availabilityImpact": "HIGH"
+                },
+                "source": "vendor",
+                "type": "Primary"
+              },
+              "products": [
+                "jvnpid:1.0::veritas:netbackup",
+                "jvnpid:1.0::hitachi:jp1_veritas_netbackup"
+              ]
+            }
+          ]
+        }
+      ],
+      "jvn_extension": {
+        "version": "4.0.0",
+        "affected": [
+          {
+            "vendor": "ベリタス",
+            "product": "Veritas NetBackup",
+            "versions": [
+              {
+                "version": "7.7",
+                "status": "affected",
+                "description": "バージョン 7.7"
+              },
+              {
+                "version": "8.0",
+                "status": "affected",
+                "description": "バージョン 8.0"
+              },
+              {
+                "version": "8.1",
+                "status": "affected",
+                "description": "バージョン 8.1"
+              }
+            ]
+          },
+          {
+            "vendor": "日立",
+            "product": "JP1/VERITAS NetBackup",
+            "versions": [
+              {
+                "version": "7.7",
+                "status": "affected",
+                "description": "バージョン 7.7"
+              },
+              {
+                "version": "8.0",
+                "status": "affected",
+                "description": "バージョン 8.0"
+              },
+              {
+                "version": "8.1",
+                "status": "affected",
+                "description": "バージョン 8.1"
+              }
+            ]
+          }
+        ],
+        "cpeApplicability": [
+          {
+            "nodes": [
+              {
+                "operator": "OR",
+                "negate": false,
+                "cpeMatch": [
+                  {
+                    "vulnerable": true,
+                    "criteria": "cpe:2.3:a:veritas:netbackup:7.7:*:*:*:*:*:*:*"
+                  },
+                  {
+                    "vulnerable": true,
+                    "criteria": "cpe:2.3:a:veritas:netbackup:8.0:*:*:*:*:*:*:*"
+                  },
+                  {
+                    "vulnerable": true,
+                    "criteria": "cpe:2.3:a:veritas:netbackup:8.1:*:*:*:*:*:*:*"
+                  },
+                  {
+                    "vulnerable": true,
+                    "criteria": "jvnpid:1.0::hitachi:jp1_veritas_netbackup:7.7"
+                  },
+                  {
+                    "vulnerable": true,
+                    "criteria": "jvnpid:1.0::hitachi:jp1_veritas_netbackup:8.0"
+                  },
+                  {
+                    "vulnerable": true,
+                    "criteria": "jvnpid:1.0::hitachi:jp1_veritas_netbackup:8.1"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "document": {
+        "category": "myjvn_security_advisory",
+        "csaf_version": "2.1",
+        "distribution": {
+          "tlp": {
+            "label": "CLEAR",
+            "url": "https://www.first.org/tlp/"
+          }
+        },
+        "title": "トレンドマイクロ製 ServerProtect における認証回避の脆弱性",
+        "lang": "ja",
+        "notes": [
+          {
+            "category": "description",
+            "text": "トレンドマイクロ株式会社から ServerProtect 向けのアップデートが公開されました。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
+          }
+        ],
+        "tracking": {
+          "generator": {
+            "engine": {
+              "version": "4.0.0",
+              "name": "MyJVN API"
+            }
+          },
+          "id": "JVNDB-2021-002774",
+          "current_release_date": "2025-04-06T03:00:00+09:00",
+          "initial_release_date": "2021-10-01T14:00:11+09:00",
+          "public_release_date": "2021-09-30T00:00:00+09:00",
+          "status": "final",
+          "version": "2.0.0",
+          "revision_history": [
+            {
+              "date": "2021-10-01T12:10:56+09:00",
+              "number": "1.0.0",
+              "summary": "[2021年10月01日] 掲載"
+            },
+            {
+              "date": "2025-04-06T02:00:00+09:00",
+              "number": "2.0.0",
+              "summary": "XML形式からJSON形式に変換"
+            }
+          ]
+        },
+        "publisher": {
+          "category": "coordinator",
+          "name": "IPA",
+          "namespace": "https://www.ipa.go.jp"
+        },
+        "references": [
+          {
+            "category": "external",
+            "summary": "アラート/アドバイザリ：ServerProtect における認証バイパスの脆弱性について",
+            "url": "https://success.trendmicro.com/jp/solution/000289030",
+            "type": "vendor",
+            "source": "トレンドマイクロ Q&amp;Aページ"
+          },
+          {
+            "category": "external",
+            "summary": "ServerProtect for Windows 5.8",
+            "url": "https://downloadcenter.trendmicro.com/index.php?regs=jp&amp;prodid=1317&amp;_ga=2.170889705.89746224.1632722190-574928202.1599120500#fragment-3446",
+            "type": "vendor",
+            "source": "トレンドマイクロ ダウンロード"
+          },
+          {
+            "category": "external",
+            "summary": "ServerProtect for NetApp 5.8",
+            "url": "https://downloadcenter.trendmicro.com/index.php?regs=jp&amp;prodid=1318&amp;_ga=2.170889705.89746224.1632722190-574928202.1599120500#fragment-3435",
+            "type": "vendor",
+            "source": "トレンドマイクロ ダウンロード"
+          },
+          {
+            "category": "external",
+            "summary": "ServerProtect for EMC Celerra 5.8",
+            "url": "https://downloadcenter.trendmicro.com/index.php?regs=jp&amp;prodid=1319&amp;_ga=2.210147804.89746224.1632722190-574928202.1599120500#fragment-3434",
+            "type": "vendor",
+            "source": "トレンドマイクロ ダウンロード"
+          },
+          {
+            "category": "external",
+            "summary": "ServerProtect for Storage 6.0",
+            "url": "https://downloadcenter.trendmicro.com/index.php?regs=jp&amp;prodid=1685&amp;_ga=2.210147804.89746224.1632722190-574928202.1599120500#fragment-5218",
+            "type": "vendor",
+            "source": "トレンドマイクロ ダウンロード"
+          },
+          {
+            "category": "external",
+            "summary": "CVE-2021-36745",
+            "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-36745",
+            "type": "advisory",
+            "source": "Common Vulnerabilities and Exposures (CVE)"
+          },
+          {
+            "category": "external",
+            "summary": "JVNVU#99520559",
+            "url": "https://jvn.jp/vu/JVNVU99520559/",
+            "type": "advisory",
+            "source": "JVN"
+          },
+          {
+            "category": "external",
+            "summary": "CVE-2021-36745",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-36745",
+            "type": "advisory",
+            "source": "National Vulnerability Database (NVD)"
+          },
+          {
+            "category": "external",
+            "summary": "Vulnerability in pyrotechnical control units of passenger cars",
+            "url": "http://www.mmt.hs-karlsruhe.de/downloads/IEEM/Schwachstellen/PCU_Vulnerability_Description_HsKA.PDF",
+            "type": "advisory",
+            "source": "関連文書"
+          }
+        ]
+      },
+      "product_tree": {
+        "branches": [
+          {
+            "category": "vendor",
+            "name": "トレンドマイクロ",
+            "product": {
+              "product_id": "jvnpid:1.0::trendmicro:serverprotect",
+              "name": "Trend Micro ServerProtect",
+              "product_identification_helper": {
+                "cpe": "cpe:2.3:a:trendmicro:serverprotect:*:*:*:*:*:*:*:*"
+              }
+            }
+          }
+        ]
+      },
+      "vulnerabilities": [
+        {
+          "cve": "CVE-2021-36745",
+          "product_status": {
+            "known_affected": ["jvnpid:1.0::trendmicro:serverprotect"]
+          },
+          "threats": [
+            {
+              "category": "impact",
+              "details": "遠隔の第三者によって、当該製品の認証を回避される可能性があります。 詳細については、トレンドマイクロ株式会社が提供するアドバイザリを参照してください。"
+            }
+          ],
+          "remediations": [
+            {
+              "category": "vendor_fix",
+              "details": "[パッチを適用する] トレンドマイクロ株式会社が提供する情報をもとにパッチを適用してください。",
+              "product_ids": ["jvnpid:1.0::trendmicro:serverprotect"]
+            }
+          ]
+        }
+      ],
+      "jvn_extension": {
+        "affected": [
+          {
+            "vendor": "トレンドマイクロ",
+            "product": "Trend Micro ServerProtect",
+            "versions": [
+              {
+                "version": "",
+                "status": "affected",
+                "lessThanOrEqual": "",
+                "versionType": "custom",
+                "description": "for EMC Celerra 5.8 (Build 1577) 未満, for NetApp 5.8 (Build 1299) 未満, for Storage 6.0 (Build 1284) 未満, for Windows 5.8 (Build 1575) 未満"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "document": {
+        "category": "myjvn_security_advisory",
+        "csaf_version": "2.1",
+        "distribution": {
+          "tlp": {
+            "label": "CLEAR",
+            "url": "https://www.first.org/tlp/"
+          }
+        },
+        "title": "電子入札コアシステムにおける複数の脆弱性",
+        "lang": "ja",
+        "notes": [
+          {
+            "category": "description",
+            "text": "一般財団法人日本建設情報総合センターが提供する電子入札コアシステムには、次の複数の脆弱性が存在します。クロスサイトスクリプティング (CWE-79) - CVE-2022-41993, クロスサイトスクリプティング (CWE-79) - CVE-2022-46287, オープンリダイレクト (CWE-601) - CVE-2022-46288"
+          }
+        ],
+        "tracking": {
+          "generator": {
+            "engine": {
+              "version": "4.0.0",
+              "name": "MyJVN API"
+            }
+          },
+          "id": "JVNDB-2022-000097",
+          "current_release_date": "2025-04-06T03:00:00+09:00",
+          "initial_release_date": "2022-12-15T12:04:51+09:00",
+          "public_release_date": "2022-12-15T00:00:00+09:00",
+          "status": "final",
+          "version": "3.0.0",
+          "revision_history": [
+            {
+              "date": "2022-12-07T13:44:19+09:00",
+              "number": "1.0.0",
+              "summary": "[2022年12月15日] 掲載"
+            },
+            {
+              "date": "2024-07-10T15:35:46+09:00",
+              "number": "2.0.0",
+              "summary": "[2024年05月29日] 参考情報：National Vulnerability Database (NVD) (CVE-2022-41993) を追加  参考情報：National Vulnerability Database (NVD) (CVE-2022-46287) を追加  参考情報：National Vulnerability Database (NVD) (CVE-2022-46288) を追加"
+            },
+            {
+              "date": "2025-04-06T02:00:00+09:00",
+              "number": "3.0.0",
+              "summary": "XML形式からJSON形式に変換"
+            }
+          ]
+        },
+        "publisher": {
+          "category": "coordinator",
+          "name": "IPA",
+          "namespace": "https://www.ipa.go.jp"
+        },
+        "references": [
+          {
+            "category": "external",
+            "summary": "【発注機関の皆様】電子入札コアシステムにおける複数の脆弱性について",
+            "url": "https://www.cals.jacic.or.jp/coreconso/pdf/coreconsoinfo20221215.pdf",
+            "type": "vendor",
+            "source": "JACIC"
+          },
+          {
+            "category": "external",
+            "summary": "CVE-2022-41993",
+            "url": "https://www.cve.org/CVERecord?id=CVE-2022-41993",
+            "type": "advisory",
+            "source": "Common Vulnerabilities and Exposures (CVE)"
+          },
+          {
+            "category": "external",
+            "summary": "CVE-2022-46287",
+            "url": "https://www.cve.org/CVERecord?id=CVE-2022-46287",
+            "type": "advisory",
+            "source": "Common Vulnerabilities and Exposures (CVE)"
+          },
+          {
+            "category": "external",
+            "summary": "CVE-2022-46288",
+            "url": "https://www.cve.org/CVERecord?id=CVE-2022-46288",
+            "type": "advisory",
+            "source": "Common Vulnerabilities and Exposures (CVE)"
+          },
+          {
+            "category": "external",
+            "summary": "JVN#96321933",
+            "url": "https://jvn.jp/jp/JVN96321933/index.html",
+            "type": "advisory",
+            "source": "JVN"
+          },
+          {
+            "category": "external",
+            "summary": "CVE-2022-41993",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-41993",
+            "type": "advisory",
+            "source": "National Vulnerability Database (NVD)"
+          },
+          {
+            "category": "external",
+            "summary": "CVE-2022-46287",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-46287",
+            "type": "advisory",
+            "source": "National Vulnerability Database (NVD)"
+          },
+          {
+            "category": "external",
+            "summary": "CVE-2022-46288",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-46288",
+            "type": "advisory",
+            "source": "National Vulnerability Database (NVD)"
+          }
+        ]
+      },
+      "product_tree": {
+        "branches": [
+          {
+            "category": "vendor",
+            "name": "一般財団法人日本建設情報総合センター",
+            "product": {
+              "product_id": "jvnpid:1.0::jacic:electronic_bidding_core_system",
+              "name": "電子入札コアシステム",
+              "product_identification_helper": {
+                "cpe": "cpe:2.3:a:jacic:electronic_bidding_core_system:*:*:*:*:*:*:*:*"
+              }
+            }
+          }
+        ]
+      },
+      "vulnerabilities": [
+        {
+          "cve": "",
+          "cwes": [
+            {
+              "id": "CWE-79",
+              "name": "クロスサイトスクリプティング",
+              "version": "",
+              "source": "IPA"
+            },
+            {
+              "id": "CWE-20",
+              "name": "不適切な入力確認",
+              "version": "",
+              "source": "IPA"
+            }
+          ],
+          "product_status": {
+            "known_affected": [
+              "jvnpid:1.0::jacic:electronic_bidding_core_system"
+            ]
+          }
+        },
+        {
+          "cve": "CVE-2022-41993",
+          "product_status": {
+            "known_affected": [
+              "jvnpid:1.0::jacic:electronic_bidding_core_system"
+            ]
+          },
+          "threats": [
+            {
+              "category": "impact",
+              "details": "当該製品を使用しているシステムにログインしているユーザのウェブブラウザ上で、任意のスクリプトを実行される。"
+            }
+          ],
+          "remediations": [
+            {
+              "category": "vendor_fix",
+              "details": "[パッチを適用する] 開発者が提供する情報をもとにパッチを適用してください。",
+              "product_ids": [
+                "jvnpid:1.0::jacic:electronic_bidding_core_system"
+              ]
+            }
+          ],
+          "metrics": [
+            {
+              "content": {
+                "cvss_v2": {
+                  "version": "2.0",
+                  "vectorString": "AV:N/AC:H/Au:N/C:N/I:P/A:N",
+                  "baseScore": "2.6",
+                  "baseSeverity": "LOW",
+                  "accessVector": "NETWORK",
+                  "accessComplexity": "HIGH",
+                  "authentication": "NONE",
+                  "confidentialityImpact": "NONE",
+                  "integrityImpact": "PARTIAL",
+                  "availabilityImpact": "NONE"
+                },
+                "cvss_v3": {
+                  "version": "3.0",
+                  "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+                  "baseScore": "6.1",
+                  "baseSeverity": "MEDIUM",
+                  "attackVector": "NETWORK",
+                  "attackComplexity": "LOW",
+                  "privilegesRequired": "NONE",
+                  "userInteraction": "REQUIRED",
+                  "scope": "CHANGED",
+                  "confidentialityImpact": "LOW",
+                  "integrityImpact": "LOW",
+                  "availabilityImpact": "NONE"
+                },
+                "source": "IPA"
+              },
+              "products": ["jvnpid:1.0::jacic:electronic_bidding_core_system"]
+            }
+          ]
+        },
+        {
+          "cve": "CVE-2022-46287",
+          "product_status": {
+            "known_affected": [
+              "jvnpid:1.0::jacic:electronic_bidding_core_system"
+            ]
+          },
+          "threats": [
+            {
+              "category": "impact",
+              "details": "当該製品を使用しているシステムにアクセスしたユーザのウェブブラウザ上で、任意のスクリプトを実行される。"
+            }
+          ],
+          "remediations": [
+            {
+              "category": "vendor_fix",
+              "details": "[パッチを適用する] 開発者が提供する情報をもとにパッチを適用してください。",
+              "product_ids": [
+                "jvnpid:1.0::jacic:electronic_bidding_core_system"
+              ]
+            }
+          ],
+          "metrics": [
+            {
+              "content": {
+                "cvss_v2": {
+                  "version": "2.0",
+                  "vectorString": "AV:N/AC:M/Au:N/C:N/I:P/A:N",
+                  "baseScore": "4.3",
+                  "baseSeverity": "MEDIUM",
+                  "accessVector": "NETWORK",
+                  "accessComplexity": "MEDIUM",
+                  "authentication": "NONE",
+                  "confidentialityImpact": "NONE",
+                  "integrityImpact": "PARTIAL",
+                  "availabilityImpact": "NONE"
+                },
+                "cvss_v3": {
+                  "version": "3.0",
+                  "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+                  "baseScore": "6.1",
+                  "baseSeverity": "MEDIUM",
+                  "attackVector": "NETWORK",
+                  "attackComplexity": "LOW",
+                  "privilegesRequired": "NONE",
+                  "userInteraction": "REQUIRED",
+                  "scope": "CHANGED",
+                  "confidentialityImpact": "LOW",
+                  "integrityImpact": "LOW",
+                  "availabilityImpact": "NONE"
+                },
+                "source": "IPA",
+                "type": "Primary"
+              },
+              "products": ["jvnpid:1.0::jacic:electronic_bidding_core_system"]
+            }
+          ]
+        },
+        {
+          "cve": "CVE-2022-46288",
+          "product_status": {
+            "known_affected": [
+              "jvnpid:1.0::jacic:electronic_bidding_core_system"
+            ]
+          },
+          "threats": [
+            {
+              "category": "impact",
+              "details": "細工された URL にアクセスすることで、任意のウェブサイトにリダイレクトされる。"
+            }
+          ],
+          "remediations": [
+            {
+              "category": "vendor_fix",
+              "details": "[パッチを適用する] 開発者が提供する情報をもとにパッチを適用してください。",
+              "product_ids": [
+                "jvnpid:1.0::jacic:electronic_bidding_core_system"
+              ]
+            }
+          ],
+          "metrics": [
+            {
+              "content": {
+                "cvss_v2": {
+                  "version": "2.0",
+                  "vectorString": "AV:N/AC:M/Au:N/C:N/I:P/A:N",
+                  "baseScore": "4.3",
+                  "baseSeverity": "MEDIUM",
+                  "accessVector": "NETWORK",
+                  "accessComplexity": "MEDIUM",
+                  "authentication": "NONE",
+                  "confidentialityImpact": "NONE",
+                  "integrityImpact": "PARTIAL",
+                  "availabilityImpact": "NONE"
+                },
+                "cvss_v3": {
+                  "version": "3.0",
+                  "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:N/I:L/A:N",
+                  "baseScore": "4.7",
+                  "baseSeverity": "MEDIUM",
+                  "attackVector": "NETWORK",
+                  "attackComplexity": "LOW",
+                  "privilegesRequired": "NONE",
+                  "userInteraction": "REQUIRED",
+                  "scope": "CHANGED",
+                  "confidentialityImpact": "NONE",
+                  "integrityImpact": "LOW",
+                  "availabilityImpact": "NONE"
+                },
+                "source": "IPA"
+              },
+              "products": ["jvnpid:1.0::jacic:electronic_bidding_core_system"]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "status": {
+    "version": "4.0.0",
+    "method": "getDetailInfo",
+    "feed": "oka",
+    "lang": "ja",
+    "retCd": "0",
+    "retMax": "",
+    "errCd": "",
+    "errMsg": "",
+    "totalRes": "4",
+    "totalResRet": "4",
+    "ft": "jvncsaf",
+    "lt": "1"
+  }
+}

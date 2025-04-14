@@ -1,0 +1,138 @@
+{
+  "jvn_product_dictionary": {
+    "generator": {
+      "engine": {
+        "version": "4.0.0",
+        "name": "MyJVN API"
+      }
+    },
+    "title": "JVNDB 製品一覧",
+    "id": "jvnpid:1.0::ipa:myjvn_api_getProductList:4.0.0",
+    "link": "https://jvndb.jvn.jp/apis/myjvn/",
+    "updated": "2025-03-24T06:17:53+09:00",
+    "lang": "ja",
+    "author": {
+      "name": "IPA",
+      "uri": "https://www.ipa.go.jp/"
+    },
+    "distribution": {
+      "tlp": {
+        "label": "CLEAR",
+        "url": "https://www.first.org/tlp/"
+      }
+    },
+    "vendors": [
+      {
+        "vendor_id": "jvnpid:1.0::dendai.ac.jp",
+        "vid": "99999999991",
+        "vname": "東京電機大学",
+        "vname_i18": { "ja": "東京電機大学", "en": "Tokyo Denki University" },
+        "cpe": "cpe:2.3::dendai.ac.jp",
+        "products": [
+          {
+            "product_id": "jvnpid:1.0::dendai.ac.jp:myjvn_api",
+            "pid": "99999999991001",
+            "pname": "マイジェイブイエヌ API",
+            "pname_i18": { "ja": "マイジェイブイエヌ API", "en": "MyJVN API" },
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api:*:*:*:*:*:*:*:*",
+                "id_refs": [
+                  { "key": "purl", "value": "pkg:/dendai.ac.jp/myjvn_api" },
+                  { "key": "swid", "value": "swid:dendai.ac.jp+myjvn_api" }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "vendor_id": "jvnpid:1.0::ipa",
+        "vid": "10297",
+        "vname": "独立行政法人情報処理推進機構 (IPA)",
+        "vname_i18": {
+          "ja": "独立行政法人情報処理推進機構 (IPA)",
+          "en": "INFORMATION-TECHNOLOGY PROMOTION AGENCY, JAPAN (IPA)"
+        },
+        "cpe": "cpe:2.3::ipa",
+        "products": [
+          {
+            "product_id": "jvnpid:1.0::ipa:myjvn_api_getProductList",
+            "pid": "99999999992001",
+            "pname": "マイジェイブイエヌ API getProductList",
+            "pname_i18": {
+              "ja": "マイジェイブイエヌ API getProductList",
+              "en": "MyJVN API getProductList"
+            },
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:a:ipa:myjvn_api_getProductList:*:*:*:*:*:*:*:*",
+                "id_refs": [
+                  {
+                    "key": "purl",
+                    "value": "pkg:/ipa/myjvn_api_getProductList"
+                  },
+                  {
+                    "key": "swid",
+                    "value": "swid:ipa.go.jp+myjvn_api+getProductList"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "vendor_id": "jvnpid:1.0::mitsubishielectric",
+        "vid": "4499",
+        "vname": "三菱電機",
+        "vname_i18": { "ja": "三菱電機", "en": "Mitsubishi Electric" },
+        "cpe": "cpe:2.3::mitsubishielectric",
+        "products": [
+          {
+            "product_id": "jvnpid:1.0::mitsubishielectric:melipc_series_mi5000",
+            "pid": "43039",
+            "pname": "MELIPC シリーズ MI5000",
+            "pname_i18": {
+              "ja": "MELIPC シリーズ MI5000",
+              "en": "MELIPC Series MI5000"
+            },
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:a:mitsubishielectric:melipc_series_mi5000:*:*:*:*:*:*:*:*"
+              }
+            ]
+          },
+          {
+            "product_id": "jvnpid:1.0::mitsubishielectric:melipc_series_mi5122-vw",
+            "pid": "76240",
+            "pname": "MELIPC シリーズ MI5122-VW",
+            "pname_i18": {
+              "ja": "MELIPC シリーズ MI5122-VW",
+              "en": "MELIPC Series MI5122-VW"
+            },
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:o:mitsubishielectric:melipc_series_mi5122-vw:*:*:*:*:*:*:*:*"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "status": {
+    "version": "4.0.0",
+    "method": "getProductList",
+    "feed": "oka",
+    "lang": "ja",
+    "retCd": "0",
+    "retMax": "",
+    "errCd": "",
+    "errMsg": "",
+    "totalRes": "77315",
+    "totalResRet": "77315",
+    "firstRes": "",
+    "lt": "1"
+  }
+}

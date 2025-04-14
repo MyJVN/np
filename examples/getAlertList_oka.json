@@ -27,7 +27,10 @@
         "id": "MYJVN-ALT-2025-0011",
         "link": "",
         "summary": "",
-        "category": { "term": "Info", "label": "INFO" },
+        "category": {
+          "term": "Info",
+          "label": "INFO"
+        },
         "update": "2025-02-12T10:58:02+09:00",
         "published": "2025-02-12T10:58:02+09:00",
         "items": [
@@ -43,18 +46,18 @@
           }
         ]
       }
-    ],
-    "status:Status": {
-      "version": "4.0.0",
-      "method": "getAlertList",
-      "feed": "oka",
-      "retCd": 0,
-      "retMax": "50",
-      "errCd": "",
-      "errMsg": "",
-      "totalRes": "1",
-      "totalResRet": "1",
-      "firstRes": "1"
-    }
+    ]
+  },
+  "status": {
+    "version": "4.0.0",
+    "method": "getAlertList",
+    "feed": "oka",
+    "retCd": 0,
+    "retMax": "50",
+    "errCd": "",
+    "errMsg": "",
+    "totalRes": "1",
+    "totalResRet": "1",
+    "firstRes": "1"
   }
 }

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Result
+  version="3.3"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://jvndb.jvn.jp/myjvn/Results"
+  xmlns:mjres="http://jvndb.jvn.jp/myjvn/Results"
+  xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
+  xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/Results https://jvndb.jvn.jp/schema/results_3.3.xsd">
+  <VendorInfo xml:lang="ja">
+    <Vendor vname="サン・マイクロシステムズ" cpe="cpe:/:sun" vid="1">
+      <Product pname="Sun Cobalt RaQ2" cpe="cpe:/h:sun:sun_cobalt_raq_2" pid="16" />
+      <Product pname="Sun Cobalt RaQ3" cpe="cpe:/h:sun:sun_cobalt_raq_3" pid="17" />
+      <Product pname="Sun Cobalt RaQ4" cpe="cpe:/h:sun:sun_cobalt_raq_4" pid="18" />
+      <Product pname="Sun Cobalt RaQ550" cpe="cpe:/h:sun:sun_cobalt_raq_550" pid="19" />
+      <Product pname="Sun Cobalt RaQXTR" cpe="cpe:/h:sun:sun_cobalt_raq_xtr" pid="20" />
+      <Product pname="Sun Java System Web Server" cpe="cpe:/a:sun:java_system_web_server" pid="21" />
+      <Product pname="Sun ONE/iPlanet Web Server" cpe="cpe:/a:sun:one_web_server" pid="22" />
+      <Product pname="Sun Java System Application Server"
+        cpe="cpe:/a:sun:java_system_application_server" pid="264" />
+      <Product pname="JRE" cpe="cpe:/a:sun:jre" pid="266" />
+      <Product pname="SDK" cpe="cpe:/a:sun:sdk" pid="267" />
+      <Product pname="JDK" cpe="cpe:/a:sun:jdk" pid="268" />
+      <Product pname="Sun ONE Application Server" cpe="cpe:/a:sun:one_application_server" pid="269" />
+      <Product pname="Sun Ultra 20 Workstation" cpe="cpe:/h:sun:ultra_20_workstation" pid="270" />
+      <Product pname="Sun Ultra 20 M2 Workstation" cpe="cpe:/h:sun:ultra_20_m2_workstation"
+        pid="271" />
+      <Product pname="Sun Ultra 40 Workstation" cpe="cpe:/h:sun:ultra_40_workstation" pid="272" />
+      <Product pname="Sun Java System Web Proxy Server"
+        cpe="cpe:/a:sun:java_system_web_proxy_server" pid="273" />
+      <Product pname="StarOffice" cpe="cpe:/a:sun:staroffice" pid="274" />
+      <Product pname="StarSuite" cpe="cpe:/a:sun:starsuite" pid="275" />
+      <Product pname="JCE" cpe="cpe:/a:sun:jce" pid="276" />
+      <Product pname="J2SE" cpe="cpe:/a:sun:j2se" pid="277" />
+      <Product pname="Sun ONE Directory Server" cpe="cpe:/a:sun:one_directory_server" pid="572" />
+      <Product pname="Sun Java System Directory Server"
+        cpe="cpe:/a:sun:java_system_directory_server" pid="573" />
+      <Product pname="Mozilla" cpe="cpe:/a:sun:mozilla" pid="586" />
+      <Product pname="SunForum" cpe="cpe:/a:sun:sunforum" pid="612" />
+      <Product pname="Sun Crypto Accelerator" cpe="cpe:/h:sun:sun_crypto_accelerator" pid="646" />
+      <Product pname="NSS" cpe="cpe:/a:sun:nss" pid="812" />
+      <Product pname="Sun Secure Global Desktop" cpe="cpe:/a:sun:secure_global_desktop" pid="813" />
+      <Product pname="Sun SEAM" cpe="cpe:/a:sun:seam" pid="814" />
+      <Product pname="Sun Java Enterprise System" cpe="cpe:/a:sun:java_enterprise_system" pid="815" />
+      <Product pname="Sun Java Desktop System" cpe="cpe:/a:sun:java_desktop_system" pid="890" />
+      <Product pname="Sun Java Web Console" cpe="cpe:/a:sun:java_web_console" pid="893" />
+      <Product pname="Sun ONE Web Proxy Server" cpe="cpe:/a:sun:one_web_proxy_server" pid="920" />
+      <Product pname="Sun Cobalt Qube3" cpe="cpe:/h:sun:sun_cobalt_qube_3" pid="990" />
+      <Product pname="Sun Linux 5.0" cpe="cpe:/a:sun:linux" pid="991" />
+    </Vendor>
+    <Vendor vname="AVSystem" cpe="cpe:/:avsystem" vid="30722">
+      <Product pname="uUnified Management Platform"
+        cpe="cpe:/a:avsystem:unified_management_platform" pid="80793" />
+    </Vendor>
+    <Vendor vname="Fujian Kelixin Communication"
+      cpe="cpe:/:kelixin_communication_command_and_dispatch_project" vid="30723">
+      <Product pname="Command and Dispatch Platform"
+        cpe="cpe:/a:kelixin_communication_command_and_dispatch_project:kelixin_communication_command_and_dispatch"
+        pid="80794" />
+    </Vendor>
+  </VendorInfo>
+  <status:Status version="3.3" method="getProductList" lang="ja" retCd="0" retMax="" errCd=""
+    errMsg="" totalRes="77315" totalResRet="77315" firstRes="" feed="hnd" lt="1" />
+</Result>

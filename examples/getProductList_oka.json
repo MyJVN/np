@@ -31,32 +31,37 @@
           {
             "product_id": "jvnpid:1.0::dendai.ac.jp:myjvn_api",
             "pid": "99999999991001",
-            "pname": "MyJVN API",
+            "pname": "マイジェイブイエヌ API",
             "product_ids": [
               {
                 "cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api:*:*:*:*:*:*:*:*",
                 "id_refs": [
-                  { "key": "purl", "value": "pkg:/ipa/myjvn_api" },
-                  { "key": "swid", "value": "swid:ipa.go.jp+myjvn_api" }
+                  { "key": "purl", "value": "pkg:/dendai.ac.jp/myjvn_api" },
+                  { "key": "swid", "value": "swid:dendai.ac.jp+myjvn_api" }
                 ]
               }
             ]
           },
           {
-            "product_id": "jvnpid:1.0::dendai.ac.jp:myjvn_api_getProductList",
-            "pid": "9999999991002",
-            "pname": "MyJVN API getPorductList",
+            "product_id": "jvnpid:1.0::dendai.ac.jp:myjvn_api:4.0.0",
+            "pid": "99999999991001",
+            "pname": "マイジェイブイエヌ API",
+            "version": "4.0.0",
             "product_ids": [
               {
-                "cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api_getProductList:*:*:*:*:*:*:*:*",
+                "cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api:4.0.0:*:*:*:*:*:*:*",
                 "id_refs": [
                   {
+                    "key": "sha256",
+                    "value": "9BE897694CFD0D06DDD83E7660CD09EA09CE04CB987AC932F056BDE1068F7148"
+                  },
+                  {
                     "key": "purl",
-                    "value": "pkg:/ipa/myjvn_api_getProductList"
+                    "value": "pkg:/dendai.ac.jp/myjvn_api:4.0.0"
                   },
                   {
                     "key": "swid",
-                    "value": "swid:ipa.go.jp+myjvn_api_getProductList"
+                    "value": "swid:dendai.ac.jp+myjvn_api+4.0.0"
                   }
                 ]
               }
@@ -65,50 +70,55 @@
         ]
       },
       {
-        "vendor_id": "jvnpid:1.0::ipa.go.jp",
-        "vid": "99999999992",
-        "vname": "情報処理推進機構",
-        "cpe": "cpe:2.3::ipa.go.jp",
+        "vendor_id": "jvnpid:1.0::ipa",
+        "vid": "10297",
+        "vname": "独立行政法人情報処理推進機構 (IPA)",
+        "cpe": "cpe:2.3::ipa",
         "products": [
           {
-            "product_id": "jvnpid:1.0::ipa.go.jp:myjvn_api:4.0.0",
+            "product_id": "jvnpid:1.0::ipa:myjvn_api_getProductList",
             "pid": "99999999992001",
-            "pname": "MyJVN API",
-            "version": "4.0.0",
-            "product_ids": {
-              "cpe": "cpe:2.3:a:ipa:myjvn_api:4.0.0:*:*:*:*:*:*:*",
-              "id_refs": [
-                {
-                  "key": "sha256",
-                  "value": "9BE897694CFD0D06DDD83E7660CD09EA09CE04CB987AC932F056BDE1068F7148"
-                },
-                { "key": "purl", "value": "pkg:/ipa/myjvn_api:4.0.0" },
-                { "key": "swid", "value": "swid:ipa.go.jp+myjvn_api+4.0.0" }
-              ]
-            }
+            "pname": "マイジェイブイエヌ API getProductList",
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:a:ipa:myjvn_api_getProductList:*:*:*:*:*:*:*:*",
+                "id_refs": [
+                  {
+                    "key": "purl",
+                    "value": "pkg:/ipa/myjvn_api_getProductList"
+                  },
+                  {
+                    "key": "swid",
+                    "value": "swid:ipa.go.jp+myjvn_api+getProductList"
+                  }
+                ]
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::ipa:myjvn_api_getProductList:4.0.0",
-            "pid": "99999999992002",
-            "pname": "MyJVN API getPorductList",
+            "pid": "99999999992001",
+            "pname": "マイジェイブイエヌ API getProductList",
             "version": "4.0.0",
-            "product_ids": {
-              "cpe": "cpe:2.3:a:ipa:myjvn_api_getProductList:4.0.0:*:*:*:*:*:*:*",
-              "id_refs": [
-                {
-                  "key": "sha256",
-                  "value": "B93C2754A3B01C367CBA38E5A0C44941B39579CC0383E500C20B1D0AB13E0FFC"
-                },
-                {
-                  "key": "purl",
-                  "value": "pkg:/ipa/myjvn_api_getProductList:4.0.0"
-                },
-                {
-                  "key": "swid",
-                  "value": "swid:ipa.go.jp+myjvn_api_getProductList+4.0.0"
-                }
-              ]
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:a:ipa:myjvn_api_getProductList:4.0.0:*:*:*:*:*:*:*",
+                "id_refs": [
+                  {
+                    "key": "sha256",
+                    "value": "B93C2754A3B01C367CBA38E5A0C44941B39579CC0383E500C20B1D0AB13E0FFC"
+                  },
+                  {
+                    "key": "purl",
+                    "value": "pkg:/ipa/myjvn_api_getProductList:4.0.0"
+                  },
+                  {
+                    "key": "swid",
+                    "value": "swid:ipa.go.jp+myjvn_api_getProductList+4.0.0"
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -122,407 +132,507 @@
             "product_id": "jvnpid:1.0::mitsubishielectric:melipc_series_mi5000",
             "pid": "43039",
             "pname": "MELIPC シリーズ MI5000",
-            "product_ids": {
-              "cpe": "cpe:2.3:a:mitsubishielectric:melipc_series_mi5000:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:a:mitsubishielectric:melipc_series_mi5000:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melipc_series_mi5122-vw",
             "pid": "76240",
             "pname": "MELIPC シリーズ MI5122-VW",
-            "product_ids": {
-              "cpe": "cpe:2.3:o:mitsubishielectric:melipc_series_mi5122-vw:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:o:mitsubishielectric:melipc_series_mi5122-vw:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec_f_series",
             "pid": "43870",
             "pname": "MELSEC F シリーズ",
-            "product_ids": {
-              "cpe": "cpe:2.3:a:mitsubishielectric:melsec_f_series:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:a:mitsubishielectric:melsec_f_series:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec-fx_firmware",
             "pid": "44968",
             "pname": "MELSEC FX シリーズ",
-            "product_ids": {
-              "cpe": "cpe:2.3:o:mitsubishielectric:melsec-fx_firmware:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:o:mitsubishielectric:melsec-fx_firmware:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec_fx3g",
             "pid": "24920",
             "pname": "MELSEC FX3G シリーズ",
-            "product_ids": {
-              "cpe": "cpe:2.3:h:mitsubishielectric:melsec_fx3g:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:h:mitsubishielectric:melsec_fx3g:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec_iq-f_firmware",
             "pid": "43868",
             "pname": "MELSEC iQ-F シリーズ",
-            "product_ids": {
-              "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-f_firmware:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-f_firmware:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec_iq-fx5u-32mr%2Fds_firmware",
             "pid": "59900",
             "pname": "melsec iq-fx5u-32mr/ds ファームウェア",
-            "product_ids": {
-              "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-32mr%2Fds_firmware:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-32mr%2Fds_firmware:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec_iq-fx5u-32mr%2Fdss_firmware",
             "pid": "59902",
             "pname": "melsec iq-fx5u-32mr/dss ファームウェア",
-            "product_ids": {
-              "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-32mr%2Fdss_firmware:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-32mr%2Fdss_firmware:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec_iq-fx5u-32mr%2Fes_firmware",
             "pid": "59899",
             "pname": "melsec iq-fx5u-32mr/es ファームウェア",
-            "product_ids": {
-              "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-32mr%2Fes_firmware:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-32mr%2Fes_firmware:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec_iq-fx5u-32mr%2Fess_firmware",
             "pid": "59901",
             "pname": "melsec iq-fx5u-32mr/ess ファームウェア",
-            "product_ids": {
-              "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-32mr%2Fess_firmware:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-32mr%2Fess_firmware:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec_iq-fx5u-32mt%2Fds_firmware",
             "pid": "59896",
             "pname": "melsec iq-fx5u-32mt/ds ファームウェア",
-            "product_ids": {
-              "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-32mt%2Fds_firmware:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-32mt%2Fds_firmware:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec_iq-fx5u-32mt%2Fdss_firmware",
             "pid": "59898",
             "pname": "melsec iq-fx5u-32mt/dss ファームウェア",
-            "product_ids": {
-              "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-32mt%2Fdss_firmware:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-32mt%2Fdss_firmware:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec_iq-fx5u-32mt%2Fes_firmware",
             "pid": "59895",
             "pname": "melsec iq-fx5u-32mt/es ファームウェア",
-            "product_ids": {
-              "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-32mt%2Fes_firmware:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-32mt%2Fes_firmware:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec_iq-fx5u-32mt%2Fess_firmware",
             "pid": "59897",
             "pname": "melsec iq-fx5u-32mt/ess ファームウェア",
-            "product_ids": {
-              "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-32mt%2Fess_firmware:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-32mt%2Fess_firmware:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec_iq-fx5u-64mr%2Fds_firmware",
             "pid": "59908",
             "pname": "melsec iq-fx5u-64mr/ds ファームウェア",
-            "product_ids": {
-              "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-64mr%2Fds_firmware:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-64mr%2Fds_firmware:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec_iq-fx5u-64mr%2Fdss_firmware",
             "pid": "59910",
             "pname": "melsec iq-fx5u-64mr/dss ファームウェア",
-            "product_ids": {
-              "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-64mr%2Fdss_firmware:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-64mr%2Fdss_firmware:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec_iq-fx5u-64mr%2Fes_firmware",
             "pid": "59907",
             "pname": "melsec iq-fx5u-64mr/es ファームウェア",
-            "product_ids": {
-              "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-64mr%2Fes_firmware:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-64mr%2Fes_firmware:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec_iq-fx5u-64mr%2Fess_firmware",
             "pid": "59909",
             "pname": "melsec iq-fx5u-64mr/ess ファームウェア",
-            "product_ids": {
-              "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-64mr%2Fess_firmware:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-64mr%2Fess_firmware:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec_iq-fx5u-64mt%2Fds_firmware",
             "pid": "59904",
             "pname": "melsec iq-fx5u-64mt/ds ファームウェア",
-            "product_ids": {
-              "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-64mt%2Fds_firmware:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-64mt%2Fds_firmware:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec_iq-fx5u-64mt%2Fdss_firmware",
             "pid": "59906",
             "pname": "melsec iq-fx5u-64mt/dss ファームウェア",
-            "product_ids": {
-              "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-64mt%2Fdss_firmware:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-64mt%2Fdss_firmware:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec_iq-fx5u-64mt%2Fes_firmware",
             "pid": "59903",
             "pname": "melsec iq-fx5u-64mt/es ファームウェア",
-            "product_ids": {
-              "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-64mt%2Fes_firmware:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-64mt%2Fes_firmware:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec_iq-fx5u-64mt%2Fess_firmware",
             "pid": "59905",
             "pname": "melsec iq-fx5u-64mt/ess ファームウェア",
-            "product_ids": {
-              "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-64mt%2Fess_firmware:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-64mt%2Fess_firmware:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec_iq-fx5u-80mt%2Fds_firmware",
             "pid": "59912",
             "pname": "melsec iq-fx5u-80mt/ds ファームウェア",
-            "product_ids": {
-              "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-80mt%2Fds_firmware:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-80mt%2Fds_firmware:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec_iq-fx5u-80mt%2Fdss_firmware",
             "pid": "59914",
             "pname": "melsec iq-fx5u-80mt/dss ファームウェア",
-            "product_ids": {
-              "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-80mt%2Fdss_firmware:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-80mt%2Fdss_firmware:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec_iq-fx5u-80mt%2Fes_firmware",
             "pid": "59911",
             "pname": "melsec iq-fx5u-80mt/es ファームウェア",
-            "product_ids": {
-              "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-80mt%2Fes_firmware:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-80mt%2Fes_firmware:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec_iq-fx5u-80mt%2Fess_firmware",
             "pid": "59913",
             "pname": "melsec iq-fx5u-80mt/ess ファームウェア",
-            "product_ids": {
-              "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-80mt%2Fess_firmware:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-fx5u-80mt%2Fess_firmware:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec_iq-l_firmware",
             "pid": "77934",
             "pname": "MELSEC iQ-L シリーズ",
-            "product_ids": {
-              "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-l_firmware:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-l_firmware:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec_iq-r_firmware",
             "pid": "43867",
             "pname": "MELSEC iQ-R シリーズ",
-            "product_ids": {
-              "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-r_firmware:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-r_firmware:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec_iq-r_series_c_intelligent_function_module",
             "pid": "43038",
             "pname": "MELSEC iQ-R シリーズ C言語インテリジェント機能ユニット",
-            "product_ids": {
-              "cpe": "cpe:2.3:a:mitsubishielectric:melsec_iq-r_series_c_intelligent_function_module:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:a:mitsubishielectric:melsec_iq-r_series_c_intelligent_function_module:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec_iq-r_series_c_controller_module",
             "pid": "43037",
             "pname": "MELSEC iQ-R シリーズ C言語コントローラユニット",
-            "product_ids": {
-              "cpe": "cpe:2.3:a:mitsubishielectric:melsec_iq-r_series_c_controller_module:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:a:mitsubishielectric:melsec_iq-r_series_c_controller_module:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec_iq-r_rd81mes96n_firmware",
             "pid": "75769",
             "pname": "MELSEC iQ-R シリーズ RD81MES96N ファームウェア",
-            "product_ids": {
-              "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-r_rd81mes96n_firmware:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:o:mitsubishielectric:melsec_iq-r_rd81mes96n_firmware:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec-l_firmware",
             "pid": "43871",
             "pname": "MELSEC L シリーズ",
-            "product_ids": {
-              "cpe": "cpe:2.3:o:mitsubishielectric:melsec-l_firmware:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:o:mitsubishielectric:melsec-l_firmware:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec_lj71e71-100_firmware",
             "pid": "75771",
             "pname": "MELSEC L シリーズ LJ71E71-100 ファームウェア",
-            "product_ids": {
-              "cpe": "cpe:2.3:o:mitsubishielectric:melsec_lj71e71-100_firmware:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:o:mitsubishielectric:melsec_lj71e71-100_firmware:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec-q_firmware",
             "pid": "43869",
             "pname": "MELSEC Q シリーズ",
-            "product_ids": {
-              "cpe": "cpe:2.3:o:mitsubishielectric:melsec-q_firmware:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:o:mitsubishielectric:melsec-q_firmware:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec_qj71e71-100_firmware",
             "pid": "75770",
             "pname": "MELSEC Q シリーズ QJ71E71-100 ファームウェア",
-            "product_ids": {
-              "cpe": "cpe:2.3:o:mitsubishielectric:melsec_qj71e71-100_firmware:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:o:mitsubishielectric:melsec_qj71e71-100_firmware:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec_ws0-geth00200_firmware",
             "pid": "56740",
             "pname": "MELSEC WS シリーズ WS0-GETH00200",
-            "product_ids": {
-              "cpe": "cpe:2.3:o:mitsubishielectric:melsec_ws0-geth00200_firmware:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:o:mitsubishielectric:melsec_ws0-geth00200_firmware:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec-l_series",
             "pid": "57374",
             "pname": "MELSEC-L シリーズ",
-            "product_ids": {
-              "cpe": "cpe:2.3:a:mitsubishielectric:melsec-l_series:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:a:mitsubishielectric:melsec-l_series:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec-l_series_cpu_unit",
             "pid": "41508",
             "pname": "MELSEC-L シリーズ CPU ユニット",
-            "product_ids": {
-              "cpe": "cpe:2.3:a:mitsubishielectric:melsec-l_series_cpu_unit:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:a:mitsubishielectric:melsec-l_series_cpu_unit:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec-q_series",
             "pid": "57373",
             "pname": "MELSEC-Q シリーズ",
-            "product_ids": {
-              "cpe": "cpe:2.3:a:mitsubishielectric:melsec-q_series:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:a:mitsubishielectric:melsec-q_series:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec-q_series_cpu_unit",
             "pid": "41507",
             "pname": "MELSEC-Q シリーズ CPU ユニット",
-            "product_ids": {
-              "cpe": "cpe:2.3:a:mitsubishielectric:melsec-q_series_cpu_unit:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:a:mitsubishielectric:melsec-q_series_cpu_unit:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsec-q_series_c_controller_module",
             "pid": "43036",
             "pname": "MELSEC-Q シリーズ C言語コントローラユニット",
-            "product_ids": {
-              "cpe": "cpe:2.3:a:mitsubishielectric:melsec-q_series_c_controller_module:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:a:mitsubishielectric:melsec-q_series_c_controller_module:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsoft_em_software_development_kit",
             "pid": "46766",
             "pname": "MELSOFT EM Software Development Kit",
-            "product_ids": {
-              "cpe": "cpe:2.3:a:mitsubishielectric:melsoft_em_software_development_kit:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:a:mitsubishielectric:melsoft_em_software_development_kit:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsoft_fielddeviceconfigurator",
             "pid": "53180",
             "pname": "MELSOFT FieldDeviceConfigurator",
-            "product_ids": {
-              "cpe": "cpe:2.3:a:mitsubishielectric:melsoft_fielddeviceconfigurator:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:a:mitsubishielectric:melsoft_fielddeviceconfigurator:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsoft_iq_appportal",
             "pid": "56953",
             "pname": "MELSOFT iQ AppPortal",
-            "product_ids": {
-              "cpe": "cpe:2.3:a:mitsubishielectric:melsoft_iq_appportal:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:a:mitsubishielectric:melsoft_iq_appportal:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melsoft_navigator",
             "pid": "46767",
             "pname": "MELSOFT Navigator",
-            "product_ids": {
-              "cpe": "cpe:2.3:a:mitsubishielectric:melsoft_navigator:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:a:mitsubishielectric:melsoft_navigator:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:mfz-gxt50%2F60%2F73vfk_firmware",
             "pid": "64700",
             "pname": "mfz-gxt50/60/73vfk ファームウェア",
-            "product_ids": {
-              "cpe": "cpe:2.3:o:mitsubishielectric:mfz-gxt50%2F60%2F73vfk_firmware:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:o:mitsubishielectric:mfz-gxt50%2F60%2F73vfk_firmware:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:mfz-xt50%2F60vfk_firmware",
             "pid": "64701",
             "pname": "mfz-xt50/60vfk ファームウェア",
-            "product_ids": {
-              "cpe": "cpe:2.3:o:mitsubishielectric:mfz-xt50%2F60vfk_firmware:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:o:mitsubishielectric:mfz-xt50%2F60vfk_firmware:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:mh11_settingtool_version2",
             "pid": "46768",
             "pname": "MH11 SettingTool Version2",
-            "product_ids": {
-              "cpe": "cpe:2.3:a:mitsubishielectric:mh11_settingtool_version2:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:a:mitsubishielectric:mh11_settingtool_version2:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:mi_configurator",
             "pid": "46769",
             "pname": "MI Configurator",
-            "product_ids": {
-              "cpe": "cpe:2.3:a:mitsubishielectric:mi_configurator:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:a:mitsubishielectric:mi_configurator:*:*:*:*:*:*:*:*"
+              }
+            ]
           },
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:mx4_scada",
             "pid": "9611",
             "pname": "Mitsubishi MX4 SCADA",
-            "product_ids": {
-              "cpe": "cpe:2.3:a:mitsubishielectric:mx4_scada:*:*:*:*:*:*:*:*"
-            }
+            "product_ids": [
+              {
+                "cpe": "cpe:2.3:a:mitsubishielectric:mx4_scada:*:*:*:*:*:*:*:*"
+              }
+            ]
           }
         ]
       }
     ]
   },
-  "status:Status": {
+  "status": {
     "version": "4.0.0",
     "method": "getProductList",
     "feed": "oka",

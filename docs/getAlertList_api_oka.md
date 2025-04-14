@@ -80,7 +80,7 @@
    Apache HTTPD 全てのバージョンに関する注意警戒情報を取得したい場合  
    `https://jvndb.jvn.jp/myjvn?method=getAlertList&feed=hnd&type=cpe&ProductName=cpe:2.3:a:apache:http_server`
 
-   Apache HTTPD 1.3.1.1 に関する注意警戒情報を取得したい場合  
+  Apache HTTPD 1.3.1.1 に関する注意警戒情報を取得したい場合  
    `https://jvndb.jvn.jp/myjvn?method=getAlertList&feed=hnd&cpeName=cpe:2.3:a:apache:http_server:1.3.1.1`
 
 #### productName (type=jvnpid)
@@ -119,7 +119,7 @@ cpe あるいは、jvnpid のバージョン(0 文字以上の ASCII 文字列)�
 
 - nameType=cpe あるいは、nameType=jvnpid のみ使用可
 - \[例\]  
-   Apache HTTPD 1.3.1.1 に関する概要情報一覧を取得したい場合
+   Apache HTTPD 1.3.1.1 に関する概要情報一覧を取得したい場合  
    `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&nameType=cpe&productName=cpe:2.3:a:apache:http_server&version=1.3.1.1`
 - versionType  
   | オペレータ名 | 使用可パラメタ | 操作 |
@@ -163,8 +163,8 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
 
 ### 概要
 
-- 処理成功時、feed ノード、MyJVN 共通 Status ノードを含む JSON(UTF-8)を応答します。
-- エラー発生時、MyJVN 共通 Status ノードにエラーコードとエラーメッセージを格納します。
+- 処理成功時、feed、MyJVN 共通 status を含む JSON(UTF-8)を応答します。
+- エラー発生時、MyJVN 共通 status にエラーコードとエラーメッセージを格納します。
 
 ### JSON スキーマ
 
@@ -222,24 +222,24 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
             "cpe": "cpe 製品識別子",
             "jvnpid": "JVN 製品識別子"
           },
-          { "$comment": "title,idなどのタグを繰り返します。" }
+          { "$comment": "title,idなどを繰り返します。" }
         ]
       }
-    ],
-    "status:Status": {
-      "version": "4.0",
-      "method": "getAlertList",
-      "feed": "hnd",
-      "lang": "表示言語",
-      "retCd": "リターンコード (0:成功時、1:エラー時)",
-      "retMax": "エントリ上限値",
-      "errCd": "エラーコード (処理成功時は空文字列)",
-      "errMsg": "エラーメッセージ (処理成功時は空文字列)",
-      "totalRes": "応答エントリ総数",
-      "totalResRet": "応答エントリ数",
-      "firstRes": "応答エントリ開始位置",
-      "各リクエストパラメタ": "各リクエストパラメタ値"
-    }
+    ]
+  },
+  "status": {
+    "version": "4.0",
+    "method": "getAlertList",
+    "feed": "hnd",
+    "lang": "表示言語",
+    "retCd": "リターンコード (0:成功時、1:エラー時)",
+    "retMax": "エントリ上限値",
+    "errCd": "エラーコード (処理成功時は空文字列)",
+    "errMsg": "エラーメッセージ (処理成功時は空文字列)",
+    "totalRes": "応答エントリ総数",
+    "totalResRet": "応答エントリ数",
+    "firstRes": "応答エントリ開始位置",
+    "各リクエストパラメタ": "各リクエストパラメタ値"
   }
 }
 ```
@@ -247,6 +247,7 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
 - feed [type:object] [required]
 
   - entry [type:array]
+
     - title: 関連情報のタイトル
     - id: 関連情報の識別子
     - summary: 関連情報の概要
@@ -271,29 +272,29 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
       - cpe: CPE 製品識別子
       - jvnpid: JVN 製品識別子
 
-- generator [type:object]
+  - generator [type:object]
 
-  - engine [type:object]
+    - engine [type:object]
+      - name [type:string] [required]  
+        `MyJVN API`
+      - version [type:string] [required]  
+        `4.0.0`
+
+  - title [type:string] [required]  
+    `IPA 注意警戒サービス API`
+  - id [type:string] [required]  
+    `jvnpid:1.0::ipa:myjvn_api_getAlertList:4.0.0`
+  - link [type:string] [required]  
+    `https://jvndb.jvn.jp/myjvn`
+  - updated [type:string] [format:"yyyy-MM-ddTHH:mm:ss+09:00"] [required]  
+    更新日
+  - lang [type:string] [required]  
+    表示言語 (ja:日本語、en:英語 )
+
+  - author [type:object]
     - name [type:string] [required]  
-      `MyJVN API`
-    - version [type:string] [required]  
-      `4.0.0`
+      `IPA`
+    - uri [type:string] [required]  
+      `https://www.ipa.go.jp/`
 
-- title [type:string] [required]  
-  `IPA 注意警戒サービス API`
-- id [type:string] [required]  
-  `jvnpid:1.0::ipa:myjvn_api_getAlertList:4.0.0`
-- link [type:string] [required]  
-  `https://jvndb.jvn.jp/myjvn`
-- updated [type:string] [format:"yyyy-MM-ddTHH:mm:ss+09:00"] [required]  
-  更新日  
-  The date and time (timestamp) when the AlertList was created.
-- lang [type:string] [required]  
-  表示言語 (ja:日本語、en:英語 )  
-  Must be one of: ja, en
-
-- author [type:object]
-  - name [type:string] [required]  
-    `IPA`
-  - uri [type:string] [required]  
-    `https://www.ipa.go.jp/`
+- status [type:object]

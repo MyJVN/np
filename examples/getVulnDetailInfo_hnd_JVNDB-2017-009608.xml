@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<VULDEF-Document 
+version="3.2" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns="http://jvn.jp/vuldef/" 
+xmlns:vuldef="http://jvn.jp/vuldef/" 
+xmlns:status="http://jvndb.jvn.jp/myjvn/Status" 
+xmlns:sec="http://jvn.jp/rss/mod_sec/3.0/" 
+xmlns:marking="http://data-marking.mitre.org/Marking-1" 
+xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1" 
+xsi:schemaLocation="http://jvn.jp/vuldef/ https://jvndb.jvn.jp/schema/vuldef_3.2.xsd http://jvn.jp/rss/mod_sec/3.0/ https://jvndb.jvn.jp/schema/mod_sec_3.0.xsd http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1 https://jvndb.jvn.jp/schema/tlp_marking.xsd http://jvndb.jvn.jp/myjvn/Status https://jvndb.jvn.jp/schema/status_3.3.xsd" 
+xml:lang="ja">
+    <Vulinfo>
+      <VulinfoID>JVNDB-2017-009608</VulinfoID>
+      <VulinfoData>
+        <Title>エアバッグコントロールユニットにおける暗号アルゴリズムの使用に関する脆弱性</Title>
+        <VulinfoDescription>
+          <Overview>2014 年以降に製造された不特定の乗用車のエアバッグコントロールユニット (別名 pyrotechnical control unit または PCU) には、暗号アルゴリズムの使用に関する脆弱性が存在します。</Overview>
+        </VulinfoDescription>
+        <Affected>
+          <AffectedItem>
+            <Name>PCU</Name>
+            <ProductName>PCU</ProductName>
+            <Cpe version="2.2">cpe:/h:pcu:pcu</Cpe>
+            <VersionNumber/>
+          </AffectedItem>
+        </Affected>
+        <Impact>
+          <Cvss version="2.0">
+            <Severity type="Base">Low</Severity>
+            <Base>1.9</Base>
+            <Vector>AV:L/AC:M/Au:N/C:P/I:N/A:N</Vector>
+          </Cvss>
+          <Cvss version="3.0">
+            <Severity type="Base">Medium</Severity>
+            <Base>4.7</Base>
+            <Vector>CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N</Vector>
+          </Cvss>
+          <ImpactItem>
+            <Description>情報を取得される可能性があります。</Description>
+          </ImpactItem>
+        </Impact>
+        <Solution>
+          <SolutionItem>
+            <Description>参考情報を参照して適切な対策を実施してください。</Description>
+          </SolutionItem>
+        </Solution>
+        <Related>
+          <RelatedItem type="advisory">
+            <Name>Common Vulnerabilities and Exposures (CVE)</Name>
+            <VulinfoID>CVE-2017-14937</VulinfoID>
+            <URL>http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-14937</URL>
+          </RelatedItem>
+          <RelatedItem type="advisory">
+            <Name>National Vulnerability Database (NVD)</Name>
+            <VulinfoID>CVE-2017-14937</VulinfoID>
+            <URL>https://nvd.nist.gov/vuln/detail/CVE-2017-14937</URL>
+          </RelatedItem>
+          <RelatedItem type="advisory">
+            <Name>関連文書</Name>
+            <VulinfoID>Vulnerability in pyrotechnical control units of passenger cars</VulinfoID>
+            <URL>http://www.mmt.hs-karlsruhe.de/downloads/IEEM/Schwachstellen/PCU_Vulnerability_Description_HsKA.PDF</URL>
+          </RelatedItem>
+          <RelatedItem type="cwe">
+            <Name>JVNDB</Name>
+            <VulinfoID>CWE-327</VulinfoID>
+            <Title>不完全、または危険な暗号アルゴリズムの使用</Title>
+            <URL>https://cwe.mitre.org/data/definitions/327.html</URL>
+          </RelatedItem>
+        </Related>
+        <History>
+          <HistoryItem>
+            <HistoryNo>0</HistoryNo>
+            <DateTime>2018-02-17T10:37:52+09:00</DateTime>
+            <Description>[2017年11月16日]\n  掲載</Description>
+          </HistoryItem>
+        </History>
+        <DateFirstPublished>2017-11-16T15:06:40+09:00</DateFirstPublished>
+        <DateLastUpdated>2017-11-16T15:06:40+09:00</DateLastUpdated>
+        <DatePublic>2017-10-20T00:00:00+09:00</DatePublic>
+      </VulinfoData>
+    </Vulinfo>
+    <sec:handling>
+      <marking:Marking>
+        <marking:Marking_Structure xsi:type="tlpMarking:TLPMarkingStructureType" marking_model_name="TLP" marking_model_ref="http://www.us-cert.gov/tlp/" color="WHITE"/>
+      </marking:Marking>
+    </sec:handling>
+    <status:Status version="3.3" method="getVulnDetailInfo" lang="ja" retCd="0" retMax="10" errCd="" errMsg="" totalRes="1" totalResRet="1" firstRes="1" feed="hnd" vulnId="JVNDB-2017-009608"/>
+  </VULDEF-Document>
+

@@ -5,7 +5,7 @@
 ## リクエスト
 
 - `https://jvndb.jvn.jp/myjvn?method=getVulnDetailInfo&feed=oka&パラメタ名=パラメタ値&...`
-  - リクエストURLは、HTTPSのGETおよびPOSTに対応しています。
+  - リクエスト URL は、HTTPS の GET および POST に対応しています。
 
 ### パラメタ
 
@@ -16,13 +16,13 @@
 
 <br>
 
-| パラメタ名 | 名称 | パラメタ値 | 必須 | デフォルト |
-| ---- | ---- | ---- | ---- | ---- | 
-| method | メソッド名 | getVulnDetailInfo (固定) | ○ | － |
-| feed | フィードフォーマット名 | フィードフォーマット(=APIバージョン)を示す名称 <br> okaを指定 | ○ | － |
-| vulnId | 脆弱性対策情報ID | JVNDB-YYYY-XXXXXX <br> JVNDB ... プレフィックス <br> YYYY ... 整数4桁 <br> XXXXXX ... 整数6桁 | ○ | － |
-| ft | 出力形式 | jvncsaf: CSAFベースカスタム仕様 <br> jvnstix: STIXベースカスタム仕様 | － | jvncsaf |
-| lang | 表示言語(日本語／英語) | ja:日本語、en:英語 | － | ja |
+| パラメタ名 | 名称                   | パラメタ値                                                                                        | 必須 | デフォルト |
+| ---------- | ---------------------- | ------------------------------------------------------------------------------------------------- | ---- | ---------- |
+| method     | メソッド名             | getVulnDetailInfo (固定)                                                                          | ○    | －         |
+| feed       | フィードフォーマット名 | フィードフォーマット(=API バージョン)を示す名称 <br> oka を指定                                   | ○    | －         |
+| vulnId     | 脆弱性対策情報 ID      | JVNDB-YYYY-XXXXXX <br> JVNDB ... プレフィックス <br> YYYY ... 整数 4 桁 <br> XXXXXX ... 整数 6 桁 | ○    | －         |
+| ft         | 出力形式               | jvncsaf: CSAF ベースカスタム仕様 <br> jvnstix: STIX ベースカスタム仕様                            | －   | jvncsaf    |
+| lang       | 表示言語(日本語／英語) | ja:日本語、en:英語                                                                                | －   | ja         |
 
 <br>
 
@@ -32,12 +32,12 @@
 
 #### vulnId
 
-脆弱性対策情報IDを指定します。
+脆弱性対策情報 ID を指定します。
 
 - 複数指定は不可
 - \[例\]
-    JVNDB-2017-009608を取得したい場合  
-    `https://jvndb.jvn.jp/myjvn?method=getVulnDetailInfo&feed=oka&vulnId=JVNDB-2017-009608`
+  JVNDB-2017-009608 を取得したい場合  
+   `https://jvndb.jvn.jp/myjvn?method=getVulnDetailInfo&feed=oka&vulnId=JVNDB-2017-009608`
 
 <br>
 <br>
@@ -45,14 +45,20 @@
 ## レスポンス (jvncsaf)
 
 ### 概要
-- 処理成功時、documentノード、product_treeノード、vulnerabilitiesノード、MyJVN共通Statusノードを含むJSONを応答します。
-- エラー発生時、MyJVN共通Statusノードにエラーコードとエラーメッセージを格納します。
 
-### JSONスキーマ
+- 処理成功時、document、product_tree、vulnerabilities、jvn_extension、MyJVN 共通 status を含む JSON を応答します。
+- エラー発生時、MyJVN 共通 status にエラーコードとエラーメッセージを格納します。
+
+### JSON スキーマ
+
 - TBD
 
 ### 例
-- \[ getVulnDetailInfo_oka.json \]
+
+- [ getVulnDetailInfo_oka_JVNDB-2017-009608 (CVE=1, CWE=1, CVSS=2, Ver=NONE) ](../examples/getVulnDetailInfo_oka_JVNDB-2017-009608.json)
+- [ getVulnDetailInfo_oka_JVNDB-2018-009328 (CVE=1, CWE=1, CVSS=2, Ver=PRESENT) ](../examples/getVulnDetailInfo_oka_JVNDB-2018-009328.json)
+- [ getVulnDetailInfo_oka_JVNDB-2021-002774 (CVE=1, CWE=0, CVSS=0, Ver=PRESENT) ](../examples/getVulnDetailInfo_oka_JVNDB-2021-002774.json)
+- [ getVulnDetailInfo_oka_JVNDB-2022-000097 (CVE=3, CWE=2, CVSS=6, Ver=NONE ) ](../examples/getVulnDetailInfo_oka_JVNDB-2022-000097.json)
 
 ```
 {
@@ -65,37 +71,32 @@
         "url": "https://www.first.org/tlp/"
       }
     },
-    "title": "エアバッグコントロールユニットにおける暗号アルゴリズムの使用に関する脆弱性",
+    "title": "タイトル",
     "lang": "ja",
     "notes": [
       {
         "category": "description",
-        "text": "2014 年以降に製造された不特定の乗用車のエアバッグコントロールユニット (別名 pyrotechnical control unit または PCU) には、暗号アルゴリズムの使用に関する脆弱性が存在します。"
+        "text": "セキュリティ情報の概要"
       }
     ],
     "tracking": {
       "generator": {
-        "date": "2026-04-01T00:00:00+09:00",
+        "date": "更新日",
         "engine": {
           "version": "4.0.0",
           "name": "MyJVN API"
         }
       },
-      "id": "JVNDB-2017-009608",
-      "current_release_date": "2025-04-06T03:00:00+09:00",
-      "initial_release_date": "2017-11-16T15:06:40+09:00",
+      "id": "脆弱性識別子",
+      "current_release_date": "更新日",
+      "initial_release_date": "発行日",
       "status": "final",
-      "version": "2.0.0",
+      "version": "更新バージョ",
       "revision_history": [
         {
-          "date": "2018-02-17T10:37:52+09:00",
-          "number": "1.0.0",
-          "summary": "[2017年11月16日] 掲載"
-        },
-        {
-          "date": "2025-04-06T03:00:00+09:00",
-          "number": "2.0.0",
-          "summary": "更新"
+          "date": "発行日",
+          "number": "更新バージョン",
+          "summary": "更新内容"
         }
       ]
     },
@@ -103,42 +104,42 @@
       "category": "coordinator",
       "name": "IPA",
       "namespace": "https://www.ipa.go.jp"
-    }
+    },
+    "references": [
+      {
+        "category": "external",
+        "summary": "アドバイザリID",
+        "url": "アドバイザリURL",
+        "source": "アドバイザリ情報源"
+      }
+    ]
   },
   "product_tree": {
     "branches": [
       {
         "category": "vendor",
-        "name": "PCU",
+        "name": "ベンダ名",
         "product": {
-          "product_id": "jvnpid:1.0::pcu:pcu",
-          "name": "PCU",
+          "product_id": "JVN製品識別子",
+          "name": "製品名",
           "product_identification_helper": {
-            "cpe": "cpe:2.3:h:pcu:pcu:*:*:*:*:*:*:*:*"
+            "cpe": "CPE製品識別子"
           }
-        }
-      },
-      {
-        "category": "vendor",
-        "name": "PCU",
-        "product": {
-          "product_id": "jvnpid:1.0::pcu:pcu2",
-          "name": "PCU2"
         }
       }
     ]
   },
   "vulnerabilities": [
     {
-      "cve": "CVE-2017-14937",
+      "cve": "CVE番号",
       "cwes": [
         {
-          "id": "CWE-327",
-          "name": "Use of a Broken or Risky Cryptographic Algorithm"
+          "id": "CWE番号",
+          "name": "CWE説明"
         }
       ],
       "product_status": {
-        "known_affected": ["jvnpid:1.0::pcu:pcu", "jvnpid:1.0::pcu:pcu2"]
+        "known_affected": ["JVN製品識別子"]
       },
       "threats": [
         {
@@ -150,84 +151,109 @@
         {
           "category": "vendor_fix",
           "details": "参考情報を参照して適切な対策を実施してください。",
-          "product_ids": ["jvnpid:1.0::pcu:pcu", "jvnpid:1.0::pcu:pcu2"]
+          "product_ids": ["JVN製品識別子"]
         }
       ],
-      "scores": [
+      "metrics": [
         {
-          "cvss_v2": {
-            "version": "2.0",
-            "vectorString": "AV:N/AC:M/Au:S/C:P/I:P/A:P",
-            "baseScore": 6,
-            "baseSeverity": "HIGH",
-            "accessVector": "NETWORK",
-            "accessComplexity": "MEDIUM",
-            "authentication": "SINGLE",
-            "confidentialityImpact": "PARTIAL",
-            "integrityImpact": "PARTIAL",
-            "availabilityImpact": "PARTIAL"
+          "content": {
+            "cvss_v2": {
+              "version": "CVSSバージョン 2.0",
+              "vectorString": "パラメタ短縮表記",
+              "baseScore": "基本値",
+              "baseSeverity": "基本値深刻度",
+              "$comment": "cvss_v2 基本評価値一覧"
+            },
+            "cvss_v3": {
+              "version": "CVSSバージョン 3.0 or 3.1",
+              "vectorString": "パラメタ短縮表記",
+              "baseScore": "基本値",
+              "baseSeverity": "基本値深刻度",
+              "$comment": "cvss_v3 基本評価値一覧"
+            },
+            "cvss_v4": {
+              "version": "CVSSバージョン 4.0",
+              "vectorString": "パラメタ短縮表記",
+              "baseScore": "基本値",
+              "baseSeverity": "基本値深刻度",
+              "$comment": "cvss_v4 基本評価値一覧"
+            },
+            "ScoringSystem": {
+              "name": "スコアリングシステムの名称",
+              "version": "バージョン",
+              "vectorString": "パラメタ短縮表記",
+              "baseScore": "基本値",
+              "baseSeverity": "基本値深刻度"
+            },
+            "source": "情報源",
+            "type": "情報区分"
           },
-          "cvss_v3": {
-            "version": "3.0",
-            "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:L/A:L",
-            "baseScore": 7.6,
-            "baseSeverity": "HIGH",
-            "attackVector": "NETWORK",
-            "attackComplexity": "LOW",
-            "privilegesRequired": "NONE",
-            "userInteraction": "REQUIRED",
-            "scope": "UNCHANGED",
-            "confidentialityImpact": "HIGH",
-            "integrityImpact": "LOW",
-            "availabilityImpact": "LOW"
-          },
-          "cvss_v4": {
-            "version": "4.0",
-            "vectorString": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
-            "baseScore": 9.5,
-            "baseSeverity": "CRITICAL",
-            "attackVector": "NETWORK",
-            "attackComplexity": "LOW",
-            "attackRequirements": "PRESENT",
-            "privilegesRequired": "NONE",
-            "userInteraction": "NONE",
-            "vulnConfidentialityImpact": "HIGH",
-            "vulnIntegrityImpact": "HIGH",
-            "vulnAvailabilityImpact": "HIGH",
-            "subConfidentialityImpact": "HIGH",
-            "subIntegrityImpact": "HIGH",
-            "subAvailabilityImpact": "HIGH"
-          },
-          "products": ["jvnpid:1.0::pcu:pcu", "jvnpid:1.0::pcu:pcu2"]
+          "products": ["JVN製品識別子"]
         }
       ]
     }
   ],
-  "references": [
-    {
-      "category": "external",
-      "summary": "CVE-2017-14937",
-      "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-14937"
-    },
-    {
-      "category": "external",
-      "summary": "CVE-2017-14937",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-14937"
-    },
-    {
-      "category": "external",
-      "summary": "Vulnerability in pyrotechnical control units of passenger cars",
-      "url": "http://www.mmt.hs-karlsruhe.de/downloads/IEEM/Schwachstellen/PCU_Vulnerability_Description_HsKA.PDF"
-    }
-  ],
-  "jvnextension": {
-    "entry": [],
-    "cpeApplicability": [],
-    "spdx": [],
-    "cyclonedx": [],
-    "$comment": "バージョンチェック用"
+  "jvn_extension": {
+    "version": "4.0.0",
+    "affected": [
+      { "$comment": "可読ベースのバージョンチェック用" },
+      {
+        "vendor": "ベンダ名",
+        "product": "製品名",
+        "versions": [
+          {
+            "version": "開始バージョン",
+            "status": "affected",
+            "description": "バージョンに関する説明"
+          },
+          {
+            "version": "開始バージョン",
+            "status": "affected",
+            "lessThan": "終了バージョン",
+            "versionType": "semver",
+            "description": "バージョンに関する説明"
+          },
+          {
+            "version": "開始バージョン",
+            "status": "affected",
+            "lessThanOrEqual": "終了バージョン",
+            "versionType": "semver",
+            "description": "バージョンに関する説明"
+          }
+        ]
+      }
+    ],
+    "cpeApplicability": [
+      { "$comment": "CPEベースのバージョンチェック用" },
+      {
+        "nodes": [
+          {
+            "operator": "OR",
+            "negate": false,
+            "cpeMatch": [
+              {
+                "vulnerable": true,
+                "criteria": "CPE 製品識別子 あるいは、JVN 製品識別子"
+              },
+              {
+                "vulnerable": true,
+                "criteria": "CPE 製品識別子 あるいは、JVN 製品識別子",
+                "versionStartIncluding": "開始バージョン",
+                "versionEndIncluding": "終了バージョン"
+              },
+              {
+                "vulnerable": true,
+                "criteria": "CPE 製品識別子 あるいは、JVN 製品識別子",
+                "versionStartExcluding": "開始バージョン",
+                "versionEndExcluding": "終了バージョン"
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
-  "status:Status": {
+  "status": {
     "version": "4.0.0",
     "method": "getProductList",
     "feed": "oka",
@@ -244,16 +270,151 @@
 }
 ```
 
+<br>
+
+- CSAF 2.1 ベースカスタム仕様
+  - document [type:object] [required]
+  - product_tree [type:object] [required]
+  - vulnerabilities [type:object] [required]
+- jvn_extension [type:object]
+
+  - version [type:string]  
+    `4.0.0`
+  - affected [type:array]
+
+    - vendor [type:string]  
+      ベンダ名
+    - product [type:string]  
+      製品名
+    - versions [type:array]
+
+      - version [type:string]  
+        開始バージョン
+      - status [type:string]  
+        影響有無 (affected, unaffected or unknown)
+      - lessThan [type:string]  
+        終了バージョン
+      - lessThanOrEqual [type:string]  
+        終了バージョン
+      - versionType [type:string]  
+        バージョン形式 (semver, custom など)
+      - description [type:string]  
+         バージョンに関する説明
+
+  - cpeApplicability
+    - nodes [type:array]
+      - operator
+      - negate
+      - cpeMatch
+        - vulnerable  
+          脆弱性の影響有無 (ture or false)
+        - criteria  
+           CPE 製品識別子 あるいは、JVN 製品識別子  
+           \[例\]  
+           `cpe:2.3:a:example_org:example_product:*:*:*:*:*:*:*:*`  
+           `jvnpid:1.0::example_org:example_product`
+        - versionStartIncluding
+        - versionStartExcluding
+        - versionEndIncluding
+        - versionEndExcluding
+- status [type:object] [required]
+
+<br>
+
+```
+{
+  "jvn_extension": {
+    "version": "4.0.0",
+    "affected": [
+      { "$comment": "可読ベースのバージョンチェック用" },
+      {
+        "vendor": "ベンダ名",
+        "product": "製品名",
+        "versions": [
+          {
+            "version": "8.1.2",
+            "status": "affected",
+            "description": "バージョン 8.1.2"
+          },
+          {
+            "version": "0.0.0",
+            "status": "affected",
+            "lessThan": "1.0.6",
+            "versionType": "semver",
+            "description": "バージョン 1.0.6未満"
+          },
+          {
+            "version": "2.1.0",
+            "status": "affected",
+            "lessThanOrEqual": "2.1.3",
+            "versionType": "semver",
+            "description": "バージョン 2.1.0以上 2.1.3以下"
+          },
+          {
+            "version": "3.1.1a",
+            "status": "affected",
+            "lessThan": "3.1.1d",
+            "versionType": "custom",
+            "description": "バージョン 3.1.1a以上 3.1.1d未満"
+          }
+        ]
+      }
+    ],
+    "cpeApplicability": [
+      { "$comment": "CPEベースのバージョンチェック用" },
+      {
+        "nodes": [
+          {
+            "operator": "OR",
+            "negate": false,
+            "cpeMatch": [
+              {
+                "vulnerable": true,
+                "criteria": "jvnpid:1.0::example_org:example_product:8.1.2"
+              },
+              {
+                "vulnerable": true,
+                "criteria": "cpe:2.3:a:example_org:example_product:*:*:*:*:*:*:*:*",
+                "versionStartIncluding": "0.0.0",
+                "versionEndExcluding": "1.0.6"
+              },
+              {
+                "vulnerable": true,
+                "criteria": "cpe:2.3:a:example_org:example_product:*:*:*:*:*:*:*:*",
+                "versionStartIncluding": "2.1.0",
+                "versionEndIncluding": "2.1.3"
+              },
+              {
+                "vulnerable": true,
+                "criteria": "jvnpid:1.0::example_org:example_product",
+                "versionStartIncluding": "3.1.1a",
+                "versionEndExcluding": "3.1.1d"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+<br>
+<br>
+
 ## レスポンス (jvnstix)
 
 ### 概要
-- 処理成功時、documentノード、product_treeノード、vulnerabilitiesノード、MyJVN共通Statusノードを含むJSONを応答します。
-- エラー発生時、MyJVN共通Statusノードにエラーコードとエラーメッセージを格納します。
 
-### JSONスキーマ
+- 処理成功時、objects、MyJVN 共通 status を含む JSON を応答します。
+- エラー発生時、MyJVN 共通 status にエラーコードとエラーメッセージを格納します。
+
+### JSON スキーマ
+
 - TBD
 
 ### 例
+
 - \[ getVulnDetailInfo_oka.json \]
 
 ```
@@ -299,28 +460,35 @@
       "document": {},
       "product_tree": {},
       "vulnerabilities": [],
-      "jvnextension": {
-        "entry": [],
-        "cpeApplicability": [],
-        "spdx": [],
-        "cyclonedx": [],
-        "$comment": "バージョンチェック用"
-      },
-      "status:Status": {
-        "version": "4.0.0",
-        "method": "getProductList",
-        "feed": "oka",
-        "lang": "表示言語",
-        "retCd": "リターンコード (0:成功時、1:エラー時)",
-        "retMax": "エントリ上限値",
-        "errCd": "エラーコード (処理成功時は空文字列)",
-        "errMsg": "エラーメッセージ (処理成功時は空文字列)",
-        "totalRes": "応答エントリ総数",
-        "totalResRet": "応答エントリ数",
-        "firstRes": "応答エントリ開始位置",
-        "各リクエストパラメタ": "各リクエストパラメタ値"
-      }
+      "jvn_extension": {}
     }
-  ]
+  ],
+  "status": {
+    "version": "4.0.0",
+    "method": "getProductList",
+    "feed": "oka",
+    "lang": "表示言語",
+    "retCd": "リターンコード (0:成功時、1:エラー時)",
+    "retMax": "エントリ上限値",
+    "errCd": "エラーコード (処理成功時は空文字列)",
+    "errMsg": "エラーメッセージ (処理成功時は空文字列)",
+    "totalRes": "応答エントリ総数",
+    "totalResRet": "応答エントリ数",
+    "firstRes": "応答エントリ開始位置",
+    "各リクエストパラメタ": "各リクエストパラメタ値"
+  }
 }
 ```
+
+- STIX 2.1 ベースカスタム仕様
+  - type=bundle
+    - objects [type:array] [required]
+      - type=extension-definition field [type:object] [required]
+      - type=identity field [type:object] [required]
+      - type=jvn-jp-sdo field [type:object] [required]
+        - CSAF 2.1 ベースカスタム仕様
+          - document [type:object] [required]
+          - product_tree [type:object] [required]
+          - vulnerabilities [type:object] [required]
+        - jvn_extension [type:object]
+  - status [type:object] [required]

@@ -1,5 +1,5 @@
 {
-  "jvn-product-dictionary": {
+  "jvn_product_dictionary": {
     "generator": {
       "engine": {
         "version": "4.0.0",
@@ -26,36 +26,43 @@
         "vendor_id": "jvnpid:1.0::dendai.ac.jp",
         "vid": "99999999991",
         "vname": "東京電機大学",
+        "vname_i18": { "ja": "東京電機大学", "en": "Tokyo Denki University" },
         "cpe": "cpe:2.3::dendai.ac.jp"
       },
       {
         "vendor_id": "jvnpid:1.0::ipa.go.jp",
-        "vid": "99999999992",
-        "vname": "情報処理推進機構",
-"vname_i18": { "ja":"", "en": ""},
+        "vid": "10297",
+        "vname": "独立行政法人情報処理推進機構 (IPA)",
+        "vname_i18": {
+          "ja": "独立行政法人情報処理推進機構 (IPA)",
+          "en": "INFORMATION-TECHNOLOGY PROMOTION AGENCY, JAPAN (IPA)"
+        },
         "cpe": "cpe:2.3::ipa.go.jp"
       },
       {
         "vendor_id": "jvnpid:1.0::ntt_east",
         "vid": "12160",
         "vname": "東日本電信電話株式会社",
+        "vname_i18": {
+          "ja": "東日本電信電話株式会社",
+          "en": "NIPPON TELEGRAPH AND TELEPHONE EAST CORPORATION"
+        },
         "cpe": "cpe:2.3::ntt_east"
       }
     ]
   },
-  "status:Status": {
+  "status": {
     "version": "4.0.0",
     "method": "getVendorList",
     "feed": "oka",
     "lang": "ja",
     "retCd": "0",
-    "retMax": "10000",
+    "retMax": "",
     "errCd": "",
     "errMsg": "",
-    "totalRes": "29944",
-    "totalResRet": "50",
-    "firstRes": "1",
-    "startItem": "29860",
-    "maxCountItem": "50"
+    "totalRes": "29831",
+    "totalResRet": "29831",
+    "firstRes": "",
+    "lt": "1"
   }
 }

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Result
+  version="3.3"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://jvndb.jvn.jp/myjvn/Results"
+  xmlns:mjres="http://jvndb.jvn.jp/myjvn/Results"
+  xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
+  xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/Results https://jvndb.jvn.jp/schema/results_3.3.xsd">
+  <VendorInfo xml:lang="ja">
+    <Vendor vname="#1 deals and maps app" cpe="cpe:/:pointinside" vid="10133" />
+    <Vendor vname="$0.99 kindle books project" cpe="cpe:/:%240.99_kindle_books_project" vid="11248" />
+    <Vendor vname="*" cpe="cpe:/:%2A" vid="24089" />
+    <Vendor vname=".NET Foundation" cpe="cpe:/:dotnetfoundation" vid="20996" />
+    <Vendor vname=".VDMi/" cpe="cpe:/:fibonacciorange" vid="11644" />
+    <Vendor vname="01-Scripts" cpe="cpe:/:01-scripts" vid="21951" />
+    <Vendor vname="01generator" cpe="cpe:/:01generator" vid="26888" />
+    <Vendor vname="07fly" cpe="cpe:/:07fly" vid="25605" />
+    <Vendor vname="0branch" cpe="cpe:/:0branch" vid="27839" />
+    <Vendor vname="0kims" cpe="cpe:/:0kims" vid="26301" />
+    <Vendor vname="0mk Shortener project" cpe="cpe:/:0mk_shortener_project" vid="23800" />
+    <Vendor vname="0verkill" cpe="cpe:/:0verkill" vid="28672" />
+    <Vendor vname="0xacab" cpe="cpe:/:0xacab" vid="23735" />
+    <Vendor vname="0xRACER project" cpe="cpe:/:zeroxracer_project" vid="20701" />
+    <Vendor vname="1-800 CONTACTS" cpe="cpe:/:1800contacts" vid="10077" />
+    <Vendor vname="1-script" cpe="cpe:/:1-script" vid="1928" />
+    <Vendor vname="10-Strike Software" cpe="cpe:/:10-strike" vid="13908" />
+    <Vendor vname="1000guess" cpe="cpe:/:1000guess" vid="14792" />
+    <Vendor vname="1000projects" cpe="cpe:/:1000projects" vid="30342" />
+    <Vendor vname="100296" cpe="cpe:/:100296" vid="28382" />
+    <Vendor vname="100plugins" cpe="cpe:/:100plugins" vid="26914" />
+    <Vendor vname="有限会社クレアル" cpe="cpe:/:almail" vid="11537" />
+    <Vendor vname="有限会社サイトー企画" cpe="cpe:/:hidemaru" vid="159" />
+    <Vendor vname="有限会社シースリー" cpe="cpe:/:c-3.co.jp" vid="559" />
+    <Vendor vname="有限会社ビーグラフ" cpe="cpe:/:be-graph" vid="6617" />
+    <Vendor vname="有限会社ブルームーン" cpe="cpe:/:bluemoon" vid="390" />
+    <Vendor vname="理化学研究所 脳神経科学研究センター 神経情報基盤開発ユニット" cpe="cpe:/:riken" vid="9504" />
+  </VendorInfo>
+  <status:Status version="3.3" method="getVendorList" lang="ja" retCd="0" retMax="" errCd=""
+    errMsg="" totalRes="29831" totalResRet="29831" firstRes="" feed="hnd" lt="1" />
+</Result>

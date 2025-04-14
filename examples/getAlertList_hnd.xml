@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/2005/Atom"
+  xmlns:sec="http://jvn.jp/rss/mod_sec/3.0/" xmlns:marking="http://data-marking.mitre.org/Marking-1"
+  xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1"
+  xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
+  xsi:schemaLocation="http://www.w3.org/2005/Atom https://jvndb.jvn.jp/schema/atom.xsd
+                      http://jvn.jp/rss/mod_sec/3.0/ https://jvndb.jvn.jp/schema/mod_sec_3.0.xsd
+                      http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1 https://jvndb.jvn.jp/schema/tlp_marking.xsd
+                      http://jvndb.jvn.jp/myjvn/Status https://jvndb.jvn.jp/schema/status_3.3.xsd"
+  xml:lang="ja">
+  <title type="text">IPA注意警戒サービスAPI</title>
+  <updated>2025-03-23T05:16:39+09:00</updated>
+  <id>swid:ipa.go.jp+myjvn_alert+1.0.0</id>
+  <link rel="alternate" type="text/html" hreflang="ja" href="https://jvndb.jvn.jp/apis/myjvn/" />
+  <author>
+    <name>IPA</name>
+    <uri>https://www.ipa.go.jp/</uri>
+  </author>
+  <sec:handling>
+    <marking:Marking>
+      <marking:Marking_Structure xsi:type="tlpMarking:TLPMarkingStructureType"
+        marking_model_name="TLP" marking_model_ref="http://www.us-cert.gov/tlp/" color="WHITE" />
+    </marking:Marking>
+  </sec:handling>
+  <entry>
+    <title>WordPress に関するソフトウェア更新情報 (2025年2月12日 公開)</title>
+    <id>MYJVN-ALT-2025-0011</id>
+    <published>2025-02-12T10:58:02+09:00</published>
+    <updated>2025-02-12T10:58:02+09:00</updated>
+    <category label="INFO" term="Info" />
+    <sec:items>
+      <sec:item>
+        <sec:title>Download WordPress (6.7.2)</sec:title>
+        <sec:identifier>MYJVN-ALT-2025-0011-0001</sec:identifier>
+        <sec:link href="https://wordpress.org/download/" />
+        <sec:cpe>cpe:/a:wordpress:wordpress</sec:cpe>
+        <sec:published>2025-02-12T00:00:00+09:00</sec:published>
+        <sec:updated>2025-02-12T10:58:02+09:00</sec:updated>
+      </sec:item>
+    </sec:items>
+  </entry>
+  <status:Status version="3.3" method="getAlertList" retCd="0" retMax="50" errCd="" errMsg=""
+    totalRes="1" totalResRet="1" firstRes="1" feed="hnd" cpeName="cpe:/a:wordpress:wordpress"
+    ft="xml" />
+</feed>

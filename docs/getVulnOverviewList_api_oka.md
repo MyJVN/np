@@ -218,8 +218,8 @@ CVSSv4 基本評価基準、CVSSv4 深刻度を指定します。
 
 ### 概要
 
-- 処理成功時、feed ノード、MyJVN 共通 Status ノードを含む JSON を応答します。
-- エラー発生時、MyJVN 共通 Status ノードにエラーコードとエラーメッセージを格納します。
+- 処理成功時、feed、MyJVN 共通 status を含む JSON を応答します。
+- エラー発生時、MyJVN 共通 status にエラーコードとエラーメッセージを格納します。
 
 ### JSON スキーマ
 
@@ -264,9 +264,12 @@ CVSSv4 基本評価基準、CVSSv4 深刻度を指定します。
         "references": [
           {
             "url": "参考情報のURL",
-            "summary": "タイトル or 概要"
+            "summary": "タイトル or 概要",
+            "source": "情報源"
           },
-          { "$comment": "url,summaryのタグを繰り返します。" }
+          {
+            "$comment": "url,summaryを繰り返します。"
+          }
         ],
         "products": [
           {
@@ -282,83 +285,96 @@ CVSSv4 基本評価基準、CVSSv4 深刻度を指定します。
             "$comment": "jvnpidがバージョン情報を出力する場合",
             "vendor": "ベンダ名",
             "product": "製品名",
+            "version": "バージョン",
             "product_ids": {
               "jvnpid": "JVN製品識別子",
               "cpe": "CPE製品識別子",
               "id_refs": [
-                { "key": "sha256", "value": "ハッシュ値 1234DF...234" },
-                { "key": "purl", "value": "Package-Manager値 rpm:/" },
-                { "key": "swid", "value": "swid:ipa.go.jp+myjvn_alert+1.0.0" }
+                {
+                  "key": "sha256",
+                  "value": "ハッシュ値 1234DF...234"
+                },
+                {
+                  "key": "purl",
+                  "value": "Package-Manager値 rpm:/"
+                },
+                {
+                  "key": "swid",
+                  "value": "swid:ipa.go.jp+myjvn_alert+1.0.0"
+                }
               ]
             }
           },
-          { "$comment": "vendor,productなどのタグを繰り返します。" }
+          {
+            "$comment": "vendor,productなどを繰り返します。"
+          }
         ],
-        "scores": {
-          "cvss_v2": [
-            {
-              "version": "CVSSバージョン 2.0",
-              "vectorString": "パラメタ短縮表記",
-              "baseScore": "基本値",
-              "baseSeverity": "基本値深刻度"
+        "metrics": [
+          {
+            "content": {
+              "cvss_v2": {
+                "version": "CVSSバージョン 2.0",
+                "vectorString": "パラメタ短縮表記",
+                "baseScore": "基本値",
+                "baseSeverity": "基本値深刻度"
+              },
+              "cvss_v3": {
+                "version": "CVSSバージョン 3.0 or 3.1",
+                "vectorString": "パラメタ短縮表記",
+                "baseScore": "基本値",
+                "baseSeverity": "基本値深刻度"
+              },
+              "cvss_v4": {
+                "version": "CVSSバージョン 4.0",
+                "vectorString": "パラメタ短縮表記",
+                "baseScore": "基本値",
+                "baseSeverity": "基本値深刻度"
+              },
+              "ScoringSystem": {
+                "name": "スコアリングシステムの名称",
+                "version": "バージョン",
+                "vectorString": "パラメタ短縮表記",
+                "baseScore": "基本値",
+                "baseSeverity": "基本値深刻度"
+              }
             }
-          ],
-          "cvss_v3": [
-            {
-              "version": "CVSSバージョン 3.0 or 3.1",
-              "vectorString": "パラメタ短縮表記",
-              "baseScore": "基本値",
-              "baseSeverity": "基本値深刻度"
-            }
-          ],
-          "cvss_v4": [
-            {
-              "version": "CVSSバージョン 4.0",
-              "vectorString": "パラメタ短縮表記",
-              "baseScore": "基本値",
-              "baseSeverity": "基本値深刻度"
-            }
-          ],
-          "ScoringSystem": [
-            {
-              "name": "スコアリングシステムの名称",
-              "version": "バージョン",
-              "vectorString": "パラメタ短縮表記",
-              "baseScore": "基本値",
-              "baseSeverity": "基本値深刻度"
-            }
-          ]
-        },
+          }
+        ],
         "cwes": [
           {
-            "id": "CWE-Other",
-            "title": "その他(CWE-Other)"
+            "id": "CWE-番号",
+            "title": "CWE 説明",
+            "url": "CWE URL"
           }
         ]
       },
-      { "$comment": "title,idなどのタグを繰り返します。" }
-    ],
-    "status:Status": {
-      "version": "4.0.0",
-      "method": "getVulnOverviewList",
-      "feed": "oka",
-      "lang": "表示言語",
-      "retCd": "リターンコード (0:成功時、1:エラー時)",
-      "retMax": "エントリ上限値",
-      "errCd": "エラーコード (処理成功時は空文字列)",
-      "errMsg": "エラーメッセージ (処理成功時は空文字列)",
-      "totalRes": "応答エントリ総数",
-      "totalResRet": "応答エントリ数",
-      "firstRes": "応答エントリ開始位置",
-      "各リクエストパラメタ": "各リクエストパラメタ値"
-    }
+      {
+        "$comment": "title,idなどを繰り返します。"
+      }
+    ]
+  },
+  "status:Status": {
+    "version": "4.0.0",
+    "method": "getVulnOverviewList",
+    "feed": "oka",
+    "lang": "表示言語",
+    "retCd": "リターンコード (0:成功時、1:エラー時)",
+    "retMax": "エントリ上限値",
+    "errCd": "エラーコード (処理成功時は空文字列)",
+    "errMsg": "エラーメッセージ (処理成功時は空文字列)",
+    "totalRes": "応答エントリ総数",
+    "totalResRet": "応答エントリ数",
+    "firstRes": "応答エントリ開始位置",
+    "各リクエストパラメタ": "各リクエストパラメタ値"
   }
 }
 ```
 
+<br>
+
 - feed [type:object] [required]
 
-  - entry
+  - entry [type:array]
 
     - title: 関連情報のタイトル
     - id: 関連情報の識別子
@@ -375,69 +391,73 @@ CVSSv4 基本評価基準、CVSSv4 深刻度を指定します。
 
         - vendor: ベンダ名
         - product: 製品名
-        - product_ids
+        - product_ids [type:array]
           - jvnpid: JVN 製品識別子
           - cpe: CPE 製品識別子"
 
       - jvnpid がバージョン情報を出力する場合
         - vendor: ベンダ名
         - product: 製品名
+        - version: バージョン
         - product_ids [type:array]
           - jvnpid: JVN 製品識別子
           - cpe: CPE 製品識別子
           - id_refs [type:array]
-            -key:
-            -value:
+            - key:
+            - value:
 
-    - scores [type:array]
-      - cvss_v2 [type:array]
-        - version: CVSS バージョン 2.0
-        - vectorString: パラメタ短縮表記
-        - baseScore: 基本値
-        - baseSeverity: 基本値深刻度"
-      - cvss_v3 [type:array]
-        - version: CVSS バージョン 3.0 or 3.1
-        - vectorString: パラメタ短縮表記
-        - baseScore: 基本値
-        - baseSeverity: 基本値深刻度"
-      - cvss_v4 [type:array]
-        - version: CVSS バージョン 4.0
-        - vectorString: パラメタ短縮表記
-        - baseScore: 基本値
-        - baseSeverity: 基本値深刻度"
-      - ScoringSystem [type:array]
-        - name: スコアリングシステムの名称
-        - version: バージョン
-        - vectorString: パラメタ短縮表記
-        - baseScore: 基本値
-        - baseSeverity: 基本値深刻度"
+    - metrics [type:array]
+      - content [type:object]
+        - cvss_v2 [type:object]
+          - version: CVSS バージョン 2.0
+          - vectorString: パラメタ短縮表記
+          - baseScore: 基本値
+          - baseSeverity: 基本値深刻度"
+        - cvss_v3 [type:object]
+          - version: CVSS バージョン 3.0 or 3.1
+          - vectorString: パラメタ短縮表記
+          - baseScore: 基本値
+          - baseSeverity: 基本値深刻度"
+        - cvss_v4 [type:object]
+          - version: CVSS バージョン 4.0
+          - vectorString: パラメタ短縮表記
+          - baseScore: 基本値
+          - baseSeverity: 基本値深刻度"
+        - ScoringSystem [type:object]
+          - name: スコアリングシステムの名称
+          - version: バージョン
+          - vectorString: パラメタ短縮表記
+          - baseScore: 基本値
+          - baseSeverity: 基本値深刻度"
     - cwes [type:array]
       - id: CWE 番号
       - title: 説明
 
-- generator [type:object]
+  - generator [type:object]
 
-  - engine [type:object]
+    - engine [type:object]
+      - name [type:string] [required]  
+        `MyJVN API`
+      - version [type:string] [required]  
+        `4.0.0`
+
+  - title [type:string] [required]  
+    `JVNDB 脆弱性対策情報`
+  - id [type:string] [required]  
+    `jvnpid:1.0::ipa.go.jp:myjvn_getOverviewList:4.0.0`
+  - link [type:string] [required]  
+    `https://jvndb.jvn.jp/myjvn`
+  - updated [type:string] [format:"yyyy-MM-ddTHH:mm:ss+09:00"] [required]  
+    更新日  
+    The date and time (timestamp) when the OverviewList was created.
+  - lang [type:string] [required]  
+    表示言語 (ja:日本語、en:英語 )  
+    Must be one of: ja, en
+
+  - author [type:object]
     - name [type:string] [required]  
-      `MyJVN API`
-    - version [type:string] [required]  
-      `4.0.0`
+      `IPA`
+    - uri [type:string] [required]  
+      `https://www.ipa.go.jp/`
 
-- title [type:string] [required]  
-  `JVNDB 脆弱性対策情報`
-- id [type:string] [required]  
-  `jvnpid:1.0::ipa.go.jp:myjvn_getOverviewList:4.0.0`
-- link [type:string] [required]  
-  `https://jvndb.jvn.jp/myjvn`
-- updated [type:string] [format:"yyyy-MM-ddTHH:mm:ss+09:00"] [required]  
-  更新日  
-  The date and time (timestamp) when the OverviewList was created.
-- lang [type:string] [required]  
-  表示言語 (ja:日本語、en:英語 )  
-  Must be one of: ja, en
-
-- author [type:object]
-  - name [type:string] [required]  
-    `IPA`
-  - uri [type:string] [required]  
-    `https://www.ipa.go.jp/`
+- status:Status [type:object]

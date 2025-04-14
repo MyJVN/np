@@ -91,8 +91,8 @@
 
 ### 概要
 
-- 処理成功時、jvn-product-dictionary ノード、MyJVN 共通 Status ノードを含む JSON を応答します。
-- エラー発生時、MyJVN 共通 Status ノードにエラーコードとエラーメッセージを格納します。
+- 処理成功時、jvn_product_dictionary、MyJVN 共通 status を含む JSON を応答します。
+- エラー発生時、MyJVN 共通 status にエラーコードとエラーメッセージを格納します。
 
 ### JSON スキーマ
 
@@ -104,7 +104,7 @@
 
 ```
 {
-  "jvn-product-dictionary": {
+  "jvn_product_dictionary": {
     "generator": {
       "engine": {
         "version": "4.0.0",
@@ -127,10 +127,10 @@
         "vname": "ベンダ名",
         "cpe": "CPEベンダ名"
       },
-      { "$comment": "vendor_id,vid,vnameなどのタグを繰り返します。" }
+      { "$comment": "vendor_id,vid,vnameなどを繰り返します。" }
     ]
   },
-  "status:Status": {
+  "status": {
     "version": "4.0.0",
     "method": "getVendorList",
     "feed": "oka",
@@ -147,7 +147,9 @@
 }
 ```
 
-- jvn-product-dictionary [type:object]
+<br>
+
+- jvn_product_dictionary [type:object]
 
   - vendors [type:array]
 
@@ -183,10 +185,10 @@
   - link [type:string] [required]  
     `https://jvndb.jvn.jp/myjvn`
   - updated [type:string] [format:"yyyy-MM-ddTHH:mm:ss+09:00"] [required]  
-    更新日  
     The date and time (timestamp) when the VendorList was created.
+    更新日
   - lang [type:string] [required]  
-    表示言語 (ja:日本語、en:英語 )  
+    表示言語 (ja:日本語、en:英語 )
     Must be one of: ja, en
 
   - author [type:object]
@@ -194,3 +196,5 @@
       `IPA`
     - uri [type:string] [required]  
       `https://www.ipa.go.jp/`
+
+- status [type:object]

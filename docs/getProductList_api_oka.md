@@ -63,10 +63,10 @@
    Apache HTTPD の場合  
    `https://jvndb.jvn.jp/myjvn?method=getProductList&feed=oka&type=cpe&productName=cpe:2.3:a:apache:http_server`
 
-   Apache 製品の場合  
+  Apache 製品の場合  
    `https://jvndb.jvn.jp/myjvn?method=getProductList&feed=oka&type=cpe&productName=cpe:2.3:a:apache:*`
 
-   cpe:/a:apache:xerces-c%252B%252B の場合  
+  cpe:/a:apache:xerces-c%252B%252B の場合  
    `https://jvndb.jvn.jp/myjvn?method=getProductList&feed=oka&type=cpe&productName=cpe:/a:apache:xerces-c%252B%252B`
 
 #### productName (type=jvnpid)
@@ -103,7 +103,7 @@ cpe あるいは、jvnpid のバージョン(0 文字以上の ASCII 文字列)�
 
 - nameType=cpe あるいは、nameType=jvnpid のみ使用可
 - \[例\]  
-   Apache HTTPD 1.3.1.1 に関する概要情報一覧を取得したい場合
+   Apache HTTPD 1.3.1.1 に関する概要情報一覧を取得したい場合  
    `https://jvndb.jvn.jp/myjvn?method=getProductList&feed=oka&nameType=cpe&productName=cpe:2.3:a:apache:http_server&version=1.3.1.1`
 - versionType  
   | オペレータ名 | 使用可パラメタ | 操作 |
@@ -156,18 +156,21 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
 ## レスポンス
 
 ### 概要
-- 処理成功時、jvn-product-dictionary ノード、MyJVN 共通 Status ノードを含む JSON を応答します。
-- エラー発生時、MyJVN 共通 Status ノードにエラーコードとエラーメッセージを格納します。
+
+- 処理成功時、jvn_product_dictionary、MyJVN 共通 status を含む JSON を応答します。
+- エラー発生時、MyJVN 共通 status にエラーコードとエラーメッセージを格納します。
 
 ### JSON スキーマ
+
 - TBD
 
 ### 例
+
 - [ getProductList_oka.json ](../examples/getProductList_oka.json)
 
 ```
 {
-  "jvn-product-dictionary": {
+  "jvn_product_dictionary": {
     "generator": {
       "engine": {
         "version": "4.0.0",
@@ -206,13 +209,13 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
               }
             ]
           },
-          { "$comment": "product_id,pid,pnameなどのタグを繰り返します。" }
+          { "$comment": "product_id,pid,pnameなどを繰り返します。" }
         ]
       },
-      { "$comment": "vendor_id,vid,vnameなどのタグを繰り返します。" }
+      { "$comment": "vendor_id,vid,vnameなどを繰り返します。" }
     ]
   },
-  "status:Status": {
+  "status": {
     "version": "4.0.0",
     "method": "getProductList",
     "feed": "oka",
@@ -229,7 +232,9 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
 }
 ```
 
-- jvn-product-dictionary
+<br>
+
+- jvn_product_dictionary
 
   - vendors [type:array]
 
@@ -250,44 +255,44 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
       CPE ベンダ名 (CPE v2.3 形式)  
       \[例\] `cpe:2.3::dendai.ac.jp`
 
-  - products [type:array]
+    - products [type:array]
 
-    - product_id [type:string] [required]  
-      JVN Product identfier  
-      JVN 製品識別子  
-      \[例\] `jvnpid:1.0::dendai.ac.jp:myjvn_api`
-    - pid [type:integer] [required]  
-      Product unique number in JVN iPedia  
-      JVN iPedia における製品の識別番号  
-       \[例\] `99999999991001`
-    - pname [type:string] [required]  
-      Product Title  
-      製品名  
-       \[例\] `MyJVN API`
-    - version [type:string] [required]  
-      Product Version  
-      製品バージョン  
-      \[例\] `4.0.0`
-    - product_ids [type:array]
-      - cpe [type:string] [required]  
-        Product identifier (CPE v2.3 format)  
-        CPE 製品識別子 (CPE v2.3 形式)  
-        \[例\] `cpe:2.3:a:dendai.ac.jp:myjvn_api:*:*:*:*:*:*:*:*`
-      - id_refs [type:array]
-        - key  
-          SWID、spdxid、purl、SHA256 などの参照情報名
-        - value  
-          SWID、spdxid、purl、SHA256 などの参照情報値
-        - Package-Manager の場合  
-          \[例\] `{ "key": "purl", "value": "pkg:/ipa/myjvn_api_getProductList:4.0.0" }`
-        - UUID の場合  
-          \[例\] `{ "key": "uuid", "value": "186ce5f8-0049-953a-37da-bc89c6f07aa1" }`
-        - SWID の場合  
-          \[例\] `{ "key": "swid", "value": "swid:ipa.go.jp+myjvn_api_getProductList+4.0.0" }`
-        - SHA256 の場合  
-          \[例\] `{ "key": "sha256", "value": "B93C2754A3B01C367CBA38E5A0C44941B39579CC0383E500C20B1D0AB13E0FFC" }`
-        - TEI の場合  
-          \[例\] `{ "key": "tei", "value": "urn:tei:uuid:protucts.example.com:186ce5f8-0049-953a-37da-bc89c6f07aa1" }`
+      - product_id [type:string] [required]  
+        JVN Product identfier  
+        JVN 製品識別子  
+        \[例\] `jvnpid:1.0::dendai.ac.jp:myjvn_api`
+      - pid [type:integer] [required]  
+        Product unique number in JVN iPedia  
+        JVN iPedia における製品の識別番号  
+         \[例\] `99999999991001`
+      - pname [type:string] [required]  
+        Product Title  
+        製品名  
+         \[例\] `MyJVN API`
+      - version [type:string] [required]  
+        Product Version  
+        製品バージョン  
+        \[例\] `4.0.0`
+      - product_ids [type:array]
+        - cpe [type:string] [required]  
+          Product identifier (CPE v2.3 format)  
+          CPE 製品識別子 (CPE v2.3 形式)  
+          \[例\] `cpe:2.3:a:dendai.ac.jp:myjvn_api:*:*:*:*:*:*:*:*`
+        - id_refs [type:array]
+          - key  
+            SWID、spdxid、purl、SHA256 などの参照情報名
+          - value  
+            SWID、spdxid、purl、SHA256 などの参照情報値
+          - Package-Manager の場合  
+            \[例\] `{ "key": "purl", "value": "pkg:/ipa/myjvn_api_getProductList:4.0.0" }`
+          - UUID の場合  
+            \[例\] `{ "key": "uuid", "value": "186ce5f8-0049-953a-37da-bc89c6f07aa1" }`
+          - SWID の場合  
+            \[例\] `{ "key": "swid", "value": "swid:ipa.go.jp+myjvn_api_getProductList+4.0.0" }`
+          - SHA256 の場合  
+            \[例\] `{ "key": "sha256", "value": "B93C2754A3B01C367CBA38E5A0C44941B39579CC0383E500C20B1D0AB13E0FFC" }`
+          - TEI の場合  
+            \[例\] `{ "key": "tei", "value": "urn:tei:uuid:protucts.example.com:186ce5f8-0049-953a-37da-bc89c6f07aa1" }`
 
   - generator [type:object]
 
@@ -315,3 +320,5 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
       `IPA`
     - uri [type:string] [required]  
       `https://www.ipa.go.jp/`
+
+- status [type:object]
