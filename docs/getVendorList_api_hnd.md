@@ -54,10 +54,10 @@ CPE ベンダ名を指定します。
    Apache の場合  
    `https://jvndb.jvn.jp/myjvn?method=getVendorList&feed=hnd&cpeName=cpe:/:apache`
 
-   Apache と Microsoft の場合  
+  Apache と Microsoft の場合  
    `https://jvndb.jvn.jp/myjvn?method=getVendorList&feed=hnd&cpeName=cpe:/:apache+cpe:/:microsoft`
 
-   cpeName=cpe:/:%40mail の場合  
+  cpeName=cpe:/:%40mail の場合  
    `https://jvndb.jvn.jp/myjvn?method=getVendorList&feed=hnd&cpeName=cpe:/:%40mail`
 
 #### keyword
@@ -86,6 +86,8 @@ CPE ベンダ名を指定します。
 ### 例
 
 - [ getVendorList_hnd.xml ](../examples/getVendorList_hnd.xml)
+
+### 解説
 
 ```
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -119,12 +121,12 @@ firstRes="応答エントリ開始位置" >
 </Result>
 ```
 
-- VendorInfo [type: array] [required]
+- VendorInfo [type:array] [required]
   - xml:lang [type:string] [required]  
     Language  
     表示言語  
     Must be one of: `ja, en`
-  - Vendor [type: object]
+  - Vendor [type:object]
     - vid [type:integer] [required]  
       Vendor unique number in JVN iPedia  
       JVN iPedia におけるベンダの識別番号  

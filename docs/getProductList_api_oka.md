@@ -168,6 +168,8 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
 
 - [ getProductList_oka.json ](../examples/getProductList_oka.json)
 
+### 解説
+
 ```
 {
   "jvn_product_dictionary": {
@@ -202,9 +204,9 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
               {
                 "cpe": "CPE製品識別子",
                 "id_refs": [
-                  { "key": "sha256", "value": "ハッシュ値 1234DF...234" },
-                  { "key": "purl", "value": "Package-Manager値 rpm:/" },
-                  { "key": "swid", "value": "swid:ipa.go.jp+myjvn_alert+1.0.0" }
+                  { "nameType": "sha256", "value": "ハッシュ値 1234DF...234" },
+                  { "nameType": "purl", "value": "Package-Manager値 rpm:/" },
+                  { "nameType": "swid", "value": "swid:ipa.go.jp+myjvn_alert+1.0.0" }
                 ]
               }
             ]
@@ -279,20 +281,20 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
           CPE 製品識別子 (CPE v2.3 形式)  
           \[例\] `cpe:2.3:a:dendai.ac.jp:myjvn_api:*:*:*:*:*:*:*:*`
         - id_refs [type:array]
-          - key  
+          - nameType  
             SWID、spdxid、purl、SHA256 などの参照情報名
           - value  
             SWID、spdxid、purl、SHA256 などの参照情報値
           - Package-Manager の場合  
-            \[例\] `{ "key": "purl", "value": "pkg:/ipa/myjvn_api_getProductList:4.0.0" }`
+            \[例\] `{ "nameType": "purl", "value": "pkg:/ipa/myjvn_api_getProductList:4.0.0" }`
           - UUID の場合  
-            \[例\] `{ "key": "uuid", "value": "186ce5f8-0049-953a-37da-bc89c6f07aa1" }`
+            \[例\] `{ "nameType": "uuid", "value": "186ce5f8-0049-953a-37da-bc89c6f07aa1" }`
           - SWID の場合  
-            \[例\] `{ "key": "swid", "value": "swid:ipa.go.jp+myjvn_api_getProductList+4.0.0" }`
+            \[例\] `{ "nameType": "swid", "value": "swid:ipa.go.jp+myjvn_api_getProductList+4.0.0" }`
           - SHA256 の場合  
-            \[例\] `{ "key": "sha256", "value": "B93C2754A3B01C367CBA38E5A0C44941B39579CC0383E500C20B1D0AB13E0FFC" }`
+            \[例\] `{ "nameType": "sha256", "value": "B93C2754A3B01C367CBA38E5A0C44941B39579CC0383E500C20B1D0AB13E0FFC" }`
           - TEI の場合  
-            \[例\] `{ "key": "tei", "value": "urn:tei:uuid:protucts.example.com:186ce5f8-0049-953a-37da-bc89c6f07aa1" }`
+            \[例\] `{ "nameType": "tei", "value": "urn:tei:uuid:protucts.example.com:186ce5f8-0049-953a-37da-bc89c6f07aa1" }`
 
   - generator [type:object]
 

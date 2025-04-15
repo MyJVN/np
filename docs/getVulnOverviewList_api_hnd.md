@@ -107,16 +107,21 @@ CVSSv3 基本評価基準、CVSSv3 深刻度を指定します。
 ## レスポンス
 
 ### 概要
+
 - 処理成功時、JVNRSS 3.2(RSS 1.0 + mod_sec)、MyJVN 共通 Status ノードを含む XML を応答します。ただし、フィルタリング結果が 0 件の場合、Result ノードの中に MyJVN 共通 Status ノードのみを含む XML を応答します。
 - エラー発生時、MyJVN 共通 Status ノードにエラーコードとエラーメッセージを格納します。
 
 ### XML スキーマ
+
 - JVNRSS 3.2：https://jvndb.jvn.jp/schema/jvnrss_3.2.xsd
 - mod_sec 3.0：https://jvndb.jvn.jp/schema/mod_sec_3.0.xsd
 - MyJVN 共通 Status ノード：https://jvndb.jvn.jp/schema/status_3.3.xsd
 
 ### 例
+
 - [ getVulnOverviewList_hnd.xml ](../examples/getVulnOverviewList_hnd.xml)
+
+### 解説
 
 ```
 <?xml version="1.0" encoding="UTF-8" ?>

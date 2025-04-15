@@ -60,6 +60,8 @@
 - [ getVulnDetailInfo_oka_JVNDB-2021-002774 (CVE=1, CWE=0, CVSS=0, Ver=PRESENT) ](../examples/getVulnDetailInfo_oka_JVNDB-2021-002774.json)
 - [ getVulnDetailInfo_oka_JVNDB-2022-000097 (CVE=3, CWE=2, CVSS=6, Ver=NONE ) ](../examples/getVulnDetailInfo_oka_JVNDB-2022-000097.json)
 
+### 解説
+
 ```
 {
   "document": {
@@ -317,6 +319,7 @@
         - versionStartExcluding
         - versionEndIncluding
         - versionEndExcluding
+
 - status [type:object] [required]
 
 <br>
@@ -415,32 +418,34 @@
 
 ### 例
 
-- \[ getVulnDetailInfo_oka.json \]
+- [ getVulnDetailInfo_oka_JVNDB-2017-009608_jvnstix (CVE=1, CWE=1, CVSS=2, Ver=NONE) ](../examples/getVulnDetailInfo_oka_JVNDB-2017-009608_jvnstix.json)
+
+### 解説
 
 ```
 {
   "type": "bundle",
-  "id": "bundle--63c46abd-9f5a-472a-8b10-c51208c10000",
+  "id": "bundle--UUIDv4",
   "objects": [
     {
       "id": "extension-definition--b2440624-45a6-11ec-81d3-0242ac130003",
       "type": "extension-definition",
       "spec_version": "2.1",
-      "name": "CSAF embedded in STIX",
-      "description": "This schema is to deliver CSAF using STIX.",
-      "created": "2021-11-11T11:11:11.000000Z",
-      "modified": "2021-11-11T11:11:11.000000Z",
+      "name": "VULDEF-Document embedded in STIX",
+      "description": "This schema is to deliver VULDEF-Document using STIX.",
+      "created": "2021-11-11T11:11:11.000Z",
+      "modified": "2021-11-11T11:11:11.000Z",
       "created_by_ref": "identity--298980da-697f-431b-ae10-505b3542c427",
-      "schema": "http://jvndb.jvn.jp/schema/jvn.sdo",
-      "version": "2.0",
+      "schema": "http://jvndb.jvn.jp/schema/jvn-jp-sdo.json",
+      "version": "1.0",
       "extension_types": ["new-sdo"]
     },
     {
       "type": "identity",
       "spec_version": "2.1",
       "id": "identity--298980da-697f-431b-ae10-505b3542c427",
-      "created": "2021-11-11T11:11:11.000000Z",
-      "modified": "2021-11-11T11:11:11.000000Z",
+      "created": "2021-11-11T11:11:11.000Z",
+      "modified": "2021-11-11T11:11:11.000Z",
       "name": "MyJVN",
       "description": "Japan Vulnerability Notes - MyJVN",
       "identity_class": "system"
@@ -448,19 +453,23 @@
     {
       "type": "jvn-jp-sdo",
       "spec_version": "2.1",
-      "id": "jvn-jp-sdo--ac97aae4-83f1-46ca-a351-7aeb76678189",
-      "created": "2021-11-15T09:16:08.989000Z",
-      "modified": "2021-11-15T09:16:08.989000Z",
-      "name": "JVN CSAF embedded in STIX",
+      "id": "jvn-jp-sdo--UUIDv4",
+      "created": "2021-11-15T09:16:08.000Z",
+      "modified": "2021-11-15T09:16:08.000Z",
+      "name": "MyJVN API VULDEF-Document embedded in STIX",
       "extensions": {
         "extension-definition--b2440624-45a6-11ec-81d3-0242ac130003": {
           "extension_type": "new-sdo"
         }
       },
-      "document": {},
-      "product_tree": {},
-      "vulnerabilities": [],
-      "jvn_extension": {}
+      "VULDEF-Document": [
+        {
+          "document": {},
+          "product_tree": {},
+          "vulnerabilities": [],
+          "jvn_extension": {}
+        }
+      ]
     }
   ],
   "status": {
@@ -486,9 +495,9 @@
       - type=extension-definition field [type:object] [required]
       - type=identity field [type:object] [required]
       - type=jvn-jp-sdo field [type:object] [required]
-        - CSAF 2.1 ベースカスタム仕様
+        - VULDEF-Document [type:array] [required]
           - document [type:object] [required]
           - product_tree [type:object] [required]
           - vulnerabilities [type:object] [required]
-        - jvn_extension [type:object]
+          - jvn_extension [type:object]
   - status [type:object] [required]

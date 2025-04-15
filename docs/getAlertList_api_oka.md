@@ -174,6 +174,8 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
 
 - [ getAlertList_oka.json ](../examples/getAlertList_oka.json)
 
+### 解説
+
 ```
 {
   "feed": {

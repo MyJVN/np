@@ -38,8 +38,8 @@
               {
                 "cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api:*:*:*:*:*:*:*:*",
                 "id_refs": [
-                  { "key": "purl", "value": "pkg:/dendai.ac.jp/myjvn_api" },
-                  { "key": "swid", "value": "swid:dendai.ac.jp+myjvn_api" }
+                  { "nameType": "purl", "value": "pkg:/dendai.ac.jp/myjvn_api" },
+                  { "nameType": "swid", "value": "swid:dendai.ac.jp+myjvn_api" }
                 ]
               }
             ]
@@ -69,11 +69,11 @@
                 "cpe": "cpe:2.3:a:ipa:myjvn_api_getProductList:*:*:*:*:*:*:*:*",
                 "id_refs": [
                   {
-                    "key": "purl",
+                    "nameType": "purl",
                     "value": "pkg:/ipa/myjvn_api_getProductList"
                   },
                   {
-                    "key": "swid",
+                    "nameType": "swid",
                     "value": "swid:ipa.go.jp+myjvn_api+getProductList"
                   }
                 ]

@@ -229,6 +229,8 @@ CVSSv4 基本評価基準、CVSSv4 深刻度を指定します。
 
 - [ getVulnOverviewList_oka.json ](../examples/getVulnOverviewList_oka.json)
 
+### 解説
+
 ```
 {
   "feed": {
@@ -291,15 +293,15 @@ CVSSv4 基本評価基準、CVSSv4 深刻度を指定します。
               "cpe": "CPE製品識別子",
               "id_refs": [
                 {
-                  "key": "sha256",
+                  "nameType": "sha256",
                   "value": "ハッシュ値 1234DF...234"
                 },
                 {
-                  "key": "purl",
+                  "nameType": "purl",
                   "value": "Package-Manager値 rpm:/"
                 },
                 {
-                  "key": "swid",
+                  "nameType": "swid",
                   "value": "swid:ipa.go.jp+myjvn_alert+1.0.0"
                 }
               ]
@@ -403,7 +405,7 @@ CVSSv4 基本評価基準、CVSSv4 深刻度を指定します。
           - jvnpid: JVN 製品識別子
           - cpe: CPE 製品識別子
           - id_refs [type:array]
-            - key:
+            - nameType:
             - value:
 
     - metrics [type:array]

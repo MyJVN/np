@@ -102,6 +102,8 @@
 
 - [ getVendorList_oka.json ](../examples/getVendorList_oka.json)
 
+### 解説
+
 ```
 {
   "jvn_product_dictionary": {

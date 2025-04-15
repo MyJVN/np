@@ -90,69 +90,69 @@ CPE 製品識別子を指定します。
 - [ getAlertList_hnd.xml ](../examples/getAlertList_hnd.xml)
 
 ```
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <feed
-xmlns="http://www.w3.org/2005/Atom"
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xmlns:sec="https://jvn.jp/rss/mod_sec/3.0/"
-xmlns:marking="http://data-marking.mitre.org/Marking-1"
-xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1"
-xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
-xsi:schemaLocation="http://www.w3.org/2005/Atom https://jvndb.jvn.jp/schema/atom.xsd
-https://jvn.jp/rss/mod_sec/3.0/ https://jvndb.jvn.jp/schema/mod_sec_3.0.xsd
-http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1 https://jvndb.jvn.jp/schema/tlp_marking.xsd"
-xml:lang="ja">
+  xmlns="http://www.w3.org/2005/Atom"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:sec="https://jvn.jp/rss/mod_sec/3.0/"
+  xmlns:marking="http://data-marking.mitre.org/Marking-1"
+  xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1"
+  xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
+  xsi:schemaLocation="http://www.w3.org/2005/Atom https://jvndb.jvn.jp/schema/atom.xsd
+                      https://jvn.jp/rss/mod_sec/3.0/ https://jvndb.jvn.jp/schema/mod_sec_3.0.xsd
+                      http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1 https://jvndb.jvn.jp/schema/tlp_marking.xsd"
+  xml:lang="ja">
 
-<title type="text">IPA注意警戒サービスAPI</title>
-<updated>更新日</updated>
-<id>swid:ipa.go.jp+myjvn_alert+1.0.0</id>
-<link rel="alternate" type="text/html" hreflang="ja" href="https://jvndb.jvn.jp/apis/myjvn/" />
-<author>
-<name>IPA</name>
-<uri>https://www.ipa.go.jp/</uri>
-</author>
-<sec:handling>
-<marking:Marking>
-<marking:Marking_Structure xsi:type="tlpMarking:TLPMarkingStructureType"
- marking_model_name="TLP"
- marking_model_ref="http://www.us-cert.gov/tlp/" color="WHITE"/>
-</marking:Marking>
-</sec:handling>
-<entry>
-  <title>注意警戒のタイトル</title>
-  <id>注意警戒の識別子</id>
-  <summary>注意警戒の概要</summary>
-  <link href="http://www.example-store.com/products/foo.html" />
-  <published>発行日</published>
+  <title type="text">IPA注意警戒サービスAPI</title>
   <updated>更新日</updated>
-  <category term="カテゴリ名" label="カテゴリラベル" />
-  <sec:items>
-    <sec:item>
-      <sec:title>関連情報のタイトル</sec:title>
-      <sec:identifier>関連情報の識別子</sec:identifier>
-      <sec:summary>関連情報の概要</sec:summary>
-      <sec:link href="関連情報の概要のURL" />
-      <sec:cpe>cpe製品名</sec:cpe>
-      <sec:published>発行日</sec:published>
-      <sec:updated>更新日</sec:updated>
-    </sec:item>
-    <!-- sec:itemノードを繰り返します。 -->
-  </sec:items>
-</entry>
-<status:Status
-version="3.3"
-method="getAlertList"
-feed="hnd"
-lang="表示言語"
-retCd="リターンコード (0:成功時、1:エラー時)"
-retMax="エントリ上限値"
-errCd="エラーコード (処理成功時は空文字列)"
-errMsg="エラーメッセージ (処理成功時は空文字列)"
-totalRes="応答エントリ総数"
-totalResRet="応答エントリ数"
-firstRes="応答エントリ開始位置" >
-<!-- 各リクエストパラメタ -->
-</status:Status>
+  <id>swid:ipa.go.jp+myjvn_alert+1.0.0</id>
+  <link rel="alternate" type="text/html" hreflang="ja" href="https://jvndb.jvn.jp/apis/myjvn/" />
+  <author>
+    <name>IPA</name>
+    <uri>https://www.ipa.go.jp/</uri>
+  </author>
+  <sec:handling>
+    <marking:Marking>
+      <marking:Marking_Structure xsi:type="tlpMarking:TLPMarkingStructureType"
+        marking_model_name="TLP"
+        marking_model_ref="http://www.us-cert.gov/tlp/" color="WHITE" />
+    </marking:Marking>
+  </sec:handling>
+  <entry>
+    <title>注意警戒のタイトル</title>
+    <id>注意警戒の識別子</id>
+    <summary>注意警戒の概要</summary>
+    <link href="http://www.example-store.com/products/foo.html" />
+    <published>発行日</published>
+    <updated>更新日</updated>
+    <category term="カテゴリ名" label="カテゴリラベル" />
+    <sec:items>
+      <sec:item>
+        <sec:title>関連情報のタイトル</sec:title>
+        <sec:identifier>関連情報の識別子</sec:identifier>
+        <sec:summary>関連情報の概要</sec:summary>
+        <sec:link href="関連情報の概要のURL" />
+        <sec:cpe>cpe製品名</sec:cpe>
+        <sec:published>発行日</sec:published>
+        <sec:updated>更新日</sec:updated>
+      </sec:item>
+      <!-- sec:itemノードを繰り返します。 -->
+    </sec:items>
+  </entry>
+  <status:Status
+    version="3.3"
+    method="getAlertList"
+    feed="hnd"
+    lang="表示言語"
+    retCd="リターンコード (0:成功時、1:エラー時)"
+    retMax="エントリ上限値"
+    errCd="エラーコード (処理成功時は空文字列)"
+    errMsg="エラーメッセージ (処理成功時は空文字列)"
+    totalRes="応答エントリ総数"
+    totalResRet="応答エントリ数"
+    firstRes="応答エントリ開始位置">
+    <!-- 各リクエストパラメタ -->
+  </status:Status>
 </feed>
 ```
 
@@ -173,6 +173,8 @@ firstRes="応答エントリ開始位置" >
 ### 例
 
 - [ getAlertList_hnd.json ](../examples/getAlertList_hnd.json)
+
+### 解説
 
 ```
 {

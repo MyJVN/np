@@ -36,8 +36,8 @@
               {
                 "cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api:*:*:*:*:*:*:*:*",
                 "id_refs": [
-                  { "key": "purl", "value": "pkg:/dendai.ac.jp/myjvn_api" },
-                  { "key": "swid", "value": "swid:dendai.ac.jp+myjvn_api" }
+                  { "nameType": "purl", "value": "pkg:/dendai.ac.jp/myjvn_api" },
+                  { "nameType": "swid", "value": "swid:dendai.ac.jp+myjvn_api" }
                 ]
               }
             ]
@@ -52,15 +52,15 @@
                 "cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api:4.0.0:*:*:*:*:*:*:*",
                 "id_refs": [
                   {
-                    "key": "sha256",
+                    "nameType": "sha256",
                     "value": "9BE897694CFD0D06DDD83E7660CD09EA09CE04CB987AC932F056BDE1068F7148"
                   },
                   {
-                    "key": "purl",
+                    "nameType": "purl",
                     "value": "pkg:/dendai.ac.jp/myjvn_api:4.0.0"
                   },
                   {
-                    "key": "swid",
+                    "nameType": "swid",
                     "value": "swid:dendai.ac.jp+myjvn_api+4.0.0"
                   }
                 ]
@@ -84,11 +84,11 @@
                 "cpe": "cpe:2.3:a:ipa:myjvn_api_getProductList:*:*:*:*:*:*:*:*",
                 "id_refs": [
                   {
-                    "key": "purl",
+                    "nameType": "purl",
                     "value": "pkg:/ipa/myjvn_api_getProductList"
                   },
                   {
-                    "key": "swid",
+                    "nameType": "swid",
                     "value": "swid:ipa.go.jp+myjvn_api+getProductList"
                   }
                 ]
@@ -105,15 +105,15 @@
                 "cpe": "cpe:2.3:a:ipa:myjvn_api_getProductList:4.0.0:*:*:*:*:*:*:*",
                 "id_refs": [
                   {
-                    "key": "sha256",
+                    "nameType": "sha256",
                     "value": "B93C2754A3B01C367CBA38E5A0C44941B39579CC0383E500C20B1D0AB13E0FFC"
                   },
                   {
-                    "key": "purl",
+                    "nameType": "purl",
                     "value": "pkg:/ipa/myjvn_api_getProductList:4.0.0"
                   },
                   {
-                    "key": "swid",
+                    "nameType": "swid",
                     "value": "swid:ipa.go.jp+myjvn_api_getProductList+4.0.0"
                   }
                 ]

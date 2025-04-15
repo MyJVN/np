@@ -19,12 +19,12 @@
 | パラメタ名      | 名称                   | パラメタ値                                                                                                                                                | 必須 | デフォルト |
 | --------------- | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- | ---------- |
 | method          | メソッド名             | getStatistics (固定)                                                                                                                                      | ○    | －         |
-| feed            | フィードフォーマット名 | フィードフォーマット(=API バージョン)を示す名称 <br> hnd を指定                                                                                           | ○    | －         |
+| feed            | フィードフォーマット名 | フィードフォーマット(=API バージョン)を示す名称 <br> oka を指定                                                                                           | ○    | －         |
 | nameType        | 製品識別子タイプ       | cpe, jvnpid, vid, pid のいずれかひとつ                                                                                                                    | －   | －         |
 | productName     | 製品識別子             | type=cpe: cpe v2.3 形式　<br> type=jvnpid: jvnpid v1.0 形式 <br>nameType=vid: JVN iPedia におけるベンダ番号 <br>nameType=pid: JVN iPedia における製品番号 | －   | －         |
 | cweId           | CWE 識別子             | CWE 番号                                                                                                                                                  | －   | －         |
 | metricType      | 評価タイプ             | cvssV2, cvssV3, cvssV4 のいずれかひとつ                                                                                                                   | －   | cvssV3     |
-| datePublicStart | 発見日開始年           | 整数 4 桁                                                                                                                                                 | －   | 1998       |
+| datePublicStart | 発見日開始年           | 整数 4 桁                                                                                                                                                 | －   | 現在の年   |
 | datePublicEnd   | 発見日終了年           | 整数 4 桁                                                                                                                                                 | －   | －         |
 
 <br>
@@ -33,14 +33,16 @@
 
 該当パラメタに指定がない場合(パラメタ自体もしくはパラメタ値が未指定の場合)に MyJVN API 側で自動的に設定する値です。
 
+- 必須パラメタ以外を指定しない場合には、datePublicStart=現在の年、metricType=cvssV3 を適用するため、CVSS Ver3 に関する、現在の年の 1 月～ 12 月分の統計情報を出力します。
+
 - \[例\]  
-   JVN iPedia の統計情報を取得したい場合 (1998年以降のCVSS ver3に関する統計情報)  
-   ( datePublicStart=1998, metricType=cvssv3 )  
+   必須パラメタのみを指定して統計情報を取得したい場合  
+   ( datePublicStart=現在の年, metricType=cvssv3 )  
    `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=oka`
 
 #### nameType
 
-製品識別子タイプとして、\[cpe \| jvnpid \| vid \| pid \]のいずれか一つを指定します。
+製品識別子タイプとして、\[ cpe \| jvnpid \| vid \| pid \]のいずれか一つを指定します。
 
 #### productName & nameType=cpe
 
@@ -50,11 +52,10 @@
   {part}フィールド ... \[ h | o | a | \* \]  
   {vendor}:{product}フィールド ... CPE ベンダ名、製品名
 - ワイルドカード(\*) 指定可、アスキー文字、大文字／小文字区別なし、複数指定は不可
-- バージョンが設定されていない情報とバージョンが設定された全ての情報を取得
 - URL エンコードされたエスケープシーケンス
 - \[例\]  
    Apache HTTPD 全てのバージョンに関する統計情報を取得したい場合  
-   ( datePublicStart=1998, metricType=cvssV3 )  
+   ( datePublicStart=現在の年, metricType=cvssV3 )  
    `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=oka&nameType=cpe&ProductName=cpe:2.3:a:apache:http_server`
 
 #### cweId
@@ -64,7 +65,7 @@ CWE 識別子として、CWE 番号を指定します。
 - 複数指定は不可
 - \[例\]  
    CWE-79 に関する統計情報を取得したい場合  
-   ( datePublicStart=1998, metricType=cvssV3 )  
+   ( datePublicStart=現在の年, metricType=cvssV3 )  
    `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=oka&cweId=CWE-79`
 
 #### metricType
@@ -73,8 +74,22 @@ CWE 識別子として、CWE 番号を指定します。
 
 - \[例\]  
    CVSS Ver4 に関する統計情報を取得したい場合  
-   ( datePublicStart=1998 )  
-   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=oka&0etr5cType=cvssV4`
+   ( datePublicStart=現在の年 )  
+   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=oka&metricType=cvssV4`
+
+#### datePublicStart. datePublicEnd
+
+発見日開始年、発見日終了年を指定します。
+
+- datePublicStart の最小値は 1998
+- datePublicStart のみを指定した場合には、発見日開始年以降が対象
+- datePublicEnd のみを指定した場合には、発見日終了年以前が対象
+- \[例\]  
+   期間を指定して統計情報を取得したい場合  
+   ( metricType=cvssV3 )  
+   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=oka&datePublicStart=2005`  
+   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=oka&datePublicEnd=2005`  
+   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=oka&datePublicStart=2005&datePublicEnd=2025`
 
 <br>
 <br>
@@ -83,8 +98,18 @@ CWE 識別子として、CWE 番号を指定します。
 
 ### 概要
 
-- 処理成功時、Result ノードの中に VendorInfo、MyJVN 共通 Status ノードを含む XML を応答します。ただし、フィルタリング結果が 0 件の場合、Result ノードの中に MyJVN 共通 Status ノードのみを含む XML を応答します。
+- 処理成功時、datatotal、data、MyJVN 共通 status を含む JSON を応答します。
 - エラー発生時、MyJVN 共通 Status ノードにエラーコードとエラーメッセージを格納します。
+
+### JSON スキーマ
+
+- TBD
+
+### 例
+
+- [ getStatistics_oka.json ](../examples/getStatistics_oka.json)
+
+### 解説
 
 ```
 {
@@ -92,14 +117,24 @@ CWE 識別子として、CWE 番号を指定します。
   "version": "4.0.0",
   "timestamp": "2025-04-02T00:38:11+09:00",
   "dataTotal": {
+    "$comment": "脆弱性対策情報総件数、ベンダ総件数、製品総件数",
     "vulinfo": 234156,
     "vendor": 30054,
     "product": 77871
   },
-  "dataFilter": {"cweId": "CWE-79", "nameType":"jvnpid", "productName": "jvnpid:1.0::ipa" , "metricType": "cvssV3" },
+  "dataFilter": {
+    "$comment": "指定されたパラメタを記録します。",
+    "nameType": "製品識別子タイプ",
+    "productName": "製品識別子",
+    "cweId": "CWE番号",
+    "metricType": "評価タイプ",
+    "datePublicStart": "発見日開始年",
+    "datePublicEnd": "発見日終了年"
+  },
   "data": [
     {
-      "year": "1999",
+      "$comment": "該当年、該当年の脆弱性対策情報の件数、深刻度(緊急、重要、警告、注意、なし)の件数",
+      "year": "2025",
       "total_vulinfo": 4,
       "total_seveirty_critical": 4,
       "total_seveirty_high": 0,
@@ -107,43 +142,63 @@ CWE 識別子として、CWE 番号を指定します。
       "total_seveirty_low": 0,
       "total_seveirty_none": 0,
       "vulinfo": {
+        "$comment": "毎月の脆弱性対策情報の件数",
         "1": 1,
         "2": 1,
         "3": 1,
         "4": 1
       },
       "seveirty_critical": {
+        "$comment": "毎月の深刻度(緊急)の件数",
         "1": 1,
         "2": 1,
         "3": 1,
         "4": 1
       },
       "seveirty_high": {
+        "$comment": "毎月の深刻度(重要)の件数",
         "1": 0,
         "2": 0,
         "3": 0,
         "4": 0
       },
       "seveirty_medium": {
+        "$comment": "毎月の深刻度(警告)の件数",
         "1": 0,
         "2": 0,
         "3": 0,
         "4": 0
       },
       "seveirty_low": {
+        "$comment": "毎月の深刻度(注意)の件数",
         "1": 0,
         "2": 0,
         "3": 0,
         "4": 0
       },
       "seveirty_none": {
+        "$comment": "毎月の深刻度(なし)の件数",
         "1": 0,
         "2": 0,
         "3": 0,
         "4": 0
       }
     }
-  ]
+  ],
+  "status": {
+    "version": "4.0.0",
+    "method": "getStatistics",
+    "feed": "oka",
+    "lang": "表示言語",
+    "retCd": "リターンコード (0:成功時、1:エラー時)",
+    "retMax": "エントリ上限値",
+    "errCd": "エラーコード (処理成功時は空文字列)",
+    "errMsg": "エラーメッセージ (処理成功時は空文字列)",
+    "totalRes": "応答エントリ総数",
+    "totalResRet": "応答エントリ数",
+    "firstRes": "応答エントリ開始位置",
+    "各リクエストパラメタ": "各リクエストパラメタ値"
+  }
 }
-
 ```
+

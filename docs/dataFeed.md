@@ -8,8 +8,9 @@
 
   - TBD
 
-- \[例\]  
-  [ dataFeed_jvndb_rss_hnd.xml ](../examples/dataFeed_jvndb_rss_hnd.xml)
+- \[例\]
+  - [ dataFeed_jvndb_rss_hnd.xml ](../examples/dataFeed_jvndb_rss_hnd.xml)
+  - 解説
   ```
   - rdf:RDF
     - channel
@@ -32,7 +33,7 @@
       - dcterms:issued
       - dcterms:modified
    - item
-   :   
+   :
   ```
 
 <br>
@@ -43,9 +44,9 @@
 
   - TBD
 
-- \[例\]  
-  [ dataFeed_jvndb_rss_oka.json ](../examples/dataFeed_jvndb_rss_oka.json)
-
+- \[例\]
+  - [ dataFeed_jvndb_rss_oka.json ](../examples/dataFeed_jvndb_rss_oka.json)
+  - 解説
   ```
   - feed
     - generator
@@ -71,8 +72,9 @@
 
   - TBD
 
-- \[例\]  
-  [ dataFeed_jvndb_detail_hnd.xml ](../examples/dataFeed_jvndb_detail_hnd.xml)
+- \[例\]
+  - [ dataFeed_jvndb_detail_hnd.xml ](../examples/dataFeed_jvndb_detail_hnd.xml)
+  - 解説
   ```
   - VULDEF-Document
     - Vulinfo
@@ -98,8 +100,9 @@
 
   - TBD
 
-- \[例\]  
-  [ dataFeed_jvndb_detail_oka.json ](../examples/dataFeed_jvndb_detail_oka.json)
+- \[例\]
+  - [ dataFeed_jvndb_detail_oka.json ](../examples/dataFeed_jvndb_detail_oka.json)
+  - 解説
   ```
   - format
   - version
@@ -124,8 +127,9 @@
 
   - TBD
 
-- \[例\]  
-  [ dataFeed_myjvn_vendor_hnd.xml ](../examples/dataFeed_myjvn_vendor_hnd.xml)
+- \[例\]
+  - [ dataFeed_myjvn_vendor_hnd.xml ](../examples/dataFeed_myjvn_vendor_hnd.xml)
+  - 解説
   ```
   - VendorInfo
     - Vendor (vname, cpe, vid)
@@ -139,8 +143,9 @@
 
   - TBD
 
-- \[例\]  
-  [ dataFeed_myjvn_product_oka.json ](../examples/dataFeed_myjvn_product_oka.json)
+- \[例\]
+  - [ dataFeed_myjvn_product_oka.json ](../examples/dataFeed_myjvn_product_oka.json)
+  - 解説
   ```
   - jvn_product_dictionary
     - vendors
@@ -158,8 +163,9 @@
 
   - TBD
 
-- \[例\]  
-  [ dataFeed_myjvn_product_hnd.xml ](../examples/dataFeed_myjvn_product_hnd.xml) バージョン表記なし
+- \[例\]
+  - [ dataFeed_myjvn_product_hnd.xml ](../examples/dataFeed_myjvn_product_hnd.xml) バージョン表記なし
+  - 解説
   ```
   - VendorInfo
     - Vendor (vname, cpe, vid)
@@ -174,8 +180,10 @@
 
   - TBD
 
-- \[例\]  
-   [ dataFeed_myjvn_product_oka.json ](../examples/dataFeed_myjvn_product_oka.json) バージョン表記なし
+- \[例\]
+
+  - [ dataFeed_myjvn_product_oka.json ](../examples/dataFeed_myjvn_product_oka.json) バージョン表記なし
+  - 解説
 
   ```
   - jvn_product_dictionary
@@ -185,8 +193,9 @@
         - product_id, pid, pname, pname_i18, product_ids
   ```
 
-  [ dataFeed_myjvn_product_version_oka.json ](../examples/dataFeed_myjvn_product_version_oka.json) バージョン表記あり
-
+- \[例\]
+  - [ dataFeed_myjvn_product_version_oka.json ](../examples/dataFeed_myjvn_product_version_oka.json) バージョン表記あり
+  - 解説
   ```
   - jvn_product_dictionary
     - vendors

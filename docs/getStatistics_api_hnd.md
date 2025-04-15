@@ -57,3 +57,98 @@
 
 - 処理成功時、Result ノードの中に VendorInfo、MyJVN 共通 Status ノードを含む XML を応答します。ただし、フィルタリング結果が 0 件の場合、Result ノードの中に MyJVN 共通 Status ノードのみを含む XML を応答します。
 - エラー発生時、MyJVN 共通 Status ノードにエラーコードとエラーメッセージを格納します。
+
+### XML スキーマ
+
+- Result ノード：http://jvndb.jvn.jp/schema/results_3.3.xsd
+- MyJVN 共通 Status ノード：http://jvndb.jvn.jp/schema/status_3.3.xsd
+
+### 例
+
+- [ getStatistics_hnd_sumJvnDb.xml ](../examples/getStatistics_hnd_sumJvnDb.xml)
+- [ getStatistics_hnd_sumCvss.xml ](../examples/getStatistics_hnd_sumCvss.xml)
+- [ getStatistics_hnd_sumAll.xml ](../examples/getStatistics_hnd_sumAll.xml)
+- [ getStatistics_hnd_sumCwe.xml ](../examples/getStatistics_hnd_sumCwe.xml)
+
+### 解説
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<Result version="3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://jvndb.jvn.jp/myjvn/Results" xmlns:mjres="http://jvndb.jvn.jp/myjvn/Results"
+  xmlns:mjstat="http://jvndb.jvn.jp/myjvn/Statistics"
+  xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
+  xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/Results https://jvndb.jvn.jp/schema/results_3.3.xsd
+                      ">
+
+  <!-- theme=sumJvnDb の場合 -->
+  <mjstat:sumJvnDb>
+    <mjstat:title xml:lang="ja">脆弱性統計情報</mjstat:title>
+    <mjstat:title xml:lang="en-US">Statistics
+    Vulnerability Count</mjstat:title>
+    <mjstat:resDataTotal vulinfo="脆弱性対策情報総件数" vendor="ベンダ総件数"
+      product="製品総件数" />
+    <mjstat:resData date="集計期間" cntAll="登録件数" /> 集計期間分 mjstat:resData
+    ノードを繰り返します。 mjstat:resData ノードの date に記載される値は、 type=y の場合 年(yyyy形式)、 type=m の場合 年月(yyyy-mm形式)、
+    type=q の場合 四半期(yyyy-(1～4)Q形式)となります。 </mjstat:sumJvnDb>
+
+  <!-- theme=sumCvss の場合 -->
+  <mjstat:sumCvss>
+    <mjstat:title xml:lang="ja">CVSSスコア</mjstat:title>
+    <mjstat:title xml:lang="en-US">CVSS Score</mjstat:title>
+    <mjstat:resDataTotal
+      vulinfo="脆弱性対策情報総件数" vendor="ベンダ総件数" product="製品総件数" />
+    <mjstat:resData date="集計期間"
+      cntAll="総件数" cntC="深刻度(緊急)の件数" cntH="深刻度(重要)の件数" cntM="深刻度(警告)の件数"
+      cntL="深刻度(注意)の件数" cntN="深刻度(なし意)の件数" /> 集計期間分 mjstat:resData ノードを繰り返します。 <br />
+  </mjstat:sumCvss>
+
+  <!-- theme=sumCwe の場合 -->
+  <mjstat:sumCwe cweId="CWE 識別子">
+    <mjstat:title xml:lang="ja">CWE 識別子のタイトル(日本語)</mjstat:title>
+    <mjstat:title xml:lang="en-US">CWE
+    識別子のタイトル(英語)</mjstat:title>
+    <mjstat:resDataTotal vulinfo="脆弱性対策情報総件数" vendor="ベンダ総件数"
+      product="製品総件数" />
+    <mjstat:resData date="集計期間" cntAll="件数" /> 集計期間分 mjstat:resData ノードを繰り返します。 </mjstat:sumCwe>
+
+  <!-- theme=sumAll の場合 -->
+  <mjstat:sumJvnDb>
+    <mjstat:title xml:lang="ja">脆弱性統計情報</mjstat:title>
+    <mjstat:title xml:lang="en-US">Statistics Vulnerability Count</mjstat:title>
+    <mjstat:resDataTotal vulinfo="脆弱性対策情報総件数" vendor="ベンダ総件数" product="製品総件数" />
+    <mjstat:resData date="集計期間" cntAll="登録件数" />
+  </mjstat:sumJvnDb>
+
+  <mjstat:sumCvss>
+    <mjstat:title xml:lang="ja">CVSSスコア</mjstat:title>
+    <mjstat:title xml:lang="en-US">CVSS Score</mjstat:title>
+    <mjstat:resDataTotal vulinfo="脆弱性対策情報総件数" vendor="ベンダ総件数" product="製品総件数" />
+    <mjstat:resData date="集計期間" cntAll="総件数" cntC="深刻度(緊急)の件数" cntH="深刻度(重要)の件数" cntM="深刻度(警告)の件数"
+      cntL="深刻度(注意)の件数" cntN="深刻度(なし意)の件数" />
+  </mjstat:sumCvss>
+
+  <mjstat:sumCwe cweId="CWE 識別子">
+    <mjstat:title xml:lang="ja">CWE 識別子のタイトル(日本語)</mjstat:title>
+    <mjstat:title xml:lang="en-US">CWE 識別子のタイトル(英語)</mjstat:title>
+    <mjstat:resDataTotal vulinfo="脆弱性対策情報総件数" vendor="ベンダ総件数" product="製品総件数" />
+    <mjstat:resData date="集計期間" cntAll="件数" />
+  </mjstat:sumCwe>
+
+  <status:Status
+    version="3.3"
+    method="getAlertList"
+    feed="hnd"
+    lang="表示言語"
+    retCd="リターンコード (0:成功時、1:エラー時)"
+    retMax="エントリ上限値"
+    errCd="エラーコード (処理成功時は空文字列)"
+    errMsg="エラーメッセージ (処理成功時は空文字列)"
+    totalRes="応答エントリ総数"
+    totalResRet="応答エントリ数"
+    firstRes="応答エントリ開始位置">
+    <!-- 各リクエストパラメタ -->
+  </status:Status>
+
+</Result>
+```

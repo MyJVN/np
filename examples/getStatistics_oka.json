@@ -1,0 +1,178 @@
+{
+  "format": "mjstat:sumJvnDb",
+  "version": "4.0.0",
+  "timestamp": "2025-04-02T00:38:11+09:00",
+  "dataTotal": {
+    "vulinfo": 234395,
+    "vendor": 30055,
+    "product": 77881
+  },
+  "dataFilter": {
+    "nameType": "",
+    "productName": "",
+    "cweId": "",
+    "metricType": "cvssV3",
+    "datePublicStart": "2024",
+    "datePublicEnd": "2025"
+  },
+  "data": [
+    {
+      "year": "2024",
+      "total_vulinfo": 21085,
+      "total_seveirty_critical": 2816,
+      "total_seveirty_high": 7578,
+      "total_seveirty_medium": 10322,
+      "total_seveirty_low": 369,
+      "total_seveirty_none": 0,
+
+      "vulinfo": {
+        "1": 1416,
+        "2": 1733,
+        "3": 1716,
+        "4": 1467,
+        "5": 1383,
+        "6": 1838,
+        "7": 1884,
+        "8": 2189,
+        "9": 1933,
+        "10": 2313,
+        "11": 1943,
+        "12": 1270
+      },
+      "seveirty_critical": {
+        "1": 307,
+        "2": 258,
+        "3": 193,
+        "4": 150,
+        "5": 154,
+        "6": 247,
+        "7": 207,
+        "8": 396,
+        "9": 225,
+        "10": 259,
+        "11": 244,
+        "12": 176
+      },
+      "seveirty_high": {
+        "1": 426,
+        "2": 570,
+        "3": 552,
+        "4": 563,
+        "5": 463,
+        "6": 575,
+        "7": 710,
+        "8": 834,
+        "9": 716,
+        "10": 847,
+        "11": 878,
+        "12": 444
+      },
+      "seveirty_medium": {
+        "1": 648,
+        "2": 881,
+        "3": 935,
+        "4": 732,
+        "5": 748,
+        "6": 985,
+        "7": 922,
+        "8": 930,
+        "9": 952,
+        "10": 1158,
+        "11": 795,
+        "12": 636
+      },
+      "seveirty_low": {
+        "1": 35,
+        "2": 24,
+        "3": 36,
+        "4": 22,
+        "5": 18,
+        "6": 31,
+        "7": 45,
+        "8": 29,
+        "9": 40,
+        "10": 49,
+        "11": 26,
+        "12": 14
+      },
+      "seveirty_none": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0,
+        "10": 0,
+        "11": 0,
+        "12": 0
+      }
+    },
+    {
+      "year": "2025",
+      "total_vulinfo": 2418,
+      "total_seveirty_critical": 441,
+      "total_seveirty_high": 808,
+      "total_seveirty_medium": 1126,
+      "total_seveirty_low": 43,
+      "total_seveirty_none": 0,
+
+      "vulinfo": {
+        "1": 762,
+        "2": 811,
+        "3": 741,
+        "4": 104
+      },
+      "seveirty_critical": {
+        "1": 94,
+        "2": 110,
+        "3": 201,
+        "4": 36
+      },
+      "seveirty_high": {
+        "1": 277,
+        "2": 288,
+        "3": 203,
+        "4": 40
+      },
+      "seveirty_medium": {
+        "1": 382,
+        "2": 402,
+        "3": 317,
+        "4": 25
+      },
+      "seveirty_low": {
+        "1": 9,
+        "2": 11,
+        "3": 20,
+        "4": 3
+      },
+      "seveirty_none": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0
+      }
+    }
+  ],
+  "status": {
+    "version": "4.0.0",
+    "method": "getStatistics",
+    "feed": "oka",
+    "lang": "ja",
+    "retCd": "0",
+    "retMax": "10000",
+    "retMaxCnt": "2313",
+    "errCd": "",
+    "errMsg": "",
+    "totalRes": "16",
+    "totalResRet": "16",
+    "firstRes": "",
+    "theme": "sumCvss",
+    "type": "m",
+    "datePublicStartY": "2024",
+    "datePublicStartM": "1"
+  }
+}

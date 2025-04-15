@@ -1,0 +1,211 @@
+{
+  "type": "bundle",
+  "id": "bundle--4c2812dd-d870-42ed-a920-b3b0cc1bef03",
+  "objects": [
+    {
+      "id": "extension-definition--b2440624-45a6-11ec-81d3-0242ac130003",
+      "type": "extension-definition",
+      "spec_version": "2.1",
+      "name": "VULDEF-Document embedded in STIX",
+      "description": "This schema is to deliver VULDEF-Document using STIX.",
+      "created": "2021-11-11T11:11:11.000Z",
+      "modified": "2021-11-11T11:11:11.000Z",
+      "created_by_ref": "identity--298980da-697f-431b-ae10-505b3542c427",
+      "schema": "http://jvndb.jvn.jp/schema/jvn-jp-sdo.json",
+      "version": "1.0",
+      "extension_types": ["new-sdo"]
+    },
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--298980da-697f-431b-ae10-505b3542c427",
+      "created": "2021-11-11T11:11:11.000Z",
+      "modified": "2021-11-11T11:11:11.000Z",
+      "name": "MyJVN",
+      "description": "Japan Vulnerability Notes - MyJVN",
+      "identity_class": "system"
+    },
+    {
+      "type": "jvn-jp-sdo",
+      "spec_version": "2.1",
+      "id": "jvn-jp-sdo--ac97aae4-83f1-46ca-a351-7aeb76678189",
+      "created": "2021-11-15T09:16:08.000Z",
+      "modified": "2021-11-15T09:16:08.000Z",
+      "name": "MyJVN API VULDEF-Document embedded in STIX",
+      "extensions": {
+        "extension-definition--b2440624-45a6-11ec-81d3-0242ac130003": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "VULDEF-Document": [
+        {
+          "document": {
+            "category": "myjvn_security_advisory",
+            "csaf_version": "2.1",
+            "distribution": {
+              "tlp": {
+                "label": "CLEAR",
+                "url": "https://www.first.org/tlp/"
+              }
+            },
+            "title": "エアバッグコントロールユニットにおける暗号アルゴリズムの使用に関する脆弱性",
+            "lang": "ja",
+            "notes": [
+              {
+                "category": "description",
+                "text": "2014 年以降に製造された不特定の乗用車のエアバッグコントロールユニット (別名 pyrotechnical control unit または PCU) には、暗号アルゴリズムの使用に関する脆弱性が存在します。"
+              }
+            ],
+            "tracking": {
+              "generator": {
+                "engine": {
+                  "version": "4.0.0",
+                  "name": "MyJVN API"
+                }
+              },
+              "id": "JVNDB-2017-009608",
+              "current_release_date": "2025-04-06T03:00:00+09:00",
+              "initial_release_date": "2017-11-16T15:06:40+09:00",
+              "status": "final",
+              "version": "2.0.0",
+              "revision_history": [
+                {
+                  "date": "2018-02-17T10:37:52+09:00",
+                  "number": "1.0.0",
+                  "summary": "[2017年11月16日] 掲載"
+                },
+                {
+                  "date": "2025-04-06T02:00:00+09:00",
+                  "number": "2.0.0",
+                  "summary": "XML形式からJSON形式に変換"
+                }
+              ]
+            },
+            "publisher": {
+              "category": "coordinator",
+              "name": "IPA",
+              "namespace": "https://www.ipa.go.jp"
+            },
+            "references": [
+              {
+                "category": "external",
+                "summary": "CVE-2017-14937",
+                "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-14937",
+                "type": "advisory",
+                "source": "Common Vulnerabilities and Exposures (CVE)"
+              },
+              {
+                "category": "external",
+                "summary": "CVE-2017-14937",
+                "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-14937",
+                "type": "advisory",
+                "source": "National Vulnerability Database (NVD)"
+              },
+              {
+                "category": "external",
+                "summary": "Vulnerability in pyrotechnical control units of passenger cars",
+                "url": "http://www.mmt.hs-karlsruhe.de/downloads/IEEM/Schwachstellen/PCU_Vulnerability_Description_HsKA.PDF",
+                "type": "advisory",
+                "source": "関連文書"
+              }
+            ]
+          },
+          "product_tree": {
+            "branches": [
+              {
+                "category": "vendor",
+                "name": "PCU",
+                "product": {
+                  "product_id": "jvnpid:1.0::pcu:pcu",
+                  "name": "PCU",
+                  "product_identification_helper": {
+                    "cpe": "cpe:2.3:h:pcu:pcu:*:*:*:*:*:*:*:*"
+                  }
+                }
+              }
+            ]
+          },
+          "vulnerabilities": [
+            {
+              "cve": "CVE-2017-14937",
+              "cwes": [
+                {
+                  "id": "CWE-327",
+                  "name": "不完全、または危険な暗号アルゴリズムの使用",
+                  "version": "",
+                  "source": "NVD"
+                }
+              ],
+              "product_status": {
+                "known_affected": ["jvnpid:1.0::pcu:pcu"]
+              },
+              "threats": [
+                {
+                  "category": "impact",
+                  "details": "情報を取得される可能性があります。"
+                }
+              ],
+              "remediations": [
+                {
+                  "category": "vendor_fix",
+                  "details": "参考情報を参照して適切な対策を実施してください。",
+                  "product_ids": ["jvnpid:1.0::pcu:pcu"]
+                }
+              ],
+              "metrics": [
+                {
+                  "content": {
+                    "cvss_v2": {
+                      "version": "2.0",
+                      "vectorString": "AV:L/AC:M/Au:N/C:P/I:N/A:N",
+                      "baseScore": 1.9,
+                      "baseSeverity": "LOW",
+                      "accessVector": "LOCAL",
+                      "accessComplexity": "MEDIUM",
+                      "authentication": "NONE",
+                      "confidentialityImpact": "PARTIAL",
+                      "integrityImpact": "NONE",
+                      "availabilityImpact": "NONE"
+                    },
+                    "cvss_v3": {
+                      "version": "3.0",
+                      "vectorString": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N",
+                      "baseScore": 4.7,
+                      "baseSeverity": "MEDIUM",
+                      "attackVector": "LOCAL",
+                      "attackComplexity": "HIGH",
+                      "privilegesRequired": "LOW",
+                      "userInteraction": "NONE",
+                      "scope": "UNCHANGED",
+                      "confidentialityImpact": "HIGH",
+                      "integrityImpact": "NONE",
+                      "availabilityImpact": "NONE"
+                    },
+                    "source": "NVD",
+                    "type": "Primary"
+                  },
+                  "products": ["jvnpid:1.0::pcu:pcu"]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "status": {
+    "version": "4.0.0",
+    "method": "getDetailInfo",
+    "feed": "oka",
+    "lang": "ja",
+    "retCd": "0",
+    "retMax": "1",
+    "errCd": "",
+    "errMsg": "",
+    "totalRes": "1",
+    "totalResRet": "1",
+    "firstRes": "1",
+    "vulnId": "JVNDB-2017-009608",
+    "ft": "jvnstix"
+  }
+}

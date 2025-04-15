@@ -33,12 +33,12 @@
 
 #### vulnId
 
-脆弱性対策情報IDを指定します。
+脆弱性対策情報 ID を指定します。
 
 - 複数指定時は "+" で連結
 - \[例\]
-    JVNDB-2017-009608を取得したい場合  
-    `https://jvndb.jvn.jp/myjvn?method=getVulnDetailInfo&feed=hnd&vulnId=JVNDB-2017-009608`
+  JVNDB-2017-009608 を取得したい場合  
+   `https://jvndb.jvn.jp/myjvn?method=getVulnDetailInfo&feed=hnd&vulnId=JVNDB-2017-009608`
 
 <br>
 <br>
@@ -62,6 +62,8 @@
 - [ getVulnDetailInfo_hnd_JVNDB-2018-009328 (CVE=1, CWE=1, CVSS=2, Ver=PRESENT) ](../examples/getVulnDetailInfo_hnd_JVNDB-2018-009328.xml)
 - [ getVulnDetailInfo_hnd_JVNDB-2021-002774 (CVE=1, CWE=0, CVSS=0, Ver=PRESENT) ](../examples/getVulnDetailInfo_hnd_JVNDB-2021-002774.xml)
 - [ getVulnDetailInfo_hnd_JVNDB-2022-000097 (CVE=3, CWE=2, CVSS=6, Ver=NONE ) ](../examples/getVulnDetailInfo_hnd_JVNDB-2022-000097.xml)
+
+### 解説
 
 ```
 <?xml version="1.0" encoding="UTF-8" ?>
