@@ -1,4 +1,5 @@
 {
+  "$schema": "https://jvndb.jvn.jp/schema/jvnpid_1.0.json?20250414",
   "jvn_product_dictionary": {
     "generator": {
       "engine": {
