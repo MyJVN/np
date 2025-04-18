@@ -141,9 +141,7 @@
 
 - JSON スキーマ
 
-- Vendor and Product Dictionary for MyJVN
-  https://jvndb.jvn.jp/schema/jvnpid_1.0.json?20250414
-  [ jvnpid_1.0.json ](../schema/jvnpid_1.0.json)
+  - TBD
 
 - \[例\]
   - [ dataFeed_myjvn_product_oka.json ](../examples/dataFeed_myjvn_product_oka.json)
@@ -180,9 +178,7 @@
 
 - JSON スキーマ
 
-- Vendor and Product Dictionary for MyJVN
-  https://jvndb.jvn.jp/schema/jvnpid_1.0.json?20250414
-  [ jvnpid_1.0.json ](../schema/jvnpid_1.0.json)
+  - TBD
 
 - \[例\]
 
@@ -195,8 +191,6 @@
       - vendor_id, vid, vname, vname_i18, cpe
       - products
         - product_id, pid, pname, pname_i18, product_ids
-      - revision_history
-        - date, number, summary
   ```
 
 - \[例\]
@@ -208,6 +202,4 @@
       - vendor_id, vid, vname, vname_i18, cpe
       - products
         - product_id, pid, pname, pname_i18, version, product_ids
-      - revision_history
-        - date, number, summary
   ```

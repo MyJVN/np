@@ -1,20 +1,14 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema#",
   "$id": "https://jvndb.jvn.jp/schema/jvnpid_1.0.json?20250414",
-  "title": "Vendor and Product Dictionary for MyJVN",
-  "description": "Representation of Vendor and Product Dictionary for MyJVN as a JSON document. Ver 1.0 20250414",
+  "title": "Product Dictionary for MyJVN",
+  "description": "Representation of Vendor and Product Dictionary for MyJVN as a JSON document.",
   "type": "object",
   "properties": {
-    "$schema": { "type": "string" },
     "jvn-product-dictionary": { "$ref": "#/$defs/jvn-product-dictionary_type" },
     "status": { "$ref": "#/$defs/status_type" }
   },
   "$defs": {
-    "timestamp_type": {
-      "type": "string",
-      "description": "Date/time format based on RFC3339 and ISO ISO8601, with an optional timezone in the format 'yyyy-MM-ddTHH:mm:ss[+-]ZH:ZM'. If timezone offset is not given, GMT (+00:00) is assumed.",
-      "pattern": "^(((2000|2400|2800|(19|2[0-9](0[48]|[2468][048]|[13579][26])))-02-29)|(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))|(((19|2[0-9])[0-9]{2})-(0[13578]|10|12)-(0[1-9]|[12][0-9]|3[01]))|(((19|2[0-9])[0-9]{2})-(0[469]|11)-(0[1-9]|[12][0-9]|30)))T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})?$"
-    },
     "engine_type": {
       "type": "object",
       "properties": {
@@ -126,19 +120,6 @@
         "required": ["product_ids", "pname", "pname_i18", "product_id", "pid"]
       }
     },
-    "revision_history_type": {
-      "type": "array",
-      "minItems": 0,
-      "items": {
-        "type": "object",
-        "properties": {
-          "date": { "type": "string" },
-          "number": { "type": "string" },
-          "summary": { "type": "string" }
-        },
-        "required": ["date", "summary", "number"]
-      }
-    },
     "vendors_type": {
       "type": "array",
       "minItems": 0,
@@ -161,8 +142,7 @@
             "pattern": "^((cpe:2\\.3:[aho\\*\\-](:(((\\?*|\\*?)([a-zA-Z0-9\\-\\._]|(\\\\[\\\\\\*\\?!\"#\\$%&'\\(\\)\\+,\\/:;<=>@\\[\\]\\^`\\{\\|\\}~]))+(\\?*|\\*?))|[\\*\\-])){5}(:(([a-zA-Z]{2,3}(-([a-zA-Z]{2}|[0-9]{3}))?)|[\\*\\-]))(:(((\\?*|\\*?)([a-zA-Z0-9\\-\\._]|(\\\\[\\\\\\*\\?!\"#\\$%&'\\(\\)\\+,\\/:;<=>@\\[\\]\\^`\\{\\|\\}~]))+(\\?*|\\*?))|[\\*\\-])){4})|([c][pP][eE]:\\/[AHOaho]?(:[A-Za-z0-9\\._\\-~%]*){0,6}))$",
             "minLength": 5
           },
-          "products": { "$ref": "#/$defs/products_type" },
-          "revision_history": { "$ref": "#/$defs/revision_history_type" }
+          "products": { "$ref": "#/$defs/products_type" }
         },
         "required": [
           "vid",
@@ -181,7 +161,7 @@
         "title": { "type": "string" },
         "id": { "type": "string" },
         "link": { "type": "string" },
-        "updated": { "$ref": "#/$defs/timestamp_type" },
+        "updated": { "type": "string", "format": "date-time" },
         "lang": {
           "title": "Language type",
           "description": "Identifies a language, corresponding to IETF BCP 47 / RFC 5646. See IETF language registry: https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry",

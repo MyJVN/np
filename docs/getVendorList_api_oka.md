@@ -96,9 +96,7 @@
 
 ### JSON スキーマ
 
-- Vendor and Product Dictionary for MyJVN
-  https://jvndb.jvn.jp/schema/jvnpid_1.0.json?20250414
-  [ jvnpid_1.0.json ](../schema/jvnpid_1.0.json)
+- TBD
 
 ### 例
 
