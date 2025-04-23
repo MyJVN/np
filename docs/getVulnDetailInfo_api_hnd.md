@@ -31,13 +31,14 @@
 
 該当パラメタに指定がない場合(パラメタ自体もしくはパラメタ値が未指定の場合)に MyJVN API 側で自動的に設定する値です。
 
+<br>
+
 #### vulnId
 
 脆弱性対策情報 ID を指定します。
 
 - 複数指定時は "+" で連結
-- \[例\]
-  JVNDB-2017-009608 を取得したい場合  
+- \[例\] JVNDB-2017-009608 を取得したい場合  
    `https://jvndb.jvn.jp/myjvn?method=getVulnDetailInfo&feed=hnd&vulnId=JVNDB-2017-009608`
 
 <br>
@@ -66,98 +67,94 @@
 ### 解説
 
 ```
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <VULDEF-Document version="3.1"
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xmlns="https://jvn.jp/vuldef/"
-xmlns:vuldef="https://jvn.jp/vuldef/"
-xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
-xsi:schemaLocation="https://jvn.jp/vuldef/
-https://jvndb.jvn.jp/schema/vuldef_3.2.xsd
-https://jvn.jp/rss/mod_sec/3.0/
-https://jvndb.jvn.jp/schema/mod_sec_3.0.xsd
-http://jvndb.jvn.jp/myjvn/Status
-https://jvndb.jvn.jp/schema/status_3.3.xsd"
-xml:lang="ja">
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="https://jvn.jp/vuldef/"
+  xmlns:vuldef="https://jvn.jp/vuldef/"
+  xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
+  xsi:schemaLocation="https://jvn.jp/vuldef/ https://jvndb.jvn.jp/schema/vuldef_3.2.xsd
+            https://jvn.jp/rss/mod_sec/3.0/ https://jvndb.jvn.jp/schema/mod_sec_3.0.xsd
+            http://jvndb.jvn.jp/myjvn/Status https://jvndb.jvn.jp/schema/status_3.3.xsd"
+  xml:lang="ja">
 
-<Vulinfo>
-  <VulinfoID>脆弱性情報ID</VulinfoID>
-  <VulinfoData>
-    <Title>タイトル</Title>
-    <VulinfoDescription>
-      <Overview>概要</Overview>
-    </VulinfoDescription>
-    <Affected>
-    <AffectedItem>
-        <Name>ベンダ名</Name>
-        <ProductName>製品名</ProductName>
-        <VersionNumber>バージョン情報</VersionNumber>
-        <!-- バージョン情報の件数分 VersionNumber ノードを繰り返します。 -->
-      </AffectedItem>
-      <!-- 製品の件数分 AffectedItem ノードを繰り返します。 -->
-    </Affected>
+  <Vulinfo>
+    <VulinfoID>脆弱性情報ID</VulinfoID>
+    <VulinfoData>
+      <Title>タイトル</Title>
+      <VulinfoDescription>
+        <Overview>概要</Overview>
+      </VulinfoDescription>
+      <Affected>
+        <AffectedItem>
+          <Name>ベンダ名</Name>
+          <ProductName>製品名</ProductName>
+          <VersionNumber>バージョン情報</VersionNumber>
+          <!-- バージョン情報の件数分 VersionNumber ノードを繰り返します。 -->
+        </AffectedItem>
+        <!-- 製品の件数分 AffectedItem ノードを繰り返します。 -->
+      </Affected>
 
-    <Impact>
-      <Cvss version="CVSS バージョン">
-        <Severity type="基本|現状|環境評価基準">typeで指定された評価基準の深刻度</Severity>
-        <Vector>短縮表記</Vector>
-        <Base>CVSS 基本値</Base>
-      </Cvss>
-      <ImpactItem>
-        <Description>想定される影響</Description>
-      </ImpactItem>
-    </Impact>
+      <Impact>
+        <Cvss version="CVSS バージョン">
+          <Severity type="基本|現状|環境評価基準">typeで指定された評価基準の深刻度</Severity>
+          <Vector>短縮表記</Vector>
+          <Base>CVSS 基本値</Base>
+        </Cvss>
+        <ImpactItem>
+          <Description>想定される影響</Description>
+        </ImpactItem>
+      </Impact>
 
-    <Solution>
-      <SolutionItem>
-        <Description>対策</Description>
-      </SolutionItem>
-    </Solution>
+      <Solution>
+        <SolutionItem>
+          <Description>対策</Description>
+        </SolutionItem>
+      </Solution>
 
-    <Related>
-      <RelatedItem type="advisory">
-        <Name>アドバイザリ情報源</Name>
-        <VulinfoID>アドバイザリID</VulinfoID>
-        <URL>アドバイザリURL</URL>
-      </RelatedItem>
-      <!-- アドバイザリ情報の件数分 RelatedItem ノードを繰り返します。 -->
-      <RelatedItem type="cwe">
-        <Name>JVNDB</Name>
-        <VulinfoID>CWE-ID</VulinfoID>
-        <Title>CWE名</Title>
-        <URL>CWEURL</URL>
-      </RelatedItem>
-      <!-- CWE情報の件数分 RelatedItem ノードを繰り返します。 -->
-    </Related>
+      <Related>
+        <RelatedItem type="advisory">
+          <Name>参考情報源</Name>
+          <VulinfoID>参考情報ID</VulinfoID>
+          <URL>参考情報URL</URL>
+        </RelatedItem>
+        <!-- 参考情報の件数分 RelatedItem ノードを繰り返します。 -->
+        <RelatedItem type="cwe">
+          <Name>JVNDB</Name>
+          <VulinfoID>CWE-ID</VulinfoID>
+          <Title>CWE名</Title>
+          <URL>CWEURL</URL>
+        </RelatedItem>
+        <!-- CWE情報の件数分 RelatedItem ノードを繰り返します。 -->
+      </Related>
 
-    <History>
-      <HistoryItem>
-        <Description>更新履歴</Description>
-      </HistoryItem>
-    </History>
+      <History>
+        <HistoryItem>
+          <Description>更新履歴</Description>
+        </HistoryItem>
+      </History>
 
-    <DateFirstPublished>公開日</DateFirstPublished>
-    <DateLastUpdated>最終更新日</DateLastUpdated>
-    <DatePublic>発見日</DatePublic >
-  </VulinfoData>
+      <DateFirstPublished>公開日</DateFirstPublished>
+      <DateLastUpdated>最終更新日</DateLastUpdated>
+      <DatePublic>発見日</DatePublic>
+    </VulinfoData>
 
-</Vulinfo>
-<!-- フィルタリングに当てはまる脆弱性対策詳細情報の件数分 Vulinfo ノードを繰り返します。 -->
+  </Vulinfo>
+  <!-- フィルタリングに当てはまる脆弱性対策詳細情報の件数分 Vulinfo ノードを繰り返します。 -->
 
-<status:Status
-version="3.3"
-method="getVulnDetailInfo"
-feed="hnd"
-lang="表示言語"
-retCd="リターンコード (0:成功時、1:エラー時) "
-retMax="エントリ上限値"
-errCd="エラーコード (処理成功時は空文字列) "
-errMsg="エラーメッセージ (処理成功時は空文字列) "
-totalRes="応答エントリ総数"
-totalResRet="応答エントリ数"
-firstRes="応答エントリ開始位置" >
-<!-- 各リクエストパラメタ -->
-</status:Status>
+  <status:Status
+    version="3.3"
+    method="getVulnDetailInfo"
+    feed="hnd"
+    lang="表示言語"
+    retCd="リターンコード (0:成功時、1:エラー時) "
+    retMax="エントリ上限値"
+    errCd="エラーコード (処理成功時は空文字列) "
+    errMsg="エラーメッセージ (処理成功時は空文字列) "
+    totalRes="応答エントリ総数"
+    totalResRet="応答エントリ数"
+    firstRes="応答エントリ開始位置">
+    <!-- 各リクエストパラメタ -->
+  </status:Status>
 </VULDEF-Document>
-
 ```

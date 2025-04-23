@@ -1,4 +1,5 @@
 {
+  "$schema": "https://jvndb.jvn.jp/schema/jvnpid_1.0.json?20250419",
   "jvn-product-dictionary": {
     "generator": {
       "engine": {
@@ -7,7 +8,7 @@
       }
     },
     "title": "JVNDB 製品一覧",
-    "id": "jvnpid:1.0::ipa:myjvn_api_getProductList:4.0.0",
+    "systemid": "jvnpid:1.0::ipa:myjvn_api_getProductList:4.0.0",
     "link": "https://jvndb.jvn.jp/apis/myjvn/",
     "updated": "2025-03-24T06:17:53+09:00",
     "lang": "ja",
@@ -38,7 +39,10 @@
               {
                 "cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api:*:*:*:*:*:*:*:*",
                 "id_refs": [
-                  { "nameType": "purl", "value": "pkg:/dendai.ac.jp/myjvn_api" },
+                  {
+                    "nameType": "purl",
+                    "value": "pkg:/dendai.ac.jp/myjvn_api"
+                  },
                   { "nameType": "swid", "value": "swid:dendai.ac.jp+myjvn_api" }
                 ]
               }
@@ -69,6 +73,18 @@
                 ]
               }
             ]
+          }
+        ],
+        "revision_history": [
+          {
+            "date": "2024-04-01T12:10:56+09:00",
+            "number": "1.0.0",
+            "summary": "新規登録"
+          },
+          {
+            "date": "2025-04-06T02:00:00+09:00",
+            "number": "2.0.0",
+            "summary": "purl登録"
           }
         ]
       },
@@ -135,6 +151,13 @@
               }
             ]
           }
+        ],
+        "revision_history": [
+          {
+            "date": "2025-04-01T12:10:56+09:00",
+            "number": "1.0.0",
+            "summary": "新規登録"
+          }
         ]
       },
       {
@@ -172,6 +195,13 @@
               }
             ]
           }
+        ],
+        "revision_history": [
+          {
+            "date": "2025-04-01T12:10:56+09:00",
+            "number": "1.0.0",
+            "summary": "新規登録"
+          }
         ]
       }
     ]
@@ -181,7 +211,7 @@
     "method": "getProductList",
     "feed": "oka",
     "lang": "ja",
-    "retCd": "0",
+    "retCd": 0,
     "retMax": "",
     "errCd": "",
     "errMsg": "",

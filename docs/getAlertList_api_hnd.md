@@ -25,8 +25,6 @@
 | datePublished      | 更新年                 | 整数 4 桁                                                       | －   | －         |
 | dateFirstPublished | 発行年                 | 整数 4 桁                                                       | －   | －         |
 | cpeName            | CPE 製品識別子         | CPE v2.2 形式                                                   | －   | －         |
-| vendorId           | ベンダ番号             | 整数                                                            | －   | －         |
-| productId          | 製品番号               | 整数                                                            | －   | －         |
 | ft                 | 応答フォーマット       | xml または json                                                 | －   | xml        |
 
 <br>
@@ -35,21 +33,25 @@
 
 該当パラメタに指定がない場合(パラメタ自体もしくはパラメタ値が未指定の場合)に MyJVN API 側で自動的に設定する値です。
 
+<br>
+
 #### startItem , maxCountItem
 
 エントリ開始位置とエントリ取得件数を指定します。
 
-- \[例\]  
-   1 件目から 50 件分の注意警戒情報を取得したい場合  
+- \[例\] 1 件目から 50 件分の注意警戒情報を取得したい場合  
   `https://jvndb.jvn.jp/myjvn?method=getAlertList&feed=hnd&startItem=1&maxCountItem=50`
+
+<br>
 
 #### datePublished
 
 更新年を指定します。
 
-- \[例\]  
-   2024 年に更新された注意警戒情報を取得したい場合  
+- \[例\] 2024 年に更新された注意警戒情報を取得したい場合  
   `https://jvndb.jvn.jp/myjvn?method=getAlertList&feed=hnd&datePublished=2024`
+
+<br>
 
 #### cpeName
 
@@ -61,12 +63,9 @@ CPE 製品識別子を指定します。
 - ワイルドカード "\*" 指定可、アスキー文字、大文字／小文字区別なし
 - 複数指定時は "+" で連結
 - URL エンコードされたエスケープシーケンス
-- いずれか 1 つのみ指定可 \[ cpeName \| vendorId \| productId \]
-- \[例\]  
-   cpe:/a:apache:xerces-c%2B%2B の場合  
+- \[例\] cpe:/a:apache:xerces-c%2B%2B の場合  
    `cpeName=cpe:/a:apache:xerces-c%252B%252B`
-
-  Wordpress に関する注意警戒情報を取得したい場合  
+- \[例\] Wordpress に関する注意警戒情報を取得したい場合  
    `https://jvndb.jvn.jp/myjvn?method=getAlertList&feed=hnd&cpeName=cpe:/a:wordpress:wordpress`
 
 <br>
@@ -89,6 +88,8 @@ CPE 製品識別子を指定します。
 
 - [ getAlertList_hnd.xml ](../examples/getAlertList_hnd.xml)
 
+### 解説
+
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <feed
@@ -99,8 +100,8 @@ CPE 製品識別子を指定します。
   xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1"
   xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
   xsi:schemaLocation="http://www.w3.org/2005/Atom https://jvndb.jvn.jp/schema/atom.xsd
-                      https://jvn.jp/rss/mod_sec/3.0/ https://jvndb.jvn.jp/schema/mod_sec_3.0.xsd
-                      http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1 https://jvndb.jvn.jp/schema/tlp_marking.xsd"
+     https://jvn.jp/rss/mod_sec/3.0/ https://jvndb.jvn.jp/schema/mod_sec_3.0.xsd
+     http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1 https://jvndb.jvn.jp/schema/tlp_marking.xsd"
   xml:lang="ja">
 
   <title type="text">IPA注意警戒サービスAPI</title>
@@ -168,7 +169,9 @@ CPE 製品識別子を指定します。
 
 ### JSON スキーマ
 
-- TBD
+- JVN Feed for MyJVN getAlert  
+  http://jvndb.jvn.jp/schema/getalert1.json?20250419  
+  [ getalert1.json ](../schema/getalert1.json)
 
 ### 例
 
@@ -242,33 +245,3 @@ CPE 製品識別子を指定します。
 }
 ```
 
-- Feed [type:object] [required]
-  - title [type:string] [required]  
-    タイトル "IPA 注意警戒サービス API"
-  - updated [type:string] [format:"yyyy-MM-ddTHH:mm:ss+09:00"] [required]
-  - id [type:string] [required]  
-    製品識別子 "swid:ipa.go.jp+myjvn_alert+1.0.0"
-  - link [type:string] [required]  
-    MyJVN URL "https://jvndb.jvn.jp/apis/myjvn/"
-  - author [type:object]
-    - name [type:string]
-    - uri
-  - sec:handling
-  - entry
-    - title: 関連情報のタイトル
-    - id: 関連情報の識別子
-    - summary: 関連情報の概要
-    - link: 関連情報の概要の URL
-    - category
-    - update: 更新日
-    - published: 発行日
-    - sec:items
-      - sec:item
-        - sec:title: 関連情報のタイトル
-        - sec:identifier: 関連情報の識別子
-        - sec:link: 関連情報の概要の URL
-        - sec:published: 発行日
-        - sec:updated: 更新日
-        - sec:author
-        - sec:cpe
-          - value: cpe 製品名

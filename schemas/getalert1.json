@@ -1,0 +1,193 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema#",
+  "$id": "https://jvndb.jvn.jp/schema/getalert1.json?20250419",
+  "title": "JVN Feed for MyJVN getAlert",
+  "description": "Ver 1.0 (20170816): JVN Feed getAlert as a JSON document. Ver 1.0.1 (20250419): Improved schema description.",
+  "type": "object",
+  "properties": {
+    "feed": { "$ref": "#/$defs/feed_type" }
+  },
+  "$defs": {
+    "author_type": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "uri": { "type": "string" }
+      }
+    },
+    "marking:Marking_Structure_type": {
+      "type": "object",
+      "properties": {
+        "xsi:type": { "type": "string" },
+        "marking_model_name": { "type": "string" },
+        "marking_model_ref": { "type": "string" },
+        "color": {
+          "title": "Label of TLP 1.0",
+          "description": "Provides the TLP label of the document.",
+          "type": "string",
+          "default": "WHITE",
+          "enum": ["AMBER", "WHITE", "GREEN", "RED"]
+        }
+      }
+    },
+    "marking:Marking_type": {
+      "type": "object",
+      "properties": {
+        "marking:Marking_Structure": {
+          "$ref": "#/$defs/marking:Marking_Structure_type"
+        }
+      }
+    },
+    "sec:handling_type": {
+      "type": "object",
+      "properties": {
+        "marking:Marking": { "$ref": "#/$defs/marking:Marking_type" }
+      }
+    },
+    "category_type": {
+      "type": "object",
+      "properties": {
+        "term": { "type": "string", "enum": [null, "Info", "Low", "Critical"] },
+        "label": { "type": "string", "enum": [null, "INFO", "注意", "緊急"] }
+      }
+    },
+    "sec:author_type": {
+      "type": "object",
+      "properties": {
+        "href": { "type": "string" },
+        "value": { "type": "string" }
+      }
+    },
+    "sec:cpe_type": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "properties": {
+          "impact": { "type": "string" },
+          "product": { "type": "string" },
+          "value": { "type": "string" },
+          "vendor": { "type": "string" },
+          "version": { "type": "string" }
+        },
+        "required": ["value"]
+      }
+    },
+    "sec:cvss_type": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "properties": {
+          "score": { "type": "string" },
+          "severity": {
+            "type": "string",
+            "enum": [null, "None", "Low", "Medium", "High", "Critical"]
+          },
+          "type": {
+            "type": "string",
+            "enum": [null, "Base", "Temporal", "Environmental"]
+          },
+          "vector": { "type": "string" },
+          "version": { "type": "string" }
+        },
+        "required": ["severity", "score", "vector", "type", "version"]
+      }
+    },
+    "sec:references_type": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "source": { "type": "string" },
+          "title": { "type": "string" },
+          "value": { "type": "string" }
+        }
+      }
+    },
+    "sec:item_type": {
+      "type": "object",
+      "properties": {
+        "sec:title": { "type": "string" },
+        "sec:summary": { "type": "string" },
+        "sec:identifier": { "type": "string" },
+        "sec:link": { "type": "string" },
+        "sec:published": { "type": "string" },
+        "sec:updated": { "type": "string" },
+        "sec:author": { "$ref": "#/$defs/sec:author_type" },
+        "sec:cpe": { "$ref": "#/$defs/sec:cpe_type" },
+        "sec:cvss": { "$ref": "#/$defs/sec:cvss_type" },
+        "sec:references": { "$ref": "#/$defs/sec:references_type" }
+      }
+    },
+    "sec:items_type": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "properties": {
+          "sec:item": { "$ref": "#/$defs/sec:item_type" }
+        },
+        "required": ["sec:item"]
+      }
+    },
+    "entry_type": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "id": { "type": "string" },
+          "link": { "type": "string" },
+          "summary": { "type": "string" },
+          "category": { "$ref": "#/$defs/category_type" },
+          "updated": { "type": "string" },
+          "published": { "type": "string" },
+          "sec:items": { "$ref": "#/$defs/sec:items_type" }
+        },
+        "required": [
+          "sec:items",
+          "link",
+          "id",
+          "published",
+          "title",
+          "category",
+          "updated"
+        ]
+      }
+    },
+    "status:Status_type": {
+      "type": "object",
+      "properties": {
+        "version": { "type": "string" },
+        "method": { "type": "string" },
+        "retCd": { "type": "integer" },
+        "retMax": { "type": "string" },
+        "errCd": { "type": "string" },
+        "errMsg": { "type": "string" },
+        "totalRes": { "type": "string" },
+        "totalResRet": { "type": "string" },
+        "firstRes": { "type": "string" },
+        "cpeName": { "type": "string" },
+        "ft": { "type": "string" },
+        "feed": { "type": "string" }
+      }
+    },
+    "feed_type": {
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "id": { "type": "string" },
+        "author": { "$ref": "#/$defs/author_type" },
+        "updated": { "type": "string" },
+        "link": { "type": "string" },
+        "sec:handling": { "$ref": "#/$defs/sec:handling_type" },
+        "entry": { "$ref": "#/$defs/entry_type" },
+        "status:Status": { "$ref": "#/$defs/status:Status_type" }
+      }
+    }
+  }
+}

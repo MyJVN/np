@@ -57,13 +57,16 @@
 
 - rangeDatePublic, rangeDatePublished, rangeDateFirstPublished を指定しない場合には、デフォルト値(w:過去 1 週間)に従い、過去 1 週間分の一覧を出力します。
 
+<br>
+
 #### startItem , maxCountItem
 
 エントリ開始位置とエントリ取得件数を指定します。
 
-- \[例\]  
-   1 件目から 50 件分のベンダ名を取得したい場合  
+- \[例\] 1 件目から 50 件分のベンダ名を取得したい場合  
    `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=hnd&startItem=1&maxCountItem=50`
+
+<br>
 
 #### cpeName
 
@@ -76,6 +79,8 @@ CPE ベンダ名を指定します。
 - 複数指定時は "+" で連結
 - URL エンコードされたエスケープシーケンス
 
+<br>
+
 #### keyword
 
 脆弱性概要情報の部分一致によるフィルタリングします。
@@ -83,6 +88,8 @@ CPE ベンダ名を指定します。
 - ワイルドカード "\*" 指定不可 ("\*"を指定した場合、"\*"を含む項目をフィルタリング)
 - 大文字／小文字区別なし
 - charset=UTF-8
+
+<br>
 
 #### vector, severity
 
@@ -94,12 +101,42 @@ CVSSv3 基本評価基準、CVSSv3 深刻度を指定します。
    `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=hnd&vector=CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N`  
    `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=hnd&severity=m`
 
+<br>
+
 #### rangeDatePublic , rangeDatePublished , rangeDateFirstPublished
 
 発見日、更新日、発行日の範囲を指定します。
 
-- \[例\]  
-   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=hnd&rangeDatePublic=n&rangeDatePublished=n&rangeDateFirstPublished=n`
+- \[例\] 範囲指定を解除して最新情報を取得する場合 (rangeDatePublic=n, rangeDatePublished=n, rangeDateFirstPublished=n)  
+  `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=hnd&rangeDatePublic=n&rangeDatePublished=n&rangeDateFirstPublished=n`
+
+- \[例\] 過去 1 週間に更新された情報を取得する場合 (rangeDatePublished=w)
+  `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=hnd&rangeDatePublic=n&rangeDatePublished=w&rangeDateFirstPublished=n`
+
+- \[例\] 過去 1 ヶ月に更新された情報を取得する場合 (rangeDatePublished=m)
+  `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=hnd&rangeDatePublic=n&rangeDatePublished=m&rangeDateFirstPublished=n`
+
+#### datePublicStartY/M/D & datePublicEndY/M/D
+
+発見日開始年月日、発見日終了年月日を指定します。
+
+- \[例\] 2020 年以降に発見された脆弱性情報の中で、過去 1 ヶ月に更新された情報を取得する場合 (rangeDatePublished=m, rangeDateFirstPublished=n)  
+  `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=hnd&  datePublicStartY=2020&rangeDatePublished=m&rangeDateFirstPublished=n`
+
+- \[例\] 2020 年～ 2022 年に発見された脆弱性情報 (rangeDatePublished=n, rangeDateFirstPublished=n)  
+  `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=hnd&datePublicStartY=2020&datePublicEndY=2022&rangeDatePublished=n&rangeDateFirstPublished=n`
+
+<br>
+
+#### datePublishedStartY/M/D & datePublishedEndY/M/D
+
+更新日開始年月日、更新日終了年月日を指定します。
+
+<br>
+
+#### dateFirstPublishedStartY/M/D & dateFirstPublishedEndY/M/D
+
+発行日開始年月日、発行日終了年月日を指定します。
 
 <br>
 <br>
@@ -124,67 +161,71 @@ CVSSv3 基本評価基準、CVSSv3 深刻度を指定します。
 ### 解説
 
 ```
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xmlns="http://purl.org/rss/1.0/"
-xmlns:rss="http://purl.org/rss/1.0/"
-xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-xmlns:dc="http://purl.org/dc/elements/1.1/"
-xmlns:dcterms="http://purl.org/dc/terms/"
-xmlns:sec="https://jvn.jp/rss/mod_sec/"
-xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
-xsi:schemaLocation="http://purl.org/rss/1.0/
-https://jvndb.jvn.jp/schema/jvnrss_3.2.xsd"
-xml:lang="ja">
+  xmlns="http://purl.org/rss/1.0/"
+  xmlns:rss="http://purl.org/rss/1.0/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:sec="https://jvn.jp/rss/mod_sec/"
+  xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
+  xsi:schemaLocation="http://purl.org/rss/1.0/ https://jvndb.jvn.jp/schema/jvnrss_3.2.xsd"
+  xml:lang="ja">
 
-<channel rdf:about="セキュリティ情報のチャンネルURI">
-  <title>セキュリティ情報のチャンネルタイトル</title>
-  <link>セキュリティ情報が掲載されているURI</link>
-  <description>セキュリティ情報の概要</description>
-  <dc:date>レスポンス生成日時</dc:date>
-  <dcterms:issued />
-  <dcterms:modified>レスポンス生成日時</dcterms:modified>
-  <items>
-  <rdf:Seq>
-  <rdf:li rdf:resource="item要素のrdf:about属性と同じURI"/>
-  <!-- フィルタリングに当てはまる脆弱性対策概要情報の件数分 <rdf:li rdf:resource= を繰り返します。 -->
-  </rdf:Seq>
-  </items>
-</channel>
+  <channel rdf:about="セキュリティ情報のチャンネルURI">
+    <title>セキュリティ情報のチャンネルタイトル</title>
+    <link>セキュリティ情報が掲載されているURI</link>
+    <description>セキュリティ情報の概要</description>
+    <dc:date>レスポンス生成日時</dc:date>
+    <dcterms:issued />
+    <dcterms:modified>レスポンス生成日時</dcterms:modified>
+    <items>
+      <rdf:Seq>
+        <rdf:li rdf:resource="item要素のrdf:about属性と同じURI" />
+        <!-- フィルタリングに当てはまる脆弱性対策概要情報の件数分 <rdf:li rdf:resource= を繰り返します。 -->
+      </rdf:Seq>
+    </items>
+  </channel>
 
-<item rdf:about="ベンダが掲載するセキュリティ情報のURI">
-  <title>セキュリティ情報のタイトル</title>
-  <link>セキュリティ情報のURI</link>
-  <description>セキュリティ情報の概要</description>
-  <sec:identifier>ベンダ固有のセキュリティ情報ID</sec:identifier>
-  <sec:references source="発行元省略名" id="識別番号" title="タイトル" >関連情報</sec:references>
-  <!-- 参考情報の件数分 sec:references ノードを繰り返します。 -->
+  <item rdf:about="ベンダが掲載するセキュリティ情報のURI">
+    <title>セキュリティ情報のタイトル</title>
+    <link>セキュリティ情報のURI</link>
+    <description>セキュリティ情報の概要</description>
+    <sec:identifier>ベンダ固有のセキュリティ情報ID</sec:identifier>
+    <sec:references source="発行元省略名" id="識別番号" title="タイトル">参考情報</sec:references>
+    <!-- 参考情報の件数分 sec:references ノードを繰り返します。 -->
 
-  <sec:cpe version="CPEバージョン" vendor="ベンダ名" product="製品名">CPE製品名</sec:cpe>
-  <!-- 製品情報の件数分 sec:cpe ノードを繰り返します。 -->
+    <sec:cpe version="CPEバージョン" vendor="ベンダ名" product="製品名">CPE製品識別子 (CPE v2.2 形式)</sec:cpe>
+    <!-- 製品情報の件数分 sec:cpe ノードを繰り返します。 -->
 
-  <sec:cvss version="CVSS バージョン" type="基本|現状|環境評価基準" severity="typeで指定された評価基準の深刻度" score="typeで指定された評価基準の評価値" vector="短縮表記"/>
-  <!-- 評価の件数分 sec:cvss ノードを繰り返します。 -->
+    <sec:cvss
+      version="CVSS バージョン"
+      type="基本|現状|環境評価基準"
+      severity="typeで指定された評価基準の深刻度"
+      score="typeで指定された評価基準の評価値"
+      vector="短縮表記" />
+      <!-- 評価の件数分 sec:cvss ノードを繰り返します。 -->
 
-  <dc:date>更新日</dc:date>
-  <dcterms:issued>発行日</dcterms:issued>
-  <dcterms:modified>更新日</dcterms:modified>
-</item>
-<!-- フィルタリングに当てはまる脆弱性対策概要情報の件数分itemノードを繰り返します。 -->
+    <dc:date>更新日</dc:date>
+    <dcterms:issued>発行日</dcterms:issued>
+    <dcterms:modified>更新日</dcterms:modified>
+  </item>
+  <!-- フィルタリングに当てはまる脆弱性対策概要情報の件数分itemノードを繰り返します。 -->
 
-<status:Status
-version="3.3"
-method="getVulnOverviewList"
-feed="hnd"
-lang="表示言語"
-retCd="リターンコード (0:成功時、1:エラー時) "
-retMax="エントリ上限値"
-errCd="エラーコード (処理成功時は空文字列) "
-errMsg="エラーメッセージ (処理成功時は空文字列) "
-totalRes="応答エントリ総数"
-totalResRet="応答エントリ数"
-firstRes="応答エントリ開始位置" >
-<!-- 各リクエストパラメタ -->
-</status:Status>
+  <status:Status
+    version="3.3"
+    method="getVulnOverviewList"
+    feed="hnd"
+    lang="表示言語"
+    retCd="リターンコード (0:成功時、1:エラー時) "
+    retMax="エントリ上限値"
+    errCd="エラーコード (処理成功時は空文字列) "
+    errMsg="エラーメッセージ (処理成功時は空文字列) "
+    totalRes="応答エントリ総数"
+    totalResRet="応答エントリ数"
+    firstRes="応答エントリ開始位置">
+    <!-- 各リクエストパラメタ -->
+  </status:Status>
 </rdf:RDF>
 ```

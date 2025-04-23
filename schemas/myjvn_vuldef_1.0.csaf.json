@@ -1,0 +1,41 @@
+﻿{
+  "$schema": "https://json-schema.org/draft/2020-12/schema#",
+  "$id": "https://jvndb.jvn.jp/schema/myjvn_vuldef_1.0.csaf.json?20250419",
+  "title": "VULDEF (CSAF) - The Vulnerability Data Publication and Exchange Format Data Model for MyJVN",
+  "description": "Ver 1.0 (20250419): Representation of CSAF based Vulnerability Data Publication and Exchange for MyJVN as a JSON document.",
+  "type": "object",
+  "$comment": "csaf_type",
+  "properties": {
+    "document": {
+      "$ref": "csaf_json_schema_2.1.json#/properties/document"
+    },
+    "product_tree": {
+      "$ref": "csaf_json_schema_2.1.json#/properties/product_tree"
+    },
+    "vulnerabilities": {
+      "$ref": "csaf_json_schema_2.1.json#/properties/vulnerabilities"
+    },
+    "jvn_extension": {
+      "$ref": "jvnpid_extension_1.0.json#/$defs/jvn_extension_type"
+    },
+    "status": { "$ref": "#/$defs/status_type" }
+  },
+  "$defs": {
+    "status_type": {
+      "type": "object",
+      "properties": {
+        "version": { "type": "string" },
+        "method": { "type": "string" },
+        "feed": { "type": "string" },
+        "lang": { "type": "string" },
+        "retCd": { "type": "integer" },
+        "retMax": { "type": "string" },
+        "errCd": { "type": "string" },
+        "errMsg": { "type": "string" },
+        "totalRes": { "type": "string" },
+        "totalResRet": { "type": "string" },
+        "firstRes": { "type": "string" }
+      }
+    }
+  }
+}

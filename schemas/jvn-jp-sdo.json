@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema#",
+  "$id": "https://jvndb.jvn.jp/schema/jvn-jp-sdo.json?20250419",
+  "title": "MyJVN STIX SDO (Stix Domain Object)",
+  "description": "Ver 1.0 (20250419): Representation of MyJVN STIX SDO (Stix Domain Object) as a JSON document.",
+  "type": "object",
+  "properties": {
+    "type": { "type": "string", "enum": ["jvn-jp-sdo"] },
+    "id": {
+      "type": "string",
+      "pattern": "^jvn-jp-sdo--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$"
+    },
+    "spec_version": { "type": "string", "enum": ["2.1"] },
+    "created": { "$ref": "#/$defs/stix_datetime_type" },
+    "modified": { "$ref": "#/$defs/stix_datetime_type" },
+    "name": {
+      "type": "string",
+      "enum": ["MyJVN API VULDEF-Document embedded in STIX"]
+    },
+    "extensions": { "$ref": "#/$defs/stix_extensions_type" },
+    "VULDEF-Document": { "$ref": "#/$defs/VULDEF-Document_type" }
+  },
+  "required": [
+    "type",
+    "id",
+    "spec_version",
+    "created",
+    "modified",
+    "name",
+    "extensions",
+    "VULDEF-Document"
+  ],
+  "$defs": {
+    "stix_datetime_type": {
+      "title": "STIX date and time",
+      "type": "string",
+      "pattern": "^(((2000|2400|2800|(19|2[0-9](0[48]|[2468][048]|[13579][26])))-02-29)|(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))|(((19|2[0-9])[0-9]{2})-(0[13578]|10|12)-(0[1-9]|[12][0-9]|3[01]))|(((19|2[0-9])[0-9]{2})-(0[469]|11)-(0[1-9]|[12][0-9]|30)))T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]{3,})?(Z|[+-][0-9]{2}:[0-9]{2})?$"
+    },
+    "stix_extension-definition_type": {
+      "type": "object",
+      "properties": {
+        "extension_type": { "type": "string", "enum": ["new-sdo"] }
+      },
+      "required": ["extension_type"]
+    },
+    "stix_extensions_type": {
+      "type": "object",
+      "properties": {
+        "extension-definition--b2440624-45a6-11ec-81d3-0242ac130003": {
+          "$ref": "#/$defs/stix_extension-definition_type"
+        }
+      },
+      "required": ["extension-definition--b2440624-45a6-11ec-81d3-0242ac130003"]
+    },
+    "VULDEF-Document_type": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "document": {
+            "$ref": "csaf_json_schema_2.1.json#/properties/document"
+          },
+          "product_tree": {
+            "$ref": "csaf_json_schema_2.1.json#/properties/product_tree"
+          },
+          "vulnerabilities": {
+            "$ref": "csaf_json_schema_2.1.json#/properties/vulnerabilities"
+          },
+          "jvn_extension": {
+            "$ref": "jvnpid_extension_1.0.json#/$defs/jvn_extension_type"
+          }
+        }
+      }
+    }
+  }
+}

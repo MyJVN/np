@@ -1,4 +1,5 @@
 {
+  "$schema": "https://jvndb.jvn.jp/schema/jvnfeed_1.0.json?20250419",
   "feed": {
     "generator": {
       "engine": {
@@ -7,7 +8,7 @@
       }
     },
     "title": "IPA注意警戒サービスAPI",
-    "id": "jvnpid:1.0::ipa:myjvn_api_getAlertList:4.0.0",
+    "systemid": "jvnpid:1.0::ipa:myjvn_api_getAlertList:4.0.0",
     "link": "https://jvndb.jvn.jp/apis/myjvn/",
     "updated": "2025-04-07T07:36:21+09:00",
     "lang": "ja",
@@ -31,7 +32,7 @@
           "term": "Info",
           "label": "INFO"
         },
-        "update": "2025-02-12T10:58:02+09:00",
+        "updated": "2025-02-12T10:58:02+09:00",
         "published": "2025-02-12T10:58:02+09:00",
         "items": [
           {

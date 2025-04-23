@@ -36,17 +36,90 @@
 
 該当パラメタに指定がない場合(パラメタ自体もしくはパラメタ値が未指定の場合)に MyJVN API 側で自動的に設定する値です。
 
+<br>
+
 #### 年毎の集計(type=y)：開始年以降、現在年まで
 
-- \[例\]  
-   1999 年以降の場合 ( theme=sumJvnDb, sumCvss )  
-   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=hnd&theme=sumJvnDb&type=y&datePublicStartY=1999`  
-   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=hnd&theme=sumCvss&type=y&datePublicStartY=1999`
+- \[例\] 2004 年以降の場合 ( theme=sumJvnDb, sumCvss )  
+   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=hnd&theme=sumJvnDb&type=y&datePublicStartY=2004`  
+   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=hnd&theme=sumCvss&type=y&datePublicStartY=2004`
 
-- \[例\]  
-   1999 年以降、cweId=CWE-79 の場合 ( theme=sumAll, sumCWE )  
-   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=hnd&theme=sumAll&cweId=CWE-79&type=y&datePublicStartY=1999`  
-   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=hnd&theme=sumCwe&cweId=CWE-79&type=y&datePublicStartY=1999`
+- \[例\] 2004 年以降、cweId=CWE-79 の場合 ( theme=sumAll, sumCWE )  
+   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=hnd&theme=sumAll&cweId=CWE-79&type=y&datePublicStartY=2004`  
+   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=hnd&theme=sumCwe&cweId=CWE-79&type=y&datePublicStartY=2004`
+
+<br>
+
+#### 年毎の集計(type=y)：終了年まで
+
+- \[例\] 2010 年以前の場合 ( theme=sumJvnDb, sumCvss )  
+   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=hnd&theme=sumJvnDb&type=y&datePublicEndY=2010`  
+   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=hnd&theme=sumCvss&type=y&datePublicEndY=2010`
+
+<br>
+
+#### 年毎の集計(type=y)：範囲指定
+
+- \[例\] 2004 年～ 2010 年 ( theme=sumJvnDb, sumCvss )  
+   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=hnd&theme=sumJvnDb&type=y&datePublicStartY=2004&datePublicEndY=2010`  
+   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=hnd&theme=sumCvss&type=y&datePublicStartY=2004&datePublicEndY=2010`
+
+<br>
+<br>
+#### 四半期毎の集計(type=q)：開始年以降、現在年まで
+
+- \[例\] 2004 年以降の場合 ( theme=sumJvnDb, sumCvss )  
+   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=hnd&theme=sumJvnDb&type=q&datePublicStartY=2004`  
+   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=hnd&theme=sumCvss&type=q&datePublicStartY=2004`
+
+- \[例\] 2004 年以降、cweId=CWE-79 の場合 ( theme=sumAll, sumCWE )  
+   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=hnd&theme=sumAll&cweId=CWE-79&type=q&datePublicStartY=2004`  
+   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=hnd&theme=sumCwe&cweId=CWE-79&type=q&datePublicStartY=2004`
+
+<br>
+
+#### 四半期毎の集計(type=q)：終了年まで
+
+- \[例\] 2010 年以前の場合 ( theme=sumJvnDb, sumCvss )  
+   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=hnd&theme=sumJvnDb&type=q&datePublicEndY=2010`  
+   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=hnd&theme=sumCvss&type=q&datePublicEndY=2010`
+
+<br>
+
+#### 四半期毎の集計(type=q)：範囲指定
+
+- \[例\] 2004 年～ 2010 年 ( theme=sumJvnDb, sumCvss )  
+   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=hnd&theme=sumJvnDb&type=q&datePublicStartY=2004&datePublicEndY=2010`  
+   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=hnd&theme=sumCvss&type=q&datePublicStartY=2004&datePublicEndY=2010`
+
+<br>
+<br>
+
+#### 月毎の集計(type=m)：開始年月以降、現在年月まで
+
+- \[例\] 2004 年 2 月以降の場合 ( theme=sumJvnDb, sumCvss )  
+   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=hnd&theme=sumJvnDb&type=m&datePublicStartY=2004&datePublicStartM=2`  
+   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=hnd&theme=sumCvss&type=m&datePublicStartY=2004&datePublicStartM=2`
+
+- \[例\] 2004 年 2 月以降、cweId=CWE-79 の場合 ( theme=sumAll, sumCWE )  
+   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=hnd&theme=sumAll&cweId=CWE-79&type=m&datePublicStartY=2004&datePublicStartM=2`  
+   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=hnd&theme=sumCwe&cweId=CWE-79&type=m&datePublicStartY=2004&datePublicStartM=2`
+
+<br>
+
+#### 月毎の集計(type=m)：終了年まで
+
+- \[例\] 2010 年 3 月以前の場合 ( theme=sumJvnDb, sumCvss )  
+   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=hnd&theme=sumJvnDb&type=m&datePublicEndY=2010&datePublicEndM=3`  
+   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=hnd&theme=sumCvss&type=m&datePublicEndY=2010&datePublicEndM=3`
+
+<br>
+
+#### 月毎の集計(type=m)：範囲指定
+
+- \[例\] 2004 年 2 月～ 2010 年 3 月 ( theme=sumJvnDb, sumCvss )  
+   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=hnd&theme=sumJvnDb&type=m&datePublicStartY=2004&datePublicStartM=2&datePublicEndY=2010&datePublicEndM=3`  
+   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=hnd&theme=sumCvss&type=m&datePublicStartY=2004&&datePublicStartM=2&datePublicEndY=2010&datePublicEndM=3`
 
 <br>
 <br>
@@ -79,38 +152,43 @@
   xmlns:mjstat="http://jvndb.jvn.jp/myjvn/Statistics"
   xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
   xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/Results https://jvndb.jvn.jp/schema/results_3.3.xsd
-                      ">
+  ">
 
   <!-- theme=sumJvnDb の場合 -->
   <mjstat:sumJvnDb>
     <mjstat:title xml:lang="ja">脆弱性統計情報</mjstat:title>
-    <mjstat:title xml:lang="en-US">Statistics
-    Vulnerability Count</mjstat:title>
-    <mjstat:resDataTotal vulinfo="脆弱性対策情報総件数" vendor="ベンダ総件数"
-      product="製品総件数" />
-    <mjstat:resData date="集計期間" cntAll="登録件数" /> 集計期間分 mjstat:resData
-    ノードを繰り返します。 mjstat:resData ノードの date に記載される値は、 type=y の場合 年(yyyy形式)、 type=m の場合 年月(yyyy-mm形式)、
-    type=q の場合 四半期(yyyy-(1～4)Q形式)となります。 </mjstat:sumJvnDb>
+    <mjstat:title xml:lang="en-US">Statistics Vulnerability Count</mjstat:title>
+    <mjstat:resDataTotal vulinfo="脆弱性対策情報総件数" vendor="ベンダ総件数" product="製品総件数" />
+    <mjstat:resData date="集計期間" cntAll="登録件数" />
+    <!-- 集計期間分 mjstat:resData ノードを繰り返します。 -->
+    <!-- mjstat:resData ノードの date に記載される値は、 type=y の場合 年(yyyy形式)、 type=m の場合
+    年月(yyyy-mm形式)、 type=q の場合 四半期(yyyy-(1～4)Q形式)となります。 -->
+  </mjstat:sumJvnDb>
 
   <!-- theme=sumCvss の場合 -->
   <mjstat:sumCvss>
     <mjstat:title xml:lang="ja">CVSSスコア</mjstat:title>
     <mjstat:title xml:lang="en-US">CVSS Score</mjstat:title>
-    <mjstat:resDataTotal
-      vulinfo="脆弱性対策情報総件数" vendor="ベンダ総件数" product="製品総件数" />
-    <mjstat:resData date="集計期間"
-      cntAll="総件数" cntC="深刻度(緊急)の件数" cntH="深刻度(重要)の件数" cntM="深刻度(警告)の件数"
-      cntL="深刻度(注意)の件数" cntN="深刻度(なし意)の件数" /> 集計期間分 mjstat:resData ノードを繰り返します。 <br />
+    <mjstat:resDataTotal vulinfo="脆弱性対策情報総件数" vendor="ベンダ総件数" product="製品総件数" />
+    <mjstat:resData
+      date="集計期間"
+      cntAll="総件数"
+      cntC="深刻度(緊急)の件数"
+      cntH="深刻度(重要)の件数"
+      cntM="深刻度(警告)の件数"
+      cntL="深刻度(注意)の件数"
+      cntN="深刻度(なし意)の件数" />
+    <!-- 集計期間分 mjstat:resData ノードを繰り返します。 -->
   </mjstat:sumCvss>
 
   <!-- theme=sumCwe の場合 -->
   <mjstat:sumCwe cweId="CWE 識別子">
     <mjstat:title xml:lang="ja">CWE 識別子のタイトル(日本語)</mjstat:title>
-    <mjstat:title xml:lang="en-US">CWE
-    識別子のタイトル(英語)</mjstat:title>
-    <mjstat:resDataTotal vulinfo="脆弱性対策情報総件数" vendor="ベンダ総件数"
-      product="製品総件数" />
-    <mjstat:resData date="集計期間" cntAll="件数" /> 集計期間分 mjstat:resData ノードを繰り返します。 </mjstat:sumCwe>
+    <mjstat:title xml:lang="en-US">CWE 識別子のタイトル(英語)</mjstat:title>
+    <mjstat:resDataTotal vulinfo="脆弱性対策情報総件数" vendor="ベンダ総件数"  product="製品総件数" />
+    <mjstat:resData date="集計期間" cntAll="件数" />
+    <!-- 集計期間分 mjstat:resData ノードを繰り返します。 -->
+  </mjstat:sumCwe>
 
   <!-- theme=sumAll の場合 -->
   <mjstat:sumJvnDb>
@@ -124,8 +202,15 @@
     <mjstat:title xml:lang="ja">CVSSスコア</mjstat:title>
     <mjstat:title xml:lang="en-US">CVSS Score</mjstat:title>
     <mjstat:resDataTotal vulinfo="脆弱性対策情報総件数" vendor="ベンダ総件数" product="製品総件数" />
-    <mjstat:resData date="集計期間" cntAll="総件数" cntC="深刻度(緊急)の件数" cntH="深刻度(重要)の件数" cntM="深刻度(警告)の件数"
-      cntL="深刻度(注意)の件数" cntN="深刻度(なし意)の件数" />
+    <mjstat:resData
+      date="集計期間"
+      cntAll="総件数"
+      cntC="深刻度(緊急)の件数"
+      cntH="深刻度(重要)の件数"
+      cntM="深刻度(警告)の件数"
+      cntL="深刻度(注意)の件数"
+      cntN="深刻度(なし意)の件数" />
+    <!-- 集計期間分 mjstat:resData ノードを繰り返します。 -->
   </mjstat:sumCvss>
 
   <mjstat:sumCwe cweId="CWE 識別子">
@@ -133,6 +218,7 @@
     <mjstat:title xml:lang="en-US">CWE 識別子のタイトル(英語)</mjstat:title>
     <mjstat:resDataTotal vulinfo="脆弱性対策情報総件数" vendor="ベンダ総件数" product="製品総件数" />
     <mjstat:resData date="集計期間" cntAll="件数" />
+    <!-- 集計期間分 mjstat:resData ノードを繰り返します。 -->
   </mjstat:sumCwe>
 
   <status:Status

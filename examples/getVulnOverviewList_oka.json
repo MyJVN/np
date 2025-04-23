@@ -1,4 +1,5 @@
 {
+  "$schema": "https://jvndb.jvn.jp/schema/myjvn_feed_1.0.json?20250419",
   "feed": {
     "generator": {
       "engine": {
@@ -7,7 +8,7 @@
       }
     },
     "title": "JVNDB 脆弱性対策情報",
-    "id": "jvnpid:1.0::ipa:myjvn_api_getVulnOverviewList:4.0.0",
+    "systemid": "jvnpid:1.0::ipa:myjvn_api_getVulnOverviewList:4.0.0",
     "link": "https://jvndb.jvn.jp/apis/myjvn/",
     "updated": "2025-04-07T07:36:21+09:00",
     "lang": "ja",
@@ -27,7 +28,7 @@
         "id": "JVNDB-2025-002953",
         "summary": "WordPress 用 Sunshine Photo Cart には、信頼できないデータのデシリアライゼーションに関する脆弱性が存在します。",
         "link": "https://jvndb.jvn.jp/ja/contents/2025/JVNDB-2025-002953.html",
-        "update": "2025-04-04T14:45:58+09:00",
+        "updated": "2025-04-04T14:45:58+09:00",
         "published": "2025-04-04T14:45:58+09:00",
         "references": [
           {
@@ -62,7 +63,7 @@
               "cvss_v3": {
                 "version": "3.0",
                 "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-                "baseScore": "9.8",
+                "baseScore": 9.8,
                 "baseSeverity": "CRITICAL"
               }
             }
@@ -81,7 +82,7 @@
         "id": "JVNDB-2025-002884",
         "summary": "Rockwell Automation が提供する複数の製品には、次の脆弱性が存在します。* 信頼できないデータのデシリアライゼーション（CWE-502） - CVE-2025-23120",
         "link": "https://jvndb.jvn.jp/ja/contents/2025/JVNDB-2025-002884.html",
-        "update": "2025-04-03T12:27:09+09:00",
+        "updated": "2025-04-03T12:27:09+09:00",
         "published": "2025-04-03T12:27:09+09:00",
         "references": [
           {
@@ -131,8 +132,8 @@
         "id": "JVNDB-9999-999999",
         "summary": "MyJVN API バージョン表記なし",
         "link": "https://jvndb.jvn.jp/apis/",
-        "update": "025-04-04T14:45:58+09:00",
-        "published": "025-04-04T14:45:58+09:00",
+        "updated": "2025-04-04T14:45:58+09:00",
+        "published": "2025-04-04T14:45:58+09:00",
         "references": [
           {
             "url": "https://jvndb.jvn.jp/",
@@ -178,26 +179,26 @@
               "cvss_v2": {
                 "version": "2.0",
                 "vectorString": "AV:N/AC:M/Au:N/C:N/I:P/A:N",
-                "baseScore": "10.0",
-                "baseSeverity": "CRITICAL"
+                "baseScore": 10.0,
+                "baseSeverity": "HIGH"
               },
               "cvss_v3": {
                 "version": "3.0",
                 "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-                "baseScore": "9.8",
+                "baseScore": 9.8,
                 "baseSeverity": "CRITICAL"
               },
               "cvss_v4": {
                 "version": "4.0",
                 "vectorString": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:L/SA:L",
-                "baseScore": "9.5",
+                "baseScore": 9.5,
                 "baseSeverity": "CRITICAL"
               },
               "ScoringSystem": {
                 "name": "Common Vulnerability Scoring System V5",
                 "version": "5.0",
                 "vectorString": "CVSS:5.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:L/SA:L/LA:S",
-                "baseScore": "9.5",
+                "baseScore": 9.5,
                 "baseSeverity": "CRITICAL"
               }
             }
@@ -221,8 +222,8 @@
         "id": "JVNDB-9998-999998",
         "summary": "MyJVN API バージョン表記あり",
         "link": "https://jvndb.jvn.jp/apis/",
-        "update": "025-04-04T14:45:58+09:00",
-        "published": "025-04-04T14:45:58+09:00",
+        "updated": "2025-04-04T14:45:58+09:00",
+        "published": "2025-04-04T14:45:58+09:00",
         "references": [
           {
             "url": "https://jvndb.jvn.jp/",
@@ -284,26 +285,26 @@
               "cvss_v2": {
                 "version": "2.0",
                 "vectorString": "AV:N/AC:M/Au:N/C:N/I:P/A:N",
-                "baseScore": "10.0",
+                "baseScore": 10.0,
                 "baseSeverity": "CRITICAL"
               },
               "cvss_v3": {
                 "version": "3.0",
                 "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-                "baseScore": "9.8",
+                "baseScore": 9.8,
                 "baseSeverity": "CRITICAL"
               },
               "cvss_v4": {
                 "version": "4.0",
                 "vectorString": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:L/SA:L",
-                "baseScore": "9.5",
+                "baseScore": 9.5,
                 "baseSeverity": "CRITICAL"
               },
               "ScoringSystem": {
                 "name": "Common Vulnerability Scoring System V5",
                 "version": "5.0",
                 "vectorString": "CVSS:5.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:L/SA:L/LA:S",
-                "baseScore": "9.5",
+                "baseScore": 9.5,
                 "baseSeverity": "CRITICAL"
               }
             }
@@ -329,7 +330,7 @@
     "method": "getVulnOverviewList",
     "feed": "oka",
     "lang": "ja",
-    "retCd": "0",
+    "retCd": 0,
     "retMax": "50",
     "errCd": "",
     "errMsg": "",

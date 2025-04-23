@@ -33,12 +33,13 @@
 
 該当パラメタに指定がない場合(パラメタ自体もしくはパラメタ値が未指定の場合)に MyJVN API 側で自動的に設定する値です。
 
+<br>
+
 #### startItem , maxCountItem
 
 エントリ開始位置とエントリ取得件数を指定します。
 
-- \[例\]  
-   1 件目から 50 件分のベンダ名を取得したい場合  
+- \[例\] 1 件目から 50 件分のベンダ名を取得したい場合  
    `https://jvndb.jvn.jp/myjvn?method=getVendorList&feed=oka&startItem=1&maxCountItem=50`
 
 <br>
@@ -47,6 +48,8 @@
 
 ベンダ識別子タイプとして、\[ cpe \| jvnpid \]のいずれか一つを指定します。
 
+<br>
+
 #### vendorName (type=cpe)
 
 ベンダ名として、CPE ベンダ識別子を指定します。
@@ -54,14 +57,15 @@
 - cpe:2.3:{part}:{vendor}  
    {part}フィールド ... \[ \* \| (NULL) \]  
    {vendor}フィールド ... CPE ベンダ名
-- アスキー文字、大文字／小文字区別なし、複数指定は不可
+- アスキー文字、大文字／小文字区別なし
+- 複数指定は不可
 - URL エンコードされたエスケープシーケンス
-- \[例\]  
-   Microsoft の場合  
+- \[例\] Microsoft の場合  
    `https://jvndb.jvn.jp/myjvn?method=getVendorList&feed=oka&type=cpe&vendorName=cpe:2.3::microsoft`
-
-  cpeName=cpe:2.3::%25%40mail の場合  
+- \[例\] cpeName=cpe:2.3::%25%40mail の場合  
    `https://jvndb.jvn.jp/myjvn?method=getVendorList&feed=oka&type=cpe&vendorName=cpe:2.3::%40mail`
+
+<br>
 
 #### vendorName (type=jvnpid)
 
@@ -69,9 +73,9 @@
 
 - jvnpid:1.0::{vendor}  
    {vendor}フィールド ... JVN ベンダ名
-- アスキー文字、大文字／小文字区別なし、複数指定は不可
-- \[例\]  
-   Microsoft の場合  
+- アスキー文字、大文字／小文字区別なし
+- 複数指定は不可
+- \[例\] Microsoft の場合  
    `https://jvndb.jvn.jp/myjvn?method=getVendorList&feed=oka&type=jvnpid&vendorName=jvnpid:1.0::microsoft`
 
 <br>
@@ -96,7 +100,9 @@
 
 ### JSON スキーマ
 
-- TBD
+- Vendor and Product Dictionary for MyJVN
+  - https://jvndb.jvn.jp/schema/jvnpid_1.0.json?20250419
+  - [ jvnpid_1.0.json ](../schemas/jvnpid_1.0.json)
 
 ### 例
 
@@ -106,6 +112,7 @@
 
 ```
 {
+  "$schema": "https://jvndb.jvn.jp/schema/jvnpid_1.0.json?20250419",
   "jvn_product_dictionary": {
     "generator": {
       "engine": {
@@ -114,22 +121,30 @@
       }
     },
     "title": "JVNDB ベンダ一覧",
-    "id": "jvnpid:1.0::ipa:myjvn_api_getVendorList:4.0.0",
+    "systemid": "jvnpid:1.0::ipa:myjvn_api_getVendorList:4.0.0",
     "link": "https://jvndb.jvn.jp/apis/myjvn/",
     "updated": "更新日",
-    "lang": "ja",
+    "lang": "表示言語 (ja:日本語、en:英語 )",
     "author": {
       "name": "IPA",
       "uri": "https://www.ipa.go.jp/"
     },
+    "distribution": {
+      "tlp": {
+        "label": "CLEAR",
+        "url": "https://www.first.org/tlp/"
+      }
+    },
     "vendors": [
       {
-        "vendor_id": "JVNベンダ名",
-        "vid": "ベンダ番号",
+        "vendor_id": "JVNベンダ識別子 (jvnpid 1.0 形式) 
+                      [例] jvnpid:1.0::dendai.ac.jp",
+        "vid": "ベンダ番号 (JVN iPedia におけるベンダの識別番号)",
         "vname": "ベンダ名",
-        "cpe": "CPEベンダ名"
+        "cpe": "CPEベンダ識別子(CPE v2.3 形式) 
+                [例] cpe:2.3::dendai.ac.jp"
       },
-      { "$comment": "vendor_id,vid,vnameなどを繰り返します。" }
+      { "$comment": "vendor_id,vid,vname,cpeなどを繰り返します。" }
     ]
   },
   "status": {
@@ -148,55 +163,3 @@
   }
 }
 ```
-
-<br>
-
-- jvn_product_dictionary [type:object]
-
-  - vendors [type:array]
-
-    - vendor_id [type:string] [required]  
-      JVN Vendor Name (jvnpid 1.0 format)  
-      JVN ベンダ名 (jvnpid 1.0 形式)  
-      \[例\] `jvnpid:1.0::dendai.ac.jp`
-    - vid [type:integer] [required]  
-      Vendor unique number in JVN iPedia  
-      JVN iPedia におけるベンダの識別番号  
-      \[例\] `99999999991`
-    - vname [type:string] [required]  
-      Vendor Title  
-      ベンダ名  
-      \[例\] `東京電機大学`
-    - cpe [type:string] [required]  
-      CPE Vendor Name (CPE v2.3 format)  
-      CPE ベンダ名 (CPE v2.3 形式)  
-      \[例\] `cpe:2.3::dendai.ac.jp`
-
-  - generator [type:object]
-
-    - engine [type:object]
-      - name [type:string] [required]  
-        `MyJVN API`
-      - version [type:string] [required]  
-        `4.0.0`
-
-  - title [type:string] [required]  
-    `JVNDB ベンダ一覧`
-  - id [type:string] [required]  
-    `jvnpid:1.0::ipa:myjvn_api_getVendorList:4.0.0`
-  - link [type:string] [required]  
-    `https://jvndb.jvn.jp/myjvn`
-  - updated [type:string] [format:"yyyy-MM-ddTHH:mm:ss+09:00"] [required]  
-    The date and time (timestamp) when the VendorList was created.
-    更新日
-  - lang [type:string] [required]  
-    表示言語 (ja:日本語、en:英語 )
-    Must be one of: ja, en
-
-  - author [type:object]
-    - name [type:string] [required]  
-      `IPA`
-    - uri [type:string] [required]  
-      `https://www.ipa.go.jp/`
-
-- status [type:object]

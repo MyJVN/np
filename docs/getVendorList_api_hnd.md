@@ -32,13 +32,16 @@
 
 該当パラメタに指定がない場合(パラメタ自体もしくはパラメタ値が未指定の場合)に MyJVN API 側で自動的に設定する値です。
 
+<br>
+
 #### startItem , maxCountItem
 
 エントリ開始位置とエントリ取得件数を指定します。
 
-- \[例\]  
-   1 件目から 50 件分のベンダ名を取得したい場合  
+- \[例\] 1 件目から 50 件分のベンダ名を取得したい場合  
    `https://jvndb.jvn.jp/myjvn?method=getVendorList&feed=hnd&startItem=1&maxCountItem=50`
+
+<br>
 
 #### cpeName
 
@@ -50,15 +53,14 @@ CPE ベンダ名を指定します。
 - ワイルドカード "\*" 指定可、アスキー文字、大文字／小文字区別なし
 - 複数指定時は "+" で連結
 - URL エンコードされたエスケープシーケンス
-- \[例\]  
-   Apache の場合  
+- \[例\] Apache の場合  
    `https://jvndb.jvn.jp/myjvn?method=getVendorList&feed=hnd&cpeName=cpe:/:apache`
-
-  Apache と Microsoft の場合  
+- \[例\] Apache と Microsoft の場合  
    `https://jvndb.jvn.jp/myjvn?method=getVendorList&feed=hnd&cpeName=cpe:/:apache+cpe:/:microsoft`
-
-  cpeName=cpe:/:%40mail の場合  
+- \[例\] cpeName=cpe:/:%40mail の場合  
    `https://jvndb.jvn.jp/myjvn?method=getVendorList&feed=hnd&cpeName=cpe:/:%40mail`
+
+<br>
 
 #### keyword
 
@@ -90,52 +92,35 @@ CPE ベンダ名を指定します。
 ### 解説
 
 ```
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Result version="3.3"
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xmlns="http://jvndb.jvn.jp/myjvn/Results"
-xmlns:mjres="http://jvndb.jvn.jp/myjvn/Results"
-xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
-xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/Results　
-https://jvndb.jvn.jp/schema/results_3.3.xsd ">
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://jvndb.jvn.jp/myjvn/Results"
+  xmlns:mjres="http://jvndb.jvn.jp/myjvn/Results"
+  xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
+  xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/Results https://jvndb.jvn.jp/schema/results_3.3.xsd
+  ">
 
-<VendorInfo xml:lang="表示言語">
-  <Vendor vid="ベンダ番号" vname="ベンダ名" cpe="CPEベンダ名"/>
-  <!-- フィルタリングに当てはまるベンダの件数分Vendorノードを繰り返します。 -->
-</VendorInfo>
+  <VendorInfo xml:lang="表示言語">
+    <Vendor vid="ベンダ番号 (JVN iPedia におけるベンダの識別番号)" vname="ベンダ名" cpe="CPEベンダ識別子 (CPE v2.2 形式)" />
+    <Vendor vid="99999999991" vname="東京電機大学" cpe="cpe:/:dendai.ac.jp" />
+    <!-- ベンダの件数分 Vendor ノードを繰り返します。 -->
+  </VendorInfo>
 
-<status:Status
-version="3.3"
-method="getVendorList"
-feed="hnd"
-lang="表示言語"
-retCd="リターンコード (0:成功時、1:エラー時) "
-retMax="エントリ上限値"
-errCd="エラーコード (処理成功時は空文字列) "
-errMsg="エラーメッセージ (処理成功時は空文字列) "
-totalRes="応答エントリ総数"
-totalResRet="応答エントリ数"
-firstRes="応答エントリ開始位置" >
-<!-- 各リクエストパラメタ -->
-</status:Status>
+  <status:Status
+    version="3.3"
+    method="getVendorList"
+    feed="hnd"
+    lang="表示言語"
+    retCd="リターンコード (0:成功時、1:エラー時) "
+    retMax="エントリ上限値"
+    errCd="エラーコード (処理成功時は空文字列) "
+    errMsg="エラーメッセージ (処理成功時は空文字列) "
+    totalRes="応答エントリ総数"
+    totalResRet="応答エントリ数"
+    firstRes="応答エントリ開始位置">
+    <!-- 各リクエストパラメタ -->
+  </status:Status>
 </Result>
 ```
 
-- VendorInfo [type:array] [required]
-  - xml:lang [type:string] [required]  
-    Language  
-    表示言語  
-    Must be one of: `ja, en`
-  - Vendor [type:object]
-    - vid [type:integer] [required]  
-      Vendor unique number in JVN iPedia  
-      JVN iPedia におけるベンダの識別番号  
-      \[例\] `99999999991`
-    - vname [type:string] [required]  
-      Vendor Title  
-      ベンダ名  
-      \[例\] `東京電機大学`
-    - cpe [type:string] [required]  
-      CPE Vendor Name (CPE v2.2 format)  
-      CPE ベンダ名 (CPE v2.2 形式)  
-      \[例\] `cpe:/:dendai.ac.jp`

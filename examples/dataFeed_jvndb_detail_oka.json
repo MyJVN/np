@@ -1,7 +1,15 @@
 {
-  "format": "VULDEF-Document",
-  "version": "4.0.0",
-  "timestamp": "2025-04-02T00:38:11+09:00",
+  "$schema": "https://jvndb.jvn.jp/schema/myjvn_vuldef_1.0.vulinfo.json?20250419",
+  "generator": {
+    "engine": {
+      "version": "4.0.0",
+      "name": "MyJVN API"
+    }
+  },
+  "title": "JVNDB 脆弱性対策詳細情報",
+  "systemid": "jvnpid:1.0::ipa:myjvn_api_getVulnDetailInfo:4.0.0",
+  "link": "https://jvndb.jvn.jp/apis/myjvn/",
+  "updated": "2025-04-02T00:38:11+09:00",
   "VULDEF-Document": [
     {
       "document": {
@@ -153,7 +161,19 @@
             }
           ]
         }
-      ]
+      ],
+      "jvn_extension": {
+        "generator": {
+          "engine": {
+            "version": "4.0.0",
+            "name": "MyJVN API"
+          }
+        },
+        "title": "JVNDB 脆弱性対策詳細情報",
+        "systemid": "jvnpid:1.0::ipa:myjvn_api_getVulnDetailInfo:4.0.0",
+        "link": "https://jvndb.jvn.jp/apis/myjvn/",
+        "vulnid": "JVNDB-2017-009608"
+      }
     },
     {
       "document": {
@@ -305,7 +325,7 @@
                 "cvss_v2": {
                   "version": "2.0",
                   "vectorString": "AV:N/AC:M/Au:N/C:N/I:P/A:N",
-                  "baseScore": "10.0",
+                  "baseScore": 10.0,
                   "baseSeverity": "CRITICAL",
                   "accessVector": "NETWORK",
                   "accessComplexity": "MEDIUM",
@@ -318,7 +338,7 @@
                 "cvss_v3": {
                   "version": "3.0",
                   "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-                  "baseScore": "9.8",
+                  "baseScore": 9.8,
                   "baseSeverity": "CRITICAL",
                   "attackVector": "NETWORK",
                   "attackComplexity": "LOW",
@@ -341,7 +361,16 @@
         }
       ],
       "jvn_extension": {
-        "version": "4.0.0",
+        "generator": {
+          "engine": {
+            "version": "4.0.0",
+            "name": "MyJVN API"
+          }
+        },
+        "title": "JVNDB 脆弱性対策詳細情報",
+        "systemid": "jvnpid:1.0::ipa:myjvn_api_getVulnDetailInfo:4.0.0",
+        "link": "https://jvndb.jvn.jp/apis/myjvn/",
+        "vulnid": "JVNDB-2017-009608",
         "affected": [
           {
             "vendor": "ベリタス",
@@ -576,6 +605,16 @@
         }
       ],
       "jvn_extension": {
+        "generator": {
+          "engine": {
+            "version": "4.0.0",
+            "name": "MyJVN API"
+          }
+        },
+        "title": "JVNDB 脆弱性対策詳細情報",
+        "systemid": "jvnpid:1.0::ipa:myjvn_api_getVulnDetailInfo:4.0.0",
+        "link": "https://jvndb.jvn.jp/apis/myjvn/",
+        "vulnid": "JVNDB-2021-002774",
         "affected": [
           {
             "vendor": "トレンドマイクロ",
@@ -772,7 +811,7 @@
                 "cvss_v2": {
                   "version": "2.0",
                   "vectorString": "AV:N/AC:H/Au:N/C:N/I:P/A:N",
-                  "baseScore": "2.6",
+                  "baseScore": 2.6,
                   "baseSeverity": "LOW",
                   "accessVector": "NETWORK",
                   "accessComplexity": "HIGH",
@@ -784,7 +823,7 @@
                 "cvss_v3": {
                   "version": "3.0",
                   "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
-                  "baseScore": "6.1",
+                  "baseScore": 6.1,
                   "baseSeverity": "MEDIUM",
                   "attackVector": "NETWORK",
                   "attackComplexity": "LOW",
@@ -829,7 +868,7 @@
                 "cvss_v2": {
                   "version": "2.0",
                   "vectorString": "AV:N/AC:M/Au:N/C:N/I:P/A:N",
-                  "baseScore": "4.3",
+                  "baseScore": 4.3,
                   "baseSeverity": "MEDIUM",
                   "accessVector": "NETWORK",
                   "accessComplexity": "MEDIUM",
@@ -841,7 +880,7 @@
                 "cvss_v3": {
                   "version": "3.0",
                   "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
-                  "baseScore": "6.1",
+                  "baseScore": 6.1,
                   "baseSeverity": "MEDIUM",
                   "attackVector": "NETWORK",
                   "attackComplexity": "LOW",
@@ -887,7 +926,7 @@
                 "cvss_v2": {
                   "version": "2.0",
                   "vectorString": "AV:N/AC:M/Au:N/C:N/I:P/A:N",
-                  "baseScore": "4.3",
+                  "baseScore": 4.3,
                   "baseSeverity": "MEDIUM",
                   "accessVector": "NETWORK",
                   "accessComplexity": "MEDIUM",
@@ -899,7 +938,7 @@
                 "cvss_v3": {
                   "version": "3.0",
                   "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:N/I:L/A:N",
-                  "baseScore": "4.7",
+                  "baseScore": 4.7,
                   "baseSeverity": "MEDIUM",
                   "attackVector": "NETWORK",
                   "attackComplexity": "LOW",
@@ -916,7 +955,19 @@
             }
           ]
         }
-      ]
+      ],
+      "jvn_extension": {
+        "generator": {
+          "engine": {
+            "version": "4.0.0",
+            "name": "MyJVN API"
+          }
+        },
+        "title": "JVNDB 脆弱性対策詳細情報",
+        "systemid": "jvnpid:1.0::ipa:myjvn_api_getVulnDetailInfo:4.0.0",
+        "link": "https://jvndb.jvn.jp/apis/myjvn/",
+        "vulnid": "JVNDB-2022-000097"
+      }
     }
   ],
   "status": {
@@ -924,7 +975,7 @@
     "method": "getDetailInfo",
     "feed": "oka",
     "lang": "ja",
-    "retCd": "0",
+    "retCd": 0,
     "retMax": "",
     "errCd": "",
     "errMsg": "",

@@ -1,15 +1,15 @@
 {
+  "$schema": "https://jvndb.jvn.jp/schema/myjvn_vuldef_1.0.stix.json?20250419",
   "type": "bundle",
   "id": "bundle--4c2812dd-d870-42ed-a920-b3b0cc1bef03",
   "objects": [
     {
-      "id": "extension-definition--b2440624-45a6-11ec-81d3-0242ac130003",
       "type": "extension-definition",
+      "id": "extension-definition--b2440624-45a6-11ec-81d3-0242ac130003",
       "spec_version": "2.1",
-      "name": "VULDEF-Document embedded in STIX",
-      "description": "This schema is to deliver VULDEF-Document using STIX.",
       "created": "2021-11-11T11:11:11.000Z",
       "modified": "2021-11-11T11:11:11.000Z",
+      "name": "VULDEF-Document embedded in STIX",
       "created_by_ref": "identity--298980da-697f-431b-ae10-505b3542c427",
       "schema": "http://jvndb.jvn.jp/schema/jvn-jp-sdo.json",
       "version": "1.0",
@@ -17,20 +17,19 @@
     },
     {
       "type": "identity",
-      "spec_version": "2.1",
       "id": "identity--298980da-697f-431b-ae10-505b3542c427",
+      "spec_version": "2.1",
       "created": "2021-11-11T11:11:11.000Z",
       "modified": "2021-11-11T11:11:11.000Z",
-      "name": "MyJVN",
-      "description": "Japan Vulnerability Notes - MyJVN",
+      "name": "MyJVN API",
       "identity_class": "system"
     },
     {
       "type": "jvn-jp-sdo",
-      "spec_version": "2.1",
       "id": "jvn-jp-sdo--ac97aae4-83f1-46ca-a351-7aeb76678189",
-      "created": "2021-11-15T09:16:08.000Z",
-      "modified": "2021-11-15T09:16:08.000Z",
+      "spec_version": "2.1",
+      "created": "2025-04-06T09:16:08.000Z",
+      "modified": "2025-04-06T09:16:08.000Z",
       "name": "MyJVN API VULDEF-Document embedded in STIX",
       "extensions": {
         "extension-definition--b2440624-45a6-11ec-81d3-0242ac130003": {
@@ -188,7 +187,19 @@
                 }
               ]
             }
-          ]
+          ],
+          "jvn_extension": {
+            "generator": {
+              "engine": {
+                "version": "4.0.0",
+                "name": "MyJVN API"
+              }
+            },
+            "title": "JVNDB 脆弱性対策詳細情報",
+            "systemid": "jvnpid:1.0::ipa:myjvn_api_getVulnDetailInfo:4.0.0",
+            "link": "https://jvndb.jvn.jp/apis/myjvn/",
+            "vulnid": "JVNDB-2017-009608"
+          }
         }
       ]
     }
@@ -198,7 +209,7 @@
     "method": "getDetailInfo",
     "feed": "oka",
     "lang": "ja",
-    "retCd": "0",
+    "retCd": 0,
     "retMax": "1",
     "errCd": "",
     "errMsg": "",

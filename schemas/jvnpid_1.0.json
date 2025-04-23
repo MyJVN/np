@@ -1,14 +1,39 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema#",
-  "$id": "https://jvndb.jvn.jp/schema/jvnpid_1.0.json?20250414",
-  "title": "Product Dictionary for MyJVN",
-  "description": "Representation of Vendor and Product Dictionary for MyJVN as a JSON document.",
+  "$id": "https://jvndb.jvn.jp/schema/jvnpid_1.0.json?20250419",
+  "title": "Vendor and Product Dictionary for MyJVN",
+  "description": "Ver 1.0 (20250419): Representation of Vendor and Product Dictionary for MyJVN as a JSON document.",
   "type": "object",
   "properties": {
+    "$schema": { "type": "string" },
     "jvn-product-dictionary": { "$ref": "#/$defs/jvn-product-dictionary_type" },
     "status": { "$ref": "#/$defs/status_type" }
   },
   "$defs": {
+    "jvnpid_vendor_type": {
+      "title": "JVN Platform IDentification representation for vendor",
+      "description": "The JVN Platform IDentification (jvnpid) attribute refers to a method for naming platforms external to this specification.",
+      "type": "string",
+      "pattern": "^jvnpid:1\\.0:(:[A-Za-z0-9\\._\\-~%]*){1}$"
+    },
+    "cpe_vendor_type": {
+      "title": "Common Platform Enumeration representation for vendor",
+      "description": "The Common Platform Enumeration (CPE) attribute refers to a method for naming platforms external to this specification.",
+      "type": "string",
+      "pattern": "^cpe:2\\.3:(|[\\*\\-])(:[A-Za-z0-9\\._\\-~%]*){1}$"
+    },
+    "jvnpid_type": {
+      "title": "JVN Platform IDentification representation",
+      "description": "The JVN Platform IDentification (jvnpid) attribute refers to a method for naming platforms external to this specification.",
+      "type": "string",
+      "pattern": "^jvnpid:1\\.0:(:[A-Za-z0-9\\._\\-~%]*){2}(|:[a-zA-Z0-9\\-\\._].*)$"
+    },
+    "cpe_type": {
+      "title": "Common Platform Enumeration representation",
+      "description": "The Common Platform Enumeration (CPE) attribute refers to a method for naming platforms external to this specification.",
+      "type": "string",
+      "pattern": "^cpe:2\\.3:(|[aho\\*\\-])(:[A-Za-z0-9\\._\\-~%]*){2}(|:[a-zA-Z0-9\\-\\._\\*].*)$"
+    },
     "engine_type": {
       "type": "object",
       "properties": {
@@ -33,7 +58,6 @@
       "title": "Traffic Light Protocol (TLP)",
       "description": "Provides details about the TLP classification of the document.",
       "type": "object",
-      "required": ["label"],
       "properties": {
         "label": {
           "title": "Label of TLP",
@@ -50,13 +74,13 @@
           "format": "uri",
           "examples": ["https://www.us-cert.gov/tlp"]
         }
-      }
+      },
+      "required": ["label"]
     },
     "distribution_type": {
       "title": "Rules for sharing document",
       "description": "Describe any constraints on how this document might be shared.",
       "type": "object",
-      "required": ["tlp"],
       "properties": {
         "text": {
           "title": "Textual description",
@@ -66,7 +90,8 @@
           "examples": ["Copyright 2025, IPA, All Rights Reserved."]
         },
         "tlp": { "$ref": "#/$defs/tlp_type" }
-      }
+      },
+      "required": ["tlp"]
     },
     "vname_i18_type": {
       "type": "object",
@@ -93,7 +118,7 @@
       "items": {
         "type": "object",
         "properties": {
-          "cpe": { "type": "string" },
+          "cpe": { "$ref": "#/$defs/cpe_type" },
           "id_refs": { "$ref": "#/$defs/id_refs_type" }
         },
         "required": ["cpe"]
@@ -105,19 +130,27 @@
       "items": {
         "type": "object",
         "properties": {
-          "product_id": {
-            "title": "JVN Platform IDentification representation",
-            "description": "The JVN Platform IDentification (jvnpid) attribute refers to a method for naming platforms external to this specification.",
-            "type": "string",
-            "pattern": "^jvnpid:1\\.0:(:[A-Za-z0-9\\._\\-~%]*){2}$"
-          },
+          "product_id": { "$ref": "#/$defs/jvnpid_type" },
           "pid": { "type": "string" },
           "pname": { "type": "string" },
           "pname_i18": { "$ref": "#/$defs/vname_i18_type" },
           "product_ids": { "$ref": "#/$defs/product_ids_type" },
           "version": { "type": "string" }
         },
-        "required": ["product_ids", "pname", "pname_i18", "product_id", "pid"]
+        "required": ["product_id", "pid", "pname", "product_ids"]
+      }
+    },
+    "revision_history_type": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": { "type": "string", "format": "date-time" },
+          "number": { "type": "string" },
+          "summary": { "type": "string" }
+        },
+        "required": ["date", "number", "summary"]
       }
     },
     "vendors_type": {
@@ -126,32 +159,15 @@
       "items": {
         "type": "object",
         "properties": {
-          "vendor_id": {
-            "title": "JVN Platform IDentification representation",
-            "description": "The JVN Platform IDentification (jvnpid) attribute refers to a method for naming platforms external to this specification.",
-            "type": "string",
-            "pattern": "^jvnpid:1\\.0:(:[A-Za-z0-9\\._\\-~%]*){1}$"
-          },
+          "vendor_id": { "$ref": "#/$defs/jvnpid_vendor_type" },
           "vid": { "type": "string" },
           "vname": { "type": "string" },
           "vname_i18": { "$ref": "#/$defs/vname_i18_type" },
-          "cpe": {
-            "title": "Common Platform Enumeration representation",
-            "description": "The Common Platform Enumeration (CPE) attribute refers to a method for naming platforms external to this specification.",
-            "type": "string",
-            "pattern": "^((cpe:2\\.3:[aho\\*\\-](:(((\\?*|\\*?)([a-zA-Z0-9\\-\\._]|(\\\\[\\\\\\*\\?!\"#\\$%&'\\(\\)\\+,\\/:;<=>@\\[\\]\\^`\\{\\|\\}~]))+(\\?*|\\*?))|[\\*\\-])){5}(:(([a-zA-Z]{2,3}(-([a-zA-Z]{2}|[0-9]{3}))?)|[\\*\\-]))(:(((\\?*|\\*?)([a-zA-Z0-9\\-\\._]|(\\\\[\\\\\\*\\?!\"#\\$%&'\\(\\)\\+,\\/:;<=>@\\[\\]\\^`\\{\\|\\}~]))+(\\?*|\\*?))|[\\*\\-])){4})|([c][pP][eE]:\\/[AHOaho]?(:[A-Za-z0-9\\._\\-~%]*){0,6}))$",
-            "minLength": 5
-          },
-          "products": { "$ref": "#/$defs/products_type" }
+          "cpe": { "$ref": "#/$defs/cpe_vendor_type" },
+          "products": { "$ref": "#/$defs/products_type" },
+          "revision_history": { "$ref": "#/$defs/revision_history_type" }
         },
-        "required": [
-          "vid",
-          "vname",
-          "vendor_id",
-          "vname_i18",
-          "cpe",
-          "products"
-        ]
+        "required": ["vendor_id", "vid", "vname", "cpe", "products"]
       }
     },
     "jvn-product-dictionary_type": {
@@ -159,20 +175,25 @@
       "properties": {
         "generator": { "$ref": "#/$defs/generator_type" },
         "title": { "type": "string" },
-        "id": { "type": "string" },
-        "link": { "type": "string" },
+        "systemid": { "type": "string" },
+        "link": { "type": "string", "format": "uri" },
         "updated": { "type": "string", "format": "date-time" },
-        "lang": {
-          "title": "Language type",
-          "description": "Identifies a language, corresponding to IETF BCP 47 / RFC 5646. See IETF language registry: https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry",
-          "type": "string",
-          "pattern": "^(([A-Za-z]{2,3}(-[A-Za-z]{3}(-[A-Za-z]{3}){0,2})?|[A-Za-z]{4,8})(-[A-Za-z]{4})?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-[A-WY-Za-wy-z0-9](-[A-Za-z0-9]{2,8})+)*(-[Xx](-[A-Za-z0-9]{1,8})+)?|[Xx](-[A-Za-z0-9]{1,8})+|[Ii]-[Dd][Ee][Ff][Aa][Uu][Ll][Tt]|[Ii]-[Mm][Ii][Nn][Gg][Oo])$",
-          "examples": ["de", "en", "fr", "frc", "jp"]
-        },
+        "lang": { "type": "string", "enum": ["ja", "en"] },
         "author": { "$ref": "#/$defs/author_type" },
         "distribution": { "$ref": "#/$defs/distribution_type" },
         "vendors": { "$ref": "#/$defs/vendors_type" }
-      }
+      },
+      "required": [
+        "generator",
+        "title",
+        "systemid",
+        "link",
+        "updated",
+        "lang",
+        "author",
+        "distribution",
+        "vendors"
+      ]
     },
     "status_type": {
       "type": "object",
@@ -181,7 +202,7 @@
         "method": { "type": "string" },
         "feed": { "type": "string" },
         "lang": { "type": "string" },
-        "retCd": { "type": "string" },
+        "retCd": { "type": "integer" },
         "retMax": { "type": "string" },
         "errCd": { "type": "string" },
         "errMsg": { "type": "string" },

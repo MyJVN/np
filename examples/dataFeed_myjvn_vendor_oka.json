@@ -1,4 +1,5 @@
 {
+  "$schema": "https://jvndb.jvn.jp/schema/jvnpid_1.0.json?20250419",
   "jvn_product_dictionary": {
     "generator": {
       "engine": {
@@ -7,7 +8,7 @@
       }
     },
     "title": "JVNDB ベンダ一覧",
-    "id": "jvnpid:1.0::ipa:myjvn_api_getVendorList:4.0.0",
+    "systemid": "jvnpid:1.0::ipa:myjvn_api_getVendorList:4.0.0",
     "link": "https://jvndb.jvn.jp/apis/myjvn/",
     "updated": "2025-03-24T06:17:53+09:00",
     "lang": "ja",
@@ -56,7 +57,7 @@
     "method": "getVendorList",
     "feed": "oka",
     "lang": "ja",
-    "retCd": "0",
+    "retCd": 0,
     "retMax": "",
     "errCd": "",
     "errMsg": "",

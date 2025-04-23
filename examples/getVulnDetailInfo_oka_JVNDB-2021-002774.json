@@ -1,4 +1,5 @@
 {
+  "$schema": "https://jvndb.jvn.jp/schema/myjvn_vuldef_1.0.csaf.json?20250419",
   "document": {
     "category": "myjvn_security_advisory",
     "csaf_version": "2.1",
@@ -150,6 +151,28 @@
     }
   ],
   "jvn_extension": {
+    "generator": {
+      "engine": {
+        "version": "4.0.0",
+        "name": "MyJVN API"
+      }
+    },
+    "title": "JVNDB 脆弱性対策詳細情報",
+    "systemid": "jvnpid:1.0::ipa:myjvn_api_getVulnDetailInfo:4.0.0",
+    "link": "https://jvndb.jvn.jp/apis/myjvn/",
+    "vulnid": "JVNDB-2021-002774",
+    "updated": "2025-04-06T03:00:00+09:00",
+    "lang": "ja",
+    "author": {
+      "name": "IPA",
+      "uri": "https://www.ipa.go.jp/"
+    },
+    "distribution": {
+      "tlp": {
+        "label": "CLEAR",
+        "url": "https://www.first.org/tlp/"
+      }
+    },
     "affected": [
       {
         "vendor": "トレンドマイクロ",
@@ -171,7 +194,7 @@
     "method": "getDetailInfo",
     "feed": "oka",
     "lang": "ja",
-    "retCd": "0",
+    "retCd": 0,
     "retMax": "1",
     "errCd": "",
     "errMsg": "",

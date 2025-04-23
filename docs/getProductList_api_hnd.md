@@ -34,13 +34,16 @@
 
 該当パラメタに指定がない場合(パラメタ自体もしくはパラメタ値が未指定の場合)に MyJVN API 側で自動的に設定する値です。
 
+<br>
+
 #### startItem , maxCountItem
 
 エントリ開始位置とエントリ取得件数を指定します。
 
-- \[例\]  
-   1 件目から 50 件分のベンダ名を取得したい場合  
+- \[例\] 1 件目から 50 件分のベンダ名を取得したい場合  
    `https://jvndb.jvn.jp/myjvn?method=getProductList&feed=hnd&startItem=1&maxCountItem=50`
+
+<br>
 
 #### cpeName
 
@@ -53,18 +56,16 @@ CPE 製品名を指定します。
 - ワイルドカード "\*" 指定可、アスキー文字、大文字／小文字区別なし
 - 複数指定時は "+" で連結
 - URL エンコードされたエスケープシーケンス
-- \[例\]  
-   Apache HTTPD の場合  
+- \[例\] Apache HTTPD の場合  
    `https://jvndb.jvn.jp/myjvn?method=getProductList&feed=hnd&cpeName=cpe:/a: apache:http_server`
-
-  Apache 製品の場合  
+- \[例\] Apache 製品の場合  
    `https://jvndb.jvn.jp/myjvn?method=getProductList&feed=hnd&cpeName=cpe:/a:apache:*`
-
-  Apache HTTPD と Microsoft .Net の場合  
+- \[例\] Apache HTTPD と Microsoft .Net の場合  
    `https://jvndb.jvn.jp/myjvn?method=getProductList&feed=hnd&cpeName=cpe:/a: apache:http_server+cpe:/a:microsoft:.net`
-
-  cpe:/a:apache:xerces-c%252B%252B の場合  
+- \[例\] cpe:/a:apache:xerces-c%252B%252B の場合  
    `https://jvndb.jvn.jp/myjvn?method=getProductList&feed=hnd&cpeName=cpe:/a:apache:xerces-c%252B%252B`
+
+<br>
 
 #### vendorId
 
@@ -72,9 +73,10 @@ CPE 製品名を指定します。
 
 - いずれか 1 つのみ指定可 \[ cpeName \| vendorId \| productId \]
 - 複数指定時は "+" で連結
-- \[例\]  
-   vendorId=100 の場合  
+- \[例\] vendorId=100 の場合  
    `https://jvndb.jvn.jp/myjvn?method=getProductList&feed=hnd&vendorId=100`
+
+<br>
 
 #### productId
 
@@ -82,9 +84,10 @@ CPE 製品名を指定します。
 
 - いずれか 1 つのみ指定可 \[ cpeName \| vendorId \| productId \]
 - 複数指定時は "+" で連結
-- \[例\]  
-   productId=10000 の場合  
+- \[例\] productId=10000 の場合  
    `https://jvndb.jvn.jp/myjvn?method=getProductList&feed=hnd&productId=10000`
+
+<br>
 
 #### keyword
 
@@ -116,73 +119,41 @@ CPE 製品名を指定します。
 ### 解説
 
 ```
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Result version="3.3"
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xmlns="http://jvndb.jvn.jp/myjvn/Results"
-xmlns:mjres="http://jvndb.jvn.jp/myjvn/Results"
-xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
-xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/Results　
-https://jvndb.jvn.jp/schema/results_3.3.xsd ">
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://jvndb.jvn.jp/myjvn/Results"
+  xmlns:mjres="http://jvndb.jvn.jp/myjvn/Results"
+  xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
+  xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/Results https://jvndb.jvn.jp/schema/results_3.3.xsd
+  ">
 
-<VendorInfo xml:lang="表示言語">
-  <Vendor vid="ベンダ番号" vname="ベンダ名" cpe="CPEベンダ名">
-    <Product pid="製品番号" pname="製品名" cpe="CPE製品名"/>
-    <!-- フィルタリングに当てはまる製品の件数分Productノードを繰り返します。 -->
-  </Vendor>
-  <!-- ベンダの件数分 Vendor ノードを繰り返します。 -->
-</VendorInfo>
+  <VendorInfo xml:lang="表示言語">
+    <Vendor vid="ベンダ番号 (JVN iPedia におけるベンダの識別番号)" vname="ベンダ名" cpe="CPEベンダ識別子 (CPE v2.2 形式)">
+      <Product pid="製品番号 (JVN iPedia における製品の識別番号)" pname="製品名" cpe="CPE製品識別子 (CPE v2.2 形式)" />
+      <!-- フィルタリングに当てはまる製品の件数分Productノードを繰り返します。 -->
+    </Vendor>
+    <Vendor vid="99999999991" vname="東京電機大学" cpe="cpe:/:dendai.ac.jp">
+      <Product pid="99999999991001" pname="MyJVN API" cpe="cpe:/a:dendai.ac.jp:myjvn_api" />
+      <!-- フィルタリングに当てはまる製品の件数分Productノードを繰り返します。 -->
+    </Vendor>
+    <!-- フィルタリングに当てはまるベンダの件数分Vendorノードを繰り返します。 -->
+  </VendorInfo>
 
-<status:Status
-version="3.3"
-method="getProductList"
-feed="hnd"
-lang="表示言語"
-retCd="リターンコード (0:成功時、1:エラー時) "
-retMax="エントリ上限値"
-errCd="エラーコード (処理成功時は空文字列) "
-errMsg="エラーメッセージ (処理成功時は空文字列) "
-totalRes="応答エントリ総数"
-totalResRet="応答エントリ数"
-firstRes="応答エントリ開始位置" >
-<!-- 各リクエストパラメタ -->
-</status:Status>
+  <status:Status
+    version="3.3"
+    method="getProductList"
+    feed="hnd"
+    lang="表示言語"
+    retCd="リターンコード (0:成功時、1:エラー時) "
+    retMax="エントリ上限値"
+    errCd="エラーコード (処理成功時は空文字列) "
+    errMsg="エラーメッセージ (処理成功時は空文字列) "
+    totalRes="応答エントリ総数"
+    totalResRet="応答エントリ数"
+    firstRes="応答エントリ開始位置">
+    <!-- 各リクエストパラメタ -->
+  </status:Status>
 </Result>
 ```
 
-- VendorInfo
-
-  - xml:lang [type:string] [required]  
-    Language  
-    表示言語  
-    Must be one of: `ja, en`
-  - Vendor
-
-    - vid [type:integer] [required]  
-      Vendor unique number in JVN iPedia  
-      JVN iPedia におけるベンダの識別番号  
-      \[例\] `99999999991`
-    - vname [type:string] [required]  
-      Vendor Title  
-      ベンダ名  
-      \[例\] `東京電機大学`
-    - cpe [type:string] [required]  
-      CPE Vendor Name  
-      CPE ベンダ名  
-      CPE Vendor Name that based on the CPE 2.2 specification.  
-      \[例\] `cpe:/:dendai.ac.jp`
-
-    - Product
-      - pid [type:integer] [required]  
-        Product unique number in JVN iPedia
-        JVN iPedia における製品の識別番号  
-        \[例\] `99999999991001`
-      - pname [type:string] [required]  
-        Product Title  
-        製品名  
-        \[例\] `MyJVN API`
-      - cpe [type:string] [required]  
-        Product identfier by CPE 2.2  
-        CPE 製品名  
-        CPE Vendor Name that based on the CPE 2.2 specification.  
-         \[例\] `cpe:/a:dendai.ac.jp:myjvn_api`

@@ -1,0 +1,329 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema#",
+  "$id": "https://jvndb.jvn.jp/schema/myjvn_feed_1.0.json?20250419",
+  "title": "MyJVN Feed",
+  "description": "Ver 1.0 (20250419): Representation of MyJVN Feed as a JSON document.",
+  "type": "object",
+  "properties": {
+    "feed": { "$ref": "#/$defs/feed_type" },
+    "status": { "$ref": "#/$defs/status_type" }
+  },
+  "required": ["feed"],
+  "$defs": {
+    "jvnpid_type": {
+      "title": "JVN Platform IDentification representation",
+      "description": "The JVN Platform IDentification (jvnpid) attribute refers to a method for naming platforms external to this specification.",
+      "type": "string",
+      "pattern": "^jvnpid:1\\.0:(:[A-Za-z0-9\\._\\-~%]*){2}(|:[a-zA-Z0-9\\-\\._].*)$"
+    },
+    "cpe_type": {
+      "title": "Common Platform Enumeration representation",
+      "description": "The Common Platform Enumeration (CPE) attribute refers to a method for naming platforms external to this specification.",
+      "type": "string",
+      "pattern": "^cpe:2\\.3:(|[aho\\*\\-])(:[A-Za-z0-9\\._\\-~%]*){2}(|:[a-zA-Z0-9\\-\\._\\*].*)$"
+    },
+    "cvss_baseSeverity_type": {
+      "description": "CVSS Severity",
+      "type": "string",
+      "enum": ["NONE", "LOW", "MEDIUM", "HIGH", "CRITICAL"]
+    },
+    "engine_type": {
+      "type": "object",
+      "properties": {
+        "version": { "type": "string" },
+        "name": { "type": "string" }
+      }
+    },
+    "generator_type": {
+      "type": "object",
+      "properties": {
+        "engine": { "$ref": "#/$defs/engine_type" }
+      }
+    },
+    "author_type": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "uri": { "type": "string", "format": "uri" }
+      }
+    },
+    "tlp_type": {
+      "title": "Traffic Light Protocol (TLP)",
+      "description": "Provides details about the TLP classification of the document.",
+      "type": "object",
+      "properties": {
+        "label": {
+          "title": "Label of TLP",
+          "description": "Provides the TLP label of the document.",
+          "type": "string",
+          "default": "CLEAR",
+          "enum": ["AMBER", "AMBER+STRICT", "CLEAR", "GREEN", "RED"]
+        },
+        "url": {
+          "title": "URL of TLP version",
+          "description": "Provides a URL where to find the textual description of the TLP version which is used in this document. Default is the URL to the definition by FIRST.",
+          "type": "string",
+          "default": "https://www.first.org/tlp/",
+          "format": "uri",
+          "examples": ["https://www.us-cert.gov/tlp"]
+        }
+      },
+      "required": ["label"]
+    },
+    "distribution_type": {
+      "title": "Rules for sharing document",
+      "description": "Describe any constraints on how this document might be shared.",
+      "type": "object",
+      "properties": {
+        "text": {
+          "title": "Textual description",
+          "description": "Provides a textual description of additional constraints.",
+          "type": "string",
+          "minLength": 1,
+          "examples": ["Copyright 2025, IPA, All Rights Reserved."]
+        },
+        "tlp": { "$ref": "#/$defs/tlp_type" }
+      },
+      "required": ["tlp"]
+    },
+    "references_type": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "properties": {
+          "url": { "type": "string", "format": "uri" },
+          "summary": { "type": "string" },
+          "source": { "type": "string" }
+        },
+        "required": ["summary", "source", "url"]
+      }
+    },
+    "id_refs_type": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "properties": {
+          "nameType": { "type": "string" },
+          "value": { "type": "string" }
+        },
+        "required": ["nameType", "value"]
+      }
+    },
+    "product_ids_type": {
+      "type": "object",
+      "properties": {
+        "jvnpid": { "$ref": "#/$defs/jvnpid_type" },
+        "cpe": { "$ref": "#/$defs/cpe_type" },
+        "id_refs": { "$ref": "#/$defs/id_refs_type" }
+      }
+    },
+    "products_type": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "properties": {
+          "vendor": { "type": "string" },
+          "product": { "type": "string" },
+          "product_ids": { "$ref": "#/$defs/product_ids_type" },
+          "version": { "type": "string" }
+        },
+        "required": ["vendor", "product", "product_ids"]
+      }
+    },
+    "cvss_V2_type": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "description": "CVSS Version",
+          "type": "string",
+          "enum": ["2.0"]
+        },
+        "vectorString": {
+          "type": "string",
+          "pattern": "^((AV:[NAL]|AC:[LMH]|Au:[MSN]|[CIA]:[NPC]|E:(U|POC|F|H|ND)|RL:(OF|TF|W|U|ND)|RC:(UC|UR|C|ND)|CDP:(N|L|LM|MH|H|ND)|TD:(N|L|M|H|ND)|[CIA]R:(L|M|H|ND))/)*(AV:[NAL]|AC:[LMH]|Au:[MSN]|[CIA]:[NPC]|E:(U|POC|F|H|ND)|RL:(OF|TF|W|U|ND)|RC:(UC|UR|C|ND)|CDP:(N|L|LM|MH|H|ND)|TD:(N|L|M|H|ND)|[CIA]R:(L|M|H|ND))$"
+        },
+        "baseScore": { "type": "number" },
+        "baseSeverity": { "$ref": "#/$defs/cvss_baseSeverity_type" }
+      }
+    },
+    "cvss_V3_type": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "description": "CVSS Version",
+          "type": "string",
+          "enum": ["3.0", "3.1"]
+        },
+        "vectorString": {
+          "type": "string",
+          "pattern": "^CVSS:3[.]([01])/((AV:[NALP]|AC:[LH]|PR:[NLH]|UI:[NR]|S:[UC]|[CIA]:[NLH]|E:[XUPFH]|RL:[XOTWU]|RC:[XURC]|[CIA]R:[XLMH]|MAV:[XNALP]|MAC:[XLH]|MPR:[XNLH]|MUI:[XNR]|MS:[XUC]|M[CIA]:[XNLH])/)*(AV:[NALP]|AC:[LH]|PR:[NLH]|UI:[NR]|S:[UC]|[CIA]:[NLH]|E:[XUPFH]|RL:[XOTWU]|RC:[XURC]|[CIA]R:[XLMH]|MAV:[XNALP]|MAC:[XLH]|MPR:[XNLH]|MUI:[XNR]|MS:[XUC]|M[CIA]:[XNLH])$"
+        },
+        "baseScore": { "type": "number" },
+        "baseSeverity": { "$ref": "#/$defs/cvss_baseSeverity_type" }
+      }
+    },
+    "cvss_V4_type": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "description": "CVSS Version",
+          "type": "string",
+          "enum": ["4.0"]
+        },
+        "vectorString": {
+          "type": "string",
+          "pattern": "^CVSS:4[.]0/AV:[NALP]/AC:[LH]/AT:[NP]/PR:[NLH]/UI:[NPA]/VC:[HLN]/VI:[HLN]/VA:[HLN]/SC:[HLN]/SI:[HLN]/SA:[HLN](/E:[XAPU])?(/CR:[XHML])?(/IR:[XHML])?(/AR:[XHML])?(/MAV:[XNALP])?(/MAC:[XLH])?(/MAT:[XNP])?(/MPR:[XNLH])?(/MUI:[XNPA])?(/MVC:[XNLH])?(/MVI:[XNLH])?(/MVA:[XNLH])?(/MSC:[XNLH])?(/MSI:[XNLHS])?(/MSA:[XNLHS])?(/S:[XNP])?(/AU:[XNY])?(/R:[XAUI])?(/V:[XDC])?(/RE:[XLMH])?(/U:(X|Clear|Green|Amber|Red))?$"
+        },
+        "baseScore": { "type": "number" },
+        "baseSeverity": { "$ref": "#/$defs/cvss_baseSeverity_type" }
+      }
+    },
+    "ScoringSystem_type": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "version": { "type": "string" },
+        "vectorString": { "type": "string" },
+        "baseScore": { "type": "number" },
+        "baseSeverity": { "type": "string" }
+      }
+    },
+    "content_type": {
+      "type": "object",
+      "properties": {
+        "cvss_v2": { "$ref": "#/$defs/cvss_V2_type" },
+        "cvss_v3": { "$ref": "#/$defs/cvss_V3_type" },
+        "cvss_v4": { "$ref": "#/$defs/cvss_V4_type" },
+        "ScoringSystem": { "$ref": "#/$defs/ScoringSystem_type" }
+      }
+    },
+    "metrics_type": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "properties": {
+          "content": { "$ref": "#/$defs/content_type" }
+        },
+        "required": ["content"]
+      }
+    },
+    "cwes_type": {
+      "title": "List of CWEs",
+      "description": "Contains a list of CWEs.",
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "title": "CWE",
+        "description": "Holds the MITRE standard Common Weakness Enumeration (CWE) for the weakness associated.",
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "url": { "type": "string", "format": "uri" }
+        },
+        "required": ["id", "title", "url"]
+      }
+    },
+    "category_type": {
+      "type": "object",
+      "properties": {
+        "term": { "type": "string", "enum": [null, "Info", "Low", "Critical"] },
+        "label": { "type": "string", "enum": [null, "INFO", "注意", "緊急"] }
+      }
+    },
+    "items_type": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "id": { "type": "string" },
+          "link": { "type": "string", "format": "uri" },
+          "updated": { "type": "string", "format": "date-time" },
+          "published": { "type": "string", "format": "date-time" },
+          "author": { "type": "string" },
+          "cpe": { "$ref": "#/$defs/cpe_type" },
+          "jvnpid": { "$ref": "#/$defs/jvnpid_type" }
+        },
+        "required": [
+          "title",
+          "id",
+          "link",
+          "updated",
+          "published",
+          "author",
+          "cpe",
+          "jvnpid"
+        ]
+      }
+    },
+    "entry_type": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "id": { "type": "string" },
+          "summary": { "type": "string" },
+          "link": { "type": "string", "format": "uri" },
+          "updated": { "type": "string", "format": "date-time" },
+          "published": { "type": "string", "format": "date-time" },
+          "references": { "$ref": "#/$defs/references_type" },
+          "products": { "$ref": "#/$defs/products_type" },
+          "metrics": { "$ref": "#/$defs/metrics_type" },
+          "cwes": { "$ref": "#/$defs/cwes_type" },
+          "category": { "$ref": "#/$defs/category_type" },
+          "items": { "$ref": "#/$defs/items_type" }
+        },
+        "required": ["title", "id", "summary", "link", "updated", "published"]
+      }
+    },
+    "feed_type": {
+      "type": "object",
+      "properties": {
+        "generator": { "$ref": "#/$defs/generator_type" },
+        "title": { "type": "string" },
+        "systemid": { "type": "string" },
+        "link": { "type": "string", "format": "uri" },
+        "updated": { "type": "string", "format": "date-time" },
+        "lang": { "type": "string", "enum": ["ja", "en"] },
+        "author": { "$ref": "#/$defs/author_type" },
+        "distribution": { "$ref": "#/$defs/distribution_type" },
+        "entry": { "$ref": "#/$defs/entry_type" }
+      },
+      "required": [
+        "generator",
+        "title",
+        "systemid",
+        "link",
+        "updated",
+        "lang",
+        "author",
+        "distribution",
+        "entry"
+      ]
+    },
+    "status_type": {
+      "type": "object",
+      "properties": {
+        "version": { "type": "string" },
+        "method": { "type": "string" },
+        "feed": { "type": "string" },
+        "lang": { "type": "string" },
+        "retCd": { "type": "integer" },
+        "retMax": { "type": "string" },
+        "errCd": { "type": "string" },
+        "errMsg": { "type": "string" },
+        "totalRes": { "type": "string" },
+        "totalResRet": { "type": "string" },
+        "firstRes": { "type": "string" }
+      }
+    }
+  }
+}

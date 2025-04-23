@@ -35,58 +35,65 @@
 
 - 必須パラメタ以外を指定しない場合には、datePublicStart=現在の年、metricType=cvssV3 を適用するため、CVSS Ver3 に関する、現在の年の 1 月～ 12 月分の統計情報を出力します。
 
-- \[例\]  
-   必須パラメタのみを指定して統計情報を取得したい場合  
+- \[例\] 必須パラメタのみを指定して統計情報を取得したい場合  
    ( datePublicStart=現在の年, metricType=cvssv3 )  
    `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=oka`
+
+<br>
 
 #### nameType
 
 製品識別子タイプとして、\[ cpe \| jvnpid \| vid \| pid \]のいずれか一つを指定します。
 
+<br>
+
 #### productName & nameType=cpe
 
 製品識別子として、CPE 製品識別子を指定します。
 
+- productName & nameType, cweId, metricType, datePublicStart, datePublicEnd は、組み合わせて使用できます。
 - cpe:2.3{part}:{vendor}:{product}  
   {part}フィールド ... \[ h | o | a | \* \]  
   {vendor}:{product}フィールド ... CPE ベンダ名、製品名
-- ワイルドカード(\*) 指定可、アスキー文字、大文字／小文字区別なし、複数指定は不可
+- ワイルドカード(\*) 指定可、アスキー文字、大文字／小文字区別なし
+- 複数指定は不可
 - URL エンコードされたエスケープシーケンス
-- \[例\]  
-   Apache HTTPD 全てのバージョンに関する統計情報を取得したい場合  
+- \[例\] Apache HTTPD 全てのバージョンに関する統計情報を取得したい場合  
    ( datePublicStart=現在の年, metricType=cvssV3 )  
    `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=oka&nameType=cpe&ProductName=cpe:2.3:a:apache:http_server`
+
+<br>
 
 #### cweId
 
 CWE 識別子として、CWE 番号を指定します。
 
+- productName & nameType, cweId, metricType, datePublicStart, datePublicEnd は、組み合わせて使用できます。
 - 複数指定は不可
-- \[例\]  
-   CWE-79 に関する統計情報を取得したい場合  
-   ( datePublicStart=現在の年, metricType=cvssV3 )  
+- \[例\] CWE-79 に関する統計情報を取得したい場合 (datePublicStart=現在の年, metricType=cvssV3)  
    `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=oka&cweId=CWE-79`
+
+<br>
 
 #### metricType
 
 評価タイプとして、\[ cvssV2 \| cvssV3 \| cvssV4 \]のいずれか一つを指定します。
 
-- \[例\]  
-   CVSS Ver4 に関する統計情報を取得したい場合  
-   ( datePublicStart=現在の年 )  
+- productName & nameType, cweId, metricType, datePublicStart, datePublicEnd は、組み合わせて使用できます。
+- \[例\] CVSS Ver4 に関する統計情報を取得したい場合 (datePublicStart=現在の年)  
    `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=oka&metricType=cvssV4`
+
+<br>
 
 #### datePublicStart. datePublicEnd
 
 発見日開始年、発見日終了年を指定します。
 
+- productName & nameType, cweId, metricType, datePublicStart, datePublicEnd は、組み合わせて使用できます。
 - datePublicStart の最小値は 1998
 - datePublicStart のみを指定した場合には、発見日開始年以降が対象
 - datePublicEnd のみを指定した場合には、発見日終了年以前が対象
-- \[例\]  
-   期間を指定して統計情報を取得したい場合  
-   ( metricType=cvssV3 )  
+- \[例\] 期間を指定して統計情報を取得したい場合 (metricType=cvssV3)  
    `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=oka&datePublicStart=2005`  
    `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=oka&datePublicEnd=2005`  
    `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=oka&datePublicStart=2005&datePublicEnd=2025`
@@ -103,7 +110,9 @@ CWE 識別子として、CWE 番号を指定します。
 
 ### JSON スキーマ
 
-- TBD
+- MyJVN Statistics
+  - https://jvndb.jvn.jp/schema/myjvn_statistics_1.0.json?20250419
+  - [ myjvn_statistics_1.0.json ](../schemas/myjvn_statistics_1.0.json)
 
 ### 例
 
@@ -113,9 +122,28 @@ CWE 識別子として、CWE 番号を指定します。
 
 ```
 {
-  "format": "mjstat:sumJvnDb",
-  "version": "4.0.0",
-  "timestamp": "2025-04-02T00:38:11+09:00",
+  "$schema": "https://jvndb.jvn.jp/schema/myjvn_statistics_1.0.json?20250419",
+  "generator": {
+    "engine": {
+      "version": "4.0.0",
+      "name": "MyJVN API"
+    }
+  },
+  "title": "JVNDB 脆弱性対策統計データ",
+  "systemid": "jvnpid:1.0::ipa:myjvn_api_getStatistics:4.0.0",
+  "link": "https://jvndb.jvn.jp/apis/myjvn/",
+  "updated": "更新日",
+  "lang": "表示言語 (ja:日本語、en:英語 )",
+  "author": {
+    "name": "IPA",
+    "uri": "https://www.ipa.go.jp/"
+  },
+  "distribution": {
+    "tlp": {
+      "label": "CLEAR",
+      "url": "https://www.first.org/tlp/"
+    }
+  },
   "dataTotal": {
     "$comment": "脆弱性対策情報総件数、ベンダ総件数、製品総件数",
     "vulinfo": 234156,
@@ -126,7 +154,7 @@ CWE 識別子として、CWE 番号を指定します。
     "$comment": "指定されたパラメタを記録します。",
     "nameType": "製品識別子タイプ",
     "productName": "製品識別子",
-    "cweId": "CWE番号",
+    "cweId": "CWE 番号",
     "metricType": "評価タイプ",
     "datePublicStart": "発見日開始年",
     "datePublicEnd": "発見日終了年"
@@ -201,4 +229,3 @@ CWE 識別子として、CWE 番号を指定します。
   }
 }
 ```
-
