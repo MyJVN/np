@@ -9,7 +9,7 @@
 | 製品一覧の取得               | getProductList      | フィルタリング条件に当てはまる製品名リストを取得します。                     | [ XML ](docs/getProductList_api_hnd.md)              | [ JSON ](docs/getProductList_api_oka.md)      |
 | 脆弱性対策概要情報一覧の取得 | getVulnOverviewList | フィルタリング条件に当てはまる脆弱性対策の概要情報リストを取得します。       | [ XML ](docs/getVulnOverviewList_api_hnd.md)         | [ JSON ](docs/getVulnOverviewList_api_oka.md) |
 | 脆弱性対策詳細情報の取得     | getVulnDetailInfo   | フィルタリング条件に当てはまる脆弱性対策の詳細情報を取得します。             | [ XML ](docs/getVulnDetailInfo_api_hnd.md)           | [ JSON ](docs/getVulnDetailInfo_api_oka.md)   |
-| 脆弱性対策詳細情報の取得     | getStatistics       | 脆弱性対策情報を、登録件数、深刻度、脆弱性種別で集計したデータを取得します。 | [ XML ](docs/getStatistics_api_hnd.md)               | [ JSON ](docs/getStatistics_api_oka.md)       |
+| 脆弱性対策情報統計データの取得     | getStatistics       | 脆弱性対策情報を、登録件数、深刻度、脆弱性種別で集計したデータを取得します。 | [ XML ](docs/getStatistics_api_hnd.md)               | [ JSON ](docs/getStatistics_api_oka.md)       |
 
 <br>
 <br>
