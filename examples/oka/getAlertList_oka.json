@@ -77,9 +77,9 @@
             "products": [
               {
                 "vname": "東京電機大学",
+                "product_id": "jvnpid:1.0::dendai.ac.jp:myjvn_api",
                 "pname": "マイジェイブイエヌ API",
                 "product_ids": {
-                  "jvnpid": "jvnpid:1.0::dendai.ac.jp:myjvn_api",
                   "cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api:*:*:*:*:*:*:*:*"
                 }
               }
@@ -96,10 +96,10 @@
             "products": [
               {
                 "vname": "東京電機大学",
+                "product_id": "jvnpid:1.0::dendai.ac.jp:myjvn_api:4.0.0",
                 "pname": "マイジェイブイエヌ API",
                 "version": "4.0.0",
                 "product_ids": {
-                  "jvnpid": "jvnpid:1.0::dendai.ac.jp:myjvn_api:4.0.0",
                   "cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api:4.0.0:*:*:*:*:*:*:*"
                 }
               }
