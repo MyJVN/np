@@ -29,21 +29,21 @@
       "initial_release_date": "2018-11-15T16:17:27+09:00",
       "public_release_date": "2018-11-14T00:00:00+09:00",
       "status": "final",
-      "version": "3.0.0",
+      "version": "3",
       "revision_history": [
         {
           "date": "2018-11-15T16:17:27+09:00",
-          "number": "1.0.0",
+          "number": "1",
           "summary": "[2018年11月15日] 掲載"
         },
         {
           "date": "2018-11-20T10:37:07+09:00",
-          "number": "2.0.0",
+          "number": "2",
           "summary": "[2018年11月20日] CVSS による深刻度：内容を更新"
         },
         {
           "date": "2025-04-06T02:00:00+09:00",
-          "number": "3.0.0",
+          "number": "3",
           "summary": "XML形式からJSON形式に変換"
         }
       ]
@@ -87,26 +87,38 @@
   "product_tree": {
     "branches": [
       {
-        "category": "vendor",
-        "name": "ベリタス",
-        "product": {
-          "product_id": "jvnpid:1.0::veritas:netbackup",
-          "name": "Veritas NetBackup",
-          "product_identification_helper": {
-            "cpe": "cpe:2.3:a:veritas:netbackup:*:*:*:*:*:*:*:*"
+        "branches": [
+          {
+            "product": {
+              "product_id": "jvnpid:1.0::veritas:netbackup",
+              "name": "Veritas NetBackup",
+              "product_identification_helper": {
+                "cpe": "cpe:2.3:a:veritas:netbackup:*:*:*:*:*:*:*:*"
+              }
+            },
+            "category": "product_name",
+            "name": "Veritas NetBackup"
           }
-        }
+        ],
+        "category": "vendor",
+        "name": "ベリタス"
       },
       {
-        "category": "vendor",
-        "name": "日立",
-        "product": {
-          "product_id": "jvnpid:1.0::hitachi:jp1_veritas_netbackup",
-          "name": "JP1/VERITAS NetBackup",
-          "product_identification_helper": {
-            "cpe": "cpe:2.3:a:hitachi:jp1_veritas_netbackup:*:*:*:*:*:*:*:*"
+        "branches": [
+          {
+            "product": {
+              "product_id": "jvnpid:1.0::hitachi:jp1_veritas_netbackup",
+              "name": "JP1/VERITAS NetBackup",
+              "product_identification_helper": {
+                "cpe": "cpe:2.3:a:hitachi:jp1_veritas_netbackup:*:*:*:*:*:*:*:*"
+              }
+            },
+            "category": "product_name",
+            "name": "JP1/VERITAS NetBackup"
           }
-        }
+        ],
+        "category": "vendor",
+        "name": "日立"
       }
     ]
   },
@@ -192,8 +204,7 @@
       }
     },
     "title": "JVNDB 脆弱性対策詳細情報",
-    "systemid": "jvnpid:1.0::ipa:myjvn_api_getVulnDetailInfo:4.0.0",
-    "link": "https://jvndb.jvn.jp/apis/myjvn/",
+    "link": "https://jvndb.jvn.jp/apis/",
     "vulnid": "JVNDB-2018-009328",
     "updated": "2025-04-06T03:00:00+09:00",
     "lang": "ja",
@@ -290,7 +301,7 @@
   },
   "status": {
     "version": "4.0.0",
-    "method": "getDetailInfo",
+    "method": "getVulnDetailInfo",
     "feed": "oka",
     "lang": "ja",
     "retCd": 0,

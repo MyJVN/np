@@ -130,9 +130,8 @@ CWE 識別子として、CWE 番号を指定します。
     }
   },
   "title": "JVNDB 脆弱性対策統計データ",
-  "systemid": "jvnpid:1.0::ipa:myjvn_api_getStatistics:4.0.0",
   "link": "https://jvndb.jvn.jp/apis/myjvn/",
-  "updated": "更新日",
+  "updated": "更新日 [例] 2025-04-26T07:36:21+09:00",
   "lang": "表示言語 (ja:日本語、en:英語 )",
   "author": {
     "name": "IPA",

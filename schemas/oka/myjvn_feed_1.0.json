@@ -114,7 +114,6 @@
     "product_ids_type": {
       "type": "object",
       "properties": {
-        "jvnpid": { "$ref": "#/$defs/jvnpid_type" },
         "cpe": { "$ref": "#/$defs/cpe_type" },
         "id_refs": { "$ref": "#/$defs/id_refs_type" }
       }
@@ -125,12 +124,13 @@
       "items": {
         "type": "object",
         "properties": {
-          "vendor": { "type": "string" },
-          "product": { "type": "string" },
+          "vname": { "type": "string" },
+          "product_id": { "$ref": "#/$defs/jvnpid_type" },
+          "pname": { "type": "string" },
           "product_ids": { "$ref": "#/$defs/product_ids_type" },
           "version": { "type": "string" }
         },
-        "required": ["vendor", "product", "product_ids"]
+        "required": ["vname", "product_id", "pname", "product_ids"]
       }
     },
     "cvss_V2_type": {
@@ -232,7 +232,10 @@
       "type": "object",
       "properties": {
         "term": { "type": "string", "enum": [null, "Info", "Low", "Critical"] },
-        "label": { "type": "string", "enum": [null, "INFO", "注意", "緊急"] }
+        "label": {
+          "type": "string",
+          "enum": [null, "お知らせ", "注意", "緊急"]
+        }
       }
     },
     "items_type": {
@@ -247,8 +250,7 @@
           "updated": { "type": "string", "format": "date-time" },
           "published": { "type": "string", "format": "date-time" },
           "author": { "type": "string" },
-          "cpe": { "$ref": "#/$defs/cpe_type" },
-          "jvnpid": { "$ref": "#/$defs/jvnpid_type" }
+          "products": { "$ref": "#/$defs/products_type" }
         },
         "required": [
           "title",
@@ -257,8 +259,7 @@
           "updated",
           "published",
           "author",
-          "cpe",
-          "jvnpid"
+          "products"
         ]
       }
     },
@@ -289,7 +290,6 @@
       "properties": {
         "generator": { "$ref": "#/$defs/generator_type" },
         "title": { "type": "string" },
-        "systemid": { "type": "string" },
         "link": { "type": "string", "format": "uri" },
         "updated": { "type": "string", "format": "date-time" },
         "lang": { "type": "string", "enum": ["ja", "en"] },
@@ -300,7 +300,6 @@
       "required": [
         "generator",
         "title",
-        "systemid",
         "link",
         "updated",
         "lang",

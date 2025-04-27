@@ -1,0 +1,301 @@
+{
+  "$schema": "https://jvndb.jvn.jp/schema/myjvn_vuldef_1.0.csaf.json?20250419",
+  "document": {
+    "category": "myjvn_security_advisory",
+    "csaf_version": "2.1",
+    "distribution": {
+      "tlp": {
+        "label": "CLEAR",
+        "url": "https://www.first.org/tlp/"
+      }
+    },
+    "title": "MyJVN API セキュリティ情報",
+    "lang": "ja",
+    "notes": [
+      {
+        "category": "description",
+        "text": "MyJVN API は、APIを介してセキュリティ情報を提供するシステムです。"
+      }
+    ],
+    "tracking": {
+      "generator": {
+        "date": "2025-04-26T07:36:21+09:00",
+        "engine": {
+          "version": "4.0.0",
+          "name": "MyJVN API"
+        }
+      },
+      "id": "JVNDB-2025-000000",
+      "current_release_date": "2025-04-26T07:36:21+09:00",
+      "initial_release_date": "2025-04-04T14:45:58+09:00",
+      "status": "final",
+      "version": "1",
+      "revision_history": [
+        {
+          "date": "2025-04-04T14:45:58+09:00",
+          "number": "1",
+          "summary": "初版"
+        }
+      ]
+    },
+    "publisher": {
+      "category": "coordinator",
+      "name": "IPA",
+      "namespace": "https://www.ipa.go.jp"
+    },
+    "references": [
+      {
+        "category": "external",
+        "summary": "IPA security-alert",
+        "url": "https://www.ipa.go.jp/security/security-alert/index.html",
+        "source": "advisory"
+      }
+    ]
+  },
+  "product_tree": {
+    "branches": [
+      {
+        "branches": [
+          {
+            "product": {
+              "product_id": "jvnpid:1.0::dendai.ac.jp:myjvn_api",
+              "name": "マイジェイブイエヌ API",
+              "product_identification_helper": {
+                "cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api:*:*:*:*:*:*:*:*",
+                "purls": ["pkg:rpm/dendai.ac.jp/myjvn_api"],
+                "id_refs": [
+                  {
+                    "nameType": "swid",
+                    "value": "swid:dendai.ac.jp+myjvn_api"
+                  }
+                ]
+              }
+            },
+            "category": "product_name",
+            "name": "マイジェイブイエヌ API"
+          },
+          {
+            "branches": [
+              {
+                "category": "product_version",
+                "name": "4.0.0",
+                "product": {
+                  "product_id": "jvnpid:1.0::dendai.ac.jp:myjvn_api:4.0.0",
+                  "name": "マイジェイブイエヌ API 4.0.0",
+                  "product_identification_helper": {
+                    "cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api:4.0.0:*:*:*:*:*:*:*",
+                    "purls": ["pkg:rpm/dendai.ac.jp/myjvn_api@4.0.0"],
+                    "hashes": [
+                      {
+                        "file_hashes": [
+                          {
+                            "algorithm": "sha256",
+                            "value": "4ce633e7bc8cb97e9ea4e966a70b4748b46c7f7c0e572b0172ca4d24b5795561"
+                          }
+                        ]
+                      }
+                    ],
+                    "sbom_urls": [
+                      "http://dendai.ac.jp/spdxdocs#SPDXRef-myjvn_api-v4.0.0"
+                    ],
+                    "serial_numbers": [
+                      "186ce5f8-0049-953a-37da-bc89c6f07aa1",
+                      "urn:uuid:186ce5f8-0049-953a-37da-bc89c6f07aa1",
+                      "urn:tei:uuid:dendai.ac.jp:186ce5f8-0049-953a-37da-bc89c6f07aa1"
+                    ],
+                    "id_refs": [
+                      {
+                        "nameType": "swid",
+                        "value": "swid:dendai.ac.jp+myjvn_api+4.0.0"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "category": "product_name",
+            "name": "マイジェイブイエヌ API"
+          }
+        ],
+        "category": "vendor",
+        "name": "東京電機大学"
+      }
+    ]
+  },
+  "vulnerabilities": [
+    {
+      "cve": "CVE-2025-0000",
+      "cwes": [
+        {
+          "id": "CWE-502",
+          "name": "信頼できないデータのデシリアライゼーション(CWE-502)",
+          "url": "https://cwe.mitre.org/data/definitions/502.html"
+        }
+      ],
+      "notes": [
+        {
+          "category": "description",
+          "text": "脆弱性に関する補足情報です。"
+        }
+      ],
+      "product_status": {
+        "known_affected": [
+          "jvnpid:1.0::dendai.ac.jp:myjvn_api",
+          "jvnpid:1.0::dendai.ac.jp:myjvn_api:4.0.0"
+        ]
+      },
+      "threats": [
+        {
+          "category": "impact",
+          "details": "情報を取得される可能性があります。"
+        }
+      ],
+      "remediations": [
+        {
+          "category": "vendor_fix",
+          "details": "参考情報を参照して適切な対策を実施してください。",
+          "product_ids": [
+            "jvnpid:1.0::dendai.ac.jp:myjvn_api",
+            "jvnpid:1.0::dendai.ac.jp:myjvn_api:4.0.0"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "content": {
+            "cvss_v2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:C/I:C/A:C",
+              "baseScore": 10.0,
+              "baseSeverity": "HIGH"
+            },
+            "cvss_v3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "baseScore": 9.8,
+              "baseSeverity": "CRITICAL"
+            },
+            "cvss_v4": {
+              "version": "4.0",
+              "vectorString": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:L/SA:L",
+              "baseScore": 9.5,
+              "baseSeverity": "CRITICAL"
+            },
+            "source": "IPA",
+            "type": "Primary"
+          },
+          "products": [
+            "jvnpid:1.0::dendai.ac.jp:myjvn_api",
+            "jvnpid:1.0::dendai.ac.jp:myjvn_api:4.0.0"
+          ]
+        }
+      ]
+    }
+  ],
+  "jvn_extension": {
+    "generator": {
+      "engine": {
+        "version": "4.0.0",
+        "name": "MyJVN API"
+      }
+    },
+    "title": "JVNDB 脆弱性対策詳細情報",
+    "link": "https://jvndb.jvn.jp/apis/",
+    "vulnid": "JVNDB-2025-000000",
+    "updated": "2025-04-26T07:36:21+09:00",
+    "lang": "ja",
+    "author": {
+      "name": "IPA",
+      "uri": "https://www.ipa.go.jp/"
+    },
+    "distribution": {
+      "tlp": {
+        "label": "CLEAR",
+        "url": "https://www.first.org/tlp/"
+      }
+    },
+    "affected": [
+      {
+        "vendor": "東京電機大学",
+        "product": "マイジェイブイエヌ API",
+        "versions": [
+          {
+            "version": "8.1.2",
+            "status": "affected",
+            "description": "バージョン 8.1.2"
+          },
+          {
+            "version": "0.0.0",
+            "status": "affected",
+            "lessThan": "1.0.6",
+            "versionType": "semver",
+            "description": "バージョン 1.0.6未満"
+          },
+          {
+            "version": "2.1.0",
+            "status": "affected",
+            "lessThanOrEqual": "2.1.3",
+            "versionType": "semver",
+            "description": "バージョン 2.1.0以上 2.1.3以下"
+          },
+          {
+            "version": "3.1.1a",
+            "status": "affected",
+            "lessThan": "3.1.1d",
+            "versionType": "custom",
+            "description": "バージョン 3.1.1a以上 3.1.1d未満"
+          }
+        ]
+      }
+    ],
+    "cpeApplicability": [
+      {
+        "nodes": [
+          {
+            "operator": "OR",
+            "negate": false,
+            "cpeMatch": [
+              {
+                "vulnerable": true,
+                "criteria": "jvnpid:1.0::dendai.ac.jp:myjvn_api:8.1.2"
+              },
+              {
+                "vulnerable": true,
+                "criteria": "cpe:2.3:a:dendai.ac.jp:myjvn_api:*:*:*:*:*:*:*:*",
+                "versionStartIncluding": "0.0.0",
+                "versionEndExcluding": "1.0.6"
+              },
+              {
+                "vulnerable": true,
+                "criteria": "cpe:2.3:a:dendai.ac.jp:myjvn_api:*:*:*:*:*:*:*:*",
+                "versionStartIncluding": "2.1.0",
+                "versionEndIncluding": "2.1.3"
+              },
+              {
+                "vulnerable": true,
+                "criteria": "jvnpid:1.0::dendai.ac.jp:myjvn_api",
+                "versionStartIncluding": "3.1.1a",
+                "versionEndExcluding": "3.1.1d"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "status": {
+    "version": "4.0.0",
+    "method": "getVulnDetailInfo",
+    "feed": "oka",
+    "lang": "ja",
+    "retCd": 0,
+    "retMax": "1",
+    "errCd": "",
+    "errMsg": "",
+    "totalRes": "1",
+    "totalResRet": "1",
+    "firstRes": "1",
+    "vulnId": "JVNDB-2025-000000",
+    "ft": "jvncsaf"
+  }
+}

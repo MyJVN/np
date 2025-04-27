@@ -7,9 +7,8 @@
     }
   },
   "title": "JVNDB 脆弱性対策統計データ",
-  "systemid": "jvnpid:1.0::ipa:myjvn_api_getStatistics:4.0.0",
   "link": "https://jvndb.jvn.jp/apis/myjvn/",
-  "updated": "2025-04-02T00:38:11+09:00",
+  "updated": "2025-04-26T07:36:21+09:00",
   "lang": "ja",
   "author": {
     "name": "IPA",
@@ -189,9 +188,7 @@
     "totalRes": "16",
     "totalResRet": "16",
     "firstRes": "",
-    "theme": "sumCvss",
-    "type": "m",
-    "datePublicStartY": "2024",
-    "datePublicStartM": "1"
+    "datePublicStart": "2024",
+    "datePublicEnd": "2025"
   }
 }

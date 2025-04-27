@@ -112,9 +112,9 @@
 
 #### JSON スキーマ
 
-- VULDEF (VULINFO) - The Vulnerability Data Publication and Exchange Format Data Model for MyJVN
-  - https://jvndb.jvn.jp/schema/myjvn_vuldef_1.0.vulinfo.json?20250419
-  - [ myjvn_vuldef_1.0.vulinfo.json ](../schemas/myjvn_vuldef_1.0.vulinfo.json)
+- VULDEF (STIX) - The Vulnerability Data Publication and Exchange Format Data Model for MyJVN
+  - https://jvndb.jvn.jp/schema/myjvn_vuldef_1.0.stix.json?20250419
+  - [ myjvn_vuldef_1.0.stix.json ](../schemas/myjvn_vuldef_1.0.stix.json)
 
 #### 例
 
@@ -123,25 +123,29 @@
 #### 解説
 
 ```
-- generator, title, systemid, link: データフィードタイトル、URL
-- updated: 更新日
-- VULDEF-Document
-  - document
-    - category, csaf_version, distribution
-    - title: 概要
-    - lang: 表示言語
-    - notes: 概要
-    - tracking: 脆弱性対策情報識別子、更新日、発行日、履歴
-    - publisher: 発行者
-    - references: 参考情報
-  - product_tree: 製品情報
-  - vulnerabilities: 脆弱性情報
-    - cve: CVE番号
-    - cwes: 脆弱性種別
-    - product_status: 影響を受ける製品
-    - threats: 想定される影響
-    - remediations: 対策
-    - metrics: 脆弱性深刻度
+- type(bundle)
+- type(extension-definition)
+- type(identity)
+- type(jvn-jp-sdo)
+  - created: 発行日
+  - modified: 更新日
+  - VULDEF-Document
+    - document
+      - category, csaf_version, distribution
+      - title: 概要
+      - lang: 表示言語
+      - notes: 概要
+      - tracking: 脆弱性対策情報識別子、更新日、発行日、履歴
+      - publisher: 発行者
+      - references: 参考情報
+    - product_tree: 製品情報
+    - vulnerabilities: 脆弱性情報
+      - cve: CVE番号
+      - cwes: 脆弱性種別
+      - product_status: 影響を受ける製品
+      - threats: 想定される影響
+      - remediations: 対策
+      - metrics: 脆弱性深刻度
 ```
 
 <br>

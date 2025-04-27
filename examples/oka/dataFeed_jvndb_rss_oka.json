@@ -8,9 +8,8 @@
       }
     },
     "title": "JVNDB 脆弱性対策情報",
-    "systemid": "jvnpid:1.0::ipa:myjvn_api_getVulnOverviewList:4.0.0",
     "link": "https://jvndb.jvn.jp/apis/myjvn/",
-    "updated": "2025-04-07T07:36:21+09:00",
+    "updated": "2025-04-26T07:36:21+09:00",
     "lang": "ja",
     "author": {
       "name": "IPA",
@@ -49,10 +48,10 @@
         ],
         "products": [
           {
-            "vendor": "Sunshine Photo Cart",
-            "product": "Sunshine Photo Cart",
+            "vname": "Sunshine Photo Cart",
+            "product_id": "jvnpid:1.0::sunshinephotocart:sunshine_photo_cart",
+            "pname": "Sunshine Photo Cart",
             "product_ids": {
-              "jvnpid": "jvnpid:1.0::sunshinephotocart:sunshine_photo_cart",
               "cpe": "cpe:2.3:a:sunshinephotocart:sunshine_photo_cart:*:*:*:*:*:*:*:*"
             }
           }
@@ -103,18 +102,18 @@
         ],
         "products": [
           {
-            "vendor": "Rockwell Automation",
-            "product": "Industrial Data Center (IDC) with Veeam",
+            "vname": "Rockwell Automation",
+            "product_id": "jvnpid:1.0::rockwellautomation:industrial_data_center_%28idc%29_with_veeam",
+            "pname": "Industrial Data Center (IDC) with Veeam",
             "product_ids": {
-              "jvnpid": "jvnpid:1.0::rockwellautomation:industrial_data_center_%28idc%29_with_veeam",
               "cpe": "cpe:2.3:a:rockwellautomation:industrial_data_center_%28idc%29_with_veeam:*:*:*:*:*:*:*:*"
             }
           },
           {
-            "vendor": "Rockwell Automation",
-            "product": "VersaVirtual Appliance (VVA) with Veeam",
+            "vname": "Rockwell Automation",
+            "product_id": "jvnpid:1.0::rockwellautomation:versavirtual_appliance_%28vva%29_with_veeam",
+            "pname": "VersaVirtual Appliance (VVA) with Veeam",
             "product_ids": {
-              "jvnpid": "jvnpid:1.0::rockwellautomation:versavirtual_appliance_%28vva%29_with_veeam",
               "cpe": "cpe:2.3:a:rockwellautomation:versavirtual_appliance_%28vva%29_with_veeam:*:*:*:*:*:*:*:*"
             }
           }
@@ -128,47 +127,70 @@
         ]
       },
       {
-        "title": "MyJVN API",
-        "id": "JVNDB-9999-999999",
-        "summary": "MyJVN API バージョン表記なし",
-        "link": "https://jvndb.jvn.jp/apis/",
-        "updated": "2025-04-04T14:45:58+09:00",
+        "title": "MyJVN API セキュリティ情報",
+        "id": "JVNDB-2025-000000",
+        "summary": "MyJVN API は、APIを介してセキュリティ情報を提供するシステムです。",
+        "link": "https://jvndb.jvn.jp/ja/contents/2025/JVNDB-2025-000000.html",
+        "updated": "2025-04-26T07:36:21+09:00",
         "published": "2025-04-04T14:45:58+09:00",
         "references": [
           {
-            "url": "https://jvndb.jvn.jp/",
-            "summary": "JVN iPediaにようこそ",
-            "source": "IPA"
+            "summary": "IPA security-alert",
+            "url": "https://www.ipa.go.jp/security/security-alert/index.html",
+            "source": "advisory"
           }
         ],
         "products": [
           {
-            "vendor": "独立行政法人情報処理推進機構 (IPA)",
-            "product": "マイジェイブイエヌ API getProductList",
+            "vname": "東京電機大学",
+            "product_id": "jvnpid:1.0::dendai.ac.jp:myjvn_api",
+            "pname": "マイジェイブイエヌ API",
             "product_ids": {
-              "jvnpid": "jvnpid:1.0::ipa:myjvn_api_getProductList",
-              "cpe": "cpe:2.3:a:ipa:myjvn_api_getProductList:*:*:*:*:*:*:*:*",
+              "cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api:*:*:*:*:*:*:*:*",
               "id_refs": [
                 {
                   "nameType": "purl",
-                  "value": "pkg:/ipa/myjvn_api_getProductList"
+                  "value": "pkg:rpm/dendai.ac.jp/myjvn_api"
                 },
                 {
                   "nameType": "swid",
-                  "value": "swid:ipa.go.jp+myjvn_api+getProductList"
+                  "value": "swid:dendai.ac.jp+myjvn_api"
                 }
               ]
             }
           },
           {
-            "vendor": "東京電機大学",
-            "product": "マイジェイブイエヌ API",
+            "vname": "東京電機大学",
+            "product_id": "jvnpid:1.0::dendai.ac.jp:myjvn_api:4.0.0",
+            "pname": "マイジェイブイエヌ API",
+            "version": "バージョン [例] 4.0.0",
             "product_ids": {
-              "jvnpid": "jvnpid:1.0::dendai.ac.jp:myjvn_api",
-              "cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api:*:*:*:*:*:*:*:*",
+              "cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api:4.0.0:*:*:*:*:*:*:*",
               "id_refs": [
-                { "nameType": "purl", "value": "pkg:/dendai.ac.jp/myjvn_api" },
-                { "nameType": "swid", "value": "swid:dendai.ac.jp+myjvn_api" }
+                {
+                  "nameType": "purl",
+                  "value": "pkg:rpm/dendai.ac.jp/myjvn_api@4.0.0"
+                },
+                {
+                  "nameType": "sha256",
+                  "value": "4ce633e7bc8cb97e9ea4e966a70b4748b46c7f7c0e572b0172ca4d24b5795561"
+                },
+                {
+                  "nameType": "spdx",
+                  "value": "http://dendai.ac.jp/spdxdocs#SPDXRef-myjvn_api-v4.0.0"
+                },
+                {
+                  "nameType": "uuid",
+                  "value": "186ce5f8-0049-953a-37da-bc89c6f07aa1"
+                },
+                {
+                  "nameType": "tei",
+                  "value": "urn:tei:uuid:dendai.ac.jp:186ce5f8-0049-953a-37da-bc89c6f07aa1"
+                },
+                {
+                  "nameType": "swid",
+                  "value": "swid:dendai.ac.jp+myjvn_api+4.0.0"
+                }
               ]
             }
           }
@@ -178,7 +200,7 @@
             "content": {
               "cvss_v2": {
                 "version": "2.0",
-                "vectorString": "AV:N/AC:M/Au:N/C:N/I:P/A:N",
+                "vectorString": "AV:N/AC:L/Au:N/C:C/I:C/A:C",
                 "baseScore": 10.0,
                 "baseSeverity": "HIGH"
               },
@@ -206,120 +228,9 @@
         ],
         "cwes": [
           {
-            "id": "CWE-674",
-            "title": "不適切な再帰制御",
-            "url": "https://cwe.mitre.org/data/definitions/674.html"
-          },
-          {
-            "id": "CWE-749",
-            "title": "危険なメソッドや機能の公開",
-            "url": "https://cwe.mitre.org/data/definitions/749.html"
-          }
-        ]
-      },
-      {
-        "title": "MyJVN API",
-        "id": "JVNDB-9998-999998",
-        "summary": "MyJVN API バージョン表記あり",
-        "link": "https://jvndb.jvn.jp/apis/",
-        "updated": "2025-04-04T14:45:58+09:00",
-        "published": "2025-04-04T14:45:58+09:00",
-        "references": [
-          {
-            "url": "https://jvndb.jvn.jp/",
-            "summary": "JVN iPediaにようこそ",
-            "source": "IPA"
-          }
-        ],
-        "products": [
-          {
-            "vendor": "独立行政法人情報処理推進機構 (IPA)",
-            "product": "マイジェイブイエヌ API getProductList",
-            "version": "4.0.0",
-            "product_ids": {
-              "jvnpid": "jvnpid:1.0::ipa:myjvn_api_getProductList:4.0.0",
-              "cpe": "cpe:2.3:a:ipa:myjvn_api_getProductList:4.0.0:*:*:*:*:*:*:*",
-              "id_refs": [
-                {
-                  "nameType": "sha256",
-                  "value": "B93C2754A3B01C367CBA38E5A0C44941B39579CC0383E500C20B1D0AB13E0FFC"
-                },
-                {
-                  "nameType": "purl",
-                  "value": "pkg:/ipa/myjvn_api_getProductList:4.0.0"
-                },
-                {
-                  "nameType": "swid",
-                  "value": "swid:ipa.go.jp+myjvn_api_getProductList+4.0.0"
-                }
-              ]
-            }
-          },
-          {
-            "vendor": "東京電機大学",
-            "product": "マイジェイブイエヌ API",
-            "version": "4.0.0",
-            "product_ids": {
-              "jvnpid": "jvnpid:1.0::dendai.ac.jp:myjvn_api:4.0.0",
-              "cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api:4.0.0:*:*:*:*:*:*:*",
-              "id_refs": [
-                {
-                  "nameType": "sha256",
-                  "value": "9BE897694CFD0D06DDD83E7660CD09EA09CE04CB987AC932F056BDE1068F7148"
-                },
-                {
-                  "nameType": "purl",
-                  "value": "pkg:/dendai.ac.jp/myjvn_api:4.0.0"
-                },
-                {
-                  "nameType": "swid",
-                  "value": "swid:dendai.ac.jp+myjvn_api+4.0.0"
-                }
-              ]
-            }
-          }
-        ],
-        "metrics": [
-          {
-            "content": {
-              "cvss_v2": {
-                "version": "2.0",
-                "vectorString": "AV:N/AC:M/Au:N/C:N/I:P/A:N",
-                "baseScore": 10.0,
-                "baseSeverity": "CRITICAL"
-              },
-              "cvss_v3": {
-                "version": "3.0",
-                "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-                "baseScore": 9.8,
-                "baseSeverity": "CRITICAL"
-              },
-              "cvss_v4": {
-                "version": "4.0",
-                "vectorString": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:L/SA:L",
-                "baseScore": 9.5,
-                "baseSeverity": "CRITICAL"
-              },
-              "ScoringSystem": {
-                "name": "Common Vulnerability Scoring System V5",
-                "version": "5.0",
-                "vectorString": "CVSS:5.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:L/SA:L/LA:S",
-                "baseScore": 9.5,
-                "baseSeverity": "CRITICAL"
-              }
-            }
-          }
-        ],
-        "cwes": [
-          {
-            "id": "CWE-674",
-            "title": "不適切な再帰制御",
-            "url": "https://cwe.mitre.org/data/definitions/674.html"
-          },
-          {
-            "id": "CWE-749",
-            "title": "危険なメソッドや機能の公開",
-            "url": "https://cwe.mitre.org/data/definitions/749.html"
+            "id": "CWE-502",
+            "name": "信頼できないデータのデシリアライゼーション(CWE-502)",
+            "url": "https://cwe.mitre.org/data/definitions/502.html"
           }
         ]
       }
@@ -336,6 +247,7 @@
     "errMsg": "",
     "totalRes": "6",
     "totalResRet": "4",
-    "firstRes": "1"
+    "firstRes": "1",
+    "lt": "1"
   }
 }

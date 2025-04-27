@@ -199,9 +199,8 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
       }
     },
     "title": "JVNDB 製品一覧",
-    "systemid": "jvnpid:1.0::ipa:myjvn_api_getProductList:4.0.0",
     "link": "https://jvndb.jvn.jp/apis/myjvn/",
-    "updated": "更新日",
+    "updated": "更新日 [例] 2025-04-26T07:36:21+09:00",
     "lang": "表示言語 (ja:日本語、en:英語 )",
     "author": {
       "name": "IPA",
@@ -215,48 +214,65 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
     },
     "vendors": [
       {
-        "vendor_id": "JVNベンダ識別子 (jvnpid 1.0 形式) 
-                      [例] jvnpid:1.0::dendai.ac.jp",
-        "vid": "ベンダ番号 (JVN iPedia におけるベンダの識別番号)",
-        "vname": "ベンダ名",
-        "cpe": "CPEベンダ識別子 (CPE v2.3 形式) 
-                [例] cpe:2.3::dendai.ac.jp",
+        "vendor_id": "JVNベンダ識別子 (jvnpid 1.0 形式) [例] jvnpid:1.0::dendai.ac.jp",
+        "vid": "ベンダ番号 (JVN iPedia におけるベンダの識別番号) [例] 99999999991",
+        "vname": "ベンダ名 [例] 東京電機大学",
+        "cpe": "CPEベンダ識別子 (CPE v2.3 形式) [例] cpe:2.3::dendai.ac.jp",
         "products": [
           {
-            "product_id": "JVN製品識別子 (jvnpid 1.0 形式) 
-                           [例] jvnpid:1.0::dendai.ac.jp:myjvn_api",
-            "pid": "製品番号 (JVN iPedia における製品の識別番号)",
-            "pname": "製品名",
-            "version": "バージョン",
+            "$comment": "jvnpidがバージョン情報を出力しない場合",
+            "product_id": "JVN製品識別子 (jvnpid 1.0 形式) [例] jvnpid:1.0::dendai.ac.jp:myjvn_api",
+            "pid": "製品番号 (JVN iPedia における製品の識別番号) [例] 99999999991001",
+            "pname": "製品名 [例] マイジェイブイエヌ API",
             "product_ids": [
               {
-                "cpe": "CPE製品識別子 (CPE v2.3 形式) 
-                        [例] cpe:2.3:a:dendai.ac.jp:myjvn_api:*:*:*:*:*:*:*:*",
+                "cpe": "CPE製品識別子 (CPE v2.3 形式) [例] cpe:2.3:a:dendai.ac.jp:myjvn_api:*:*:*:*:*:*:*:*",
                 "id_refs": [
                   {
-                    "nameType": "sha256",
-                    "value": "ハッシュ値 
-                              [例] B93C2754A3B01C367CBA38E5A0C44941B39579CC0383E500C20B1D0AB13E0FFC"
-                  },
-                  {
                     "nameType": "purl",
-                    "value": "Package-Manager値 
-                              [例] pkg:/ipa/myjvn_api_getProductList:4.0.0"
+                    "value": "Package-Manager値 [例] pkg:rpm/dendai.ac.jp/myjvn_api"
                   },
                   {
                     "nameType": "swid",
-                    "value": "一意な識別子 
-                              [例] swid:ipa.go.jp+myjvn_alert+1.0.0"
+                    "value": "一意な識別子 [例] swid:dendai.ac.jp+myjvn_api"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "$comment": "jvnpidがバージョン情報を出力する場合",
+            "product_id": "JVN製品識別子 (jvnpid 1.0 形式) [例] jvnpid:1.0::dendai.ac.jp:myjvn_api:4.0.0",
+            "pid": "製品番号 (JVN iPedia における製品の識別番号) [例] 99999999991002",
+            "pname": "製品名 [例] マイジェイブイエヌ API",
+            "version": "バージョン [例] 4.0.0",
+            "product_ids": [
+              {
+                "cpe": "CPE製品識別子 (CPE v2.3 形式) [例] cpe:2.3:a:dendai.ac.jp:myjvn_api:4.0.0:*:*:*:*:*:*:*",
+                "id_refs": [
+                  {
+                    "nameType": "purl",
+                    "value": "Package-Manager値 [例] pkg:rpm/dendai.ac.jp/myjvn_api@4.0.0"
+                  },
+                  {
+                    "nameType": "sha256",
+                    "value": "ハッシュ値 [例] 4ce633e7bc8cb97e9ea4e966a70b4748b46c7f7c0e572b0172ca4d24b5795561"
+                  },
+                  {
+                    "nameType": "spdx",
+                    "value": "一意な識別子 [例] http://dendai.ac.jp/spdxdocs#SPDXRef-myjvn_api-v4.0.0"
                   },
                   {
                     "nameType": "uuid",
-                    "value": "一意な識別子 
-                              [例] 186ce5f8-0049-953a-37da-bc89c6f07aa1"
+                    "value": "一意な識別子 [例] 186ce5f8-0049-953a-37da-bc89c6f07aa1"
                   },
                   {
                     "nameType": "tei",
-                    "value": "TEI (Transparency Exchange API) 識別子 
-                              [例] urn:tei:uuid:protucts.example.com:186ce5f8-0049-953a-37da-bc89c6f07aa1"
+                    "value": "TEI (Transparency Exchange API) 識別子 [例] urn:tei:uuid:dendai.ac.jp:186ce5f8-0049-953a-37da-bc89c6f07aa1"
+                  },
+                  {
+                    "nameType": "swid",
+                    "value": "一意な識別子 [例] swid:dendai.ac.jp+myjvn_api+4.0.0"
                   }
                 ]
               }

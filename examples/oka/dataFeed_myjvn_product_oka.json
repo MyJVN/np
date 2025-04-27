@@ -8,9 +8,8 @@
       }
     },
     "title": "JVNDB 製品一覧",
-    "systemid": "jvnpid:1.0::ipa:myjvn_api_getProductList:4.0.0",
     "link": "https://jvndb.jvn.jp/apis/myjvn/",
-    "updated": "2025-03-24T06:17:53+09:00",
+    "updated": "2025-04-26T07:36:21+09:00",
     "lang": "ja",
     "author": {
       "name": "IPA",
@@ -41,9 +40,12 @@
                 "id_refs": [
                   {
                     "nameType": "purl",
-                    "value": "pkg:/dendai.ac.jp/myjvn_api"
+                    "value": "pkg:rpm/dendai.ac.jp/myjvn_api"
                   },
-                  { "nameType": "swid", "value": "swid:dendai.ac.jp+myjvn_api" }
+                  {
+                    "nameType": "swid",
+                    "value": "swid:dendai.ac.jp+myjvn_api"
+                  }
                 ]
               }
             ]
@@ -73,24 +75,24 @@
         "cpe": "cpe:2.3::ipa",
         "products": [
           {
-            "product_id": "jvnpid:1.0::ipa:myjvn_api_getProductList",
+            "product_id": "jvnpid:1.0::ipa:jvn_ipedia",
             "pid": "99999999992001",
-            "pname": "マイジェイブイエヌ API getProductList",
+            "pname": "ジェイブイエヌ アイペディア",
             "pname_i18": {
-              "ja": "マイジェイブイエヌ API getProductList",
-              "en": "MyJVN API getProductList"
+              "ja": "ジェイブイエヌ アイペディア",
+              "en": "JVN iPedia"
             },
             "product_ids": [
               {
-                "cpe": "cpe:2.3:a:ipa:myjvn_api_getProductList:*:*:*:*:*:*:*:*",
+                "cpe": "cpe:2.3:a:ipa:jvn_ipedia:*:*:*:*:*:*:*:*",
                 "id_refs": [
                   {
                     "nameType": "purl",
-                    "value": "pkg:/ipa/myjvn_api_getProductList"
+                    "value": "pkg:rpm/ipa/jvn_ipedia"
                   },
                   {
                     "nameType": "swid",
-                    "value": "swid:ipa.go.jp+myjvn_api+getProductList"
+                    "value": "swid:ipa.go.jp+jvn_ipedia"
                   }
                 ]
               }

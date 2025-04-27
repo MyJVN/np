@@ -4,7 +4,7 @@
 
 ## リクエスト
 
-- `https://jvndb.jvn.jp/myjvn?method=getAlertList&feed=hnd&パラメタ名=パラメタ値&...`
+- `https://jvndb.jvn.jp/myjvn?method=getAlertList&feed=oka&パラメタ名=パラメタ値&...`
   - リクエスト URL は、HTTPS の GET および POST に対応しています。
 
 ### パラメタ
@@ -91,9 +91,9 @@
 - バージョンが未指定(NULL)、もしくはワイルドカード(\*)が指定された場合、全てのバージョン情報を取得します。
 - URL エンコードされたエスケープシーケンス
 - \[例\] Apache HTTPD 全てのバージョンに関する注意警戒情報を取得したい場合  
-   `https://jvndb.jvn.jp/myjvn?method=getAlertList&feed=hnd&type=cpe&ProductName=cpe:2.3:a:apache:http_server`
+   `https://jvndb.jvn.jp/myjvn?method=getAlertList&feed=oka&type=cpe&ProductName=cpe:2.3:a:apache:http_server`
 - \[例\] Apache HTTPD 1.3.1.1 に関する注意警戒情報を取得したい場合  
-   `https://jvndb.jvn.jp/myjvn?method=getAlertList&feed=hnd&cpeName=cpe:2.3:a:apache:http_server:1.3.1.1`
+   `https://jvndb.jvn.jp/myjvn?method=getAlertList&feed=oka&cpeName=cpe:2.3:a:apache:http_server:1.3.1.1`
 
 <br>
 
@@ -107,7 +107,7 @@
 - バージョンが未指定(NULL)、もしくはワイルドカード(\*)が指定された場合、全てのバージョン情報を取得します。
 - URL エンコードされたエスケープシーケンス
 - \[例\] Apache HTTPD 全てのバージョンに関する注意警戒情報を取得したい場合  
-   `https://jvndb.jvn.jp/myjvn?method=getAlertList&feed=hnd&type=jvnpid&ProductName=jvnpid:1.0::apache:http_server`
+   `https://jvndb.jvn.jp/myjvn?method=getAlertList&feed=oka&type=jvnpid&ProductName=jvnpid:1.0::apache:http_server`
 
 <br>
 
@@ -116,7 +116,7 @@
 製品識別子として、JVN iPedia におけるベンダ番号を指定します。
 
 - \[例\] Apache Software Foundation(vid=8)に関する注意警戒情報を取得したい場合  
-   `https://jvndb.jvn.jp/myjvn?method=getAlertList&feed=hnd&type=vid&ProductName=8`
+   `https://jvndb.jvn.jp/myjvn?method=getAlertList&feed=oka&type=vid&ProductName=8`
 
 <br>
 
@@ -125,7 +125,7 @@
 製品識別子として、JVN iPedia における製品番号を指定します。
 
 - \[例\] Apache HTTPD(pid=141)に関する注意警戒情報を取得したい場合  
-   `https://jvndb.jvn.jp/myjvn?method=getAlertList&feed=hnd&type=pid&ProductName=141`
+   `https://jvndb.jvn.jp/myjvn?method=getAlertList&feed=oka&type=pid&ProductName=141`
 
 <br>
 
@@ -205,6 +205,7 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
 
 ```
 {
+  "$schema": "https://jvndb.jvn.jp/schema/myjvn_feed_1.0.json?20250419",
   "feed": {
     "generator": {
       "engine": {
@@ -213,9 +214,8 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
       }
     },
     "title": "IPA注意警戒サービスAPI",
-    "system": "jvnpid:1.0::ipa:myjvn_api_getAlertList:4.0.0",
     "link": "https://jvndb.jvn.jp/apis/myjvn/",
-    "updated": "更新日",
+    "updated": "更新日 [例] 2025-04-26T07:36:21+09:00",
     "lang": "表示言語 (ja:日本語、en:英語 )",
     "author": {
       "name": "IPA",
@@ -229,30 +229,60 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
     },
     "entry": [
       {
-        "title": "関連情報のタイトル",
-        "id": "関連情報の識別子 (MYJVN-ALT-西暦-番号)
-               [例] MYJVN-ALT-2025-0011",
-        "summary": "関連情報の概要",
-        "link": "関連情報の概要のURL",
+        "title": "関連情報のタイトル [例] MyJVN APIに関する更新情報",
+        "id": "関連情報の識別子 (MYJVN-ALT-西暦-番号) [例] MYJVN-ALT-2025-0000",
+        "summary": "関連情報の概要 [例] 更新に関する連絡です。",
+        "link": "関連情報の概要のURL [例] https://jvndb.jvn.jp/apis/",
         "category": {
           "term": "カテゴリ名 (Info, Low, Medium, High, Critical)",
-          "label": "カテゴリラベル (INFO, 注意, 警告, 重要, 緊急)"
+          "label": "カテゴリラベル (お知らせ, 注意, 警告, 重要, 緊急)"
         },
-        "updated": "更新日",
-        "published": "発行日",
+        "updated": "更新日 [例] 2025-04-26T07:36:21+09:00",
+        "published": "発行日 [例] 2025-04-04T14:45:58+09:00",
         "items": [
           {
-            "title": "関連情報のタイトル",
-            "id": "関連情報の識別子 (MYJVN-ALT-西暦-番号-サブ番号)
-                   [例] MYJVN-ALT-2025-0011-0001",
-            "summary": "関連情報の概要",
-            "link": "関連情報の概要のURL",
-            "updated": "更新日",
-            "published": "発行日",
-            "author": "発行者",
-            "cpe": "CPE製品識別子 (CPE v2.3 形式) [例] cpe:2.3:a:dendai.ac.jp:myjvn_api:*:*:*:*:*:*:*:*",
-            "jvnpid": "JVN製品識別子 (jvnpid 1.0 形式) [例] jvnpid:1.0::dendai.ac.jp:myjvn_api"
+            "$comment": "jvnpidがバージョン情報を出力しない場合",
+            "title": "関連情報のタイトル [例] APIに関する更新情報",
+            "id": "関連情報の識別子 (MYJVN-ALT-西暦-番号-サブ番号) [例] MYJVN-ALT-2025-0000-0001",
+            "summary": "関連情報の概要 [例] APIの仕様",
+            "link": "関連情報の概要のURL [例] https://jvndb.jvn.jp/apis/",
+            "updated": "更新日 [例] 2025-04-26T07:36:21+09:00",
+            "published": "発行日 [例] 2025-04-04T14:45:58+09:00",
+            "author": "発行者 [例] 東京電機大学",
+            "products": [
+              {
+                "$comment": "jvnpidがバージョン情報を出力しない場合",
+                "vname": "ベンダ名 [例] 東京電機大学",
+                "product_id": "JVN製品識別子 (jvnpid 1.0 形式) [例] jvnpid:1.0::dendai.ac.jp:myjvn_api",
+                "pname": "製品名 [例] マイジェイブイエヌ API",
+                "product_ids": {
+                  "cpe": "CPE製品識別子 (CPE v2.3 形式) [例] cpe:2.3:a:dendai.ac.jp:myjvn_api:*:*:*:*:*:*:*:*"
+                }
+              }
+            ]
           },
+          {
+            "$comment": "jvnpidがバージョン情報を出力する場合",
+            "title": "関連情報のタイトル [例] v4.0.0に関する更新情報",
+            "id": "関連情報の識別子 (MYJVN-ALT-西暦-番号-サブ番号) [例] MYJVN-ALT-2025-0000-0002",
+            "summary": "関連情報の概要 [例] v4.0.0の仕様",
+            "link": "関連情報の概要のURL [例] https://jvndb.jvn.jp/apis/",
+            "updated": "更新日 [例] 2025-04-26T07:36:21+09:00",
+            "published": "発行日 [例] 2025-04-04T14:45:58+09:00",
+            "author": "発行者 [例] 東京電機大学",
+            "products": [
+              {
+                "$comment": "jvnpidがバージョン情報を出力する場合",
+                "vname": "ベンダ名 [例] 東京電機大学",
+                "product_id": "JVN製品識別子 (jvnpid 1.0 形式) [例] jvnpid:1.0::dendai.ac.jp:myjvn_api:4.0.0",
+                "pname": "製品名 [例] マイジェイブイエヌ API",
+                "version": "バージョン [例] 4.0.0",
+                "product_ids": {
+                  "cpe": "CPE製品識別子 (CPE v2.3 形式) [例] cpe:2.3:a:dendai.ac.jp:myjvn_api:4.0.0:*:*:*:*:*:*:*"
+                }
+              }
+            ]
+          }
           { "$comment": "title,idなどを繰り返します。" }
         ]
       }
@@ -261,7 +291,7 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
   "status": {
     "version": "4.0",
     "method": "getAlertList",
-    "feed": "hnd",
+    "feed": "oka",
     "lang": "表示言語",
     "retCd": "リターンコード (0:成功時、1:エラー時)",
     "retMax": "エントリ上限値",

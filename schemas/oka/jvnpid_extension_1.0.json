@@ -213,7 +213,6 @@
       "properties": {
         "generator": { "$ref": "#/$defs/generator_type" },
         "title": { "type": "string" },
-        "systemid": { "type": "string" },
         "link": { "type": "string", "format": "uri" },
         "vulnid": { "type": "string" },
         "updated": { "type": "string", "format": "date-time" },
@@ -223,7 +222,7 @@
         "affected": { "$ref": "#/$defs/affected_type" },
         "cpeApplicability": { "$ref": "#/$defs/cpeApplicability_type" }
       },
-      "required": ["generator", "title", "systemid", "link", "vulnid"]
+      "required": ["generator", "title", "link", "vulnid"]
     }
   }
 }

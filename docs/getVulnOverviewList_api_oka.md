@@ -283,9 +283,8 @@ CVSSv4 基本評価基準、CVSSv4 深刻度を指定します。
       }
     },
     "title": "getVulnOverviewList API",
-    "id": "jvnpid:1.0::ipa:myjvn_api_getVulnOverviewList:4.0.0",
     "link": "https://jvndb.jvn.jp/apis/myjvn/",
-    "updated": "更新日",
+    "updated": "更新日 [例] 2025-04-26T07:36:21+09:00",
     "lang": "表示言語 (ja:日本語、en:英語 )",
     "author": {
       "name": "IPA",
@@ -299,18 +298,17 @@ CVSSv4 基本評価基準、CVSSv4 深刻度を指定します。
     },
     "entry": [
       {
-        "title": "脆弱性対策情報のタイトル",
-        "id": "脆弱性対策情報の識別子 (JVNDB-西暦-番号)
-               [例] JVNDB-2025-001234",
-        "summary": "脆弱性対策情報の概要",
-        "link": "脆弱性対策情報の概要のURL",
-        "updated": "更新日",
-        "published": "発行日",
+        "title": "脆弱性対策情報のタイトル [例] MyJVN API セキュリティ情報",
+        "id": "脆弱性対策情報の識別子 (JVNDB-西暦-番号) [例] JVNDB-2025-000000",
+        "summary": "脆弱性対策情報の概要 [例] MyJVN API は、APIを介してセキュリティ情報を提供するシステムです。",
+        "link": "脆弱性対策情報の概要のURL [例] https://jvndb.jvn.jp/ja/contents/2025/JVNDB-2025-000000.html",
+        "updated": "更新日 [例] 2025-04-26T07:36:21+09:00",
+        "published": "発行日 [例] 2025-04-04T14:45:58+09:00",
         "references": [
           {
-            "url": "参考情報のURL",
-            "summary": "タイトル or 概要",
-            "source": "情報源"
+            "summary": "参考情報のタイトル or 概要 [例] IPA security-alert",
+            "url": "参考情報のURL [例] https://www.ipa.go.jp/security/security-alert/index.html",
+            "source": "情報源 [例] advisory"
           },
           {
             "$comment": "url,summaryを繰り返します。"
@@ -319,46 +317,61 @@ CVSSv4 基本評価基準、CVSSv4 深刻度を指定します。
         "products": [
           {
             "$comment": "jvnpidがバージョン情報を出力しない場合",
-            "vendor": "ベンダ名",
-            "product": "製品名",
+            "vname": "ベンダ名 [例] 東京電機大学",
+            "product_id": "JVN製品識別子 (jvnpid 1.0 形式) [例] jvnpid:1.0::dendai.ac.jp:myjvn_api",
+            "pname": "製品名 [例] マイジェイブイエヌ API",
             "product_ids": {
-              "jvnpid": "JVN製品識別子 (jvnpid 1.0 形式)
-                         [例] jvnpid:1.0::dendai.ac.jp:myjvn_api",
-              "cpe": "CPE製品識別子 (CPE v2.3 形式)
-                      [例] cpe:2.3:a:dendai.ac.jp:myjvn_api:*:*:*:*:*:*:*:*"
-            }
-          },
-          {
-            "$comment": "jvnpidがバージョン情報を出力する場合",
-            "vendor": "ベンダ名",
-            "product": "製品名",
-            "version": "バージョン",
-            "product_ids": {
-              "jvnpid": "JVN製品識別子 (jvnpid 1.0 形式)
-                         [例] jvnpid:1.0::dendai.ac.jp:myjvn_api",
-              "cpe": "CPE製品識別子 (CPE v2.3 形式)
-                      [例] cpe:2.3:a:dendai.ac.jp:myjvn_api:*:*:*:*:*:*:*:*",
+              "cpe": "CPE製品識別子 (CPE v2.3 形式) [例] cpe:2.3:a:dendai.ac.jp:myjvn_api:*:*:*:*:*:*:*:*",
               "id_refs": [
                 {
-                  "nameType": "sha256",
-                  "value": "ハッシュ値
-                            [例] B93C2754A3B01C367CBA38E5A0C44941B39579CC0383E500C20B1D0AB13E0FFC"
-                },
-                {
                   "nameType": "purl",
-                  "value": "Package-Manager値
-                            [例] pkg:/ipa/myjvn_api_getProductList:4.0.0"
+                  "value": "Package-Manager値 [例] pkg:rpm/dendai.ac.jp/myjvn_api"
                 },
                 {
                   "nameType": "swid",
-                  "value": "一意な識別子
-                            [例] swid:ipa.go.jp+myjvn_alert+1.0.0"
+                  "value": "一意な識別子 [例] swid:dendai.ac.jp+myjvn_api"
                 }
               ]
             }
           },
           {
-            "$comment": "vendor,productなどを繰り返します。"
+            "$comment": "jvnpidがバージョン情報を出力する場合",
+            "vname": "ベンダ名 [例] 東京電機大学",
+            "product_id": "JVN製品識別子 (jvnpid 1.0 形式) [例] jvnpid:1.0::dendai.ac.jp:myjvn_api:4.0.0",
+            "pname": "製品名 [例] マイジェイブイエヌ API",
+            "version": "バージョン [例] 4.0.0",
+            "product_ids": {
+              "cpe": "CPE製品識別子 (CPE v2.3 形式) [例] cpe:2.3:a:dendai.ac.jp:myjvn_api:4.0.0:*:*:*:*:*:*:*",
+              "id_refs": [
+                {
+                  "nameType": "purl",
+                  "value": "Package-Manager値 [例] pkg:rpm/dendai.ac.jp/myjvn_api@4.0.0"
+                },
+                {
+                  "nameType": "sha256",
+                  "value": "ハッシュ値 [例] 4ce633e7bc8cb97e9ea4e966a70b4748b46c7f7c0e572b0172ca4d24b5795561"
+                },
+                {
+                  "nameType": "spdx",
+                  "value": "一意な識別子 [例] http://dendai.ac.jp/spdxdocs#SPDXRef-myjvn_api-v4.0.0"
+                },
+                {
+                  "nameType": "uuid",
+                  "value": "一意な識別子 [例] 186ce5f8-0049-953a-37da-bc89c6f07aa1"
+                },
+                {
+                  "nameType": "tei",
+                  "value": "TEI (Transparency Exchange API) 識別子 [例] urn:tei:uuid:dendai.ac.jp:186ce5f8-0049-953a-37da-bc89c6f07aa1"
+                },
+                {
+                  "nameType": "swid",
+                  "value": "一意な識別子 [例] swid:dendai.ac.jp+myjvn_api+4.0.0"
+                }
+              ]
+            }
+          },
+          {
+            "$comment": "vname,productなどを繰り返します。"
           }
         ],
         "metrics": [
@@ -366,42 +379,37 @@ CVSSv4 基本評価基準、CVSSv4 深刻度を指定します。
             "content": {
               "cvss_v2": {
                 "version": "CVSSバージョン 2.0",
-                "vectorString": "パラメタ短縮表記
-                                 [例] AV:N/AC:M/Au:N/C:N/I:P/A:N",
-                "baseScore": "基本値",
+                "vectorString": "パラメタ短縮表記 [例] AV:N/AC:L/Au:N/C:C/I:C/A:C",
+                "baseScore": "基本値 [例] 10.0",
                 "baseSeverity": "基本値深刻度 (LOW, MEDIUM, HIGH)"
               },
               "cvss_v3": {
                 "version": "CVSSバージョン 3.0 or 3.1",
-                "vectorString": "パラメタ短縮表記
-                                [例] CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-                "baseScore": "基本値",
+                "vectorString": "パラメタ短縮表記 [例] CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+                "baseScore": "基本値 [例] 9.8",
                 "baseSeverity": "基本値深刻度 (NONE, LOW, MEDIUM, HIGH, CRITICAL)"
               },
               "cvss_v4": {
                 "version": "CVSSバージョン 4.0",
-                "vectorString": "パラメタ短縮表記
-                                 [例] CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:L/SA:L",
-                "baseScore": "基本値",
+                "vectorString": "パラメタ短縮表記 [例] CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:L/SA:L",
+                "baseScore": "基本値 [例] 9.5",
                 "baseSeverity": "基本値深刻度 (NONE, LOW, MEDIUM, HIGH, CRITICAL)"
               },
               "ScoringSystem": {
-                "name": "スコアリングシステムの名称",
-                "version": "バージョン",
-                "vectorString": "パラメタ短縮表記",
-                "baseScore": "基本値",
-                "baseSeverity": "基本値深刻度"
+                "name": "スコアリングシステムの名称 [例] Common Vulnerability Scoring System V5",
+                "version": "バージョン [例] 5.0",
+                "vectorString": "パラメタ短縮表記 [例] CVSS:5.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:L/SA:L/LA:S",
+                "baseScore": "基本値 [例] 9.5",
+                "baseSeverity": "基本値深刻度 [例] CRITICAL"
               }
             }
           }
         ],
         "cwes": [
           {
-            "id": "CWE 番号
-                   [例] CWE-502",
-            "title": "CWE 説明
-                      [例] 信頼できないデータのデシリアライゼーション(CWE-502)",
-            "url": "CWE 掲載 URL"
+            "id": "CWE 番号 [例] CWE-502",
+            "name": "CWE 説明 [例] 信頼できないデータのデシリアライゼーション(CWE-502)",
+            "url": "CWE 掲載 URL [例] https://cwe.mitre.org/data/definitions/502.html"
           }
         ]
       },

@@ -8,7 +8,6 @@
       }
     },
     "title": "JVNDB 製品一覧",
-    "systemid": "jvnpid:1.0::ipa:myjvn_api_getProductList:4.0.0",
     "link": "https://jvndb.jvn.jp/apis/myjvn/",
     "updated": "2025-03-24T06:17:53+09:00",
     "lang": "ja",
@@ -39,16 +38,19 @@
                 "id_refs": [
                   {
                     "nameType": "purl",
-                    "value": "pkg:/dendai.ac.jp/myjvn_api"
+                    "value": "pkg:rpm/dendai.ac.jp/myjvn_api"
                   },
-                  { "nameType": "swid", "value": "swid:dendai.ac.jp+myjvn_api" }
+                  {
+                    "nameType": "swid",
+                    "value": "swid:dendai.ac.jp+myjvn_api"
+                  }
                 ]
               }
             ]
           },
           {
             "product_id": "jvnpid:1.0::dendai.ac.jp:myjvn_api:4.0.0",
-            "pid": "99999999991001",
+            "pid": "99999999991002",
             "pname": "マイジェイブイエヌ API",
             "version": "4.0.0",
             "product_ids": [
@@ -56,12 +58,24 @@
                 "cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api:4.0.0:*:*:*:*:*:*:*",
                 "id_refs": [
                   {
-                    "nameType": "sha256",
-                    "value": "9BE897694CFD0D06DDD83E7660CD09EA09CE04CB987AC932F056BDE1068F7148"
+                    "nameType": "purl",
+                    "value": "pkg:rpm/dendai.ac.jp/myjvn_api@4.0.0"
                   },
                   {
-                    "nameType": "purl",
-                    "value": "pkg:/dendai.ac.jp/myjvn_api:4.0.0"
+                    "nameType": "sha256",
+                    "value": "4ce633e7bc8cb97e9ea4e966a70b4748b46c7f7c0e572b0172ca4d24b5795561"
+                  },
+                  {
+                    "nameType": "spdx",
+                    "value": "http://dendai.ac.jp/spdxdocs#SPDXRef-myjvn_api-v4.0.0"
+                  },
+                  {
+                    "nameType": "uuid",
+                    "value": "186ce5f8-0049-953a-37da-bc89c6f07aa1"
+                  },
+                  {
+                    "nameType": "tei",
+                    "value": "urn:tei:uuid:dendai.ac.jp:186ce5f8-0049-953a-37da-bc89c6f07aa1"
                   },
                   {
                     "nameType": "swid",
@@ -77,48 +91,31 @@
         "vendor_id": "jvnpid:1.0::ipa",
         "vid": "10297",
         "vname": "独立行政法人情報処理推進機構 (IPA)",
+        "vname_i18": {
+          "ja": "独立行政法人情報処理推進機構 (IPA)",
+          "en": "INFORMATION-TECHNOLOGY PROMOTION AGENCY, JAPAN (IPA)"
+        },
         "cpe": "cpe:2.3::ipa",
         "products": [
           {
-            "product_id": "jvnpid:1.0::ipa:myjvn_api_getProductList",
+            "product_id": "jvnpid:1.0::ipa:jvn_ipedia",
             "pid": "99999999992001",
-            "pname": "マイジェイブイエヌ API getProductList",
+            "pname": "ジェイブイエヌ アイペディア",
+            "pname_i18": {
+              "ja": "ジェイブイエヌ アイペディア",
+              "en": "JVN iPedia"
+            },
             "product_ids": [
               {
-                "cpe": "cpe:2.3:a:ipa:myjvn_api_getProductList:*:*:*:*:*:*:*:*",
+                "cpe": "cpe:2.3:a:ipa:jvn_ipedia:*:*:*:*:*:*:*:*",
                 "id_refs": [
                   {
                     "nameType": "purl",
-                    "value": "pkg:/ipa/myjvn_api_getProductList"
+                    "value": "pkg:rpm/ipa/jvn_ipedia"
                   },
                   {
                     "nameType": "swid",
-                    "value": "swid:ipa.go.jp+myjvn_api+getProductList"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "product_id": "jvnpid:1.0::ipa:myjvn_api_getProductList:4.0.0",
-            "pid": "99999999992001",
-            "pname": "マイジェイブイエヌ API getProductList",
-            "version": "4.0.0",
-            "product_ids": [
-              {
-                "cpe": "cpe:2.3:a:ipa:myjvn_api_getProductList:4.0.0:*:*:*:*:*:*:*",
-                "id_refs": [
-                  {
-                    "nameType": "sha256",
-                    "value": "B93C2754A3B01C367CBA38E5A0C44941B39579CC0383E500C20B1D0AB13E0FFC"
-                  },
-                  {
-                    "nameType": "purl",
-                    "value": "pkg:/ipa/myjvn_api_getProductList:4.0.0"
-                  },
-                  {
-                    "nameType": "swid",
-                    "value": "swid:ipa.go.jp+myjvn_api_getProductList+4.0.0"
+                    "value": "swid:ipa.go.jp+jvn_ipedia"
                   }
                 ]
               }

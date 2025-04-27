@@ -121,9 +121,8 @@
       }
     },
     "title": "JVNDB ベンダ一覧",
-    "systemid": "jvnpid:1.0::ipa:myjvn_api_getVendorList:4.0.0",
     "link": "https://jvndb.jvn.jp/apis/myjvn/",
-    "updated": "更新日",
+    "updated": "更新日 [例] 2025-04-26T07:36:21+09:00",
     "lang": "表示言語 (ja:日本語、en:英語 )",
     "author": {
       "name": "IPA",
@@ -137,12 +136,10 @@
     },
     "vendors": [
       {
-        "vendor_id": "JVNベンダ識別子 (jvnpid 1.0 形式) 
-                      [例] jvnpid:1.0::dendai.ac.jp",
-        "vid": "ベンダ番号 (JVN iPedia におけるベンダの識別番号)",
-        "vname": "ベンダ名",
-        "cpe": "CPEベンダ識別子(CPE v2.3 形式) 
-                [例] cpe:2.3::dendai.ac.jp"
+        "vendor_id": "JVNベンダ識別子 (jvnpid 1.0 形式) [例] jvnpid:1.0::dendai.ac.jp",
+        "vid": "ベンダ番号 (JVN iPedia におけるベンダの識別番号) [例] 99999999991",
+        "vname": "ベンダ名 [例] 東京電機大学",
+        "cpe": "CPEベンダ識別子 (CPE v2.3 形式) [例] cpe:2.3::dendai.ac.jp"
       },
       { "$comment": "vendor_id,vid,vname,cpeなどを繰り返します。" }
     ]

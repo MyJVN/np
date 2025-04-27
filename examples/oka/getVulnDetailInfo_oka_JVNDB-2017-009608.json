@@ -28,16 +28,16 @@
       "current_release_date": "2025-04-06T03:00:00+09:00",
       "initial_release_date": "2017-11-16T15:06:40+09:00",
       "status": "final",
-      "version": "2.0.0",
+      "version": "2",
       "revision_history": [
         {
           "date": "2018-02-17T10:37:52+09:00",
-          "number": "1.0.0",
+          "number": "1",
           "summary": "[2017年11月16日] 掲載"
         },
         {
           "date": "2025-04-06T02:00:00+09:00",
-          "number": "2.0.0",
+          "number": "2",
           "summary": "XML形式からJSON形式に変換"
         }
       ]
@@ -74,15 +74,21 @@
   "product_tree": {
     "branches": [
       {
-        "category": "vendor",
-        "name": "PCU",
-        "product": {
-          "product_id": "jvnpid:1.0::pcu:pcu",
-          "name": "PCU",
-          "product_identification_helper": {
-            "cpe": "cpe:2.3:h:pcu:pcu:*:*:*:*:*:*:*:*"
+        "branches": [
+          {
+            "product": {
+              "product_id": "jvnpid:1.0::pcu:pcu",
+              "name": "PCU",
+              "product_identification_helper": {
+                "cpe": "cpe:2.3:h:pcu:pcu:*:*:*:*:*:*:*:*"
+              }
+            },
+            "category": "product_name",
+            "name": "PCU"
           }
-        }
+        ],
+        "category": "vendor",
+        "name": "PCU"
       }
     ]
   },
@@ -158,13 +164,12 @@
       }
     },
     "title": "JVNDB 脆弱性対策詳細情報",
-    "systemid": "jvnpid:1.0::ipa:myjvn_api_getVulnDetailInfo:4.0.0",
-    "link": "https://jvndb.jvn.jp/apis/myjvn/",
+    "link": "https://jvndb.jvn.jp/apis/",
     "vulnid": "JVNDB-2017-009608"
   },
   "status": {
     "version": "4.0.0",
-    "method": "getDetailInfo",
+    "method": "getVulnDetailInfo",
     "feed": "oka",
     "lang": "ja",
     "retCd": 0,
