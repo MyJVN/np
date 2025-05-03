@@ -68,80 +68,103 @@
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
-<VULDEF-Document version="3.1"
+<VULDEF-Document 
+  version="3.2"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns="https://jvn.jp/vuldef/"
-  xmlns:vuldef="https://jvn.jp/vuldef/"
+  xmlns="http://jvn.jp/vuldef/"
+  xmlns:vuldef="http://jvn.jp/vuldef/"
   xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
-  xsi:schemaLocation="https://jvn.jp/vuldef/ https://jvndb.jvn.jp/schema/vuldef_3.2.xsd
-            https://jvn.jp/rss/mod_sec/3.0/ https://jvndb.jvn.jp/schema/mod_sec_3.0.xsd
-            http://jvndb.jvn.jp/myjvn/Status https://jvndb.jvn.jp/schema/status_3.3.xsd"
-  xml:lang="ja">
-
+  xmlns:sec="http://jvn.jp/rss/mod_sec/3.0/"
+  xmlns:marking="http://data-marking.mitre.org/Marking-1"
+  xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1"
+  xsi:schemaLocation="http://jvn.jp/vuldef/ https://jvndb.jvn.jp/schema/vuldef_3.2.xsd
+                      http://jvn.jp/rss/mod_sec/3.0/ https://jvndb.jvn.jp/schema/mod_sec_3.0.xsd
+                      http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1 https://jvndb.jvn.jp/schema/tlp_marking.xsd
+                      http://jvndb.jvn.jp/myjvn/Status https://jvndb.jvn.jp/schema/status_3.3.xsd"
+  xml:lang="ja"
+  >
   <Vulinfo>
-    <VulinfoID>脆弱性情報ID</VulinfoID>
+    <VulinfoID>脆弱性対策情報の識別子 (JVNDB-西暦-番号) [例] JVNDB-2025-000000</VulinfoID>
     <VulinfoData>
-      <Title>タイトル</Title>
+      <Title>タイトル [例] MyJVN API セキュリティ情報</Title>
       <VulinfoDescription>
-        <Overview>概要</Overview>
+        <Overview>セキュリティ情報の概要 [例] MyJVN API は、APIを介してセキュリティ情報を提供するシステムです。</Overview>
       </VulinfoDescription>
       <Affected>
         <AffectedItem>
-          <Name>ベンダ名</Name>
-          <ProductName>製品名</ProductName>
-          <VersionNumber>バージョン情報</VersionNumber>
+          <Name>ベンダ名 [例] 東京電機大学</Name>
+          <ProductName>製品名 [例] マイジェイブイエヌ API</ProductName>
+          <VersionNumber>バージョン [例] 4.0.0</VersionNumber>
           <!-- バージョン情報の件数分 VersionNumber ノードを繰り返します。 -->
         </AffectedItem>
-        <!-- 製品の件数分 AffectedItem ノードを繰り返します。 -->
+        <!-- 製品の件数分 AffectedItem を繰り返します。 -->
       </Affected>
 
       <Impact>
-        <Cvss version="CVSS バージョン">
-          <Severity type="基本|現状|環境評価基準">typeで指定された評価基準の深刻度</Severity>
-          <Vector>短縮表記</Vector>
-          <Base>CVSS 基本値</Base>
+        <Cvss version="CVSS バージョン 2.0">
+          <Severity type="基本|現状|環境評価基準 (Base, Temp, Env)">typeで指定された評価基準の深刻度 (Low, Medium, High)</Severity>
+          <Vector>パラメタ短縮表記 [例] AV:N/AC:L/Au:N/C:C/I:C/A:C</Vector>
+          <Base>基本値 [例] 10.0</Base>
+        </Cvss>
+        <Cvss version="CVSS バージョン 3.0">
+          <Severity type="基本|現状|環境評価基準 (Base, Temp, Env)">typeで指定された評価基準の深刻度 (None, Low, Medium,
+            High, Critical)</Severity>
+          <Vector>パラメタ短縮表記 [例] CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H</Vector>
+          <Base>基本値 [例] 9.8</Base>
         </Cvss>
         <ImpactItem>
-          <Description>想定される影響</Description>
+          <Description>想定される影響 [例] 情報を取得される可能性があります。</Description>
         </ImpactItem>
       </Impact>
 
       <Solution>
         <SolutionItem>
-          <Description>対策</Description>
+          <Description>対策 [例] 参考情報を参照して適切な対策を実施してください。</Description>
         </SolutionItem>
       </Solution>
 
       <Related>
         <RelatedItem type="advisory">
-          <Name>参考情報源</Name>
-          <VulinfoID>参考情報ID</VulinfoID>
-          <URL>参考情報URL</URL>
+          <Name>情報源 [例] advisory</Name>
+          <VulinfoID>参考情報のタイトル or 概要 [例] IPA security-alert</VulinfoID>
+          <URL>参考情報のURL [例] https://www.ipa.go.jp/security/security-alert/</URL>
         </RelatedItem>
-        <!-- 参考情報の件数分 RelatedItem ノードを繰り返します。 -->
+        <!-- 参考情報の件数分 RelatedItem を繰り返します。 -->
         <RelatedItem type="cwe">
           <Name>JVNDB</Name>
-          <VulinfoID>CWE-ID</VulinfoID>
-          <Title>CWE名</Title>
-          <URL>CWEURL</URL>
+          <VulinfoID>CWE 番号 [例] CWE-502</VulinfoID>
+          <Title>CWE 説明 [例] 信頼できないデータのデシリアライゼーション(CWE-502)</Title>
+          <URL>CWE 掲載 URL [例] https://cwe.mitre.org/data/definitions/502.html</URL>
         </RelatedItem>
-        <!-- CWE情報の件数分 RelatedItem ノードを繰り返します。 -->
+        <!-- CWE情報の件数分 RelatedItem を繰り返します。 -->
       </Related>
 
       <History>
         <HistoryItem>
-          <Description>更新履歴</Description>
+          <HistoryNo>更新バージョン [例] 1</HistoryNo>
+          <DateTime>履歴記載日 [例] 2025-04-04T14:45:58+09:00</DateTime>
+          <Description>更新内容 [例] 初版</Description>
+        </HistoryItem>
+        <HistoryItem>
+          <HistoryNo>更新バージョン [例] 2</HistoryNo>
+          <DateTime>履歴記載日 [例] 2025-04-26T07:36:21+09:00</DateTime>
+          <Description>更新内容 [例] 更新版</Description>
         </HistoryItem>
       </History>
 
-      <DateFirstPublished>公開日</DateFirstPublished>
-      <DateLastUpdated>最終更新日</DateLastUpdated>
-      <DatePublic>発見日</DatePublic>
+      <DateFirstPublished>登録日 [例] 2025-04-04T14:45:58+09:00</DateFirstPublished>
+      <DateLastUpdated>最終更新日 [例] 2025-04-26T07:36:21+09:00</DateLastUpdated>
+      <DatePublic>公表日 [例] 2025-04-01T10:23:42+09:00</DatePublic>
     </VulinfoData>
 
   </Vulinfo>
-  <!-- フィルタリングに当てはまる脆弱性対策詳細情報の件数分 Vulinfo ノードを繰り返します。 -->
-
+  <!-- フィルタリングに当てはまる脆弱性対策詳細情報の件数分 Vulinfo を繰り返します。 -->
+  <sec:handling>
+    <marking:Marking>
+      <marking:Marking_Structure xsi:type="tlpMarking:TLPMarkingStructureType"
+        marking_model_name="TLP" marking_model_ref="http://www.us-cert.gov/tlp/" color="WHITE" />
+    </marking:Marking>
+  </sec:handling>
   <status:Status
     version="3.3"
     method="getVulnDetailInfo"

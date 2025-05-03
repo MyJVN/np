@@ -22,11 +22,11 @@
 | feed                               | フィードフォーマット名 | フィードフォーマット(=API バージョン)を示す名称 <br> oka を指定                                                                                           | ○    | －         |
 | startItem                          | エントリ開始位置       | 整数 1 ～応答エントリ数                                                                                                                                   | －   | 1          |
 | maxCountItem                       | エントリ取得件数       | 整数 1 ～ 50 (getVulnOverviewList エントリ上限値)                                                                                                         | －   | 50         |
-| rangelastModDate                   | 更新日の範囲指定       | NONE: 範囲指定なし、DAY: 前日以降 <br> WEEK:過去 1 週間以降、MONTH:過去 1 ヶ月以降                                                                        | －   | －         |
-| lastModStartDate                   | 更新日開始年月日       | 整数 8 桁                                                                                                                                                 | －   | －         |
-| lastModEndDate                     | 更新日終了年月日       | 整数 8 桁                                                                                                                                                 | －   | －         |
-| pubStartDate                       | 発行日開始年月日       | 整数 8 桁                                                                                                                                                 | －   | －         |
-| pubEndDate                         | 発行日終了年月日       | 整数 8 桁                                                                                                                                                 | －   | －         |
+| rangelastModDate                   | 最終更新日の範囲指定       | NONE: 範囲指定なし、DAY: 前日以降 <br> WEEK:過去 1 週間以降、MONTH:過去 1 ヶ月以降                                                                        | －   | －         |
+| lastModStartDate                   | 最終更新日開始年月日       | 整数 8 桁                                                                                                                                                 | －   | －         |
+| lastModEndDate                     | 最終更新日終了年月日       | 整数 8 桁                                                                                                                                                 | －   | －         |
+| pubStartDate                       | 登録日開始年月日       | 整数 8 桁                                                                                                                                                 | －   | －         |
+| pubEndDate                         | 登録日終了年月日       | 整数 8 桁                                                                                                                                                 | －   | －         |
 | nameType                           | 製品識別子タイプ       | cpe, jvnpid, vid, pid のいずれかひとつ                                                                                                                    | －   | －         |
 | productName                        | 製品識別子             | type=cpe: cpe v2.3 形式　<br> type=jvnpid: jvnpid v1.0 形式 <br>nameType=vid: JVN iPedia におけるベンダ番号 <br>nameType=pid: JVN iPedia における製品番号 | －   | －         |
 | version <br> versionType           | バージョン             | バージョン情報                                                                                                                                            | －   | －         |
@@ -62,7 +62,7 @@
 
 #### rangelastModDate
 
-更新日の簡易な範囲を指定します。
+最終更新日の簡易な範囲を指定します。
 
 - rangelastModDate と(lastModStartDate & lastModEndDate, pubStartDate & pubEndDate)の同時使用はできません。
 - \[ NONE: 範囲指定なし \| DAY: 前日以降 \| WEEK:過去 1 週間以降 \| MONTH:過去 1 ヶ月以降 \]のいずれか一つを指定します。
@@ -73,12 +73,12 @@
 
 #### lastModStartDate & lastModEndDate
 
-更新日開始年月日、更新日終了年月日を指定します。
+最終更新日開始年月日、最終更新日終了年月日を指定します。
 
 - rangelastModDate と(lastModStartDate & lastModEndDate, pubStartDate & pubEndDate)の同時使用はできません。
 - pubStartDate, pubEndDate と組み合わせて使用できます。
-- pubStartDate のみの指定の場合には、更新日開始年月日以降が対象となります。
-- pubEndDate のみの指定の場合には、更新日終了年月日以前が対象となります。
+- pubStartDate のみの指定の場合には、最終更新日開始年月日以降が対象となります。
+- pubEndDate のみの指定の場合には、最終更新日終了年月日以前が対象となります。
 - \[例\]  
    `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&lastModStartDate=20210804&lastModEndDate=20211022`
 
@@ -86,12 +86,12 @@
 
 #### pubStartDate & pubEndDate
 
-発行日開始年月日、発行日終了年月日を指定します。
+登録日開始年月日、登録日終了年月日を指定します。
 
 - rangelastModDate と(lastModStartDate & lastModEndDate, pubStartDate & pubEndDate)の同時使用はできません。
 - lastModStartDate, lastModEndDate と組み合わせて使用できます。
-- pubStartDate のみの指定の場合には、発行日開始年月日以降が対象となります。
-- pubEndDate のみの指定の場合には、発行日終了年月日以前が対象となります。
+- pubStartDate のみの指定の場合には、登録日開始年月日以降が対象となります。
+- pubEndDate のみの指定の場合には、登録日終了年月日以前が対象となります。
 - \[例\]  
    `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&pubStartDate=20210804&pubEndDate=20211022`
 
@@ -275,16 +275,18 @@ CVSSv4 基本評価基準、CVSSv4 深刻度を指定します。
 
 ```
 {
+  "$schema": "https://jvndb.jvn.jp/schema/myjvn_feed_1.0.json?20250419",
   "feed": {
     "generator": {
+      "date": "レスポンス生成日 [例] 2025-04-30T11:36:12+09:00",
       "engine": {
         "version": "4.0.0",
         "name": "MyJVN API"
       }
     },
-    "title": "getVulnOverviewList API",
+    "title": "JVNDB 脆弱性対策情報",
     "link": "https://jvndb.jvn.jp/apis/myjvn/",
-    "updated": "更新日 [例] 2025-04-26T07:36:21+09:00",
+    "updated": "",
     "lang": "表示言語 (ja:日本語、en:英語 )",
     "author": {
       "name": "IPA",
@@ -302,16 +304,17 @@ CVSSv4 基本評価基準、CVSSv4 深刻度を指定します。
         "id": "脆弱性対策情報の識別子 (JVNDB-西暦-番号) [例] JVNDB-2025-000000",
         "summary": "脆弱性対策情報の概要 [例] MyJVN API は、APIを介してセキュリティ情報を提供するシステムです。",
         "link": "脆弱性対策情報の概要のURL [例] https://jvndb.jvn.jp/ja/contents/2025/JVNDB-2025-000000.html",
-        "updated": "更新日 [例] 2025-04-26T07:36:21+09:00",
-        "published": "発行日 [例] 2025-04-04T14:45:58+09:00",
+        "modified": "最終更新日 [例] 2025-04-26T07:36:21+09:00",
+        "created": "登録日 [例] 2025-04-04T14:45:58+09:00",
+        "public": "公表日 [例] 2025-04-01T10:23:42+09:00",
         "references": [
           {
             "summary": "参考情報のタイトル or 概要 [例] IPA security-alert",
-            "url": "参考情報のURL [例] https://www.ipa.go.jp/security/security-alert/index.html",
+            "url": "参考情報のURL [例] https://www.ipa.go.jp/security/security-alert/",
             "source": "情報源 [例] advisory"
           },
           {
-            "$comment": "url,summaryを繰り返します。"
+            "$comment": "url,summary などを繰り返します。"
           }
         ],
         "products": [
@@ -371,7 +374,7 @@ CVSSv4 基本評価基準、CVSSv4 深刻度を指定します。
             }
           },
           {
-            "$comment": "vname,productなどを繰り返します。"
+            "$comment": "vname,product_id などを繰り返します。"
           }
         ],
         "metrics": [
@@ -414,7 +417,7 @@ CVSSv4 基本評価基準、CVSSv4 深刻度を指定します。
         ]
       },
       {
-        "$comment": "title,idなどを繰り返します。"
+        "$comment": "title,id などを繰り返します。"
       }
     ]
   },

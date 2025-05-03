@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rdf:RDF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://purl.org/rss/1.0/" xmlns:rss="http://purl.org/rss/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:sec="http://jvn.jp/rss/mod_sec/3.0/" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xsi:schemaLocation="http://purl.org/rss/1.0/ https://jvndb.jvn.jp/schema/jvnrss_3.2.xsd" xml:lang="ja">
+<rdf:RDF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns="http://purl.org/rss/1.0/"
+  xmlns:rss="http://purl.org/rss/1.0/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:sec="http://jvn.jp/rss/mod_sec/3.0/"
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+  xsi:schemaLocation="http://purl.org/rss/1.0/ https://jvndb.jvn.jp/schema/jvnrss_3.2.xsd"
+  xml:lang="ja"
+>
   <channel rdf:about="https://jvndb.jvn.jp/ja/rss/jvndb_new.rdf">
     <title>JVNDB RSS Feed - New Entry</title>
     <link>https://jvndb.jvn.jp/</link>
@@ -9,10 +20,10 @@
     <dcterms:modified>2025-04-13T12:00:23+09:00</dcterms:modified>
     <items>
       <rdf:Seq>
-        <rdf:li rdf:resource="https://jvndb.jvn.jp/ja/contents/2023/JVNDB-2023-028579.html"/>
-        <rdf:li rdf:resource="https://jvndb.jvn.jp/ja/contents/2023/JVNDB-2023-028578.html"/>
-        <rdf:li rdf:resource="https://jvndb.jvn.jp/ja/contents/2023/JVNDB-2023-028577.html"/>
-        <rdf:li rdf:resource="https://jvndb.jvn.jp/ja/contents/2023/JVNDB-2023-028576.html"/>
+        <rdf:li rdf:resource="https://jvndb.jvn.jp/ja/contents/2023/JVNDB-2023-028579.html" />
+        <rdf:li rdf:resource="https://jvndb.jvn.jp/ja/contents/2023/JVNDB-2023-028578.html" />
+        <rdf:li rdf:resource="https://jvndb.jvn.jp/ja/contents/2023/JVNDB-2023-028577.html" />
+        <rdf:li rdf:resource="https://jvndb.jvn.jp/ja/contents/2023/JVNDB-2023-028576.html" />
       </rdf:Seq>
     </items>
   </channel>
@@ -23,11 +34,15 @@
     <sec:identifier>JVNDB-2023-028579</sec:identifier>
     <sec:references source="CVE" id="CVE-2023-29001">https://www.cve.org/CVERecord?id=CVE-2023-29001</sec:references>
     <sec:references source="NVD" id="CVE-2023-29001">https://nvd.nist.gov/vuln/detail/CVE-2023-29001</sec:references>
-    <sec:references source="関連文書" id="github.com (pull/2264)">https://github.com/contiki-ng/contiki-ng/pull/2264</sec:references>
-    <sec:references source="関連文書" id="github.com (GHSA-7p75-mf53-ffwm)">https://github.com/contiki-ng/contiki-ng/security/advisories/GHSA-7p75-mf53-ffwm</sec:references>
-    <sec:references title="不適切な再帰制御(CWE-674)" id="CWE-674">https://cwe.mitre.org/data/definitions/674.html</sec:references>
+    <sec:references source="関連文書" id="github.com (pull/2264)">
+      https://github.com/contiki-ng/contiki-ng/pull/2264</sec:references>
+    <sec:references source="関連文書" id="github.com (GHSA-7p75-mf53-ffwm)">
+      https://github.com/contiki-ng/contiki-ng/security/advisories/GHSA-7p75-mf53-ffwm</sec:references>
+    <sec:references title="不適切な再帰制御(CWE-674)" id="CWE-674">
+      https://cwe.mitre.org/data/definitions/674.html</sec:references>
     <sec:cpe version="2.2" vendor="Contiki-NG" product="Contiki-NG">cpe:/o:contiki-ng:contiki-ng</sec:cpe>
-    <sec:cvss version="3.0" score="7.5" type="Base" severity="High" vector="CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"/>
+    <sec:cvss version="3.0" score="7.5" type="Base" severity="High"
+      vector="CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H" />
     <dc:date>2025-04-11T23:52+09:00</dc:date>
     <dcterms:issued>2025-04-11T23:52+09:00</dcterms:issued>
     <dcterms:modified>2025-04-11T23:52+09:00</dcterms:modified>
@@ -39,10 +54,13 @@
     <sec:identifier>JVNDB-2023-028578</sec:identifier>
     <sec:references source="CVE" id="CVE-2023-40496">https://www.cve.org/CVERecord?id=CVE-2023-40496</sec:references>
     <sec:references source="NVD" id="CVE-2023-40496">https://nvd.nist.gov/vuln/detail/CVE-2023-40496</sec:references>
-    <sec:references source="関連文書" id="www.zerodayinitiative.com (ZDI-23-1202)">https://www.zerodayinitiative.com/advisories/ZDI-23-1202/</sec:references>
+    <sec:references source="関連文書" id="www.zerodayinitiative.com (ZDI-23-1202)">
+      https://www.zerodayinitiative.com/advisories/ZDI-23-1202/</sec:references>
     <sec:references title="パス・トラバーサル(CWE-22)" id="CWE-22">https://jvndb.jvn.jp/ja/cwe/CWE-22.html</sec:references>
-    <sec:cpe version="2.2" vendor="LG Electronics" product="LG Simple Editor">cpe:/a:lg:simple_editor</sec:cpe>
-    <sec:cvss version="3.0" score="7.5" type="Base" severity="High" vector="CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"/>
+    <sec:cpe version="2.2" vendor="LG Electronics" product="LG Simple Editor">
+      cpe:/a:lg:simple_editor</sec:cpe>
+    <sec:cvss version="3.0" score="7.5" type="Base" severity="High"
+      vector="CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N" />
     <dc:date>2025-04-11T23:52+09:00</dc:date>
     <dcterms:issued>2025-04-11T23:52+09:00</dcterms:issued>
     <dcterms:modified>2025-04-11T23:52+09:00</dcterms:modified>
@@ -54,11 +72,16 @@
     <sec:identifier>JVNDB-2023-028577</sec:identifier>
     <sec:references source="CVE" id="CVE-2023-40500">https://www.cve.org/CVERecord?id=CVE-2023-40500</sec:references>
     <sec:references source="NVD" id="CVE-2023-40500">https://nvd.nist.gov/vuln/detail/CVE-2023-40500</sec:references>
-    <sec:references source="関連文書" id="www.zerodayinitiative.com (ZDI-23-1206)">https://www.zerodayinitiative.com/advisories/ZDI-23-1206/</sec:references>
-    <sec:references title="危険なメソッドや機能の公開(CWE-749)" id="CWE-749">https://cwe.mitre.org/data/definitions/749.html</sec:references>
-    <sec:references title="その他(CWE-Other)" id="CWE-Other">https://www.ipa.go.jp/security/vuln/scap/cwe.html</sec:references>
-    <sec:cpe version="2.2" vendor="LG Electronics" product="LG Simple Editor">cpe:/a:lg:simple_editor</sec:cpe>
-    <sec:cvss version="3.0" score="9.8" type="Base" severity="Critical" vector="CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"/>
+    <sec:references source="関連文書" id="www.zerodayinitiative.com (ZDI-23-1206)">
+      https://www.zerodayinitiative.com/advisories/ZDI-23-1206/</sec:references>
+    <sec:references title="危険なメソッドや機能の公開(CWE-749)" id="CWE-749">
+      https://cwe.mitre.org/data/definitions/749.html</sec:references>
+    <sec:references title="その他(CWE-Other)" id="CWE-Other">
+      https://www.ipa.go.jp/security/vuln/scap/cwe.html</sec:references>
+    <sec:cpe version="2.2" vendor="LG Electronics" product="LG Simple Editor">
+      cpe:/a:lg:simple_editor</sec:cpe>
+    <sec:cvss version="3.0" score="9.8" type="Base" severity="Critical"
+      vector="CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" />
     <dc:date>2025-04-11T23:52+09:00</dc:date>
     <dcterms:issued>2025-04-11T23:52+09:00</dcterms:issued>
     <dcterms:modified>2025-04-11T23:52+09:00</dcterms:modified>
@@ -70,10 +93,14 @@
     <sec:identifier>JVNDB-2023-028576</sec:identifier>
     <sec:references source="CVE" id="CVE-2023-40516">https://www.cve.org/CVERecord?id=CVE-2023-40516</sec:references>
     <sec:references source="NVD" id="CVE-2023-40516">https://nvd.nist.gov/vuln/detail/CVE-2023-40516</sec:references>
-    <sec:references source="関連文書" id="www.zerodayinitiative.com (ZDI-23-1218)">https://www.zerodayinitiative.com/advisories/ZDI-23-1218/</sec:references>
-    <sec:references title="重要なリソースに対する不適切なパーミッションの割り当て(CWE-732)" id="CWE-732">https://cwe.mitre.org/data/definitions/732.html</sec:references>
-    <sec:cpe version="2.2" vendor="LG Electronics" product="LG Simple Editor">cpe:/a:lg:simple_editor</sec:cpe>
-    <sec:cvss version="3.0" score="7.8" type="Base" severity="High" vector="CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"/>
+    <sec:references source="関連文書" id="www.zerodayinitiative.com (ZDI-23-1218)">
+      https://www.zerodayinitiative.com/advisories/ZDI-23-1218/</sec:references>
+    <sec:references title="重要なリソースに対する不適切なパーミッションの割り当て(CWE-732)" id="CWE-732">
+      https://cwe.mitre.org/data/definitions/732.html</sec:references>
+    <sec:cpe version="2.2" vendor="LG Electronics" product="LG Simple Editor">
+      cpe:/a:lg:simple_editor</sec:cpe>
+    <sec:cvss version="3.0" score="7.8" type="Base" severity="High"
+      vector="CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H" />
     <dc:date>2025-04-11T23:52+09:00</dc:date>
     <dcterms:issued>2025-04-11T23:52+09:00</dcterms:issued>
     <dcterms:modified>2025-04-11T23:52+09:00</dcterms:modified>

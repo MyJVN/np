@@ -125,19 +125,31 @@ CPE 製品名を指定します。
   xmlns="http://jvndb.jvn.jp/myjvn/Results"
   xmlns:mjres="http://jvndb.jvn.jp/myjvn/Results"
   xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
-  xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/Results https://jvndb.jvn.jp/schema/results_3.3.xsd
-  ">
-
-  <VendorInfo xml:lang="表示言語">
-    <Vendor vid="ベンダ番号 (JVN iPedia におけるベンダの識別番号)" vname="ベンダ名" cpe="CPEベンダ識別子 (CPE v2.2 形式)">
-      <Product pid="製品番号 (JVN iPedia における製品の識別番号)" pname="製品名" cpe="CPE製品識別子 (CPE v2.2 形式)" />
-      <!-- フィルタリングに当てはまる製品の件数分Productノードを繰り返します。 -->
+  xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/Results https://jvndb.jvn.jp/schema/results_3.3.xsd"
+  >
+  <VendorInfo
+    xml:lang="表示言語 (ja:日本語、en:英語 )">
+    <Vendor
+      vid="ベンダ番号 (JVN iPedia におけるベンダの識別番号)"
+      vname="ベンダ名"
+      cpe="CPEベンダ識別子 (CPE v2.2 形式)">
+      <Product
+        pid="製品番号 (JVN iPedia における製品の識別番号)"
+        pname="製品名"
+        cpe="CPE製品識別子 (CPE v2.2 形式)" />
+      <!-- フィルタリングに当てはまる製品の件数分 Product を繰り返します。 -->
     </Vendor>
-    <Vendor vid="99999999991" vname="東京電機大学" cpe="cpe:/:dendai.ac.jp">
-      <Product pid="99999999991001" pname="MyJVN API" cpe="cpe:/a:dendai.ac.jp:myjvn_api" />
-      <!-- フィルタリングに当てはまる製品の件数分Productノードを繰り返します。 -->
+    <Vendor
+      vid="99999999991"
+      vname="東京電機大学"
+      cpe="cpe:/:dendai.ac.jp">
+      <Product
+        pid="99999999991001"
+        pname="マイジェイブイエヌ API"
+        cpe="cpe:/a:dendai.ac.jp:myjvn_api" />
+      <!-- フィルタリングに当てはまる製品の件数分 Product を繰り返します。 -->
     </Vendor>
-    <!-- フィルタリングに当てはまるベンダの件数分Vendorノードを繰り返します。 -->
+    <!-- フィルタリングに当てはまるベンダの件数分 Vendor を繰り返します。 -->
   </VendorInfo>
 
   <status:Status

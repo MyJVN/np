@@ -19,17 +19,18 @@
     ],
     "tracking": {
       "generator": {
+        "date": "2025-04-30T11:36:12+09:00",
         "engine": {
           "version": "4.0.0",
           "name": "MyJVN API"
         }
       },
       "id": "JVNDB-2018-009328",
-      "current_release_date": "2025-04-06T03:00:00+09:00",
+      "current_release_date": "2018-11-20T12:12:04+09:00",
       "initial_release_date": "2018-11-15T16:17:27+09:00",
-      "public_release_date": "2018-11-14T00:00:00+09:00",
+      "public_date": "2018-11-14T00:00:00+09:00",
       "status": "final",
-      "version": "3",
+      "version": "2",
       "revision_history": [
         {
           "date": "2018-11-15T16:17:27+09:00",
@@ -40,11 +41,6 @@
           "date": "2018-11-20T10:37:07+09:00",
           "number": "2",
           "summary": "[2018年11月20日] CVSS による深刻度：内容を更新"
-        },
-        {
-          "date": "2025-04-06T02:00:00+09:00",
-          "number": "3",
-          "summary": "XML形式からJSON形式に変換"
         }
       ]
     },
@@ -129,6 +125,7 @@
         {
           "id": "CWE-noinfo",
           "name": "情報不足",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
           "version": "",
           "source": "IPA"
         }
@@ -198,6 +195,7 @@
   ],
   "jvn_extension": {
     "generator": {
+      "date": "2025-04-30T11:36:12+09:00",
       "engine": {
         "version": "4.0.0",
         "name": "MyJVN API"
@@ -205,8 +203,8 @@
     },
     "title": "JVNDB 脆弱性対策詳細情報",
     "link": "https://jvndb.jvn.jp/apis/",
+    "updated": "",
     "vulnid": "JVNDB-2018-009328",
-    "updated": "2025-04-06T03:00:00+09:00",
     "lang": "ja",
     "author": {
       "name": "IPA",

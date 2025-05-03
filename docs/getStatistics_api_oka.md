@@ -124,6 +124,7 @@ CWE 識別子として、CWE 番号を指定します。
 {
   "$schema": "https://jvndb.jvn.jp/schema/myjvn_statistics_1.0.json?20250419",
   "generator": {
+    "date": "レスポンス生成日 [例] 2025-04-30T11:36:12+09:00",
     "engine": {
       "version": "4.0.0",
       "name": "MyJVN API"
@@ -131,7 +132,7 @@ CWE 識別子として、CWE 番号を指定します。
   },
   "title": "JVNDB 脆弱性対策統計データ",
   "link": "https://jvndb.jvn.jp/apis/myjvn/",
-  "updated": "更新日 [例] 2025-04-26T07:36:21+09:00",
+  "updated": "",
   "lang": "表示言語 (ja:日本語、en:英語 )",
   "author": {
     "name": "IPA",

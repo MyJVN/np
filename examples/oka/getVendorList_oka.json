@@ -1,7 +1,8 @@
 {
   "$schema": "https://jvndb.jvn.jp/schema/jvnpid_1.0.json?20250419",
-  "jvn_product_dictionary": {
+  "jvn-product-dictionary": {
     "generator": {
+      "date": "2025-04-30T11:36:12+09:00",
       "engine": {
         "version": "4.0.0",
         "name": "MyJVN API"

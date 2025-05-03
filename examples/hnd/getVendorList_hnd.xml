@@ -3,8 +3,14 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns="http://jvndb.jvn.jp/myjvn/Results"
   xmlns:mjres="http://jvndb.jvn.jp/myjvn/Results"
-  xmlns:status="http://jvndb.jvn.jp/myjvn/Status" xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/Results https://jvndb.jvn.jp/schema/results_3.3.xsd">
+  xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
+  xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/Results https://jvndb.jvn.jp/schema/results_3.3.xsd"
+>
   <VendorInfo xml:lang="ja">
+    <Vendor
+      vid="99999999991"
+      vname="東京電機大学"
+      cpe="cpe:/:dendai.ac.jp" />
     <Vendor vname="多川 貴郎" cpe="cpe:/:dounokouno" vid="11629" />
     <Vendor vname="大河内 洋介" cpe="cpe:/:ohtanz" vid="15612" />
     <Vendor vname="大垣共立銀行" cpe="cpe:/:ogaki_kyoritsu_bank" vid="11524" />
@@ -56,5 +62,17 @@
     <Vendor vname="農林水産省" cpe="cpe:/:maff" vid="12679" />
     <Vendor vname="飛天ジャパン株式会社" cpe="cpe:/:misc" vid="15297" />
   </VendorInfo>
-  <status:Status version="3.3" method="getVendorList" lang="ja" retCd="0" retMax="10000" errCd="" errMsg="" totalRes="29944" totalResRet="50" firstRes="29860" feed="hnd" startItem="29860" maxCountItem="50" />
+  <status:Status version="3.3"
+    method="getVendorList"
+    lang="ja"
+    retCd="0"
+    retMax="10000"
+    errCd=""
+    errMsg=""
+    totalRes="29944"
+    totalResRet="50"
+    firstRes="29860"
+    feed="hnd"
+    startItem="29860"
+    maxCountItem="50" />
 </Result>

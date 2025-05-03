@@ -1,40 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Result
-  version="3.3"
+<Result version="3.3"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns="http://jvndb.jvn.jp/myjvn/Results"
   xmlns:mjres="http://jvndb.jvn.jp/myjvn/Results"
   xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
-  xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/Results https://jvndb.jvn.jp/schema/results_3.3.xsd">
+  xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/Results https://jvndb.jvn.jp/schema/results_3.3.xsd"
+>
   <VendorInfo xml:lang="ja">
-    <Vendor vname="#1 deals and maps app" cpe="cpe:/:pointinside" vid="10133" />
-    <Vendor vname="$0.99 kindle books project" cpe="cpe:/:%240.99_kindle_books_project" vid="11248" />
-    <Vendor vname="*" cpe="cpe:/:%2A" vid="24089" />
-    <Vendor vname=".NET Foundation" cpe="cpe:/:dotnetfoundation" vid="20996" />
-    <Vendor vname=".VDMi/" cpe="cpe:/:fibonacciorange" vid="11644" />
-    <Vendor vname="01-Scripts" cpe="cpe:/:01-scripts" vid="21951" />
-    <Vendor vname="01generator" cpe="cpe:/:01generator" vid="26888" />
-    <Vendor vname="07fly" cpe="cpe:/:07fly" vid="25605" />
-    <Vendor vname="0branch" cpe="cpe:/:0branch" vid="27839" />
-    <Vendor vname="0kims" cpe="cpe:/:0kims" vid="26301" />
-    <Vendor vname="0mk Shortener project" cpe="cpe:/:0mk_shortener_project" vid="23800" />
-    <Vendor vname="0verkill" cpe="cpe:/:0verkill" vid="28672" />
-    <Vendor vname="0xacab" cpe="cpe:/:0xacab" vid="23735" />
-    <Vendor vname="0xRACER project" cpe="cpe:/:zeroxracer_project" vid="20701" />
-    <Vendor vname="1-800 CONTACTS" cpe="cpe:/:1800contacts" vid="10077" />
-    <Vendor vname="1-script" cpe="cpe:/:1-script" vid="1928" />
-    <Vendor vname="10-Strike Software" cpe="cpe:/:10-strike" vid="13908" />
-    <Vendor vname="1000guess" cpe="cpe:/:1000guess" vid="14792" />
-    <Vendor vname="1000projects" cpe="cpe:/:1000projects" vid="30342" />
-    <Vendor vname="100296" cpe="cpe:/:100296" vid="28382" />
-    <Vendor vname="100plugins" cpe="cpe:/:100plugins" vid="26914" />
-    <Vendor vname="有限会社クレアル" cpe="cpe:/:almail" vid="11537" />
-    <Vendor vname="有限会社サイトー企画" cpe="cpe:/:hidemaru" vid="159" />
-    <Vendor vname="有限会社シースリー" cpe="cpe:/:c-3.co.jp" vid="559" />
-    <Vendor vname="有限会社ビーグラフ" cpe="cpe:/:be-graph" vid="6617" />
-    <Vendor vname="有限会社ブルームーン" cpe="cpe:/:bluemoon" vid="390" />
-    <Vendor vname="理化学研究所 脳神経科学研究センター 神経情報基盤開発ユニット" cpe="cpe:/:riken" vid="9504" />
+    <Vendor
+      vid="99999999991"
+      vname="東京電機大学"
+      cpe="cpe:/:dendai.ac.jp" />
+    <Vendor vname="サン・マイクロシステムズ" cpe="cpe:/:sun" vid="1">
+      <Product pname="Sun Cobalt RaQ2" cpe="cpe:/h:sun:sun_cobalt_raq_2" pid="16" />
+      <Product pname="Sun Cobalt RaQ3" cpe="cpe:/h:sun:sun_cobalt_raq_3" pid="17" />
+      <Product pname="Sun Cobalt RaQ4" cpe="cpe:/h:sun:sun_cobalt_raq_4" pid="18" />
+      <Product pname="Sun Cobalt RaQ550" cpe="cpe:/h:sun:sun_cobalt_raq_550" pid="19" />
+      <Product pname="Sun Cobalt RaQXTR" cpe="cpe:/h:sun:sun_cobalt_raq_xtr" pid="20" />
+      <Product pname="Sun Java System Web Server" cpe="cpe:/a:sun:java_system_web_server" pid="21" />
+      <Product pname="Sun ONE/iPlanet Web Server" cpe="cpe:/a:sun:one_web_server" pid="22" />
+      <Product pname="Sun Java System Application Server"
+        cpe="cpe:/a:sun:java_system_application_server" pid="264" />
+      <Product pname="JRE" cpe="cpe:/a:sun:jre" pid="266" />
+      <Product pname="SDK" cpe="cpe:/a:sun:sdk" pid="267" />
+      <Product pname="JDK" cpe="cpe:/a:sun:jdk" pid="268" />
+      <Product pname="Sun ONE Application Server" cpe="cpe:/a:sun:one_application_server" pid="269" />
+      <Product pname="Sun Ultra 20 Workstation" cpe="cpe:/h:sun:ultra_20_workstation" pid="270" />
+      <Product pname="Sun Ultra 20 M2 Workstation"
+        cpe="cpe:/h:sun:ultra_20_m2_workstation" pid="271" />
+      <Product pname="Sun Ultra 40 Workstation"
+        cpe="cpe:/h:sun:ultra_40_workstation" pid="272" />
+      <Product pname="Sun Java System Web Proxy Server"
+        cpe="cpe:/a:sun:java_system_web_proxy_server" pid="273" />
+      <Product pname="StarOffice" cpe="cpe:/a:sun:staroffice" pid="274" />
+      <Product pname="StarSuite" cpe="cpe:/a:sun:starsuite" pid="275" />
+      <Product pname="JCE" cpe="cpe:/a:sun:jce" pid="276" />
+      <Product pname="J2SE" cpe="cpe:/a:sun:j2se" pid="277" />
+      <Product pname="Sun ONE Directory Server" cpe="cpe:/a:sun:one_directory_server" pid="572" />
+      <Product pname="Sun Java System Directory Server"
+        cpe="cpe:/a:sun:java_system_directory_server" pid="573" />
+      <Product pname="Mozilla" cpe="cpe:/a:sun:mozilla" pid="586" />
+      <Product pname="SunForum" cpe="cpe:/a:sun:sunforum" pid="612" />
+      <Product pname="Sun Crypto Accelerator" cpe="cpe:/h:sun:sun_crypto_accelerator" pid="646" />
+      <Product pname="NSS" cpe="cpe:/a:sun:nss" pid="812" />
+      <Product pname="Sun Secure Global Desktop" cpe="cpe:/a:sun:secure_global_desktop" pid="813" />
+      <Product pname="Sun SEAM" cpe="cpe:/a:sun:seam" pid="814" />
+      <Product pname="Sun Java Enterprise System" cpe="cpe:/a:sun:java_enterprise_system" pid="815" />
+      <Product pname="Sun Java Desktop System" cpe="cpe:/a:sun:java_desktop_system" pid="890" />
+      <Product pname="Sun Java Web Console" cpe="cpe:/a:sun:java_web_console" pid="893" />
+      <Product pname="Sun ONE Web Proxy Server" cpe="cpe:/a:sun:one_web_proxy_server" pid="920" />
+      <Product pname="Sun Cobalt Qube3" cpe="cpe:/h:sun:sun_cobalt_qube_3" pid="990" />
+      <Product pname="Sun Linux 5.0" cpe="cpe:/a:sun:linux" pid="991" />
+    </Vendor>
+    <Vendor vname="AVSystem" cpe="cpe:/:avsystem" vid="30722">
+      <Product pname="uUnified Management Platform"
+        cpe="cpe:/a:avsystem:unified_management_platform" pid="80793" />
+    </Vendor>
+    <Vendor vname="Fujian Kelixin Communication"
+      cpe="cpe:/:kelixin_communication_command_and_dispatch_project" vid="30723">
+      <Product pname="Command and Dispatch Platform"
+        cpe="cpe:/a:kelixin_communication_command_and_dispatch_project:kelixin_communication_command_and_dispatch"
+        pid="80794" />
+    </Vendor>
   </VendorInfo>
-  <status:Status version="3.3" method="getVendorList" lang="ja" retCd="0" retMax="" errCd=""
-    errMsg="" totalRes="29831" totalResRet="29831" firstRes="" feed="hnd" lt="1" />
+  <status:Status version="3.3"
+    method="getProductList"
+    lang="ja"
+    retCd="0"
+    retMax=""
+    errCd=""
+    errMsg=""
+    totalRes="77315"
+    totalResRet="77315"
+    firstRes=""
+    feed="hnd"
+    lt="1" />
 </Result>

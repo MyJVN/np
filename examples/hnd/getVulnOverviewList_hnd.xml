@@ -1,68 +1,94 @@
-<?xml version="1.0" encoding="UTF-8" ?>   
-<rdf:RDF 
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-xmlns="http://purl.org/rss/1.0/" 
-xmlns:rss="http://purl.org/rss/1.0/" 
-xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
-xmlns:dc="http://purl.org/dc/elements/1.1/" 
-xmlns:dcterms="http://purl.org/dc/terms/" 
-xmlns:sec="http://jvn.jp/rss/mod_sec/3.0/" 
-xmlns:marking="http://data-marking.mitre.org/Marking-1" 
-xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1" 
-xmlns:status="http://jvndb.jvn.jp/myjvn/Status" 
-xsi:schemaLocation="http://purl.org/rss/1.0/ https://jvndb.jvn.jp/schema/jvnrss_3.2.xsd http://jvndb.jvn.jp/myjvn/Status https://jvndb.jvn.jp/schema/status_3.3.xsd" 
-xml:lang="ja">
-    <channel rdf:about="https://jvndb.jvn.jp/apis/myjvn">
-      <title>JVNDB　脆弱性対策情報</title>
-      <link>https://jvndb.jvn.jp/apis/myjvn</link>
-      <description>JVNDB　脆弱性対策情報</description>
-      <dc:date>2025-04-07T07:36:21+09:00</dc:date>
-      <dcterms:issued/>
-      <dcterms:modified>2025-04-07T07:36:21+09:00</dcterms:modified>
-      <sec:handling>
-        <marking:Marking>
-          <marking:Marking_Structure xsi:type="tlpMarking:TLPMarkingStructureType" marking_model_name="TLP" marking_model_ref="http://www.us-cert.gov/tlp/" color="WHITE"/>
-        </marking:Marking>
-      </sec:handling>
-      <items>
-        <rdf:Seq>
-          <rdf:li rdf:resource="https://jvndb.jvn.jp/ja/contents/2025/JVNDB-2025-002953.html"/>
-          <rdf:li rdf:resource="https://jvndb.jvn.jp/ja/contents/2025/JVNDB-2025-002884.html"/>
-        </rdf:Seq>
-      </items>
-    </channel>
-    <item rdf:about="https://jvndb.jvn.jp/ja/contents/2025/JVNDB-2025-002953.html">
-      <title>WordPress 用 Sunshine Photo Cart における信頼できないデータのデシリアライゼーションに関する脆弱性</title>
-      <link>https://jvndb.jvn.jp/ja/contents/2025/JVNDB-2025-002953.html</link>
-      <description>WordPress 用 Sunshine Photo Cart には、信頼できないデータのデシリアライゼーションに関する脆弱性が存在します。</description>
-      <dc:creator>Information-technology Promotion Agency, Japan</dc:creator>
-      <sec:identifier>JVNDB-2025-002953</sec:identifier>
-      <sec:references source="CVE" id="CVE-2025-31084">https://www.cve.org/CVERecord?id=CVE-2025-31084</sec:references>
-      <sec:references source="NVD" id="CVE-2025-31084">https://nvd.nist.gov/vuln/detail/CVE-2025-31084</sec:references>
-      <sec:references source="関連文書" id="patchstack.com (wordpress-sunshine-photo-cart-3-4-10-php-object-injection-vulnerability?_s_id=cve)">https://patchstack.com/database/wordpress/plugin/sunshine-photo-cart/vulnerability/wordpress-sunshine-photo-cart-3-4-10-php-object-injection-vulnerability?_s_id=cve</sec:references>
-      <sec:references id="CWE-502" title="信頼できないデータのデシリアライゼーション(CWE-502)">https://cwe.mitre.org/data/definitions/502.html</sec:references>
-      <sec:cpe version="2.2" vendor="Sunshine Photo Cart" product="Sunshine Photo Cart">cpe:/a:sunshinephotocart:sunshine_photo_cart</sec:cpe>
-      <sec:cvss score="9.8" severity="Critical" vector="CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" version="3.0" type="Base"/>
-      <dc:date>2025-04-04T14:45:58+09:00</dc:date>
-      <dcterms:issued>2025-04-04T14:45:58+09:00</dcterms:issued>
-      <dcterms:modified>2025-04-04T14:45:58+09:00</dcterms:modified>
-    </item>
-    <item rdf:about="https://jvndb.jvn.jp/ja/contents/2025/JVNDB-2025-002884.html">
-      <title>複数の Rockwell Automation 製品における信頼できないデータのデシリアライゼーションの脆弱性</title>
-      <link>https://jvndb.jvn.jp/ja/contents/2025/JVNDB-2025-002884.html</link>
-      <description>Rockwell Automation が提供する複数の製品には、次の脆弱性が存在します。  　* 信頼できないデータのデシリアライゼーション（CWE-502） - CVE-2025-23120  </description>
-      <dc:creator>Information-technology Promotion Agency, Japan</dc:creator>
-      <sec:identifier>JVNDB-2025-002884</sec:identifier>
-      <sec:references source="CVE" id="CVE-2025-23120">https://www.cve.org/CVERecord?id=CVE-2025-23120</sec:references>
-      <sec:references source="ICS-CERT ADVISORY" id="ICSA-25-091-01">https://www.cisa.gov/news-events/ics-advisories/icsa-25-091-01</sec:references>
-      <sec:references source="JVN" id="JVNVU#99709964">https://jvn.jp/vu/JVNVU99709964/index.html</sec:references>
-      <sec:references id="CWE-502" title="信頼できないデータのデシリアライゼーション(CWE-502)">https://cwe.mitre.org/data/definitions/502.html</sec:references>
-      <sec:cpe version="2.2" vendor="Rockwell Automation" product="Industrial Data Center (IDC) with Veeam">cpe:/a:rockwellautomation:industrial_data_center_%28idc%29_with_veeam</sec:cpe>
-      <sec:cpe version="2.2" vendor="Rockwell Automation" product="VersaVirtual Appliance (VVA) with Veeam">cpe:/a:rockwellautomation:versavirtual_appliance_%28vva%29_with_veeam</sec:cpe>
-      <dc:date>2025-04-03T12:27:09+09:00</dc:date>
-      <dcterms:issued>2025-04-03T12:27:09+09:00</dcterms:issued>
-      <dcterms:modified>2025-04-03T12:27:09+09:00</dcterms:modified>
-    </item>
-    <status:Status version="3.3" method="getVulnOverviewList" lang="ja" retCd="0" retMax="50" errCd="" errMsg="" totalRes="6" totalResRet="2" firstRes="1" feed="hnd" maxCountItem="2"/>
-  </rdf:RDF>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://purl.org/rss/1.0/"
+  xmlns:rss="http://purl.org/rss/1.0/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:sec="http://jvn.jp/rss/mod_sec/3.0/"
+  xmlns:marking="http://data-marking.mitre.org/Marking-1"
+  xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1"
+  xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
+  xsi:schemaLocation="http://purl.org/rss/1.0/ https://jvndb.jvn.jp/schema/jvnrss_3.2.xsd
+                      http://jvndb.jvn.jp/myjvn/Status https://jvndb.jvn.jp/schema/status_3.3.xsd"
+  xml:lang="ja"
+>
+  <channel rdf:about="https://jvndb.jvn.jp/apis/myjvn">
+    <title>JVNDB　脆弱性対策情報</title>
+    <link>https://jvndb.jvn.jp/apis/myjvn</link>
+    <description>JVNDB　脆弱性対策情報</description>
+    <dc:date>2025-04-07T07:36:21+09:00</dc:date>
+    <dcterms:issued />
+    <dcterms:modified>2025-04-07T07:36:21+09:00</dcterms:modified>
+    <sec:handling>
+      <marking:Marking>
+        <marking:Marking_Structure xsi:type="tlpMarking:TLPMarkingStructureType"
+          marking_model_name="TLP" marking_model_ref="http://www.us-cert.gov/tlp/" color="WHITE" />
+      </marking:Marking>
+    </sec:handling>
+    <items>
+      <rdf:Seq>
+        <rdf:li rdf:resource="https://jvndb.jvn.jp/ja/contents/2025/JVNDB-2025-002953.html" />
+        <rdf:li rdf:resource="https://jvndb.jvn.jp/ja/contents/2025/JVNDB-2025-002884.html" />
+      </rdf:Seq>
+    </items>
+  </channel>
+  <item rdf:about="https://jvndb.jvn.jp/ja/contents/2025/JVNDB-2025-002953.html">
+    <title>WordPress 用 Sunshine Photo Cart における信頼できないデータのデシリアライゼーションに関する脆弱性</title>
+    <link>https://jvndb.jvn.jp/ja/contents/2025/JVNDB-2025-002953.html</link>
+    <description>WordPress 用 Sunshine Photo Cart には、信頼できないデータのデシリアライゼーションに関する脆弱性が存在します。</description>
+    <dc:creator>Information-technology Promotion Agency, Japan</dc:creator>
+    <sec:identifier>JVNDB-2025-002953</sec:identifier>
+    <sec:references source="CVE" id="CVE-2025-31084">https://www.cve.org/CVERecord?id=CVE-2025-31084</sec:references>
+    <sec:references source="NVD" id="CVE-2025-31084">https://nvd.nist.gov/vuln/detail/CVE-2025-31084</sec:references>
+    <sec:references source="関連文書"
+      id="patchstack.com (wordpress-sunshine-photo-cart-3-4-10-php-object-injection-vulnerability?_s_id=cve)">
+      https://patchstack.com/database/wordpress/plugin/sunshine-photo-cart/vulnerability/wordpress-sunshine-photo-cart-3-4-10-php-object-injection-vulnerability?_s_id=cve</sec:references>
+    <sec:references id="CWE-502" title="信頼できないデータのデシリアライゼーション(CWE-502)">
+      https://cwe.mitre.org/data/definitions/502.html</sec:references>
+    <sec:cpe version="2.2" vendor="Sunshine Photo Cart" product="Sunshine Photo Cart">
+      cpe:/a:sunshinephotocart:sunshine_photo_cart</sec:cpe>
+    <sec:cvss score="9.8" severity="Critical" vector="CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+      version="3.0" type="Base" />
+    <dc:date>2025-04-04T14:45:58+09:00</dc:date>
+    <dcterms:issued>2025-04-04T14:45:58+09:00</dcterms:issued>
+    <dcterms:modified>2025-04-04T14:45:58+09:00</dcterms:modified>
+  </item>
+  <item rdf:about="https://jvndb.jvn.jp/ja/contents/2025/JVNDB-2025-002884.html">
+    <title>複数の Rockwell Automation 製品における信頼できないデータのデシリアライゼーションの脆弱性</title>
+    <link>https://jvndb.jvn.jp/ja/contents/2025/JVNDB-2025-002884.html</link>
+    <description>Rockwell Automation が提供する複数の製品には、次の脆弱性が存在します。  　* 信頼できないデータのデシリアライゼーション（CWE-502） - CVE-2025-23120  </description>
+    <dc:creator>Information-technology Promotion Agency, Japan</dc:creator>
+    <sec:identifier>JVNDB-2025-002884</sec:identifier>
+    <sec:references source="CVE" id="CVE-2025-23120">https://www.cve.org/CVERecord?id=CVE-2025-23120</sec:references>
+    <sec:references source="ICS-CERT ADVISORY" id="ICSA-25-091-01">
+      https://www.cisa.gov/news-events/ics-advisories/icsa-25-091-01</sec:references>
+    <sec:references source="JVN" id="JVNVU#99709964">https://jvn.jp/vu/JVNVU99709964/index.html</sec:references>
+    <sec:references id="CWE-502" title="信頼できないデータのデシリアライゼーション(CWE-502)">
+      https://cwe.mitre.org/data/definitions/502.html</sec:references>
+    <sec:cpe version="2.2" vendor="Rockwell Automation"
+      product="Industrial Data Center (IDC) with Veeam">
+      cpe:/a:rockwellautomation:industrial_data_center_%28idc%29_with_veeam</sec:cpe>
+    <sec:cpe version="2.2" vendor="Rockwell Automation"
+      product="VersaVirtual Appliance (VVA) with Veeam">
+      cpe:/a:rockwellautomation:versavirtual_appliance_%28vva%29_with_veeam</sec:cpe>
+    <dc:date>2025-04-03T12:27:09+09:00</dc:date>
+    <dcterms:issued>2025-04-03T12:27:09+09:00</dcterms:issued>
+    <dcterms:modified>2025-04-03T12:27:09+09:00</dcterms:modified>
+  </item>
+  <status:Status
+    version="3.3"
+    method="getVulnOverviewList"
+    lang="ja"
+    retCd="0"
+    retMax="50"
+    errCd=""
+    errMsg=""
+    totalRes="6"
+    totalResRet="2"
+    firstRes="1"
+    feed="hnd"
+    maxCountItem="2"
+  />
+</rdf:RDF>

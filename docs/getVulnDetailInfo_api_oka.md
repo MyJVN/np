@@ -120,22 +120,28 @@
     ],
     "tracking": {
       "generator": {
-        "date": "更新日 [例] 2025-04-26T07:36:21+09:00",
+        "date": "レスポンス生成日 [例] 2025-04-30T11:36:12+09:00",
         "engine": {
           "version": "4.0.0",
           "name": "MyJVN API"
         }
       },
       "id": "脆弱性対策情報の識別子 (JVNDB-西暦-番号) [例] JVNDB-2025-000000",
-      "current_release_date": "更新日 [例] 2025-04-26T07:36:21+09:00",
-      "initial_release_date": "発行日 [例] 2025-04-04T14:45:58+09:00",
+      "current_release_date": "最終更新日 [例] 2025-04-26T07:36:21+09:00",
+      "initial_release_date": "登録日 [例] 2025-04-04T14:45:58+09:00",
+      "public_date": "公表日 [例] 2025-04-01T10:23:42+09:00",
       "status": "final",
-      "version": "更新バージョン",
+      "version": "更新バージョン [例] 2",
       "revision_history": [
         {
-          "date": "発行日 [例] 2025-04-04T14:45:58+09:00",
+          "date": "履歴記載日 [例] 2025-04-04T14:45:58+09:00",
           "number": "更新バージョン [例] 1",
           "summary": "更新内容 [例] 初版"
+        },
+        {
+          "date": "履歴記載日 [例] 2025-04-26T07:36:21+09:00",
+          "number": "更新バージョン [例] 2",
+          "summary": "更新内容 [例] 更新版"
         }
       ]
     },
@@ -148,7 +154,7 @@
       {
         "category": "external",
         "summary": "参考情報のタイトル or 概要 [例] IPA security-alert",
-        "url": "参考情報のURL [例] https://www.ipa.go.jp/security/security-alert/index.html",
+        "url": "参考情報のURL [例] https://www.ipa.go.jp/security/security-alert/",
         "source": "情報源 [例] advisory"
       }
     ]
@@ -158,7 +164,7 @@
       {
         "branches": [
           {
-            "$comment": "jvnpidがバージョン情報を出力しない場合",
+            "$comment": "jvnpid がバージョン情報を出力しない場合",
             "product": {
               "product_id": "JVN製品識別子1 (jvnpid 1.0 形式) [例] jvnpid:1.0::dendai.ac.jp:myjvn_api",
               "name": "製品名 [例] マイジェイブイエヌ API",
@@ -181,7 +187,7 @@
           {
             "branches": [
               {
-                "$comment": "jvnpidがバージョン情報を出力する場合",
+                "$comment": "jvnpid がバージョン情報を出力する場合",
                 "category": "product_version",
                 "name": "バージョン [例] 4.0.0",
                 "product": {
@@ -237,7 +243,9 @@
         {
           "id": "CWE 番号 [例] CWE-502",
           "name": "CWE 説明 [例] 信頼できないデータのデシリアライゼーション(CWE-502)",
-          "url": "CWE 掲載 URL [例] https://cwe.mitre.org/data/definitions/502.html"
+          "url": "CWE 掲載 URL [例] https://cwe.mitre.org/data/definitions/502.html",
+          "version": "CWEバージョン [例] 1.5",
+          "source": "情報源 [例] IPA"
         }
       ],
       "notes": [
@@ -303,6 +311,7 @@
   ],
   "jvn_extension": {
     "generator": {
+      "date": "レスポンス生成日 [例] 2025-04-30T11:36:12+09:00",
       "engine": {
         "version": "4.0.0",
         "name": "MyJVN API"
@@ -310,8 +319,8 @@
     },
     "title": "JVNDB 脆弱性対策詳細情報",
     "link": "https://jvndb.jvn.jp/apis/",
+    "updated": "",
     "vulnid": "脆弱性対策情報の識別子 (JVNDB-西暦-番号) [例] JVNDB-2025-000000",
-    "updated": "更新日 [例] 2025-04-26T07:36:21+09:00",
     "lang": "ja",
     "author": {
       "name": "IPA",
@@ -471,6 +480,7 @@
 ### JSON スキーマ
 
 - VULDEF (STIX) - The Vulnerability Data Publication and Exchange Format Data Model for MyJVN
+
   - https://jvndb.jvn.jp/schema/myjvn_vuldef_1.0.stix.json?20250419
   - [ myjvn_vuldef_1.0.stix.json ](../schemas/myjvn_vuldef_1.0.stix.json)
 
@@ -516,8 +526,8 @@
       "type": "jvn-jp-sdo",
       "id": "jvn-jp-sdo--UUIDv4 (bundle UUIDv4と同値) [例] jvn-jp-sdo--7194eb1c-7b39-4d5b-82a5-161a538ec11d",
       "spec_version": "2.1",
-      "created": "発行日 [例] 2025-04-04T14:45:58.000Z",
-      "modified": "更新日 [例] 2025-04-26T07:36:21.000Z",
+      "created": "レスポンス生成日 [例] 2025-04-30T20:36:12.000Z",
+      "modified": "レスポンス生成日 [例] 2025-04-30T20:36:12.000Z",
       "name": "MyJVN API VULDEF-Document embedded in STIX",
       "extensions": {
         "extension-definition--b2440624-45a6-11ec-81d3-0242ac130003": {
@@ -526,11 +536,36 @@
       },
       "VULDEF-Document": [
         {
-          "document": {},
-          "product_tree": {},
-          "vulnerabilities": [],
-          "jvn_extension": {}
-        }
+          "document": {
+            "tracking": {
+              "generator": {
+                "date": "レスポンス生成日 [例] 2025-04-30T11:36:12+09:00",
+                "engine": {
+                  "version": "4.0.0",
+                  "name": "MyJVN API"
+                }
+              }
+            },
+            "$comment": "その他のフィールドはレスポンス (jvncsaf) を参照のこと"
+          },
+          "product_tree": {
+            "$comment": "フィールドはレスポンス (jvncsaf) を参照のこと"
+          },
+          "vulnerabilities": [
+            { "$comment": "フィールドはレスポンス (jvncsaf) を参照のこと" }
+          ],
+          "jvn_extension": {
+            "generator": {
+              "date": "レスポンス生成日 [例] 2025-04-30T11:36:12+09:00",
+              "engine": {
+                "version": "4.0.0",
+                "name": "MyJVN API"
+              }
+            },
+            "$comment": "その他のフィールドはレスポンス (jvncsaf) を参照のこと"
+          }
+        },
+        "$comment": "document,product_tree,vulnerabilities,jvn_extension を繰り返します。"
       ]
     }
   ],

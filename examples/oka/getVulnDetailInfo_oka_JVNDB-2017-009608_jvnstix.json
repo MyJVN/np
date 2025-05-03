@@ -21,15 +21,15 @@
       "spec_version": "2.1",
       "created": "2021-11-11T11:11:11.000Z",
       "modified": "2021-11-11T11:11:11.000Z",
-      "name": "MyJVN API 4.0.0",
+      "name": "MyJVN API",
       "identity_class": "system"
     },
     {
       "type": "jvn-jp-sdo",
       "id": "jvn-jp-sdo--4c2812dd-d870-42ed-a920-b3b0cc1bef03",
       "spec_version": "2.1",
-      "created": "2025-04-06T09:16:08.000Z",
-      "modified": "2025-04-06T09:16:08.000Z",
+      "created": "2025-04-30T11:36:12.000Z",
+      "modified": "2025-04-30T11:36:12.000Z",
       "name": "MyJVN API VULDEF-Document embedded in STIX",
       "extensions": {
         "extension-definition--b2440624-45a6-11ec-81d3-0242ac130003": {
@@ -57,26 +57,23 @@
             ],
             "tracking": {
               "generator": {
+                "date": "2025-04-30T11:36:12+09:00",
                 "engine": {
                   "version": "4.0.0",
                   "name": "MyJVN API"
                 }
               },
               "id": "JVNDB-2017-009608",
-              "current_release_date": "2025-04-06T03:00:00+09:00",
+              "current_release_date": "2017-11-16T15:06:40+09:00",
               "initial_release_date": "2017-11-16T15:06:40+09:00",
+              "public_date": "2017-10-20T00:00:00+09:00",
               "status": "final",
-              "version": "2",
+              "version": "1",
               "revision_history": [
                 {
                   "date": "2018-02-17T10:37:52+09:00",
                   "number": "1",
                   "summary": "[2017年11月16日] 掲載"
-                },
-                {
-                  "date": "2025-04-06T02:00:00+09:00",
-                  "number": "2",
-                  "summary": "XML形式からJSON形式に変換"
                 }
               ]
             },
@@ -137,14 +134,9 @@
                 {
                   "id": "CWE-327",
                   "name": "不完全、または危険な暗号アルゴリズムの使用",
+                  "url": "https://cwe.mitre.org/data/definitions/327.html",
                   "version": "",
                   "source": "NVD"
-                }
-              ],
-              "notes": [
-                {
-                  "category": "description",
-                  "text": "脆弱性に関する補足情報です。"
                 }
               ],
               "product_status": {
@@ -202,6 +194,7 @@
           ],
           "jvn_extension": {
             "generator": {
+              "date": "2025-04-30T11:36:12+09:00",
               "engine": {
                 "version": "4.0.0",
                 "name": "MyJVN API"
@@ -209,6 +202,7 @@
             },
             "title": "JVNDB 脆弱性対策詳細情報",
             "link": "https://jvndb.jvn.jp/apis/",
+            "updated": "",
             "vulnid": "JVNDB-2017-009608"
           }
         }

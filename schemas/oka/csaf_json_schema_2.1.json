@@ -678,6 +678,7 @@
             "current_release_date",
             "id",
             "initial_release_date",
+            "public_date",
             "revision_history",
             "status",
             "version"
@@ -758,6 +759,12 @@
             "initial_release_date": {
               "title": "Initial release date",
               "description": "The date when this document was first released to the specified target group.",
+              "type": "string",
+              "format": "date-time"
+            },
+            "public_date": {
+              "title": "Disclosure date",
+              "description": "getVulnDetailInfo jvncsaf/jvnstix extension for the vulnerability disclosed to the public.",
               "type": "string",
               "format": "date-time"
             },
@@ -943,7 +950,7 @@
               "title": "CWE",
               "description": "Holds the MITRE standard Common Weakness Enumeration (CWE) for the weakness associated.",
               "type": "object",
-              "required": ["id", "name", "version"],
+              "required": ["id", "name", "url", "version", "source"],
               "properties": {
                 "id": {
                   "title": "Weakness ID",
@@ -963,6 +970,12 @@
                     "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
                   ]
                 },
+                "url": {
+                  "title": "Weakness reference URL",
+                  "description": "getVulnDetailInfo jvncsaf/jvnstix extension.",
+                  "type": "string",
+                  "format": "uri"
+                },
                 "version": {
                   "title": "CWE version",
                   "description": "Holds the version string of the CWE specification this weakness was extracted from.",
@@ -970,6 +983,12 @@
                   "minLength": 1,
                   "pattern": "^[1-9]\\d*\\.([0-9]|([1-9]\\d+))(\\.\\d+)?$",
                   "examples": ["1.0", "3.4.1", "4.0", "4.11", "4.12"]
+                },
+                "source": {
+                  "title": "CWE source",
+                  "description": "getVulnDetailInfo jvncsaf/jvnstix extension.",
+                  "type": "string",
+                  "examples": ["IPA", "NVD"]
                 }
               }
             }
@@ -1142,6 +1161,18 @@
                     },
                     "ssvc_v1": {
                       "$ref": "Decision_Point_Value_Selection-1-0-1.schema.json"
+                    },
+                    "ScoringSystem": {
+                      "title": "For the Future Scoring System",
+                      "description": "getVulnDetailInfo jvncsaf/jvnstix extension.",
+                      "type": "object",
+                      "properties": {
+                        "name": { "type": "string" },
+                        "version": { "type": "string" },
+                        "vectorString": { "type": "string" },
+                        "baseScore": { "type": "number" },
+                        "baseSeverity": { "type": "string" }
+                      }
                     }
                   }
                 },

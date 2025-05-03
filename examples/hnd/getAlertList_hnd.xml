@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<feed xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/2005/Atom"
-  xmlns:sec="http://jvn.jp/rss/mod_sec/3.0/" xmlns:marking="http://data-marking.mitre.org/Marking-1"
+<feed 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns="http://www.w3.org/2005/Atom"
+  xmlns:sec="http://jvn.jp/rss/mod_sec/3.0/" 
+  xmlns:marking="http://data-marking.mitre.org/Marking-1"
   xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1"
   xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
   xsi:schemaLocation="http://www.w3.org/2005/Atom https://jvndb.jvn.jp/schema/atom.xsd
                       http://jvn.jp/rss/mod_sec/3.0/ https://jvndb.jvn.jp/schema/mod_sec_3.0.xsd
                       http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1 https://jvndb.jvn.jp/schema/tlp_marking.xsd
                       http://jvndb.jvn.jp/myjvn/Status https://jvndb.jvn.jp/schema/status_3.3.xsd"
-  xml:lang="ja">
+  xml:lang="ja"
+  >
   <title type="text">IPA注意警戒サービスAPI</title>
   <updated>2025-03-23T05:16:39+09:00</updated>
   <id>swid:ipa.go.jp+myjvn_alert+1.0.0</id>
-  <link rel="alternate" type="text/html" hreflang="ja" href="https://jvndb.jvn.jp/apis/myjvn/" />
+  <link rel="alternate" 
+    type="text/html" 
+    hreflang="ja" 
+    href="https://jvndb.jvn.jp/apis/myjvn/" />
   <author>
     <name>IPA</name>
     <uri>https://www.ipa.go.jp/</uri>
@@ -19,9 +26,40 @@
   <sec:handling>
     <marking:Marking>
       <marking:Marking_Structure xsi:type="tlpMarking:TLPMarkingStructureType"
-        marking_model_name="TLP" marking_model_ref="http://www.us-cert.gov/tlp/" color="WHITE" />
+        marking_model_name="TLP" 
+        marking_model_ref="http://www.us-cert.gov/tlp/" color="WHITE" />
     </marking:Marking>
   </sec:handling>
+  <entry>
+    <title>MyJVN APIに関するセキュリティ情報</title>
+    <id>MYJVN-ALT-2025-0000</id>
+    <summary>更新に関する連絡です。</summary>
+    <link href="https://www.ipa.go.jp/security/" />
+    <published>2025-04-04T14:45:58+09:00</published>
+    <updated>2025-04-26T07:36:21+09:00</updated>
+    <category term="Info" label="INFO" />
+    <sec:items>
+      <sec:item>
+        <sec:title>IPA security-alert</sec:title>
+        <sec:identifier>MYJVN-ALT-2025-0000-0001</sec:identifier>
+        <sec:summary>MyJVN APIの仕様</sec:summary>
+        <sec:link href="https://www.ipa.go.jp/security/security-alert/" />
+        <sec:cpe>cpe:/a:dendai.ac.jp:myjvn_api</sec:cpe>
+        <sec:published>2025-04-04T14:45:58+09:00</sec:published>
+        <sec:updated>2025-04-26T07:36:21+09:00</sec:updated>
+      </sec:item>
+      <sec:item>
+        <sec:title>IPA security-alert MyJVN API v4.0.0に関する更新情報</sec:title>
+        <sec:identifier>MYJVN-ALT-2025-0000-0002</sec:identifier>
+        <sec:summary>MyJVN API v4.0.0の仕様</sec:summary>
+        <sec:link href="https://www.ipa.go.jp/security/security-alert/" />
+        <sec:cpe>cpe:/a:dendai.ac.jp:myjvn_api</sec:cpe>
+        <sec:published>2025-04-04T14:45:58+09:00</sec:published>
+        <sec:updated>2025-04-26T07:36:21+09:00</sec:updated>
+      </sec:item>
+      <!-- sec:itemノードを繰り返します。 -->
+    </sec:items>
+  </entry>
   <entry>
     <title>WordPress に関するソフトウェア更新情報 (2025年2月12日 公開)</title>
     <id>MYJVN-ALT-2025-0011</id>
@@ -40,6 +78,6 @@
     </sec:items>
   </entry>
   <status:Status version="3.3" method="getAlertList" retCd="0" retMax="50" errCd="" errMsg=""
-    totalRes="1" totalResRet="1" firstRes="1" feed="hnd" cpeName="cpe:/a:wordpress:wordpress"
+    totalRes="2" totalResRet="2" firstRes="1" feed="hnd"
     ft="xml" />
 </feed>

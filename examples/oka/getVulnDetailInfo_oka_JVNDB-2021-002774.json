@@ -19,27 +19,23 @@
     ],
     "tracking": {
       "generator": {
+        "date": "2025-04-30T11:36:12+09:00",
         "engine": {
           "version": "4.0.0",
           "name": "MyJVN API"
         }
       },
       "id": "JVNDB-2021-002774",
-      "current_release_date": "2025-04-06T03:00:00+09:00",
+      "current_release_date": "2021-10-01T14:00:11+09:00",
       "initial_release_date": "2021-10-01T14:00:11+09:00",
-      "public_release_date": "2021-09-30T00:00:00+09:00",
+      "public_date": "2021-09-30T00:00:00+09:00",
       "status": "final",
-      "version": "2",
+      "version": "1",
       "revision_history": [
         {
           "date": "2021-10-01T12:10:56+09:00",
           "number": "1",
           "summary": "[2021年10月01日] 掲載"
-        },
-        {
-          "date": "2025-04-06T02:00:00+09:00",
-          "number": "2",
-          "summary": "XML形式からJSON形式に変換"
         }
       ]
     },
@@ -158,6 +154,7 @@
   ],
   "jvn_extension": {
     "generator": {
+      "date": "2025-04-30T11:36:12+09:00",
       "engine": {
         "version": "4.0.0",
         "name": "MyJVN API"
@@ -165,8 +162,8 @@
     },
     "title": "JVNDB 脆弱性対策詳細情報",
     "link": "https://jvndb.jvn.jp/apis/",
+    "updated": "",
     "vulnid": "JVNDB-2021-002774",
-    "updated": "2025-04-06T03:00:00+09:00",
     "lang": "ja",
     "author": {
       "name": "IPA",

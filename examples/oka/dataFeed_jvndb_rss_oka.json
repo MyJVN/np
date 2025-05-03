@@ -2,6 +2,7 @@
   "$schema": "https://jvndb.jvn.jp/schema/myjvn_feed_1.0.json?20250419",
   "feed": {
     "generator": {
+      "date": "2025-04-30T11:36:12+09:00",
       "engine": {
         "version": "4.0.0",
         "name": "MyJVN API"
@@ -9,7 +10,7 @@
     },
     "title": "JVNDB 脆弱性対策情報",
     "link": "https://jvndb.jvn.jp/apis/myjvn/",
-    "updated": "2025-04-26T07:36:21+09:00",
+    "updated": "",
     "lang": "ja",
     "author": {
       "name": "IPA",
@@ -23,120 +24,17 @@
     },
     "entry": [
       {
-        "title": "WordPress 用 Sunshine Photo Cart における信頼できないデータのデシリアライゼーションに関する脆弱性",
-        "id": "JVNDB-2025-002953",
-        "summary": "WordPress 用 Sunshine Photo Cart には、信頼できないデータのデシリアライゼーションに関する脆弱性が存在します。",
-        "link": "https://jvndb.jvn.jp/ja/contents/2025/JVNDB-2025-002953.html",
-        "updated": "2025-04-04T14:45:58+09:00",
-        "published": "2025-04-04T14:45:58+09:00",
-        "references": [
-          {
-            "url": "https://www.cve.org/CVERecord?id=CVE-2025-31084",
-            "summary": "CVE-2025-31084",
-            "source": "CVE"
-          },
-          {
-            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-31084",
-            "summary": "CVE-2025-31084",
-            "source": "NVD"
-          },
-          {
-            "url": "https://patchstack.com/database/wordpress/plugin/sunshine-photo-cart/vulnerability/wordpress-sunshine-photo-cart-3-4-10-php-object-injection-vulnerability?_s_id=cve",
-            "summary": "patchstack.com (wordpress-sunshine-photo-cart-3-4-10-php-object-injection-vulnerability?_s_id=cve)",
-            "source": "関連文書"
-          }
-        ],
-        "products": [
-          {
-            "vname": "Sunshine Photo Cart",
-            "product_id": "jvnpid:1.0::sunshinephotocart:sunshine_photo_cart",
-            "pname": "Sunshine Photo Cart",
-            "product_ids": {
-              "cpe": "cpe:2.3:a:sunshinephotocart:sunshine_photo_cart:*:*:*:*:*:*:*:*"
-            }
-          }
-        ],
-        "metrics": [
-          {
-            "content": {
-              "cvss_v3": {
-                "version": "3.0",
-                "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-                "baseScore": 9.8,
-                "baseSeverity": "CRITICAL"
-              }
-            }
-          }
-        ],
-        "cwes": [
-          {
-            "id": "CWE-502",
-            "title": "信頼できないデータのデシリアライゼーション(CWE-502)",
-            "url": "https://cwe.mitre.org/data/definitions/502.html"
-          }
-        ]
-      },
-      {
-        "title": "複数の Rockwell Automation 製品における信頼できないデータのデシリアライゼーションの脆弱性",
-        "id": "JVNDB-2025-002884",
-        "summary": "Rockwell Automation が提供する複数の製品には、次の脆弱性が存在します。* 信頼できないデータのデシリアライゼーション（CWE-502） - CVE-2025-23120",
-        "link": "https://jvndb.jvn.jp/ja/contents/2025/JVNDB-2025-002884.html",
-        "updated": "2025-04-03T12:27:09+09:00",
-        "published": "2025-04-03T12:27:09+09:00",
-        "references": [
-          {
-            "url": "https://www.cve.org/CVERecord?id=CVE-2025-23120",
-            "summary": "CVE-2025-23120",
-            "source": "CVE"
-          },
-          {
-            "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-25-091-01",
-            "summary": "ICSA-25-091-01",
-            "source": "ICS-CERT ADVISORY"
-          },
-          {
-            "url": "https://jvn.jp/vu/JVNVU99709964/index.html",
-            "summary": "JVNVU#99709964",
-            "source": "JVN"
-          }
-        ],
-        "products": [
-          {
-            "vname": "Rockwell Automation",
-            "product_id": "jvnpid:1.0::rockwellautomation:industrial_data_center_%28idc%29_with_veeam",
-            "pname": "Industrial Data Center (IDC) with Veeam",
-            "product_ids": {
-              "cpe": "cpe:2.3:a:rockwellautomation:industrial_data_center_%28idc%29_with_veeam:*:*:*:*:*:*:*:*"
-            }
-          },
-          {
-            "vname": "Rockwell Automation",
-            "product_id": "jvnpid:1.0::rockwellautomation:versavirtual_appliance_%28vva%29_with_veeam",
-            "pname": "VersaVirtual Appliance (VVA) with Veeam",
-            "product_ids": {
-              "cpe": "cpe:2.3:a:rockwellautomation:versavirtual_appliance_%28vva%29_with_veeam:*:*:*:*:*:*:*:*"
-            }
-          }
-        ],
-        "cwes": [
-          {
-            "id": "CWE-502",
-            "title": "信頼できないデータのデシリアライゼーション(CWE-502)",
-            "url": "https://cwe.mitre.org/data/definitions/502.html"
-          }
-        ]
-      },
-      {
         "title": "MyJVN API セキュリティ情報",
         "id": "JVNDB-2025-000000",
         "summary": "MyJVN API は、APIを介してセキュリティ情報を提供するシステムです。",
         "link": "https://jvndb.jvn.jp/ja/contents/2025/JVNDB-2025-000000.html",
-        "updated": "2025-04-26T07:36:21+09:00",
-        "published": "2025-04-04T14:45:58+09:00",
+        "modified": "2025-04-26T07:36:21+09:00",
+        "created": "2025-04-04T14:45:58+09:00",
+        "public": "2025-04-01T10:23:42+09:00",
         "references": [
           {
             "summary": "IPA security-alert",
-            "url": "https://www.ipa.go.jp/security/security-alert/index.html",
+            "url": "https://www.ipa.go.jp/security/security-alert/",
             "source": "advisory"
           }
         ],
@@ -163,7 +61,7 @@
             "vname": "東京電機大学",
             "product_id": "jvnpid:1.0::dendai.ac.jp:myjvn_api:4.0.0",
             "pname": "マイジェイブイエヌ API",
-            "version": "バージョン [例] 4.0.0",
+            "version": "4.0.0",
             "product_ids": {
               "cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api:4.0.0:*:*:*:*:*:*:*",
               "id_refs": [
@@ -223,6 +121,112 @@
                 "baseScore": 9.5,
                 "baseSeverity": "CRITICAL"
               }
+            }
+          }
+        ],
+        "cwes": [
+          {
+            "id": "CWE-502",
+            "name": "信頼できないデータのデシリアライゼーション(CWE-502)",
+            "url": "https://cwe.mitre.org/data/definitions/502.html"
+          }
+        ]
+      },
+      {
+        "title": "WordPress 用 Sunshine Photo Cart における信頼できないデータのデシリアライゼーションに関する脆弱性",
+        "id": "JVNDB-2025-002953",
+        "summary": "WordPress 用 Sunshine Photo Cart には、信頼できないデータのデシリアライゼーションに関する脆弱性が存在します。",
+        "link": "https://jvndb.jvn.jp/ja/contents/2025/JVNDB-2025-002953.html",
+        "modified": "2025-04-04T14:45:58+09:00",
+        "created": "2025-04-04T14:45:58+09:00",
+        "public": "2025-04-01T00:00:00+09:00",
+        "references": [
+          {
+            "url": "https://www.cve.org/CVERecord?id=CVE-2025-31084",
+            "summary": "CVE-2025-31084",
+            "source": "CVE"
+          },
+          {
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-31084",
+            "summary": "CVE-2025-31084",
+            "source": "NVD"
+          },
+          {
+            "url": "https://patchstack.com/database/wordpress/plugin/sunshine-photo-cart/vulnerability/wordpress-sunshine-photo-cart-3-4-10-php-object-injection-vulnerability?_s_id=cve",
+            "summary": "patchstack.com (wordpress-sunshine-photo-cart-3-4-10-php-object-injection-vulnerability?_s_id=cve)",
+            "source": "関連文書"
+          }
+        ],
+        "products": [
+          {
+            "vname": "Sunshine Photo Cart",
+            "product_id": "jvnpid:1.0::sunshinephotocart:sunshine_photo_cart",
+            "pname": "Sunshine Photo Cart",
+            "product_ids": {
+              "cpe": "cpe:2.3:a:sunshinephotocart:sunshine_photo_cart:*:*:*:*:*:*:*:*"
+            }
+          }
+        ],
+        "metrics": [
+          {
+            "content": {
+              "cvss_v3": {
+                "version": "3.0",
+                "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+                "baseScore": 9.8,
+                "baseSeverity": "CRITICAL"
+              }
+            }
+          }
+        ],
+        "cwes": [
+          {
+            "id": "CWE-502",
+            "name": "信頼できないデータのデシリアライゼーション(CWE-502)",
+            "url": "https://cwe.mitre.org/data/definitions/502.html"
+          }
+        ]
+      },
+      {
+        "title": "複数の Rockwell Automation 製品における信頼できないデータのデシリアライゼーションの脆弱性",
+        "id": "JVNDB-2025-002884",
+        "summary": "Rockwell Automation が提供する複数の製品には、次の脆弱性が存在します。* 信頼できないデータのデシリアライゼーション（CWE-502） - CVE-2025-23120",
+        "link": "https://jvndb.jvn.jp/ja/contents/2025/JVNDB-2025-002884.html",
+        "modified": "2025-04-03T12:27:09+09:00",
+        "created": "2025-04-03T12:27:09+09:00",
+        "public": "2025-04-02T00:00:00+09:00",
+        "references": [
+          {
+            "url": "https://www.cve.org/CVERecord?id=CVE-2025-23120",
+            "summary": "CVE-2025-23120",
+            "source": "CVE"
+          },
+          {
+            "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-25-091-01",
+            "summary": "ICSA-25-091-01",
+            "source": "ICS-CERT ADVISORY"
+          },
+          {
+            "url": "https://jvn.jp/vu/JVNVU99709964/index.html",
+            "summary": "JVNVU#99709964",
+            "source": "JVN"
+          }
+        ],
+        "products": [
+          {
+            "vname": "Rockwell Automation",
+            "product_id": "jvnpid:1.0::rockwellautomation:industrial_data_center_%28idc%29_with_veeam",
+            "pname": "Industrial Data Center (IDC) with Veeam",
+            "product_ids": {
+              "cpe": "cpe:2.3:a:rockwellautomation:industrial_data_center_%28idc%29_with_veeam:*:*:*:*:*:*:*:*"
+            }
+          },
+          {
+            "vname": "Rockwell Automation",
+            "product_id": "jvnpid:1.0::rockwellautomation:versavirtual_appliance_%28vva%29_with_veeam",
+            "pname": "VersaVirtual Appliance (VVA) with Veeam",
+            "product_ids": {
+              "cpe": "cpe:2.3:a:rockwellautomation:versavirtual_appliance_%28vva%29_with_veeam:*:*:*:*:*:*:*:*"
             }
           }
         ],

@@ -28,8 +28,8 @@
       "type": "jvn-jp-sdo",
       "id": "jvn-jp-sdo--7194eb1c-7b39-4d5b-82a5-161a538ec11d",
       "spec_version": "2.1",
-      "created": "2025-04-04T14:45:58.000Z",
-      "modified": "2025-04-26T07:36:21.000Z",
+      "created": "2025-04-30T11:36:12.000Z",
+      "modified": "2025-04-30T11:36:12.000Z",
       "name": "MyJVN API VULDEF-Document embedded in STIX",
       "extensions": {
         "extension-definition--b2440624-45a6-11ec-81d3-0242ac130003": {
@@ -57,7 +57,7 @@
             ],
             "tracking": {
               "generator": {
-                "date": "2025-04-26T07:36:21+09:00",
+                "date": "2025-04-30T11:36:12+09:00",
                 "engine": {
                   "version": "4.0.0",
                   "name": "MyJVN API"
@@ -66,13 +66,19 @@
               "id": "JVNDB-2025-000000",
               "current_release_date": "2025-04-26T07:36:21+09:00",
               "initial_release_date": "2025-04-04T14:45:58+09:00",
+              "public_date": "2025-04-01T10:23:42+09:00",
               "status": "final",
-              "version": "1",
+              "version": "2",
               "revision_history": [
                 {
                   "date": "2025-04-04T14:45:58+09:00",
                   "number": "1",
                   "summary": "初版"
+                },
+                {
+                  "date": "2025-04-26T07:36:21+09:00",
+                  "number": "2",
+                  "summary": "更新版"
                 }
               ]
             },
@@ -85,7 +91,7 @@
               {
                 "category": "external",
                 "summary": "IPA security-alert",
-                "url": "https://www.ipa.go.jp/security/security-alert/index.html",
+                "url": "https://www.ipa.go.jp/security/security-alert/",
                 "source": "advisory"
               }
             ]
@@ -167,7 +173,9 @@
                 {
                   "id": "CWE-502",
                   "name": "信頼できないデータのデシリアライゼーション(CWE-502)",
-                  "url": "https://cwe.mitre.org/data/definitions/502.html"
+                  "url": "https://cwe.mitre.org/data/definitions/502.html",
+                  "version": "1.5",
+                  "source": "IPA"
                 }
               ],
               "notes": [
@@ -205,17 +213,49 @@
                       "version": "2.0",
                       "vectorString": "AV:N/AC:L/Au:N/C:C/I:C/A:C",
                       "baseScore": 10.0,
-                      "baseSeverity": "HIGH"
+                      "baseSeverity": "HIGH",
+                      "accessVector": "NETWORK",
+                      "accessComplexity": "LOW",
+                      "authentication": "NONE",
+                      "confidentialityImpact": "COMPLETE",
+                      "integrityImpact": "COMPLETE",
+                      "availabilityImpact": "COMPLETE"
                     },
                     "cvss_v3": {
                       "version": "3.0",
                       "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
                       "baseScore": 9.8,
-                      "baseSeverity": "CRITICAL"
+                      "baseSeverity": "CRITICAL",
+                      "attackVector": "NETWORK",
+                      "attackComplexity": "LOW",
+                      "privilegesRequired": "NONE",
+                      "userInteraction": "NONE",
+                      "scope": "UNCHANGED",
+                      "confidentialityImpact": "HIGH",
+                      "integrityImpact": "HIGH",
+                      "availabilityImpact": "HIGH"
                     },
                     "cvss_v4": {
                       "version": "4.0",
                       "vectorString": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:L/SA:L",
+                      "baseScore": 9.5,
+                      "baseSeverity": "CRITICAL",
+                      "attackVector": "NETWORK",
+                      "attackComplexity": "HIGH",
+                      "attackRequirements": "PRESENT",
+                      "privilegesRequired": "NONE",
+                      "userInteraction": "NONE",
+                      "vulnConfidentialityImpact": "HIGH",
+                      "vulnIntegrityImpact": "HIGH",
+                      "vulnAvailabilityImpact": "HIGH",
+                      "subConfidentialityImpact": "HIGH",
+                      "subIntegrityImpact": "LOW",
+                      "subAvailabilityImpact": "LOW"
+                    },
+                    "ScoringSystem": {
+                      "name": "Common Vulnerability Scoring System V5",
+                      "version": "5.0",
+                      "vectorString": "CVSS:5.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:L/SA:L/LA:S",
                       "baseScore": 9.5,
                       "baseSeverity": "CRITICAL"
                     },
@@ -232,6 +272,7 @@
           ],
           "jvn_extension": {
             "generator": {
+              "date": "2025-04-30T11:36:12+09:00",
               "engine": {
                 "version": "4.0.0",
                 "name": "MyJVN API"
@@ -239,8 +280,8 @@
             },
             "title": "JVNDB 脆弱性対策詳細情報",
             "link": "https://jvndb.jvn.jp/apis/",
+            "updated": "",
             "vulnid": "JVNDB-2025-000000",
-            "updated": "2025-04-26T07:36:21+09:00",
             "lang": "ja",
             "author": {
               "name": "IPA",

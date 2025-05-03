@@ -2,6 +2,7 @@
   "$schema": "https://jvndb.jvn.jp/schema/jvnpid_1.0.json?20250419",
   "jvn-product-dictionary": {
     "generator": {
+      "date": "2025-04-30T11:36:12+09:00",
       "engine": {
         "version": "4.0.0",
         "name": "MyJVN API"
@@ -26,14 +27,14 @@
         "vendor_id": "jvnpid:1.0::dendai.ac.jp",
         "vid": "99999999991",
         "vname": "東京電機大学",
-        "vname_i18": { "ja": "東京電機大学", "en": "Tokyo Denki University" },
+        "vname_i18n": { "ja": "東京電機大学", "en": "Tokyo Denki University" },
         "cpe": "cpe:2.3::dendai.ac.jp",
         "products": [
           {
             "product_id": "jvnpid:1.0::dendai.ac.jp:myjvn_api",
             "pid": "99999999991001",
             "pname": "マイジェイブイエヌ API",
-            "pname_i18": { "ja": "マイジェイブイエヌ API", "en": "MyJVN API" },
+            "pname_i18n": { "ja": "マイジェイブイエヌ API", "en": "MyJVN API" },
             "product_ids": [
               {
                 "cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api:*:*:*:*:*:*:*:*",
@@ -51,7 +52,7 @@
             "product_id": "jvnpid:1.0::dendai.ac.jp:myjvn_api:4.0.0",
             "pid": "99999999991002",
             "pname": "マイジェイブイエヌ API",
-            "pname_i18": { "ja": "マイジェイブイエヌ API", "en": "MyJVN API" },
+            "pname_i18n": { "ja": "マイジェイブイエヌ API", "en": "MyJVN API" },
             "version": "4.0.0",
             "product_ids": [
               {
@@ -86,24 +87,14 @@
             ]
           }
         ],
-        "revision_history": [
-          {
-            "date": "2024-04-01T12:10:56+09:00",
-            "number": "1.0.0",
-            "summary": "新規登録"
-          },
-          {
-            "date": "2025-04-06T02:00:00+09:00",
-            "number": "2.0.0",
-            "summary": "purl登録"
-          }
-        ]
+        "modified": "2025-04-06T02:00:00+09:00",
+        "created": "2024-04-01T12:10:56+09:00"
       },
       {
         "vendor_id": "jvnpid:1.0::ipa",
         "vid": "10297",
         "vname": "独立行政法人情報処理推進機構 (IPA)",
-        "vname_i18": {
+        "vname_i18n": {
           "ja": "独立行政法人情報処理推進機構 (IPA)",
           "en": "INFORMATION-TECHNOLOGY PROMOTION AGENCY, JAPAN (IPA)"
         },
@@ -113,7 +104,7 @@
             "product_id": "jvnpid:1.0::ipa:jvn_ipedia",
             "pid": "99999999992001",
             "pname": "ジェイブイエヌ アイペディア",
-            "pname_i18": {
+            "pname_i18n": {
               "ja": "ジェイブイエヌ アイペディア",
               "en": "JVN iPedia"
             },
@@ -134,26 +125,21 @@
             ]
           }
         ],
-        "revision_history": [
-          {
-            "date": "2025-04-01T12:10:56+09:00",
-            "number": "1.0.0",
-            "summary": "新規登録"
-          }
-        ]
+        "modified": "2025-04-01T12:10:56+09:00",
+        "created": "2024-04-01T12:10:56+09:00"
       },
       {
         "vendor_id": "jvnpid:1.0::mitsubishielectric",
         "vid": "4499",
         "vname": "三菱電機",
-        "vname_i18": { "ja": "三菱電機", "en": "Mitsubishi Electric" },
+        "vname_i18n": { "ja": "三菱電機", "en": "Mitsubishi Electric" },
         "cpe": "cpe:2.3::mitsubishielectric",
         "products": [
           {
             "product_id": "jvnpid:1.0::mitsubishielectric:melipc_series_mi5000",
             "pid": "43039",
             "pname": "MELIPC シリーズ MI5000",
-            "pname_i18": {
+            "pname_i18n": {
               "ja": "MELIPC シリーズ MI5000",
               "en": "MELIPC Series MI5000"
             },
@@ -167,7 +153,7 @@
             "product_id": "jvnpid:1.0::mitsubishielectric:melipc_series_mi5122-vw",
             "pid": "76240",
             "pname": "MELIPC シリーズ MI5122-VW",
-            "pname_i18": {
+            "pname_i18n": {
               "ja": "MELIPC シリーズ MI5122-VW",
               "en": "MELIPC Series MI5122-VW"
             },
@@ -178,13 +164,8 @@
             ]
           }
         ],
-        "revision_history": [
-          {
-            "date": "2025-04-01T12:10:56+09:00",
-            "number": "1.0.0",
-            "summary": "新規登録"
-          }
-        ]
+        "modified": "2025-04-01T12:10:56+09:00",
+        "created": "2024-04-01T12:10:56+09:00"
       }
     ]
   },

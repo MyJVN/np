@@ -115,6 +115,7 @@
   "$schema": "https://jvndb.jvn.jp/schema/jvnpid_1.0.json?20250419",
   "jvn_product_dictionary": {
     "generator": {
+      "date": "レスポンス生成日 [例] 2025-04-30T11:36:12+09:00",
       "engine": {
         "version": "4.0.0",
         "name": "MyJVN API"
@@ -122,7 +123,7 @@
     },
     "title": "JVNDB ベンダ一覧",
     "link": "https://jvndb.jvn.jp/apis/myjvn/",
-    "updated": "更新日 [例] 2025-04-26T07:36:21+09:00",
+    "updated": "最終更新日 [例] 2025-04-26T07:36:21+09:00",
     "lang": "表示言語 (ja:日本語、en:英語 )",
     "author": {
       "name": "IPA",
@@ -141,7 +142,7 @@
         "vname": "ベンダ名 [例] 東京電機大学",
         "cpe": "CPEベンダ識別子 (CPE v2.3 形式) [例] cpe:2.3::dendai.ac.jp"
       },
-      { "$comment": "vendor_id,vid,vname,cpeなどを繰り返します。" }
+      { "$comment": "vendor_id,vid,vname,cpe などを繰り返します。" }
     ]
   },
   "status": {

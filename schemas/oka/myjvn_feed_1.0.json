@@ -30,15 +30,17 @@
     "engine_type": {
       "type": "object",
       "properties": {
-        "version": { "type": "string" },
-        "name": { "type": "string" }
+        "version": { "type": "string", "enum": ["4.0.0"] },
+        "name": { "type": "string", "enum": ["MyJVN API"] }
       }
     },
     "generator_type": {
       "type": "object",
       "properties": {
+        "date": { "type": "string", "format": "date-time" },
         "engine": { "$ref": "#/$defs/engine_type" }
-      }
+      },
+      "required": ["date", "engine"]
     },
     "author_type": {
       "type": "object",
@@ -222,10 +224,10 @@
         "type": "object",
         "properties": {
           "id": { "type": "string" },
-          "title": { "type": "string" },
+          "name": { "type": "string" },
           "url": { "type": "string", "format": "uri" }
         },
-        "required": ["id", "title", "url"]
+        "required": ["id", "name", "url"]
       }
     },
     "category_type": {
@@ -247,8 +249,9 @@
           "title": { "type": "string" },
           "id": { "type": "string" },
           "link": { "type": "string", "format": "uri" },
-          "updated": { "type": "string", "format": "date-time" },
-          "published": { "type": "string", "format": "date-time" },
+          "modified": { "type": "string", "format": "date-time" },
+          "created": { "type": "string", "format": "date-time" },
+          "public": { "type": "string", "format": "date-time" },
           "author": { "type": "string" },
           "products": { "$ref": "#/$defs/products_type" }
         },
@@ -273,8 +276,9 @@
           "id": { "type": "string" },
           "summary": { "type": "string" },
           "link": { "type": "string", "format": "uri" },
-          "updated": { "type": "string", "format": "date-time" },
-          "published": { "type": "string", "format": "date-time" },
+          "modified": { "type": "string", "format": "date-time" },
+          "created": { "type": "string", "format": "date-time" },
+          "public": { "type": "string", "format": "date-time" },
           "references": { "$ref": "#/$defs/references_type" },
           "products": { "$ref": "#/$defs/products_type" },
           "metrics": { "$ref": "#/$defs/metrics_type" },

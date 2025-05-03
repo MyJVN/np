@@ -1,4 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" ?>   <Result version="3.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://jvndb.jvn.jp/myjvn/Results" xmlns:mjres="http://jvndb.jvn.jp/myjvn/Results" xmlns:mjstat="http://jvndb.jvn.jp/myjvn/Statistics" xmlns:status="http://jvndb.jvn.jp/myjvn/Status" xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/Results https://jvndb.jvn.jp/schema/results_3.3.xsd">
+<?xml version="1.0" encoding="UTF-8" ?>
+<Result version="3.3" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://jvndb.jvn.jp/myjvn/Results" 
+  xmlns:mjres="http://jvndb.jvn.jp/myjvn/Results"
+  xmlns:mjstat="http://jvndb.jvn.jp/myjvn/Statistics"
+  xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
+  xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/Results https://jvndb.jvn.jp/schema/results_3.3.xsd"
+  >
     <mjstat:sumJvnDb>
       <mjstat:title xml:lang="ja">脆弱性統計情報</mjstat:title>
       <mjstat:title xml:lang="en-US">Statistics Vulnerability Count</mjstat:title>
@@ -97,4 +105,3 @@
     </mjstat:sumCwe>
     <status:Status version="3.3" method="getStatistics" lang="ja" retCd="0" retMax="10000" retMaxCnt="27636" errCd="" errMsg="" totalRes="27" totalResRet="27" firstRes="" feed="hnd" theme="sumAll" cweId="CWE-79" type="y" datePublicStartY="1999"/>
   </Result>
-

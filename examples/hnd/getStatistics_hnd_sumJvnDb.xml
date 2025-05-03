@@ -1,36 +1,57 @@
-<?xml version="1.0" encoding="UTF-8" ?>   <Result version="3.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://jvndb.jvn.jp/myjvn/Results" xmlns:mjres="http://jvndb.jvn.jp/myjvn/Results" xmlns:mjstat="http://jvndb.jvn.jp/myjvn/Statistics" xmlns:status="http://jvndb.jvn.jp/myjvn/Status" xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/Results https://jvndb.jvn.jp/schema/results_3.3.xsd">
-    <mjstat:sumJvnDb>
-      <mjstat:title xml:lang="ja">脆弱性統計情報</mjstat:title>
-      <mjstat:title xml:lang="en-US">Statistics Vulnerability Count</mjstat:title>
-      <mjstat:resDataTotal vulinfo="234395" vendor="30055" product="77881"/>
-      <mjstat:resData date="1999" cntAll="4"/>
-      <mjstat:resData date="2000" cntAll="2"/>
-      <mjstat:resData date="2001" cntAll="7"/>
-      <mjstat:resData date="2002" cntAll="17"/>
-      <mjstat:resData date="2003" cntAll="14"/>
-      <mjstat:resData date="2004" cntAll="28"/>
-      <mjstat:resData date="2005" cntAll="28"/>
-      <mjstat:resData date="2006" cntAll="28"/>
-      <mjstat:resData date="2007" cntAll="50"/>
-      <mjstat:resData date="2008" cntAll="71"/>
-      <mjstat:resData date="2009" cntAll="110"/>
-      <mjstat:resData date="2010" cntAll="217"/>
-      <mjstat:resData date="2011" cntAll="273"/>
-      <mjstat:resData date="2012" cntAll="377"/>
-      <mjstat:resData date="2013" cntAll="601"/>
-      <mjstat:resData date="2014" cntAll="950"/>
-      <mjstat:resData date="2015" cntAll="2298"/>
-      <mjstat:resData date="2016" cntAll="8650"/>
-      <mjstat:resData date="2017" cntAll="14447"/>
-      <mjstat:resData date="2018" cntAll="15913"/>
-      <mjstat:resData date="2019" cntAll="15935"/>
-      <mjstat:resData date="2020" cntAll="17413"/>
-      <mjstat:resData date="2021" cntAll="20847"/>
-      <mjstat:resData date="2022" cntAll="25078"/>
-      <mjstat:resData date="2023" cntAll="27636"/>
-      <mjstat:resData date="2024" cntAll="21085"/>
-      <mjstat:resData date="2025" cntAll="2418"/>
-    </mjstat:sumJvnDb>
-    <status:Status version="3.3" method="getStatistics" lang="ja" retCd="0" retMax="10000" retMaxCnt="27636" errCd="" errMsg="" totalRes="27" totalResRet="27" firstRes="" feed="hnd" theme="sumJvnDb" type="y" datePublicStartY="1999"/>
-  </Result>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<Result version="3.3"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://jvndb.jvn.jp/myjvn/Results"
+  xmlns:mjres="http://jvndb.jvn.jp/myjvn/Results"
+  xmlns:mjstat="http://jvndb.jvn.jp/myjvn/Statistics"
+  xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
+  xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/Results https://jvndb.jvn.jp/schema/results_3.3.xsd"
+>
+  <mjstat:sumJvnDb>
+    <mjstat:title xml:lang="ja">脆弱性統計情報</mjstat:title>
+    <mjstat:title xml:lang="en-US">Statistics Vulnerability Count</mjstat:title>
+    <mjstat:resDataTotal vulinfo="234395" vendor="30055" product="77881" />
+    <mjstat:resData date="1999" cntAll="4" />
+    <mjstat:resData date="2000" cntAll="2" />
+    <mjstat:resData date="2001" cntAll="7" />
+    <mjstat:resData date="2002" cntAll="17" />
+    <mjstat:resData date="2003" cntAll="14" />
+    <mjstat:resData date="2004" cntAll="28" />
+    <mjstat:resData date="2005" cntAll="28" />
+    <mjstat:resData date="2006" cntAll="28" />
+    <mjstat:resData date="2007" cntAll="50" />
+    <mjstat:resData date="2008" cntAll="71" />
+    <mjstat:resData date="2009" cntAll="110" />
+    <mjstat:resData date="2010" cntAll="217" />
+    <mjstat:resData date="2011" cntAll="273" />
+    <mjstat:resData date="2012" cntAll="377" />
+    <mjstat:resData date="2013" cntAll="601" />
+    <mjstat:resData date="2014" cntAll="950" />
+    <mjstat:resData date="2015" cntAll="2298" />
+    <mjstat:resData date="2016" cntAll="8650" />
+    <mjstat:resData date="2017" cntAll="14447" />
+    <mjstat:resData date="2018" cntAll="15913" />
+    <mjstat:resData date="2019" cntAll="15935" />
+    <mjstat:resData date="2020" cntAll="17413" />
+    <mjstat:resData date="2021" cntAll="20847" />
+    <mjstat:resData date="2022" cntAll="25078" />
+    <mjstat:resData date="2023" cntAll="27636" />
+    <mjstat:resData date="2024" cntAll="21085" />
+    <mjstat:resData date="2025" cntAll="2418" />
+  </mjstat:sumJvnDb>
+  <status:Status
+    version="3.3"
+    method="getStatistics"
+    lang="ja" retCd="0"
+    retMax="10000"
+    retMaxCnt="27636"
+    errCd=""
+    errMsg=""
+    totalRes="27"
+    totalResRet="27"
+    firstRes=""
+    feed="hnd"
+    theme="sumJvnDb"
+    type="y"
+    datePublicStartY="1999" />
+</Result>

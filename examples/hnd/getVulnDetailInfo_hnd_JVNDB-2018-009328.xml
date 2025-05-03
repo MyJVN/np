@@ -1,110 +1,126 @@
-<?xml version="1.0" encoding="UTF-8" ?>   
-<VULDEF-Document 
-version="3.2" 
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-xmlns="http://jvn.jp/vuldef/" 
-xmlns:vuldef="http://jvn.jp/vuldef/" 
-xmlns:status="http://jvndb.jvn.jp/myjvn/Status" 
-xmlns:sec="http://jvn.jp/rss/mod_sec/3.0/" 
-xmlns:marking="http://data-marking.mitre.org/Marking-1" 
-xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1" 
-xsi:schemaLocation="http://jvn.jp/vuldef/ https://jvndb.jvn.jp/schema/vuldef_3.2.xsd http://jvn.jp/rss/mod_sec/3.0/ https://jvndb.jvn.jp/schema/mod_sec_3.0.xsd http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1 https://jvndb.jvn.jp/schema/tlp_marking.xsd http://jvndb.jvn.jp/myjvn/Status https://jvndb.jvn.jp/schema/status_3.3.xsd" 
-xml:lang="ja">
-    <Vulinfo>
-      <VulinfoID>JVNDB-2018-009328</VulinfoID>
-      <VulinfoData>
-        <Title>JP1/VERITAS 製品における複数の脆弱性</Title>
-        <VulinfoDescription>
-          <Overview>JP1/VERITAS 製品に複数の脆弱性が存在します。   </Overview>
-        </VulinfoDescription>
-        <Affected>
-          <AffectedItem>
-            <Name>ベリタス</Name>
-            <ProductName>Veritas NetBackup</ProductName>
-            <Cpe version="2.2">cpe:/a:veritas:netbackup</Cpe>
-            <VersionNumber>7.7</VersionNumber>
-            <VersionNumber>8.0</VersionNumber>
-            <VersionNumber>8.1</VersionNumber>
-          </AffectedItem>
-          <AffectedItem>
-            <Name>日立</Name>
-            <ProductName>JP1/VERITAS NetBackup</ProductName>
-            <Cpe version="2.2">cpe:/a:hitachi:jp1_veritas_netbackup</Cpe>
-            <VersionNumber>7.7</VersionNumber>
-            <VersionNumber>8.0</VersionNumber>
-            <VersionNumber>8.1</VersionNumber>
-          </AffectedItem>
-        </Affected>
-        <Impact>
-          <Cvss version="2.0">
-            <Severity type="Base">High</Severity>
-            <Base>10</Base>
-            <Vector>AV:N/AC:L/Au:N/C:C/I:C/A:C</Vector>
-          </Cvss>
-          <Cvss version="3.0">
-            <Severity type="Base">Critical</Severity>
-            <Base>9.8</Base>
-            <Vector>CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H</Vector>
-          </Cvss>
-          <ImpactItem>
-            <Description>想定される影響については、ベンダ情報をご確認ください。</Description>
-          </ImpactItem>
-        </Impact>
-        <Solution>
-          <SolutionItem>
-            <Description>ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。</Description>
-          </SolutionItem>
-        </Solution>
-        <Related>
-          <RelatedItem type="vendor">
-            <Name>Hitachi Software Vulnerability Information</Name>
-            <VulinfoID>hitachi-sec-2018-133</VulinfoID>
-            <URL>http://www.hitachi.co.jp/Prod/comp/soft1/global/security/info/vuls/hitachi-sec-2018-133/index.html</URL>
-          </RelatedItem>
-          <RelatedItem type="vendor">
-            <Name>Support</Name>
-            <VulinfoID>Article ID:100000477</VulinfoID>
-            <URL>https://www.veritas.com/support/en_US/article.100000477.html</URL>
-          </RelatedItem>
-          <RelatedItem type="vendor">
-            <Name>Support</Name>
-            <VulinfoID>Article ID:100043979</VulinfoID>
-            <URL>https://www.veritas.com/support/en_US/article.100043979.html</URL>
-          </RelatedItem>
-          <RelatedItem type="vendor">
-            <Name>ソフトウェア製品セキュリティ情報</Name>
-            <VulinfoID>hitachi-sec-2018-133</VulinfoID>
-            <URL>http://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2018-133/index.html</URL>
-          </RelatedItem>
-          <RelatedItem type="cwe">
-            <Name>JVNDB</Name>
-            <VulinfoID>CWE-noinfo</VulinfoID>
-            <Title>情報不足</Title>
-            <URL>https://www.ipa.go.jp/security/vuln/scap/cwe.html</URL>
-          </RelatedItem>
-        </Related>
-        <History>
-          <HistoryItem>
-            <HistoryNo>1</HistoryNo>
-            <DateTime>2018-11-15T16:17:27+09:00</DateTime>
-            <Description>[2018年11月15日]\n  掲載</Description>
-          </HistoryItem>
-          <HistoryItem>
-            <HistoryNo>2</HistoryNo>
-            <DateTime>2018-11-20T10:37:07+09:00</DateTime>
-            <Description>[2018年11月20日]\n  CVSS による深刻度：内容を更新</Description>
-          </HistoryItem>
-        </History>
-        <DateFirstPublished>2018-11-15T16:17:27+09:00</DateFirstPublished>
-        <DateLastUpdated>2018-11-20T12:12:04+09:00</DateLastUpdated>
-        <DatePublic>2018-11-14T00:00:00+09:00</DatePublic>
-      </VulinfoData>
-    </Vulinfo>
-    <sec:handling>
-      <marking:Marking>
-        <marking:Marking_Structure xsi:type="tlpMarking:TLPMarkingStructureType" marking_model_name="TLP" marking_model_ref="http://www.us-cert.gov/tlp/" color="WHITE"/>
-      </marking:Marking>
-    </sec:handling>
-    <status:Status version="3.3" method="getVulnDetailInfo" lang="ja" retCd="0" retMax="10" errCd="" errMsg="" totalRes="1" totalResRet="1" firstRes="1" feed="hnd" vulnId="JVNDB-2018-009328"/>
-  </VULDEF-Document>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<VULDEF-Document
+  version="3.2"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://jvn.jp/vuldef/"
+  xmlns:vuldef="http://jvn.jp/vuldef/"
+  xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
+  xmlns:sec="http://jvn.jp/rss/mod_sec/3.0/"
+  xmlns:marking="http://data-marking.mitre.org/Marking-1"
+  xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1"
+  xsi:schemaLocation="http://jvn.jp/vuldef/ https://jvndb.jvn.jp/schema/vuldef_3.2.xsd
+                      http://jvn.jp/rss/mod_sec/3.0/ https://jvndb.jvn.jp/schema/mod_sec_3.0.xsd
+                      http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1 https://jvndb.jvn.jp/schema/tlp_marking.xsd
+                      http://jvndb.jvn.jp/myjvn/Status https://jvndb.jvn.jp/schema/status_3.3.xsd"
+  xml:lang="ja"
+  >
+  <Vulinfo>
+    <VulinfoID>JVNDB-2018-009328</VulinfoID>
+    <VulinfoData>
+      <Title>JP1/VERITAS 製品における複数の脆弱性</Title>
+      <VulinfoDescription>
+        <Overview>JP1/VERITAS 製品に複数の脆弱性が存在します。   </Overview>
+      </VulinfoDescription>
+      <Affected>
+        <AffectedItem>
+          <Name>ベリタス</Name>
+          <ProductName>Veritas NetBackup</ProductName>
+          <Cpe version="2.2">cpe:/a:veritas:netbackup</Cpe>
+          <VersionNumber>7.7</VersionNumber>
+          <VersionNumber>8.0</VersionNumber>
+          <VersionNumber>8.1</VersionNumber>
+        </AffectedItem>
+        <AffectedItem>
+          <Name>日立</Name>
+          <ProductName>JP1/VERITAS NetBackup</ProductName>
+          <Cpe version="2.2">cpe:/a:hitachi:jp1_veritas_netbackup</Cpe>
+          <VersionNumber>7.7</VersionNumber>
+          <VersionNumber>8.0</VersionNumber>
+          <VersionNumber>8.1</VersionNumber>
+        </AffectedItem>
+      </Affected>
+      <Impact>
+        <Cvss version="2.0">
+          <Severity type="Base">High</Severity>
+          <Base>10</Base>
+          <Vector>AV:N/AC:L/Au:N/C:C/I:C/A:C</Vector>
+        </Cvss>
+        <Cvss version="3.0">
+          <Severity type="Base">Critical</Severity>
+          <Base>9.8</Base>
+          <Vector>CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H</Vector>
+        </Cvss>
+        <ImpactItem>
+          <Description>想定される影響については、ベンダ情報をご確認ください。</Description>
+        </ImpactItem>
+      </Impact>
+      <Solution>
+        <SolutionItem>
+          <Description>ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。</Description>
+        </SolutionItem>
+      </Solution>
+      <Related>
+        <RelatedItem type="vendor">
+          <Name>Hitachi Software Vulnerability Information</Name>
+          <VulinfoID>hitachi-sec-2018-133</VulinfoID>
+          <URL>http://www.hitachi.co.jp/Prod/comp/soft1/global/security/info/vuls/hitachi-sec-2018-133/index.html</URL>
+        </RelatedItem>
+        <RelatedItem type="vendor">
+          <Name>Support</Name>
+          <VulinfoID>Article ID:100000477</VulinfoID>
+          <URL>https://www.veritas.com/support/en_US/article.100000477.html</URL>
+        </RelatedItem>
+        <RelatedItem type="vendor">
+          <Name>Support</Name>
+          <VulinfoID>Article ID:100043979</VulinfoID>
+          <URL>https://www.veritas.com/support/en_US/article.100043979.html</URL>
+        </RelatedItem>
+        <RelatedItem type="vendor">
+          <Name>ソフトウェア製品セキュリティ情報</Name>
+          <VulinfoID>hitachi-sec-2018-133</VulinfoID>
+          <URL>http://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2018-133/index.html</URL>
+        </RelatedItem>
+        <RelatedItem type="cwe">
+          <Name>JVNDB</Name>
+          <VulinfoID>CWE-noinfo</VulinfoID>
+          <Title>情報不足</Title>
+          <URL>https://www.ipa.go.jp/security/vuln/scap/cwe.html</URL>
+        </RelatedItem>
+      </Related>
+      <History>
+        <HistoryItem>
+          <HistoryNo>1</HistoryNo>
+          <DateTime>2018-11-15T16:17:27+09:00</DateTime>
+          <Description>[2018年11月15日]\n  掲載</Description>
+        </HistoryItem>
+        <HistoryItem>
+          <HistoryNo>2</HistoryNo>
+          <DateTime>2018-11-20T10:37:07+09:00</DateTime>
+          <Description>[2018年11月20日]\n  CVSS による深刻度：内容を更新</Description>
+        </HistoryItem>
+      </History>
+      <DateFirstPublished>2018-11-15T16:17:27+09:00</DateFirstPublished>
+      <DateLastUpdated>2018-11-20T12:12:04+09:00</DateLastUpdated>
+      <DatePublic>2018-11-14T00:00:00+09:00</DatePublic>
+    </VulinfoData>
+  </Vulinfo>
+  <sec:handling>
+    <marking:Marking>
+      <marking:Marking_Structure xsi:type="tlpMarking:TLPMarkingStructureType"
+        marking_model_name="TLP" marking_model_ref="http://www.us-cert.gov/tlp/" color="WHITE" />
+    </marking:Marking>
+  </sec:handling>
+  <status:Status
+    version="3.3"
+    method="getVulnDetailInfo"
+    lang="ja"
+    retCd="0"
+    retMax="10"
+    errCd=""
+    errMsg=""
+    totalRes="1"
+    totalResRet="1"
+    firstRes="1"
+    feed="hnd"
+    vulnId="JVNDB-2018-009328" />
+</VULDEF-Document>

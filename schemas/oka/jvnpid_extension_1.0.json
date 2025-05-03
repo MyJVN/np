@@ -13,15 +13,17 @@
     "engine_type": {
       "type": "object",
       "properties": {
-        "version": { "type": "string" },
-        "name": { "type": "string" }
+        "version": { "type": "string", "enum": ["4.0.0"] },
+        "name": { "type": "string", "enum": ["MyJVN API"] }
       }
     },
     "generator_type": {
       "type": "object",
       "properties": {
+        "date": { "type": "string", "format": "date-time" },
         "engine": { "$ref": "#/$defs/engine_type" }
-      }
+      },
+      "required": ["date", "engine"]
     },
     "author_type": {
       "type": "object",
@@ -214,15 +216,15 @@
         "generator": { "$ref": "#/$defs/generator_type" },
         "title": { "type": "string" },
         "link": { "type": "string", "format": "uri" },
-        "vulnid": { "type": "string" },
         "updated": { "type": "string", "format": "date-time" },
+        "vulnid": { "type": "string" },
         "lang": { "type": "string", "enum": ["ja", "en"] },
         "author": { "$ref": "#/$defs/author_type" },
         "distribution": { "$ref": "#/$defs/distribution_type" },
         "affected": { "$ref": "#/$defs/affected_type" },
         "cpeApplicability": { "$ref": "#/$defs/cpeApplicability_type" }
       },
-      "required": ["generator", "title", "link", "vulnid"]
+      "required": ["generator", "title", "link", "updated", "vulnid"]
     }
   }
 }

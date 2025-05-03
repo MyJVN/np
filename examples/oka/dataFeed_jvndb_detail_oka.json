@@ -28,8 +28,8 @@
       "type": "jvn-jp-sdo",
       "id": "jvn-jp-sdo--b8244da2-4bd8-4a8c-b9f4-940740281c22",
       "spec_version": "2.1",
-      "created": "2025-04-04T14:45:58.000Z",
-      "modified": "2025-04-26T07:36:21.000Z",
+      "created": "2025-04-30T11:36:12.000Z",
+      "modified": "2025-04-30T11:36:12.000Z",
       "name": "MyJVN API VULDEF-Document embedded in STIX",
       "extensions": {
         "extension-definition--b2440624-45a6-11ec-81d3-0242ac130003": {
@@ -57,26 +57,23 @@
             ],
             "tracking": {
               "generator": {
+                "date": "2025-04-30T11:36:12+09:00",
                 "engine": {
                   "version": "4.0.0",
                   "name": "MyJVN API"
                 }
               },
               "id": "JVNDB-2017-009608",
-              "current_release_date": "2025-04-06T03:00:00+09:00",
+              "current_release_date": "2017-11-16T15:06:40+09:00",
               "initial_release_date": "2017-11-16T15:06:40+09:00",
+              "public_date": "2017-10-20T00:00:00+09:00",
               "status": "final",
-              "version": "2",
+              "version": "1",
               "revision_history": [
                 {
                   "date": "2018-02-17T10:37:52+09:00",
                   "number": "1",
                   "summary": "[2017年11月16日] 掲載"
-                },
-                {
-                  "date": "2025-04-06T02:00:00+09:00",
-                  "number": "2",
-                  "summary": "XML形式からJSON形式に変換"
                 }
               ]
             },
@@ -137,6 +134,7 @@
                 {
                   "id": "CWE-327",
                   "name": "不完全、または危険な暗号アルゴリズムの使用",
+                  "url": "https://cwe.mitre.org/data/definitions/327.html",
                   "version": "",
                   "source": "NVD"
                 }
@@ -196,6 +194,7 @@
           ],
           "jvn_extension": {
             "generator": {
+              "date": "2025-04-30T11:36:12+09:00",
               "engine": {
                 "version": "4.0.0",
                 "name": "MyJVN API"
@@ -203,6 +202,7 @@
             },
             "title": "JVNDB 脆弱性対策詳細情報",
             "link": "https://jvndb.jvn.jp/apis/",
+            "updated": "",
             "vulnid": "JVNDB-2017-009608"
           }
         },
@@ -226,17 +226,18 @@
             ],
             "tracking": {
               "generator": {
+                "date": "2025-04-30T11:36:12+09:00",
                 "engine": {
                   "version": "4.0.0",
                   "name": "MyJVN API"
                 }
               },
               "id": "JVNDB-2018-009328",
-              "current_release_date": "2025-04-06T03:00:00+09:00",
+              "current_release_date": "2018-11-20T12:12:04+09:00",
               "initial_release_date": "2018-11-15T16:17:27+09:00",
-              "public_release_date": "2018-11-14T00:00:00+09:00",
+              "public_date": "2018-11-14T00:00:00+09:00",
               "status": "final",
-              "version": "3",
+              "version": "2",
               "revision_history": [
                 {
                   "date": "2018-11-15T16:17:27+09:00",
@@ -247,11 +248,6 @@
                   "date": "2018-11-20T10:37:07+09:00",
                   "number": "2",
                   "summary": "[2018年11月20日] CVSS による深刻度：内容を更新"
-                },
-                {
-                  "date": "2025-04-06T02:00:00+09:00",
-                  "number": "3",
-                  "summary": "XML形式からJSON形式に変換"
                 }
               ]
             },
@@ -336,6 +332,7 @@
                 {
                   "id": "CWE-noinfo",
                   "name": "情報不足",
+                  "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
                   "version": "",
                   "source": "IPA"
                 }
@@ -405,6 +402,7 @@
           ],
           "jvn_extension": {
             "generator": {
+              "date": "2025-04-30T11:36:12+09:00",
               "engine": {
                 "version": "4.0.0",
                 "name": "MyJVN API"
@@ -412,8 +410,8 @@
             },
             "title": "JVNDB 脆弱性対策詳細情報",
             "link": "https://jvndb.jvn.jp/apis/",
+            "updated": "",
             "vulnid": "JVNDB-2018-009328",
-            "updated": "2025-04-06T03:00:00+09:00",
             "lang": "ja",
             "author": {
               "name": "IPA",
@@ -527,27 +525,23 @@
             ],
             "tracking": {
               "generator": {
+                "date": "2025-04-30T11:36:12+09:00",
                 "engine": {
                   "version": "4.0.0",
                   "name": "MyJVN API"
                 }
               },
               "id": "JVNDB-2021-002774",
-              "current_release_date": "2025-04-06T03:00:00+09:00",
+              "current_release_date": "2021-10-01T14:00:11+09:00",
               "initial_release_date": "2021-10-01T14:00:11+09:00",
-              "public_release_date": "2021-09-30T00:00:00+09:00",
+              "public_date": "2021-09-30T00:00:00+09:00",
               "status": "final",
-              "version": "2",
+              "version": "1",
               "revision_history": [
                 {
                   "date": "2021-10-01T12:10:56+09:00",
                   "number": "1",
                   "summary": "[2021年10月01日] 掲載"
-                },
-                {
-                  "date": "2025-04-06T02:00:00+09:00",
-                  "number": "2",
-                  "summary": "XML形式からJSON形式に変換"
                 }
               ]
             },
@@ -666,6 +660,7 @@
           ],
           "jvn_extension": {
             "generator": {
+              "date": "2025-04-30T11:36:12+09:00",
               "engine": {
                 "version": "4.0.0",
                 "name": "MyJVN API"
@@ -673,8 +668,8 @@
             },
             "title": "JVNDB 脆弱性対策詳細情報",
             "link": "https://jvndb.jvn.jp/apis/",
+            "updated": "",
             "vulnid": "JVNDB-2021-002774",
-            "updated": "2025-04-06T03:00:00+09:00",
             "lang": "ja",
             "author": {
               "name": "IPA",
@@ -723,17 +718,18 @@
             ],
             "tracking": {
               "generator": {
+                "date": "2025-04-30T11:36:12+09:00",
                 "engine": {
                   "version": "4.0.0",
                   "name": "MyJVN API"
                 }
               },
               "id": "JVNDB-2022-000097",
-              "current_release_date": "2025-04-06T03:00:00+09:00",
+              "current_release_date": "2024-05-29T17:39:51+09:00",
               "initial_release_date": "2022-12-15T12:04:51+09:00",
-              "public_release_date": "2022-12-15T00:00:00+09:00",
+              "public_date": "2022-12-15T00:00:00+09:00",
               "status": "final",
-              "version": "3",
+              "version": "2",
               "revision_history": [
                 {
                   "date": "2022-12-07T13:44:19+09:00",
@@ -744,11 +740,6 @@
                   "date": "2024-07-10T15:35:46+09:00",
                   "number": "2",
                   "summary": "[2024年05月29日] 参考情報：National Vulnerability Database (NVD) (CVE-2022-41993) を追加  参考情報：National Vulnerability Database (NVD) (CVE-2022-46287) を追加  参考情報：National Vulnerability Database (NVD) (CVE-2022-46288) を追加"
-                },
-                {
-                  "date": "2025-04-06T02:00:00+09:00",
-                  "number": "3",
-                  "summary": "XML形式からJSON形式に変換"
                 }
               ]
             },
@@ -844,12 +835,14 @@
                 {
                   "id": "CWE-79",
                   "name": "クロスサイトスクリプティング",
+                  "url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
                   "version": "",
                   "source": "IPA"
                 },
                 {
                   "id": "CWE-20",
                   "name": "不適切な入力確認",
+                  "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
                   "version": "",
                   "source": "IPA"
                 }
@@ -1041,6 +1034,7 @@
           ],
           "jvn_extension": {
             "generator": {
+              "date": "2025-04-30T11:36:12+09:00",
               "engine": {
                 "version": "4.0.0",
                 "name": "MyJVN API"
@@ -1048,6 +1042,7 @@
             },
             "title": "JVNDB 脆弱性対策詳細情報",
             "link": "https://jvndb.jvn.jp/apis/",
+            "updated": "",
             "vulnid": "JVNDB-2022-000097"
           }
         },
@@ -1071,7 +1066,7 @@
             ],
             "tracking": {
               "generator": {
-                "date": "2025-04-26T07:36:21+09:00",
+                "date": "2025-04-30T11:36:12+09:00",
                 "engine": {
                   "version": "4.0.0",
                   "name": "MyJVN API"
@@ -1080,13 +1075,19 @@
               "id": "JVNDB-2025-000000",
               "current_release_date": "2025-04-26T07:36:21+09:00",
               "initial_release_date": "2025-04-04T14:45:58+09:00",
+              "public_date": "2025-04-01T10:23:42+09:00",
               "status": "final",
-              "version": "1",
+              "version": "2",
               "revision_history": [
                 {
                   "date": "2025-04-04T14:45:58+09:00",
                   "number": "1",
                   "summary": "初版"
+                },
+                {
+                  "date": "2025-04-26T07:36:21+09:00",
+                  "number": "2",
+                  "summary": "更新版"
                 }
               ]
             },
@@ -1099,7 +1100,7 @@
               {
                 "category": "external",
                 "summary": "IPA security-alert",
-                "url": "https://www.ipa.go.jp/security/security-alert/index.html",
+                "url": "https://www.ipa.go.jp/security/security-alert/",
                 "source": "advisory"
               }
             ]
@@ -1181,7 +1182,9 @@
                 {
                   "id": "CWE-502",
                   "name": "信頼できないデータのデシリアライゼーション(CWE-502)",
-                  "url": "https://cwe.mitre.org/data/definitions/502.html"
+                  "url": "https://cwe.mitre.org/data/definitions/502.html",
+                  "version": "",
+                  "source": ""
                 }
               ],
               "notes": [
@@ -1219,19 +1222,44 @@
                       "version": "2.0",
                       "vectorString": "AV:N/AC:L/Au:N/C:C/I:C/A:C",
                       "baseScore": 10.0,
-                      "baseSeverity": "HIGH"
+                      "baseSeverity": "HIGH",
+                      "accessVector": "NETWORK",
+                      "accessComplexity": "LOW",
+                      "authentication": "NONE",
+                      "confidentialityImpact": "COMPLETE",
+                      "integrityImpact": "COMPLETE",
+                      "availabilityImpact": "COMPLETE"
                     },
                     "cvss_v3": {
                       "version": "3.0",
                       "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
                       "baseScore": 9.8,
-                      "baseSeverity": "CRITICAL"
+                      "baseSeverity": "CRITICAL",
+                      "attackVector": "NETWORK",
+                      "attackComplexity": "LOW",
+                      "privilegesRequired": "NONE",
+                      "userInteraction": "NONE",
+                      "scope": "UNCHANGED",
+                      "confidentialityImpact": "HIGH",
+                      "integrityImpact": "HIGH",
+                      "availabilityImpact": "HIGH"
                     },
                     "cvss_v4": {
                       "version": "4.0",
                       "vectorString": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:L/SA:L",
                       "baseScore": 9.5,
-                      "baseSeverity": "CRITICAL"
+                      "baseSeverity": "CRITICAL",
+                      "attackVector": "NETWORK",
+                      "attackComplexity": "HIGH",
+                      "attackRequirements": "PRESENT",
+                      "privilegesRequired": "NONE",
+                      "userInteraction": "NONE",
+                      "vulnConfidentialityImpact": "HIGH",
+                      "vulnIntegrityImpact": "HIGH",
+                      "vulnAvailabilityImpact": "HIGH",
+                      "subConfidentialityImpact": "HIGH",
+                      "subIntegrityImpact": "LOW",
+                      "subAvailabilityImpact": "LOW"
                     },
                     "source": "IPA",
                     "type": "Primary"
@@ -1246,6 +1274,7 @@
           ],
           "jvn_extension": {
             "generator": {
+              "date": "2025-04-30T11:36:12+09:00",
               "engine": {
                 "version": "4.0.0",
                 "name": "MyJVN API"
@@ -1253,8 +1282,8 @@
             },
             "title": "JVNDB 脆弱性対策詳細情報",
             "link": "https://jvndb.jvn.jp/apis/",
+            "updated": "",
             "vulnid": "JVNDB-2025-000000",
-            "updated": "2025-04-26T07:36:21+09:00",
             "lang": "ja",
             "author": {
               "name": "IPA",

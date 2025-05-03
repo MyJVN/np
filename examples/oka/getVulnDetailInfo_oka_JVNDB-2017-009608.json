@@ -19,26 +19,23 @@
     ],
     "tracking": {
       "generator": {
+        "date": "2025-04-30T11:36:12+09:00",
         "engine": {
           "version": "4.0.0",
           "name": "MyJVN API"
         }
       },
       "id": "JVNDB-2017-009608",
-      "current_release_date": "2025-04-06T03:00:00+09:00",
+      "current_release_date": "2017-11-16T15:06:40+09:00",
       "initial_release_date": "2017-11-16T15:06:40+09:00",
+      "public_date": "2017-10-20T00:00:00+09:00",
       "status": "final",
-      "version": "2",
+      "version": "1",
       "revision_history": [
         {
           "date": "2018-02-17T10:37:52+09:00",
           "number": "1",
           "summary": "[2017年11月16日] 掲載"
-        },
-        {
-          "date": "2025-04-06T02:00:00+09:00",
-          "number": "2",
-          "summary": "XML形式からJSON形式に変換"
         }
       ]
     },
@@ -99,6 +96,7 @@
         {
           "id": "CWE-327",
           "name": "不完全、または危険な暗号アルゴリズムの使用",
+          "url": "https://cwe.mitre.org/data/definitions/327.html",
           "version": "",
           "source": "NVD"
         }
@@ -158,6 +156,7 @@
   ],
   "jvn_extension": {
     "generator": {
+      "date": "2025-04-30T11:36:12+09:00",
       "engine": {
         "version": "4.0.0",
         "name": "MyJVN API"
@@ -165,6 +164,7 @@
     },
     "title": "JVNDB 脆弱性対策詳細情報",
     "link": "https://jvndb.jvn.jp/apis/",
+    "updated": "",
     "vulnid": "JVNDB-2017-009608"
   },
   "status": {

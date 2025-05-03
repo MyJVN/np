@@ -98,13 +98,18 @@ CPE ベンダ名を指定します。
   xmlns="http://jvndb.jvn.jp/myjvn/Results"
   xmlns:mjres="http://jvndb.jvn.jp/myjvn/Results"
   xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
-  xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/Results https://jvndb.jvn.jp/schema/results_3.3.xsd
-  ">
-
-  <VendorInfo xml:lang="表示言語">
-    <Vendor vid="ベンダ番号 (JVN iPedia におけるベンダの識別番号)" vname="ベンダ名" cpe="CPEベンダ識別子 (CPE v2.2 形式)" />
-    <Vendor vid="99999999991" vname="東京電機大学" cpe="cpe:/:dendai.ac.jp" />
-    <!-- ベンダの件数分 Vendor ノードを繰り返します。 -->
+  xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/Results https://jvndb.jvn.jp/schema/results_3.3.xsd"
+  >
+  <VendorInfo xml:lang="表示言語 (ja:日本語、en:英語 )">
+    <Vendor
+      vid="ベンダ番号 (JVN iPedia におけるベンダの識別番号)"
+      vname="ベンダ名" 
+      cpe="CPEベンダ識別子 (CPE v2.2 形式)" />
+    <Vendor
+      vid="99999999991"
+      vname="東京電機大学"
+      cpe="cpe:/:dendai.ac.jp" />
+    <!-- ベンダの件数分 Vendor を繰り返します。 -->
   </VendorInfo>
 
   <status:Status

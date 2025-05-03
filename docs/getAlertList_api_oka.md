@@ -22,10 +22,10 @@
 | feed                               | フィードフォーマット名 | フィードフォーマット(=API バージョン)を示す名称 <br> oka を指定                                                                                           | ○    | －         |
 | startItem                          | エントリ開始位置       | 1 ～応答エントリ数                                                                                                                                        | －   | 1          |
 | maxCountItem                       | エントリ取得件数       | 1 ～ 50 (getAlertList エントリ上限値)                                                                                                                     | －   | 50         |
-| lastModStartDate                   | 更新日開始年月日       | 整数 8 桁                                                                                                                                                 | －   | －         |
-| lastModEndDate                     | 更新日終了年月日       | 整数 8 桁                                                                                                                                                 | －   | －         |
-| pubStartDate                       | 発行日開始年月日       | 整数 8 桁                                                                                                                                                 | －   | －         |
-| pubEndDate                         | 発行日終了年月日       | 整数 8 桁                                                                                                                                                 | －   | －         |
+| lastModStartDate                   | 最終更新日開始年月日       | 整数 8 桁                                                                                                                                                 | －   | －         |
+| lastModEndDate                     | 最終更新日終了年月日       | 整数 8 桁                                                                                                                                                 | －   | －         |
+| pubStartDate                       | 登録日開始年月日       | 整数 8 桁                                                                                                                                                 | －   | －         |
+| pubEndDate                         | 登録日終了年月日       | 整数 8 桁                                                                                                                                                 | －   | －         |
 | nameType                           | 製品識別子タイプ       | cpe, jvnpid, vid, pid のいずれかひとつ                                                                                                                    | －   | －         |
 | productName                        | 製品識別子             | type=cpe: cpe v2.3 形式　<br> type=jvnpid: jvnpid v1.0 形式 <br>nameType=vid: JVN iPedia におけるベンダ番号 <br>nameType=pid: JVN iPedia における製品番号 | －   | －         |
 | version <br> versionType           | バージョン             | バージョン情報                                                                                                                                            | －   | －         |
@@ -51,11 +51,11 @@
 
 #### lastModStartDate & lastModEndDate
 
-更新日開始年月日、更新日終了年月日を指定します。
+最終更新日開始年月日、最終更新日終了年月日を指定します。
 
 - pubStartDate, pubEndDate と組み合わせて使用できます。
-- pubStartDate のみの指定の場合には、更新日開始年月日以降が対象となります。
-- pubEndDate のみの指定の場合には、更新日終了年月日以前が対象となります。
+- pubStartDate のみの指定の場合には、最終更新日開始年月日以降が対象となります。
+- pubEndDate のみの指定の場合には、最終更新日終了年月日以前が対象となります。
 - \[例\]  
    `https://jvndb.jvn.jp/myjvn?method=getAlertList&feed=oka&lastModStartDate=20210804&lastModEndDate=20211022`
 
@@ -63,11 +63,11 @@
 
 #### pubStartDate & pubEndDate
 
-発行日開始年月日、発行日終了年月日を指定します。
+登録日開始年月日、登録日終了年月日を指定します。
 
 - lastModStartDate, lastModEndDate と組み合わせて使用できます。
-- pubStartDate のみの指定の場合には、発行日開始年月日以降が対象となります。
-- pubEndDate のみの指定の場合には、発行日終了年月日以前が対象となります。
+- pubStartDate のみの指定の場合には、登録日開始年月日以降が対象となります。
+- pubEndDate のみの指定の場合には、登録日終了年月日以前が対象となります。
 - \[例\]  
    `https://jvndb.jvn.jp/myjvn?method=getAlertList&feed=oka&pubStartDate=20210804&pubEndDate=20211022`
 
@@ -208,6 +208,7 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
   "$schema": "https://jvndb.jvn.jp/schema/myjvn_feed_1.0.json?20250419",
   "feed": {
     "generator": {
+      "date": "レスポンス生成日 [例] 2025-04-30T11:36:12+09:00",
       "engine": {
         "version": "4.0.0",
         "name": "MyJVN API"
@@ -215,7 +216,7 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
     },
     "title": "IPA注意警戒サービスAPI",
     "link": "https://jvndb.jvn.jp/apis/myjvn/",
-    "updated": "更新日 [例] 2025-04-26T07:36:21+09:00",
+    "updated": "",
     "lang": "表示言語 (ja:日本語、en:英語 )",
     "author": {
       "name": "IPA",
@@ -229,29 +230,31 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
     },
     "entry": [
       {
-        "title": "関連情報のタイトル [例] MyJVN APIに関する更新情報",
-        "id": "関連情報の識別子 (MYJVN-ALT-西暦-番号) [例] MYJVN-ALT-2025-0000",
-        "summary": "関連情報の概要 [例] 更新に関する連絡です。",
-        "link": "関連情報の概要のURL [例] https://jvndb.jvn.jp/apis/",
+        "title": "注意警戒情報のタイトル [例] MyJVN APIに関するセキュリティ情報",
+        "id": "注意警戒情報の識別子 (MYJVN-ALT-西暦-番号) [例] MYJVN-ALT-2025-0000",
+        "summary": "注意警戒情報の概要 [例] 更新に関する連絡です。",
+        "link": "注意警戒情報のURL [例] https://www.ipa.go.jp/security/",
         "category": {
           "term": "カテゴリ名 (Info, Low, Medium, High, Critical)",
           "label": "カテゴリラベル (お知らせ, 注意, 警告, 重要, 緊急)"
         },
-        "updated": "更新日 [例] 2025-04-26T07:36:21+09:00",
-        "published": "発行日 [例] 2025-04-04T14:45:58+09:00",
+        "modified": "最終更新日 [例] 2025-04-26T07:36:21+09:00",
+        "created": "登録日 [例] 2025-04-04T14:45:58+09:00",
+        "public": "公表日 [例] 2025-04-01T10:23:42+09:00",
         "items": [
           {
-            "$comment": "jvnpidがバージョン情報を出力しない場合",
-            "title": "関連情報のタイトル [例] APIに関する更新情報",
+            "$comment": "jvnpi dがバージョン情報を出力しない場合",
+            "title": "関連情報のタイトル [例] IPA security-alert",
             "id": "関連情報の識別子 (MYJVN-ALT-西暦-番号-サブ番号) [例] MYJVN-ALT-2025-0000-0001",
-            "summary": "関連情報の概要 [例] APIの仕様",
-            "link": "関連情報の概要のURL [例] https://jvndb.jvn.jp/apis/",
-            "updated": "更新日 [例] 2025-04-26T07:36:21+09:00",
-            "published": "発行日 [例] 2025-04-04T14:45:58+09:00",
-            "author": "発行者 [例] 東京電機大学",
+            "summary": "関連情報の概要 [例] MyJVN APIの仕様",
+            "link": "関連情報の概要のURL [例] https://www.ipa.go.jp/security/security-alert/",
+            "modified": "最終更新日 [例] 2025-04-26T07:36:21+09:00",
+            "created": "登録日 [例] 2025-04-04T14:45:58+09:00",
+            "public": "公表日 [例] 2025-04-01T10:23:42+09:00",
+            "author": "発行者 [例] IPA",
             "products": [
               {
-                "$comment": "jvnpidがバージョン情報を出力しない場合",
+                "$comment": "jvnpid がバージョン情報を出力しない場合",
                 "vname": "ベンダ名 [例] 東京電機大学",
                 "product_id": "JVN製品識別子 (jvnpid 1.0 形式) [例] jvnpid:1.0::dendai.ac.jp:myjvn_api",
                 "pname": "製品名 [例] マイジェイブイエヌ API",
@@ -262,17 +265,18 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
             ]
           },
           {
-            "$comment": "jvnpidがバージョン情報を出力する場合",
-            "title": "関連情報のタイトル [例] v4.0.0に関する更新情報",
+            "$comment": "jvnpid がバージョン情報を出力する場合",
+            "title": "関連情報のタイトル [例] IPA security-alert MyJVN API v4.0.0に関する更新情報",
             "id": "関連情報の識別子 (MYJVN-ALT-西暦-番号-サブ番号) [例] MYJVN-ALT-2025-0000-0002",
-            "summary": "関連情報の概要 [例] v4.0.0の仕様",
-            "link": "関連情報の概要のURL [例] https://jvndb.jvn.jp/apis/",
-            "updated": "更新日 [例] 2025-04-26T07:36:21+09:00",
-            "published": "発行日 [例] 2025-04-04T14:45:58+09:00",
-            "author": "発行者 [例] 東京電機大学",
+            "summary": "関連情報の概要 [例] MyJVN API v4.0.0の仕様",
+            "link": "関連情報の概要のURL [例] https://www.ipa.go.jp/security/security-alert/",
+            "modified": "最終更新日 [例] 2025-04-26T07:36:21+09:00",
+            "created": "登録日 [例] 2025-04-04T14:45:58+09:00",
+            "public": "公表日 [例] 2025-04-01T10:23:42+09:00",
+            "author": "発行者 [例] IPA",
             "products": [
               {
-                "$comment": "jvnpidがバージョン情報を出力する場合",
+                "$comment": "jvnpid がバージョン情報を出力する場合",
                 "vname": "ベンダ名 [例] 東京電機大学",
                 "product_id": "JVN製品識別子 (jvnpid 1.0 形式) [例] jvnpid:1.0::dendai.ac.jp:myjvn_api:4.0.0",
                 "pname": "製品名 [例] マイジェイブイエヌ API",
@@ -283,7 +287,7 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
               }
             ]
           }
-          { "$comment": "title,idなどを繰り返します。" }
+          { "$comment": "title,id などを繰り返します。" }
         ]
       }
     ]

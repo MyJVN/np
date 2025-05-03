@@ -37,15 +37,17 @@
     "engine_type": {
       "type": "object",
       "properties": {
-        "version": { "type": "string" },
-        "name": { "type": "string" }
+        "version": { "type": "string", "enum": ["4.0.0"] },
+        "name": { "type": "string", "enum": ["MyJVN API"] }
       }
     },
     "generator_type": {
       "type": "object",
       "properties": {
+        "date": { "type": "string", "format": "date-time" },
         "engine": { "$ref": "#/$defs/engine_type" }
-      }
+      },
+      "required": ["date", "engine"]
     },
     "author_type": {
       "type": "object",
@@ -93,7 +95,7 @@
       },
       "required": ["tlp"]
     },
-    "vname_i18_type": {
+    "vname_i18n_type": {
       "type": "object",
       "properties": {
         "ja": { "type": "string" },
@@ -133,24 +135,11 @@
           "product_id": { "$ref": "#/$defs/jvnpid_type" },
           "pid": { "type": "string" },
           "pname": { "type": "string" },
-          "pname_i18": { "$ref": "#/$defs/vname_i18_type" },
+          "pname_i18n": { "$ref": "#/$defs/vname_i18n_type" },
           "product_ids": { "$ref": "#/$defs/product_ids_type" },
           "version": { "type": "string" }
         },
         "required": ["product_id", "pid", "pname", "product_ids"]
-      }
-    },
-    "revision_history_type": {
-      "type": "array",
-      "minItems": 0,
-      "items": {
-        "type": "object",
-        "properties": {
-          "date": { "type": "string", "format": "date-time" },
-          "number": { "type": "string" },
-          "summary": { "type": "string" }
-        },
-        "required": ["date", "number", "summary"]
       }
     },
     "vendors_type": {
@@ -162,12 +151,13 @@
           "vendor_id": { "$ref": "#/$defs/jvnpid_vendor_type" },
           "vid": { "type": "string" },
           "vname": { "type": "string" },
-          "vname_i18": { "$ref": "#/$defs/vname_i18_type" },
+          "vname_i18n": { "$ref": "#/$defs/vname_i18n_type" },
           "cpe": { "$ref": "#/$defs/cpe_vendor_type" },
           "products": { "$ref": "#/$defs/products_type" },
-          "revision_history": { "$ref": "#/$defs/revision_history_type" }
+          "modified": { "type": "string", "format": "date-time" },
+          "created": { "type": "string", "format": "date-time" }
         },
-        "required": ["vendor_id", "vid", "vname", "cpe", "products"]
+        "required": ["vendor_id", "vid", "vname", "cpe"]
       }
     },
     "jvn-product-dictionary_type": {
@@ -175,9 +165,9 @@
       "properties": {
         "generator": { "$ref": "#/$defs/generator_type" },
         "title": { "type": "string" },
-        "systemid": { "type": "string" },
         "link": { "type": "string", "format": "uri" },
         "updated": { "type": "string", "format": "date-time" },
+        "vulnid": { "type": "string" },
         "lang": { "type": "string", "enum": ["ja", "en"] },
         "author": { "$ref": "#/$defs/author_type" },
         "distribution": { "$ref": "#/$defs/distribution_type" },
@@ -186,7 +176,6 @@
       "required": [
         "generator",
         "title",
-        "systemid",
         "link",
         "updated",
         "lang",

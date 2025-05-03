@@ -147,29 +147,41 @@
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
-<Result version="3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns="http://jvndb.jvn.jp/myjvn/Results" xmlns:mjres="http://jvndb.jvn.jp/myjvn/Results"
+<Result version="3.3"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://jvndb.jvn.jp/myjvn/Results"
+  xmlns:mjres="http://jvndb.jvn.jp/myjvn/Results"
   xmlns:mjstat="http://jvndb.jvn.jp/myjvn/Statistics"
   xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
-  xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/Results https://jvndb.jvn.jp/schema/results_3.3.xsd
-  ">
+  xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/Results https://jvndb.jvn.jp/schema/results_3.3.xsd"
+  >
 
   <!-- theme=sumJvnDb の場合 -->
   <mjstat:sumJvnDb>
     <mjstat:title xml:lang="ja">脆弱性統計情報</mjstat:title>
     <mjstat:title xml:lang="en-US">Statistics Vulnerability Count</mjstat:title>
-    <mjstat:resDataTotal vulinfo="脆弱性対策情報総件数" vendor="ベンダ総件数" product="製品総件数" />
-    <mjstat:resData date="集計期間" cntAll="登録件数" />
-    <!-- 集計期間分 mjstat:resData ノードを繰り返します。 -->
-    <!-- mjstat:resData ノードの date に記載される値は、 type=y の場合 年(yyyy形式)、 type=m の場合
-    年月(yyyy-mm形式)、 type=q の場合 四半期(yyyy-(1～4)Q形式)となります。 -->
+    <mjstat:resDataTotal
+      vulinfo="脆弱性対策情報総件数"
+      vendor="ベンダ総件数"
+      product="製品総件数" />
+    <mjstat:resData
+      date="集計期間"
+      cntAll="登録件数" />
+    <mjstat:resData date="2008" cntAll="71" />
+    <mjstat:resData date="2009" cntAll="110" />
+    <!-- 集計期間分 mjstat:resData を繰り返します。 -->
+    <!-- mjstat:resData の date に記載される値は、 type=y の場合 年(yyyy形式)、 
+         type=m の場合 年月(yyyy-mm形式)、 type=q の場合 四半期(yyyy-(1～4)Q形式)となります。 -->
   </mjstat:sumJvnDb>
 
   <!-- theme=sumCvss の場合 -->
   <mjstat:sumCvss>
     <mjstat:title xml:lang="ja">CVSSスコア</mjstat:title>
     <mjstat:title xml:lang="en-US">CVSS Score</mjstat:title>
-    <mjstat:resDataTotal vulinfo="脆弱性対策情報総件数" vendor="ベンダ総件数" product="製品総件数" />
+    <mjstat:resDataTotal
+      vulinfo="脆弱性対策情報総件数"
+      vendor="ベンダ総件数"
+      product="製品総件数" />
     <mjstat:resData
       date="集計期間"
       cntAll="総件数"
@@ -178,30 +190,50 @@
       cntM="深刻度(警告)の件数"
       cntL="深刻度(注意)の件数"
       cntN="深刻度(なし意)の件数" />
-    <!-- 集計期間分 mjstat:resData ノードを繰り返します。 -->
+    <mjstat:resData date="2008" cntAll="71" cntC="17" cntH="40" cntM="14" cntL="0" cntN="0" />
+    <mjstat:resData date="2009" cntAll="110" cntC="16" cntH="54" cntM="38" cntL="2" cntN="0" />
+    <!-- 集計期間分 mjstat:resData を繰り返します。 -->
   </mjstat:sumCvss>
 
   <!-- theme=sumCwe の場合 -->
-  <mjstat:sumCwe cweId="CWE 識別子">
-    <mjstat:title xml:lang="ja">CWE 識別子のタイトル(日本語)</mjstat:title>
-    <mjstat:title xml:lang="en-US">CWE 識別子のタイトル(英語)</mjstat:title>
-    <mjstat:resDataTotal vulinfo="脆弱性対策情報総件数" vendor="ベンダ総件数"  product="製品総件数" />
-    <mjstat:resData date="集計期間" cntAll="件数" />
-    <!-- 集計期間分 mjstat:resData ノードを繰り返します。 -->
+  <mjstat:sumCwe
+    cweId="CWE 識別子 [例] CWE-79">
+    <mjstat:title xml:lang="ja">CWE 識別子のタイトル(日本語) [例] クロスサイトスクリプティング</mjstat:title>
+    <mjstat:title xml:lang="en-US">CWE 識別子のタイトル(英語) [例] Cross-site Scripting</mjstat:title>
+    <mjstat:resDataTotal
+      vulinfo="脆弱性対策情報総件数"
+      vendor="ベンダ総件数"
+      product="製品総件数" />
+    <mjstat:resData
+      date="集計期間"
+      cntAll="件数" />
+    <mjstat:resData date="2008" cntAll="0" />
+    <mjstat:resData date="2009" cntAll="9" />
+    <!-- 集計期間分 mjstat:resData を繰り返します。 -->
   </mjstat:sumCwe>
 
   <!-- theme=sumAll の場合 -->
   <mjstat:sumJvnDb>
     <mjstat:title xml:lang="ja">脆弱性統計情報</mjstat:title>
     <mjstat:title xml:lang="en-US">Statistics Vulnerability Count</mjstat:title>
-    <mjstat:resDataTotal vulinfo="脆弱性対策情報総件数" vendor="ベンダ総件数" product="製品総件数" />
-    <mjstat:resData date="集計期間" cntAll="登録件数" />
+    <mjstat:resDataTotal
+      vulinfo="脆弱性対策情報総件数"
+      vendor="ベンダ総件数"
+      product="製品総件数" />
+    <mjstat:resData
+      date="集計期間"
+      cntAll="登録件数" />
+    <mjstat:resData date="2008" cntAll="71" />
+    <mjstat:resData date="2009" cntAll="110" />
   </mjstat:sumJvnDb>
 
   <mjstat:sumCvss>
     <mjstat:title xml:lang="ja">CVSSスコア</mjstat:title>
     <mjstat:title xml:lang="en-US">CVSS Score</mjstat:title>
-    <mjstat:resDataTotal vulinfo="脆弱性対策情報総件数" vendor="ベンダ総件数" product="製品総件数" />
+    <mjstat:resDataTotal
+      vulinfo="脆弱性対策情報総件数"
+      vendor="ベンダ総件数"
+      product="製品総件数" />
     <mjstat:resData
       date="集計期間"
       cntAll="総件数"
@@ -210,15 +242,25 @@
       cntM="深刻度(警告)の件数"
       cntL="深刻度(注意)の件数"
       cntN="深刻度(なし意)の件数" />
-    <!-- 集計期間分 mjstat:resData ノードを繰り返します。 -->
+    <mjstat:resData date="2008" cntAll="71" cntC="17" cntH="40" cntM="14" cntL="0" cntN="0" />
+    <mjstat:resData date="2009" cntAll="110" cntC="16" cntH="54" cntM="38" cntL="2" cntN="0" />
+    <!-- 集計期間分 mjstat:resData を繰り返します。 -->
   </mjstat:sumCvss>
 
-  <mjstat:sumCwe cweId="CWE 識別子">
-    <mjstat:title xml:lang="ja">CWE 識別子のタイトル(日本語)</mjstat:title>
-    <mjstat:title xml:lang="en-US">CWE 識別子のタイトル(英語)</mjstat:title>
-    <mjstat:resDataTotal vulinfo="脆弱性対策情報総件数" vendor="ベンダ総件数" product="製品総件数" />
-    <mjstat:resData date="集計期間" cntAll="件数" />
-    <!-- 集計期間分 mjstat:resData ノードを繰り返します。 -->
+  <mjstat:sumCwe
+    cweId="CWE 識別子 [例] CWE-79">
+    <mjstat:title xml:lang="ja">CWE 識別子のタイトル(日本語) [例] クロスサイトスクリプティング</mjstat:title>
+    <mjstat:title xml:lang="en-US">CWE 識別子のタイトル(英語) [例] Cross-site Scripting</mjstat:title>
+    <mjstat:resDataTotal
+      vulinfo="脆弱性対策情報総件数"
+      vendor="ベンダ総件数"
+      product="製品総件数" />
+    <mjstat:resData
+      date="集計期間"
+      cntAll="件数" />
+    <mjstat:resData date="2008" cntAll="0" />
+    <mjstat:resData date="2009" cntAll="9" />
+    <!-- 集計期間分 mjstat:resData を繰り返します。 -->
   </mjstat:sumCwe>
 
   <status:Status

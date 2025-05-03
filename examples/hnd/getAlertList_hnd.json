@@ -4,7 +4,7 @@
     "title": "IPA注意警戒サービスAPI",
     "id": "swid:ipa.go.jp+myjvn_alert+1.0.0",
     "author": { "name": "IPA", "uri": "https://www.ipa.go.jp/" },
-    "updated": "2025-03-23T05:16:35+09:00",
+    "updated": "2025-04-30T11:36:12+09:00",
     "link": "https://jvndb.jvn.jp/apis/myjvn/",
     "sec:handling": {
       "marking:Marking": {
@@ -17,6 +17,47 @@
       }
     },
     "entry": [
+      {
+        "title": "MyJVN APIに関するセキュリティ情報",
+        "id": "MYJVN-ALT-2025-0000",
+        "summary": "更新に関する連絡です。",
+        "link": "https://www.ipa.go.jp/security/",
+        "category": { "term": "Info", "label": "INFO" },
+        "update": "2025-04-26T07:36:21+09:00",
+        "published": "2025-04-04T14:45:58+09:00",
+        "sec:items": [
+          {
+            "sec:item": {
+              "sec:title": "IPA security-alert",
+              "sec:identifier": "MYJVN-ALT-2025-0000-0001",
+              "sec:link": "https://www.ipa.go.jp/security/security-alert/",
+              "sec:published": "2025-04-04T14:45:58+09:00",
+              "sec:updated": "2025-04-26T07:36:21+09:00",
+              "sec:author": { "value": "IPA" },
+              "sec:cpe": [
+                {
+                  "value": "cpe:/a:dendai.ac.jp:myjvn_api"
+                }
+              ]
+            }
+          },
+          {
+            "sec:item": {
+              "sec:title": "IPA security-alert MyJVN API v4.0.0に関する更新情報",
+              "sec:identifier": "MYJVN-ALT-2025-0000-0002",
+              "sec:link": "https://www.ipa.go.jp/security/security-alert/",
+              "sec:published": "2025-04-04T14:45:58+09:00",
+              "sec:updated": "2025-04-26T07:36:21+09:00",
+              "sec:author": { "value": "IPA" },
+              "sec:cpe": [
+                {
+                  "value": "cpe:/a:dendai.ac.jp:myjvn_api"
+                }
+              ]
+            }
+          }
+        ]
+      },
       {
         "title": "WordPress に関するソフトウェア更新情報 (2025年2月12日 公開)",
         "id": "MYJVN-ALT-2025-0011",
@@ -47,10 +88,9 @@
       "retMax": "50",
       "errCd": "",
       "errMsg": "",
-      "totalRes": "1",
-      "totalResRet": "1",
+      "totalRes": "2",
+      "totalResRet": "2",
       "firstRes": "1",
-      "cpeName": "cpe:/a:wordpress:wordpress",
       "ft": "json",
       "feed": "hnd"
     }

@@ -26,27 +26,27 @@
 | keyword                  | キーワード             | URL エンコードされたキーワード                                  | －   | －         |
 | severity                 | CVSS 深刻度            | n:なし、l:注意、m:警告、h:重要、c:緊急                          | －   | －         |
 | vector                   | CVSS 基本評価基準      | CVSS 基本評価基準 CVSS v3.0 形式                                | －   | －         |
-| rangeDatePublic          | 発見日の範囲指定       | n:範囲指定なし、w:過去 1 週間、m:過去 1 ヶ月                    | －   | w          |
-| rangeDatePublished       | 更新日の範囲指定       | n:範囲指定なし、w:過去 1 週間、m:過去 1 ヶ月                    | －   | w          |
-| rangeDateFirstPublished  | 発行日の範囲指定       | n:範囲指定なし、w:過去 1 週間、m:過去 1 ヶ月                    | －   | w          |
-| datePublicStartY         | 発見日開始年           | 整数 4 桁                                                       | －   | －         |
-| datePublicStartM         | 発見日開始月           | 整数 2 桁 1 ～ 12                                               | －   | －         |
-| datePublicStartD         | 発見日開始日           | 整数 2 桁 1 ～ 31                                               | －   | －         |
-| datePublicEndY           | 発見日終了年           | 整数 4 桁                                                       | －   | －         |
-| datePublicEndM           | 発見日終了月           | 整数 2 桁 1 ～ 12                                               | －   | －         |
-| datePublicEndD           | 発見日終了日           | 整数 2 桁 1 ～ 31                                               | －   | －         |
-| datePublishedStartY      | 更新日開始年           | 整数 4 桁                                                       | －   | －         |
-| datePublishedStartM      | 更新日開始月           | 整数 2 桁 1 ～ 12                                               | －   | －         |
-| datePublishedStartD      | 更新日開始日           | 整数 2 桁 1 ～ 31                                               | －   | －         |
-| datePublishedEndY        | 更新日終了年           | 整数 4 桁                                                       | －   | －         |
-| datePublishedEndM        | 更新日終了月           | 整数 2 桁 1 ～ 12                                               | －   | －         |
-| datePublishedEndD        | 更新日終了日           | 整数 2 桁 1 ～ 31                                               | －   | －         |
-| dateFirstPublishedStartY | 発行日開始年           | 整数 4 桁                                                       | －   | －         |
-| dateFirstPublishedStartM | 発行日開始月           | 整数 2 桁 1 ～ 12                                               | －   | －         |
-| dateFirstPublishedStartD | 発行日開始日           | 整数 2 桁 1 ～ 31                                               | －   | －         |
-| dateFirstPublishedEndY   | 発行日終了年           | 整数 4 桁                                                       | －   | －         |
-| dateFirstPublishedEndM   | 発行日終了月           | 整数 2 桁 1 ～ 12                                               | －   | －         |
-| dateFirstPublishedEndD   | 発行日終了日           | 整数 2 桁 1 ～ 31                                               | －   | －         |
+| rangeDatePublic          | 公表日の範囲指定       | n:範囲指定なし、w:過去 1 週間、m:過去 1 ヶ月                    | －   | w          |
+| rangeDatePublished       | 最終更新日の範囲指定       | n:範囲指定なし、w:過去 1 週間、m:過去 1 ヶ月                    | －   | w          |
+| rangeDateFirstPublished  | 登録日の範囲指定       | n:範囲指定なし、w:過去 1 週間、m:過去 1 ヶ月                    | －   | w          |
+| datePublicStartY         | 公表日開始年           | 整数 4 桁                                                       | －   | －         |
+| datePublicStartM         | 公表日開始月           | 整数 2 桁 1 ～ 12                                               | －   | －         |
+| datePublicStartD         | 公表日開始日           | 整数 2 桁 1 ～ 31                                               | －   | －         |
+| datePublicEndY           | 公表日終了年           | 整数 4 桁                                                       | －   | －         |
+| datePublicEndM           | 公表日終了月           | 整数 2 桁 1 ～ 12                                               | －   | －         |
+| datePublicEndD           | 公表日終了日           | 整数 2 桁 1 ～ 31                                               | －   | －         |
+| datePublishedStartY      | 最終更新日開始年           | 整数 4 桁                                                       | －   | －         |
+| datePublishedStartM      | 最終更新日開始月           | 整数 2 桁 1 ～ 12                                               | －   | －         |
+| datePublishedStartD      | 最終更新日開始日           | 整数 2 桁 1 ～ 31                                               | －   | －         |
+| datePublishedEndY        | 最終更新日終了年           | 整数 4 桁                                                       | －   | －         |
+| datePublishedEndM        | 最終更新日終了月           | 整数 2 桁 1 ～ 12                                               | －   | －         |
+| datePublishedEndD        | 最終更新日終了日           | 整数 2 桁 1 ～ 31                                               | －   | －         |
+| dateFirstPublishedStartY | 登録日開始年           | 整数 4 桁                                                       | －   | －         |
+| dateFirstPublishedStartM | 登録日開始月           | 整数 2 桁 1 ～ 12                                               | －   | －         |
+| dateFirstPublishedStartD | 登録日開始日           | 整数 2 桁 1 ～ 31                                               | －   | －         |
+| dateFirstPublishedEndY   | 登録日終了年           | 整数 4 桁                                                       | －   | －         |
+| dateFirstPublishedEndM   | 登録日終了月           | 整数 2 桁 1 ～ 12                                               | －   | －         |
+| dateFirstPublishedEndD   | 登録日終了日           | 整数 2 桁 1 ～ 31                                               | －   | －         |
 | lang                     | 表示言語(日本語／英語) | ja:日本語、en:英語                                              | －   | ja         |
 
 <br>
@@ -105,7 +105,7 @@ CVSSv3 基本評価基準、CVSSv3 深刻度を指定します。
 
 #### rangeDatePublic , rangeDatePublished , rangeDateFirstPublished
 
-発見日、更新日、発行日の範囲を指定します。
+公表日、最終更新日、登録日の範囲を指定します。
 
 - \[例\] 範囲指定を解除して最新情報を取得する場合 (rangeDatePublic=n, rangeDatePublished=n, rangeDateFirstPublished=n)  
   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=hnd&rangeDatePublic=n&rangeDatePublished=n&rangeDateFirstPublished=n`
@@ -118,7 +118,7 @@ CVSSv3 基本評価基準、CVSSv3 深刻度を指定します。
 
 #### datePublicStartY/M/D & datePublicEndY/M/D
 
-発見日開始年月日、発見日終了年月日を指定します。
+公表日開始年月日、公表日終了年月日を指定します。
 
 - \[例\] 2020 年以降に発見された脆弱性情報の中で、過去 1 ヶ月に更新された情報を取得する場合 (rangeDatePublished=m, rangeDateFirstPublished=n)  
   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=hnd&  datePublicStartY=2020&rangeDatePublished=m&rangeDateFirstPublished=n`
@@ -130,13 +130,13 @@ CVSSv3 基本評価基準、CVSSv3 深刻度を指定します。
 
 #### datePublishedStartY/M/D & datePublishedEndY/M/D
 
-更新日開始年月日、更新日終了年月日を指定します。
+最終更新日開始年月日、最終更新日終了年月日を指定します。
 
 <br>
 
 #### dateFirstPublishedStartY/M/D & dateFirstPublishedEndY/M/D
 
-発行日開始年月日、発行日終了年月日を指定します。
+登録日開始年月日、登録日終了年月日を指定します。
 
 <br>
 <br>
@@ -162,56 +162,73 @@ CVSSv3 基本評価基準、CVSSv3 深刻度を指定します。
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
-<rdf:RDF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<rdf:RDF 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns="http://purl.org/rss/1.0/"
   xmlns:rss="http://purl.org/rss/1.0/"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns:dc="http://purl.org/dc/elements/1.1/"
   xmlns:dcterms="http://purl.org/dc/terms/"
-  xmlns:sec="https://jvn.jp/rss/mod_sec/"
+  xmlns:sec="http://jvn.jp/rss/mod_sec/3.0/"
+  xmlns:marking="http://data-marking.mitre.org/Marking-1"
+  xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1"
   xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
-  xsi:schemaLocation="http://purl.org/rss/1.0/ https://jvndb.jvn.jp/schema/jvnrss_3.2.xsd"
-  xml:lang="ja">
+  xsi:schemaLocation="http://purl.org/rss/1.0/ https://jvndb.jvn.jp/schema/jvnrss_3.2.xsd
+                      http://jvndb.jvn.jp/myjvn/Status https://jvndb.jvn.jp/schema/status_3.3.xsd"
+  xml:lang="ja"
+  >
 
-  <channel rdf:about="セキュリティ情報のチャンネルURI">
-    <title>セキュリティ情報のチャンネルタイトル</title>
-    <link>セキュリティ情報が掲載されているURI</link>
-    <description>セキュリティ情報の概要</description>
-    <dc:date>レスポンス生成日時</dc:date>
+  <channel rdf:about="https://jvndb.jvn.jp/apis/myjvn">
+    <title>JVNDB　脆弱性対策情報</title>
+    <link>https://jvndb.jvn.jp/apis/myjvn</link>
+    <description>JVNDB　脆弱性対策情報</description>
+    <dc:date>レスポンス生成日 [例] 2025-04-30T11:36:12+09:00</dc:date>
     <dcterms:issued />
-    <dcterms:modified>レスポンス生成日時</dcterms:modified>
+    <dcterms:modified>レスポンス生成日 [例] 2025-04-30T11:36:12+09:00</dcterms:modified>
     <items>
       <rdf:Seq>
-        <rdf:li rdf:resource="item要素のrdf:about属性と同じURI" />
+        <rdf:li
+          rdf:resource="脆弱性対策情報の概要のURL [例] https://jvndb.jvn.jp/ja/contents/2025/JVNDB-2025-000000.html" />
         <!-- フィルタリングに当てはまる脆弱性対策概要情報の件数分 <rdf:li rdf:resource= を繰り返します。 -->
       </rdf:Seq>
     </items>
   </channel>
 
-  <item rdf:about="ベンダが掲載するセキュリティ情報のURI">
-    <title>セキュリティ情報のタイトル</title>
-    <link>セキュリティ情報のURI</link>
-    <description>セキュリティ情報の概要</description>
-    <sec:identifier>ベンダ固有のセキュリティ情報ID</sec:identifier>
-    <sec:references source="発行元省略名" id="識別番号" title="タイトル">参考情報</sec:references>
-    <!-- 参考情報の件数分 sec:references ノードを繰り返します。 -->
+  <item
+    rdf:about="脆弱性対策情報の概要のURL [例] https://jvndb.jvn.jp/ja/contents/2025/JVNDB-2025-000000.html">
+    <title>脆弱性対策情報のタイトル [例] MyJVN API セキュリティ情報</title>
+    <link>脆弱性対策情報の概要のURL [例] https://jvndb.jvn.jp/ja/contents/2025/JVNDB-2025-000000.html</link>
+    <description>脆弱性対策情報の概要 [例] MyJVN API は、APIを介してセキュリティ情報を提供するシステムです。</description>
+    <sec:identifier>脆弱性対策情報の識別子 (JVNDB-西暦-番号) [例] JVNDB-2025-000000</sec:identifier>
+    <sec:references
+      source="情報源 [例] advisory"
+      id="参考情報のID [例] security-alert"
+      title="参考情報のタイトル or 概要 [例] IPA security-alert">
+      参考情報のURL [例] https://www.ipa.go.jp/security/security-alert/
+    </sec:references>
+    <!-- 参考情報の件数分 sec:references を繰り返します。 -->
 
-    <sec:cpe version="CPEバージョン" vendor="ベンダ名" product="製品名">CPE製品識別子 (CPE v2.2 形式)</sec:cpe>
-    <!-- 製品情報の件数分 sec:cpe ノードを繰り返します。 -->
+    <sec:cpe
+      version="CPEバージョン 2.2"
+      vendor="ベンダ名 [例] 東京電機大学"
+      product="製品名 [例] マイジェイブイエヌ API">
+      CPE製品識別子 (CPE v2.2 形式) [例] cpe:/a:dendai.ac.jp:myjvn_api
+    </sec:cpe>
+    <!-- 製品情報の件数分 sec:cpe を繰り返します。 -->
 
     <sec:cvss
-      version="CVSS バージョン"
-      type="基本|現状|環境評価基準"
-      severity="typeで指定された評価基準の深刻度"
-      score="typeで指定された評価基準の評価値"
-      vector="短縮表記" />
-      <!-- 評価の件数分 sec:cvss ノードを繰り返します。 -->
+      score="基本値 [例] 9.8"
+      severity="基本値深刻度 (None, Low, Medium, High, Critical)"
+      vector="パラメタ短縮表記 [例] CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+      version="CVSS バージョン 3.0"
+      type="基本評価基準 (Base)" />
+    <!-- 評価の件数分 sec:cvss を繰り返します。 -->
 
-    <dc:date>更新日</dc:date>
-    <dcterms:issued>発行日</dcterms:issued>
-    <dcterms:modified>更新日</dcterms:modified>
+    <dc:date>最終更新日 [例] 2025-04-26T07:36:21+09:00</dc:date>
+    <dcterms:issued>登録日 [例] 2025-04-04T14:45:58+09:00</dcterms:issued>
+    <dcterms:modified>最終更新日 [例] 2025-04-26T07:36:21+09:00</dcterms:modified>
   </item>
-  <!-- フィルタリングに当てはまる脆弱性対策概要情報の件数分itemノードを繰り返します。 -->
+  <!-- フィルタリングに当てはまる脆弱性対策概要情報の件数分 item を繰り返します。 -->
 
   <status:Status
     version="3.3"

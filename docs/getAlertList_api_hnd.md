@@ -93,21 +93,25 @@ CPE 製品識別子を指定します。
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <feed
-  xmlns="http://www.w3.org/2005/Atom"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns:sec="https://jvn.jp/rss/mod_sec/3.0/"
+  xmlns="http://www.w3.org/2005/Atom"
+  xmlns:sec="http://jvn.jp/rss/mod_sec/3.0/"
   xmlns:marking="http://data-marking.mitre.org/Marking-1"
   xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1"
   xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
   xsi:schemaLocation="http://www.w3.org/2005/Atom https://jvndb.jvn.jp/schema/atom.xsd
-     https://jvn.jp/rss/mod_sec/3.0/ https://jvndb.jvn.jp/schema/mod_sec_3.0.xsd
-     http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1 https://jvndb.jvn.jp/schema/tlp_marking.xsd"
-  xml:lang="ja">
-
+                      http://jvn.jp/rss/mod_sec/3.0/ https://jvndb.jvn.jp/schema/mod_sec_3.0.xsd
+                      http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1 https://jvndb.jvn.jp/schema/tlp_marking.xsd
+                      http://jvndb.jvn.jp/myjvn/Status https://jvndb.jvn.jp/schema/status_3.3.xsd"
+  xml:lang="ja"
+  >
   <title type="text">IPA注意警戒サービスAPI</title>
-  <updated>更新日</updated>
+  <updated>レスポンス生成日 [例] 2025-04-30T11:36:12+09:00</updated>
   <id>swid:ipa.go.jp+myjvn_alert+1.0.0</id>
-  <link rel="alternate" type="text/html" hreflang="ja" href="https://jvndb.jvn.jp/apis/myjvn/" />
+  <link rel="alternate"
+    type="text/html"
+    hreflang="ja"
+    href="https://jvndb.jvn.jp/apis/myjvn/" />
   <author>
     <name>IPA</name>
     <uri>https://www.ipa.go.jp/</uri>
@@ -120,24 +124,26 @@ CPE 製品識別子を指定します。
     </marking:Marking>
   </sec:handling>
   <entry>
-    <title>注意警戒のタイトル</title>
-    <id>注意警戒の識別子</id>
-    <summary>注意警戒の概要</summary>
-    <link href="http://www.example-store.com/products/foo.html" />
-    <published>発行日</published>
-    <updated>更新日</updated>
-    <category term="カテゴリ名" label="カテゴリラベル" />
+    <title>注意警戒情報のタイトル [例] MyJVN APIに関するセキュリティ情報</title>
+    <id>注意警戒情報の識別子 (MYJVN-ALT-西暦-番号) [例] MYJVN-ALT-2025-0000</id>
+    <summary>注意警戒情報の概要 [例] 更新に関する連絡です。</summary>
+    <link href="注意警戒情報のURL [例] https://www.ipa.go.jp/security/" />
+    <published>登録日 [例] 2025-04-04T14:45:58+09:00</published>
+    <updated>最終更新日 [例] 2025-04-26T07:36:21+09:00</updated>
+    <category
+      term="カテゴリ名 (Info, Low, Medium, High, Critical)"
+      label="カテゴリラベル (INFO, 注意, 警告, 重要, 緊急)" />
     <sec:items>
       <sec:item>
-        <sec:title>関連情報のタイトル</sec:title>
-        <sec:identifier>関連情報の識別子</sec:identifier>
-        <sec:summary>関連情報の概要</sec:summary>
-        <sec:link href="関連情報の概要のURL" />
-        <sec:cpe>cpe製品名</sec:cpe>
-        <sec:published>発行日</sec:published>
-        <sec:updated>更新日</sec:updated>
+        <sec:title>関連情報のタイトル [例] IPA security-alert</sec:title>
+        <sec:identifier>関連情報の識別子 (MYJVN-ALT-西暦-番号-サブ番号) [例] MYJVN-ALT-2025-0000-0001</sec:identifier>
+        <sec:summary>関連情報の概要 [例] MyJVN APIの仕様</sec:summary>
+        <sec:link href="関連情報の概要のURL [例] https://www.ipa.go.jp/security/security-alert/" />
+        <sec:cpe>CPE製品識別子 (CPE v2.2 形式) [例] cpe:/a:dendai.ac.jp:myjvn_api</sec:cpe>
+        <sec:published>登録日 [例] 2025-04-04T14:45:58+09:00</sec:published>
+        <sec:updated>最終更新日 [例] 2025-04-26T07:36:21+09:00</sec:updated>
       </sec:item>
-      <!-- sec:itemノードを繰り返します。 -->
+      <!-- sec:item を繰り返します。 -->
     </sec:items>
   </entry>
   <status:Status
@@ -181,18 +187,20 @@ CPE 製品識別子を指定します。
 
 ```
 {
+  "$schema": "https://jvndb.jvn.jp/schema/getalert1.json",
   "feed": {
     "title": "IPA注意警戒サービスAPI",
-    "updated": "更新日",
     "id": "swid:ipa.go.jp+myjvn_alert+1.0.0",
-    "link": "https://jvndb.jvn.jp/apis/myjvn/",
     "author": {
       "name": "IPA",
       "uri": "https://www.ipa.go.jp/"
     },
+    "updated": "レスポンス生成日 [例] 2025-04-30T11:36:12+09:00",
+    "link": "https://jvndb.jvn.jp/apis/myjvn/",
     "sec:handling": {
       "marking:Marking": {
         "marking:Marking_Structure": {
+          "xsi:type": "tlpMarking:TLPMarkingStructureType",
           "marking_model_name": "TLP",
           "marking_model_ref": "http://www.us-cert.gov/tlp/",
           "color": "WHITE"
@@ -201,26 +209,30 @@ CPE 製品識別子を指定します。
     },
     "entry": [
       {
-        "title": "関連情報のタイトル",
-        "id": "関連情報の識別子",
-        "summary": "関連情報の概要",
-        "link": "関連情報の概要のURL",
+        "title": "注意警戒情報のタイトル [例] MyJVN APIに関するセキュリティ情報",
+        "id": "注意警戒情報の識別子 (MYJVN-ALT-西暦-番号) [例] MYJVN-ALT-2025-0000",
+        "summary": "注意警戒情報の概要 [例] 更新に関する連絡です。",
+        "link": "注意警戒情報のURL [例] https://www.ipa.go.jp/security/",
         "category": {
-          "term": "カテゴリ名",
-          "label": "カテゴリラベル"
+          "term": "カテゴリ名 (Info, Low, Medium, High, Critical)",
+          "label": "カテゴリラベル (INFO, 注意, 警告, 重要, 緊急)"
         },
-        "update": "更新日",
-        "published": "発行日",
+        "update": "最終更新日 [例] 2025-04-26T07:36:21+09:00",
+        "published": "登録日 [例] 2025-04-04T14:45:58+09:00",
         "sec:items": [
           {
             "sec:item": {
-              "sec:title": "関連情報のタイトル",
-              "sec:identifier": "関連情報の識別子",
-              "sec:link": "関連情報の概要のURL",
-              "sec:published": "発行日",
-              "sec:updated": "更新日",
-              "sec:author": { "name": "発行者" },
-              "sec:cpe": [{ "value": "cpe製品識別子" }]
+              "sec:title": "関連情報のタイトル [例] IPA security-alert",
+              "sec:identifier": "関連情報の識別子 (MYJVN-ALT-西暦-番号-サブ番号) [例] MYJVN-ALT-2025-0000-0001",
+              "sec:link": "関連情報の概要のURL [例] https://www.ipa.go.jp/security/security-alert/",
+              "sec:published": "登録日 [例] 2025-04-04T14:45:58+09:00",
+              "sec:updated": "最終更新日 [例] 2025-04-26T07:36:21+09:00",
+              "sec:author": { "value": "発行者 [例] IPA" },
+              "sec:cpe": [
+                {
+                  "value": "CPE製品識別子 (CPE v2.2 形式) [例] cpe:/a:dendai.ac.jp:myjvn_api"
+                }
+              ]
             }
           },
           { "//_comment": "sec:itemタグを繰り返します。" }

@@ -1,36 +1,58 @@
-<?xml version="1.0" encoding="UTF-8" ?>   <Result version="3.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://jvndb.jvn.jp/myjvn/Results" xmlns:mjres="http://jvndb.jvn.jp/myjvn/Results" xmlns:mjstat="http://jvndb.jvn.jp/myjvn/Statistics" xmlns:status="http://jvndb.jvn.jp/myjvn/Status" xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/Results https://jvndb.jvn.jp/schema/results_3.3.xsd">
-    <mjstat:sumCwe cweId="CWE-79">
-      <mjstat:title xml:lang="ja">クロスサイトスクリプティング</mjstat:title>
-      <mjstat:title xml:lang="en-US">Cross-site Scripting</mjstat:title>
-      <mjstat:resDataTotal vulinfo="234395" vendor="30055" product="77881"/>
-      <mjstat:resData date="1999" cntAll="0"/>
-      <mjstat:resData date="2000" cntAll="0"/>
-      <mjstat:resData date="2001" cntAll="0"/>
-      <mjstat:resData date="2002" cntAll="0"/>
-      <mjstat:resData date="2003" cntAll="1"/>
-      <mjstat:resData date="2004" cntAll="0"/>
-      <mjstat:resData date="2005" cntAll="1"/>
-      <mjstat:resData date="2006" cntAll="1"/>
-      <mjstat:resData date="2007" cntAll="2"/>
-      <mjstat:resData date="2008" cntAll="0"/>
-      <mjstat:resData date="2009" cntAll="9"/>
-      <mjstat:resData date="2010" cntAll="25"/>
-      <mjstat:resData date="2011" cntAll="45"/>
-      <mjstat:resData date="2012" cntAll="60"/>
-      <mjstat:resData date="2013" cntAll="103"/>
-      <mjstat:resData date="2014" cntAll="112"/>
-      <mjstat:resData date="2015" cntAll="374"/>
-      <mjstat:resData date="2016" cntAll="786"/>
-      <mjstat:resData date="2017" cntAll="1366"/>
-      <mjstat:resData date="2018" cntAll="2072"/>
-      <mjstat:resData date="2019" cntAll="2026"/>
-      <mjstat:resData date="2020" cntAll="2057"/>
-      <mjstat:resData date="2021" cntAll="2584"/>
-      <mjstat:resData date="2022" cntAll="3182"/>
-      <mjstat:resData date="2023" cntAll="4513"/>
-      <mjstat:resData date="2024" cntAll="4026"/>
-      <mjstat:resData date="2025" cntAll="396"/>
-    </mjstat:sumCwe>
-    <status:Status version="3.3" method="getStatistics" lang="ja" retCd="0" retMax="10000" retMaxCnt="4513" errCd="" errMsg="" totalRes="27" totalResRet="27" firstRes="" feed="hnd" theme="sumCwe" cweId="CWE-79" type="y" datePublicStartY="1999"/>
-  </Result>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<Result version="3.3"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://jvndb.jvn.jp/myjvn/Results"
+  xmlns:mjres="http://jvndb.jvn.jp/myjvn/Results"
+  xmlns:mjstat="http://jvndb.jvn.jp/myjvn/Statistics"
+  xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
+  xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/Results https://jvndb.jvn.jp/schema/results_3.3.xsd"
+>
+  <mjstat:sumCwe cweId="CWE-79">
+    <mjstat:title xml:lang="ja">クロスサイトスクリプティング</mjstat:title>
+    <mjstat:title xml:lang="en-US">Cross-site Scripting</mjstat:title>
+    <mjstat:resDataTotal vulinfo="234395" vendor="30055" product="77881" />
+    <mjstat:resData date="1999" cntAll="0" />
+    <mjstat:resData date="2000" cntAll="0" />
+    <mjstat:resData date="2001" cntAll="0" />
+    <mjstat:resData date="2002" cntAll="0" />
+    <mjstat:resData date="2003" cntAll="1" />
+    <mjstat:resData date="2004" cntAll="0" />
+    <mjstat:resData date="2005" cntAll="1" />
+    <mjstat:resData date="2006" cntAll="1" />
+    <mjstat:resData date="2007" cntAll="2" />
+    <mjstat:resData date="2008" cntAll="0" />
+    <mjstat:resData date="2009" cntAll="9" />
+    <mjstat:resData date="2010" cntAll="25" />
+    <mjstat:resData date="2011" cntAll="45" />
+    <mjstat:resData date="2012" cntAll="60" />
+    <mjstat:resData date="2013" cntAll="103" />
+    <mjstat:resData date="2014" cntAll="112" />
+    <mjstat:resData date="2015" cntAll="374" />
+    <mjstat:resData date="2016" cntAll="786" />
+    <mjstat:resData date="2017" cntAll="1366" />
+    <mjstat:resData date="2018" cntAll="2072" />
+    <mjstat:resData date="2019" cntAll="2026" />
+    <mjstat:resData date="2020" cntAll="2057" />
+    <mjstat:resData date="2021" cntAll="2584" />
+    <mjstat:resData date="2022" cntAll="3182" />
+    <mjstat:resData date="2023" cntAll="4513" />
+    <mjstat:resData date="2024" cntAll="4026" />
+    <mjstat:resData date="2025" cntAll="396" />
+  </mjstat:sumCwe>
+  <status:Status
+    version="3.3"
+    method="getStatistics"
+    lang="ja"
+    retCd="0"
+    retMax="10000"
+    retMaxCnt="4513"
+    errCd="" errMsg=""
+    totalRes="27"
+    totalResRet="27"
+    firstRes=""
+    feed="hnd"
+    theme="sumCwe"
+    cweId="CWE-79"
+    type="y"
+    datePublicStartY="1999" />
+</Result>

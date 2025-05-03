@@ -2,6 +2,7 @@
   "$schema": "https://jvndb.jvn.jp/schema/myjvn_feed_1.0.json?20250419",
   "feed": {
     "generator": {
+      "date": "2025-04-30T11:36:12+09:00",
       "engine": {
         "version": "4.0.0",
         "name": "MyJVN API"
@@ -9,7 +10,7 @@
     },
     "title": "IPA注意警戒サービスAPI",
     "link": "https://jvndb.jvn.jp/apis/myjvn/",
-    "updated": "2025-04-07T07:36:21+09:00",
+    "updated": "",
     "lang": "ja",
     "author": {
       "name": "IPA",
@@ -23,57 +24,27 @@
     },
     "entry": [
       {
-        "title": "WordPress に関するソフトウェア更新情報 (2025年2月12日 公開)",
-        "id": "MYJVN-ALT-2025-0011",
-        "link": "",
-        "summary": "",
-        "category": {
-          "term": "Info",
-          "label": "お知らせ"
-        },
-        "updated": "2025-02-12T10:58:02+09:00",
-        "published": "2025-02-12T10:58:02+09:00",
-        "items": [
-          {
-            "title": "Download WordPress (6.3.2)",
-            "id": "MYJVN-ALT-2025-0011-0001",
-            "link": "https://wordpress.org/download/",
-            "updated": "2025-02-12T10:58:02+09:00",
-            "published": "2025-02-12T00:00:00+09:00",
-            "author": "WordPress.org",
-            "products": [
-              {
-                "vname": "Wordpress",
-                "pname": "Wordpress",
-                "product_ids": {
-                  "jvnpid": "jvnpid:1.0::wordpress:wordpress:6.3.2",
-                  "cpe": "cpe:2.3:a:wordpress:wordpress:6.3.2:*:*:*:*:*:*:*"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "title": "MyJVN APIに関する更新情報",
+        "title": "MyJVN APIに関するセキュリティ情報",
         "id": "MYJVN-ALT-2025-0000",
         "summary": "更新に関する連絡です。",
-        "link": "https://jvnrss.isl.im.dendai.ac.jp/?myjvn_api",
+        "link": "https://www.ipa.go.jp/security/",
         "category": {
           "term": "Info",
           "label": "お知らせ"
         },
-        "updated": "2025-04-26T07:36:21+09:00",
-        "published": "2025-04-04T14:45:58+09:00",
+        "modified": "2025-04-26T07:36:21+09:00",
+        "created": "2025-04-04T14:45:58+09:00",
+        "public": "2025-04-01T10:23:42+09:00",
         "items": [
           {
-            "title": "APIに関する更新情報",
+            "title": "IPA security-alert",
             "id": "MYJVN-ALT-2025-0000-0001",
-            "summary": "APIの仕様",
-            "link": "https://jvnrss.isl.im.dendai.ac.jp/?myjvn_api",
-            "updated": "2025-04-26T07:36:21+09:00",
-            "published": "2025-04-04T14:45:58+09:00",
-            "author": "東京電機大学",
+            "summary": "MyJVN APIの仕様",
+            "link": "https://www.ipa.go.jp/security/security-alert/",
+            "modified": "2025-04-26T07:36:21+09:00",
+            "created": "2025-04-04T14:45:58+09:00",
+            "public": "2025-04-01T10:23:42+09:00",
+            "author": "IPA",
             "products": [
               {
                 "vname": "東京電機大学",
@@ -86,12 +57,13 @@
             ]
           },
           {
-            "title": "v4.0.0に関する更新情報",
+            "title": "IPA security-alert MyJVN API v4.0.0に関する更新情報",
             "id": "MYJVN-ALT-2025-0000-0002",
-            "summary": "v4.0.0の仕様",
+            "summary": "MyJVN API v4.0.0の仕様",
             "link": "https://jvnrss.isl.im.dendai.ac.jp/?myjvn_api_v4",
-            "updated": "2025-04-26T07:36:21+09:00",
-            "published": "2025-04-04T14:45:58+09:00",
+            "modified": "2025-04-26T07:36:21+09:00",
+            "created": "2025-04-04T14:45:58+09:00",
+            "public": "2025-04-01T10:23:42+09:00",
             "author": "東京電機大学",
             "products": [
               {
@@ -101,6 +73,40 @@
                 "version": "4.0.0",
                 "product_ids": {
                   "cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api:4.0.0:*:*:*:*:*:*:*"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "WordPress に関するソフトウェア更新情報 (2025年2月12日 公開)",
+        "id": "MYJVN-ALT-2025-0011",
+        "link": "",
+        "summary": "",
+        "category": {
+          "term": "Info",
+          "label": "お知らせ"
+        },
+        "modified": "2025-02-12T10:58:02+09:00",
+        "created": "2025-02-12T10:58:02+09:00",
+        "public": "",
+        "items": [
+          {
+            "title": "Download WordPress (6.3.2)",
+            "id": "MYJVN-ALT-2025-0011-0001",
+            "link": "https://wordpress.org/download/",
+            "modified": "2025-02-12T10:58:02+09:00",
+            "created": "2025-02-12T00:00:00+09:00",
+            "public": "",
+            "author": "WordPress.org",
+            "products": [
+              {
+                "vname": "Wordpress",
+                "pname": "Wordpress",
+                "product_ids": {
+                  "jvnpid": "jvnpid:1.0::wordpress:wordpress:6.3.2",
+                  "cpe": "cpe:2.3:a:wordpress:wordpress:6.3.2:*:*:*:*:*:*:*"
                 }
               }
             ]
