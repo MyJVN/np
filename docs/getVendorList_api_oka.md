@@ -123,7 +123,7 @@
     },
     "title": "JVNDB ベンダ一覧",
     "link": "https://jvndb.jvn.jp/apis/myjvn/",
-    "updated": "最終更新日 [例] 2025-04-26T07:36:21+09:00",
+    "updated": "JVNDB ベンダ一覧の最終更新日 [例] 2025-04-26T07:36:21+09:00",
     "lang": "表示言語 (ja:日本語、en:英語 )",
     "author": {
       "name": "IPA",

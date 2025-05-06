@@ -51,7 +51,17 @@
                 "product_id": "jvnpid:1.0::dendai.ac.jp:myjvn_api",
                 "pname": "マイジェイブイエヌ API",
                 "product_ids": {
-                  "cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api:*:*:*:*:*:*:*:*"
+                  "cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api:*:*:*:*:*:*:*:*",
+                  "id_refs": [
+                    {
+                      "nameType": "purl",
+                      "value": "Package-Manager値 [例] pkg:rpm/dendai.ac.jp/myjvn_api"
+                    },
+                    {
+                      "nameType": "swid",
+                      "value": "一意な識別子 [例] swid:dendai.ac.jp+myjvn_api"
+                    }
+                  ]
                 }
               }
             ]

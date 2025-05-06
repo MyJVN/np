@@ -22,9 +22,9 @@
 | feed                               | フィードフォーマット名 | フィードフォーマット(=API バージョン)を示す名称 <br> oka を指定                                                                                           | ○    | －         |
 | startItem                          | エントリ開始位置       | 整数 1 ～応答エントリ数                                                                                                                                   | －   | 1          |
 | maxCountItem                       | エントリ取得件数       | 整数 1 ～ 50 (getVulnOverviewList エントリ上限値)                                                                                                         | －   | 50         |
-| rangelastModDate                   | 最終更新日の範囲指定       | NONE: 範囲指定なし、DAY: 前日以降 <br> WEEK:過去 1 週間以降、MONTH:過去 1 ヶ月以降                                                                        | －   | －         |
-| lastModStartDate                   | 最終更新日開始年月日       | 整数 8 桁                                                                                                                                                 | －   | －         |
-| lastModEndDate                     | 最終更新日終了年月日       | 整数 8 桁                                                                                                                                                 | －   | －         |
+| rangelastModDate                   | 最終更新日の範囲指定   | NONE: 範囲指定なし、DAY: 前日以降 <br> WEEK:過去 1 週間以降、MONTH:過去 1 ヶ月以降                                                                        | －   | －         |
+| lastModStartDate                   | 最終更新日開始年月日   | 整数 8 桁                                                                                                                                                 | －   | －         |
+| lastModEndDate                     | 最終更新日終了年月日   | 整数 8 桁                                                                                                                                                 | －   | －         |
 | pubStartDate                       | 登録日開始年月日       | 整数 8 桁                                                                                                                                                 | －   | －         |
 | pubEndDate                         | 登録日終了年月日       | 整数 8 桁                                                                                                                                                 | －   | －         |
 | nameType                           | 製品識別子タイプ       | cpe, jvnpid, vid, pid のいずれかひとつ                                                                                                                    | －   | －         |
@@ -76,10 +76,11 @@
 最終更新日開始年月日、最終更新日終了年月日を指定します。
 
 - rangelastModDate と(lastModStartDate & lastModEndDate, pubStartDate & pubEndDate)の同時使用はできません。
-- pubStartDate, pubEndDate と組み合わせて使用できます。
-- pubStartDate のみの指定の場合には、最終更新日開始年月日以降が対象となります。
-- pubEndDate のみの指定の場合には、最終更新日終了年月日以前が対象となります。
-- \[例\]  
+- (lastModStartDate & lastModEndDate)と (pubStartDate & pubEndDate) とを組み合わせて使用できます。
+- lastModStartDate の最小値は 19980101
+- lastModStartDate のみの指定の場合には、最終更新日開始年月日以降、API 実行日までが対象となります。
+- lastModEndDate のみの指定の場合には、1998 年から最終更新日終了年月日以前が対象となります。
+- \[例\] 最終更新日の期間を指定して概要情報を取得したい場合  
    `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&lastModStartDate=20210804&lastModEndDate=20211022`
 
 <br>
@@ -89,11 +90,14 @@
 登録日開始年月日、登録日終了年月日を指定します。
 
 - rangelastModDate と(lastModStartDate & lastModEndDate, pubStartDate & pubEndDate)の同時使用はできません。
-- lastModStartDate, lastModEndDate と組み合わせて使用できます。
-- pubStartDate のみの指定の場合には、登録日開始年月日以降が対象となります。
-- pubEndDate のみの指定の場合には、登録日終了年月日以前が対象となります。
-- \[例\]  
+- (lastModStartDate & lastModEndDate)と (pubStartDate & pubEndDate) とを組み合わせて使用できます。
+- pubStartDate の最小値は 19980101
+- pubStartDate のみの指定の場合には、登録日開始年月日以降、API 実行日までが対象となります。
+- pubEndDate のみの指定の場合には、1998 年から登録日終了年月日以前が対象となります。
+- \[例\] 登録日の期間を指定して概要情報を取得したい場合  
    `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&pubStartDate=20210804&pubEndDate=20211022`
+- \[例\] 登録日と最終更新日の期間を指定して概要情報を取得したい場合(2021 年に登録、2025 年に更新された概要情報)  
+   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&pubStartDate=20210101&pubEndDate=20211231&lastModStartDate=20250101&lastModEndDate=20251231`
 
 <br>
 

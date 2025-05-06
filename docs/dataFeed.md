@@ -17,7 +17,19 @@
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
-<rdf:RDF>
+<rdf:RDF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://purl.org/rss/1.0/"
+  xmlns:rss="http://purl.org/rss/1.0/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:sec="http://jvn.jp/rss/mod_sec/3.0/"
+  xmlns:marking="http://data-marking.mitre.org/Marking-1"
+  xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1"
+  xsi:schemaLocation="http://purl.org/rss/1.0/ https://jvndb.jvn.jp/schema/jvnrss_3.2.xsd"
+  xml:lang="ja"
+  >
   <channel rdf:about="https://jvndb.jvn.jp/apis/myjvn">
     <title>JVNDB 脆弱性対策情報</title>
     <link>https://jvndb.jvn.jp/apis/myjvn</link>
@@ -47,6 +59,20 @@
     <dcterms:modified>最終更新日 [例] 2025-04-26T07:36:21+09:00</dcterms:modified>
   </item>
   <!-- 脆弱性対策概要情報の件数分 item を繰り返します。 -->
+  <status:Status
+    version="3.3"
+    method="getVulnOverviewList"
+    feed="hnd"
+    lang="ja"
+    retCd= 0
+    retMax=""
+    errCd=""
+    errMsg=""
+    totalRes="エントリ総数"
+    totalResRet="エントリ数"
+    firstRes=""
+    lt="1">
+  </status:Status>
 </rdf:RDF>
 ```
 
@@ -96,6 +122,20 @@
       },
       { "$comment": "title,id などを繰り返します。" }
     ]
+  },
+  "status:Status": {
+    "version": "4.0.0",
+    "method": "getVulnOverviewList",
+    "feed": "oka",
+    "lang": "ja",
+    "retCd": 0,
+    "retMax": "",
+    "errCd": "",
+    "errMsg": "",
+    "totalRes": "エントリ総数",
+    "totalResRet": "エントリ数",
+    "firstRes": "",
+    "lt": "1"
   }
 }
 ```
@@ -121,7 +161,21 @@
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
-<VULDEF-Document>
+<VULDEF-Document 
+  version="3.2"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://jvn.jp/vuldef/"
+  xmlns:vuldef="http://jvn.jp/vuldef/"
+  xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
+  xmlns:sec="http://jvn.jp/rss/mod_sec/3.0/"
+  xmlns:marking="http://data-marking.mitre.org/Marking-1"
+  xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1"
+  xsi:schemaLocation="http://jvn.jp/vuldef/ https://jvndb.jvn.jp/schema/vuldef_3.2.xsd
+                      http://jvn.jp/rss/mod_sec/3.0/ https://jvndb.jvn.jp/schema/mod_sec_3.0.xsd
+                      http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1 https://jvndb.jvn.jp/schema/tlp_marking.xsd
+                      http://jvndb.jvn.jp/myjvn/Status https://jvndb.jvn.jp/schema/status_3.3.xsd"
+  xml:lang="ja"
+  >
   <Vulinfo>
     <VulinfoID>脆弱性対策情報の識別子 (JVNDB-西暦-番号) [例] JVNDB-2025-000000</VulinfoID>
     <VulinfoData>
@@ -141,6 +195,20 @@
   </Vulinfo>
   <!-- 脆弱性対策詳細情報の件数分 Vulinfo を繰り返します。 -->
   <sec:handling />
+  <status:Status
+    version="3.3"
+    method="getVulnDetailInfo"
+    feed="hnd"
+    lang="ja"
+    retCd= 0
+    retMax=""
+    errCd=""
+    errMsg=""
+    totalRes="エントリ総数"
+    totalResRet="エントリ数"
+    firstRes=""
+    lt="1">
+  </status:Status>
 </VULDEF-Document>
 ```
 
@@ -212,7 +280,21 @@
         { "$comment": "document,product_tree,vulnerabilities,jvn_extension を繰り返します。" }
       ]
     }
-  ]
+  ],
+  "status:Status": {
+    "version": "4.0.0",
+    "method": "getVulnDetailInfo",
+    "feed": "oka",
+    "lang": "ja",
+    "retCd": 0,
+    "retMax": "",
+    "errCd": "",
+    "errMsg": "",
+    "totalRes": "エントリ総数",
+    "totalResRet": "エントリ数",
+    "firstRes": "",
+    "lt": "1"
+  }
 }
 
 ```
@@ -237,7 +319,13 @@
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
-<Result>
+<Result version="3.3"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://jvndb.jvn.jp/myjvn/Results"
+  xmlns:mjres="http://jvndb.jvn.jp/myjvn/Results"
+  xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
+  xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/Results https://jvndb.jvn.jp/schema/results_3.3.xsd"
+  >
   <VendorInfo xml:lang="ja">
     <Vendor
       vid="ベンダ番号 (JVN iPedia におけるベンダの識別番号) [例] 99999999991"
@@ -245,6 +333,20 @@
       cpe="CPEベンダ識別子 (CPE v2.2 形式) [例] cpe:/:dendai.ac.jp" />
     <!-- ベンダの件数分 Vendor を繰り返します。 -->
   </VendorInfo>
+  <status:Status
+    version="3.3"
+    method="getVendorList"
+    feed="hnd"
+    lang="ja"
+    retCd= 0
+    retMax=""
+    errCd=""
+    errMsg=""
+    totalRes="エントリ総数"
+    totalResRet="エントリ数"
+    firstRes=""
+    lt="1">
+  </status:Status>
 </Result>
 ```
 
@@ -291,6 +393,20 @@
       },
       { "$comment": "vendor_id,vid,vname,vname_i18n を繰り返します。" }
     ]
+  },
+  "status:Status": {
+    "version": "4.0.0",
+    "method": "getVendorList",
+    "feed": "oka",
+    "lang": "ja",
+    "retCd": 0,
+    "retMax": "",
+    "errCd": "",
+    "errMsg": "",
+    "totalRes": "エントリ総数",
+    "totalResRet": "エントリ数",
+    "firstRes": "",
+    "lt": "1"
   }
 }
 ```
@@ -315,7 +431,13 @@
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
-<Result>
+<Result version="3.3"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://jvndb.jvn.jp/myjvn/Results"
+  xmlns:mjres="http://jvndb.jvn.jp/myjvn/Results"
+  xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
+  xsi:schemaLocation="http://jvndb.jvn.jp/myjvn/Results https://jvndb.jvn.jp/schema/results_3.3.xsd"
+  >
   <VendorInfo
     xml:lang="ja">
     <Vendor
@@ -330,6 +452,20 @@
     </Vendor>
     <!-- フィルタリングに当てはまるベンダの件数分 Vendor を繰り返します。 -->
   </VendorInfo>
+  <status:Status
+    version="3.3"
+    method="getProductList"
+    feed="hnd"
+    lang="ja"
+    retCd= 0
+    retMax=""
+    errCd=""
+    errMsg=""
+    totalRes="エントリ総数"
+    totalResRet="エントリ数"
+    firstRes=""
+    lt="1">
+  </status:Status>
 </Result>
 ```
 
@@ -391,6 +527,20 @@
       },
       { "$comment": "vendor_id,vid,vname,cpe などを繰り返します。" }
     ]
+  },
+  "status:Status": {
+    "version": "4.0.0",
+    "method": "getProductList",
+    "feed": "oka",
+    "lang": "ja",
+    "retCd": 0,
+    "retMax": "",
+    "errCd": "",
+    "errMsg": "",
+    "totalRes": "エントリ総数",
+    "totalResRet": "エントリ数",
+    "firstRes": "",
+    "lt": "1"
   }
 }
 
@@ -445,6 +595,20 @@
       },
       { "$comment": "vendor_id,vid,vname,cpe などを繰り返します。" }
     ]
+  },
+  "status:Status": {
+    "version": "4.0.0",
+    "method": "getProductList",
+    "feed": "oka",
+    "lang": "ja",
+    "retCd": 0,
+    "retMax": "",
+    "errCd": "",
+    "errMsg": "",
+    "totalRes": "エントリ総数",
+    "totalResRet": "エントリ数",
+    "firstRes": "",
+    "lt": "1"
   }
 }
 ```

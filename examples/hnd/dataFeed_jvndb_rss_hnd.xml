@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns="http://purl.org/rss/1.0/"
   xmlns:rss="http://purl.org/rss/1.0/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns:dc="http://purl.org/dc/elements/1.1/"
   xmlns:dcterms="http://purl.org/dc/terms/"
   xmlns:sec="http://jvn.jp/rss/mod_sec/3.0/"
-  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
-  xsi:schemaLocation="http://purl.org/rss/1.0/ https://jvndb.jvn.jp/schema/jvnrss_3.2.xsd"
+  xmlns:marking="http://data-marking.mitre.org/Marking-1"
+  xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1"
+  xmlns:status="http://jvndb.jvn.jp/myjvn/Status"
+  xsi:schemaLocation="http://purl.org/rss/1.0/ https://jvndb.jvn.jp/schema/jvnrss_3.2.xsd
+                      http://jvndb.jvn.jp/myjvn/Status https://jvndb.jvn.jp/schema/status_3.3.xsd"
   xml:lang="ja"
 >
   <channel rdf:about="https://jvndb.jvn.jp/ja/rss/jvndb_new.rdf">
@@ -105,4 +108,18 @@
     <dcterms:issued>2025-04-11T23:52+09:00</dcterms:issued>
     <dcterms:modified>2025-04-11T23:52+09:00</dcterms:modified>
   </item>
+  <status:Status
+  version="3.3"
+  method="getVulnOverviewList"
+  feed="hnd"
+  lang="ja"
+  retCd= 0
+  retMax=""
+  errCd=""
+  errMsg=""
+  totalRes="26432"
+  totalResRet="26432"
+  firstRes=""
+  lt="1">
+</status:Status>
 </rdf:RDF>

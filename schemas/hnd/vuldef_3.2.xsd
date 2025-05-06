@@ -300,6 +300,7 @@
                     </xs:annotation>
                 </xs:element>
                 <xs:element minOccurs="0" maxOccurs="1" ref="vuldef:ProductName"/>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="vuldef:Cpe"/>
                 <xs:element minOccurs="0" maxOccurs="unbounded" ref="vuldef:VersionNumber"/>
                 <xs:element minOccurs="0" maxOccurs="unbounded" ref="vuldef:BuildNumber"/>
                 <xs:element minOccurs="0" maxOccurs="unbounded" ref="vuldef:Description">
@@ -309,7 +310,6 @@
                         <xs:documentation xml:lang="ja">影響を受ける製品に関する説明</xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element minOccurs="0" maxOccurs="unbounded" ref="vuldef:Cpe"/>
             </xs:sequence>
             <xs:attribute name="restriction" type="vuldef:restrictionEnum" use="optional"/>
             <xs:attribute name="affectedstatus" type="vuldef:affectedstatusEnum" use="optional"/>
@@ -434,8 +434,8 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element minOccurs="0" maxOccurs="1" ref="vuldef:Severity"/>
-                <xs:element minOccurs="0" maxOccurs="1" ref="vuldef:Vector"/>
                 <xs:element minOccurs="0" maxOccurs="1" ref="vuldef:Base"/>
+                <xs:element minOccurs="0" maxOccurs="1" ref="vuldef:Vector"/>
                 <xs:element minOccurs="0" maxOccurs="1" ref="vuldef:Temp"/>
                 <xs:element minOccurs="0" maxOccurs="1" ref="vuldef:Env"/>
             </xs:sequence>
@@ -804,6 +804,7 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element minOccurs="0" maxOccurs="1" ref="vuldef:HistoryNo"/>
+                <xs:element minOccurs="0" maxOccurs="1" ref="vuldef:DateTime"/>
                 <xs:element minOccurs="0" maxOccurs="1" ref="vuldef:Published"/>
                 <xs:element minOccurs="0" maxOccurs="1" ref="vuldef:Updated"/>
                 <xs:element minOccurs="1" maxOccurs="unbounded" ref="vuldef:Description"/>
@@ -1554,6 +1555,9 @@ Full Copyright Statement
          https://jvndb.jvn.jp/schema/vuldef_3.1.xsd
     v3.2 2017-07-20
          3.2 version for MyJVN API hnd
+         https://jvndb.jvn.jp/schema/vuldef_3.2.xsd
+    v3.2.1 2025-04-20
+         3.2.1 version for MyJVN API hnd (revise affected, impact, history)
          https://jvndb.jvn.jp/schema/vuldef_3.2.xsd
     -->
 

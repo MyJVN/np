@@ -7,7 +7,6 @@
   "properties": {
     "generator": { "$ref": "#/$defs/generator_type" },
     "title": { "type": "string" },
-    "systemid": { "type": "string" },
     "link": { "type": "string", "format": "uri" },
     "updated": { "type": "string", "format": "date-time" },
     "lang": { "type": "string", "enum": ["ja", "en"] },
@@ -93,8 +92,8 @@
         "productName": { "type": "string" },
         "cweId": { "type": "string" },
         "metricType": { "type": "string" },
-        "datePublicStart": { "type": "string" },
-        "datePublicEnd": { "type": "string" }
+        "pubStartDate": { "type": "string" },
+        "pubEndDate": { "type": "string" }
       }
     },
     "vulinfo_type": {
@@ -166,11 +165,9 @@
         "totalRes": { "type": "string" },
         "totalResRet": { "type": "string" },
         "firstRes": { "type": "string" },
-        "theme": { "type": "string" },
-        "type": { "type": "string" },
-        "datePublicStartY": { "type": "string" },
-        "datePublicStartM": { "type": "string" }
-      }
+        "lt": { "type": "string" }
+      },
+      "required": ["version", "method", "feed", "retCd"]
     }
   }
 }

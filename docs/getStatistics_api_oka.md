@@ -16,16 +16,17 @@
 
  <br>
 
-| パラメタ名      | 名称                   | パラメタ値                                                                                                                                                | 必須 | デフォルト |
-| --------------- | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- | ---------- |
-| method          | メソッド名             | getStatistics (固定)                                                                                                                                      | ○    | －         |
-| feed            | フィードフォーマット名 | フィードフォーマット(=API バージョン)を示す名称 <br> oka を指定                                                                                           | ○    | －         |
-| nameType        | 製品識別子タイプ       | cpe, jvnpid, vid, pid のいずれかひとつ                                                                                                                    | －   | －         |
-| productName     | 製品識別子             | type=cpe: cpe v2.3 形式　<br> type=jvnpid: jvnpid v1.0 形式 <br>nameType=vid: JVN iPedia におけるベンダ番号 <br>nameType=pid: JVN iPedia における製品番号 | －   | －         |
-| cweId           | CWE 識別子             | CWE 番号                                                                                                                                                  | －   | －         |
-| metricType      | 評価タイプ             | cvssV2, cvssV3, cvssV4 のいずれかひとつ                                                                                                                   | －   | cvssV3     |
-| datePublicStart | 発見日開始年           | 整数 4 桁                                                                                                                                                 | －   | 現在の年   |
-| datePublicEnd   | 発見日終了年           | 整数 4 桁                                                                                                                                                 | －   | －         |
+| パラメタ名   | 名称                   | パラメタ値                                                                                                                                                | 必須 | デフォルト |
+| ------------ | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- | ---------- |
+| method       | メソッド名             | getStatistics (固定)                                                                                                                                      | ○    | －         |
+| feed         | フィードフォーマット名 | フィードフォーマット(=API バージョン)を示す名称 <br> oka を指定                                                                                           | ○    | －         |
+| pubStartDate | 登録日開始年           | 整数 4 桁                                                                                                                                                 | －   | －         |
+| pubEndDate   | 登録日終了年           | 整数 4 桁                                                                                                                                                 |
+| nameType     | 製品識別子タイプ       | cpe, jvnpid, vid, pid のいずれかひとつ                                                                                                                    | －   | －         |
+| productName  | 製品識別子             | type=cpe: cpe v2.3 形式　<br> type=jvnpid: jvnpid v1.0 形式 <br>nameType=vid: JVN iPedia におけるベンダ番号 <br>nameType=pid: JVN iPedia における製品番号 | －   | －         |
+| cweId        | CWE 識別子             | CWE 番号                                                                                                                                                  | －   | －         |
+| metricType   | 評価タイプ             | cvssV2, cvssV3, cvssV4 のいずれかひとつ                                                                                                                   | －   | cvssV3     |
+|              |
 
 <br>
 
@@ -33,11 +34,25 @@
 
 該当パラメタに指定がない場合(パラメタ自体もしくはパラメタ値が未指定の場合)に MyJVN API 側で自動的に設定する値です。
 
-- 必須パラメタ以外を指定しない場合には、datePublicStart=現在の年、metricType=cvssV3 を適用するため、CVSS Ver3 に関する、現在の年の 1 月～ 12 月分の統計情報を出力します。
+- 必須パラメタ以外を指定しない場合には、pubStartDate=現在の年、metricType=cvssV3 を適用するため、CVSS Ver3 に関する、現在の年の 1 月～ 12 月分の統計情報を出力します。
 
 - \[例\] 必須パラメタのみを指定して統計情報を取得したい場合  
-   ( datePublicStart=現在の年, metricType=cvssv3 )  
+   ( pubStartDate=現在の年, metricType=cvssv3 )  
    `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=oka`
+
+<br>
+
+#### pubStartDate & pubEndDate
+
+登録日開始年、登録日終了年を指定します。
+
+- pubStartDate の最小値は 1998
+- pubStartDate のみの指定の場合には、登録日開始年以降、API 実行日までが対象となります。
+- pubEndDate のみの指定の場合には、1998 年から登録日終了年以前が対象となります。
+- \[例\] 登録日の期間を指定して統計情報を取得したい場合 (metricType=cvssV3)  
+   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=oka&pubStartDate=2005`  
+   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=oka&pubEndDate=2025`  
+   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=oka&pubStartDate=2005&pubEndDate=2025`
 
 <br>
 
@@ -51,7 +66,7 @@
 
 製品識別子として、CPE 製品識別子を指定します。
 
-- productName & nameType, cweId, metricType, datePublicStart, datePublicEnd は、組み合わせて使用できます。
+- productName & nameType, cweId, metricType, pubStartDate & pubEndDate は、組み合わせて使用できます。
 - cpe:2.3{part}:{vendor}:{product}  
   {part}フィールド ... \[ h | o | a | \* \]  
   {vendor}:{product}フィールド ... CPE ベンダ名、製品名
@@ -59,7 +74,7 @@
 - 複数指定は不可
 - URL エンコードされたエスケープシーケンス
 - \[例\] Apache HTTPD 全てのバージョンに関する統計情報を取得したい場合  
-   ( datePublicStart=現在の年, metricType=cvssV3 )  
+   ( lastModStartDate=現在の年, metricType=cvssV3 )  
    `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=oka&nameType=cpe&ProductName=cpe:2.3:a:apache:http_server`
 
 <br>
@@ -68,9 +83,9 @@
 
 CWE 識別子として、CWE 番号を指定します。
 
-- productName & nameType, cweId, metricType, datePublicStart, datePublicEnd は、組み合わせて使用できます。
+- productName & nameType, cweId, metricType, pubStartDate & pubEndDate は、組み合わせて使用できます。
 - 複数指定は不可
-- \[例\] CWE-79 に関する統計情報を取得したい場合 (datePublicStart=現在の年, metricType=cvssV3)  
+- \[例\] CWE-79 に関する統計情報を取得したい場合 (pubStartDate=現在の年, metricType=cvssV3)  
    `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=oka&cweId=CWE-79`
 
 <br>
@@ -79,24 +94,9 @@ CWE 識別子として、CWE 番号を指定します。
 
 評価タイプとして、\[ cvssV2 \| cvssV3 \| cvssV4 \]のいずれか一つを指定します。
 
-- productName & nameType, cweId, metricType, datePublicStart, datePublicEnd は、組み合わせて使用できます。
-- \[例\] CVSS Ver4 に関する統計情報を取得したい場合 (datePublicStart=現在の年)  
+- productName & nameType, cweId, metricType, pubStartDate & pubEndDate は、組み合わせて使用できます。
+- \[例\] CVSS Ver4 に関する統計情報を取得したい場合 (pubStartDate=現在の年)  
    `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=oka&metricType=cvssV4`
-
-<br>
-
-#### datePublicStart. datePublicEnd
-
-発見日開始年、発見日終了年を指定します。
-
-- productName & nameType, cweId, metricType, datePublicStart, datePublicEnd は、組み合わせて使用できます。
-- datePublicStart の最小値は 1998
-- datePublicStart のみを指定した場合には、発見日開始年以降が対象
-- datePublicEnd のみを指定した場合には、発見日終了年以前が対象
-- \[例\] 期間を指定して統計情報を取得したい場合 (metricType=cvssV3)  
-   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=oka&datePublicStart=2005`  
-   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=oka&datePublicEnd=2005`  
-   `https://jvndb.jvn.jp/myjvn?method=getStatistics&feed=oka&datePublicStart=2005&datePublicEnd=2025`
 
 <br>
 <br>
@@ -156,8 +156,10 @@ CWE 識別子として、CWE 番号を指定します。
     "productName": "製品識別子",
     "cweId": "CWE 番号",
     "metricType": "評価タイプ",
-    "datePublicStart": "発見日開始年",
-    "datePublicEnd": "発見日終了年"
+    "lastModStartDate": "最終更新日開始年",
+    "lastModEndDate": "最終更新日終了年",
+    "pubStartDate": "登録日開始年",
+    "pubEndDate": "登録日終了年"
   },
   "data": [
     {

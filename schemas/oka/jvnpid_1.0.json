@@ -199,7 +199,8 @@
         "totalResRet": { "type": "string" },
         "firstRes": { "type": "string" },
         "lt": { "type": "string" }
-      }
+      },
+      "required": ["version", "method", "feed", "retCd"]
     }
   }
 }

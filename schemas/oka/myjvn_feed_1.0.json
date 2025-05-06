@@ -259,8 +259,8 @@
           "title",
           "id",
           "link",
-          "updated",
-          "published",
+          "modified",
+          "created",
           "author",
           "products"
         ]
@@ -286,7 +286,7 @@
           "category": { "$ref": "#/$defs/category_type" },
           "items": { "$ref": "#/$defs/items_type" }
         },
-        "required": ["title", "id", "summary", "link", "updated", "published"]
+        "required": ["title", "id", "summary", "link", "modified", "created"]
       }
     },
     "feed_type": {
@@ -326,7 +326,8 @@
         "totalRes": { "type": "string" },
         "totalResRet": { "type": "string" },
         "firstRes": { "type": "string" }
-      }
+      },
+      "required": ["version", "method", "feed", "retCd"]
     }
   }
 }
