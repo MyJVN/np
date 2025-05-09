@@ -1,4 +1,4 @@
-﻿{
+{
   "$schema": "https://json-schema.org/draft/2020-12/schema#",
   "$id": "https://jvndb.jvn.jp/schema/myjvn_vuldef_1.0.stix.json?20250419",
   "title": "VULDEF (STIX) - The Vulnerability Data Publication and Exchange Format Data Model for MyJVN",
