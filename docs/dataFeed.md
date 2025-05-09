@@ -11,7 +11,7 @@
 
 #### 例
 
-- [ dataFeed_jvndb_rss_hnd.xml ](../examples/dataFeed_jvndb_rss_hnd.xml)
+- [ dataFeed_jvndb_rss_hnd.xml ](../examples/hnd/dataFeed_jvndb_rss_hnd.xml)
 
 #### 解説
 
@@ -88,7 +88,7 @@
 
 #### 例
 
-- [ dataFeed_jvndb_rss_oka.json ](../examples/dataFeed_jvndb_rss_oka.json)
+- [ dataFeed_jvndb_rss_oka.json ](../examples/oka/dataFeed_jvndb_rss_oka.json)
 
 #### 解説
 
@@ -155,7 +155,7 @@
 
 #### 例
 
-- [ dataFeed_jvndb_detail_hnd.xml ](../examples/dataFeed_jvndb_detail_hnd.xml)
+- [ dataFeed_jvndb_detail_hnd.xml ](../examples/hnd/dataFeed_jvndb_detail_hnd.xml)
 
 #### 解説
 
@@ -224,7 +224,7 @@
 
 #### 例
 
-- [ dataFeed_jvndb_detail_oka.json ](../examples/dataFeed_jvndb_detail_oka.json)
+- [ dataFeed_jvndb_detail_oka.json ](../examples/oka/dataFeed_jvndb_detail_oka.json)
 
 #### 解説
 
@@ -313,7 +313,7 @@
 
 #### 例
 
-- [ dataFeed_myjvn_vendor_hnd.xml ](../examples/dataFeed_myjvn_vendor_hnd.xml)
+- [ dataFeed_myjvn_vendor_hnd.xml ](../examples/hnd/dataFeed_myjvn_vendor_hnd.xml)
 
 #### 解説
 
@@ -362,7 +362,7 @@
 
 #### 例
 
-- [ dataFeed_myjvn_product_oka.json ](../examples/dataFeed_myjvn_product_oka.json)
+- [ dataFeed_myjvn_product_oka.json ](../examples/oka/dataFeed_myjvn_product_oka.json)
 
 #### 解説
 
@@ -425,7 +425,7 @@
 
 #### 例
 
-- [ dataFeed_myjvn_product_hnd.xml ](../examples/dataFeed_myjvn_product_hnd.xml) バージョン表記なし
+- [ dataFeed_myjvn_product_hnd.xml ](../examples/hnd/dataFeed_myjvn_product_hnd.xml) バージョン表記なし
 
 #### 解説
 
@@ -481,7 +481,7 @@
 
 #### 例
 
-- [ dataFeed_myjvn_product_oka.json ](../examples/dataFeed_myjvn_product_oka.json) バージョン表記なし
+- [ dataFeed_myjvn_product_oka.json ](../examples/oka/dataFeed_myjvn_product_oka.json) バージョン表記なし
 
 #### 解説
 
@@ -548,7 +548,7 @@
 
 #### 例
 
-- [ dataFeed_myjvn_product_version_oka.json ](../examples/dataFeed_myjvn_product_version_oka.json) バージョン表記あり
+- [ dataFeed_myjvn_product_version_oka.json ](../examples/oka/dataFeed_myjvn_product_version_oka.json) バージョン表記あり
 
 #### 解説
 

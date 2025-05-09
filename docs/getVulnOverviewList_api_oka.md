@@ -269,11 +269,11 @@ CVSSv4 基本評価基準、CVSSv4 深刻度を指定します。
 
 - MyJVN Feed
   - https://jvndb.jvn.jp/schema/myjvn_feed_1.0.json?20250419
-  - [ myjvn_feed_1.0.json ](../schemas/myjvn_feed_1.0.json)
+  - [ myjvn_feed_1.0.json ](../schemas/oka/myjvn_feed_1.0.json)
 
 ### 例
 
-- [ getVulnOverviewList_oka.json ](../examples/getVulnOverviewList_oka.json)
+- [ getVulnOverviewList_oka.json ](../examples/oka/getVulnOverviewList_oka.json)
 
 ### 解説
 

@@ -156,7 +156,7 @@ CVSSv3 基本評価基準、CVSSv3 深刻度を指定します。
 
 ### 例
 
-- [ getVulnOverviewList_hnd.xml ](../examples/getVulnOverviewList_hnd.xml)
+- [ getVulnOverviewList_hnd.xml ](../examples/hnd/getVulnOverviewList_hnd.xml)
 
 ### 解説
 

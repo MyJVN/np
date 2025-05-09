@@ -112,11 +112,11 @@ CWE 識別子として、CWE 番号を指定します。
 
 - MyJVN Statistics
   - https://jvndb.jvn.jp/schema/myjvn_statistics_1.0.json?20250419
-  - [ myjvn_statistics_1.0.json ](../schemas/myjvn_statistics_1.0.json)
+  - [ myjvn_statistics_1.0.json ](../schemas/oka/myjvn_statistics_1.0.json)
 
 ### 例
 
-- [ getStatistics_oka.json ](../examples/getStatistics_oka.json)
+- [ getStatistics_oka.json ](../examples/oka/getStatistics_oka.json)
 
 ### 解説
 

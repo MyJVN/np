@@ -102,11 +102,11 @@
 
 - Vendor and Product Dictionary for MyJVN
   - https://jvndb.jvn.jp/schema/jvnpid_1.0.json?20250419
-  - [ jvnpid_1.0.json ](../schemas/jvnpid_1.0.json)
+  - [ jvnpid_1.0.json ](../schemas/oka/jvnpid_1.0.json)
 
 ### 例
 
-- [ getVendorList_oka.json ](../examples/getVendorList_oka.json)
+- [ getVendorList_oka.json ](../examples/oka/getVendorList_oka.json)
 
 ### 解説
 

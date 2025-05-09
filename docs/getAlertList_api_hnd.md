@@ -86,7 +86,7 @@ CPE 製品識別子を指定します。
 
 ### 例
 
-- [ getAlertList_hnd.xml ](../examples/getAlertList_hnd.xml)
+- [ getAlertList_hnd.xml ](../examples/hnd/getAlertList_hnd.xml)
 
 ### 解説
 
@@ -181,7 +181,7 @@ CPE 製品識別子を指定します。
 
 ### 例
 
-- [ getAlertList_hnd.json ](../examples/getAlertList_hnd.json)
+- [ getAlertList_hnd.json ](../examples/hnd/getAlertList_hnd.json)
 
 ### 解説
 

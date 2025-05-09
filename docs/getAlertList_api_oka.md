@@ -198,12 +198,12 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
 ### JSON スキーマ
 
 - MyJVN Feed
-  - https://jvndb.jvn.jp/schema/myjvn_feed_1.0.json?20250419
-  - [ myjvn_feed_1.0.json ](../schemas/myjvn_feed_1.0.json)
+  - https://jvndb.jvn.jp/schema/myjvn_feed_1.0.json?20250419 
+  - [ myjvn_feed_1.0.json ](../schemas/oka/myjvn_feed_1.0.json)
 
 ### 例
 
-- [ getAlertList_oka.json ](../examples/getAlertList_oka.json)
+- [ getAlertList_oka.json ](../examples/oka/getAlertList_oka.json)
 
 ### 解説
 

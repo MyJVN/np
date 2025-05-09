@@ -82,19 +82,19 @@
 - VULDEF (CSAF) - The Vulnerability Data Publication and Exchange Format Data Model for MyJVN
 
   - https://jvndb.jvn.jp/schema/myjvn_vuldef_1.0.csaf.json?20250419
-  - [ myjvn_vuldef_1.0.csaf.json ](../schemas/myjvn_vuldef_1.0.csaf.json)
+  - [ myjvn_vuldef_1.0.csaf.json ](../schemas/oka/myjvn_vuldef_1.0.csaf.json)
 
 - VULDEF extension
   - https://jvndb.jvn.jp/schema/jvnpid_extension_1.0.json?20250419
-  - [ jvnpid_extension_1.0.json ](../schemas/jvnpid_extension_1.0.json)
+  - [ jvnpid_extension_1.0.json ](../schemas/oka/jvnpid_extension_1.0.json)
 
 ### 例
 
-- [ getVulnDetailInfo_oka_jvncsaf ](../examples/getVulnDetailInfo_oka_jvncsaf.json)
-- [ getVulnDetailInfo_oka_JVNDB-2017-009608 (CVE=1, CWE=1, CVSS=2, Ver=NONE) ](../examples/getVulnDetailInfo_oka_JVNDB-2017-009608.json)
-- [ getVulnDetailInfo_oka_JVNDB-2018-009328 (CVE=1, CWE=1, CVSS=2, Ver=PRESENT) ](../examples/getVulnDetailInfo_oka_JVNDB-2018-009328.json)
-- [ getVulnDetailInfo_oka_JVNDB-2021-002774 (CVE=1, CWE=0, CVSS=0, Ver=PRESENT) ](../examples/getVulnDetailInfo_oka_JVNDB-2021-002774.json)
-- [ getVulnDetailInfo_oka_JVNDB-2022-000097 (CVE=3, CWE=2, CVSS=6, Ver=NONE ) ](../examples/getVulnDetailInfo_oka_JVNDB-2022-000097.json)
+- [ getVulnDetailInfo_oka_jvncsaf ](../examples/oka/getVulnDetailInfo_oka_jvncsaf.json)
+- [ getVulnDetailInfo_oka_JVNDB-2017-009608 (CVE=1, CWE=1, CVSS=2, Ver=NONE) ](../examples/oka/getVulnDetailInfo_oka_JVNDB-2017-009608.json)
+- [ getVulnDetailInfo_oka_JVNDB-2018-009328 (CVE=1, CWE=1, CVSS=2, Ver=PRESENT) ](../examples/oka/getVulnDetailInfo_oka_JVNDB-2018-009328.json)
+- [ getVulnDetailInfo_oka_JVNDB-2021-002774 (CVE=1, CWE=0, CVSS=0, Ver=PRESENT) ](../examples/oka/getVulnDetailInfo_oka_JVNDB-2021-002774.json)
+- [ getVulnDetailInfo_oka_JVNDB-2022-000097 (CVE=3, CWE=2, CVSS=6, Ver=NONE ) ](../examples/oka/getVulnDetailInfo_oka_JVNDB-2022-000097.json)
 
 ### 解説
 
@@ -482,16 +482,16 @@
 - VULDEF (STIX) - The Vulnerability Data Publication and Exchange Format Data Model for MyJVN
 
   - https://jvndb.jvn.jp/schema/myjvn_vuldef_1.0.stix.json?20250419
-  - [ myjvn_vuldef_1.0.stix.json ](../schemas/myjvn_vuldef_1.0.stix.json)
+  - [ myjvn_vuldef_1.0.stix.json ](../schemas/oka/myjvn_vuldef_1.0.stix.json)
 
 - MyJVN STIX SDO (Stix Domain Object)
   - https://jvndb.jvn.jp/schema/jvn-jp-sdo.json?20250419
-  - [ mjvn-jp-sdo.json ](../schemas/jvn-jp-sdo.json)
+  - [ mjvn-jp-sdo.json ](../schemas/oka/jvn-jp-sdo.json)
 
 ### 例
 
-- [ getVulnDetailInfo_oka_jvnstix ](../examples/getVulnDetailInfo_oka_jvnstix.json)
-- [ getVulnDetailInfo_oka_JVNDB-2017-009608_jvnstix (CVE=1, CWE=1, CVSS=2, Ver=NONE) ](../examples/getVulnDetailInfo_oka_JVNDB-2017-009608_jvnstix.json)
+- [ getVulnDetailInfo_oka_jvnstix ](../examples/oka/getVulnDetailInfo_oka_jvnstix.json)
+- [ getVulnDetailInfo_oka_JVNDB-2017-009608_jvnstix (CVE=1, CWE=1, CVSS=2, Ver=NONE) ](../examples/oka/getVulnDetailInfo_oka_JVNDB-2017-009608_jvnstix.json)
 
 ### 解説
 

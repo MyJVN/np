@@ -138,10 +138,10 @@
 
 ### 例
 
-- [ getStatistics_hnd_sumJvnDb.xml ](../examples/getStatistics_hnd_sumJvnDb.xml)
-- [ getStatistics_hnd_sumCvss.xml ](../examples/getStatistics_hnd_sumCvss.xml)
-- [ getStatistics_hnd_sumAll.xml ](../examples/getStatistics_hnd_sumAll.xml)
-- [ getStatistics_hnd_sumCwe.xml ](../examples/getStatistics_hnd_sumCwe.xml)
+- [ getStatistics_hnd_sumJvnDb.xml ](../examples/hnd/getStatistics_hnd_sumJvnDb.xml)
+- [ getStatistics_hnd_sumCvss.xml ](../examples/hnd/getStatistics_hnd_sumCvss.xml)
+- [ getStatistics_hnd_sumAll.xml ](../examples/hnd/getStatistics_hnd_sumAll.xml)
+- [ getStatistics_hnd_sumCwe.xml ](../examples/hnd/getStatistics_hnd_sumCwe.xml)
 
 ### 解説
 

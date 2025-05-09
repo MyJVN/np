@@ -59,10 +59,10 @@
 
 ### 例
 
-- [ getVulnDetailInfo_hnd_JVNDB-2017-009608 (CVE=1, CWE=1, CVSS=2, Ver=NONE) ](../examples/getVulnDetailInfo_hnd_JVNDB-2017-009608.xml)
-- [ getVulnDetailInfo_hnd_JVNDB-2018-009328 (CVE=1, CWE=1, CVSS=2, Ver=PRESENT) ](../examples/getVulnDetailInfo_hnd_JVNDB-2018-009328.xml)
-- [ getVulnDetailInfo_hnd_JVNDB-2021-002774 (CVE=1, CWE=0, CVSS=0, Ver=PRESENT) ](../examples/getVulnDetailInfo_hnd_JVNDB-2021-002774.xml)
-- [ getVulnDetailInfo_hnd_JVNDB-2022-000097 (CVE=3, CWE=2, CVSS=6, Ver=NONE ) ](../examples/getVulnDetailInfo_hnd_JVNDB-2022-000097.xml)
+- [ getVulnDetailInfo_hnd_JVNDB-2017-009608 (CVE=1, CWE=1, CVSS=2, Ver=NONE) ](../examples/hnd/getVulnDetailInfo_hnd_JVNDB-2017-009608.xml)
+- [ getVulnDetailInfo_hnd_JVNDB-2018-009328 (CVE=1, CWE=1, CVSS=2, Ver=PRESENT) ](../examples/hnd/getVulnDetailInfo_hnd_JVNDB-2018-009328.xml)
+- [ getVulnDetailInfo_hnd_JVNDB-2021-002774 (CVE=1, CWE=0, CVSS=0, Ver=PRESENT) ](../examples/hnd/getVulnDetailInfo_hnd_JVNDB-2021-002774.xml)
+- [ getVulnDetailInfo_hnd_JVNDB-2022-000097 (CVE=3, CWE=2, CVSS=6, Ver=NONE ) ](../examples/hnd/getVulnDetailInfo_hnd_JVNDB-2022-000097.xml)
 
 ### 解説
 

@@ -114,7 +114,7 @@ CPE 製品名を指定します。
 
 ### 例
 
-- [ getProductList_hnd.xml ](../examples/getProductList_hnd.xml)
+- [ getProductList_hnd.xml ](../examples/hnd/getProductList_hnd.xml)
 
 ### 解説
 

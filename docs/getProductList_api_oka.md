@@ -180,11 +180,11 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
 
 - Vendor and Product Dictionary for MyJVN
   - https://jvndb.jvn.jp/schema/jvnpid_1.0.json?20250419
-  - [ jvnpid_1.0.json ](../schemas/jvnpid_1.0.json)
+  - [ jvnpid_1.0.json ](../schemas/oka/jvnpid_1.0.json)
 
 ### 例
 
-- [ getProductList_oka.json ](../examples/getProductList_oka.json)
+- [ getProductList_oka.json ](../examples/oka/getProductList_oka.json)
 
 ### 解説
 

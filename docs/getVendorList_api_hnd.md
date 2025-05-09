@@ -87,7 +87,7 @@ CPE ベンダ名を指定します。
 
 ### 例
 
-- [ getVendorList_hnd.xml ](../examples/getVendorList_hnd.xml)
+- [ getVendorList_hnd.xml ](../examples/hnd/getVendorList_hnd.xml)
 
 ### 解説
 
