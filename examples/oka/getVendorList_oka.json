@@ -30,10 +30,10 @@
         "cpe": "cpe:2.3::dendai.ac.jp"
       },
       {
-        "vendor_id": "jvnpid:1.0::ipa.go.jp",
+        "vendor_id": "jvnpid:1.0::ipa",
         "vid": "10297",
         "vname": "独立行政法人情報処理推進機構 (IPA)",
-        "cpe": "cpe:2.3::ipa.go.jp"
+        "cpe": "cpe:2.3::ipa"
       },
       {
         "vendor_id": "jvnpid:1.0::dounokouno",
