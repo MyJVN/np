@@ -385,6 +385,7 @@
         "vendor_id": "JVNベンダ識別子 (jvnpid 1.0 形式) [例] jvnpid:1.0::dendai.ac.jp",
         "vid": "ベンダ番号 (JVN iPedia におけるベンダの識別番号) [例] 99999999991",
         "vname": "ベンダ名 [例] 東京電機大学",
+        "vfqdn": "ベンダプライマリドメイン [例] dendai.ac.jp",
         "vname_i18n": {
           "ja": "ベンダ名日本語 [例] 東京電機大学",
           "en": "ベンダ名英語 [例] Tokyo Denki University"
@@ -504,6 +505,7 @@
         "vendor_id": "JVNベンダ識別子 (jvnpid 1.0 形式) [例] jvnpid:1.0::dendai.ac.jp",
         "vid": "ベンダ番号 (JVN iPedia におけるベンダの識別番号) [例] 99999999991",
         "vname": "ベンダ名 [例] 東京電機大学",
+        "vfqdn": "ベンダプライマリドメイン [例] dendai.ac.jp",
         "vname_i18n": {
           "ja": "ベンダ名日本語 [例] 東京電機大学",
           "en": "ベンダ名英語 [例] Tokyo Denki University"
@@ -571,6 +573,7 @@
         "vendor_id": "JVNベンダ識別子 (jvnpid 1.0 形式) [例] jvnpid:1.0::dendai.ac.jp",
         "vid": "ベンダ番号 (JVN iPedia におけるベンダの識別番号) [例] 99999999991",
         "vname": "ベンダ名 [例] 東京電機大学",
+        "vfqdn": "ベンダプライマリドメイン [例] dendai.ac.jp",
         "vname_i18n": {
           "ja": "ベンダ名日本語 [例] 東京電機大学",
           "en": "ベンダ名英語 [例] Tokyo Denki University"
