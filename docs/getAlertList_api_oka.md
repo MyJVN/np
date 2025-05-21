@@ -142,7 +142,8 @@ cpe あるいは、jvnpid のバージョン(0 文字以上の ASCII 文字列)�
 - nameType=cpe あるいは、nameType=jvnpid のみ使用可
 - \[例\] Apache HTTPD 1.3.1.1 に関する概要情報一覧を取得したい場合  
    `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&nameType=cpe&productName=cpe:2.3:a:apache:http_server&version=1.3.1.1`
-- versionType  
+- versionType
+
   | オペレータ名 | 使用可パラメタ | 操作 |
   | --------------------- | ---------------------- | ---------------------- |
   | no | version | バージョンが設定されていない情報を取得 (version 値は未設定) |
@@ -162,6 +163,7 @@ cpe あるいは、jvnpid の開始バージョン(0 文字以上の ASCII 文�
 - \[例\] Apache HTTPD 1.3.1.1 以上に関する概要情報一覧を取得したい場合  
    `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&nameType=cpe&productName=cpe:2.3:a:apache:http_server&versionStart=1.3.1.1&versionStartType=including`
 - versionStartType
+
   |オペレータ名 | 使用可パラメタ | 操作|
   | --------------------- | ---------------------- | ---------------------- |
   |including | versionStartType | バージョンを含む<br> versionStartType が指定されていない場合のデフォルト値|
@@ -180,10 +182,21 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
 - \[例\] Apache HTTPD 1.3.1.1 以下に関する概要情報一覧を取得したい場合  
    `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&nameType=cpe&productName=cpe:2.3:a:apache:http_server&versionEnd=1.3.1.1&versionEndType=including`
 - versionEndType
+
   |オペレータ名 | 使用可パラメタ | 操作|
   | --------------------- | ---------------------- | ---------------------- |
   |including | versionEndType | バージョンを含む<br> versionEndType が指定されていない場合のデフォルト値|
   |excluding | versionEndType | バージョンを含まない|
+
+<br>
+
+#### keyword
+
+製品名の部分一致によりフィルタリングします。
+
+- ワイルドカード "\*" 指定不可 ("\*"を指定した場合、"\*"を含む項目をフィルタリング)
+- 大文字／小文字区別なし
+- charset=UTF-8
 
 <br>
 <br>
