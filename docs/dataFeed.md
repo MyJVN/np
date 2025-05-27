@@ -520,7 +520,12 @@
               "ja": "製品名日本語 [例] マイジェイブイエヌ API",
               "en": "製品名英語 [例] MyJVN API"
             },
-            "product_ids": [{ "$comment": "getProductList 製品識別子フィールド参照" }]
+            "product_ids": [
+              {
+                "cpe": "CPE製品識別子 (CPE v2.3 形式) [例] cpe:2.3:a:ipa:myjvn_api:*:*:*:*:*:*:*:*",
+                "$comment": "getProductList 製品識別子フィールド参照"
+              }
+            ]
           },
           { "$comment": "product_id,pid,pname,pname_i18n などを繰り返します。" }
         ],
@@ -545,7 +550,6 @@
     "lt": "1"
   }
 }
-
 ```
 
 #### 例
@@ -560,7 +564,7 @@
   "jvn-product-dictionary": {
     "generator": {
       "date": "データフィード生成日 [例] 2025-04-30T11:36:12+09:00",
-      "engine": "engine": { "version": "4.0.0", "name": "MyJVN API" }
+      "engine": { "version": "4.0.0", "name": "MyJVN API" }
     },
     "title": "JVNDB 製品一覧",
     "link": "https://jvndb.jvn.jp/apis/myjvn/",
@@ -589,7 +593,12 @@
               "en": "製品名英語 [例] MyJVN API"
             },
             "version": "バージョン [例] 4.0.0",
-            "product_ids": [{ "$comment": "getProductList 製品識別子フィールド参照" }]
+            "product_ids": [
+              {
+                "cpe": "CPE製品識別子 (CPE v2.3 形式) [例] cpe:2.3:a:ipa:myjvn_api:4.0.0:*:*:*:*:*:*:*",
+                "$comment": "getProductList 製品識別子フィールド参照"
+              }
+            ]
           },
           { "$comment": "product_id,pid,pname,pname_i18n などを繰り返します。" }
         ],
