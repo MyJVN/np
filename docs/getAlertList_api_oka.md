@@ -31,6 +31,7 @@
 | version <br> versionType           | バージョン             | バージョン情報                                                                                                                                            | －   | －         |
 | versionStart <br> versionStartType | 開始バージョン         | バージョン情報                                                                                                                                            | －   | －         |
 | versionEnd <br> versionEndType     | 終了バージョン         | バージョン情報                                                                                                                                            | －   | －         |
+| keyword                            | キーワード             | URL エンコードされたキーワード                                                                                                                            | －   | －         |
 
 <br>
 

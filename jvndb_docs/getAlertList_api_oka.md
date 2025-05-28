@@ -31,6 +31,7 @@
 | version <br> versionType           | バージョン             | バージョン情報                                                                                                                                            | －   | －         |
 | versionStart <br> versionStartType | 開始バージョン         | バージョン情報                                                                                                                                            | －   | －         |
 | versionEnd <br> versionEndType     | 終了バージョン         | バージョン情報                                                                                                                                            | －   | －         |
+| keyword                            | キーワード             | URL エンコードされたキーワード                                                                                                                            | －   | －         |
 
 <br>
 
@@ -191,6 +192,16 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
   | ------------ | -------------- | ------------------------------------------------------------------------ |
   | including    | versionEndType | バージョンを含む<br> versionEndType が指定されていない場合のデフォルト値 |
   | excluding    | versionEndType | バージョンを含まない                                                     |
+
+<br>
+
+#### keyword
+
+製品名の部分一致によりフィルタリングします。
+
+- ワイルドカード "\*" 指定不可 ("\*"を指定した場合、"\*"を含む項目をフィルタリング)
+- 大文字／小文字区別なし
+- charset=UTF-8
 
 </details>
 <br>
