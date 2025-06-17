@@ -133,7 +133,7 @@
         "type": "object",
         "properties": {
           "product_id": { "$ref": "#/$defs/jvnpid_type" },
-          "pid": { "type": "string" },
+          "pid": { "type": "integer" },
           "pname": { "type": "string" },
           "pname_i18n": { "$ref": "#/$defs/vname_i18n_type" },
           "product_ids": { "$ref": "#/$defs/product_ids_type" },
@@ -149,7 +149,7 @@
         "type": "object",
         "properties": {
           "vendor_id": { "$ref": "#/$defs/jvnpid_vendor_type" },
-          "vid": { "type": "string" },
+          "vid": { "type": "integer" },
           "vname": { "type": "string" },
           "vname_i18n": { "$ref": "#/$defs/vname_i18n_type" },
           "cpe": { "$ref": "#/$defs/cpe_vendor_type" },
@@ -192,13 +192,12 @@
         "feed": { "type": "string" },
         "lang": { "type": "string" },
         "retCd": { "type": "integer" },
-        "retMax": { "type": "string" },
+        "retMax": { "type": "integer" },
         "errCd": { "type": "string" },
         "errMsg": { "type": "string" },
-        "totalRes": { "type": "string" },
-        "totalResRet": { "type": "string" },
-        "firstRes": { "type": "string" },
-        "lt": { "type": "string" }
+        "totalRes": { "type": "integer" },
+        "totalResRet": { "type": "integer" },
+        "firstRes": { "type": "integer" }
       },
       "required": ["version", "method", "feed", "retCd"]
     }

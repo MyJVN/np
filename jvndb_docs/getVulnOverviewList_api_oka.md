@@ -22,7 +22,7 @@
 | feed                               | フィードフォーマット名 | フィードフォーマット(=API バージョン)を示す名称 <br> oka を指定                                                                                           | ○    | －         |
 | startItem                          | エントリ開始位置       | 整数 1 ～応答エントリ数                                                                                                                                   | －   | 1          |
 | maxCountItem                       | エントリ取得件数       | 整数 1 ～ 50 (getVulnOverviewList エントリ上限値)                                                                                                         | －   | 50         |
-| rangelastModDate                   | 最終更新日の範囲指定   | NONE: 範囲指定なし、DAY: 前日以降 <br> WEEK:過去 1 週間以降、MONTH:過去 1 ヶ月以降                                                                        | －   | －         |
+| rangeLastModDate                   | 最終更新日の範囲指定   | NONE: 範囲指定なし、DAY: 前日以降 <br> WEEK:過去 1 週間以降、MONTH:過去 1 ヶ月以降                                                                        | －   | －         |
 | lastModStartDate                   | 最終更新日開始年月日   | 整数 8 桁                                                                                                                                                 | －   | －         |
 | lastModEndDate                     | 最終更新日終了年月日   | 整数 8 桁                                                                                                                                                 | －   | －         |
 | pubStartDate                       | 登録日開始年月日       | 整数 8 桁                                                                                                                                                 | －   | －         |
@@ -51,7 +51,7 @@
 
 「デフォルト」は、該当パラメタに指定がない場合(パラメタ自体もしくはパラメタ値が未指定の場合)に MyJVN API 側で自動的に設定する値です。
 
-- 期間パラメタ(rangelastModDate, lastModStartDate & lastModEndDate, pubStartDate & pubEndDate)を指定しない場合には、最新順に一覧を出力します。
+- 期間パラメタ(rangeLastModDate, lastModStartDate & lastModEndDate, pubStartDate & pubEndDate)を指定しない場合には、最新順に一覧を出力します。
 
 <br>
 
@@ -64,14 +64,14 @@
 
 <br>
 
-#### rangelastModDate
+#### rangeLastModDate
 
 最終更新日の簡易な範囲を指定します。
 
-- rangelastModDate と(lastModStartDate & lastModEndDate, pubStartDate & pubEndDate)の同時使用はできません。
+- rangeLastModDate と(lastModStartDate & lastModEndDate, pubStartDate & pubEndDate)の同時使用はできません。
 - \[ NONE: 範囲指定なし \| DAY: 前日以降 \| WEEK:過去 1 週間以降 \| MONTH:過去 1 ヶ月以降 \]のいずれか一つを指定します。
 - \[例\]  
-   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&rangelastModDate=DAY`
+   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&rangeLastModDate=DAY`
 
 <br>
 
@@ -79,7 +79,7 @@
 
 最終更新日開始年月日、最終更新日終了年月日を指定します。
 
-- rangelastModDate と(lastModStartDate & lastModEndDate, pubStartDate & pubEndDate)の同時使用はできません。
+- rangeLastModDate と(lastModStartDate & lastModEndDate, pubStartDate & pubEndDate)の同時使用はできません。
 - (lastModStartDate & lastModEndDate)と (pubStartDate & pubEndDate) とを組み合わせて使用できます。
 - lastModStartDate の最小値は 19980101
 - lastModStartDate のみの指定の場合には、最終更新日開始年月日以降、API 実行日までが対象となります。
@@ -93,7 +93,7 @@
 
 登録日開始年月日、登録日終了年月日を指定します。
 
-- rangelastModDate と(lastModStartDate & lastModEndDate, pubStartDate & pubEndDate)の同時使用はできません。
+- rangeLastModDate と(lastModStartDate & lastModEndDate, pubStartDate & pubEndDate)の同時使用はできません。
 - (lastModStartDate & lastModEndDate)と (pubStartDate & pubEndDate) とを組み合わせて使用できます。
 - pubStartDate の最小値は 19980101
 - pubStartDate のみの指定の場合には、登録日開始年月日以降、API 実行日までが対象となります。
@@ -256,7 +256,7 @@ CVSSv4 基本評価基準、CVSSv4 深刻度を指定します。
 
 #### keyword
 
-製品名の部分一致によりフィルタリングします。
+脆弱性概要情報の部分一致によるフィルタリングします。
 
 - ワイルドカード "\*" 指定不可 ("\*"を指定した場合、"\*"を含む項目をフィルタリング)
 - 大文字／小文字区別なし

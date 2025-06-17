@@ -145,7 +145,7 @@ CWE 識別子として、CWE 番号を指定します。
   },
   "dataTotal": {
     "$comment": "脆弱性対策情報総件数、ベンダ総件数、製品総件数",
-    "vulinfo": 234156,
+    "vulninfo": 234156,
     "vendor": 30054,
     "product": 77871
   },
@@ -164,48 +164,48 @@ CWE 識別子として、CWE 番号を指定します。
     {
       "$comment": "該当年、該当年の脆弱性対策情報の件数、深刻度(緊急、重要、警告、注意、なし)の件数",
       "year": "2025",
-      "total_vulinfo": 4,
-      "total_seveirty_critical": 4,
-      "total_seveirty_high": 0,
-      "total_seveirty_medium": 0,
-      "total_seveirty_low": 0,
-      "total_seveirty_none": 0,
-      "vulinfo": {
+      "total_vulninfo": 4,
+      "total_severity_critical": 4,
+      "total_severity_high": 0,
+      "total_severity_medium": 0,
+      "total_severity_low": 0,
+      "total_severity_none": 0,
+      "vulninfo": {
         "$comment": "毎月の脆弱性対策情報の件数",
         "1": 1,
         "2": 1,
         "3": 1,
         "4": 1
       },
-      "seveirty_critical": {
+      "severity_critical": {
         "$comment": "毎月の深刻度(緊急)の件数",
         "1": 1,
         "2": 1,
         "3": 1,
         "4": 1
       },
-      "seveirty_high": {
+      "severity_high": {
         "$comment": "毎月の深刻度(重要)の件数",
         "1": 0,
         "2": 0,
         "3": 0,
         "4": 0
       },
-      "seveirty_medium": {
+      "severity_medium": {
         "$comment": "毎月の深刻度(警告)の件数",
         "1": 0,
         "2": 0,
         "3": 0,
         "4": 0
       },
-      "seveirty_low": {
+      "severity_low": {
         "$comment": "毎月の深刻度(注意)の件数",
         "1": 0,
         "2": 0,
         "3": 0,
         "4": 0
       },
-      "seveirty_none": {
+      "severity_none": {
         "$comment": "毎月の深刻度(なし)の件数",
         "1": 0,
         "2": 0,

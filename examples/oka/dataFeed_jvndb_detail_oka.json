@@ -1374,11 +1374,11 @@
     "feed": "oka",
     "lang": "ja",
     "retCd": 0,
-    "retMax": "",
+    "retMax": ,
     "errCd": "",
     "errMsg": "",
-    "totalRes": "4",
-    "totalResRet": "4",
+    "totalRes": 4,
+    "totalResRet": 4,
     "ft": "jvnstix",
     "lt": "1"
   }

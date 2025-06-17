@@ -215,12 +215,12 @@
     "feed": "oka",
     "lang": "ja",
     "retCd": 0,
-    "retMax": "1",
+    "retMax": 1,
     "errCd": "",
     "errMsg": "",
-    "totalRes": "1",
-    "totalResRet": "1",
-    "firstRes": "1",
+    "totalRes": 1,
+    "totalResRet": 1,
+    "firstRes": 1,
     "vulnId": "JVNDB-2017-009608",
     "ft": "jvnstix"
   }

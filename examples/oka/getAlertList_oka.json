@@ -130,11 +130,11 @@
     "method": "getAlertList",
     "feed": "oka",
     "retCd": 0,
-    "retMax": "50",
+    "retMax": 50,
     "errCd": "",
     "errMsg": "",
-    "totalRes": "1",
-    "totalResRet": "1",
-    "firstRes": "1"
+    "totalRes": 1,
+    "totalResRet": 1,
+    "firstRes": 1
   }
 }

@@ -202,12 +202,12 @@
         "feed": { "type": "string" },
         "lang": { "type": "string" },
         "retCd": { "type": "integer" },
-        "retMax": { "type": "string" },
+        "retMax": { "type": "integer" },
         "errCd": { "type": "string" },
         "errMsg": { "type": "string" },
-        "totalRes": { "type": "string" },
-        "totalResRet": { "type": "string" },
-        "firstRes": { "type": "string" }
+        "totalRes": { "type": "integer" },
+        "totalResRet": { "type": "integer" },
+        "firstRes": { "type": "integer" }
       }
     },
     "jvn_extension_type": {

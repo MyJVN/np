@@ -80,7 +80,7 @@
     "dataTotal_type": {
       "type": "object",
       "properties": {
-        "vulinfo": { "type": "integer" },
+        "vulninfo": { "type": "integer" },
         "vendor": { "type": "integer" },
         "product": { "type": "integer" }
       }
@@ -96,7 +96,7 @@
         "pubEndDate": { "type": "string" }
       }
     },
-    "vulinfo_type": {
+    "vulninfo_type": {
       "type": "object",
       "properties": {
         "1": { "type": "integer" },
@@ -120,33 +120,33 @@
         "type": "object",
         "properties": {
           "year": { "type": "integer" },
-          "total_vulinfo": { "type": "integer" },
-          "total_seveirty_critical": { "type": "integer" },
-          "total_seveirty_high": { "type": "integer" },
-          "total_seveirty_medium": { "type": "integer" },
-          "total_seveirty_low": { "type": "integer" },
-          "total_seveirty_none": { "type": "integer" },
-          "vulinfo": { "$ref": "#/$defs/vulinfo_type" },
-          "seveirty_critical": { "$ref": "#/$defs/vulinfo_type" },
-          "seveirty_high": { "$ref": "#/$defs/vulinfo_type" },
-          "seveirty_medium": { "$ref": "#/$defs/vulinfo_type" },
-          "seveirty_low": { "$ref": "#/$defs/vulinfo_type" },
-          "seveirty_none": { "$ref": "#/$defs/vulinfo_type" }
+          "total_vulninfo": { "type": "integer" },
+          "total_severity_critical": { "type": "integer" },
+          "total_severity_high": { "type": "integer" },
+          "total_severity_medium": { "type": "integer" },
+          "total_severity_low": { "type": "integer" },
+          "total_severity_none": { "type": "integer" },
+          "vulninfo": { "$ref": "#/$defs/vulninfo_type" },
+          "severity_critical": { "$ref": "#/$defs/vulninfo_type" },
+          "severity_high": { "$ref": "#/$defs/vulninfo_type" },
+          "severity_medium": { "$ref": "#/$defs/vulninfo_type" },
+          "severity_low": { "$ref": "#/$defs/vulninfo_type" },
+          "severity_none": { "$ref": "#/$defs/vulninfo_type" }
         },
         "required": [
-          "seveirty_none",
-          "total_seveirty_medium",
+          "severity_none",
+          "total_severity_medium",
           "year",
-          "total_seveirty_low",
-          "seveirty_medium",
-          "total_seveirty_high",
-          "seveirty_low",
-          "total_vulinfo",
-          "vulinfo",
-          "seveirty_high",
-          "total_seveirty_none",
-          "total_seveirty_critical",
-          "seveirty_critical"
+          "total_severity_low",
+          "severity_medium",
+          "total_severity_high",
+          "severity_low",
+          "total_vulninfo",
+          "vulninfo",
+          "severity_high",
+          "total_severity_none",
+          "total_severity_critical",
+          "severity_critical"
         ]
       }
     },
@@ -158,14 +158,12 @@
         "feed": { "type": "string" },
         "lang": { "type": "string" },
         "retCd": { "type": "integer" },
-        "retMax": { "type": "string" },
-        "retMaxCnt": { "type": "string" },
+        "retMax": { "type": "integer" },
         "errCd": { "type": "string" },
         "errMsg": { "type": "string" },
-        "totalRes": { "type": "string" },
-        "totalResRet": { "type": "string" },
-        "firstRes": { "type": "string" },
-        "lt": { "type": "string" }
+        "totalRes": { "type": "integer" },
+        "totalResRet": { "type": "integer" },
+        "firstRes": { "type": "integer" }
       },
       "required": ["version", "method", "feed", "retCd"]
     }

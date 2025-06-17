@@ -60,9 +60,9 @@
     "retMax": "",
     "errCd": "",
     "errMsg": "",
-    "totalRes": "29831",
-    "totalResRet": "29831",
-    "firstRes": "",
+    "totalRes": 29831,
+    "totalResRet": 29831,
+    "firstRes": 1,
     "lt": "1"
   }
 }

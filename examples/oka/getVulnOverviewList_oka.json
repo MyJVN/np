@@ -246,11 +246,11 @@
     "feed": "oka",
     "lang": "ja",
     "retCd": 0,
-    "retMax": "50",
+    "retMax": 50,
     "errCd": "",
     "errMsg": "",
-    "totalRes": "6",
-    "totalResRet": "4",
-    "firstRes": "1"
+    "totalRes": 6,
+    "totalResRet": 4,
+    "firstRes": 1
   }
 }

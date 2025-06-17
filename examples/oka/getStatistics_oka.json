@@ -22,7 +22,7 @@
     }
   },
   "dataTotal": {
-    "vulinfo": 234395,
+    "vulninfo": 234395,
     "vendor": 30055,
     "product": 77881
   },
@@ -37,14 +37,14 @@
   "data": [
     {
       "year": 2024,
-      "total_vulinfo": 21085,
-      "total_seveirty_critical": 2816,
-      "total_seveirty_high": 7578,
-      "total_seveirty_medium": 10322,
-      "total_seveirty_low": 369,
-      "total_seveirty_none": 0,
+      "total_vulninfo": 21085,
+      "total_severity_critical": 2816,
+      "total_severity_high": 7578,
+      "total_severity_medium": 10322,
+      "total_severity_low": 369,
+      "total_severity_none": 0,
 
-      "vulinfo": {
+      "vulninfo": {
         "1": 1416,
         "2": 1733,
         "3": 1716,
@@ -58,7 +58,7 @@
         "11": 1943,
         "12": 1270
       },
-      "seveirty_critical": {
+      "severity_critical": {
         "1": 307,
         "2": 258,
         "3": 193,
@@ -72,7 +72,7 @@
         "11": 244,
         "12": 176
       },
-      "seveirty_high": {
+      "severity_high": {
         "1": 426,
         "2": 570,
         "3": 552,
@@ -86,7 +86,7 @@
         "11": 878,
         "12": 444
       },
-      "seveirty_medium": {
+      "severity_medium": {
         "1": 648,
         "2": 881,
         "3": 935,
@@ -100,7 +100,7 @@
         "11": 795,
         "12": 636
       },
-      "seveirty_low": {
+      "severity_low": {
         "1": 35,
         "2": 24,
         "3": 36,
@@ -114,7 +114,7 @@
         "11": 26,
         "12": 14
       },
-      "seveirty_none": {
+      "severity_none": {
         "1": 0,
         "2": 0,
         "3": 0,
@@ -131,44 +131,44 @@
     },
     {
       "year": 2025,
-      "total_vulinfo": 2418,
-      "total_seveirty_critical": 441,
-      "total_seveirty_high": 808,
-      "total_seveirty_medium": 1126,
-      "total_seveirty_low": 43,
-      "total_seveirty_none": 0,
+      "total_vulninfo": 2418,
+      "total_severity_critical": 441,
+      "total_severity_high": 808,
+      "total_severity_medium": 1126,
+      "total_severity_low": 43,
+      "total_severity_none": 0,
 
-      "vulinfo": {
+      "vulninfo": {
         "1": 762,
         "2": 811,
         "3": 741,
         "4": 104
       },
-      "seveirty_critical": {
+      "severity_critical": {
         "1": 94,
         "2": 110,
         "3": 201,
         "4": 36
       },
-      "seveirty_high": {
+      "severity_high": {
         "1": 277,
         "2": 288,
         "3": 203,
         "4": 40
       },
-      "seveirty_medium": {
+      "severity_medium": {
         "1": 382,
         "2": 402,
         "3": 317,
         "4": 25
       },
-      "seveirty_low": {
+      "severity_low": {
         "1": 9,
         "2": 11,
         "3": 20,
         "4": 3
       },
-      "seveirty_none": {
+      "severity_none": {
         "1": 0,
         "2": 0,
         "3": 0,
@@ -182,12 +182,11 @@
     "feed": "oka",
     "lang": "ja",
     "retCd": 0,
-    "retMax": "10000",
-    "retMaxCnt": "2313",
+    "retMax": 10000,
     "errCd": "",
     "errMsg": "",
-    "totalRes": "16",
-    "totalResRet": "16",
-    "firstRes": ""
+    "totalRes": 16,
+    "totalResRet": 16,
+    "firstRes": 1
   }
 }
