@@ -278,31 +278,28 @@
               "vectorString": "パラメタ短縮表記 [例] AV:N/AC:L/Au:N/C:C/I:C/A:C",
               "baseScore": "基本値 [例] 10.0",
               "baseSeverity": "基本値深刻度 (LOW, MEDIUM, HIGH)",
-              "$comment": "cvss_v2 基本評価値一覧"
+              "$comment": "cvss_v2 基本評価値一覧",
+              "source": "情報源 [例] IPA",
+              "type": "情報区分 (null, primary)"
             },
             "cvss_v3": {
               "version": "CVSSバージョン 3.0 or 3.1",
               "vectorString": "パラメタ短縮表記 [例] CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
               "baseScore": "基本値 [例] 9.8",
               "baseSeverity": "基本値深刻度 (NONE, LOW, MEDIUM, HIGH, CRITICAL)",
-              "$comment": "cvss_v3 基本評価値一覧"
+              "$comment": "cvss_v3 基本評価値一覧",
+              "source": "情報源 [例] IPA",
+              "type": "情報区分 (null, primary)"
             },
             "cvss_v4": {
               "version": "CVSSバージョン 4.0",
               "vectorString": "パラメタ短縮表記 [例] CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:L/SA:L",
               "baseScore": "基本値 [例] 9.5",
               "baseSeverity": "基本値深刻度 (NONE, LOW, MEDIUM, HIGH, CRITICAL)",
-              "$comment": "cvss_v4 基本評価値一覧"
-            },
-            "ScoringSystem": {
-              "name": "スコアリングシステムの名称",
-              "version": "バージョン",
-              "vectorString": "パラメタ短縮表記",
-              "baseScore": "基本値",
-              "baseSeverity": "基本値深刻度"
-            },
-            "source": "情報源 [例] IPA",
-            "type": "情報区分 (null, Primary)"
+              "$comment": "cvss_v4 基本評価値一覧",
+              "source": "情報源 [例] IPA",
+              "type": "情報区分 (null, primary)"
+            }
           },
           "products": ["JVN製品識別子1", "JVN製品識別子2"]
         }

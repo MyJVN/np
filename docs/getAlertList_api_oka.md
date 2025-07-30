@@ -22,10 +22,12 @@
 | feed                               | フィードフォーマット名 | フィードフォーマット(=API バージョン)を示す名称 <br> oka を指定                                                                                           | ○    | －         |
 | startItem                          | エントリ開始位置       | 1 ～応答エントリ数                                                                                                                                        | －   | 1          |
 | maxCountItem                       | エントリ取得件数       | 1 ～ 50 (getAlertList エントリ上限値)                                                                                                                     | －   | 50         |
-| lastModStartDate                   | 最終更新日開始年月日   | 整数 8 桁                                                                                                                                                 | －   | －         |
-| lastModEndDate                     | 最終更新日終了年月日   | 整数 8 桁                                                                                                                                                 | －   | －         |
-| pubStartDate                       | 登録日開始年月日       | 整数 8 桁                                                                                                                                                 | －   | －         |
-| pubEndDate                         | 登録日終了年月日       | 整数 8 桁                                                                                                                                                 | －   | －         |
+| modifiedStartDate                  | 最終更新日開始年月日   | 整数 8 桁                                                                                                                                                 | －   | －         |
+| modifiedEndDate                    | 最終更新日終了年月日   | 整数 8 桁                                                                                                                                                 | －   | －         |
+| createdEndDate                     | 登録日開始年月日       | 整数 8 桁                                                                                                                                                 | －   | －         |
+| createdEndDate                     | 登録日終了年月日       | 整数 8 桁                                                                                                                                                 | －   | －         |
+| publicStartDate                    | 公表日開始年月日       | 整数 8 桁                                                                                                                                                 | －   | －         |
+| publicEndDate                      | 公表日終了年月日       | 整数 8 桁                                                                                                                                                 |
 | nameType                           | 製品識別子タイプ       | cpe, jvnpid, vid, pid のいずれかひとつ                                                                                                                    | －   | －         |
 | productName                        | 製品識別子             | type=cpe: cpe v2.3 形式　<br> type=jvnpid: jvnpid v1.0 形式 <br>nameType=vid: JVN iPedia におけるベンダ番号 <br>nameType=pid: JVN iPedia における製品番号 | －   | －         |
 | version <br> versionType           | バージョン             | バージョン情報                                                                                                                                            | －   | －         |
@@ -39,7 +41,7 @@
 
 該当パラメタに指定がない場合(パラメタ自体もしくはパラメタ値が未指定の場合)に MyJVN API 側で自動的に設定する値です。
 
-- lastModStartDate & lastModEndDate, pubStartDate & pubEndDate の指定がない場合には、全期間が対象となります。
+- modifiedStartDate & modifiedEndDate, createdEndDate & createdEndDate の指定がない場合には、全期間が対象となります。
 
 <br>
 
@@ -50,31 +52,47 @@
 
 <br>
 
-#### lastModStartDate & lastModEndDate
+#### modifiedStartDate & modifiedEndDate
 
 最終更新日開始年月日、最終更新日終了年月日を指定します。
 
-- (lastModStartDate & lastModEndDate)と (pubStartDate & pubEndDate) とを組み合わせて使用できます。
-- lastModStartDate の最小値は 19980101
-- lastModStartDate のみの指定の場合には、最終更新日開始年月日以降、API 実行日までが対象となります。
-- lastModEndDate のみの指定の場合には、1998 年から最終更新日終了年月日以前が対象となります。
+- (modifiedStartDate & modifiedEndDate)(createdStartDate & createdEndDate)(publicStartDate & publicEndDate) を組み合わせて使用できます。
+- modifiedStartDate の最小値は 19980101
+- modifiedStartDate のみの指定の場合には、最終更新日開始年月日以降、API 実行日までが対象となります。
+- modifiedEndDate のみの指定の場合には、1998 年から最終更新日終了年月日以前が対象となります。
 - \[例\] 最終更新日の期間を指定して注意喚起情報を取得したい場合  
-   `https://jvndb.jvn.jp/myjvn?method=getAlertList&feed=oka&lastModStartDate=20210804&lastModEndDate=20211022`
+   `https://jvndb.jvn.jp/myjvn?method=getAlertList&feed=oka&modifiedStartDate=20210804&modifiedEndDate=20211022`
 
 <br>
 
-#### pubStartDate & pubEndDate
+#### createdEndDate & createdEndDate
 
 登録日開始年月日、登録日終了年月日を指定します。
 
-- (lastModStartDate & lastModEndDate)と (pubStartDate & pubEndDate) とを組み合わせて使用できます。
-- pubStartDate の最小値は 19980101
-- pubStartDate のみの指定の場合には、登録日開始年月日以降、API 実行日までが対象となります。
-- pubEndDate のみの指定の場合には、1998 年から登録日終了年月日以前が対象となります。
+- (modifiedStartDate & modifiedEndDate)(createdStartDate & createdEndDate)(publicStartDate & publicEndDate) を組み合わせて使用できます。
+- createdEndDate の最小値は 19980101
+- createdEndDate のみの指定の場合には、登録日開始年月日以降、API 実行日までが対象となります。
+- createdEndDate のみの指定の場合には、1998 年から登録日終了年月日以前が対象となります。
 - \[例\] 登録日の期間を指定して注意喚起情報を取得したい場合  
-   `https://jvndb.jvn.jp/myjvn?method=getAlertList&feed=oka&pubStartDate=20210804&pubEndDate=20211022`
-- \[例\] 登録日と最終更新日の期間を指定して注意喚起情報を取得したい場合(2021 年に登録、2025 年に更新された概要情報)  
-   `https://jvndb.jvn.jp/myjvn?method=getAlertList&feed=oka&pubStartDate=20210101&pubEndDate=20211231&lastModStartDate=20250101&lastModEndDate=20251231`
+   `https://jvndb.jvn.jp/myjvn?method=getAlertList&feed=oka&createdEndDate=20210804&createdEndDate=20211022`
+- \[例\] 登録日と最終更新日の期間を指定して注意喚起情報を取得したい場合(2021 年に登録、2025 年に更新された注意喚起情報)  
+   `https://jvndb.jvn.jp/myjvn?method=getAlertList&feed=oka&createdEndDate=20210101&createdEndDate=20211231&modifiedStartDate=20250101&modifiedEndDate=20251231`
+
+<br>
+
+#### publicStartDate & publicEndDate
+
+公表日開始年月日、公表日終了年月日を指定します。
+
+- modifiedRangeDate と(modifiedStartDate & modifiedEndDate, createdStartDate & createdEndDate, publicStartDate & publicEndDate)の同時使用はできません。
+- (modifiedStartDate & modifiedEndDate)(createdStartDate & createdEndDate)(publicStartDate & publicEndDate) を組み合わせて使用できます。
+- publicStartDate の最小値は 19890101
+- publicStartDate のみの指定の場合には、登録日開始年月日以降、API 実行日までが対象となります。
+- publicEndDate のみの指定の場合には、1989 年から登録日終了年月日以前が対象となります。
+- \[例\] 公表日の期間を指定して注意喚起情報を取得したい場合  
+   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&publicStartDate=20210804&publicEndDate=20211022`
+- \[例\] 公表日と最終更新日の期間を指定して注意喚起情報を取得したい場合(2021 年に公表、2025 年に更新された注意喚起情報)  
+   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&publicStartDate=20210101&publicEndDate=20211231&modifiedStartDate=20250101&modifiedEndDate=20251231`
 
 <br>
 
@@ -145,11 +163,11 @@ cpe あるいは、jvnpid のバージョン(0 文字以上の ASCII 文字列)�
    `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&nameType=cpe&productName=cpe:2.3:a:apache:http_server&version=1.3.1.1`
 - versionType
 
-  | オペレータ名 | 使用可パラメタ | 操作 |
-  | --------------------- | ---------------------- | ---------------------- |
-  | no | version | バージョンが設定されていない情報を取得 (version 値は未設定) |
-  | all | version | バージョンが設定された全ての情報を取得 (version 値は未設定) |
-  | equal | version | version の値に一致したバージョンを持つ情報を取得 <br> versitonType が指定されていない場合のデフォルト値 |
+  | オペレータ名 | 使用可パラメタ | 操作                                                                                                    |
+  | ------------ | -------------- | ------------------------------------------------------------------------------------------------------- |
+  | no           | version        | バージョンが設定されていない情報を取得 (version 値は未設定)                                             |
+  | all          | version        | バージョンが設定された全ての情報を取得 (version 値は未設定)                                             |
+  | equal        | version        | version の値に一致したバージョンを持つ情報を取得 <br> versitonType が指定されていない場合のデフォルト値 |
 
 <br>
 
@@ -165,10 +183,10 @@ cpe あるいは、jvnpid の開始バージョン(0 文字以上の ASCII 文�
    `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&nameType=cpe&productName=cpe:2.3:a:apache:http_server&versionStart=1.3.1.1&versionStartType=including`
 - versionStartType
 
-  |オペレータ名 | 使用可パラメタ | 操作|
-  | --------------------- | ---------------------- | ---------------------- |
-  |including | versionStartType | バージョンを含む<br> versionStartType が指定されていない場合のデフォルト値|
-  |excluding | versionStartType | バージョンを含まない|
+  | オペレータ名 | 使用可パラメタ   | 操作                                                                       |
+  | ------------ | ---------------- | -------------------------------------------------------------------------- |
+  | including    | versionStartType | バージョンを含む<br> versionStartType が指定されていない場合のデフォルト値 |
+  | excluding    | versionStartType | バージョンを含まない                                                       |
 
 <br>
 
@@ -184,10 +202,10 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
    `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&nameType=cpe&productName=cpe:2.3:a:apache:http_server&versionEnd=1.3.1.1&versionEndType=including`
 - versionEndType
 
-  |オペレータ名 | 使用可パラメタ | 操作|
-  | --------------------- | ---------------------- | ---------------------- |
-  |including | versionEndType | バージョンを含む<br> versionEndType が指定されていない場合のデフォルト値|
-  |excluding | versionEndType | バージョンを含まない|
+  | オペレータ名 | 使用可パラメタ | 操作                                                                     |
+  | ------------ | -------------- | ------------------------------------------------------------------------ |
+  | including    | versionEndType | バージョンを含む<br> versionEndType が指定されていない場合のデフォルト値 |
+  | excluding    | versionEndType | バージョンを含まない                                                     |
 
 <br>
 
@@ -212,7 +230,7 @@ cpe あるいは、jvnpid の終了バージョン(0 文字以上の ASCII 文�
 ### JSON スキーマ
 
 - MyJVN Feed
-  - https://jvndb.jvn.jp/schema/myjvn_feed_1.0.json?20250419 
+  - https://jvndb.jvn.jp/schema/myjvn_feed_1.0.json?20250419
   - [ myjvn_feed_1.0.json ](../schemas/oka/myjvn_feed_1.0.json)
 
 ### 例

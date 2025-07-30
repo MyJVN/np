@@ -1144,7 +1144,17 @@
                   "minProperties": 1,
                   "properties": {
                     "cvss_v2": {
-                      "$ref": "cvss-v2.0.json"
+                      "$ref": "cvss-v2.0.json",
+                      "source": {
+                        "title": "Source",
+                        "description": "Contains the name of the source that originally determined the metric.",
+                        "type": "string"
+                      },
+                      "type": {
+                        "title": "Classification",
+                        "description": "Contains the classification of the metric.",
+                        "type": "string"
+                      }
                     },
                     "cvss_v3": {
                       "oneOf": [
@@ -1154,25 +1164,33 @@
                         {
                           "$ref": "cvss-v3.1.json"
                         }
-                      ]
+                      ],
+                      "source": {
+                        "title": "Source",
+                        "description": "Contains the name of the source that originally determined the metric.",
+                        "type": "string"
+                      },
+                      "type": {
+                        "title": "Classification",
+                        "description": "Contains the classification of the metric.",
+                        "type": "string"
+                      }
                     },
                     "cvss_v4": {
-                      "$ref": "cvss-v4.0.json"
+                      "$ref": "cvss-v4.0.json",
+                      "source": {
+                        "title": "Source",
+                        "description": "Contains the name of the source that originally determined the metric.",
+                        "type": "string"
+                      },
+                      "type": {
+                        "title": "Classification",
+                        "description": "Contains the classification of the metric.",
+                        "type": "string"
+                      }
                     },
                     "ssvc_v1": {
                       "$ref": "Decision_Point_Value_Selection-1-0-1.schema.json"
-                    },
-                    "ScoringSystem": {
-                      "title": "For the Future Scoring System",
-                      "description": "getVulnDetailInfo jvncsaf/jvnstix extension.",
-                      "type": "object",
-                      "properties": {
-                        "name": { "type": "string" },
-                        "version": { "type": "string" },
-                        "vectorString": { "type": "string" },
-                        "baseScore": { "type": "number" },
-                        "baseSeverity": { "type": "string" }
-                      }
                     }
                   }
                 },

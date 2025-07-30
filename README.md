@@ -20,9 +20,9 @@
 | ------------------ | --------------------------------- | ------------------------- | -------------------------- |
 | JVNDBRSS           | 脆弱性対策情報の概要              | [ XML ](docs/dataFeed.md) | [ JSON ](docs/dataFeed.md) |
 | 脆弱性対策情報詳細 | 脆弱性対策情報の詳細              | [ XML ](docs/dataFeed.md) | [ JSON ](docs/dataFeed.md) |
-| ベンダ一覧         | ベンダ名(製品開発者)リスト        | [ XML ](docs/dataFeed.md) | [ JSON ](docs/dataFeed.md) |
-| 製品一覧           | 製品名リスト (バージョン表記なし) | [ XML ](docs/dataFeed.md) | [ JSON ](docs/dataFeed.md) |
-| 製品一覧           | 製品名リスト (バージョン表記あり) |                           | [ JSON ](docs/dataFeed.md) |
+| ベンダ辞書         | ベンダ名(製品開発者)リスト        | [ XML ](docs/dataFeed.md) | [ JSON ](docs/dataFeed.md) |
+| 製品辞書           | 製品名リスト (バージョン表記なし) | [ XML ](docs/dataFeed.md) | [ JSON ](docs/dataFeed.md) |
+| 製品辞書           | 製品名リスト (バージョン表記あり) |                           | [ JSON ](docs/dataFeed.md) |
 
 <br>
 <br>

@@ -22,11 +22,13 @@
 | feed                               | フィードフォーマット名 | フィードフォーマット(=API バージョン)を示す名称 <br> oka を指定                                                                                           | ○    | －         |
 | startItem                          | エントリ開始位置       | 整数 1 ～応答エントリ数                                                                                                                                   | －   | 1          |
 | maxCountItem                       | エントリ取得件数       | 整数 1 ～ 50 (getVulnOverviewList エントリ上限値)                                                                                                         | －   | 50         |
-| rangeLastModDate                   | 最終更新日の範囲指定   | NONE: 範囲指定なし、DAY: 前日以降 <br> WEEK:過去 1 週間以降、MONTH:過去 1 ヶ月以降                                                                        | －   | －         |
-| lastModStartDate                   | 最終更新日開始年月日   | 整数 8 桁                                                                                                                                                 | －   | －         |
-| lastModEndDate                     | 最終更新日終了年月日   | 整数 8 桁                                                                                                                                                 | －   | －         |
-| pubStartDate                       | 登録日開始年月日       | 整数 8 桁                                                                                                                                                 | －   | －         |
-| pubEndDate                         | 登録日終了年月日       | 整数 8 桁                                                                                                                                                 | －   | －         |
+| modifiedRangeDate                  | 最終更新日の範囲指定   | NONE: 範囲指定なし、DAY: 前日以降 <br> WEEK:過去 1 週間以降、MONTH:過去 1 ヶ月以降                                                                        | －   | －         |
+| modifiedStartDate                  | 最終更新日開始年月日   | 整数 8 桁                                                                                                                                                 | －   | －         |
+| modifiedEndDate                    | 最終更新日終了年月日   | 整数 8 桁                                                                                                                                                 | －   | －         |
+| createdStartDate                   | 登録日開始年月日       | 整数 8 桁                                                                                                                                                 | －   | －         |
+| createdEndDate                     | 登録日終了年月日       | 整数 8 桁   
+| publicStartDate                    | 公表日開始年月日       | 整数 8 桁                                                                                                                                                 | －   | －         |
+| publicEndDate                      | 公表日終了年月日       | 整数 8 桁   
 | nameType                           | 製品識別子タイプ       | cpe, jvnpid, vid, pid のいずれかひとつ                                                                                                                    | －   | －         |
 | productName                        | 製品識別子             | type=cpe: cpe v2.3 形式　<br> type=jvnpid: jvnpid v1.0 形式 <br>nameType=vid: JVN iPedia におけるベンダ番号 <br>nameType=pid: JVN iPedia における製品番号 | －   | －         |
 | version <br> versionType           | バージョン             | バージョン情報                                                                                                                                            | －   | －         |
@@ -47,7 +49,7 @@
 
 「デフォルト」は、該当パラメタに指定がない場合(パラメタ自体もしくはパラメタ値が未指定の場合)に MyJVN API 側で自動的に設定する値です。
 
-- 期間パラメタ(rangeLastModDate, lastModStartDate & lastModEndDate, pubStartDate & pubEndDate)を指定しない場合には、最新順に一覧を出力します。
+- 期間パラメタ(modifiedRangeDate, modifiedStartDate & modifiedEndDate, createdStartDate & createdEndDate , publicStartDate & publicEndDate)を指定しない場合には、最新順に一覧を出力します。
 
 <br>
 
@@ -60,44 +62,60 @@
 
 <br>
 
-#### rangeLastModDate
+#### modifiedRangeDate
 
 最終更新日の簡易な範囲を指定します。
 
-- rangeLastModDate と(lastModStartDate & lastModEndDate, pubStartDate & pubEndDate)の同時使用はできません。
+- modifiedRangeDate と(modifiedStartDate & modifiedEndDate, createdStartDate & createdEndDate, publicStartDate & publicEndDate)の同時使用はできません。
 - \[ NONE: 範囲指定なし \| DAY: 前日以降 \| WEEK:過去 1 週間以降 \| MONTH:過去 1 ヶ月以降 \]のいずれか一つを指定します。
 - \[例\]  
-   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&rangeLastModDate=DAY`
+   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&modifiedRangeDate=DAY`
 
 <br>
 
-#### lastModStartDate & lastModEndDate
+#### modifiedStartDate & modifiedEndDate
 
 最終更新日開始年月日、最終更新日終了年月日を指定します。
 
-- rangeLastModDate と(lastModStartDate & lastModEndDate, pubStartDate & pubEndDate)の同時使用はできません。
-- (lastModStartDate & lastModEndDate)と (pubStartDate & pubEndDate) とを組み合わせて使用できます。
-- lastModStartDate の最小値は 19980101
-- lastModStartDate のみの指定の場合には、最終更新日開始年月日以降、API 実行日までが対象となります。
-- lastModEndDate のみの指定の場合には、1998 年から最終更新日終了年月日以前が対象となります。
+- modifiedRangeDate と(modifiedStartDate & modifiedEndDate, createdStartDate & createdEndDate, publicStartDate & publicEndDate)の同時使用はできません。
+- (modifiedStartDate & modifiedEndDate)(createdStartDate & createdEndDate)(publicStartDate & publicEndDate) を組み合わせて使用できます。
+- modifiedStartDate の最小値は 19980101
+- modifiedStartDate のみの指定の場合には、最終更新日開始年月日以降、API 実行日までが対象となります。
+- modifiedEndDate のみの指定の場合には、1998 年から最終更新日終了年月日以前が対象となります。
 - \[例\] 最終更新日の期間を指定して概要情報を取得したい場合  
-   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&lastModStartDate=20210804&lastModEndDate=20211022`
+   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&modifiedStartDate=20210804&modifiedEndDate=20211022`
 
 <br>
 
-#### pubStartDate & pubEndDate
+#### createdStartDate & createdEndDate
 
 登録日開始年月日、登録日終了年月日を指定します。
 
-- rangeLastModDate と(lastModStartDate & lastModEndDate, pubStartDate & pubEndDate)の同時使用はできません。
-- (lastModStartDate & lastModEndDate)と (pubStartDate & pubEndDate) とを組み合わせて使用できます。
-- pubStartDate の最小値は 19980101
-- pubStartDate のみの指定の場合には、登録日開始年月日以降、API 実行日までが対象となります。
-- pubEndDate のみの指定の場合には、1998 年から登録日終了年月日以前が対象となります。
+- modifiedRangeDate と(modifiedStartDate & modifiedEndDate, createdStartDate & createdEndDate, publicStartDate & publicEndDate)の同時使用はできません。
+- (modifiedStartDate & modifiedEndDate)(createdStartDate & createdEndDate)(publicStartDate & publicEndDate) を組み合わせて使用できます。
+- createdStartDate の最小値は 19980101
+- createdStartDate のみの指定の場合には、登録日開始年月日以降、API 実行日までが対象となります。
+- createdEndDate のみの指定の場合には、1998 年から登録日終了年月日以前が対象となります。
 - \[例\] 登録日の期間を指定して概要情報を取得したい場合  
-   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&pubStartDate=20210804&pubEndDate=20211022`
+   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&createdStartDate=20210804&createdEndDate=20211022`
 - \[例\] 登録日と最終更新日の期間を指定して概要情報を取得したい場合(2021 年に登録、2025 年に更新された概要情報)  
-   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&pubStartDate=20210101&pubEndDate=20211231&lastModStartDate=20250101&lastModEndDate=20251231`
+   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&createdStartDate=20210101&createdEndDate=20211231&modifiedStartDate=20250101&modifiedEndDate=20251231`
+
+<br>
+
+#### publicStartDate & publicEndDate
+
+公表日開始年月日、公表日終了年月日を指定します。
+
+- modifiedRangeDate と(modifiedStartDate & modifiedEndDate, createdStartDate & createdEndDate, publicStartDate & publicEndDate)の同時使用はできません。
+- (modifiedStartDate & modifiedEndDate)(createdStartDate & createdEndDate)(publicStartDate & publicEndDate) を組み合わせて使用できます。
+- publicStartDate の最小値は 19890101
+- publicStartDate のみの指定の場合には、登録日開始年月日以降、API 実行日までが対象となります。
+- publicEndDate のみの指定の場合には、1989 年から登録日終了年月日以前が対象となります。
+- \[例\] 公表日の期間を指定して概要情報を取得したい場合  
+   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&publicStartDate=20210804&publicEndDate=20211022`
+- \[例\] 公表日と最終更新日の期間を指定して概要情報を取得したい場合(2021 年に公表、2025 年に更新された概要情報)  
+   `https://jvndb.jvn.jp/myjvn?method=getVulnOverviewList&feed=oka&publicStartDate=20210101&publicEndDate=20211231&modifiedStartDate=20250101&modifiedEndDate=20251231`
 
 <br>
 
@@ -404,13 +422,6 @@ CVSSv4 基本評価基準、CVSSv4 深刻度を指定します。
                 "vectorString": "パラメタ短縮表記 [例] CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:L/SA:L",
                 "baseScore": "基本値 [例] 9.5",
                 "baseSeverity": "基本値深刻度 (NONE, LOW, MEDIUM, HIGH, CRITICAL)"
-              },
-              "ScoringSystem": {
-                "name": "スコアリングシステムの名称 [例] Common Vulnerability Scoring System V5",
-                "version": "バージョン [例] 5.0",
-                "vectorString": "パラメタ短縮表記 [例] CVSS:5.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:L/SA:L/LA:S",
-                "baseScore": "基本値 [例] 9.5",
-                "baseSeverity": "基本値深刻度 [例] CRITICAL"
               }
             }
           }
