@@ -196,28 +196,6 @@
                   "name": "製品名＋バージョン [例] マイジェイブイエヌ API 4.0.0",
                   "product_identification_helper": {
                     "cpe": "CPE製品識別子 (CPE v2.3 形式) [例] cpe:2.3:a:dendai.ac.jp:myjvn_api:4.0.0:*:*:*:*:*:*:*",
-                    "purls": [
-                      "Package-Manager値 [例] pkg:rpm/dendai.ac.jp/myjvn_api@4.0.0"
-                    ],
-                    "hashes": [
-                      {
-                        "file_hashes": [
-                          {
-                            "algorithm": "アルゴリズム [例] sha256",
-                            "value": "ハッシュ値 [例] 4ce633e7bc8cb97e9ea4e966a70b4748b46c7f7c0e572b0172ca4d24b5795561"
-                          }
-                        ]
-                      }
-                    ],
-                    "sbom_urls": [
-                      "一意な識別子 [例] http://dendai.ac.jp/spdxdocs#SPDXRef-myjvn_api-v4.0.0"
-                    ],
-                    "serial_numbers": [
-                      "一意な識別子 [例]",
-                      "186ce5f8-0049-953a-37da-bc89c6f07aa1",
-                      "urn:uuid:186ce5f8-0049-953a-37da-bc89c6f07aa1",
-                      "urn:tei:uuid:dendai.ac.jp:186ce5f8-0049-953a-37da-bc89c6f07aa1"
-                    ],
                     "id_refs": [
                       {
                         "nameType": "swid",
