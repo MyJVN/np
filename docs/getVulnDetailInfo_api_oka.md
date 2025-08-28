@@ -155,7 +155,7 @@
         "category": "external",
         "summary": "参考情報のタイトル or 概要 [例] IPA security-alert",
         "url": "参考情報のURL [例] https://www.ipa.go.jp/security/security-alert/",
-        "type": "advisory",
+        "type": "情報区分 (advisory, cwe)",
         "source": "情報源 [例] advisory"
       }
     ]
