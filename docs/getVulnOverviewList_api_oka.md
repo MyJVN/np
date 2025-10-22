@@ -344,7 +344,7 @@ CVSSv4 基本評価基準、CVSSv4 深刻度を指定します。
         ],
         "products": [
           {
-            "$comment": "jvnpidがバージョン情報を出力しない場合",
+            "$comment": "バージョン情報を出力しない場合",
             "vname": "ベンダ名 [例] 東京電機大学",
             "product_id": "JVN製品識別子 (jvnpid 1.0 形式) [例] jvnpid:1.0::dendai.ac.jp:myjvn_api",
             "pname": "製品名 [例] マイジェイブイエヌ API",
@@ -363,7 +363,7 @@ CVSSv4 基本評価基準、CVSSv4 深刻度を指定します。
             }
           },
           {
-            "$comment": "jvnpidがバージョン情報を出力する場合",
+            "$comment": "バージョン情報を出力する場合(単一)",
             "vname": "ベンダ名 [例] 東京電機大学",
             "product_id": "JVN製品識別子 (jvnpid 1.0 形式) [例] jvnpid:1.0::dendai.ac.jp:myjvn_api:4.0.0",
             "pname": "製品名 [例] マイジェイブイエヌ API",
@@ -399,8 +399,66 @@ CVSSv4 基本評価基準、CVSSv4 深刻度を指定します。
             }
           },
           {
-            "$comment": "vname,product_id などを繰り返します。"
-          }
+            "$comment": "バージョン情報を出力する場合(より大きい|未満)",
+            "vname": "東京電機大学",
+            "product_id": "jvnpid:1.0::dendai.ac.jp:myjvn_api",
+            "pname": "マイジェイブイエヌ API",
+            "version": ">1.0|<2.0",
+            "product_ids": {
+              "cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api:*:*:*:*:*:*:*:*"
+            }
+          },
+          {
+            "$comment": "バージョン情報を出力する場合(より大きい)",
+            "vname": "東京電機大学",
+            "product_id": "jvnpid:1.0::dendai.ac.jp:myjvn_api",
+            "pname": "マイジェイブイエヌ API",
+            "version": ">1.0",
+            "product_ids": {
+              "cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api:*:*:*:*:*:*:*:*"
+            }
+          },
+          {
+            "$comment": "バージョン情報を出力する場合(未満)",
+            "vname": "東京電機大学",
+            "product_id": "jvnpid:1.0::dendai.ac.jp:myjvn_api",
+            "pname": "マイジェイブイエヌ API",
+            "version": "<2.0",
+            "product_ids": {
+              "cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api:*:*:*:*:*:*:*:*"
+            }
+          },
+          {
+            "$comment": "バージョン情報を出力する場合(以上|以下)",
+            "vname": "東京電機大学",
+            "product_id": "jvnpid:1.0::dendai.ac.jp:myjvn_api",
+            "pname": "マイジェイブイエヌ API",
+            "version": ">=2.9|<=4.1",
+            "product_ids": {
+              "cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api:*:*:*:*:*:*:*:*"
+            }
+          },
+          {
+            "$comment": "バージョン情報を出力する場合(以上)",
+            "vname": "東京電機大学",
+            "product_id": "jvnpid:1.0::dendai.ac.jp:myjvn_api",
+            "pname": "マイジェイブイエヌ API",
+            "version": ">=2.9",
+            "product_ids": {
+              "cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api:*:*:*:*:*:*:*:*"
+            }
+          },
+          {
+            "$comment": "バージョン情報を出力する場合(以下)",
+            "vname": "東京電機大学",
+            "product_id": "jvnpid:1.0::dendai.ac.jp:myjvn_api",
+            "pname": "マイジェイブイエヌ API",
+            "version": "<=4.1",
+            "product_ids": {
+              "cpe": "cpe:2.3:a:dendai.ac.jp:myjvn_api:*:*:*:*:*:*:*:*"
+            }
+          },
+          { "$comment": "vname,product_id などを繰り返します。" }
         ],
         "metrics": [
           {
